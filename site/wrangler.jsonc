@@ -13,7 +13,7 @@
   "workers_dev": true,
   "preview_urls": true,
   // No request logs: the privacy page says so.
-  "observability": { "enabled": false }
+  "observability": { "enabled": false },
   // Custom domain, once the preview is approved:
-  // "routes": [{ "pattern": "cpp.anacay.org", "custom_domain": true }]
+  "routes": [{ "pattern": "cpp.anacay.org", "custom_domain": true }]
 }
