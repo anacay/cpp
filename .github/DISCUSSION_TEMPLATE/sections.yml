@@ -1,0 +1,21 @@
+labels: ["section"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This category holds discussion of the body of knowledge, section by section. The site's **Discuss** links start a thread here with the section's name in the title.
+        Already a thread on your point? Reply there instead. The site's **See the discussion** links list them.
+        For something that spans several sections, name the main one and mention the others.
+  - type: input
+    id: section
+    attributes:
+      label: Section
+      placeholder: "§5.2 One coefficient, two readings"
+    validations:
+      required: true
+  - type: textarea
+    id: comment
+    attributes:
+      label: What would you like to raise?
+    validations:
+      required: true

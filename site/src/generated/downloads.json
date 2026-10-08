@@ -1,0 +1,29 @@
+[
+ {
+  "key": "pdf",
+  "file": "pdf/The_Coefficient_Is_an_Agreement_v7_6.pdf",
+  "label": "PDF",
+  "detail": "Print layout, letter size",
+  "name": "The_Coefficient_Is_an_Agreement_v7_6.pdf",
+  "href": "/downloads/The_Coefficient_Is_an_Agreement_v7_6.pdf",
+  "bytes": 5387503
+ },
+ {
+  "key": "ipad",
+  "file": "ipad/The_Coefficient_Is_an_Agreement_v7_6_iPad.pdf",
+  "label": "iPad PDF",
+  "detail": "Tablet layout, larger type",
+  "name": "The_Coefficient_Is_an_Agreement_v7_6_iPad.pdf",
+  "href": "/downloads/The_Coefficient_Is_an_Agreement_v7_6_iPad.pdf",
+  "bytes": 13829631
+ },
+ {
+  "key": "epub",
+  "file": "ipad/The_Coefficient_Is_an_Agreement_v7_6.epub",
+  "label": "EPUB",
+  "detail": "Reflowable, for e-readers",
+  "name": "The_Coefficient_Is_an_Agreement_v7_6.epub",
+  "href": "/downloads/The_Coefficient_Is_an_Agreement_v7_6.epub",
+  "bytes": 15323776
+ }
+]

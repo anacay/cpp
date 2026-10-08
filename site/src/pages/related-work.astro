@@ -1,0 +1,78 @@
+---
+// Related work: the communities, frameworks and books this practice builds on.
+// Every statement is from a public source checked on 7 October 2026.
+import Base from '../layouts/Base.astro';
+const groups = [
+  {
+    id: 'communities', title: 'Communities and frameworks for the work',
+    items: [
+      { name: 'The Computer Measurement Group (CMG)', body: 'The elder of the field. CMG traces its roots to a user group that first met in the fall of 1971, and has carried the Computer Measurement Group name since 1975. It is still active, with conferences, a journal, proceedings and an archive of over a thousand papers. Its centre of gravity has been enterprise performance and capacity.',
+        links: [['CMG’s own history (MeasureIT, 2009)', 'https://www.cmg.org/2009/08/measureit-issue-7-08-the-genesis-of-cmg/'], ['cmg.org', 'https://www.cmg.org/']] },
+      { name: 'ITIL: capacity and performance management', body: 'ITIL, first released in 1989, treats capacity and performance management as one of its management practices, aimed at meeting current and future demand. It is a proprietary, certification-backed framework for IT service management.',
+        links: [['ITIL, overview (Wikipedia)', 'https://en.wikipedia.org/wiki/ITIL'], ['ITSM.tools on the practice (2025)', 'https://itsm.tools/itil-capacity-and-performance-management/']] },
+      { name: 'The FinOps Foundation', body: 'The closest modern example of practitioners building an open framework together. Founded in 2019 and part of the Linux Foundation since 2020, it describes its framework as “iteratively developed from real-world practitioner experiences” and licenses it under CC BY 4.0. FinOps looks at capacity from the cost side; this practice looks at planning demand and supply.',
+        links: [['The FinOps Framework', 'https://www.finops.org/framework/'], ['About the Foundation', 'https://www.finops.org/about/']] },
+    ],
+  },
+  {
+    id: 'sre', title: 'Site reliability engineering',
+    items: [
+      { name: 'Site Reliability Engineering (Google)', body: 'The first SRE book names capacity planning as a core tenet of the work, including “an accurate organic demand forecast, which extends beyond the lead time required for acquiring capacity.” Its chapter on software engineering describes Auxon, an “intent-based capacity planning” tool. The book is free online.',
+        links: [['Chapter 1, Introduction', 'https://sre.google/sre-book/introduction/'], ['Chapter 18, Auxon', 'https://sre.google/sre-book/software-engineering-in-sre/']] },
+      { name: 'Site Reliability Engineering, second edition (2026)', body: 'The second edition, published in September 2026, gives capacity planning a full chapter. The seed paper reads it closely and credits it throughout; see reference [7].',
+        links: [], internal: [['Reference [7] in the seed paper', '/references/']] },
+      { name: 'Hixson and Guliani, “Capacity Planning” (2015)', body: 'An article in USENIX ;login: that opens: “Capacity planning can be a torturous exercise in spreadsheets and meetings.” The seed paper builds on it directly; see reference [6].',
+        links: [[';login:, February 2015', 'https://www.usenix.org/publications/login/feb15/capacity-planning']] },
+      { name: 'SREcon talks', body: 'SREcon16 Europe ran a capacity planning track. At SREcon24 Americas, a talk from Elastic said: “We believe that capacity planning should become a more prominent skill set of SREs.”',
+        links: [['SREcon16 Europe, capacity planning track', 'https://www.usenix.org/program/session/track-1d-capacity-planning'], ['SREcon24 Americas, Elastic', 'https://www.usenix.org/conference/srecon24americas/presentation/sonney']] },
+    ],
+  },
+  {
+    id: 'books', title: 'Books on the craft',
+    items: [
+      { name: 'John Allspaw, The Art of Capacity Planning (O’Reilly, 2008)', body: 'A practitioner’s book on planning for web growth.', links: [['O’Reilly', 'https://oreilly.com/library/view/the-art-of/9780596518578']] },
+      { name: 'Neil J. Gunther, Guerrilla Capacity Planning (Springer, 2007)', body: 'A tactical approach to planning for highly scalable applications and services.', links: [['Book listing', 'https://skillsoft.com/book/guerrilla-capacity-planning-a-tactical-approach-to-planning-for-highly-scalable-applications-and-services-2b406df0-f31e-11e6-adc4-0242c0a80902']] },
+    ],
+  },
+  {
+    id: 'precedents', title: 'How other fields organized their knowledge',
+    items: [
+      { name: 'Project management and PMI', body: 'Project management went from practice to profession over decades. PMI held its first formal meeting in October 1969, gave its first certification exam in 1984, and its board approved a body-of-knowledge document in 1987. The guide that grew from it has been revised edition by edition since. Capacity planning is a different field, and nothing here is meant as an equivalent. What we borrow is the shape: a shared body of knowledge, versioned in editions, built by practitioners.',
+        links: [['PMI’s founders', 'https://www.pmi.org/about/learn-about-pmi/founders'], ['Webster, PM Network, 1994', 'https://www.pmi.org/learning/library/project-management-certification-history-development-4941']] },
+      { name: 'Open knowledge that lasts', body: 'Wikipedia is licensed CC BY-SA 4.0, and its editors stress that deciding “is not a vote”; talk pages are where they discuss and debate. Python’s enhancement proposals and Rust’s RFCs show how open projects collect input on a change and record the decision. How it grows borrows from all three.',
+        links: [['Wikipedia (about)', 'https://en.wikipedia.org/wiki/Wikipedia'], ['Python PEP 1', 'https://peps.python.org/pep-0001/'], ['Rust RFCs', 'https://github.com/rust-lang/rfcs']], internal: [['How it grows', '/how-it-grows/']] },
+    ],
+  },
+];
+---
+<Base title="Related work" description="The communities, frameworks and books the Capacity Planning Practice builds on and credits: CMG, ITIL, the SRE books, Hixson and Guliani, FinOps, PMI." nav="related">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Related work</p>
+      <h1>Built on the work that came before</h1>
+      <p class="lede">Capacity planning didn’t start here. People have measured, modeled and planned capacity for decades, and written down a lot of what they learned. This page credits that work and links to it.</p>
+    </div>
+    <nav class="toc reading" aria-labelledby="rw-toc"><h2 id="rw-toc">On this page</h2><ol>{groups.map((g) => <li><a href={`#${g.id}`}>{g.title}</a></li>)}</ol></nav>
+    <div data-outbound>
+      {groups.map((g) => (
+        <section class="reading rw" aria-labelledby={g.id}>
+          <h2 class="group-title" id={g.id}>{g.title}</h2>
+          {g.items.map((it) => (
+            <article class="rw-item">
+              <h3>{it.name}</h3>
+              <p>{it.body}</p>
+              {(it.links.length > 0 || it.internal) && (
+                <p class="rw-links">{[...it.links, ...(it.internal ?? [])].map(([t, h], i) => <>{i > 0 && ' · '}<a href={h}>{t}</a></>)}</p>
+              )}
+            </article>
+          ))}
+        </section>
+      ))}
+    </div>
+    <section class="prose reading" aria-labelledby="gap-h">
+      <h2 id="gap-h">What this adds</h2>
+      <p>What we couldn’t find is an open place where practitioners build a shared body of knowledge for capacity planning together. It would be versioned, licensed so anyone can reuse it, and edited in public. It would keep up with AI and accelerator fleets. That’s the gap this tries to fill. It links to the work above rather than rewriting it.</p>
+      <p>If something like this already exists, tell us. We’d rather join it than compete with it. And if we’ve missed work that belongs on this page, <a href="/join/">add a source</a>.</p>
+    </section>
+  </div>
+</Base>

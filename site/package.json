@@ -1,0 +1,26 @@
+{
+  "name": "cpp-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The Capacity Planning Practice: the static site for the open body of knowledge, generated from the seed paper's web manifest and the repository's founding documents.",
+  "scripts": {
+    "sync": "node scripts/sync-paper.mjs && node scripts/sync-guide.mjs",
+    "build": "npm run sync && astro build && node scripts/headers.mjs && node scripts/check.mjs",
+    "build:only": "astro build",
+    "check": "node scripts/check.mjs",
+    "dev": "npm run sync && astro dev",
+    "preview": "node scripts/serve.mjs",
+    "shots": "python3 scripts/screenshots.py",
+    "export": "node scripts/export-bok.mjs",
+    "seed-discussions": "node scripts/seed-discussions.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.3.6",
+    "markdown-it": "^15.0.2"
+  },
+  "devDependencies": {
+    "cheerio": "^1.2.0"
+  },
+  "license": "MIT"
+}

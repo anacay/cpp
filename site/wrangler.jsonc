@@ -1,0 +1,19 @@
+// Cloudflare Worker serving dist/ as static assets, like anacay.com.
+// Two-stage deploy (see README): `wrangler versions upload`, review, then
+// `wrangler versions deploy`. Never promote straight from a build.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cpp-anacay",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "workers_dev": true,
+  "preview_urls": true,
+  // No request logs: the privacy page says so.
+  "observability": { "enabled": false }
+  // Custom domain, once the preview is approved:
+  // "routes": [{ "pattern": "cpp.anacay.org", "custom_domain": true }]
+}

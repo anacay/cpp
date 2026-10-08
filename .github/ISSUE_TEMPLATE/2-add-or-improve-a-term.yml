@@ -1,0 +1,43 @@
+name: Add or improve a term
+description: A new glossary term, or a better definition for an existing one.
+title: "[Term] "
+labels: ["term"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If the definition might be debated, start a **Terms** discussion instead. Changed definitions go through the 14-day open period in HOW_IT_GROWS.md.
+  - type: input
+    id: term
+    attributes:
+      label: Term
+      placeholder: "commit point"
+    validations:
+      required: true
+  - type: textarea
+    id: definition
+    attributes:
+      label: Definition, in one plain sentence
+      description: What kind of thing it is, and what makes it different. A second sentence only if needed.
+    validations:
+      required: true
+  - type: input
+    id: also
+    attributes:
+      label: Synonyms, or terms people confuse it with
+      placeholder: "Not the same as a quota commitment. See also: lead time."
+  - type: input
+    id: source
+    attributes:
+      label: Where it's used publicly, if anywhere
+      description: A source that uses the term this way helps.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: New or changed?
+      options:
+        - New term
+        - Better definition of an existing term
+        - Synonym or "see also" pointer
+    validations:
+      required: true

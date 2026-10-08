@@ -1,0 +1,429 @@
+{
+ "A6": {
+  "file": "/figures/A6.svg",
+  "width": 960,
+  "height": 340,
+  "sha256": "3338f49abfee5846aa7de3d9a6fc8e86abfb4d5313a6453e87e0966a1a1a178c",
+  "source": "figures/v71/A6.svg"
+ },
+ "E1": {
+  "file": "/figures/E1.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "ebd87aa9071ed375a1309e575439fb2c279dcd4a112f8a4acb47708df170a7a5",
+  "source": "figures/v72/E1.svg"
+ },
+ "E2": {
+  "file": "/figures/E2.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "ec95b99723ff2746a0575bbb62f76f1cbb5e437474fdde3c8dce3f0b678a4286",
+  "source": "figures/v72/E2.svg"
+ },
+ "D1": {
+  "file": "/figures/D1.svg",
+  "width": 960,
+  "height": 340,
+  "sha256": "d929bf9ce04afdc2353f412fb3c07e67fd97c3c0a963979c4a5e1a1fc5e90b13",
+  "source": "figures/v71/D1.svg"
+ },
+ "E3": {
+  "file": "/figures/E3.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "99c9f91a84f730b3fc4a986734ad344fe6ec760e768cb274842a3b02d165c671",
+  "source": "figures/v72/E3.svg"
+ },
+ "E4": {
+  "file": "/figures/E4.svg",
+  "width": 960,
+  "height": 1214,
+  "sha256": "52286f0f477f415b33d9ceee5b906302c44dd35fd7466c30958f69406d926f45",
+  "source": "figures/v72/E4.svg"
+ },
+ "C1": {
+  "file": "/figures/C1.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "c69559f1d0827eed7cb76892e437819f17de7977f8890b4354e3092527dd5078",
+  "source": "figures/v71/C1.svg"
+ },
+ "C2": {
+  "file": "/figures/C2.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "9c86ada574996d7b80e57c97ee54b28bac436fcf7b98ed5440dc71057d5218d2",
+  "source": "figures/v71/C2.svg"
+ },
+ "A1": {
+  "file": "/figures/A1.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "009d86eaef501dc44cf9b8ab22f831fceb4696f9c11615ca49663c7da4d7fa28",
+  "source": "figures/v71/A1.svg"
+ },
+ "E5": {
+  "file": "/figures/E5.svg",
+  "width": 960,
+  "height": 1214,
+  "sha256": "543c67e719d898f1aa520fe8663c1291580951a502ab4c24d3852b1d7fe4969d",
+  "source": "figures/v72/E5.svg"
+ },
+ "C3": {
+  "file": "/figures/C3.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "4e985d36133962aacef5f6cffcbc699cbc96774fb0ae336ce7fbf5b1ddc726bd",
+  "source": "figures/v71/C3.svg"
+ },
+ "A2": {
+  "file": "/figures/A2.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "e7895d84591d86520b3bdec7e28d2c6679d8ceebf916a30e35a590253d0f5242",
+  "source": "figures/v71/A2.svg"
+ },
+ "B1": {
+  "file": "/figures/B1.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "cbdf05108aae2e7e4b7cdb5331df8fe234bcfd38ae0ee2b2f0ef79f01ad778e8",
+  "source": "figures/v71/B1.svg"
+ },
+ "E6": {
+  "file": "/figures/E6.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "a0758811ff3cbd17a009726ee0283abf68efd15ca32b24d286fd194f19003370",
+  "source": "figures/v72/E6.svg"
+ },
+ "A3": {
+  "file": "/figures/A3.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "219d9203f358ca7350e5ad16d201716a7dc6f3e8ce380463eb72233bc83900da",
+  "source": "figures/v71/A3.svg"
+ },
+ "B2": {
+  "file": "/figures/B2.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "a49b346cc20e8c2b26a13721f7cbc18aabab9127e50cdb91875601563da3dcff",
+  "source": "figures/v71/B2.svg"
+ },
+ "B3": {
+  "file": "/figures/B3.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "bb294f251d4225e0312d5f586373507408e225782bd01ed9ae54fb1bcb530313",
+  "source": "figures/v72/B3.svg"
+ },
+ "E7": {
+  "file": "/figures/E7.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "66eec82fc385675c11f8e735d2f0c30c2f7de35d2820f9a0e1d5af3677878e71",
+  "source": "figures/v72/E7.svg"
+ },
+ "C7": {
+  "file": "/figures/C7.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "368031112bcae305adfd95d67187ed580344510d3c0daabbca08fe7a04872358",
+  "source": "figures/v72/C7.svg"
+ },
+ "C4": {
+  "file": "/figures/C4.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "06a69fe7b829eeb027b78c3ec77d921c8b3837c6dcf6361077a9e2e4a1676ae1",
+  "source": "figures/v72/C4.svg"
+ },
+ "E8": {
+  "file": "/figures/E8.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "37dc36d654f6942883496e043a85949ab439c78871e583735662b20e21982b42",
+  "source": "figures/v72/E8.svg"
+ },
+ "B4": {
+  "file": "/figures/B4.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "a1ed81a2f4786689d8e630149caed068897a01d7a3a12bcfe973c6d87ca5934f",
+  "source": "figures/v72/B4.svg"
+ },
+ "C5": {
+  "file": "/figures/C5.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "d28182e771557181d826ae6461ae6a6a25417d26d62641e2b918a94daccfee88",
+  "source": "figures/v72/C5.svg"
+ },
+ "E9": {
+  "file": "/figures/E9.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "c6f945e82d2d3561dceb9c77066f9958d4d820851b7706f42fa5e87452a9b604",
+  "source": "figures/v72/E9.svg"
+ },
+ "B5": {
+  "file": "/figures/B5.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "5aab458ccf317f5896da1f737b75785b86d284a629976b7cf55c76c0fea025c3",
+  "source": "figures/v72/B5.svg"
+ },
+ "E10": {
+  "file": "/figures/E10.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "59db7397191bfe2725d6bf2d6c40a27cbe17ac4ec524ec3c603910f4c56f827d",
+  "source": "figures/v72/E10.svg"
+ },
+ "C6": {
+  "file": "/figures/C6.svg",
+  "width": 960,
+  "height": 340,
+  "sha256": "b2abe6115889d41764c1a4f5099aa32ae38a31448f5bfa4477117558cadce5b9",
+  "source": "figures/v71/C6.svg"
+ },
+ "N1": {
+  "file": "/figures/N1.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "4447327008d5644bf07b2bfe761407860284171127ebb3edc3c030dfcd9b5689",
+  "source": "figures/v72/N1.svg"
+ },
+ "E11": {
+  "file": "/figures/E11.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "4d21f5bf1070d39bf57b31b1f9f817bd97fc87194d4417367b6cc10c25b6fa97",
+  "source": "figures/v72/E11.svg"
+ },
+ "D4": {
+  "file": "/figures/D4.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "348f3f37e3aedf822dc3021420f4f96d34c5514e04097b8462a7d0f6152459bf",
+  "source": "figures/v71/D4.svg"
+ },
+ "A4": {
+  "file": "/figures/A4.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "e21ecd43baf0a4d6da1c2f0c6524189a7bb282533a0ff243cd3e670af1c7c309",
+  "source": "figures/v71/A4.svg"
+ },
+ "E12": {
+  "file": "/figures/E12.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "cc45895c797672d8cb1a90c05cfb489f161ff77f1ea5d6c858d56e024f2a298b",
+  "source": "figures/v72/E12.svg"
+ },
+ "D3": {
+  "file": "/figures/D3.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "01f3dd361f5c740bf21ae3b31b32f7704ba8c5116c8f729869d013494f7a6c93",
+  "source": "figures/v72/D3.svg"
+ },
+ "C8": {
+  "file": "/figures/C8.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "4bef957bc2a2f47bafb4f16d8141abe16d33188b6efb989fd7df611ded7fad96",
+  "source": "figures/v71/C8.svg"
+ },
+ "E13": {
+  "file": "/figures/E13.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "eb54c5f829a2a452193dc1f7601b08221f4b89a50a5eceedc238bc0184e07dde",
+  "source": "figures/v72/E13.svg"
+ },
+ "B6": {
+  "file": "/figures/B6.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "84db9da941fc8e29cc117bf23207f9093fb14c8a2c6d1177d9b53a4ed231f287",
+  "source": "figures/v72/B6.svg"
+ },
+ "A5": {
+  "file": "/figures/A5.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "5098e0f6c6c5104afbf820c8eea4ec799078985c92eff0edd6103b8042cea07f",
+  "source": "figures/v72/A5.svg"
+ },
+ "E15": {
+  "file": "/figures/E15.svg",
+  "width": 960,
+  "height": 1214,
+  "sha256": "25e61d25ac5782c34b94318e64a9e25fd8979e691f4510c298b97280de7ed2bc",
+  "source": "figures/v72/E15.svg"
+ },
+ "D5": {
+  "file": "/figures/D5.svg",
+  "width": 960,
+  "height": 1214,
+  "sha256": "7ab7c33e2312797ad80b336abcda3ccb9b622c1b700d4dabe9191b7ac08bdc0c",
+  "source": "figures/v71/D5.svg"
+ },
+ "E16": {
+  "file": "/figures/E16.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "94915155761c1ca8778a549339b1da818a091b2c01479dc83d0d87edf3a768bc",
+  "source": "figures/v72/E16.svg"
+ },
+ "E17": {
+  "file": "/figures/E17.svg",
+  "width": 960,
+  "height": 1214,
+  "sha256": "27f7938e3c2b4c858c5361f81ec5bd3e8e9c32c00f2aea5532af3d3c20f74f63",
+  "source": "figures/v72/E17.svg"
+ },
+ "E18": {
+  "file": "/figures/E18.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "17de674d9cdbdf3edec88451b221dfc9cd4d74b60bd60d5d48960968a195d951",
+  "source": "figures/v72/E18.svg"
+ },
+ "E32": {
+  "file": "/figures/E32.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "5a00d114270fc6faf4db3cf2fa02972ffe64e4148bf150bb56f202667960b8d4",
+  "source": "figures/v72/E32.svg"
+ },
+ "E19": {
+  "file": "/figures/E19.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "1e5db6635514cfbb6ec7f160c9c80199dcdf2159ff4ecd989d9cadb7ede1c64a",
+  "source": "figures/v72/E19.svg"
+ },
+ "A7": {
+  "file": "/figures/A7.svg",
+  "width": 960,
+  "height": 340,
+  "sha256": "4c4f051a5f9e937892aeca72ef3a6d0f373738426a422abe5bcaa1335310e2ac",
+  "source": "figures/v72/A7.svg"
+ },
+ "E20": {
+  "file": "/figures/E20.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "c590fcfb49e07eeec16b6150f48c0850e3d4c9e743f36fe72cd7000f87e69b72",
+  "source": "figures/v72/E20.svg"
+ },
+ "N2": {
+  "file": "/figures/N2.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "3adea69b9e85be3b1971a65aeb3dffa27bdb25a0929c1f8658fbcc75e9e5433a",
+  "source": "figures/v72/N2.svg"
+ },
+ "E21": {
+  "file": "/figures/E21.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "a51450479f5654ad390781fdce57aba76c08daff6ab5754a9468ef99f18c093c",
+  "source": "figures/v72/E21.svg"
+ },
+ "D6": {
+  "file": "/figures/D6.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "7711d080828f06fd375e96afb7b199a8b2d40c3e25aebc18d4b21b788b3ce538",
+  "source": "figures/v71/D6.svg"
+ },
+ "E22": {
+  "file": "/figures/E22.svg",
+  "width": 960,
+  "height": 340,
+  "sha256": "78f43449cd27101621a9f795ba49ec397e99078d3f102be28fca140828d3d0fb",
+  "source": "figures/v72/E22.svg"
+ },
+ "D7a": {
+  "file": "/figures/D7a.svg",
+  "width": 1280,
+  "height": 925,
+  "sha256": "7a50de1f2b72ed2a8f09c7a0a8cf50d311a63a953def994ccef689040e6b3497",
+  "source": "figures/v71/D7a.svg"
+ },
+ "D7b": {
+  "file": "/figures/D7b.svg",
+  "width": 1280,
+  "height": 925,
+  "sha256": "4a56ee71ca141734f2e196a1fe5c5fed967f27efbdb25c8bfe13f4564b621b10",
+  "source": "figures/v71/D7b.svg"
+ },
+ "E23": {
+  "file": "/figures/E23.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "9bc7f0601f75a22a1fe3f48e245ce392313e059380e11ef6e02ae2cd87e27d6e",
+  "source": "figures/v72/E23.svg"
+ },
+ "E24": {
+  "file": "/figures/E24.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "310696f0d2a3911f5954c4116a4661a5cd0e81c7a059fa2b198d8e20fcaee1a9",
+  "source": "figures/v72/E24.svg"
+ },
+ "E25": {
+  "file": "/figures/E25.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "129647f0fd7673d01df0e3e12eccde09a9239b2f8bd70915ca2485b49397004f",
+  "source": "figures/v72/E25.svg"
+ },
+ "E26": {
+  "file": "/figures/E26.svg",
+  "width": 960,
+  "height": 340,
+  "sha256": "6cdabf7ceb0124e98179e7f2fbf5bfe4d3aecefbeccf0a869751815a7858d28c",
+  "source": "figures/v72/E26.svg"
+ },
+ "E27": {
+  "file": "/figures/E27.svg",
+  "width": 960,
+  "height": 340,
+  "sha256": "a123a5e98c71bfbe2c4c34a002e1f3823ec1b7bec64fdb14bf0e08f797fbee27",
+  "source": "figures/v72/E27.svg"
+ },
+ "E28": {
+  "file": "/figures/E28.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "c0fd166eb57086f89a2247d8c40679e3a9d428a1964a262b938ba82079bbe375",
+  "source": "figures/v72/E28.svg"
+ },
+ "E29": {
+  "file": "/figures/E29.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "b00029219eda84a6e2d04f7553c9cd1f453ad7d4309f7782f8fa3d3f11ed5001",
+  "source": "figures/v72/E29.svg"
+ },
+ "E30": {
+  "file": "/figures/E30.svg",
+  "width": 960,
+  "height": 790,
+  "sha256": "51b4d77681865b92503abc3f26ba915c388af823485f2c18ae3571c0bc27e83f",
+  "source": "figures/v72/E30.svg"
+ },
+ "E31": {
+  "file": "/figures/E31.svg",
+  "width": 960,
+  "height": 536,
+  "sha256": "c9db993e0a19d34319076c5842654fdf52bb5cd7f31ea1865436d80696019638",
+  "source": "figures/v72/E31.svg"
+ }
+}

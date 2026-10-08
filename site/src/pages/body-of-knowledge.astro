@@ -1,0 +1,107 @@
+---
+// The body of knowledge hub: the guide (draft), laid out on the map, with the
+// seed paper and the reference shelf beside it.
+import Base from '../layouts/Base.astro';
+import { load, wordCount, readingTime } from '../lib/paper.mjs';
+import { community } from '../lib/community.mjs';
+import { guide, CADENCES } from '../lib/guide.mjs';
+const ctx = load();
+const { manifest } = ctx;
+const c = community();
+const g = guide();
+const of = (k) => g.pages.filter((p) => p.kind === k);
+const stages = of('stage');
+const cadLabel = (p) => CADENCES.find((x) => x.id === p.cadence[0])?.label ?? '';
+const p = (id) => ctx.pages.get(id);
+const deep = ctx.chapters.reduce((n, ch) => n + wordCount(ch.blocks), 0);
+const shelf = [
+  { href: '/glossary/', name: 'Glossary', what: 'The seed’s terms, merged and alphabetical.' },
+  { href: '/worksheet/', name: 'The worksheet', what: 'Walk one launch through the commit-point method (seed paper, Appendix A).' },
+  { href: '/public-record/', name: 'The public record on supply', what: 'Lead times, power and contracts, from public sources (Appendix B).' },
+  { href: '/references/', name: 'References', what: 'Every public source the guide and the seed cite.' },
+  { href: '/visual-tour/', name: 'Visual tour', what: `All ${manifest.stats.figure_blocks} of the seed paper’s figures, in order.` },
+];
+const seedLayers = [
+  { href: '/abstract/', name: 'Abstract', t: '2 minutes' },
+  { href: '/one-page/', name: 'One page', t: readingTime(wordCount(p('one-page').blocks)) },
+  { href: '/summary/', name: 'Executive summary', t: '10 minutes' },
+  { href: '/paper/', name: `The full paper, Sections 1–${ctx.chapters.length}`, t: readingTime(deep) },
+];
+---
+<Base title="Body of knowledge" description="The body of knowledge for capacity planning: a guide laid out on one map of cadence and altitude, with the seed paper beside it." nav="bok">
+  <div class="wrap">
+    <div class="page-head reading">
+      <p class="eyebrow">Body of knowledge</p>
+      <h1>The body of knowledge</h1>
+      <p class="lede">How capacity planning is practiced, laid out on one map: from the annual budget to a single service, and from a year out to the week after launch. It’s written for you, the planner, at whatever level you work.</p>
+      <div class="rfc-panel">
+        <p class="kicker">Start here: the seed paper, open for comments</p>
+        <p>Everything below grows out of one paper. It’s published as a request for comments: select any passage to open a thread, or reply to one of the author’s open questions.</p>
+        <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on <em>{manifest.title}</em></a> <a class="btn btn--quiet" href="/open-questions/">Open questions</a> <a class="more" href="/downloads/">PDF and EPUB</a></p>
+      </div>
+      <p class="note"><strong>An early draft.</strong> The guide below (v0.2) is a first sketch of how the body of knowledge could be organized, drawn from the seed paper. Comment on it the same way.</p>
+    </div>
+
+    <section class="band" aria-labelledby="foundation">
+      <h2 class="kicker" id="foundation">The guide, in progress</h2>
+      <ul class="cards cards--3">
+        {of('foundation').map((x) => <li><h3><a href={x.url}>{x.title}</a></h3><p>{x.short}</p></li>)}
+      </ul>
+      <figure class="plate plate--pullout hub-map">
+        <a class="plate__card" href="/guide/the-map/"><img src="/guide/figures/G1_map.svg" alt="The map: a grid of five planning cadences (annual, quarterly, monthly, weekly, post-launch, looping back) across five altitudes (envelope, region or site, portfolio, launch, unit), with supply commit points marked." width="1280" height="925" loading="lazy" decoding="async"></a>
+        <figcaption><span class="plate__caption"><strong class="plate__label">The map.</strong> Every page of the guide sits on it. Read a column for one cycle, a row for one thing firming up over time.</span><span class="plate__meta"><a class="plate__open" href="/guide/the-map/">Read the map</a></span></figcaption>
+      </figure>
+    </section>
+
+    <section class="band" aria-labelledby="stage">
+      <h2 class="kicker" id="stage">Through the cycle</h2>
+      <p class="display">Five cadences, one loop. Each commits what its lead time forces.</p>
+      <ol class="cycle">
+        {stages.map((x) => <li><a href={x.url}><span class="time">{cadLabel(x)}</span><span class="name">{((t) => t.charAt(0).toUpperCase() + t.slice(1))(x.title.replace(/^[^:]+:\s*/, ''))}</span><span class="what">{x.short}</span></a></li>)}
+      </ol>
+      <p class="cycle__loop muted">↺ Post-launch feeds the next annual plan.</p>
+    </section>
+
+    <section class="band" aria-labelledby="across">
+      <h2 class="kicker" id="across">Across the cycle</h2>
+      <ul class="cards">
+        {of('across').map((x) => <li><h3><a href={x.url}>{x.title}</a></h3><p>{x.short}</p></li>)}
+      </ul>
+    </section>
+
+    <section class="band" aria-labelledby="concept">
+      <h2 class="kicker" id="concept">Concepts</h2>
+      <p class="reading muted">The ideas that recur across the map. Stage pages link here instead of repeating them.</p>
+      <ol class="chapters">
+        {of('concept').map((x) => <li><a href={x.url}><span class="n" aria-hidden="true">·</span><span class="ct">{x.title}</span><span class="cs">{x.short}</span></a></li>)}
+      </ol>
+    </section>
+
+    <section class="band" aria-labelledby="shelf">
+      <h2 class="kicker" id="shelf">Reference shelf</h2>
+      <ol class="chapters">
+        {shelf.map((x) => <li><a href={x.href}><span class="n" aria-hidden="true">·</span><span class="ct">{x.name}</span><span class="cs">{x.what}</span></a></li>)}
+      </ol>
+    </section>
+
+    <section class="band" aria-labelledby="seed">
+      <h2 class="kicker" id="seed">The seed paper</h2>
+      <div class="split split--text">
+        <div class="reading">
+          <p class="display">Where it started.</p>
+          <p><em>{manifest.title}</em>, {c.editionNote.replace(/^built from /, '')}. One practitioner’s account, from public sources and experience. The guide is drawn from it, and every guide page says which sections. It stays whole here, as {c.edition}, so it can be read as one argument and cited exactly.</p>
+          <p><a class="more" href="/changes/">What changed</a> · <a class="more" href="/downloads/">Downloads</a></p>
+        </div>
+        <ul class="paths paths--stack">
+          {seedLayers.map((x) => <li><a href={x.href}><span class="time">{x.t}</span><span class="name">{x.name}</span></a></li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="band prose reading" aria-labelledby="labels-h">
+      <h2 class="kicker" id="labels-h">How claims are labeled</h2>
+      <p>Published claims carry a numbered citation to the reference list. Claims from practice carry <span class="ev ev--argued">argued</span>. Claims nobody has measured publicly carry <span class="ev ev--unmeasured">unmeasured</span>. Examples and numbers not attributed to a source are invented for illustration.</p>
+      <p>Every guide page is a Markdown file under <code>body-of-knowledge/guide/</code> in the repository, and ends with Discuss and Suggest an edit. <a href="/how-it-grows/">How a change is decided</a>.</p>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import { load, renderBlocks, renderInline, quote } from '../lib/paper.mjs';
+const ctx = load();
+const { manifest, config } = ctx;
+const site = config.site;
+const page = ctx.pages.get('about');
+const authorBlock = page.blocks[0];
+const html = renderBlocks(page, ctx);
+const lasting = quote(manifest, 3, 'The two claims are the part meant to last.', 'as people use them.');
+const synthesis = quote(manifest, 14, 'This is a practitioner synthesis, and it describes no particular organization.', 'not any one organization\'s process.');
+const version = manifest.version.replace(/^v/, '').replace(/\s*draft$/, '');
+const subject = encodeURIComponent(`Comment on ${manifest.title}, v${version}`);
+---
+<Base title="About" description={`What ${site.name} is, how it will change, how to comment, and who started and stewards it.`} nav="about">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">About</p>
+      <h1>About the practice and the seed</h1>
+      <p class="lede">{site.name} is an open, community-built body of knowledge for capacity planning. Its seed edition is one practitioner's account: <em>{manifest.title}</em>, by Guillermo Martinez. It's laid out to read in steps, with its worksheet, figures, glossary and sources. The <a href="/charter/">charter</a> says why it exists and what it covers.</p>
+    </div>
+
+    <section class="prose reading" aria-labelledby="evolve">
+      <h2 id="evolve">How it will change</h2>
+      <p>The body of knowledge grows by discussion and consensus, in versions and editions; <a href="/how-it-grows/">How it grows</a> sets out the loop. The seed paper is a working draft. In its own words:</p>
+      <blockquote set:html={renderInline(lasting.text, ctx.targets)} />
+      <p>So expect the claims to hold steady across versions, and the method, the mechanisms, the stages and the numbers to move as practitioners try them. Each version's changes are listed under <a href="/changes/">What changed</a>, and every version is a complete paper you can <a href="/downloads/">download</a>.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="comment">
+      <h2 id="comment">How to comment</h2>
+      <p>Comments, corrections and counter-examples are welcome, especially from people who have run a planning cycle and seen where this would break. Every section has a Discuss link and a Suggest-an-edit link; <a href="/join/">Join in</a> lists the other ways. You can also write to <a href={`mailto:${site.contact}?subject=${subject}`}>{site.contact}</a>. Please name the section or figure you mean; a public source, where there is one, helps most.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="written">
+      <h2 id="written">How this is written</h2>
+      <ul>
+        <li><strong>Invented examples.</strong> Every example and number not attributed to a source is invented for illustration, and marked as such.</li>
+        <li><strong>No employer data.</strong> The paper uses no confidential information and describes no organization's internal practice beyond what the cited public sources state.</li>
+        <li><strong>Public sources, cited.</strong> Every source is in the <a href="/references/">reference list</a>, dated and linked where it can be.</li>
+        <li><strong>Judgment, marked.</strong> <span set:html={renderInline(synthesis.text, ctx.targets)} /></li>
+      </ul>
+    </section>
+
+    <section class="prose reading" aria-labelledby="who">
+      <h2 id="who">Who started it, and who stewards it</h2>
+      <dl class="facts">
+        <dt>Founder and seed author</dt><dd>Guillermo Martinez</dd>
+        <dt>Steward</dt><dd><a href={site.steward.url}>Anacay</a>, for now; see <a href="/governance/">Governance</a> for the path to community governance</dd>
+        <dt>Edition</dt><dd>{config.community.edition}, {config.community.editionNote}</dd>
+        <dt>Licence</dt><dd><a href="/license/">CC BY-SA 4.0</a> for text and figures; MIT for site code</dd>
+      </dl>
+      <h3 id={authorBlock.anchor}>{authorBlock.heading}</h3>
+    </section>
+    <article class="prose reading-wrap about-note" set:html={html} />
+  </div>
+</Base>

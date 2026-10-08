@@ -1,0 +1,12 @@
+---
+// The site's mark: the house ring and its orbiting point (the planning cycle)
+// around a rising step (a step change). Drawn in the parent's star palette.
+const { label } = Astro.props;
+---
+<svg viewBox="0 0 64 64" aria-hidden={label ? undefined : 'true'} role={label ? 'img' : undefined} aria-label={label} focusable="false">
+  <circle cx="32" cy="32" r="27" fill="#081C28" stroke="#2A536A" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="21" fill="none" stroke="#16394E" stroke-width="1" stroke-dasharray="2 5"/>
+  <circle cx="32" cy="11" r="2.25" fill="#C9A227"/>
+  <path d="M19 42 H27 V35 H35 V27 H45" fill="none" stroke="#C9A227" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter"/>
+  <circle cx="45" cy="27" r="2.6" fill="#E3C567"/>
+</svg>

@@ -1,0 +1,38 @@
+---
+// Every figure, in reading order, each once, linked back to where it sits.
+import Base from '../layouts/Base.astro';
+import { load, renderFigure, pageMeta } from '../lib/paper.mjs';
+const ctx = load();
+const { manifest } = ctx;
+const bySeq = new Map(manifest.blocks.map((b) => [b.seq, b]));
+const groups = [];
+for (const t of manifest.visual_tour) {
+  const block = bySeq.get(t.seq);
+  if (!block || block.type !== 'figure' || block.figure.id !== t.id) throw new Error(`visual_tour entry ${t.seq} ${t.id} doesn't match the blocks`);
+  const page = ctx.pageOf.get(t.seq);
+  let g = groups.at(-1);
+  if (!g || g.page !== page) groups.push((g = { page, items: [] }));
+  g.items.push(block);
+}
+const where = (b, page) => {
+  const sub = b.heading_path[2]?.match(/^((?:\d+|[A-Z])\.\d+)\s/)?.[1];
+  const label = page.kind === 'chapter' ? `Section ${sub ?? page.number}`
+    : page.kind === 'appendix' ? `Appendix ${sub ?? page.letter}` : pageMeta(page).title;
+  return `<a class="context" href="${page.url}#${b.figure.anchor}">In context: ${label}</a>`;
+};
+---
+<Base title="The visual tour" description={`All ${manifest.visual_tour.length} figures of ${manifest.title} in reading order, each with its caption and a link to where it sits in the paper.`} nav="tour">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">{manifest.visual_tour.length} figures</p>
+      <h1>The visual tour</h1>
+      <p class="lede">Every figure in the paper, in order, with its caption. The figures and captions are built to carry the argument on their own; each links to its place in the full reading.</p>
+    </div>
+    {groups.map((g) => (
+      <section class="tour-group" aria-labelledby={`tg-${g.page.id}`}>
+        <h2 id={`tg-${g.page.id}`}><a href={g.page.url}>{pageMeta(g.page).label}</a></h2>
+        {g.items.map((b) => <Fragment set:html={renderFigure(b, ctx, { canonical: false, idPrefix: 'tour-', headingNote: where(b, g.page) }).replace('data-reuse-fig=', 'data-tour-fig=')} />)}
+      </section>
+    ))}
+  </div>
+</Base>

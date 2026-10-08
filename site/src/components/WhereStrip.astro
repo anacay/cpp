@@ -1,0 +1,26 @@
+---
+// "Where this sits": a small copy of the map with this page's cells lit, plus
+// the levels that usually do this work.
+import { CADENCES, ALTITUDES, LEVELS } from '../lib/guide.mjs';
+interface Props { page: any; compact?: boolean }
+const { page } = Astro.props;
+const on = (c, a) => page.cadence.includes(c) && page.altitude.includes(a);
+const all = page.cadence.length === CADENCES.length && page.altitude.length === ALTITUDES.length;
+const cadText = page.cadence.length === CADENCES.length ? 'every cadence' : CADENCES.filter((c) => page.cadence.includes(c.id)).map((c) => c.label.toLowerCase()).join(', ');
+const altText = page.altitude.length === ALTITUDES.length ? 'every altitude' : ALTITUDES.filter((a) => page.altitude.includes(a.id)).map((a) => a.label.toLowerCase()).join(', ');
+---
+<aside class="where" aria-label="Where this sits on the map">
+  <a class="where__map" href="/guide/the-map/" aria-label={`On the map: ${cadText}; ${altText}. Open the map.`}>
+    <table aria-hidden="true">
+      <tr><td></td>{CADENCES.map((c) => <th scope="col" title={c.label}>{c.label.charAt(0)}</th>)}</tr>
+      {ALTITUDES.map((a) => (
+        <tr><th scope="row" title={a.label}>{a.label.split(' ')[0]}</th>{CADENCES.map((c) => <td class={on(c.id, a.id) ? 'on' : undefined}></td>)}</tr>
+      ))}
+    </table>
+  </a>
+  <dl class="where__facts">
+    <dt>Cadence</dt><dd>{all ? 'Across the whole cycle' : cadText.charAt(0).toUpperCase() + cadText.slice(1)}</dd>
+    <dt>Altitude</dt><dd>{altText.charAt(0).toUpperCase() + altText.slice(1)}</dd>
+    <dt>Usually done by</dt><dd><ul class="lvl">{LEVELS.map((l) => <li class={page.levels.includes(l.id) ? 'on' : undefined}>{l.label}</li>)}</ul></dd>
+  </dl>
+</aside>

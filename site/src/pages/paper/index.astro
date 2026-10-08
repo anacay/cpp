@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+import HelpBuild from '../../components/HelpBuild.astro';
+import RfcHint from '../../components/RfcHint.astro';
+import { load, renderBlocks, pageMeta, wordCount, readingTime, esc } from '../../lib/paper.mjs';
+const ctx = load();
+const page = ctx.pages.get('paper');
+const subtitleSeq = page.blocks.find((b) => b.starts_heading && b.heading_level === 3)?.seq;
+const html = renderBlocks(page, ctx, {
+  headingOverride: subtitleSeq ? { [subtitleSeq]: (b) => `<p class="subtitle" id="${esc(b.anchor)}" data-heading-seq="${b.seq}">${esc(b.heading)}</p>` } : {},
+});
+const layers = ['abstract', 'summary', 'one-page'].map((id) => ctx.pages.get(id));
+const appendices = ['worksheet', 'public-record'].map((id) => ctx.pages.get(id));
+const time = (p) => readingTime(wordCount(p.blocks));
+const figs = (p) => p.blocks.filter((b) => b.type === 'figure').length;
+const deepWords = ctx.chapters.reduce((n, c) => n + wordCount(c.blocks), 0);
+---
+<Base title="The paper" description={`${ctx.manifest.title}: ${ctx.manifest.subtitle}. Contents, from the abstract to the appendices.`} nav="paper" commentable={{ name: "The seed paper, contents" }}>
+  <div class="wrap wrap--reading">
+    <div class="page-head"><p class="eyebrow"><a href="/body-of-knowledge/">Body of knowledge</a> · The seed paper · Request for comments</p></div>
+    <RfcHint />
+    <article class="prose paper-title" set:html={html} />
+
+    <h2 class="group-title" id="layers">Layers: stop at the depth you need</h2>
+    <ol class="chapters">
+      {layers.map((p) => (
+        <li><a href={p.url}><span class="n" aria-hidden="true">·</span><span class="ct">{pageMeta(p).title}</span>
+          <span class="cs">{time(p)}{figs(p) ? ` · ${figs(p)} figure${figs(p) > 1 ? 's' : ''}` : ''}</span></a></li>
+      ))}
+    </ol>
+
+    <h2 class="group-title" id="sections">The deep dive: Sections 1–{ctx.chapters.length} <span class="muted">· {readingTime(deepWords)}</span></h2>
+    <ol class="chapters">
+      {ctx.chapters.map((c) => (
+        <li><a href={c.url}><span class="n">{c.number}</span><span class="ct">{c.title}</span>
+          {c.inShort && <span class="cs">{c.inShort.charAt(0).toUpperCase() + c.inShort.slice(1)}</span>}</a></li>
+      ))}
+      <li><a href="/paper/terms/"><span class="n" aria-hidden="true">·</span><span class="ct">Terms used in this paper</span><span class="cs">Also merged with the appendices' terms in the <span class="u">glossary</span>.</span></a></li>
+    </ol>
+
+    <h2 class="group-title" id="appendices">Appendices: each stands on its own</h2>
+    <ol class="chapters">
+      {appendices.map((p) => (
+        <li><a href={p.url}><span class="n">{p.letter}</span><span class="ct">{p.title}</span>
+          <span class="cs">{time(p)} · {figs(p)} figures</span></a></li>
+      ))}
+    </ol>
+
+    <h2 class="group-title" id="back">Back matter and other ways in</h2>
+    <ol class="chapters">
+      <li><a href="/references/"><span class="n" aria-hidden="true">·</span><span class="ct">References</span><span class="cs">The full list, each [n] in the text links here.</span></a></li>
+      <li><a href="/visual-tour/"><span class="n" aria-hidden="true">·</span><span class="ct">The visual tour</span><span class="cs">All {ctx.manifest.stats.figure_blocks} figures in order, with captions.</span></a></li>
+      <li><a href="/downloads/"><span class="n" aria-hidden="true">·</span><span class="ct">Downloads</span><span class="cs">PDF, iPad PDF and EPUB.</span></a></li>
+      <li><a href="/about/#about-the-author-disclaimer"><span class="n" aria-hidden="true">·</span><span class="ct">About the author; disclaimer</span></a></li>
+    </ol>
+    <HelpBuild page={page} />
+  </div>
+</Base>

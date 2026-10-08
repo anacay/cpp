@@ -1,0 +1,11 @@
+---
+import { neighbours, pageMeta } from '../lib/paper.mjs';
+const { page } = Astro.props;
+const { prev, next } = neighbours(page);
+---
+{(prev || next) && (
+<nav class="pager" aria-label="Reading order">
+  {prev && <a class="prev" href={prev.url} rel="prev"><span class="dir">Previous</span><span class="t">{pageMeta(prev).label}</span></a>}
+  {next && <a class="next" href={next.url} rel="next"><span class="dir">Next</span><span class="t">{pageMeta(next).label}</span></a>}
+</nav>
+)}

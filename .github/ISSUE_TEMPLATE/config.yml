@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Talk it through first
+    url: "https://github.com/anacay/cpp/discussions"
+    about: Not sure it's an error, or want to discuss an idea? Start a discussion.
+  - name: Report a Code of Conduct concern privately
+    url: "https://cpp.anacay.org/code-of-conduct/"
+    about: The code of conduct says how to report privately. Reports go only to the people who handle enforcement.

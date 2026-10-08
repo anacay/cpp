@@ -1,0 +1,30 @@
+---
+// A page that renders a run of manifest blocks as written: abstract, summary,
+// one page, Terms, the appendices and the references.
+import Base from '../layouts/Base.astro';
+import Pager from './Pager.astro';
+import HelpBuild from './HelpBuild.astro';
+import { bokFile, pageName } from '../lib/community.mjs';
+import { annotate } from '../lib/notes.mjs';
+import RfcHint from './RfcHint.astro';
+import { load, renderBlocks, pageMeta } from '../lib/paper.mjs';
+interface Props { id: string; nav?: string; kicker?: string }
+const { id, nav = 'paper', kicker } = Astro.props;
+const ctx = load();
+const page = ctx.pages.get(id);
+const meta = pageMeta(page);
+const html = annotate(renderBlocks(page, ctx), page);
+---
+<Base title={meta.title} description={meta.description} nav={nav} commentable={bokFile(page) ? { name: pageName(page) } : undefined}>
+  <div class="wrap wrap--reading">
+    <div class="page-head">
+      {kicker && <p class="eyebrow">{kicker}</p>}
+      <slot name="before" />
+    </div>
+    {bokFile(page) && <RfcHint page={page} />}
+    <article class="prose reading-wrap" set:html={html} />
+    <slot />
+    {bokFile(page) && <HelpBuild page={page} />}
+    <Pager page={page} />
+  </div>
+</Base>

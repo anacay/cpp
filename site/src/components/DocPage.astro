@@ -1,0 +1,26 @@
+---
+// A founding document from the repository (charter, governance and so on),
+// rendered as a page. Outbound links in it are cited sources.
+import Base from '../layouts/Base.astro';
+import { foundingDoc, community } from '../lib/community.mjs';
+import { load } from '../lib/paper.mjs';
+interface Props { file: string; eyebrow?: string; nav?: string }
+const { file, eyebrow = 'The practice', nav = 'practice' } = Astro.props;
+const doc = foundingDoc(file);
+const c = community();
+const contact = load().config.site.contact;
+---
+<Base title={doc.title} description={doc.description} nav={nav}>
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{doc.title}</h1>
+    </div>
+    {doc.toc.length > 2 && (
+      <nav class="toc reading" aria-labelledby="doc-toc-h"><h2 id="doc-toc-h">On this page</h2>
+        <ol>{doc.toc.map((t) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol></nav>
+    )}
+    <article class="prose reading doc" data-outbound set:html={doc.html} />
+    <p class="doc-source muted reading">This page is <code>{file}</code> in the repository. To change it, <a href={`${c.repo}/edit/${c.branch}/${file}`}>suggest an edit</a>{!c.open && <span> (the repository is opening soon; until then, write to <a href={`mailto:${contact}`}>{contact}</a>)</span>}.</p>
+  </div>
+</Base>

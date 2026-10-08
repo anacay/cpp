@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { load } from '../lib/paper.mjs';
+const { config, manifest } = load();
+const c = config.community;
+---
+<Base title="Licence" description="The Capacity Planning Practice's text and figures are licensed CC BY-SA 4.0; the site code is MIT. How to credit it." nav="about">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Licence</p>
+      <h1>Open, and it stays open</h1>
+    </div>
+    <article class="prose reading" data-outbound>
+      <h2 id="content">Text and figures: CC BY-SA 4.0</h2>
+      <p>The body of knowledge, including the seed paper, its figures, the glossary and the founding documents, is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International licence</a>. You can share it, teach from it and adapt it, including commercially, as long as you credit it and license what you make from it the same way.</p>
+      <h2 id="code">Site code: MIT</h2>
+      <p>The code that builds this site is licensed under the <a href="https://opensource.org/license/mit">MIT licence</a>.</p>
+      <h2 id="credit">How to credit it</h2>
+      <p>Name the work, the edition and the licence, and link to the source. For example:</p>
+      <blockquote><p>The Capacity Planning Practice, {c.edition}. {manifest.title}, by Guillermo Martinez and contributors. {config.site.url}. CC BY-SA 4.0.</p></blockquote>
+      <p>Cite the edition or version you read, so others can find the exact text.</p>
+      <h2 id="exceptions">What the licence doesn’t cover</h2>
+      <ul>
+        <li><strong>Quoted sources.</strong> Short quotations from cited works stay their authors’ and publishers’. They’re here as quotation, with credit, and aren’t relicensed.</li>
+        <li><strong>Names and marks.</strong> The Anacay name and mark belong to Anacay and aren’t licensed for reuse.</li>
+      </ul>
+    </article>
+  </div>
+</Base>

@@ -1,0 +1,24 @@
+title: "[Term] "
+labels: ["term"]
+body:
+  - type: input
+    id: term
+    attributes:
+      label: Term
+    validations:
+      required: true
+  - type: textarea
+    id: definition
+    attributes:
+      label: Proposed definition, in one plain sentence
+    validations:
+      required: true
+  - type: textarea
+    id: usage
+    attributes:
+      label: How people use it in practice
+      description: Different meanings in different places? Synonyms? Terms it gets confused with? That's exactly what we want to hear.
+  - type: input
+    id: source
+    attributes:
+      label: Public source that uses it this way, if any

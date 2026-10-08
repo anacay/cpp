@@ -1,0 +1,45 @@
+name: Add a public source
+description: A paper, book, talk, filing or public dataset worth reading.
+title: "[Source] "
+labels: ["source"]
+body:
+  - type: input
+    id: citation
+    attributes:
+      label: Citation
+      placeholder: "Author(s), title, venue, year"
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+    validations:
+      required: true
+  - type: textarea
+    id: supports
+    attributes:
+      label: What does it support or add?
+      description: One or two lines. Name a section if it fits one.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of source is it?
+      options:
+        - Peer-reviewed paper or book
+        - Preprint
+        - Operator or vendor publication (blog, talk, filing)
+        - Standard or framework
+        - Public dataset
+        - Secondary source (reports on someone else's work)
+    validations:
+      required: true
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Before you submit
+      options:
+        - label: It's publicly available. No login-only internal documents.
+          required: true

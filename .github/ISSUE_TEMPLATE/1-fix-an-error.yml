@@ -1,0 +1,39 @@
+name: Fix an error
+description: A typo, a broken link, a wrong number or a misquoted source.
+title: "[Fix] "
+labels: ["fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks. Small fixes are reviewed by one editor and merged without a waiting period.
+        Faster still: click **Suggest an edit** at the bottom of the section and fix it yourself.
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: Section number, or paste the page link.
+      placeholder: "§6.2, second paragraph"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong, and what should it say?
+      placeholder: |
+        It says: "...".
+        It should say: "...".
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source, if any
+      description: A link or citation that shows the right version. Leave blank for typos and links.
+  - type: checkboxes
+    id: safe
+    attributes:
+      label: Before you submit
+      options:
+        - label: This contains no employer secrets, internal names or real internal numbers.
+          required: true

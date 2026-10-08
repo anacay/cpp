@@ -1,0 +1,48 @@
+---
+// The paper's term lists (Terms used in this paper; Appendix A; Appendix B),
+// merged and alphabetical. Definitions are the paper's words, unchanged; a
+// term defined in two lists shows both.
+import Base from '../layouts/Base.astro';
+import { load, glossary, renderInline, pageLabel } from '../lib/paper.mjs';
+const ctx = load();
+const terms = glossary(ctx);
+const letterOf = (t) => t.term.replace(/^(the|a|an)\s+/i, '').charAt(0).toUpperCase();
+const letters = [...new Set(terms.map(letterOf))];
+const sources = [...new Set(terms.flatMap((t) => t.defs.map((d) => d.label)))].sort((a, b) => (a.startsWith('Terms') ? -1 : b.startsWith('Terms') ? 1 : a.localeCompare(b)));
+---
+<Base title="Glossary" description={`${terms.length} terms from ${ctx.manifest.title}, merged from its Terms section and the appendices' term lists, each with where it's used.`} nav="glossary">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">{terms.length} terms</p>
+      <h1>Glossary</h1>
+      <p class="lede">The terms the paper defines in its lists, in its own words: {sources.join(', ').replace(/, ([^,]*)$/, ' and $1')}. Merged and alphabetical; where two lists define a term, both definitions are shown.</p>
+      <p class="muted">The three terms that carry the paper (driver, coefficient and rate) are introduced in <a href="/paper/1-introduction/">Section 1</a>; other terms are defined where they first appear.</p>
+    </div>
+    <nav aria-label="Glossary letters"><ul class="letters">{letters.map((l) => <li><a href={`#letter-${l}`}>{l}</a></li>)}</ul></nav>
+    <div class="gloss">
+      {letters.map((l) => (
+        <section aria-labelledby={`letter-${l}`}>
+          <h2 class="letter" id={`letter-${l}`}>{l}</h2>
+          <dl>
+            {terms.filter((t) => letterOf(t) === l).map((t) => (
+              <div class="entry">
+                <dt id={t.id}>{t.term}</dt>
+                <dd>
+                  {t.defs.map((d) => (
+                    <Fragment>
+                      <p class="def" set:html={renderInline(d.def, ctx.targets)} />
+                      <p class="from">Defined in <a href={d.url}>{d.label}</a></p>
+                    </Fragment>
+                  ))}
+                  {t.usedIn.length > 0 && (
+                    <p class="used">Used in: {t.usedIn.map((u, i) => <Fragment>{i > 0 && ', '}<a href={u.url}>{pageLabel(u.page)}</a></Fragment>)}</p>
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      ))}
+    </div>
+  </div>
+</Base>

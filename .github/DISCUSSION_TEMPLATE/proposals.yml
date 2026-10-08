@@ -1,0 +1,42 @@
+title: "[Proposal] "
+labels: ["proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposals stay open at least 14 days (30 for the stable core, principles or governance). Every objection gets an answer. Then an editor calls rough consensus and writes a closing note. See HOW_IT_GROWS.md.
+  - type: input
+    id: where
+    attributes:
+      label: Which section or sections?
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why? What does the current text get wrong, or leave out?
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Evidence behind it
+      options:
+        - Published (I'll cite the source)
+        - Argued (from practice and reasoning)
+        - Unmeasured (no public data yet, as far as I know)
+    validations:
+      required: true
+  - type: checkboxes
+    id: safe
+    attributes:
+      label: Before you post
+      options:
+        - label: This contains no employer secrets, internal names or real internal numbers.
+          required: true

@@ -1,0 +1,25 @@
+---
+// "Help build this section": Discuss and Suggest an edit, at the foot of every
+// body-of-knowledge page. Until the repository is open (community.open), it isn't
+// public yet, so the links are shown with a note saying so.
+import { links } from '../lib/community.mjs';
+import { load } from '../lib/paper.mjs';
+interface Props { page?: any; file?: string; name?: string; what?: string }
+const { page, file, name, what = 'This is part of the seed edition of an open body of knowledge.' } = Astro.props;
+const l = links(page, { file, name });
+const contact = load().config.site.contact;
+---
+<aside class="help-build" aria-labelledby="help-h">
+  <h2 id="help-h">Help build this page</h2>
+  <p>{what} If something here is wrong, unclear or missing, say so.</p>
+  <ul class="help-build__actions">
+    <li><a class="act" href={l.discuss}><span class="an">Discuss</span><span class="ad">Ask, push back or add what you know. Opens a thread on GitHub.</span></a></li>
+    {l.edit && <li><a class="act" href={l.edit}><span class="an">Suggest an edit</span><span class="ad">Change the text yourself. GitHub turns it into a pull request.</span></a></li>}
+    <li><a class="act" href={l.threads}><span class="an">See the discussion</span><span class="ad">What others have said about {l.name}.</span></a></li>
+  </ul>
+  <p class="help-build__fine">
+    {!l.open && <span><strong>Opening soon:</strong> the repository isn't open yet, so these links don't work. Until then, write to <a href={`mailto:${contact}?subject=${encodeURIComponent(l.name)}`}>{contact}</a>. </span>}
+    {l.file && <span>Source file: <code>{l.file}</code>. </span>}
+    <a href="/how-it-grows/">How a change is decided</a> · <a href="/join/">Other ways to take part</a>
+  </p>
+</aside>

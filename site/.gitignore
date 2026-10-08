@@ -1,0 +1,4 @@
+node_modules/
+.astro/
+dist/
+# src/generated/ is kept so the site builds without the paper folder

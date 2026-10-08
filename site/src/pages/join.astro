@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import { load } from '../lib/paper.mjs';
+import { community } from '../lib/community.mjs';
+const { config } = load();
+const c = community();
+const contact = config.site.contact;
+const kinds = [
+  ['Fix an error', 'A typo, a broken link, a wrong number, a misquoted source.', 'Suggest an edit on the page, or open a “Fix an error” issue.', 'Minutes'],
+  ['Add or improve a term', 'A word planners use differently, or one that’s missing.', 'Open a “Terms” discussion with a one-sentence definition.', 'Minutes'],
+  ['Propose a change', 'To an idea, a method, or how a section is built.', 'Open a “Proposals” discussion.', 'A short write-up'],
+  ['Share a case', 'What happened, with names and numbers changed.', 'Open a “Cases” discussion. Read the anonymizing checklist first.', 'A few paragraphs'],
+  ['Add a public source', 'A paper, a talk, a public dataset, a filing.', 'Open an “Add a public source” issue.', 'Minutes'],
+  ['Translate a section', 'Into a language you plan in.', 'Open a discussion first, so two people don’t translate the same page.', 'Hours'],
+];
+---
+<Base title="Join in" description="How to take part in the Capacity Planning Practice: discuss a section, suggest an edit, share a case, or join the group." nav="join">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Join in</p>
+      <h1>Read a section. If something is wrong, unclear or missing, say so.</h1>
+      <p class="lede">That’s the whole contribution model, and it takes about five minutes. A good correction counts as much as a new section.</p>
+    </div>
+
+    {!c.open && (
+      <p class="note reading"><strong>Opening soon.</strong> The repository and the group aren't open yet. The links below show where things will be. Until then, comments go to <a href={`mailto:${contact}`}>{contact}</a>.</p>
+    )}
+
+    <section aria-labelledby="where-h">
+      <h2 class="group-title reading" id="where-h">Where it happens</h2>
+      <ul class="cards cards--3">
+        <li><h3>On every page</h3><p>Each body-of-knowledge page ends with <strong>Discuss</strong> and <strong>Suggest an edit</strong>. You need a free GitHub account. You don’t need to know Git.</p><p><a class="more" href="/body-of-knowledge/">Pick a section</a></p></li>
+        <li><h3>On GitHub</h3><p>Discussions for questions, proposals, terms, cases and sources. Pull requests for edits. Every decision is written down in the thread.</p><p><a class="more" href={`${c.repo}/discussions`}>Discussions</a> · <a class="more" href={c.repo}>Repository</a></p></li>
+        <li><h3>On LinkedIn</h3><p>Follow the page for news and new open questions. A group for introductions and prompts opens with the repository. Good threads move to GitHub, with credit to the people in them.</p><p>{c.linkedinPage && <a class="more" href={c.linkedinPage}>The page</a>}{c.linkedinPage && ' · '}{c.linkedin ? <a class="more" href={c.linkedin}>The group</a> : <span class="muted">The group is opening soon.</span>}</p></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="kinds-h">
+      <h2 class="group-title reading" id="kinds-h">Ways to contribute</h2>
+      <div class="table-wrap" tabindex="0" role="region" aria-labelledby="kinds-h">
+        <table>
+          <thead><tr><th>You want to…</th><th>For example</th><th>Do this</th><th>Size</th></tr></thead>
+          <tbody>{kinds.map(([a, b, d, e]) => <tr><td><strong>{a}</strong></td><td>{b}</td><td>{d}</td><td>{e}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p class="reading"><a href="/contributing/">Contributing, step by step</a>, from a two-minute comment to a pull request.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="not-h">
+      <h2 id="not-h">What not to bring</h2>
+      <p>These keep the practice safe to contribute to, and safe to use.</p>
+      <ul>
+        <li>Anything confidential to a current or former employer, client or vendor.</li>
+        <li>Names of internal systems, projects or teams that aren’t already public.</li>
+        <li>Real internal numbers: ratios, costs, utilization, forecasts, lead times. Invent illustrative ones, and label them.</li>
+        <li>“I’ve seen the data, trust me.” If it isn’t public, it’s labeled argued or unmeasured.</li>
+        <li>Sales pitches, including the steward’s.</li>
+      </ul>
+    </section>
+
+    <section class="prose reading" aria-labelledby="credit-h">
+      <h2 id="credit-h">Credit, licence and conduct</h2>
+      <p>Everyone who contributes is named, by edition, with what they did. Being listed doesn’t mean you endorse every word. It means you helped build it.</p>
+      <p>By contributing text you license it under CC BY-SA 4.0, like the rest of the content; code is MIT. There’s nothing else to sign. Everyone follows the <a href="/code-of-conduct/">code of conduct</a>.</p>
+      <p>Want to help edit? Editors keep the loop moving: they review edits, call rough consensus and assemble each edition. <a href="/governance/">How editors are chosen</a>.</p>
+    </section>
+  </div>
+</Base>

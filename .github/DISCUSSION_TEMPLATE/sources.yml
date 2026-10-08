@@ -1,0 +1,23 @@
+title: "[Source] "
+labels: ["source"]
+body:
+  - type: input
+    id: citation
+    attributes:
+      label: Citation and link
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it worth reading, and for whom?
+      description: New planner, experienced planner, finance, supply? One or two lines.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Before you post
+      options:
+        - label: It's publicly available.
+          required: true

@@ -1,0 +1,48 @@
+---
+// Open questions: the author's notes on the seed paper, in one list. Each is
+// pinned to a passage and opens its own thread. A place to start talking.
+import Base from '../layouts/Base.astro';
+import { notes, KINDS, noteLinks } from '../lib/notes.mjs';
+import { load, renderInline } from '../lib/paper.mjs';
+import { links } from '../lib/community.mjs';
+const ctx = load();
+const all = notes();
+const groups = Object.entries(KINDS).map(([k, label]) => ({ k, label, items: all.filter((n) => n.kind === k) })).filter((g) => g.items.length);
+const what = {
+  'known-unknown': 'Things nobody has measured in public, as far as I could find.',
+  'open-question': 'Choices the seed paper makes by judgment. I’d like to hear how you make them.',
+  'help-wanted': 'Where a public source, a dataset or a better method would move things most.',
+};
+const anyDraft = all.some((n) => n.draft);
+---
+<Base title="Open questions" description="Where to start the conversation: known unknowns, open questions and help wanted, each pinned to a passage in the seed paper." nav="paper">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Request for comments</p>
+      <h1>Open questions</h1>
+      <p class="lede">The seed paper is everything I could gather from public sources and my own practice. This is where it runs out. Each note below is pinned to a passage in the paper. Pick one and reply, or select any other passage in the paper and start your own thread.</p>
+      {anyDraft && <p class="note">Notes marked <span class="anno__draft">draft</span> are waiting for the author’s final wording.</p>}
+    </div>
+    {groups.map((g) => (
+      <section class="reading" aria-labelledby={`g-${g.k}`}>
+        <h2 class="group-title" id={`g-${g.k}`}>{g.label}</h2>
+        <p class="muted">{what[g.k]}</p>
+        {g.items.map((n) => {
+          const l = noteLinks(n);
+          return (
+            <article class={`anno anno--${n.kind} anno--list`}>
+              <p class="anno__head"><span class="anno__n">{n.n}</span> {links(n.page).name}{n.draft && <span class="anno__draft">draft</span>}</p>
+              <blockquote class="anno__quote"><p>“{n.quote}”</p></blockquote>
+              <p class="anno__body" set:html={renderInline(n.body, ctx.targets)} />
+              <p class="anno__act"><a href={`${n.page.url}#${n.id}`}>In context</a> · <a href={l.open ? l.discuss : l.mail}>{l.open ? 'Reply on GitHub' : 'Reply by email'}</a></p>
+            </article>
+          );
+        })}
+      </section>
+    ))}
+    <section class="prose reading" aria-labelledby="add-h">
+      <h2 id="add-h">Add your own</h2>
+      <p>Anyone can start a thread on any passage: select it in the paper and choose <strong>Discuss this passage</strong>. Threads that settle into a change follow <a href="/how-it-grows/">How it grows</a>: open at least 14 days, every objection answered, consensus called and written down.</p>
+    </section>
+  </div>
+</Base>

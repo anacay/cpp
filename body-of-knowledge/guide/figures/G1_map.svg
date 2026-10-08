@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 925" width="100%" role="img" aria-labelledby="t d" data-canvas="pullout" preserveAspectRatio="xMidYMid meet" style="max-width:100%;height:auto;display:block" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"><title id="t">The map: altitude by cadence</title><desc id="d">A grid. Columns are the planning cadence, left to right: annual, quarterly, monthly, weekly and post-launch, with an arrow from post-launch back to annual because actuals feed the next plan. Rows are altitudes, high to low: envelope (capital and the fleet), region or site, portfolio (all launches), launch (one product) and unit (one service). Each cell names the work at that altitude and cadence. Dots mark supply commit points: land, power and shells annually; machines and parts quarterly; turn-up slots monthly; job placement and bridges weekly. Schematic.</desc><rect x="0" y="0" width="1280" height="925" fill="#FFFFFF"/>
+<text x="226" y="58" font-size="17" fill="#1F2933" font-weight="600">Annual</text>
+<text x="226" y="82" font-size="15" fill="#3E4C59">years out</text>
+<text x="434" y="58" font-size="17" fill="#1F2933" font-weight="600">Quarterly</text>
+<text x="434" y="82" font-size="15" fill="#3E4C59">quarters out</text>
+<text x="642" y="58" font-size="17" fill="#1F2933" font-weight="600">Monthly</text>
+<text x="642" y="82" font-size="15" fill="#3E4C59">weeks to months</text>
+<text x="850" y="58" font-size="17" fill="#1F2933" font-weight="600">Weekly</text>
+<text x="850" y="82" font-size="15" fill="#3E4C59">days to weeks</text>
+<text x="1058" y="58" font-size="17" fill="#1F2933" font-weight="600">Post-launch</text>
+<text x="1058" y="82" font-size="15" fill="#3E4C59">after it lands</text>
+<text x="24" y="142" font-size="17" fill="#1F2933" font-weight="600">Envelope</text>
+<text x="24" y="166" font-size="15" fill="#3E4C59">capital, fleet</text>
+<text x="24" y="272" font-size="17" fill="#1F2933" font-weight="600">Region / site</text>
+<text x="24" y="296" font-size="15" fill="#3E4C59">place</text>
+<text x="24" y="402" font-size="17" fill="#1F2933" font-weight="600">Portfolio</text>
+<text x="24" y="426" font-size="15" fill="#3E4C59">all launches</text>
+<text x="24" y="532" font-size="17" fill="#1F2933" font-weight="600">Launch</text>
+<text x="24" y="556" font-size="15" fill="#3E4C59">one product</text>
+<text x="24" y="662" font-size="17" fill="#1F2933" font-weight="600">Unit</text>
+<text x="24" y="686" font-size="15" fill="#3E4C59">one service</text>
+<rect x="214" y="112" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="422" y="112" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="630" y="112" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="838" y="112" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="1046" y="112" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="214" y="242" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="422" y="242" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="630" y="242" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="838" y="242" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="1046" y="242" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="214" y="372" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="422" y="372" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="630" y="372" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="838" y="372" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="1046" y="372" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="214" y="502" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="422" y="502" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="630" y="502" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="838" y="502" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="1046" y="502" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="214" y="632" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="422" y="632" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="630" y="632" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="838" y="632" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<rect x="1046" y="632" width="202" height="124" rx="4" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1"/>
+<path d="M1147.0,760 V786 H315.0 V768" fill="none" stroke="#3E4C59" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M308.0,770 L315.0,760 L322.0,770" fill="none" stroke="#3E4C59" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="474.64" y="800" width="512.71" height="16.5" rx="2" fill="#FFFFFF" stroke="none"/>
+<text x="731" y="812" font-size="15" fill="#3E4C59" text-anchor="middle">Actuals feed the next intake and the next annual plan: the cycle repeats</text>
+<path d="M214,96 L1242.4,96" fill="none" stroke="#8A96A3" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1248,96 L1241,99.5 L1241,92.5 Z" fill="#8A96A3" stroke="none" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="226" y="140" font-size="15" fill="#1F2933"><tspan x="226" dy="0">Set the envelope and cut</tspan><tspan x="226" dy="19.5">line; strategic bets on</tspan><tspan x="226" dy="19.5">demand</tspan></text>
+<text x="434" y="140" font-size="15" fill="#1F2933"><tspan x="434" dy="0">Re-plan the envelope</tspan><tspan x="434" dy="19.5">against actuals</tspan></text>
+<text x="642" y="140" font-size="15" fill="#1F2933"><tspan x="642" dy="0">Move the cut line; track</tspan><tspan x="642" dy="19.5">spend against plan</tspan></text>
+<text x="850" y="140" font-size="15" fill="#1F2933"><tspan x="850" dy="0">Overrides decided and</tspan><tspan x="850" dy="19.5">logged by the forum</tspan></text>
+<text x="1058" y="140" font-size="15" fill="#1F2933"><tspan x="1058" dy="0">Restate; re-baseline after</tspan><tspan x="1058" dy="19.5">a shock</tspan></text>
+<text x="226" y="270" font-size="15" fill="#1F2933"><tspan x="226" dy="0">Land, power, building</tspan><tspan x="226" dy="19.5">shells; long-haul</tspan><tspan x="226" dy="19.5">network</tspan></text>
+<text x="434" y="270" font-size="15" fill="#1F2933"><tspan x="434" dy="0">Machines and parts;</tspan><tspan x="434" dy="19.5">placement plan</tspan></text>
+<text x="642" y="270" font-size="15" fill="#1F2933"><tspan x="642" dy="0">Pool machines;</tspan><tspan x="642" dy="19.5">turn-up slots; arrivals</tspan></text>
+<text x="850" y="270" font-size="15" fill="#1F2933"><tspan x="850" dy="0">Job placement;</tspan><tspan x="850" dy="19.5">bridges; moves</tspan></text>
+<text x="1058" y="270" font-size="15" fill="#1F2933"><tspan x="1058" dy="0">Reclaim stranded and</tspan><tspan x="1058" dy="19.5">expired capacity</tspan></text>
+<text x="226" y="400" font-size="15" fill="#1F2933"><tspan x="226" dy="0">Intents enter at a share</tspan><tspan x="226" dy="19.5">of the envelope</tspan></text>
+<text x="434" y="400" font-size="15" fill="#1F2933"><tspan x="434" dy="0">Forecast in driver units;</tspan><tspan x="434" dy="19.5">supply review</tspan></text>
+<text x="642" y="400" font-size="15" fill="#1F2933"><tspan x="642" dy="0">Re-rank against supply;</tspan><tspan x="642" dy="19.5">grants; fulfillment ledger</tspan></text>
+<text x="850" y="400" font-size="15" fill="#1F2933"><tspan x="850" dy="0">Arbitrate, broker,</tspan><tspan x="850" dy="19.5">escalate</tspan></text>
+<text x="1058" y="400" font-size="15" fill="#1F2933"><tspan x="1058" dy="0">Variance by owner;</tspan><tspan x="1058" dy="19.5">score declarations</tspan></text>
+<text x="226" y="530" font-size="15" fill="#1F2933"><tspan x="226" dy="0">Intent: a size range, a</tspan><tspan x="226" dy="19.5">year</tspan></text>
+<text x="434" y="530" font-size="15" fill="#1F2933"><tspan x="434" dy="0">Dated: base and high</tspan><tspan x="434" dy="19.5">scenarios</tspan></text>
+<text x="642" y="530" font-size="15" fill="#1F2933"><tspan x="642" dy="0">Configured: regions,</tspan><tspan x="642" dy="19.5">shapes, ramp</tspan></text>
+<text x="850" y="530" font-size="15" fill="#1F2933">Pre-launch tests; launch</text>
+<text x="1058" y="530" font-size="15" fill="#1F2933">Live, then organic</text>
+<text x="226" y="660" font-size="15" fill="#1F2933"><tspan x="226" dy="0">Efficiency commitment</tspan><tspan x="226" dy="19.5">signed</tspan></text>
+<text x="434" y="660" font-size="15" fill="#1F2933"><tspan x="434" dy="0">Coefficient and rate card</tspan><tspan x="434" dy="19.5">versioned</tspan></text>
+<text x="642" y="660" font-size="15" fill="#1F2933"><tspan x="642" dy="0">Shape, place and time</tspan><tspan x="642" dy="19.5">checked</tspan></text>
+<text x="850" y="660" font-size="15" fill="#1F2933"><tspan x="850" dy="0">Tuning; admission</tspan><tspan x="850" dy="19.5">control</tspan></text>
+<text x="1058" y="660" font-size="15" fill="#1F2933"><tspan x="1058" dy="0">Two alerts; the next</tspan><tspan x="1058" dy="19.5">coefficient</tspan></text>
+<g transform="translate(390,254) scale(0.83)" fill="none" stroke="#1F2933" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="5.5" fill="#1F2933" stroke="none"/>
+</g>
+<g transform="translate(598,254) scale(0.83)" fill="none" stroke="#1F2933" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="5.5" fill="#1F2933" stroke="none"/>
+</g>
+<g transform="translate(806,254) scale(0.83)" fill="none" stroke="#1F2933" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="5.5" fill="#1F2933" stroke="none"/>
+</g>
+<g transform="translate(1014,254) scale(0.83)" fill="none" stroke="#1F2933" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="5.5" fill="#1F2933" stroke="none"/>
+</g>
+<g transform="translate(24,849) scale(0.92)" fill="none" stroke="#1F2933" stroke-width="1.91" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="5.5" fill="#1F2933" stroke="none"/>
+</g>
+<text x="54" y="865.25" font-size="15" fill="#3E4C59">supply commit point: each layer commits in the cadence its lead time forces</text>
+<text x="1256" y="897" font-size="15" fill="#3E4C59" text-anchor="end">Schematic</text>
+</svg>

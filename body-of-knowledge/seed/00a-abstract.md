@@ -1,0 +1,7 @@
+<!-- Seed edition, v0.1, built from the working paper, version 7.6. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/abstract/ -->
+
+# Abstract
+
+A team can forecast its demand on a shared service within a few percent and still see its bill come in 30% over plan. The bill multiplies three numbers: how much demand the team sends, how much resource each unit uses (the *coefficient*), and what that resource costs (the *rate*). The arithmetic is published; the team owns only the first number. This paper makes two claims and offers one method. A coefficient is an agreement between the suppliers and users of shared capacity; it holds only while someone owns it, versions it and restates it when hardware or measurement changes. Approval is not allocation. An ask can be approved in a common unit that makes unlike requests comparable, and still lack machines of the right shape, in the right place, on time. That gap needs an owner. Supply runs on its own clock. Power, buildings and machines are ordered long before launches firm up, under contracts that turn forecasts into liabilities. And supply slips in steps of its own. The commit-point method joins demand's clock (how firm a launch is) to supply's (when each layer must be ordered). For one launch, it asks when each layer must be ordered in a slow case, what to commit then and in what form, and who owns the rest. The paper also separates three prices one number is often asked to serve. It is a practitioner synthesis, not a model, and untested.
+
+---

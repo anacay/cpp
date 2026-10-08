@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { load } from '../lib/paper.mjs';
+const { downloads, manifest } = load();
+const mb = (n) => `${(n / 1048576).toFixed(1)} MB`;
+const version = manifest.version.replace(/^v/, '').replace(/\s*draft$/, '');
+---
+<Base title="Downloads" description={`${manifest.title}, version ${version}, as a PDF, an iPad PDF and an EPUB.`}>
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Version {version}</p>
+      <h1>Downloads</h1>
+      <p class="lede">The whole paper, with every figure, the appendices and the references, to read offline or hand over.</p>
+    </div>
+    <ul class="downloads">
+      {downloads.map((d) => (
+        <li><a href={d.href} download><span class="dn">{d.label}</span><span class="ds">{d.detail}. <span class="muted">{d.name}</span></span><span class="dz">{d.name.split('.').pop().toUpperCase()} · {mb(d.bytes)}</span></a></li>
+      ))}
+    </ul>
+    <p class="note">Each appendix also stands on its own here: <a href="/worksheet/">the worksheet</a> (Appendix A) and <a href="/public-record/">the public record on supply</a> (Appendix B). To print one, use your browser's print command on its page.</p>
+  </div>
+</Base>

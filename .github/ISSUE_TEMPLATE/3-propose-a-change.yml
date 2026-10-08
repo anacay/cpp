@@ -1,0 +1,50 @@
+name: Propose a change
+description: A change to an idea, a method or a section's structure, ideally already discussed.
+title: "[Proposal] "
+labels: ["proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bigger changes go through the consensus loop: at least 14 days open, every objection answered, then an editor calls rough consensus.
+        If you haven't yet, a **Proposals** discussion is the best place to start. Link it below.
+  - type: input
+    id: where
+    attributes:
+      label: Which section or sections?
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: What problem does the current text cause, and for whom?
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Evidence behind the change
+      options:
+        - Published (I'll cite the source)
+        - Argued (from practice and reasoning)
+        - Unmeasured (no public data yet, as far as I know)
+    validations:
+      required: true
+  - type: input
+    id: discussion
+    attributes:
+      label: Link to the discussion, if there is one
+  - type: checkboxes
+    id: safe
+    attributes:
+      label: Before you submit
+      options:
+        - label: This contains no employer secrets, internal names or real internal numbers.
+          required: true

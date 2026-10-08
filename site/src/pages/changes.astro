@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { load, renderBlocks, renderInline } from '../lib/paper.mjs';
+import data from '../data/versions.json';
+const ctx = load();
+const page = ctx.pages.get('changes');
+const html = renderBlocks(page, ctx);
+const current = ctx.manifest.version.replace(/^v/, '').replace(/\s*draft$/, '');
+if (data.versions[0].version !== current) throw new Error(`src/data/versions.json has no row for version ${current}; add one at the top.`);
+---
+<Base title="What changed" description={`What changed in version ${current} of ${ctx.manifest.title}, and a short history of earlier versions.`} nav="paper">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Version {current}</p>
+      <h1>What changed</h1>
+      <p class="lede">The paper is a working draft. Its two claims are meant to last; its method, mechanisms and numbers are expected to change as people use them.</p>
+    </div>
+    <article class="prose reading-wrap" set:html={html} />
+    <section class="prose reading" aria-labelledby="history">
+      <h2 id="history">Version history</h2>
+      <p class="muted">A reader's summary of each version.</p>
+      <dl class="facts history">
+        {data.versions.map((v) => (
+          <Fragment><dt>Version {v.version}<br><span class="muted">{v.date}</span></dt><dd set:html={renderInline(v.summary, ctx.targets)} /></Fragment>
+        ))}
+      </dl>
+    </section>
+  </div>
+</Base>

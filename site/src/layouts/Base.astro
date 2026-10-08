@@ -1,0 +1,108 @@
+---
+import '../styles/site.css';
+import Mark from '../components/Mark.astro';
+import Star from '../components/Star.astro';
+import { load } from '../lib/paper.mjs';
+
+interface Props { title: string; description: string; nav?: string; bare?: boolean; commentable?: { name: string } }
+const { title, description, nav = '', commentable } = Astro.props;
+const { config, manifest } = load();
+const site = config.site;
+const path = Astro.url.pathname;
+const fullTitle = path === '/' ? `${site.name}` : `${title} · ${site.name}`;
+const canonical = new URL(path, site.url).href;
+const version = manifest.version.replace(/\s*draft$/, '');
+
+const community = config.community;
+const ew = config.elsewhere ?? {};
+const elsewhere = [
+  { href: community.open ? community.repo : '', label: 'GitHub' },
+  { href: community.linkedinPage, label: 'LinkedIn' },
+  { href: community.linkedin, label: 'LinkedIn group' },
+  { href: ew.youtube, label: 'Talks on Sentient Minds' },
+  { href: ew.substack, label: 'Writing on Sentient Minds' },
+  { href: ew.anacayOrg, label: 'anacay.org' },
+].filter((x) => x.href);
+const links = [
+  { key: 'bok', href: '/body-of-knowledge/', label: 'Body of knowledge' },
+  { key: 'paper', href: '/paper/', label: 'The paper' },
+  { key: 'glossary', href: '/glossary/', label: 'Glossary' },
+  { key: 'practice', href: '/charter/', label: 'Charter' },
+  { key: 'related', href: '/related-work/', label: 'Related work' },
+  { key: 'join', href: '/join/', label: 'Join in' },
+  { key: 'about', href: '/about/', label: 'About' },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{fullTitle}</title>
+<meta name="description" content={description}>
+{!site.indexable && <meta name="robots" content="noindex, nofollow">}
+<link rel="canonical" href={canonical}>
+<meta name="theme-color" content="#0A2231">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="author" content="Guillermo Martinez">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content={site.name}>
+<meta property="og:title" content={fullTitle}>
+<meta property="og:description" content={description}>
+<meta property="og:url" content={canonical}>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label={`${site.name}, home`}>
+      <Mark />
+      <span class="brand__name">The Capacity<br> Planning Practice</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        {links.map((l) => (
+          <li><a href={l.href} aria-current={path === l.href ? 'page' : undefined} class={nav === l.key && path !== l.href ? 'is-section' : undefined}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+  <slot />
+</main>
+<footer class="colophon">
+  <div class="wrap">
+    <div class="steward">
+      <Star />
+      <div>
+        <p class="by">An open body of knowledge for capacity planners. <a href="/support/">Supported by Anacay</a>.</p>
+        <p>{community.edition}, {community.editionNote}: <em>{manifest.title}</em>, by Guillermo Martinez. Text and figures <a href="/license/">CC BY-SA 4.0</a>; site code MIT.</p>
+      </div>
+    </div>
+    <nav aria-label="Site">
+      <ul>
+        <li><a href="/charter/">Charter</a></li>
+        <li><a href="/how-it-grows/">How it grows</a></li>
+        <li><a href="/governance/">Governance</a></li>
+        <li><a href="/roadmap/">Roadmap</a></li>
+        <li><a href="/code-of-conduct/">Code of conduct</a></li>
+        <li><a href="/paper/">Seed paper</a></li>
+        <li><a href="/changes/">What changed</a></li>
+        <li><a href="/downloads/">Downloads</a></li>
+        <li><a href="/license/">Licence</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/support/">Support</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </nav>
+    {elsewhere.length > 0 && <p class="elsewhere">Elsewhere: {elsewhere.map((x, i) => <>{i > 0 && ' · '}<a href={x.href}>{x.label}</a></>)}</p>}
+    <p class="fine"><strong>A working draft.</strong> This is the seed edition and it will change, sometimes a lot. Facts were checked against their sources on 7 October 2026. Examples and numbers not attributed to a source are invented for illustration. The seed paper is one practitioner's account, open to challenge; it describes no particular organization.</p>
+  </div>
+</footer>
+{commentable && (
+  <script is:inline src="/comment.js" defer data-repo={community.repo} data-open={community.open ? '1' : '0'} data-contact={site.contact} data-site={site.url} data-page={commentable.name}></script>
+)}
+</body>
+</html>

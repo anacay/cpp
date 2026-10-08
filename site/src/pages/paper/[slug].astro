@@ -1,0 +1,57 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pager from '../../components/Pager.astro';
+import HelpBuild from '../../components/HelpBuild.astro';
+import { annotate } from '../../lib/notes.mjs';
+import RfcHint from '../../components/RfcHint.astro';
+import { load, renderBlocks, pageMeta, glossary, esc } from '../../lib/paper.mjs';
+
+export function getStaticPaths() {
+  const { chapters } = load();
+  return chapters.map((c) => ({ params: { slug: c.url.split('/')[2] }, props: { id: c.id } }));
+}
+const ctx = load();
+const page = ctx.pages.get(Astro.props.id);
+const meta = pageMeta(page);
+const total = ctx.chapters.length;
+
+// "In this chapter", placed right after the In short line. Marked as apparatus
+// so the fidelity check knows it isn't the paper's text.
+const toc = page.subsections.length
+  ? `<nav class="toc" aria-labelledby="toc-h" data-apparatus><h2 id="toc-h">In this section</h2><ol>${
+      page.subsections.map((s) => `<li><a href="#${esc(s.anchor)}">${esc(s.heading)}</a></li>`).join('')}</ol></nav>`
+  : '';
+let html = annotate(renderBlocks(page, ctx), page);
+if (toc) {
+  const at = html.indexOf('</p>', html.indexOf('class="in-short"'));
+  html = at > 0 ? html.slice(0, at + 4) + toc + html.slice(at + 4) : html;
+}
+
+const terms = glossary(ctx).filter((t) => t.usedIn.some((u) => u.page === page));
+---
+<Base title={meta.title} description={meta.description} nav="paper" commentable={{ name: `Section ${page.number}, ${page.title}` }}>
+  <div class="wrap wrap--reading">
+    <div class="page-head">
+      <p class="crumbs"><a href="/body-of-knowledge/">Body of knowledge</a> <span aria-hidden="true">›</span> <a href="/paper/">Seed paper</a> <span aria-hidden="true">›</span> Section {page.number}</p>
+      <nav class="progress" aria-label="Sections of the paper">
+        <ol>
+          {ctx.chapters.map((c) => (
+            <li><a href={c.url} aria-current={c === page ? 'step' : undefined} class={c.number < page.number ? 'done' : undefined}
+                   title={`Section ${c.number}: ${c.title}`}><span class="sr-only">Section {c.number}: {c.title}</span></a></li>
+          ))}
+        </ol>
+        <p class="progress__label" aria-hidden="true">Section {page.number} of {total}</p>
+      </nav>
+    </div>
+    <RfcHint page={page} />
+    <article class="prose reading-wrap" set:html={html} />
+    {terms.length > 0 && (
+      <aside class="chapter-terms" aria-labelledby="terms-h">
+        <h2 id="terms-h">Terms in this section</h2>
+        <ul class="chips">{terms.map((t) => <li><a href={`/glossary/#${t.id}`}>{t.term}</a></li>)}</ul>
+      </aside>
+    )}
+    <HelpBuild page={page} />
+    <Pager page={page} />
+  </div>
+</Base>

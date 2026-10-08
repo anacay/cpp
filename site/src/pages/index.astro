@@ -1,0 +1,181 @@
+---
+// Home: an invitation first (let's build the body of knowledge together; the
+// seed paper is a request for comments),
+// then who it's for, what it covers, the seed edition, and how it grows.
+// The why-now facts are quoted from their sources (checked 7 October 2026;
+// see research/why_now_and_precedents.md in the working files). Paper text is
+// quoted through quote(), so if the paper stops saying it, the build fails.
+import Base from '../layouts/Base.astro';
+import { load, quote, renderMarkdown, renderFigure, wordCount, readingTime } from '../lib/paper.mjs';
+
+const ctx = load();
+const { manifest, targets, config } = ctx;
+const c = config.community;
+
+const facts = [
+  { big: '945 TWh', what: 'Data centres’ electricity use is set to “more than double by 2030 to around 945 terawatt-hours.”',
+    src: 'International Energy Agency, April 2025', href: 'https://www.iea.org/news/ai-is-set-to-drive-surging-electricity-demand-from-data-centres-while-offering-the-potential-to-transform-how-the-energy-sector-works' },
+  { big: '+17%', what: 'Demand from data centres “soared by 17% in 2025.” A project pipeline is now “holding up grid connections and other necessary approvals.”',
+    src: 'International Energy Agency, April 2026', href: 'https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions' },
+  { big: '$175–185B', what: 'One company’s initial capital spending guidance for 2026, later raised. Several others guide to sums of the same order.',
+    src: 'Alphabet, Q4 2025 earnings call, February 2026', href: 'https://abc.xyz/investor/events/event-details/2026/2025-Q4-Earnings-Call-2026-Dr_C033hS6/' },
+  { big: 'In orbit', what: 'Google is studying “solar-powered satellite constellations with TPUs,” with two prototypes “slated to launch” by early 2027.',
+    src: 'Google Research, November 2025', href: 'https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/' },
+];
+const posting = {
+  text: 'Move capacity planning from an ad hoc process to a rigorous, repeatable, and forward-looking strategic function.',
+  src: 'OpenAI, “Strategic Compute Capacity Planning Lead” job posting, seen October 2026',
+  href: 'https://openai.com/careers/strategic-compute-capacity-planning-lead-san-francisco/',
+};
+
+const covers = [
+  ['Demand', 'Organic growth, launches and other step changes, and how firm a forecast is when it’s needed.'],
+  ['Supply', 'Layers, lead times, contracts, power, and supply’s own step changes.'],
+  ['Cost', 'Drivers, coefficients and rates: what a unit of demand costs, and who owns each number.'],
+  ['The agreement', 'Capital funds, supply builds and demand uses. The planner brokers between them.'],
+  ['Operating it', 'Cadence, intake, ledgers, reviews, and what to do when a plan misses.'],
+  ['Settings', 'Large fleets, AI and accelerator fleets, cloud commitments, and mid-sized companies.'],
+];
+
+const forWhom = [
+  ['New to the role', 'You know the hardware, maybe the latest accelerators inside out. Now the job is lead times, forecasts, contracts and people. Start with the one page and the executive summary.'],
+  ['Practicing planners', 'You’ve run planning cycles and seen where plans break. The seed needs your corrections, your terms and your cases.'],
+  ['Finance and supply partners', 'You fund the capacity or build it. The handshake below is about you, too.'],
+  ['People who hire planners', 'What does the job actually ask? The roadmap’s competency map starts from that question.'],
+];
+
+// The handshake (Section 10) and its figure, quoted from the paper.
+const handshake = quote(manifest, 103, 'Every capacity plan is a handshake among three parties.', 'wants a signal it can buy against.');
+const broker = quote(manifest, 103, "That's where the planner sits:", 'no capacity and no budget.');
+const handshakeFig = manifest.blocks.find((b) => b.type === 'figure' && b.figure.id === 'E17');
+const handshakePage = ctx.pageOf.get(handshakeFig.seq);
+
+// The seed's two claims, from the one page.
+const claims = quote(manifest, 11, '- **A coefficient is an agreement.**', '(Section 8).');
+const p = (id) => ctx.pages.get(id);
+const paths = [
+  { time: '2 minutes', name: 'The abstract', href: '/abstract/' },
+  { time: readingTime(wordCount(p('one-page').blocks)), name: 'The one page', href: '/one-page/' },
+  { time: '10 minutes', name: 'The executive summary', href: '/summary/' },
+  { time: readingTime(ctx.chapters.reduce((n, ch) => n + wordCount(ch.blocks), 0)), name: `The full paper, Sections 1–${ctx.chapters.length}`, href: '/paper/' },
+];
+
+const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capacity and performance practice', 'Google’s SRE books', 'Hixson and Guliani (2015)', 'Allspaw and Gunther’s books', 'The FinOps Foundation', 'PMI, for how a profession organizes'];
+---
+<Base title={config.site.name} description="Capacity planning is becoming a profession of its own, with no shared body of knowledge yet. Let's build one in the open, starting from a seed paper put out as a request for comments.">
+  <div class="wrap">
+    <section class="hero" aria-labelledby="hero-h">
+      <p class="eyebrow">The Capacity Planning Practice</p>
+      <h1 id="hero-h">Let’s build the body of knowledge for capacity planning, together.</h1>
+      <p class="lede">Capacity planning is becoming a profession of its own, and it has no shared body of knowledge yet. This starts one in the open. The seed is a paper drawn from the public record and one practitioner’s experience, put out as a request for comments. Highlight any passage, open a thread, and help shape what comes next.</p>
+      <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on the paper</a> <a class="btn btn--quiet" href="/open-questions/">Start with the open questions</a> <a class="btn btn--quiet" href="/join/">Join in</a></p>
+      <p class="hero__paper muted">The seed paper: <a href="/paper/"><em>{manifest.title}</em></a> · <a href="/one-page/">one page</a> · <a href="/downloads/">PDF and EPUB</a> · <a href="/body-of-knowledge/">the body of knowledge, in progress</a></p>
+    </section>
+
+    <section class="band" aria-labelledby="why-h" data-outbound>
+      <h2 class="kicker" id="why-h">Why now</h2>
+      <p class="display">The build-out is steep, and all of it has to be planned.</p>
+      <ul class="facts-grid">
+        {facts.map((f) => (
+          <li><span class="fg-big">{f.big}</span><span class="fg-what">{f.what}</span><a class="fg-src" href={f.href}>{f.src}</a></li>
+        ))}
+      </ul>
+      <div class="reading prose">
+        <p>Someone has to say how much, where and by when. Someone has to order land, power, network and machines years before demand is certain. And someone has to keep finance, supply and the teams who use the capacity in one agreement. That someone is a capacity planner.</p>
+        <p>Labs and cloud providers now hire for the role by name. One posting puts the job this way:</p>
+        <blockquote class="pull"><p>“{posting.text}”</p><footer><a href={posting.href}>{posting.src}</a></footer></blockquote>
+        <p>Much has been written about the craft over the years. What we couldn’t find is an open place where planners build a shared body of knowledge together and keep it current as the work changes. So let’s make one, and start by arguing about the seed.</p>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="who-h">
+      <h2 class="kicker" id="who-h">Who it’s for</h2>
+      <p class="display">Planners new and seasoned, and the people they plan with.</p>
+      <ul class="cards">
+        {forWhom.map(([t, d]) => <li><h3>{t}</h3><p>{d}</p></li>)}
+      </ul>
+    </section>
+
+    <section class="band" aria-labelledby="hand-h">
+      <h2 class="kicker" id="hand-h">The work</h2>
+      <div class="split">
+        <div>
+          <p class="display">Capital, supply and demand. The planner brokers the handshake.</p>
+          <div class="prose reading" set:html={renderMarkdown(handshake.text, { targets })} />
+          <div class="prose reading" set:html={renderMarkdown(broker.text, { targets })} />
+          <p class="source-line">— Seed paper, <a href={handshakePage.url}>Section {handshakePage.number}, {handshakePage.title}</a></p>
+        </div>
+        <Fragment set:html={renderFigure(handshakeFig, ctx, { canonical: false, headingNote: `<a href="${handshakePage.url}#${handshakeFig.figure.anchor}">In Section ${handshakePage.number}</a>` })} />
+      </div>
+      <h3 class="subkicker">What the practice covers</h3>
+      <ul class="cover-grid">
+        {covers.map(([t, d]) => <li><strong>{t}.</strong> {d}</li>)}
+      </ul>
+    </section>
+
+    <section class="band" aria-labelledby="bok-h">
+      <h2 class="kicker" id="bok-h">The body of knowledge</h2>
+      <div class="split">
+        <div>
+          <p class="display">One map of the work, from the budget to a single service.</p>
+          <p class="reading">The guide lays capacity planning on two axes: the planning cycle, from annual to the week after launch, and the altitude, from the whole fleet down to one service. Every page sits on that map, and says which levels of the path usually do that work.</p>
+          <ul class="paths paths--stack">
+            <li><a href="/guide/principles/"><span class="time">Start</span><span class="name">Principles</span></a></li>
+            <li><a href="/guide/the-work-and-the-path/"><span class="time">For you</span><span class="name">The work and the path</span></a></li>
+            <li><a href="/guide/the-map/"><span class="time">The spine</span><span class="name">The map: altitude and cadence</span></a></li>
+          </ul>
+          <p><a class="more" href="/body-of-knowledge/">The whole guide</a> · <span class="muted">Draft for review</span></p>
+        </div>
+        <figure class="plate plate--pullout">
+          <a class="plate__card" href="/guide/the-map/"><img src="/guide/figures/G1_map.svg" alt="The map: five planning cadences across five altitudes, with supply commit points marked and a loop from post-launch back to the next plan." width="1280" height="925" loading="lazy" decoding="async"></a>
+          <figcaption><span class="plate__caption"><strong class="plate__label">The map.</strong> Read a column for one cycle, a row for one thing firming up over time.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="seed-h">
+      <h2 class="kicker" id="seed-h">The seed paper</h2>
+      <div class="split split--text">
+        <div>
+          <p class="display">It starts from one working paper. On purpose.</p>
+          <p class="reading">The seed is <em>{manifest.title}</em>, one practitioner’s account built from public sources and experience. It makes two claims and offers one method:</p>
+          <div class="prose reading" set:html={renderMarkdown(claims.text, { targets })} />
+          <p class="reading muted">It’s a starting point, not a standard. Every part of it is open to challenge, starting now.</p>
+        </div>
+        <div>
+          <ul class="paths paths--stack">
+            {paths.map((x) => <li><a href={x.href}><span class="time">{x.time}</span><span class="name">{x.name}</span></a></li>)}
+          </ul>
+          <p><a class="more" href="/body-of-knowledge/#seed">The seed paper, whole</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="grow-h">
+      <h2 class="kicker" id="grow-h">How it grows</h2>
+      <p class="display">Comment on a section. Discuss it. Reach consensus. The text changes.</p>
+      <ol class="steps">
+        <li><h3>Discuss</h3><p>Every section has a Discuss link. Ask a question, push back, or add what you know.</p></li>
+        <li><h3>Suggest an edit</h3><p>Every section is a Markdown file. Change it on GitHub, and it becomes a proposal.</p></li>
+        <li><h3>Rough consensus</h3><p>Changes stay open at least 14 days. Every objection gets an answer. An editor calls it and writes down why.</p></li>
+        <li><h3>Editions, with credit</h3><p>Accepted changes go into the next version. Everyone who helped is named.</p></li>
+      </ol>
+      <p class="reading">The text is licensed CC BY-SA 4.0, the same licence Wikipedia uses. Anyone can copy, teach from and adapt it, and nobody, including the steward, can take it private.</p>
+      <p><a class="more" href="/how-it-grows/">How a change is decided</a> · <a class="more" href="/join/">Join in</a></p>
+    </section>
+
+    <section class="band" aria-labelledby="prior-h">
+      <h2 class="kicker" id="prior-h">Built on what came before</h2>
+      <p class="display">This doesn’t replace anyone’s work. It links to it and credits it.</p>
+      <ul class="chiplist">{prior.map((x) => <li>{x}</li>)}</ul>
+      <p class="reading">If something like this already exists, tell us. We’d rather join it than compete with it.</p>
+      <p><a class="more" href="/related-work/">Related work</a></p>
+    </section>
+
+    <section class="band" aria-labelledby="ver-h">
+      <h2 class="kicker" id="ver-h">This version</h2>
+      <p class="version-line">{c.edition}, {c.editionNote}. October 2026.</p>
+      <p><a class="more" href="/changes/">What changed</a> · <a class="more" href="/roadmap/">What comes next</a></p>
+    </section>
+  </div>
+</Base>

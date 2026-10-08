@@ -1,0 +1,61 @@
+name: Share a case
+description: An anonymized story of what happened, for the case library.
+title: "[Case] "
+labels: ["case"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cases teach the shape of a problem. They don't need anyone's real data.
+        Before you write: remove company, product, team, system and people names. Replace real numbers with illustrative ones that keep the shape. Shift dates and places if they'd identify anyone.
+        Prefer to talk it through first? Use a **Cases** discussion.
+  - type: input
+    id: setting
+    attributes:
+      label: Setting
+      description: In general terms only.
+      placeholder: "A mid-sized SaaS company on cloud commitments"
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened?
+      description: The plan, what actually happened, and the gap.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why do you think it happened?
+      description: Mark opinion as opinion.
+    validations:
+      required: true
+  - type: textarea
+    id: lesson
+    attributes:
+      label: What would you do differently, or tell a new planner?
+  - type: input
+    id: sections
+    attributes:
+      label: Related sections, if you know them
+  - type: dropdown
+    id: credit
+    attributes:
+      label: How should we credit you?
+      options:
+        - By my GitHub name
+        - As anonymous
+    validations:
+      required: true
+  - type: checkboxes
+    id: safe
+    attributes:
+      label: Before you submit
+      options:
+        - label: No company, product, team, system or people names, unless already public and cited.
+          required: true
+        - label: Numbers are illustrative, not real internal figures.
+          required: true
+        - label: A colleague from that organization couldn't easily recognize it.
+          required: true
