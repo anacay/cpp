@@ -34,7 +34,7 @@ const anyDraft = all.some((n) => n.draft);
               <p class="anno__head"><span class="anno__n">{n.n}</span> {links(n.page).name}{n.draft && <span class="anno__draft">draft</span>}</p>
               <blockquote class="anno__quote"><p>“{n.quote}”</p></blockquote>
               <p class="anno__body" set:html={renderInline(n.body, ctx.targets)} />
-              <p class="anno__act"><a href={`${n.page.url}#${n.id}`}>In context</a> · <a href={l.open ? l.discuss : l.mail}>{l.open ? 'Reply on GitHub' : 'Reply by email'}</a></p>
+              <p class="anno__act"><a href={`${n.page.url}#${n.id}`}>In context</a> · <a href={l.open ? l.discuss : l.mail}>{l.open ? 'Reply on GitHub' : 'Reply by email'}</a>{l.open && <> · <a href={l.mail}>or email</a></>}</p>
             </article>
           );
         })}

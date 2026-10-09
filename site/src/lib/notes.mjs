@@ -74,7 +74,7 @@ export function annotate(html, page) {
     const aside = `<aside class="anno anno--${note.kind}" id="${note.id}" data-apparatus>
 <p class="anno__head"><span class="anno__n">${note.n}</span> Author's note · ${KINDS[note.kind]}${note.draft ? ' <span class="anno__draft">draft</span>' : ''}</p>
 <p class="anno__body">${renderInline(note.body, load().targets)}</p>
-<p class="anno__act"><a href="${l.open ? l.discuss : l.mail}">${l.open ? 'Reply on GitHub' : 'Reply by email'}</a> · <a href="/open-questions/">All open questions</a></p>
+<p class="anno__act"><a href="${l.open ? l.discuss : l.mail}">${l.open ? 'Reply on GitHub' : 'Reply by email'}</a>${l.open ? ` · <a href="${l.mail}">or email</a>` : ''} · <a href="/open-questions/">All open questions</a></p>
 </aside>`;
     html = html.slice(0, end) + aside + html.slice(end);
   }

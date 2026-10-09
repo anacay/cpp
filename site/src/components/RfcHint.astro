@@ -5,4 +5,4 @@ interface Props { page?: any }
 const { page } = Astro.props;
 const n = page ? notesFor(page).length : 0;
 ---
-<p class="rfc-hint" data-apparatus><strong>This is a request for comments.</strong> Select any passage to discuss it. {n > 0 && <span>This page has {n} author’s {n === 1 ? 'note' : 'notes'} to start from, marked in gold. </span>}<a href="/open-questions/">Open questions</a> · <a href="/how-it-grows/">How comments become changes</a></p>
+<p class="rfc-hint" data-apparatus><strong>This is a request for comments.</strong> Select any sentence and a <em>Discuss</em> button appears at the bottom of the screen. {n > 0 && <span>This page has {n} author’s {n === 1 ? 'note' : 'notes'} to start from, marked in gold. </span>}<a href="/join/#new">New here? How commenting works</a> · <a href="/open-questions/">Open questions</a> · <a href="/how-it-grows/">How comments become changes</a></p>
