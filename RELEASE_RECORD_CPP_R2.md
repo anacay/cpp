@@ -6,8 +6,8 @@ The community opens: the repository is public, Discussions are on, the Discuss a
 |---|---|
 | Date | 8 October 2026 |
 | Worker | `cpp-anacay` |
-| Live version | `d1ab21fd-1bf5-43f2-93f8-a80d54b73d26`, deployed at 100% (the phone fix to the Discuss bar; see the updates below) |
-| Previous versions | `3dd24dcc-b656-4e59-be21-8ce8e6b7993f` (the new request-for-comments box); `aa749940-ce70-44b4-992d-8b5035055599` (Reply links point to the threads); `4e921705-2668-4040-8eb1-f25624957826` (`community.open = true`, before the threads existed) |
+| Live version | `4522d28f-3634-49f7-8d38-fe9ba738b62a`, deployed at 100% (v7.7 and the pre-review pass, 9 Oct; see the updates below) |
+| Previous versions | `d1ab21fd-1bf5-43f2-93f8-a80d54b73d26` (the phone fix to the Discuss bar); `3dd24dcc-b656-4e59-be21-8ce8e6b7993f` (the new request-for-comments box); `aa749940-ce70-44b4-992d-8b5035055599` (Reply links point to the threads); `4e921705-2668-4040-8eb1-f25624957826` (`community.open = true`, before the threads existed) |
 | Address | `cpp.anacay.org` only: `workers_dev` is false, and the workers.dev address returns Cloudflare's `error code: 1042` (404). Per-version preview URLs stay on (`preview_urls: true`) for review before each promote |
 | Indexable | No (`site.indexable = false`, unchanged) |
 | Repository | `anacay/cpp`, **public**, Discussions on |
@@ -62,6 +62,20 @@ On https://cpp.anacay.org/paper/13-where-this-breaks/:
 - Deployed as `d1ab21fd-1bf5-43f2-93f8-a80d54b73d26` at 100%.
 - Live, a minute after the deploy: `/comment.js` returns 200 (`text/javascript`), contains `pointer: coarse`, and is byte-identical to the committed file. Not yet tried on a real phone.
 
+## Update, 9 October: v7.7 and the pre-review pass
+
+- **Commit `969d16c`:** "v7.7 and the pre-review pass: prior-art labels, home page framing, share card, preview bots, JSON-LD, OPERATIONS.md". It covers 35 files: seed edition text and figures (E4, E5) from paper v7.7, the guide, the home page, related work, `Base.astro` (share card, JSON-LD), `robots.txt.js` (link-preview bots), `check.mjs`, `versions.json`, `site/public/og/card.jpg`, the v7.7 PDF, iPad PDF and EPUB, and the new `OPERATIONS.md`. The three v7.6 downloads were removed with `git rm`.
+- **Commit `aa3f46c`:** `site/public/_redirects` sends the three old v7.6 download URLs to their v7.7 files with a 301.
+- **Build:** all checks passed (63 pages, dist 36.0 MB). The paper folder wasn't reachable, so the sync kept `src/generated/`, which is already v7.7 (manifest "v7.7 draft").
+- **Preview:** `178dbf86-d850-4f31-b986-d0484d7a60d5` without the redirects, then `4522d28f-3634-49f7-8d38-fe9ba738b62a` with them. On the second, all three old URLs returned 301 to their v7.7 files and `/_redirects` returned 404. Approved.
+- **Deployed:** `4522d28f-3634-49f7-8d38-fe9ba738b62a` at 100%.
+- **Live checks:**
+  - `/downloads/` lists only the v7.7 files. The v7.7 PDF returns 200 (`application/pdf`, 5,390,381 bytes).
+  - `/downloads/The_Coefficient_Is_an_Agreement_v7_6.pdf` returns 301 to the v7.7 PDF.
+  - `/robots.txt` allows LinkedInBot, Slackbot, Slackbot-LinkExpanding, Twitterbot, facebookexternalhit, WhatsApp, Discordbot and TelegramBot, and keeps `User-agent: *` / `Disallow: /`. `X-Robots-Tag: noindex, nofollow` is unchanged.
+  - The home page has `<meta property="og:image" content="https://cpp.anacay.org/og/card.jpg">`, and the card returns 200 (`image/jpeg`).
+  - anacay.com's etag is now `1ed79932f4838b7e842cbd38125c7bdf` (it was `e2b113528f2a0a5892580e80e714382b`). That change didn't come from this work: nothing here touches anacay.com.
+
 ## Still open
 
 - Pin discussion #1 in the web UI.
@@ -71,4 +85,4 @@ On https://cpp.anacay.org/paper/13-where-this-breaks/:
 
 ## Rollback
 
-From `site/`: `npx wrangler versions deploy 3dd24dcc-b656-4e59-be21-8ce8e6b7993f@100%` to undo only the phone fix, `aa749940-ce70-44b4-992d-8b5035055599@100%` to go back before the new box, or `4e921705-2668-4040-8eb1-f25624957826@100%` to go back before the threads. Then flip the repo back to private only if the community has to close. Making the repo private again does not withdraw copies already made under the licences.
+From `site/`: `npx wrangler versions deploy d1ab21fd-1bf5-43f2-93f8-a80d54b73d26@100%` to go back before v7.7 (the old download URLs then work again), `3dd24dcc-b656-4e59-be21-8ce8e6b7993f@100%` to undo only the phone fix, `aa749940-ce70-44b4-992d-8b5035055599@100%` to go back before the new box, or `4e921705-2668-4040-8eb1-f25624957826@100%` to go back before the threads. Then flip the repo back to private only if the community has to close. Making the repo private again does not withdraw copies already made under the licences.
