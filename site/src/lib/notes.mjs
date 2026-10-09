@@ -41,6 +41,15 @@ export function notesFor(page) {
   return notes().filter((x) => x.page === page);
 }
 
+// Passage → thread URL, written by scripts/seed-discussions.mjs --post.
+let _threads;
+function threads() {
+  if (_threads) return _threads;
+  const file = path.resolve(process.cwd(), load().config.community.foundingDir, 'body-of-knowledge/rfc/threads.json');
+  _threads = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
+  return _threads;
+}
+
 function noteLinks(note) {
   const ctx = load();
   const l = links(note.page);
@@ -50,7 +59,8 @@ function noteLinks(note) {
   const body = `> ${note.quote}\n\nFrom [${l.name}](${site}${note.page.url}${frag})\n\n**Author's note (${KINDS[note.kind].toLowerCase()}):** ${note.body}\n\n**Your reply:**\n`;
   const q = (o) => Object.entries(o).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
   return {
-    discuss: `${ctx.config.community.repo}/discussions/new?${q({ category: 'sections', title, body })}`,
+    // The note's own thread once seed-discussions has posted it; until then, a new one.
+    discuss: threads()[note.quote] || `${ctx.config.community.repo}/discussions/new?${q({ category: 'sections', title, body })}`,
     mail: `mailto:${ctx.config.site.contact}?${q({ subject: title, body })}`,
     open: l.open,
   };
