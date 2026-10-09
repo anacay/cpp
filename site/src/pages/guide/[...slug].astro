@@ -1,4 +1,5 @@
 ---
+import RfcHint from '../../components/RfcHint.astro';
 import Base from '../../layouts/Base.astro';
 import HelpBuild from '../../components/HelpBuild.astro';
 import WhereStrip from '../../components/WhereStrip.astro';
@@ -24,6 +25,7 @@ const ctx = load();
       <h1>{page.title}</h1>
       <p class="in-short guide-short"><em set:html={renderInline(page.short, ctx.targets)} /></p>
     </div>
+    <RfcHint />
     <WhereStrip page={page} />
     {toc.length > 2 && (
       <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">On this page</h2><ol>{toc.map((t) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol></nav>

@@ -461,8 +461,23 @@ mark.anno-mark { background: rgba(201, 162, 39, 0.16); color: inherit; border-bo
 .anno__body { font-size: 0.9688rem; line-height: 1.6; }
 .anno__act { font-size: 0.875rem; margin-bottom: 0 !important; }
 .anno--known-unknown { border-left-style: dashed; }
-.rfc-hint { max-width: var(--measure); margin: 0 0 1.75rem; padding: 0.7rem 1rem; border: 1px dashed var(--water-line); border-radius: var(--radius); color: var(--ink-muted); font-size: 0.9375rem; }
-.rfc-hint strong { color: var(--ink); }
+.rfc { max-width: var(--measure); margin: 0 0 2rem; padding: 1rem 1.2rem 0.85rem; background: var(--water-raised); border: 1px solid var(--gold); border-left-width: 4px; border-radius: var(--radius); box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28); }
+.rfc p { margin: 0 0 0.6rem; }
+.rfc__kicker { display: flex; align-items: center; gap: 0.5rem; color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.rfc__dot { width: 0.55rem; height: 0.55rem; border-radius: 999px; background: var(--gold); flex: none; }
+.rfc__lead { color: var(--ink); font-size: 1.0625rem; line-height: 1.5; }
+.rfc__lead strong { color: var(--ink); }
+.rfc__demo { display: inline-flex; align-items: center; gap: 0.6rem; max-width: 100%; padding: 0.35rem 0.4rem 0.35rem 0.85rem; background: var(--water-deep); border: 1px solid var(--gold); border-radius: 999px; font-size: 0.875rem; }
+.rfc__q { color: var(--ink-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.rfc__btn { flex: none; background: var(--gold); color: var(--water-deep); font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 999px; }
+.rfc__phone { display: none; color: var(--ink-muted); font-size: 0.875rem; }
+@media (hover: none) and (pointer: coarse) { .rfc__phone { display: block; } }
+.rfc__notes { color: var(--ink-muted); font-size: 0.9375rem; }
+.rfc__mk { background: rgba(201, 162, 39, 0.16); border-bottom: 1px solid var(--gold); color: var(--ink); padding: 0 0.15em; }
+.rfc__links { font-size: 0.875rem; color: var(--ink-muted); margin-bottom: 0.15rem !important; }
+@keyframes rfc-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.55); } 50% { box-shadow: 0 0 0 6px rgba(201, 162, 39, 0); } }
+.rfc__dot, .hl-tip__dot { animation: rfc-pulse 2.4s ease-in-out 3; }
+@media (prefers-reduced-motion: reduce) { .rfc__dot, .hl-tip__dot { animation: none; } }
 .anno--list { margin: 0 0 1rem; }
 .anno__quote { margin: 0.3rem 0 0.6rem; padding: 0 0 0 0.8rem; border-left: 1px solid var(--water-line); }
 .anno__quote p { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); }
@@ -493,3 +508,18 @@ mark.anno-mark { background: rgba(201, 162, 39, 0.16); color: inherit; border-bo
 .newhere h2 { margin-top: 0; }
 .newhere ol { padding-left: 1.25rem; }
 .newhere .eg { color: var(--ink-muted); }
+
+/* The request-for-comments demo: a selection sweeps across a sample sentence,
+   then the Discuss button rises. CSS only; still for reduced motion. */
+.rfc__anim { margin: 0.2rem 0 0.75rem; padding: 0.75rem 0.85rem 0.8rem; background: var(--water-deep); border: 1px solid var(--water-line); border-radius: var(--radius); }
+.rfc__anim .rfc__sample { margin: 0 0 0.65rem; color: var(--ink); font-family: var(--serif); font-size: 1rem; line-height: 1.55; }
+.rfc__sel { background-image: linear-gradient(rgba(74, 132, 210, 0.55), rgba(74, 132, 210, 0.55)); background-repeat: no-repeat; background-size: 100% 100%; border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.rfc__anim .rfc__demo { margin: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .rfc__sel { background-size: 0% 100%; animation: rfc-select 7s ease-in-out infinite; }
+  .rfc__anim .rfc__demo { opacity: 0; transform: translateY(8px); animation: rfc-rise 7s ease-out infinite; }
+  .rfc__anim .rfc__btn { animation: rfc-press 7s ease-in-out infinite; }
+}
+@keyframes rfc-select { 0%, 8% { background-size: 0% 100%; } 38%, 88% { background-size: 100% 100%; } 96%, 100% { background-size: 0% 100%; } }
+@keyframes rfc-rise { 0%, 40% { opacity: 0; transform: translateY(8px); } 48%, 88% { opacity: 1; transform: translateY(0); } 96%, 100% { opacity: 0; transform: translateY(8px); } }
+@keyframes rfc-press { 0%, 62% { transform: scale(1); box-shadow: none; } 66% { transform: scale(0.94); box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.35); } 72%, 100% { transform: scale(1); box-shadow: none; } }
