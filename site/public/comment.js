@@ -22,9 +22,9 @@
 
   // A small resting hint, so people know the feature is there before they
   // select anything. Dismissed for this page view only; nothing is stored.
-  var tip = document.createElement('div');
+  var tip = document.createElement('aside');
   tip.className = 'hl-tip';
-  tip.setAttribute('role', 'note');
+  tip.setAttribute('aria-label', 'Tip');
   tip.innerHTML = '<span class="hl-tip__dot" aria-hidden="true"></span><span>Select any sentence to comment.</span> <a href="/join/#new">How it works</a><button type="button" class="hl-tip__x" aria-label="Hide this tip">×</button>';
   document.body.appendChild(tip);
   var tipOff = false;
