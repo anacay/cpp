@@ -11,16 +11,16 @@ seed: 5.2, 5.4, 7, 10.2
 
 ## The idea
 
-Who notices when a coefficient drifts? The 2026 SRE chapter answers that, and this loop is its work [7]. It starts from a driver that makes sense for the product, which it calls "intrinsic product metrics" [7]. As steps:
+Who notices when a coefficient drifts? The 2026 SRE chapter answers that, and this loop builds on it [7]. It starts from a driver that makes sense for the product, which it calls "intrinsic product metrics" [7]. It graphs ratios such as "cores per 1,000 active users," alerts when they shift or when consumption "deviates from predictions," reuses them before launch and re-validates them periodically [7]. As steps (the arrangement is the seed paper's, not the chapter's):
 
 1. **Pick a business driver**, such as daily active users, sales transactions or page views [7].
 2. **Instrument the driver and the infrastructure together**, including allocations and utilization [7].
-3. **Compute the ratio continuously**, such as "cores per 1,000 active users," and alert when it changes significantly [7].
-4. **Alert on two things**: the ratio shifting, and consumption that "deviates from predictions" [7].
-5. **Route deviations to planning.** If the service handles overload gracefully, a deviation can be "logged as tickets for the planning team" [7].
-6. **Reuse the ratios before launch**, in "pre-launch performance testing and A/B testing" [7].
-7. **Re-validate periodically**, and find "potential efficiency and optimization projects" [7].
-8. **Feed it back into design**, "helping to create a virtuous cycle" [7].
+3. **Compute the ratio continuously**, and graph it [7].
+4. **Alert on two things**: the ratio shifting, and consumption departing from the forecast [7].
+5. **Route deviations to planning.** If the service handles overload gracefully, a deviation can become a ticket for planning instead of a page [7].
+6. **Reuse the ratios before launch**, in performance tests and A/B tests [7].
+7. **Re-validate periodically**, and look for efficiency work [7].
+8. **Feed it back into design**, which the chapter calls a "virtuous cycle" [7].
 
 The chapter treats the mapping as "a living model that evolves alongside the system" [7].
 
@@ -60,4 +60,4 @@ In the running example, a release of Service X raised CPU per call from 2.5 to 3
 
 ## Where this comes from
 
-Seed paper, Section 5.2, with Sections 5.4, 7 and 10.2. The measuring loop, its steps, the two alerts and the backtesting advice are the 2026 SRE chapter's, by Gordon, Kirby, Hixson and colleagues [7]. Hixson and Guliani earlier advised checking that blow-up factors "remain accurate" [6]. The price reading, versioning, alert-to-owner routing and cadenced re-baseline are the seed paper's additions, labeled as explorations.
+Seed paper, Section 5.2, with Sections 5.4, 7 and 10.2. The ratio monitoring, the two alerts and the backtesting advice come from the 2026 SRE chapter, by Gordon, Kirby, Hixson and colleagues [7]. The eight-step layout is the seed paper's arrangement. Quoted phrases from the chapter stay its authors' and publisher's, as the [licence page](https://cpp.anacay.org/license/#exceptions) explains. Hixson and Guliani earlier advised checking that blow-up factors "remain accurate" [6]. The price reading, versioning, alert-to-owner routing and cadenced re-baseline are the seed paper's additions, labeled as explorations.

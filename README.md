@@ -2,7 +2,7 @@
 
 An open, community-built body of knowledge for capacity planning: the terms, methods, cases and sources behind planning the capacity of digital services. It's published at **https://cpp.anacay.org**.
 
-Capacity planning is becoming a profession of its own. This repository is where practitioners build its body of knowledge together and keep it current. It starts small, from one working paper, on purpose. Read the [charter](CHARTER.md) for why.
+Capacity planning is growing into a serious discipline, and it's hired for by name again. This repository is where practitioners build its body of knowledge together and keep it current. It starts small, from one working paper, on purpose. Read the [charter](CHARTER.md) for why.
 
 ## Take part in five minutes
 
@@ -15,6 +15,7 @@ Read a section on the site. If something is wrong, unclear or missing, click **D
 | [`CHARTER.md`](CHARTER.md) | Why the practice exists, what it covers, its principles | CC BY-SA 4.0 |
 | [`HOW_IT_GROWS.md`](HOW_IT_GROWS.md) | Discuss, suggest an edit, rough consensus, editions, credit | CC BY-SA 4.0 |
 | [`GOVERNANCE.md`](GOVERNANCE.md) | The steward, editors, conflicts of interest, the path to community governance | CC BY-SA 4.0 |
+| [`OPERATIONS.md`](OPERATIONS.md) | How the practice is run day to day: triage, moderation, releases, security | CC BY-SA 4.0 |
 | [`ROADMAP.md`](ROADMAP.md) | The next six seeds | CC BY-SA 4.0 |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | How to contribute; how we treat each other | CC BY-SA 4.0 |
 | [`CONTRIBUTORS.md`](CONTRIBUTORS.md), [`EDITORS.md`](EDITORS.md) | Who has helped, by edition; who edits | CC BY-SA 4.0 |

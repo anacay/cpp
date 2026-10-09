@@ -162,9 +162,11 @@ const mdText = (m) => squash(cheerio.load(md.render(m)).root().text());
 // ── 4. Scripts ───────────────────────────────────────────────────────────────
 {
   const c = check('4. No scripts except the site\'s own /comment.js; nothing inline');
-  let withScript = 0;
+  let withScript = 0, ldjson = 0;
   for (const [u, $] of docs) {
     $('script').each((_, el) => {
+      // Structured data is a data block, never executed; it must parse as JSON.
+      if ($(el).attr('type') === 'application/ld+json') { try { JSON.parse($(el).html()); ldjson++; } catch { c.fails.push(`${u}: JSON-LD does not parse`); } return; }
       const src = $(el).attr('src');
       if (src !== '/comment.js') c.fails.push(`${u}: script ${src ?? '(inline)'}`);
       else if (($(el).html() ?? '').trim()) c.fails.push(`${u}: inline code in the comment.js tag`);
@@ -177,7 +179,7 @@ const mdText = (m) => squash(cheerio.load(md.render(m)).root().text());
   c.notes.push(`${withScript} pages load /comment.js (highlight to discuss); it makes no requests and stores nothing`);
   const js = fs.readdirSync(path.join(dist, '_astro')).filter((f) => f.endsWith('.js'));
   if (js.length) c.fails.push(`JavaScript emitted: ${js.join(', ')}`);
-  c.notes.push(`${docs.size} HTML files; no bundled JavaScript`);
+  c.notes.push(`${docs.size} HTML files; no bundled JavaScript; ${ldjson} structured-data blocks (data only)`);
 }
 
 // ── 5. Internal links ────────────────────────────────────────────────────────

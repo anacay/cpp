@@ -15,7 +15,7 @@ const time = (p) => readingTime(wordCount(p.blocks));
 const figs = (p) => p.blocks.filter((b) => b.type === 'figure').length;
 const deepWords = ctx.chapters.reduce((n, c) => n + wordCount(c.blocks), 0);
 ---
-<Base title="The paper" description={`${ctx.manifest.title}: ${ctx.manifest.subtitle}. Contents, from the abstract to the appendices.`} nav="paper" commentable={{ name: "The seed paper, contents" }}>
+<Base ld={{ '@context': 'https://schema.org', '@type': 'ScholarlyArticle', headline: ctx.manifest.title, alternativeHeadline: ctx.manifest.subtitle, author: { '@type': 'Person', name: ctx.config.site.founder.name, sameAs: ctx.config.site.founder.linkedin }, version: ctx.manifest.version.replace(/\s*draft$/, ''), inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/', url: new URL('/paper/', ctx.config.site.url).href, isPartOf: { '@type': 'WebSite', name: ctx.config.site.name, url: ctx.config.site.url }, publisher: { '@type': 'Organization', name: 'Anacay', url: 'https://anacay.org' }, keywords: 'capacity planning, demand forecasting, supply planning, cost drivers, request for comments' }} title="The paper" description={`${ctx.manifest.title}: ${ctx.manifest.subtitle}. Contents, from the abstract to the appendices.`} nav="paper" commentable={{ name: "The seed paper, contents" }}>
   <div class="wrap wrap--reading">
     <div class="page-head"><p class="eyebrow"><a href="/body-of-knowledge/">Body of knowledge</a> · The seed paper · Request for comments</p></div>
     <RfcHint />

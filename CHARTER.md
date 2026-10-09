@@ -4,7 +4,7 @@
 
 ## Why this exists
 
-Capacity planning is becoming a profession of its own. You can see why in the numbers.
+Capacity planning is growing into a serious discipline again, and it's hired for by name. You can see why in the numbers.
 
 - Data centres used about 415 TWh of electricity in 2024, around 1.5% of the world's total ([IEA, April 2025][iea25s]). The International Energy Agency expects that to "more than double by 2030 to around 945 terawatt-hours" ([IEA, April 2025][iea25]).
 - Demand from data centres "soared by 17% in 2025" ([IEA, April 2026][iea26]). The IEA also names shortages of gas turbines, transformers and chips, and a project pipeline that is "holding up grid connections and other necessary approvals".
@@ -15,7 +15,7 @@ All of it has to be planned. Someone has to say how much, where, and by when. So
 
 That someone is a capacity planner. Frontier labs and cloud providers now post the role by name. One posting asks the hire to "move capacity planning from an ad hoc process to a rigorous, repeatable, and forward-looking strategic function" ([OpenAI careers, seen October 2026][oai]). In my experience, many people in these roles are new to them. They know the latest accelerators well. They're hired to plan, and then they find out how much of the job is lead times, contracts, forecasts and people.
 
-There's good work to learn from. The Computer Measurement Group (CMG) has gathered performance and capacity people since its roots as a user group in 1971, under the CMG name since 1975 ([CMG][cmg]). ITIL describes capacity and performance management as a practice. Books by Neil Gunther (2007) and John Allspaw (2008) cover the craft. Hixson and Guliani's 2015 article called it "a torturous exercise in spreadsheets and meetings" and showed how to make it less so ([;login:, February 2015][hg]). Google's *Site Reliability Engineering* book names capacity planning as a core tenet of the work ([SRE book, chapter 1][sre]), and its second edition (September 2026) gives it a full chapter. The FinOps Foundation showed, for cloud cost, that practitioners can build an open framework together ([FinOps Foundation][finops]).
+There's good work to learn from. The Computer Measurement Group (CMG) has gathered performance and capacity people since its roots as a user group in 1971, under the CMG name since 1975 ([CMG][cmg]). ITIL describes capacity and performance management as a practice. Books by Neil Gunther (2007) and John Allspaw (2008) cover the craft. Hixson and Guliani's 2015 article warned it "can be a torturous exercise in spreadsheets and meetings" and showed how to make it less so ([;login:, February 2015][hg]). Google's *Site Reliability Engineering* book names capacity planning as a core tenet of the work ([SRE book, chapter 1][sre]), and its second edition (September 2026) gives it a full chapter. The FinOps Foundation showed, for cloud cost, that practitioners can build an open framework together ([FinOps Foundation][finops]).
 
 What we couldn't find is an open place where practitioners build a shared body of knowledge together, and keep it current as the work changes. So this is that place. It doesn't replace any of the above. It links to them, credits them, and builds on them. If something like this already exists, tell us. We'd rather join it than compete with it.
 

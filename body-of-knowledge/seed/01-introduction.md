@@ -6,10 +6,12 @@
 
 Picture the year-end review. A product team forecast its demand on a shared service within 4%, yet its bill came in 30% over plan. A release had raised the service's CPU cost per call, and a re-priced power contract had moved its rate. No process surfaced either change in advance (Section 7 works the case with invented figures).
 
-The arithmetic isn't the hard part: requests × calls per request × CPU per call, summed over callers at the shared peak, plus buffers, times a rate. Large operators have published systems that do it at scale [1, 2]. Plans built on them still miss, in my experience more often because of the agreements around the formula than the formula itself. Hence two claims:
+The arithmetic isn't the hard part: requests × calls per request × CPU per call, summed over callers at the shared peak, plus buffers, times a rate. Each coefficient in it is a straight-line reading of a curve, true near today's load, which is why it carries a valid range (Section 5). Large operators have published systems that do it at scale [1, 2]. Plans built on them still miss, in my experience more often because of the agreements around the formula than the formula itself. Hence two claims:
 
 1. **A coefficient is an agreement** between the parties who supply and consume shared capacity, and it holds only while the agreement is kept. Someone declares demand in agreed units, owns the coefficient when it drifts, and signs the forecast. Someone carries the gap when approved demand can't become machines, and owns the cost nobody can attribute.
 2. **Approval is not allocation** (*allocation* here means placing demand on physical machines). Approving demand in a common unit prices it, so unlike asks can be compared, but doesn't source it. The distance between "approved" and "live" (Figure 15), in shape, place and time, needs a named owner. Much of the largest demand arrives as step changes (launches, events, new products) that must be supplied before they firm up. And supply has step changes of its own (Sections 5.4 and 6.5–6.7).
+
+Neither claim is new in its parts, and Sections 3 and 6.1 credit where each part comes from. What this paper adds is naming who owns each part, and when.
 
 Section 8 turns the two claims into a method for one launch, the commit-point method. Both claims come down to a handshake among three parties: capital, which funds; supply, which builds; and demand, which uses. The planner brokers it, usually with no capacity or budget of its own (Section 10).
 

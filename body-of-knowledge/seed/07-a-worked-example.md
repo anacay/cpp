@@ -12,7 +12,7 @@ Sections 5 and 6 took the pieces one at a time. Here they meet in one case, the 
 
 **The rate card.** X prices only CPU: $0.12 per busy core-hour, the pool's cost over practical capacity, here half of installed cores.
 
-**Why installed is twice busy.** Two buffers with different owners multiply. Surviving the loss of one of three failure domains takes 1.5 times peak, owned by reliability engineering. Holding latency means CPU at most 75% busy, a further 4/3 of queueing headroom, owned by X. So 1.5 × 4/3 = 2.0 installed cores for every busy one. (Multiplying assumes the latency target holds even with a domain down; accepting degraded latency during failures needs less.)
+**Why installed is twice busy.** Two buffers with different owners multiply. Surviving the loss of one of three failure domains takes 1.5 times peak, owned by reliability engineering. Holding latency means CPU at most 75% busy, a further 4/3 of queueing headroom, owned by X. If the latency target must hold even with a domain down, the two multiply: 1.5 × 4/3 = 2.0 installed cores for every busy one. Many teams accept degraded latency during a failure and run hotter, which needs less.
 
 **How A is billed.** On its realized peak, held flat for the year: a simplification of charging its coincident-peak contribution hour by hour. X's release and the power re-pricing below take effect from the start of the year.
 
@@ -30,7 +30,7 @@ X's coefficient is 0.4 calls per request × 2.5 ms per call = 1.0 ms per request
 
 **Approve.** 100 busy cores × 2.0 = 200 installed cores. The intake asks only about CPU, so the forum approves four standard machines, **4 NMU**. The high scenario would add 30 busy cores, 60 installed; following Section 6.5, the forum names a bridge for them rather than buying them.
 
-**Fulfill.** Here's the catch: X's memory grows with stored data, not requests. A's data in X will grow by 16 TB, most of it from the launch. That figure is sized at configuration on the dated base volume, and re-sized once actual data is known. At 100 GB of memory per TB stored (including failure reserve), 16 TB needs 1.6 TB of memory. Four standard machines supply 0.8 TB.
+**Fulfill.** Here's the catch: X's memory grows with stored data, not requests. A's data in X will grow by 16 TB, most of it from the launch. That figure is sized at configuration on the dated base volume, and re-sized once actual data is known. At an illustrative 100 GB of memory per TB stored (including failure reserve), 16 TB needs 1.6 TB of memory. Four standard machines supply 0.8 TB.
 
 - **Naively**, the ask needs eight standard machines, **8 NMU**, with half their CPU stranded.
 - **Re-shaped**, two standard and two high-memory machines supply exactly 200 cores and 1.6 TB for **4.8 NMU** (1 + 1 + 1.4 + 1.4). That's what the ask would have cost (200 × 0.016 + 1,600 × 0.001) had the intake asked about memory.

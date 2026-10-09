@@ -8,7 +8,7 @@
 
 **Guillermo Martinez**
 
-*Version 7.6 · October 2026 · a working draft*
+*Version 7.7 · October 2026 · a working draft*
 
 ---
 

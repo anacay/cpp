@@ -17,7 +17,7 @@ The seed paper is a practitioner synthesis, not a measured study. The [commit-po
 
 **Caching, batching and statefulness.** A per-request coefficient fails when cost depends on cache state, batch makeup or data size. Miss-rate coefficients, declared apportionment rules and load tests help. But large published attribution systems still leave residuals, partly from modeling, not only ownership [2].
 
-**Elastic cloud.** Fulfillment moves to the provider, then comes back as regional stockouts and reservation planning. Even guaranteed cloud capacity has a lead time. AWS accepts a future-dated reservation "between 5 and 120 days in advance," and may decline it [109]. Below materiality, the mechanisms cost more than they return [7]. See [settings](settings.md).
+**Elastic cloud.** Fulfillment moves to the provider, then comes back as regional stockouts and reservation planning. Even guaranteed cloud capacity has a lead time. AWS accepts a future-dated reservation "between 5 and 120 days in advance," and may decline it [109]. Below materiality, detailed planning costs more than it returns, as the SRE chapter advises [7]. See [settings](settings.md).
 
 **No reference class.** Some steps are new at the resource level, such as a first accelerator cluster or a first region on a new continent. There is no record to read a stage against. You can only bound it, phase it and buy options.
 

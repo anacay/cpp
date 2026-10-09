@@ -63,12 +63,12 @@ const paths = [
 
 const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capacity and performance practice', 'Google’s SRE books', 'Hixson and Guliani (2015)', 'Allspaw and Gunther’s books', 'The FinOps Foundation', 'PMI, for how a profession organizes'];
 ---
-<Base title={config.site.name} description="Capacity planning is becoming a profession of its own, with no shared body of knowledge yet. Let's build one in the open, starting from a seed paper put out as a request for comments.">
+<Base ld={{ '@context': 'https://schema.org', '@type': 'WebSite', name: config.site.name, url: config.site.url, description: 'An open, community-built body of knowledge for capacity planning, put out as a request for comments.', inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/', publisher: { '@type': 'Organization', name: 'Anacay', url: 'https://anacay.org' }, author: { '@type': 'Person', name: config.site.founder.name, sameAs: config.site.founder.linkedin } }} title={config.site.name} description="Capacity planning is growing into a serious discipline, and practitioners have no open, shared body of knowledge to build on. Let's build one together, starting from a seed paper put out as a request for comments.">
   <div class="wrap">
     <section class="hero" aria-labelledby="hero-h">
       <p class="eyebrow">The Capacity Planning Practice</p>
       <h1 id="hero-h">Let’s build the body of knowledge for capacity planning, together.</h1>
-      <p class="lede">Capacity planning is becoming a profession of its own, and it has no shared body of knowledge yet. This starts one in the open. The seed is a paper drawn from the public record and one practitioner’s experience, put out as a request for comments. Highlight any passage, open a thread, and help shape what comes next.</p>
+      <p class="lede">Capacity planning is growing into a serious discipline, and the people who practice it have no open, shared body of knowledge to build on. This starts one, together and in the open. It stands on decades of work: CMG, ITIL, the SRE books, and Hixson and Guliani’s 2015 article. The seed is a paper drawn from that public record and one practitioner’s experience, put out as a request for comments. Highlight any passage, open a thread, and help shape what comes next.</p>
       <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on the paper</a> <a class="btn btn--quiet" href="/open-questions/">Start with the open questions</a> <a class="btn btn--quiet" href="/join/">Join in</a></p>
       <p class="hero__paper muted">The seed paper: <a href="/paper/"><em>{manifest.title}</em></a> · <a href="/one-page/">one page</a> · <a href="/downloads/">PDF and EPUB</a> · <a href="/body-of-knowledge/">the body of knowledge, in progress</a></p>
     </section>
