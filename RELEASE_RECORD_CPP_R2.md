@@ -6,8 +6,8 @@ The community opens: the repository is public, Discussions are on, the Discuss a
 |---|---|
 | Date | 8 October 2026 |
 | Worker | `cpp-anacay` |
-| Live version | `3dd24dcc-b656-4e59-be21-8ce8e6b7993f`, deployed at 100% (the new request-for-comments box; see the update below) |
-| Previous versions | `aa749940-ce70-44b4-992d-8b5035055599` (Reply links point to the threads); `4e921705-2668-4040-8eb1-f25624957826` (`community.open = true`, before the threads existed) |
+| Live version | `d1ab21fd-1bf5-43f2-93f8-a80d54b73d26`, deployed at 100% (the phone fix to the Discuss bar; see the updates below) |
+| Previous versions | `3dd24dcc-b656-4e59-be21-8ce8e6b7993f` (the new request-for-comments box); `aa749940-ce70-44b4-992d-8b5035055599` (Reply links point to the threads); `4e921705-2668-4040-8eb1-f25624957826` (`community.open = true`, before the threads existed) |
 | Address | `cpp.anacay.org` only: `workers_dev` is false, and the workers.dev address returns Cloudflare's `error code: 1042` (404). Per-version preview URLs stay on (`preview_urls: true`) for review before each promote |
 | Indexable | No (`site.indexable = false`, unchanged) |
 | Repository | `anacay/cpp`, **public**, Discussions on |
@@ -55,13 +55,20 @@ On https://cpp.anacay.org/paper/13-where-this-breaks/:
 - Deployed as `3dd24dcc-b656-4e59-be21-8ce8e6b7993f` at 100%.
 - Live: `/paper/1-introduction/` and `/guide/annual/` both show the box (kicker, lead and demo present, old `rfc-hint` gone), and the live stylesheet `/_astro/Base.BUKnxGyi.css` carries the animation. A check about 30 seconds after the deploy still saw the old pages (`cf-cache-status: HIT`); about a minute later they were new.
 
+## Update, same day: the Discuss bar on phones
+
+- `public/comment.js`: on a phone, the first touch of a tap clears the selection, which used to hide the bar before its button could be tapped. On touch screens (`(pointer: coarse)`) the bar now stays up for 8 seconds after the selection clears; elsewhere it stays up for 1.5 seconds if the pointer went down on the bar. It closes after **Discuss this passage** is followed, with the x, or with Escape. The script still makes no requests and stores nothing. Commit `ae57e03`.
+- `npm run build`: all checks passed (63 pages).
+- Deployed as `d1ab21fd-1bf5-43f2-93f8-a80d54b73d26` at 100%.
+- Live, a minute after the deploy: `/comment.js` returns 200 (`text/javascript`), contains `pointer: coarse`, and is byte-identical to the committed file. Not yet tried on a real phone.
+
 ## Still open
 
 - Pin discussion #1 in the web UI.
-- Check the selection bar once in a real browser: select a passage on section 13 and follow **Discuss this passage**.
+- Check the selection bar once in a real browser, and once on a phone: select a passage on section 13 and tap **Discuss this passage**.
 - Turn off per-version preview URLs if cpp.anacay.org must be the only address even for unpromoted versions.
 - The LinkedIn group: set `community.linkedin` when it exists.
 
 ## Rollback
 
-From `site/`: `npx wrangler versions deploy aa749940-ce70-44b4-992d-8b5035055599@100%` to undo only the new box, or `4e921705-2668-4040-8eb1-f25624957826@100%` to go back before the threads. Then flip the repo back to private only if the community has to close. Making the repo private again does not withdraw copies already made under the licences.
+From `site/`: `npx wrangler versions deploy 3dd24dcc-b656-4e59-be21-8ce8e6b7993f@100%` to undo only the phone fix, `aa749940-ce70-44b4-992d-8b5035055599@100%` to go back before the new box, or `4e921705-2668-4040-8eb1-f25624957826@100%` to go back before the threads. Then flip the repo back to private only if the community has to close. Making the repo private again does not withdraw copies already made under the licences.
