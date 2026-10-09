@@ -6,8 +6,8 @@ The community opens: the repository is public, Discussions are on, the Discuss a
 |---|---|
 | Date | 8 October 2026 |
 | Worker | `cpp-anacay` |
-| Live version | `aa749940-ce70-44b4-992d-8b5035055599`, deployed at 100% (Reply links point to the threads) |
-| Previous version | `4e921705-2668-4040-8eb1-f25624957826` (`community.open = true`, before the threads existed) |
+| Live version | `3dd24dcc-b656-4e59-be21-8ce8e6b7993f`, deployed at 100% (the new request-for-comments box; see the update below) |
+| Previous versions | `aa749940-ce70-44b4-992d-8b5035055599` (Reply links point to the threads); `4e921705-2668-4040-8eb1-f25624957826` (`community.open = true`, before the threads existed) |
 | Address | `cpp.anacay.org` only: `workers_dev` is false, and the workers.dev address returns Cloudflare's `error code: 1042` (404). Per-version preview URLs stay on (`preview_urls: true`) for review before each promote |
 | Indexable | No (`site.indexable = false`, unchanged) |
 | Repository | `anacay/cpp`, **public**, Discussions on |
@@ -48,6 +48,13 @@ On https://cpp.anacay.org/paper/13-where-this-breaks/:
 - **workers.dev:** `https://cpp-anacay.martinez-giol.workers.dev/` returns 404 `error code: 1042`. The site isn't served there.
 - **anacay.com:** unchanged (etag `e2b113528f2a0a5892580e80e714382b`, the same as before R1).
 
+## Update, same day: the request-for-comments box
+
+- `RfcHint.astro` became a boxed call to action: a "Request for comments" kicker, "Comment on any sentence", a CSS-only demo of a selection sweeping across a sample sentence and the Discuss button rising (still under reduced motion), a phone hint, the page's count of author's notes, and links. It now also shows on guide pages (`src/pages/guide/[...slug].astro`). Commit `c0b1a21`.
+- `npm run build`: all checks passed (63 pages).
+- Deployed as `3dd24dcc-b656-4e59-be21-8ce8e6b7993f` at 100%.
+- Live: `/paper/1-introduction/` and `/guide/annual/` both show the box (kicker, lead and demo present, old `rfc-hint` gone), and the live stylesheet `/_astro/Base.BUKnxGyi.css` carries the animation. A check about 30 seconds after the deploy still saw the old pages (`cf-cache-status: HIT`); about a minute later they were new.
+
 ## Still open
 
 - Pin discussion #1 in the web UI.
@@ -57,4 +64,4 @@ On https://cpp.anacay.org/paper/13-where-this-breaks/:
 
 ## Rollback
 
-`npx wrangler versions deploy 4e921705-2668-4040-8eb1-f25624957826@100%` from `site/`, then flip the repo back to private only if the community has to close. Making the repo private again does not withdraw copies already made under the licences.
+From `site/`: `npx wrangler versions deploy aa749940-ce70-44b4-992d-8b5035055599@100%` to undo only the new box, or `4e921705-2668-4040-8eb1-f25624957826@100%` to go back before the threads. Then flip the repo back to private only if the community has to close. Making the repo private again does not withdraw copies already made under the licences.
