@@ -6,6 +6,7 @@
 // see research/why_now_and_precedents.md in the working files). Paper text is
 // quoted through quote(), so if the paper stops saying it, the build fails.
 import Base from '../layouts/Base.astro';
+import Behind from '../components/Behind.astro';
 import { load, quote, renderMarkdown, renderFigure, wordCount, readingTime } from '../lib/paper.mjs';
 
 const ctx = load();
@@ -170,6 +171,10 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
       <ul class="chiplist">{prior.map((x) => <li>{x}</li>)}</ul>
       <p class="reading">If something like this already exists, tell us. We’d rather join it than compete with it.</p>
       <p><a class="more" href="/related-work/">Related work</a></p>
+    </section>
+
+    <section class="band" aria-label="Who’s behind this">
+      <Behind />
     </section>
 
     <section class="band" aria-labelledby="ver-h">

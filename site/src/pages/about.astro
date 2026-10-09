@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Behind from '../components/Behind.astro';
 import { load, renderBlocks, renderInline, quote } from '../lib/paper.mjs';
 const ctx = load();
 const { manifest, config } = ctx;
@@ -50,6 +51,7 @@ const subject = encodeURIComponent(`Comment on ${manifest.title}, v${version}`);
         <dt>Edition</dt><dd>{config.community.edition}, {config.community.editionNote}</dd>
         <dt>Licence</dt><dd><a href="/license/">CC BY-SA 4.0</a> for text and figures; MIT for site code</dd>
       </dl>
+      <Behind heading="h3" />
       <h3 id={authorBlock.anchor}>{authorBlock.heading}</h3>
     </section>
     <article class="prose reading-wrap about-note" set:html={html} />

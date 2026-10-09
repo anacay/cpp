@@ -1,0 +1,14 @@
+---
+// "Who's behind this": a short, plain note and the two ways to reach the founder.
+import { load } from '../lib/paper.mjs';
+interface Props { heading?: 'h2' | 'h3' }
+const { heading = 'h2' } = Astro.props;
+const { config } = load();
+const f = config.site.founder;
+const H = heading;
+---
+<div class="behind" id="behind">
+  <H class="kicker">Who’s behind this</H>
+  <p>{f.name} started the practice and edits it for now. He’s a technical program manager with more than twenty years in infrastructure, much of it spent planning capacity. He’d like to hear from you, whether you agree, disagree or have a better way.</p>
+  <p class="behind__act"><a class="btn btn--quiet" href={f.linkedin} rel="me">Connect on LinkedIn</a> <a class="more" href={`mailto:${config.site.contact}`}>{config.site.contact}</a></p>
+</div>

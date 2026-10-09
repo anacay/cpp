@@ -31,6 +31,7 @@
       "url": "https://anacay.org"
     },
     "contact": "cpp@anacay.org",
+    "founder": { "name": "Guillermo Martinez", "linkedin": "https://www.linkedin.com/in/guillermo-martinez-technology/" },
     "indexable": false,
     "$indexable": "false keeps search engines out (robots.txt, meta robots, X-Robots-Tag). Set true when you want the site found by search. Sharing the link works either way."
   },
