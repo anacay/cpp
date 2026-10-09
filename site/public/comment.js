@@ -47,10 +47,24 @@
   }
   function q(o) { return Object.keys(o).map(function (k) { return k + '=' + encodeURIComponent(o[k]); }).join('&'); }
 
+  var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  var holdUntil = 0, hideT;
+  bar.addEventListener('pointerdown', function () { holdUntil = Date.now() + 2000; });
+  go.addEventListener('click', function () { setTimeout(function () { bar.hidden = true; tip.hidden = tipOff; }, 300); });
+
   function update() {
     var sel = window.getSelection();
     var text = sel && !sel.isCollapsed ? sel.toString().replace(/\s+/g, ' ').trim() : '';
-    if (text.length < 12 || !root.contains(sel.anchorNode)) { bar.hidden = true; tip.hidden = tipOff; return; }
+    if (text.length < 12 || !root.contains(sel.anchorNode)) {
+      // On phones, the first touch of a tap clears the selection. Keep the bar
+      // up long enough to be tapped; it still closes with the x or Escape.
+      if (!bar.hidden && (Date.now() < holdUntil || coarse)) {
+        clearTimeout(hideT); hideT = setTimeout(function () { bar.hidden = true; tip.hidden = tipOff; }, coarse ? 8000 : 1500);
+        return;
+      }
+      bar.hidden = true; tip.hidden = tipOff; return;
+    }
+    clearTimeout(hideT);
     if (text.length > 600) text = text.slice(0, 600).replace(/\s+\S*$/, '') + '…';
     var url = cfg.site.replace(/\/$/, '') + location.pathname + '#:~:text=' + fragment(text.replace(/…$/, ''));
     var head = cfg.page + ': "' + words(text).slice(0, 8).join(' ') + (words(text).length > 8 ? '…' : '') + '"';
@@ -65,6 +79,6 @@
   }
   var t;
   document.addEventListener('selectionchange', function () { clearTimeout(t); t = setTimeout(update, 250); });
-  x.addEventListener('click', function () { bar.hidden = true; tip.hidden = tipOff; var s = window.getSelection(); if (s) s.removeAllRanges(); });
+  x.addEventListener('click', function () { clearTimeout(hideT); bar.hidden = true; tip.hidden = tipOff; var s = window.getSelection(); if (s) s.removeAllRanges(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') bar.hidden = true; });
 })();
