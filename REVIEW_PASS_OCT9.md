@@ -6,7 +6,7 @@ An unattended pass with three jobs: check the reference links (report only), che
 
 | | |
 |---|---|
-| This branch | `review-pass-oct9` on anacay/cpp, commit `145ef64` (fixes), plus this file. `main` is unchanged at `2f04c51` |
+| This branch | `review-pass-oct9` on anacay/cpp, commit `ebc649a` (fixes), plus this file. `main` is unchanged at `229a000` |
 | cpp preview | https://61991d85-cpp-anacay.martinez-giol.workers.dev (version `61991d85-aa95-4476-8db9-107acc33f707`). Production stays on `4522d28f` |
 | anacay.org branch | `share-card` on anacay/anacay-org, commit `a1a886c`. `main` is unchanged at `9a919e9` |
 | anacay.org preview | https://c90f26bc-anacay-org.martinez-giol.workers.dev (version `c90f26bc-085b-4731-94f4-d24e10db1bef`). Production stays on `634f296a` |
@@ -237,7 +237,7 @@ Network metrics, production, mobile (Lighthouse simulated throttling): `/` LCP 1
 
 **About the two 96–97 scores in the "after" columns:** both are the same artefact. The request-for-comments box (`RfcHint.astro`) plays a decorative demo in which the "Discuss this passage" pill fades in and out. When Lighthouse samples the page mid-fade, it measures the half-faded pill against the background and reports low contrast. The demo is `aria-hidden` and is still under reduced motion. Each of those pages was re-run four more times, on both localhost and the preview, and scored 100 every time; axe reports no violations on them. The `/guide/annual/` mobile "before" score of 97 was a real failure, fixed below.
 
-### What was found and fixed (commit `145ef64`)
+### What was found and fixed (commit `ebc649a`)
 
 | Issue | Where | Fix |
 |---|---|---|
