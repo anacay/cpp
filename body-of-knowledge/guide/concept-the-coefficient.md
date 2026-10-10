@@ -39,7 +39,7 @@ That's the seed paper's first claim: **a coefficient is an agreement** between t
 
 **Keep a coefficient register and a versioned rate card** (mechanism 3). Publish each coefficient and rate with a version, an effective date, an owner and a valid range. A change is a new version, not a quiet edit.
 
-**Set a re-fit threshold in money.** *One way to think about it* [argued]: threshold = drift × volume × rate. For example, 5% drift on a $525,600 bill is about $26,000 a year (illustrative). Hixson and Guliani advise checking blow-up factors regularly to see they "remain accurate" [6]. They also ask you to write down design assumptions [6]; that's the valid range.
+**Set a re-fit threshold in money.** *One way to think about it* [argued]: threshold = drift × volume × rate. For example, 5% drift on a $525,600 bill is about $26,000 a year (illustrative). Hixson and Guliani advise checking blow-up factors regularly to see they "remain accurate" [6]. They also ask you to write down design assumptions [6], the same idea as a valid range.
 
 **Split a miss by term.** ΔCost = ΔV·α₀·r₀ + V₁·Δα·r₀ + V₁·α₁·Δr. Each piece goes to whoever moved it. The order of the swaps is a policy choice; a symmetric method avoids it [52]. In the running example, A's volume landed within 4%, but the bill came in 30% over. The coefficient term (+$126,144) and rate term (+$52,560) were Service X's (illustrative).
 

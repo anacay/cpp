@@ -13,7 +13,7 @@ seed: 1, 6, 6.1, 6.4, 7, 9.2
 
 The seed paper's second claim: **approval is not allocation** [argued]. Allocation here means placing demand on physical machines. A common unit lets unlike asks be compared and approved, but it doesn't source them.
 
-Demand then passes seven steps: declared, approved, allocated, delivered, live, adopted, productive. Each has its own owner, and each can leak. Hixson and Guliani's lead-time table runs a similar line to "Ready to serve" [6].
+Demand then passes seven steps: declared, approved, allocated, delivered, live, adopted, productive. Each has its own owner, and each can leak. Hixson and Guliani's lead-time table runs a similar line to "Ready to serve" [6]. The seven steps add adoption and productive use after capacity is live.
 
 ![Seven-step funnel from Declared to Productive, with a named leak and owner at each gap.](../seed/figures/A3.svg)
 

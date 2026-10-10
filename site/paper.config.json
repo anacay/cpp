@@ -1,23 +1,23 @@
 {
   "$comment": "Where the paper lives and which manifest version the site is built from. Paths are relative to this file. Bump 'manifest' and 'downloads' when a new version of the paper is built.",
   "paperDir": "../../06_WHITEPAPER",
-  "manifest": "web/manifest_v7_7.json",
+  "manifest": "web/manifest_v7_8.json",
   "downloads": [
     {
       "key": "pdf",
-      "file": "pdf/The_Coefficient_Is_an_Agreement_v7_7.pdf",
+      "file": "pdf/The_Coefficient_Is_an_Agreement_v7_8.pdf",
       "label": "PDF",
       "detail": "Print layout, letter size"
     },
     {
       "key": "ipad",
-      "file": "ipad/The_Coefficient_Is_an_Agreement_v7_7_iPad.pdf",
+      "file": "ipad/The_Coefficient_Is_an_Agreement_v7_8_iPad.pdf",
       "label": "iPad PDF",
       "detail": "Tablet layout, larger type"
     },
     {
       "key": "epub",
-      "file": "ipad/The_Coefficient_Is_an_Agreement_v7_7.epub",
+      "file": "ipad/The_Coefficient_Is_an_Agreement_v7_8.epub",
       "label": "EPUB",
       "detail": "Reflowable, for e-readers"
     }
@@ -41,7 +41,7 @@
     "branch": "main",
     "bokDir": "body-of-knowledge/seed",
     "edition": "Seed edition, v0.1",
-    "editionNote": "built from the working paper, version 7.6",
+    "editionNote": "built from the working paper, version 7.8",
     "linkedinPage": "https://www.linkedin.com/company/capacity-planning-practice/",
     "linkedin": "",
     "open": true,

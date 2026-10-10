@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.6. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/12-for-mid-sized-companies/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/12-for-mid-sized-companies/ -->
 
 # 12. For mid-sized companies
 
@@ -20,7 +20,7 @@ A company of a few hundred to a few thousand people usually has no data centers 
 
 *Figure 46. At a few hundred to a few thousand people, the long-lead supply is the cloud commitment and its renewal date, and the declaration register usually exists already as the sales pipeline.*
 
-**Do you need this?** The SRE chapter's first question is whether you need "the rigorous and expensive process" at all [7]. For small workloads, it says, "simple overprovisioning is often the best strategy," and precision is "only valuable relative to" your other problems [7]. *One way to answer it* is layer by layer. Compare each supply layer's lead time with how long a launch takes to firm up, from dated to live. Where supply is faster, react: autoscaling and shared buffers do the job. Where supply is slower, that layer needs a commit point. For most mid-size companies, *my guess* is that it's one layer: the commitment renewal. One path, in steps:
+**Do you need this?** The SRE chapter's first question is whether you need "the rigorous and expensive process" at all [7]. For small workloads, it says, "simple overprovisioning is often the best strategy," and precision is "only valuable relative to" your other problems [7]. Hixson and Guliani said the same in 2015: for small companies, the limit is "engineering time or management attention," not capacity [6]. *One way to answer it* is layer by layer. Compare each supply layer's lead time with how long a launch takes to firm up, from dated to live. Where supply is faster, react: autoscaling and shared buffers do the job. Where supply is slower, that layer needs a commit point. For most mid-size companies, *my guess* is that it's one layer: the commitment renewal. One path, in steps:
 
 1. Overprovision and autoscale; watch the bill.
 2. Show each team its cost, with an owner for the three largest coefficients.

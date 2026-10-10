@@ -40,9 +40,9 @@ Hixson and Guliani frame the same choice: "That tolerance should define how aggr
 
 **Mind timing, size and persistence.** A size miss is paid on the slow and middle layers; a slip, on machines and turn-up. Size owned capacity on a transient spike and you buy permanent capacity for a temporary peak.
 
-**Pool the launch reserve.** *One way to think about it* [argued]: hold one reserve for a group of launches with no shared driver, and give each a ranked claim. For example, four independent launches each with a 25,000 high slice, each half likely, need 75,000 at the 80th percentile, not 100,000 (illustrative). Tie them to one driver and the saving disappears. Hixson and Guliani's correlation check [6] is what makes this safe.
+**Pool the launch reserve.** Hixson and Guliani already collapse several products' upside into one plan, with someone in a position to resolve conflicts [6]. The SRE chapter pairs centralized inventory with a correlation check [7]. *One way to size it* [argued]: hold one reserve for a group of launches with no shared driver, and give each a ranked claim. For example, four independent launches each with a 25,000 high slice, each half likely, need 75,000 at the 80th percentile, not 100,000 (illustrative). Tie them to one driver and the saving disappears. Hixson and Guliani's correlation check [6] is what makes this safe.
 
-**Count a shortage budget.** *One way to think about it* [argued]: at 4 : 1, about one launch in five should need a bridge at that layer. Far fewer, two years running, and the ranges are padded. It's a backtest, as the chapter recommends for confidence levels [7].
+**Count a shortage budget.** The SRE chapter says capacity planning "heavily parallels the concept of error budgets" [7]. *One way to count it* [argued]: at 4 : 1, about one launch in five should need a bridge at that layer. Far fewer, two years running, and the ranges are padded. It's a backtest, as the chapter recommends for confidence levels [7].
 
 In the running example, the method buys Product A's machines to 70,000, the configured 80th percentile. The launch lands at 40,000, so about $26,280 a year of extra spare sits idle (illustrative). That's the plan working inside its ratio.
 

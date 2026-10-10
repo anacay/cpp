@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.6. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/11-what-changes-in-the-ai-era/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/11-what-changes-in-the-ai-era/ -->
 
 # 11. What changes in the AI era
 

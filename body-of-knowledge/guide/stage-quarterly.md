@@ -33,7 +33,7 @@ Machines and parts take quarters; one operator reports "over 6 months for some c
 
 **Firm declarations to Dated.** A dated declaration carries a quarter, base and high scenarios [8], and the attributes that drive slow supply. Ask for slow attributes first: region, redundancy tier, hardware class, data stored. Size usually firms last. See [demand and declarations](concept-demand-and-declarations.md).
 
-**Agree the coefficients.** Publish each coefficient and rate with a version, effective date, owner and valid range (mechanism 3). A change is a new version, not a quiet edit. The SRE chapter's ratio alerts flag drift between versions [7]. See [the coefficient](concept-the-coefficient.md) and [the measuring loop](concept-measuring-loop.md).
+**Agree the coefficients.** Publish each coefficient and rate with a version, effective date, owner and valid range (mechanism 3). A change is a new version, not a quiet edit. The SRE chapter alerts when a ratio changes significantly [7]. Reading that alert against the published version is the seed paper's idea [argued]. See [the coefficient](concept-the-coefficient.md) and [the measuring loop](concept-measuring-loop.md).
 
 **Use the right price.** Average rates set budgets. Long-run incremental cost decides what to build. The shadow price ranks claims on whatever binds this quarter [argued]. See [three prices](concept-three-prices.md).
 

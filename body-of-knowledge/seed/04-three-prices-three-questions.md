@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.6. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/4-three-prices-three-questions/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/4-three-prices-three-questions/ -->
 
 # 4. Three prices, three questions
 

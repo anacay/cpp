@@ -1,6 +1,6 @@
 # Seed edition, v0.1
 
-The seed edition of the body of knowledge, built from the working paper, version 7.6: *The Coefficient Is an Agreement*, by Guillermo Martinez. One file per page of the site, in reading order. Figures are in `figures/`.
+The seed edition of the body of knowledge, built from the working paper, version 7.8: *The Coefficient Is an Agreement*, by Guillermo Martinez. One file per page of the site, in reading order. Figures are in `figures/`.
 
 Licensed [CC BY-SA 4.0](../../LICENSE). Short quotations from cited works stay their owners'.
 

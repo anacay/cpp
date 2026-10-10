@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.6. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/8-the-commit-point-method/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/8-the-commit-point-method/ -->
 
 # 8. The commit-point method
 
@@ -75,6 +75,6 @@ It's **not a model**: the ten-outcome lists, ratios and bands write judgment dow
 
 Three explorations, labeled as such:
 
-- **A fast lane.** *One way to think about it:* Section 7's stocked pool is a fast lane, dearer than the slow lane but able to wait until the launch is configured. Its size is a decision. For example, if configured asks usually move by a tenth of their dated figure, and next quarter's dated asks total 50 machines, start from a pool of about 5 machines. Add cover for its own replenishment time. *My guess* is that with two lanes, the slow lane can be bought lower than Section 6.5's table suggests.
+- **A fast lane.** Hixson and Guliani describe one: fungible pooled resources, provisioned "much more quickly than their full lead time" [6]. *One way to think about it:* Section 7's stocked pool is a fast lane, dearer than the slow lane but able to wait until the launch is configured. Its size is a decision. For example, if configured asks usually move by a tenth of their dated figure, and next quarter's dated asks total 50 machines, start from a pool of about 5 machines. Add cover for its own replenishment time. *My guess* is that with two lanes, the slow lane can be bought lower than Section 6.5's table suggests.
 - **Re-pegging.** In the walk-through, the six-week slip freed a launch reserve for six weeks. *Speculation:* across enough launches, re-pegging may absorb a large share of timing misses at almost no cost. Nobody has measured it in public, as far as the sources show.
 - **A simulation.** A spreadsheet can stress-test the hand calculation. Draw a few hundred random years from each declaration's stage ranges and each layer's lead-time spread. Then count which launches end up short, and because of which layer. It could show whether per-layer ratios come close to the best joint answer, and what bands and shared drivers change. That's a stress test, not a validation, and its answers would depend on the data used.

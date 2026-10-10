@@ -13,7 +13,7 @@ seed: 6.5, 8, Appendix A
 
 **Two clocks.** Demand information firms up on one clock; supply commitments run on another. The power for a launch's building may be ordered before anyone hears the rumor. Alphabet's chief executive put the supply side plainly: "how we close the gap this year is a function of what we have done in the prior years" [90].
 
-**A commit point per layer.** Each layer's commit point is its need date minus its cautious lead time. What matters there is the residual uncertainty: how much of the declaration is still open when that layer must be ordered. Hixson and Guliani point at the same quantity, the "sensitivity" of estimates "to their time horizon" [6].
+**A commit point per layer.** Each layer's commit point is its need date minus its cautious lead time. What matters there is the residual uncertainty: how much of the declaration is still open when that layer must be ordered. Hixson and Guliani point at a closely related quantity, the "sensitivity" of estimates "to their time horizon" [6].
 
 ![Two lanes: the demand clock narrows at decision events; the supply clock shows each layer's commit point with the range still open above it.](../seed/figures/B4.svg)
 

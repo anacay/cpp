@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.6. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/public-record/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/public-record/ -->
 
 # Appendix B. What the public record says about supply
 
