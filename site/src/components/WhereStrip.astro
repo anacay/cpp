@@ -21,6 +21,6 @@ const altText = page.altitude.length === ALTITUDES.length ? 'every altitude' : A
   <dl class="where__facts">
     <dt>Cadence</dt><dd>{all ? 'Across the whole cycle' : cadText.charAt(0).toUpperCase() + cadText.slice(1)}</dd>
     <dt>Altitude</dt><dd>{altText.charAt(0).toUpperCase() + altText.slice(1)}</dd>
-    <dt>Usually done by</dt><dd><ul class="lvl">{LEVELS.map((l) => <li class={page.levels.includes(l.id) ? 'on' : undefined}>{l.label}</li>)}</ul></dd>
+    <dt>Usually done by</dt><dd><ul class="lvl">{LEVELS.map((l) => <li class={page.levels.includes(l.id) ? 'on' : undefined}>{l.label}<span class="sr-only">{page.levels.includes(l.id) ? ' (usually)' : ' (less often)'}</span></li>)}</ul></dd>
   </dl>
 </aside>
