@@ -296,7 +296,7 @@ export function renderBlocks(page, ctx, { skipHeadingSeqs = [], headingOverride 
     }
     if (b.type === 'figure') out.push(renderFigure(b, ctx));
     else {
-      const refs = b.heading === 'References' || /^B\.\d+ Sources/.test(b.heading);
+      const refs = b.heading === 'References' || /^B\.\d+ Sources/.test(b.heading) || /^Sources added in version/.test(b.heading);
       const html = renderMarkdown(b.markdown, { targets: ctx.targets, unresolved: ctx.unresolved, refs });
       out.push(`<div class="md${refs ? ' refs' : ''}" data-seq="${b.seq}">${html}</div>`);
     }

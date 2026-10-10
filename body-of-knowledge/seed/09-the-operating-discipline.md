@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/9-the-operating-discipline/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.9. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/9-the-operating-discipline/ -->
 
 # 9. The operating discipline: keeping the agreement
 
@@ -100,13 +100,13 @@ Figure 40 sets the nine rights against the roles.
 
 **Prior actuals in the intake.** When the intake shows "you asked for X and used Y," the padding talk happens before the ask. Bias (a governance problem) is tracked apart from dispersion (a buffer input), and step changes are scored by stage (Section 5.4).
 
-**Declarations expire.** A placeholder can hold capacity for a year for a launch nobody mentions anymore. So set a clock: an intent that hasn't advanced by its target date leaves the envelope unless re-confirmed, and a configured launch's grant lapses if its date passes unconfirmed. The slip becomes a recorded event. One public analogue is automated: the SRE chapter describes AI sweeps that reclaim "inactive or expired ML quota credits" [7].
+**Declarations expire.** A placeholder can hold capacity for a year for a launch nobody mentions anymore. So set a clock: an intent that hasn't advanced by its target date leaves the envelope unless re-confirmed, and a configured launch's grant lapses if its date passes unconfirmed. The slip becomes a recorded event. Grid operators learned this the expensive way. Speculative requests helped back up U.S. interconnection queues, and FERC's 2023 reform moved to "first-ready, first-served," with readiness deposits and withdrawal penalties [A6]. One public analogue is automated: the SRE chapter describes AI sweeps that reclaim "inactive or expired ML quota credits" [7].
 
 A sweep is only as fair as the rules it follows. The chapter notes that easy access to capacity reduces hoarding [7]; a harsh reclaim, I'd argue, brings it back. So an automated sweep should follow the landing rule (mechanism 8) and honor any right of recall (Section 10.4). It should also log each reclaim like an override, since the chapter warns that "agents can behave in surprising ways" [7]. *My guess* is that teams will judge a sweep less by how much it frees than by whether what they return comes back when needed.
 
 **Ask for slow attributes first** (Section 6.5). And ask which substitutes the team would accept (other shapes, regions, a smaller first phase, a later date); each one is free supply flexibility.
 
-**Shortage rules come before the shortage.** The re-cut order handles a smaller envelope. A delivery short in one shape at one site needs its own rule: who goes short first. Agree it in the forum beforehand; supply carries it out. Written during the shortage, it's a negotiation.
+**Shortage rules come before the shortage.** The re-cut order handles a smaller envelope. A delivery short in one shape at one site needs its own rule: who goes short first. Agree it in the forum beforehand; supply carries it out. Written during the shortage, it's a negotiation. And don't split a shortage pro rata. Supply-chain theory shows that allocation rules rewarding bigger orders make buyers "order more than they need to gain a more favorable allocation" [A5]. As I read that result, a ranked list removes the reward: a padded ask only buys capacity its team pays for.
 
 **Efficiency is a funding source.** Under chargeback with no reinvestment rule, a team that cuts its footprint gets a smaller bill at best. At worst, it gets a higher rate once a usage-based denominator shrinks (Section 4). Recovered capacity has to land where the recoverer sees it, as gain-sharing plans recognize [4], while in a lean year finance will rationally want to book it as savings. So agree the split before any recovery is known: for example, shares booked as savings, returned to the recoverer and held centrally. A rule agreed in advance is a contract; one proposed after the savings appear is a request.
 

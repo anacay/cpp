@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/2-why-cost-drivers-exist/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.9. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/2-why-cost-drivers-exist/ -->
 
 # 2. Why cost drivers exist: the service doesn't cause its own load
 

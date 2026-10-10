@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/8-the-commit-point-method/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.9. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/8-the-commit-point-method/ -->
 
 # 8. The commit-point method
 

@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/12-for-mid-sized-companies/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.9. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/12-for-mid-sized-companies/ -->
 
 # 12. For mid-sized companies
 

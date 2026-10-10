@@ -29,7 +29,7 @@ Job placement and admission commit here, at Live, in minutes to days. Turn-up an
 
 **Broker.** One team holds capacity it doesn't need; another needs that shape, there, now. Resource, amount, place and time must all match. That knowledge comes from a weekly habit of asking teams what's coming and what's idle [argued]. Log every trade, so what the broker knows outlives the broker (Section 10.4).
 
-**Apply shortage rules agreed beforehand.** A delivery short in one shape at one site needs its own rule: who goes short first. The forum agrees it in advance; supply carries it out. Written during the shortage, it's a negotiation (Section 9.3).
+**Apply shortage rules agreed beforehand.** A delivery short in one shape at one site needs its own rule: who goes short first. The forum agrees it in advance; supply carries it out. Written during the shortage, it's a negotiation (Section 9.3). Don't split a shortage pro rata: rules that reward bigger orders teach teams to pad [A5]. A ranked list doesn't reward padding [argued].
 
 **Watch turn-up.** A slipped batch queues at turn-up with everything else that slipped, so a supply slip often shows up twice. Per-site turn-up throughput often binds [argued].
 

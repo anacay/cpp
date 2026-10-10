@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/7-a-worked-example/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.9. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/paper/7-a-worked-example/ -->
 
 # 7. A worked example (all numbers illustrative)
 
@@ -12,7 +12,7 @@ Sections 5 and 6 took the pieces one at a time. Here they meet in one case, the 
 
 **The rate card.** X prices only CPU: $0.12 per busy core-hour, the pool's cost over practical capacity, here half of installed cores.
 
-**Why installed is twice busy.** Two buffers with different owners multiply. Surviving the loss of one of three failure domains takes 1.5 times peak, owned by reliability engineering. Holding latency means CPU at most 75% busy, a further 4/3 of queueing headroom, owned by X. If the latency target must hold even with a domain down, the two multiply: 1.5 × 4/3 = 2.0 installed cores for every busy one. Many teams accept degraded latency during a failure and run hotter, which needs less.
+**Why installed is twice busy.** Two buffers with different owners multiply. Surviving the loss of one of three failure domains takes 1.5 times peak, owned by reliability engineering. Holding latency means CPU at most 75% busy, a further 4/3 of queueing headroom, owned by X. If the latency target must hold even with a domain down, the two multiply: 1.5 × 4/3 = 2.0 installed cores for every busy one. The 4/3 is a flat rule, kept simple for the example; queueing headroom shrinks as a share of a larger pool (Section 6.3) [84]. Many teams accept degraded latency during a failure and run hotter, which needs less.
 
 **How A is billed.** On its realized peak, held flat for the year: a simplification of charging its coincident-peak contribution hour by hour. X's release and the power re-pricing below take effect from the start of the year.
 

@@ -1,4 +1,4 @@
-<!-- Seed edition, v0.1, built from the working paper, version 7.8. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/references/ -->
+<!-- Seed edition, v0.1, built from the working paper, version 7.9. Licensed CC BY-SA 4.0. Site page: https://cpp.anacay.org/references/ -->
 
 # References
 
@@ -118,3 +118,25 @@ Accessed 2026-10-04 unless noted. **[Preprint]** = not peer reviewed. **[Seconda
 112. Lawrence Berkeley National Laboratory. "Backlog of power plants seeking transmission grid connection eased somewhat in 2025 amidst high withdrawals" (*Queued Up* 2026 edition), news release, 1 July 2026. https://emp.lbl.gov/news/backlog-power-plants-seeking-transmission-grid-connection-eased-somewhat-2025-amidst (measures generation and storage joining the grid, not data center loads).
 113. Constellation Energy. "Constellation to Launch Crane Clean Energy Center, Restoring Jobs and Carbon-free Power to the Grid." Press release, 20 September 2024 (20-year power purchase agreement with Microsoft; Three Mile Island Unit 1 expected online in 2028 at announcement). https://investors.constellationenergy.com/node/8711/pdf
 114. Ohio Power Company (AEP Ohio). Data Center Tariff (Schedule DCT), effective 23 July 2025; approved by the Public Utilities Commission of Ohio, order of 9 July 2025. https://www.aepohio.com/company/about/rates/data-center-tariff ; reported by POWER: https://www.powermag.com/regulator-approves-aep-ohios-landmark-data-center-tariff/ (accessed 2026-10-06).
+
+## Sources added in version 7.9
+
+Cited as [A1]–[A9] until the next full renumbering by first appearance. Accessed 2026-10-10.
+
+A1\. O'Connor, J. J., & Robertson, E. F. "Agner Krarup Erlang." MacTutor History of Mathematics, University of St Andrews (describing Erlang's 1917 paper on automatic telephone exchanges). <https://mathshistory.st-andrews.ac.uk/Biographies/Erlang/> **[Secondary]**
+
+A2\. Liu, R. P., Mellou, K., Gong, X.-Y., Li, B., Coffee, T., Pathuri, J., Simchi-Levi, D., & Menache, I. "Efficient Cloud Server Deployment Under Demand Uncertainty." *Manufacturing & Service Operations Management* 27(2), 2025. <https://www.microsoft.com/en-us/research/publication/efficient-cloud-server-deployment-under-demand-uncertainty/> (abstract consulted).
+
+A3\. Kumbhare, A. G., Azimi, R., Manousakis, I., Bonde, A., Frujeri, F., Mahalingam, N., Misra, P. A., Javadi, S. A., Schroeder, B., Fontoura, M., & Bianchini, R. "Prediction-Based Power Oversubscription in Cloud Platforms." *Proc. USENIX ATC '21*, 2021. <https://www.usenix.org/system/files/atc21-kumbhare.pdf>
+
+A4\. Embrechts, P., McNeil, A., & Straumann, D. "Correlation and Dependence in Risk Management: Properties and Pitfalls." ETH Zürich working paper, 1999; published in M. Dempster (ed.), *Risk Management: Value at Risk and Beyond*, Cambridge University Press, 2002. <https://www.casact.org/abstract/correlation-and-dependence-risk-management-properties-and-pitfalls-0> (abstract consulted).
+
+A5\. Cachon, G. P., & Lariviere, M. A. "Capacity Choice and Allocation: Strategic Behavior and Supply Chain Performance." *Management Science* 45(8):1091–1108, 1999. <https://ideas.repec.org/a/inm/ormnsc/v45y1999i8p1091-1108.html> (abstract consulted).
+
+A6\. Orrick. "FERC Finalizes Rule Adopting Interconnection Reforms" (on FERC Order No. 2023), August 2023. <https://www.orrick.com/en/Insights/2023/08/FERC-Finalizes-Rule-Adopting-Interconnection-Reforms> **[Secondary]**
+
+A7\. Aubakirova, M., Atallah, A., Clark, C., Summerville, J., & Midha, A. "State of AI: An Empirical 100 Trillion Token Study with OpenRouter." arXiv:2601.10088, January 2026. <https://arxiv.org/abs/2601.10088> **[Preprint]**
+
+A8\. OpenRouter. "DeepSeek V4 Is Earning Agentic Token Share." OpenRouter blog, 30 June 2026. <https://openrouter.ai/blog/insights/deepseek-v4-adoption/>
+
+A9\. Google. "Batch Mode in the Gemini API." Google Developers Blog, 7 July 2025. <https://developers.googleblog.com/en/scale-your-ai-workloads-batch-mode-gemini-api/>
