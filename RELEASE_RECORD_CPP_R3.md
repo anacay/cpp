@@ -25,8 +25,8 @@ v7.8, the credit pass: the seed edition is rebuilt from paper v7.8, which re-che
 
 cpp (`anacay/cpp`, `main`):
 
-- `145ef64`, `91412a9`: the review pass (accessibility fixes, then `REVIEW_PASS_OCT9.md`). `review-pass-oct9` was merged into `main` as a fast-forward from `2f04c51`.
-- `5ffecdb`: "v7.8: credit pass against Hixson & Guliani and the 2026 SRE chapter; reference links". 40 files: seed edition and guide text, references, figure E5, `paper.config.json`, `versions.json`, generated manifest, figures and downloads data, `related-work.astro`, `_redirects`, and the three v7.8 downloads (the three v7.7 files removed with `git rm`).
+- `ebc649a`, `2412e1c`: the review pass (accessibility fixes, then `REVIEW_PASS_OCT9.md`). `review-pass-oct9` was merged into `main` as a fast-forward from `229a000`.
+- `897a047`: "v7.8: credit pass against Hixson & Guliani and the 2026 SRE chapter; reference links". 40 files: seed edition and guide text, references, figure E5, `paper.config.json`, `versions.json`, generated manifest, figures and downloads data, `related-work.astro`, `_redirects`, and the three v7.8 downloads (the three v7.7 files removed with `git rm`).
 
 anacay.org (`anacay/anacay-org`, `main`):
 
@@ -57,9 +57,26 @@ anacay.org (`anacay/anacay-org`, `main`):
 
 - The `review-pass-oct9` (cpp) and `share-card` (anacay-org) branches were deleted after the merge, locally and on GitHub.
 
+## History rewrite, 9 October: R2 reworded
+
+One line of `RELEASE_RECORD_CPP_R2.md` (in the history-rewrite section) quoted part of the removed internal notes. It was reworded in `a08eac8` to describe the scrub without quoting it, and the history was rewritten so that no commit contains the quoted part.
+
+- **Tool:** `git filter-repo --replace-text` with one rule, limited to that one quoted fragment and replacing it with `[removed]`. The rules file was kept outside the repo and deleted afterwards.
+- **Checks:** searching the full history finds no term from the private list except the published title of reference 87. The latest files are the same as before the rewrite, and all commits are kept.
+- **Old hashes:** hashes from `229a000` onward changed. Hashes cited before this section (including those in `REVIEW_PASS_OCT9.md`) are from before the rewrite. Look up the new ones here.
+
+| Old | New | Commit | Had the line |
+|---|---|---|---|
+| `2f04c51` | `229a000` | Release record R2: history rewrite, old to new commit hashes | yes |
+| `145ef64` | `ebc649a` | Accessibility: level-label contrast, unique landmark on /join/, tip in a landmark, 24px tap targets | yes |
+| `91412a9` | `2412e1c` | Review pass, 9 October: links, accessibility and performance, anacay.org share card | yes |
+| `5ffecdb` | `897a047` | v7.8: credit pass against Hixson & Guliani and the 2026 SRE chapter; reference links | yes |
+| `012727b` | `701a067` | Release record R3: v7.8 credit pass and the anacay.org share card (b602ee90, 22cc3c23) | yes |
+| `38e10a7` | `a08eac8` | Release record R2: describe the history rewrite without quoting the removed line | no (never pushed) |
+
 ## Still open
 
-- Carried over from R2: pin discussion #1, ask GitHub Support to purge the old commits, check the selection bar in a real browser and on a phone, and set `community.linkedin` once the group exists.
+- Carried over from R2: pin discussion #1, ask GitHub Support to purge the old commits (now including the five marked "yes" above), check the selection bar in a real browser and on a phone, and set `community.linkedin` once the group exists.
 - Check the anacay.org card in a share debugger (for example the LinkedIn Post Inspector), now that it is live.
 
 ## Rollback
