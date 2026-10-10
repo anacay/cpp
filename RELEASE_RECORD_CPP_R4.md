@@ -6,7 +6,7 @@ v7.9, adjacent fields and new evidence: the seed edition is rebuilt from paper v
 |---|---|
 | Date | 10 October 2026 |
 | Worker | `cpp-anacay` |
-| Live version | `81a5e1a5-e19f-48a4-bb4d-0ee69717040b`, deployed at 100% (the community changes, 10 Oct; see After release). v7.9 itself was `c510ec8c-972e-48bd-b0b4-3c4fa95f7b78` |
+| Live version | `1acc116e-5b87-4206-98a8-79421ec77325`, deployed at 100% (reference links and screen-reader labels, 10 Oct; see After release). Before it, `81a5e1a5-e19f-48a4-bb4d-0ee69717040b` (the community changes). v7.9 itself was `c510ec8c-972e-48bd-b0b4-3c4fa95f7b78` |
 | Previous version | `b602ee90-4f3d-4754-86c7-16635ee2bda9` (v7.8, R3) |
 | Indexable | No (unchanged) |
 
@@ -48,7 +48,7 @@ About a minute after the deploy:
 
 ## After release
 
-Two community changes, same day.
+Later changes, same day.
 
 - **Three new threads**, in Sections: [#14](https://github.com/anacay/cpp/discussions/14) "For agent-driven demand, is the declaration a cap rather than a forecast?", [#15](https://github.com/anacay/cpp/discussions/15) "When a market price exists, is the coefficient still an agreement?" and [#16](https://github.com/anacay/cpp/discussions/16) "Could this community build the dataset the field is missing?". Each has an open-question author's note on its passage (notes 13 to 15, in Sections 11, 14 and 13), and each note's "Reply on GitHub" link opens its thread (`threads.json`). `seed-discussions` now keeps links already in `threads.json`, so a re-run doesn't post these again (dry run: all 15 notes skipped as linked).
 - **Roadmap:** a new section, "Open work on the seed paper", lists what still needs doing: fold A1 to A9 into the numbering, sturdier links for references 76 and 113, screen-reader labels for the guide's level labels, the three open threads, and the untested method.
@@ -56,6 +56,7 @@ Two community changes, same day.
 - **Checks:** the posted thread texts and the notes were searched against the private term list (no matches). `npm run build`, all checks passed (63 pages). Preview `81a5e1a5` approved by Guillermo.
 - **Deployed:** `81a5e1a5-e19f-48a4-bb4d-0ee69717040b` at 100%, then `wrangler triggers deploy`.
 - **Live, a minute later:** `https://cpp.anacay.org` returned 200. /roadmap/ shows the new section. Sections 11, 14 and 13 each link their new note to #14, #15 and #16, and /open-questions/ lists all three. The v7.8 PDF URL still returns 301 to v7.9.
+- **Reference links and screen-reader labels** (`bf463fc`, deployed as `1acc116e-5b87-4206-98a8-79421ec77325` at 100%, then `wrangler triggers deploy`): refs 76, 101 (author added) and 113 (and its B.6 copy) have sturdier links, with no wording or numbering change; the guide's "Usually done by" levels now announce "(usually)" or "(less often)" to screen readers; the two finished items left the roadmap, and the 7.9 row on /changes/ notes the link refresh; figure SVGs re-synced from the paper; provenance metadata added in transfer removed; content unchanged. All checks passed (63 pages, 150 reference links); preview approved by Guillermo; live checks a minute later found the new links, the labels and the updated downloads.
 
 ## Still open
 
@@ -63,4 +64,4 @@ Two community changes, same day.
 
 ## Rollback
 
-- From `site/`: `npx wrangler versions deploy c510ec8c-972e-48bd-b0b4-3c4fa95f7b78@100%` removes only the community changes (the threads stay open on GitHub). `npx wrangler versions deploy b602ee90-4f3d-4754-86c7-16635ee2bda9@100%` returns to v7.8. That version carries its own v7.8 files and redirects, so the v7.8 URLs work again, but the v7.9 download URLs would return 404.
+- From `site/`: `npx wrangler versions deploy 81a5e1a5-e19f-48a4-bb4d-0ee69717040b@100%` undoes only the link and label changes. `npx wrangler versions deploy c510ec8c-972e-48bd-b0b4-3c4fa95f7b78@100%` removes only the community changes (the threads stay open on GitHub). `npx wrangler versions deploy b602ee90-4f3d-4754-86c7-16635ee2bda9@100%` returns to v7.8. That version carries its own v7.8 files and redirects, so the v7.8 URLs work again, but the v7.9 download URLs would return 404.
