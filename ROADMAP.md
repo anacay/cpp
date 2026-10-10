@@ -6,6 +6,18 @@ There are no dates. A seed is done when it's useful and it has been through an o
 
 Want to lead one? Say so in the "Governance" discussion category.
 
+## Open work on the seed paper
+
+The seed paper is a working draft. This is what we know still needs doing, so nobody has to guess.
+
+- **Fold in the newest sources.** Version 7.9 lists nine new sources as A1 to A9, after the references. The next full version will number them in order of first appearance, with the rest.
+- **Sturdier links.** References 76 and 113 point to pages that may move. They need archived or permanent links.
+- **Screen-reader labels.** The level labels on the guide pages need text that screen readers announce clearly.
+- **Ideas still under discussion.** A review on 10 October, done with the help of an AI model, raised ideas the paper doesn't settle yet. Three are open threads: AI demand declared as a policy, whether a market price changes the coefficient, and a shared dataset of declarations.
+- **The method is untested.** Section 13 says what hasn't been measured. The tests in Section 9.2 have not been run anywhere we know of.
+
+Say in the "Governance" category if you'd like to take one on.
+
 ---
 
 ## 1. A shared glossary

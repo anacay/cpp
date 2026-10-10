@@ -47,3 +47,12 @@ In my experience the supply review is the step most often missing between the de
 
 ## known-unknown | 13 | The planner can only bound it, phase it and buy options.
 What do you do with a step that has no reference class, such as a first accelerator cluster or a first region on a new continent? Bound it, phase it, buy options is all the paper offers. What else has worked?
+
+## open-question | 11 | caps need the same stage records
+An open question for anyone running agents at scale: when a team's own software creates the demand, is a cap a better declaration than a forecast? Tell us what you've seen.
+
+## open-question | 14 | A coefficient is an agreement among them.
+The strongest challenge to this paper's central claim that we know of: where a market price exists, does the agreement still hold? Argue it in the thread, either way.
+
+## open-question | 13 | The most useful next contribution would be multi-organization data
+Could this community pool anonymized declaration records? Say what your organization would need to see first.
