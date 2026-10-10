@@ -80,7 +80,7 @@ On https://cpp.anacay.org/paper/13-where-this-breaks/:
 
 The first commit put the author's private list of banned terms into `body-of-knowledge/guide/_SPEC.md`. It stayed in every commit up to the one before `969d16c`, which replaced it in the working file. The public history has been rewritten so that no commit contains it.
 
-- **Tool:** `git filter-repo --replace-text` (2.47.0) with one rule. It replaces the line starting `- **Banned words:** [removed]` with: "- **Banned words:** the author keeps a private list of terms that must never appear (internal names and phrasing from past employers). Editors get it privately; it is never committed here."
+- **Tool:** `git filter-repo --replace-text` (2.47.0) with one rule, which removed one line of internal notes from the guide spec and put the current "Banned words" line from `_SPEC.md` in its place.
 - **Push:** `origin` re-added; `main` force-pushed (`e67dd05` → `b570e2b`) after checking that GitHub's `main` was still `e67dd05`.
 - **Checks:** Searching the full history (`git log --all -p`) for a term from the list finds 0 matches. The 15 commits are all kept, and the latest files are unchanged. https://github.com/anacay/cpp/blob/main/body-of-knowledge/guide/_SPEC.md shows the new line, and the page has none of the listed terms.
 - **Still to do:** the old commits still open on github.com by hash (`/commit/98ab77f` and `/commit/013657a` returned 200 after the push). GitHub Support has to purge them. Send them the 12 old commits marked "yes" below, plus the old blob `af0c0a1f6ef903c6de4ce490e2754a0f2c477ee8` (`_SPEC.md` with the list). Clones or forks made while the repo was public keep the old history.
