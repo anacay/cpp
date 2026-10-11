@@ -6,7 +6,7 @@ v7.9, adjacent fields and new evidence: the seed edition is rebuilt from paper v
 |---|---|
 | Date | 10 October 2026 |
 | Worker | `cpp-anacay` |
-| Live version | `1acc116e-5b87-4206-98a8-79421ec77325`, deployed at 100% (reference links and screen-reader labels, 10 Oct; see After release). Before it, `81a5e1a5-e19f-48a4-bb4d-0ee69717040b` (the community changes). v7.9 itself was `c510ec8c-972e-48bd-b0b4-3c4fa95f7b78` |
+| Live version | `bacf1c4b-bc3d-4578-b0d2-c6f3e9f1828c`, deployed at 100% (Section 6.4 clarity fix, 11 Oct; see After release). Before it, `1acc116e-5b87-4206-98a8-79421ec77325` (reference links and screen-reader labels, 10 Oct) and `81a5e1a5-e19f-48a4-bb4d-0ee69717040b` (the community changes). v7.9 itself was `c510ec8c-972e-48bd-b0b4-3c4fa95f7b78` |
 | Previous version | `b602ee90-4f3d-4754-86c7-16635ee2bda9` (v7.8, R3) |
 | Indexable | No (unchanged) |
 
@@ -57,6 +57,7 @@ Later changes, same day.
 - **Deployed:** `81a5e1a5-e19f-48a4-bb4d-0ee69717040b` at 100%, then `wrangler triggers deploy`.
 - **Live, a minute later:** `https://cpp.anacay.org` returned 200. /roadmap/ shows the new section. Sections 11, 14 and 13 each link their new note to #14, #15 and #16, and /open-questions/ lists all three. The v7.8 PDF URL still returns 301 to v7.9.
 - **Reference links and screen-reader labels** (`bf463fc`, deployed as `1acc116e-5b87-4206-98a8-79421ec77325` at 100%, then `wrangler triggers deploy`): refs 76, 101 (author added) and 113 (and its B.6 copy) have sturdier links, with no wording or numbering change; the guide's "Usually done by" levels now announce "(usually)" or "(less often)" to screen readers; the two finished items left the roadmap, and the 7.9 row on /changes/ notes the link refresh; figure SVGs re-synced from the paper; provenance metadata added in transfer removed; content unchanged. All checks passed (63 pages, 150 reference links); preview approved by Guillermo; live checks a minute later found the new links, the labels and the updated downloads.
+- **Section 6.4, bridge premiums explained plainly** (`6660092`, 11 Oct, deployed as `bacf1c4b-bc3d-4578-b0d2-c6f3e9f1828c` at 100%, then `wrangler triggers deploy`): the "Every bridge carries a premium" paragraph rewritten in plain steps with a short example; no claim, source, number or figure changed. Changed: the 6.4 page text, the seed copy of Section 6, the generated manifest, the three v7.9 downloads and their sizes in `downloads.json`. Ref 51 keeps its old Kubecost link. Added text searched against the private patterns (no matches). All checks passed (63 pages); preview approved by Guillermo. Live a minute later: /paper/6-approval-is-not-allocation/ returned 200 with the new paragraph and without the old one; the three downloads returned 200 at the new sizes; the v7.8 PDF still returns 301 to v7.9. Rollback: `npx wrangler versions deploy 1acc116e-5b87-4206-98a8-79421ec77325@100%`.
 
 ## Still open
 
