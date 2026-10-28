@@ -7,7 +7,7 @@ import { guide, renderGuide, seedLinks, neighboursOf, KINDS } from '../../lib/gu
 import { load, renderInline } from '../../lib/paper.mjs';
 
 export function getStaticPaths() {
-  return guide().pages.filter((p) => p.kind !== 'case').map((p) => ({ params: { slug: p.url.replace(/^\/guide\/|\/$/g, '') }, props: { file: p.file } }));
+  return guide().pages.filter((p) => p.kind !== 'case' && p.kind !== 'note').map((p) => ({ params: { slug: p.url.replace(/^\/guide\/|\/$/g, '') }, props: { file: p.file } }));
 }
 const g = guide();
 const page = g.byFile.get(Astro.props.file);
