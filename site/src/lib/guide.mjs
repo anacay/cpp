@@ -30,6 +30,7 @@ export const LEVELS = [
 export const KINDS = {
   foundation: { label: 'Foundations', order: 0 },
   case: { label: 'Case studies', order: 4 },
+  note: { label: 'Emerging topics', order: 5 },
   stage: { label: 'Through the cycle', order: 1 },
   across: { label: 'Across the cycle', order: 2 },
   concept: { label: 'Concepts', order: 3 },
@@ -41,6 +42,7 @@ const dirOf = () => path.resolve(root, load().config.community.foundingDir, 'bod
 export function urlFor(file) {
   const stem = file.replace(/\.md$/, '');
   if (stem.startsWith('case-')) return `/cases/${stem.slice(5)}/`;
+  if (stem.startsWith('note-')) return `/notes/${stem.slice(5)}/`;
   if (stem.startsWith('stage-')) return `/guide/${stem.slice(6)}/`;
   if (stem.startsWith('concept-')) return `/guide/concepts/${stem.slice(8)}/`;
   return `/guide/${stem}/`;
@@ -82,7 +84,7 @@ export function guide() {
   const dir = dirOf();
   const pages = fs.readdirSync(dir).filter((f) => f.endsWith('.md') && !f.startsWith('_'))
     .map((f) => parse(f, fs.readFileSync(path.join(dir, f), 'utf8')))
-    .sort((a, b) => (KINDS[a.kind].order === 4 ? 1 : 0) - (KINDS[b.kind].order === 4 ? 1 : 0) || a.order - b.order);
+    .sort((a, b) => (KINDS[a.kind].order >= 4 ? KINDS[a.kind].order : 0) - (KINDS[b.kind].order >= 4 ? KINDS[b.kind].order : 0) || a.order - b.order);
   const byFile = new Map(pages.map((p) => [p.file, p]));
   _cache = { pages, byFile, dir };
   return _cache;
