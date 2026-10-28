@@ -1,0 +1,39 @@
+---
+// Case studies: whole problem spaces, described without answers, for the
+// practice to work on. Door pages carry integer orders; their sub-pages x.1, x.2.
+import Base from '../../layouts/Base.astro';
+import RfcHint from '../../components/RfcHint.astro';
+import { guide } from '../../lib/guide.mjs';
+const g = guide();
+const cases = g.pages.filter((p) => p.kind === 'case');
+const doors = cases.filter((p) => Number.isInteger(p.order));
+const subsOf = (d) => cases.filter((p) => !Number.isInteger(p.order) && Math.floor(p.order) === d.order);
+const subTitle = (t) => { const x = t.replace(/^[^:]+:\s*/, ''); return x.charAt(0).toUpperCase() + x.slice(1); };
+---
+<Base title="Case studies" description="Whole capacity-planning problem spaces, described without answers, for the practice to work on." nav="cases">
+  <div class="wrap wrap--reading">
+    <div class="page-head">
+      <p class="draft-tag">Guide · draft for review</p>
+      <h1>Case studies</h1>
+      <p class="in-short guide-short"><em>Whole problem spaces, described without answers, for the practice to work on.</em></p>
+    </div>
+    <RfcHint />
+    <article class="prose reading-wrap">
+      <p>A framework is easier to judge against a real-shaped problem. Each case here describes one capacity-planning problem space and leaves the answers open. The rules for writing one, and the case format, are on the guide's <a href="/guide/cases/">Cases page</a>.</p>
+      <h2>Case 1: the launch that needed memory</h2>
+      <p>The seed paper's worked example, told as a case: a launch approved on CPU alone, a memory question asked after its commit point, and a bill 30% over plan. <a href="/guide/cases/#case-1-the-launch-that-needed-memory">Read it on the Cases page</a>.</p>
+      {doors.map((d) => (
+        <>
+          <h2>{d.title}</h2>
+          <p>{d.short}</p>
+          <ul>
+            <li><a href={d.url}>The case page</a>: the situation in two minutes.</li>
+            {subsOf(d).map((s) => <li><a href={s.url}>{subTitle(s.title)}</a>: {s.short}</li>)}
+          </ul>
+        </>
+      ))}
+      <h2>Add a case</h2>
+      <p>Cases from your own experience follow the anonymization checklist; problem-space cases follow the four rules. Both are on the <a href="/guide/cases/">Cases page</a>, and every case starts as a <a href="https://github.com/anacay/cpp/discussions">discussion</a>.</p>
+    </article>
+  </div>
+</Base>

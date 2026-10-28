@@ -86,6 +86,8 @@ Cases are short stories of what happened, told so others can learn from them. Us
 
 An editor will check it again before it's added to the case library.
 
+**Problem-space cases** are different: a whole planning problem built only from public information, about a fictional company, with every claim's evidence labeled. They don't come from anyone's private experience, so they may resemble the industry they draw on. Don't quote a single company's material; paraphrase, and put further reading at the end. The rules are in the guide's Cases page.
+
 ## Adding a source
 
 Public sources only: papers, books, talks, blog posts, filings, standards, public datasets. Give the full citation and a link. Say in one line what it supports. If it's a preprint or a secondary source, say so.
