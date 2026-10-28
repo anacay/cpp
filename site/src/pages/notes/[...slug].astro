@@ -1,0 +1,44 @@
+---
+import RfcHint from '../../components/RfcHint.astro';
+import Base from '../../layouts/Base.astro';
+import HelpBuild from '../../components/HelpBuild.astro';
+import WhereStrip from '../../components/WhereStrip.astro';
+import { guide, renderGuide, seedLinks, KINDS } from '../../lib/guide.mjs';
+import { load, renderInline } from '../../lib/paper.mjs';
+
+export function getStaticPaths() {
+  return guide().pages.filter((p) => p.kind === 'note').map((p) => ({ params: { slug: p.url.replace(/^\/notes\/|\/$/g, '') }, props: { file: p.file } }));
+}
+const g = guide();
+const page = g.byFile.get(Astro.props.file);
+const { html, toc } = renderGuide(page);
+const seeds = seedLinks(page);
+const notePages = g.pages.filter((x) => x.kind === 'note');
+const ni = notePages.indexOf(page);
+const prev = notePages[ni - 1] ?? null, next = notePages[ni + 1] ?? null;
+const ctx = load();
+---
+<Base title={page.title} description={page.short} nav="notes" commentable={{ name: `Guide: ${page.title}` }} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
+  <div class="wrap wrap--reading">
+    <div class="page-head">
+      <p class="crumbs"><a href="/notes/">Emerging topics</a></p>
+      <p class="draft-tag">Guide · draft for review</p>
+      <h1>{page.title}</h1>
+      <p class="in-short guide-short"><em set:html={renderInline(page.short, ctx.targets)} /></p>
+    </div>
+    <RfcHint />
+    <WhereStrip page={page} />
+    {toc.length > 2 && (
+      <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">On this page</h2><ol>{toc.map((t) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol></nav>
+    )}
+    <article class="prose reading-wrap guide-body" set:html={html} />
+    {seeds.length > 0 && (
+      <p class="seed-from">Drawn from the seed paper: {seeds.map((s, i) => <>{i > 0 && ', '}{s.url ? <a href={s.url}>{s.label}</a> : s.label}</>)}.</p>
+    )}
+    <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a working note: thinking in progress, open for argument." />
+    <nav class="pager" aria-label="Reading order">
+      {prev && <a class="prev" href={prev.url} rel="prev"><span class="dir">Previous</span><span class="t">{prev.title}</span></a>}
+      {next && <a class="next" href={next.url} rel="next"><span class="dir">Next</span><span class="t">{next.title}</span></a>}
+    </nav>
+  </div>
+</Base>
