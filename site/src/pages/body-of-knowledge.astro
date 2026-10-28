@@ -16,6 +16,7 @@ const p = (id) => ctx.pages.get(id);
 const deep = ctx.chapters.reduce((n, ch) => n + wordCount(ch.blocks), 0);
 const shelf = [
   { href: '/cases/', name: 'Case studies', what: 'Whole problem spaces to practice the discipline on.' },
+  { href: '/notes/', name: 'Emerging topics', what: 'Working notes on questions the field is still arguing about.' },
   { href: '/glossary/', name: 'Glossary', what: 'The seed’s terms, merged and alphabetical.' },
   { href: '/worksheet/', name: 'The worksheet', what: 'Walk one launch through the commit-point method (seed paper, Appendix A).' },
   { href: '/public-record/', name: 'The public record on supply', what: 'Lead times, power and contracts, from public sources (Appendix B).' },

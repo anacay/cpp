@@ -1,0 +1,33 @@
+---
+// Emerging topics: working notes on questions the field is still arguing
+// about. Each topic moves through a lifecycle: seed → working note → RFC →
+// folded into the paper or guide, linking back to its history.
+import Base from '../../layouts/Base.astro';
+import RfcHint from '../../components/RfcHint.astro';
+import { guide } from '../../lib/guide.mjs';
+const g = guide();
+const notes = g.pages.filter((p) => p.kind === 'note');
+---
+<Base title="Emerging topics" description="Working notes on capacity-planning questions the field is still arguing about: seeds, notes and open invitations." nav="notes">
+  <div class="wrap wrap--reading">
+    <div class="page-head">
+      <p class="draft-tag">Guide · draft for review</p>
+      <h1>Emerging topics</h1>
+      <p class="in-short guide-short"><em>Working notes on questions the field is still arguing about.</em></p>
+    </div>
+    <RfcHint />
+    <article class="prose reading-wrap">
+      <p>Some questions are too alive for the paper and too big for a comment thread. They live here, and each one moves through the same stages: a <strong>seed</strong> (the observation that started it), a <strong>working note</strong> (the question worked through, open for argument), a <strong>proposal</strong> under the change process, and finally a place in the paper or guide, linking back to its history. Notes are written as thinking in progress, not conclusions.</p>
+      {notes.map((page) => (
+        <>
+          <h2>{page.title}</h2>
+          <p><strong>Stage: working note.</strong> <a href={page.url}>Read the note</a> — {page.short}</p>
+        </>
+      ))}
+      <h2>In the queue</h2>
+      <p>Three more topics are at the seed stage, growing out of the same review conversations. Each appears here when its note is ready to be argued with.</p>
+      <h2>Join in</h2>
+      <p>Every note ends with where we're unsure, and each open question links to its <a href="https://github.com/anacay/cpp/discussions">discussion thread</a>. Disagreement is the point: a note only graduates when it has survived some.</p>
+    </article>
+  </div>
+</Base>
