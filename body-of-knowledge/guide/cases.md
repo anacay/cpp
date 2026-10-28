@@ -1,6 +1,6 @@
 ---
 title: Cases
-short: The seed paper's worked example told as a case, and the format to use when you write one of your own.
+short: The seed paper's worked example told as a case, a first problem-space case, and the format to use when you write one of your own.
 kind: across
 order: 22
 cadence: all
@@ -11,7 +11,7 @@ seed: 7, 8.4, Appendix A
 
 ## Why cases
 
-A framework tells you what to look for. A case shows what it looked like when it went wrong, and what each piece cost. Every case here uses one fixed format: Setting, The plan, What happened, Why, and Lessons learned. The format keeps cases comparable and keeps the lesson apart from the story.
+A framework tells you what to look for. A case shows what it looked like when it went wrong, and what each piece cost. Every case told from experience uses one fixed format: Setting, The plan, What happened, Why, and Lessons learned. The format keeps cases comparable and keeps the lesson apart from the story.
 
 ## Case 1: the launch that needed memory
 
@@ -64,6 +64,29 @@ The bill landed at $683,280, 30% over plan. A release of X had raised CPU per ca
 - Add a second driver when one dimension isn't priced. X added data stored, from an effective date, not retroactively.
 
 The method doesn't make the launch more accurate. It moves the hard question to the date it was needed, and gives every surprise an owner [argued]. It is untested (see [limits](limits.md)).
+
+## Problem-space cases
+
+Case 1 tells what happened. A problem-space case does something else: it sets out a whole planning problem, as an outside analyst could reconstruct it, and leaves the answers open. It is for practice and discussion, the way a business-school case is.
+
+Problem-space cases follow four rules:
+
+- **Public information only.** Nothing comes from anyone's private experience or an employer's internal data.
+- **A fictional company.** The company, its teams, its people and its events are invented. Team names are generic; how teams relate can follow the industry's real shape.
+- **Evidence labeled.** Every load-bearing claim says how it would be known: reported, inferred, speculated, or a fact about the wider industry. Speculation carries a falsifier.
+- **No quotes from a single company's material.** Paraphrase instead; further reading sits at the end.
+
+Because nothing private goes in, a problem-space case may resemble the industry it draws on. The anonymization checklist below protects accounts of what happened inside an organization; it applies in full to cases like Case 1.
+
+## Case 2: Popcorn Pajamas
+
+*A problem-space case. Popcorn Pajamas is a fictional company. All case studies are collected at [Case studies](/cases/).*
+
+Popcorn Pajamas is a global streaming service with one small planning team, nearly 20,000 caching appliances (Poppers) mostly housed inside other companies' networks, a public cloud in front of everything, and a production estate on its own calendar. Live sport, cloud games and a component shock are remaking its demand and supply at once. The case sets out sixteen decision-shaped problems, twenty causal chains and six stress scenarios for 2027.
+
+- [The case page](case-popcorn-pajamas.md): the situation in two minutes.
+- [The full case](case-popcorn-pajamas-full.md).
+- [How the practice approaches it](case-popcorn-pajamas-practice.md): each problem mapped to the seed paper, and seven places where the body of knowledge runs out.
 
 ## How to write a case
 

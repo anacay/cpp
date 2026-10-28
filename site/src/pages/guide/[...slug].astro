@@ -7,7 +7,7 @@ import { guide, renderGuide, seedLinks, neighboursOf, KINDS } from '../../lib/gu
 import { load, renderInline } from '../../lib/paper.mjs';
 
 export function getStaticPaths() {
-  return guide().pages.map((p) => ({ params: { slug: p.url.replace(/^\/guide\/|\/$/g, '') }, props: { file: p.file } }));
+  return guide().pages.filter((p) => p.kind !== 'case').map((p) => ({ params: { slug: p.url.replace(/^\/guide\/|\/$/g, '') }, props: { file: p.file } }));
 }
 const g = guide();
 const page = g.byFile.get(Astro.props.file);
@@ -17,7 +17,7 @@ const { prev, next } = neighboursOf(page);
 const c = load().config.community;
 const ctx = load();
 ---
-<Base title={page.title} description={page.short} nav="bok" commentable={{ name: `Guide: ${page.title}` }}>
+<Base title={page.title} description={page.short} nav="bok" commentable={{ name: `Guide: ${page.title}` }} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
   <div class="wrap wrap--reading">
     <div class="page-head">
       <p class="crumbs"><a href="/body-of-knowledge/">Body of knowledge</a> <span aria-hidden="true">›</span> <a href={`/body-of-knowledge/#${page.kind}`}>{KINDS[page.kind].label}</a></p>
