@@ -1,6 +1,6 @@
 # Release record: CPP R5
 
-Discoverability and canon errata. Discoverability (pass 2): real dates, an RSS feed and a citation block. Canon errata: a citation audit of the whole body of knowledge found wrong section credits, two version labels and three smaller inconsistencies, all corrected here. The seed paper's text is unchanged; it stays at v7.9.
+Discoverability and canon errata. Discoverability (pass 2): real dates, an RSS feed and a citation block. Canon errata: a citation audit of the whole body of knowledge found wrong section credits, two version labels, dropped evidence labels and smaller inconsistencies, all corrected here. The seed paper's text is unchanged; it stays at v7.9.
 
 | | |
 |---|---|
@@ -22,7 +22,7 @@ HOW_IT_GROWS routes small fixes ("corrections that match a cited source") to one
 - Articles carry published and modified dates in their metadata.
 - /about/ gains a "Cite it" block.
 
-**Canon errata (commit on branch `canon-errata-r5`).**
+**Canon errata (two commits on branch `canon-errata-r5`).**
 
 | Where | What changed | Why |
 | --- | --- | --- |
@@ -34,6 +34,11 @@ HOW_IT_GROWS routes small fixes ("corrections that match a cited source") to one
 | `CHARTER.md`, `guide/_SPEC.md` | The seed paper is version 7.9, not 7.6 | Stale labels; the seed edition is built from v7.9 |
 | `guide/_SPEC.md` | Post-launch feeds the next quarterly intake and, through it, the annual plan | Matches Section 9.1, Figure 37 and the post-launch page |
 | `guide/_SPEC.md` | One rule added: where a guide page and the seed differ, the seed governs until the guide is corrected | No canon file said which text wins |
+| `case-popcorn-pajamas-practice.md`, P3 | Shortfall tolerance now carries its label: proposed in Section 6.7 "as the author's exploration" | Section 6.7 calls the field "my exploration"; the note had dropped the label |
+| Same note, P13 | The bridge-count backtest now carries Section 10.2's label, "an analogy, not a result" | The note gave it as an instruction without the label |
+| Same note, P7 | Section 11's idea is given as "one way to think about it", for agent fleets; carrying it over to games is marked as the note's extension | The note presented the extension as Section 11's own content |
+| Same note, mechanism audit table | Mechanism 9's full name: "Cadence aligned to lead time and launch calendar" | The name was shortened |
+| `principles.md` | "Name the gap" gains its source line: Sections 6.1, 8.3 and 9.1 ("Saying no"), and mechanism 11 | It was the only principle with no source |
 
 **Found, not changed.** These need a decision, not a correction, and are logged for the editor:
 - Section 14 names six roles, while Figure 40 sets decision rights against a different set. This is already queued as paper edit 2, with the executive sponsor.
@@ -42,12 +47,16 @@ HOW_IT_GROWS routes small fixes ("corrections that match a cited source") to one
 - Mechanism 5's ledger columns and Figure 15's funnel steps differ, though both have seven entries.
 - Four evidence-label systems coexist (HOW_IT_GROWS, the paper's prose, Figure 48's ledger and the case tiers), with no mapping between them.
 - "The stable core" (30-day rule) is not yet defined, as the Charter itself notes.
+- "Firm" is used two ways. Section 10.1 and Figure 35's caption call an approval firm once supply has answered it with either branch. Figure 35's alt text and Figure 3's alt text keep "firm" for a dated commit, and call a named gap "capped issue". The seed text changes only in a paper edit.
+- Section 6.1 cites Section 10.1 for "capped issue", a term Section 10.1 doesn't use. This depends on the item above.
+- Mechanism 12 lists shortfall tolerance, and mechanism 13's indicator relies on the shortage budget, without the labels Sections 6.7 and 10.2 give them. The guide pages now carry the labels; the seed's table rows change only in a paper edit.
 
 ## Commits
 
 cpp (`anacay/cpp`):
 - `63bdf07`: "Discoverability: real dates, an RSS feed, and a citation block".
-- This commit: "Canon errata R5: section credits, version labels, one evidence label".
+- `4fec59c`: "Canon errata R5: section credits, version labels, one evidence label".
+- This commit: "Canon errata R5, second pass: labels carried into the practice note, one principle source".
 
 ## Checks (before deploy)
 

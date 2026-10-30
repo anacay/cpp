@@ -64,5 +64,6 @@ See it at work: [limits](limits.md).
 - The two claims: the seed paper's Sections 1, 5 and 6, and its one page.
 - Commit only what the lead time forces: Section 9.1 of the seed paper, building on hierarchical production planning [3] and sales and operations planning [23].
 - Every number has an owner, and agree the rules first: the owner column and notes of Sections 9.2 and 9.3.
+- Name the gap: Sections 6.1, 8.3 and 9.1 ("Saying no") of the seed paper, and mechanism 11 in Section 9.2.
 - Say what's unmeasured: Sections 8.6, 9.4 and 13.
 - Putting principles first, as short testable claims rather than values, is this guide's choice. [argued]
