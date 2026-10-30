@@ -218,6 +218,8 @@ The rest of the industry runs the same loop, mostly in silence, through supply-c
 
 Supply of legacy flash is set by the decommission schedule, not a purchase order. Keeping a platform longer cuts the harvest that feeds its own spares. Retiring one releases drives that may only fit the same generation. Supply and demand are coupled through the same lifecycle decisions (Inferred). The groups on this path, and their numbers, are in section 10; each optimizing its own number is the root of most problems below (Inferred).
 
+*Practice concepts this section touches: [Supply layers and lead times](concept-supply-layers-and-lead-times.md), [Buffers and reserves](concept-buffers-and-reserves.md), [Approval and allocation](concept-approval-and-allocation.md).*
+
 ## 5. Demand: four places a legacy drive can go
 
 It is tempting to frame legacy flash as a scheduling problem: find jobs that tolerate older drives. That is one of four sinks, and may not be the largest (Speculated). The other three are physical: repairs, upgrades and retirement.
@@ -268,6 +270,8 @@ Retirement is a real sink, not a failure. Some drives cost more to keep than the
 - **Resale value.** Used enterprise drives fetch more in a shortage. The disposition trade reports more residual value in used flash than a year ago, and a shift toward harvesting parts (Press, 2026). Retired-generation enterprise NVMe drives sold for about $80–160 per terabyte gross in the year to August 2026 (Press: dealer appraisals and listings; no price index exists). That is about 13–25% of the October new price. Net to a large seller is lower after disposition fees and bulk discounts (Unknown). Resale raises the cost of keeping a marginal drive (Inferred).
 - **Data security.** Drives that fail sanitization, or are dead, are destroyed. Kuantillion Cloud requires two independent verifications before a device leaves custody, and shreds on site on failure. Current standards have moved past shredding for flash: the revised federal guideline's FAQ calls it ineffective for medium- and high-security flash, given its data density. The international standard deprecates it; melting or incineration is the listed destruct method (Third party). So assurance for a dead drive rests on keys kept off the drive, plus a listed destruct method (Inferred). What share of the fleet's flash ever held unencrypted data is Unknown.
 
+*Practice concepts this section touches: [Demand and declarations](concept-demand-and-declarations.md), [Buffers and reserves](concept-buffers-and-reserves.md).*
+
 ## 6. Supply: the gates
 
 A legacy drive is only supply if it can reach a sink. Eleven gates sit in the way. They are concurrent constraints, not a sequence, though sanitization comes first in time, because nothing moves until data is dealt with (Inferred). Each removes some drives, and each has its own owner and cost.
@@ -305,6 +309,8 @@ The field studies below measure first lives, at other operators and researchers.
 - **One operator's bad quarter.** Out-of-warranty legacy PCIe drives were 22% of one operator's drives but 77% of its failures in a quarter. Each failed card meant replacing the host chassis, which couldn't take a modern part (Third party). It is one quarter at one operator, confounded with model, firmware and warranty (Inferred).
 - **Second life is unmeasured.** One cloud's reused-drive design assumed reused drives fail no more than new. It reported lower or equal failure rates for its reused parts before redeployment, without the rates, and most drives kept over half their rated erase cycles after seven years (Third party). That is a first-life observation carried into an assumption. Removal, shipping and reinsertion may restart the infancy clock; nobody has measured it (Speculated).
 - **The read.** First-life studies disagree on late-life hazard, and two large ones saw no end-of-life rise. Firmware, model and error history dominate age. Second-life hazard, including any early failures that handling causes, is unmeasured (Unknown). No operator publishes second-life failure rates, requalification yield or sanitization yield. This is the case's single most load-bearing unknown.
+
+*Practice concepts this section touches: [Supply layers and lead times](concept-supply-layers-and-lead-times.md), [Commit points](concept-commit-points.md).*
 
 ## 7. The money: what the flow is worth
 
@@ -411,6 +417,8 @@ Most rows are Arithmetic on tagged inputs. Read every row as an order of magnitu
 
 **Together.** A program that prices only one of these numbers will be outbid by the team optimizing another (Inferred).
 
+*Practice concepts this section touches: [Three prices](concept-three-prices.md), [Approval and allocation](concept-approval-and-allocation.md).*
+
 ## 8. Two futures, and the signposts between them
 
 **What Kuantillion Cloud has said in 2026.** It calls itself supply constrained. It set 2026 capital guidance at $175–185 billion in February and raised it twice, to $195–205 billion by July (February and April figures Press). In October it said spending will rise significantly in 2027, and that it began using third-party compute at the end of the third quarter (Press). No statement about flash, like the one about memory, has been found (Unknown).
@@ -453,6 +461,8 @@ A third path: memory markets whipsaw (Third party history). A glut after this sh
 
 **The floor question.** The spares sink is often called the program's floor. Vendors rarely resume discontinued small SKUs, even when bits are plentiful (Speculated: consistent with 2026 behavior, not a documented rule, and third-party makers serve some legacy niches). The floor erodes from the demand side instead. It lasts only while old platforms do, and fail-in-place substitutes for spares at any price (Inferred). Spares are the floor and workloads the option on Path A, with the floor slowly sinking.
 
+*Practice concepts this section touches: [Commit points](concept-commit-points.md), [Supply layers and lead times](concept-supply-layers-and-lead-times.md).*
+
 ## 9. External constraints
 
 These sit outside Kuantillion Cloud's control but shape every answer.
@@ -465,6 +475,8 @@ These sit outside Kuantillion Cloud's control but shape every answer.
 - **Accounting.** Six-year depreciation was set in 2023 (Reported) and reaffirmed in October 2026 (Press). A drive past its horizon has little book value but full replacement value in a shortage. Zero-book-cost reuse flatters a program unless a transfer price stands in, and held inventory risks write-down under Path B (Inferred). Peers sit at five to six years; none changed in 2026 (Press).
 - **Trade and construction.** A 25% US tariff on a narrow class of advanced chips started in January 2026, exempting US data-center use and US repairs (Press; Third party). A broader phase that could cover servers had no rate or date by October. Hardware already in the country is insulated (Inferred). One energy-intelligence firm expects 30–50% of large data-center capacity due in 2026 to slip, so existing machines carry demand longer (Press; Inferred).
 - **Secondary market.** Keeping a drive competes with selling it into real markets. North American used data-center equipment was about $16 billion in 2024 (Reported, citing a third party). Data-center asset disposition was about $14 billion in 2026 (Press, analyst). SSDs are its fastest-growing asset class. Refurbishers pay more for SSDs, and enterprises keep devices longer (Press): the hyperscaler playbook, retailed down-market (Inferred).
+
+*Practice concepts this section touches: [Supply layers and lead times](concept-supply-layers-and-lead-times.md), [Three prices](concept-three-prices.md).*
 
 ## 10. The planning organization as part of the problem
 
@@ -537,6 +549,8 @@ The same search across the industry read about forty postings from about twenty 
 ### 10.5 What the organization adds to the problem
 
 The decisions in section 11 aren't constructed problems. They are, nearly one for one, what the industry pays six-figure salaries to have solved (Inferred). Forecasting and de-duplication feed P1 and P6. Platform lifecycle is P2; matching and fungibility, P3; spares and their working capital, P4. Supply actions and upgrades are P5, allocating scarce capacity P6, reverse logistics P7. Moving from ad hoc to repeatable is P8.
+
+*Practice concepts this section touches: [The operating mechanisms](concept-operating-mechanisms.md), [People: brokering the handshake](people.md), [The work and the path](the-work-and-the-path.md).*
 
 ## 11. Problem decomposition
 
@@ -621,6 +635,8 @@ It breaks into eight decisions and two sub-decisions carried inside them: P2a's 
 ![P1, one record per drive, feeds every other decision. P2, when the host goes, feeds P3 workloads, P4 spares, P5 upgrades and builds, and P7 the reverse pipeline. P2a, the wear policy, shapes P2 years later. P4 spares and P7 the pipeline depend on each other. P3, P4, P5 and P7 all feed P6, allocating the harvest, which feeds P8, adoption. Two slower loops run backwards: drive values from P6 flow back to P2, and adoption in P8 flows back to P3.](figures/fleet-flash-dependencies.svg)
 
 *Dependency map of the eight decisions and the wear sub-decision. Solid arrows feed. Dashed arrows are slower feedback or a slow link; two of them close loops (P6 to P2, P8 to P3).*
+
+*Practice concepts this section touches: [Approval and allocation](concept-approval-and-allocation.md), [Demand and declarations](concept-demand-and-declarations.md), [The operating mechanisms](concept-operating-mechanisms.md).*
 
 ## 12. Cross-domain causal chains
 
