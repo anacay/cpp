@@ -789,7 +789,7 @@ Signs of Path B, such as flattening contract prices or falling used prices, move
 - **[S4. Decommissions slip while spares demand rises](case-kuantillion-cloud-full.md#s4-decommissions-slip-while-spares-demand-rises).** [P6, the commitment question](#p6-the-commitment-question): the booking rule; and [P4](#p4-size-and-source-legacy-spares): push out, don't cancel.
 - **[S5. The commitments prove firm and stockouts persist](case-kuantillion-cloud-full.md#s5-the-commitments-prove-firm-and-stockouts-persist).** [Three prices](#three-prices): the anchor fork and the capacity anchor; and P6's ranking by shadow price.
 - **[S6. A rival announces flash reuse at scale](case-kuantillion-cloud-full.md#s6-a-rival-announces-flash-reuse-at-scale).** [P6](#p6-allocate-the-harvest-across-sinks): the program moves its own market.
-- **[S7. Low-endurance flash meets write-heavy work](case-kuantillion-cloud-full.md#s7-low-endurance-flash-meets-write-heavy-work).** [P2a](#p2a-the-wear-sub-decision): the wear ratio by cohort. The price across two lives is still a gap ([where the theory runs out](#where-the-theory-runs-out), item 6).
+- **[S7. Low-endurance flash meets write-heavy work](case-kuantillion-cloud-full.md#s7-low-endurance-flash-meets-write-heavy-work).** [P2a](#p2a-the-wear-sub-decision): the wear ratio by cohort. The price across two lives is adopted from use-based depreciation but not yet fitted ([where the theory runs out](#what-the-practice-lacks-but-the-literature-has-solved-adopt-it)).
 
 ## Where this comes from
 
