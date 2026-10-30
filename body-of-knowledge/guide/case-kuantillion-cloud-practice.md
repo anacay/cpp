@@ -570,7 +570,7 @@ Two lines of the paper are new to this decision. The shortage rule: "Agree it in
 
 **Where they pull against each other.** The shadow price ranks claims, but it can't be computed directly across unlike units. The internal rate charges sinks, but it isn't a ranking. And holding drives for a better claim conflicts with releasing them before prices fall.
 
-**The answer: rank by next-best source.** Value each claim at the cost of that sink's next-best source on that date [argued]:
+**The answer: priority classes, priced within class.** The shortage rule sets the classes, and spares for platforms with no other source sit in the top one. Within a class, value each claim at the cost of that sink's next-best source on that date [argued]:
 
 | Sink | Next-best source, and its cost |
 |---|---|
@@ -579,7 +579,7 @@ Two lines of the paper are new to this decision. The shortage rule: "Agree it in
 | Builds and upgrades | The cost of the new machine the drives displace |
 | Exit | Net resale, after the discount for unseen history and pipeline cost |
 
-Score the rule after two cycles. Under scarcity this approximates the shadow price at each sink's binding dimension. It avoids converting units nobody agreed on.
+Score the rule after two cycles. It is a rule, not a computed shadow price: the spares row points at a qualitative bridge table, and the classes are strict. Its value is that it avoids converting units nobody agreed on.
 
 **The shortage rule.** Agree it before the shortage. Our proposal: spares for platforms with no other source go short last, because a missed repair has no bridge [argued].
 
