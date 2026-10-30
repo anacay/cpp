@@ -42,10 +42,11 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 The planner sits in the middle, "usually owning no capacity and no budget" (Section 10). So every change below is a proposal to the forum and finance. Its standing comes, in the paper's experience, "from the number and the team's own signature" (Section 9.1). See [people](people.md) for how that works without a budget.
 
-**The groups.** This table extends the case's team map. The first nine rows are the case's; the rest are groups the case names elsewhere, or that this plan defines [argued].
+**The groups.** This table extends the case's team map. After the sponsor, the next nine rows are the case's; the rest are groups the case names elsewhere, or that this plan defines [argued].
 
 | Group | Role in this plan |
 |---|---|
+| The sponsor: an infrastructure or supply-chain vice president | Names the program lead; chairs the forum; clears data access; funds the pipeline until the landing rule credits it |
 | Capacity planning and forecasting ("planning") | Runs the program as broker; keeps the drive record and the [fulfillment](/glossary/#term-fulfillment) ledger; runs the forum |
 | Fleet provisioning | Supply answers for harvest; state and location fields; systems of record |
 | Flash platform engineering | Condition, qualification and firmware fields; the wear price; grades |
@@ -69,6 +70,7 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 
 | Decision | R | A | S | C | Change |
 |---|---|---|---|---|---|
+| Program scope, staffing and budget | Planning | The sponsor | Finance | Every group | **Change:** new; a broker still needs a principal |
 | P1 Drive record | Each field's performer | Planning keeps the record | Field owners | Drive security | **Change:** unowned today |
 | P2 Keep, redeploy or harvest | Lifecycle transitions | The forum decides the economics of every keep past plan | Finance confirms the accounting effect | Fleet provisioning, for drive values | **Change:** drive values a required input |
 | P2a Wear price | Flash platform engineering | Flash platform engineering | Finance | Storage systems | **Change:** unowned today |
@@ -108,7 +110,18 @@ Assigning them to these groups is this plan's reading [argued]. The ratio and th
 
 ## 3. The first 30, 60 and 90 days
 
-Day 1 is the day the program lead is named. Each action has one owner and one output. Owners and days are proposals [argued].
+Day 1 is the day the sponsor names the program lead. Each action has one owner and one output. Owners and days are proposals [argued].
+
+### Days 1–5: stand up the program
+
+| Day | Action | Owner | Output |
+|---|---|---|---|
+| 1 | Name the program lead, with this page as the remit | The sponsor | A named lead |
+| 1–2 | Request access for the day-10 and day-20 pulls: harvest log, flash deployed, decommission schedule, contracts | Planning, through the sponsor | Access granted by day 7, or escalated |
+| 1–2 | Book the interviews, group by group (the interview guide below) | Planning | A schedule for days 2–5 |
+| 2 | Open a RAID log: risks, assumptions, issues and decisions | Planning | The log, reviewed weekly |
+| 3 | Set the status cadence: a weekly program review and a fortnightly note to the sponsor | Planning | Both on the calendar |
+| 5 | Ask for headcount and budget to day 90: the lead's team, the record build, pipeline surge options | Planning, to the sponsor | A signed ask, or a named gap |
 
 ### Days 1–5: does a program already exist?
 
@@ -533,6 +546,9 @@ The case names public signposts between two futures. Path A stays tight through 
 | Incentive drift | Landing rule; a second technician metric | Reuse at pressured sites | Planning |
 | Wear spent blindly | Endurance by cohort, quarterly | Endurance at harvest | Flash platform engineering |
 | Fighting the last shortage | Quarterly rate card; release trigger | Contract prices flattening | The forum |
+| Data access late | Access requested on day 1, through the sponsor | Day-10 pulls not started by day 7 | Planning |
+| Legal gates the contracts | Legal consulted on the read from day 1 | Contract read not started by day 15 | Supply chain |
+| Interviewees unavailable | Interviews booked on day 1; a delegate per group | Fewer than half held by day 5 | Planning |
 
 **The cohort cap** [argued]. Name each cohort as a shared driver: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). A [cohort](/glossary/#term-cohort) is one model, one firmware and one power-on-hour band.
 - **The rule.** No redundancy group holds more members of one cohort than its failure tolerance minus one.
@@ -642,7 +658,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - **Signing.** Finance confirms the accounting effect; the forum decides the economics, for every keep past plan.
 
 **Forum charter** ([mechanism 10](concept-operating-mechanisms.md); [forum](/glossary/#term-forum)) [argued]
-- Members: a named executive chair; planning, which runs it; finance; supply; one seat per sink
+- Members: the sponsor, as chair; planning, which runs it; finance; supply; one seat per sink
 - Remit: the ranked list of harvest claims across the four sinks, the cut line, and the decision log with overrides and brokered trades
 - Rules it holds: the shortage rule; the ranking unit; the landing rule, which it ratifies
 - Cadence: monthly, plus the quarterly supply review
