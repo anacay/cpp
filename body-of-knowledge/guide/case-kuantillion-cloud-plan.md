@@ -142,7 +142,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 20 | Measure flash use by resource and site | Storage systems | The stranded stock, sized |
 | 25 | Compute both value anchors per zone (experiment 1) | Planning, with finance | The anchor, declared for Gate 1 |
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
-| 30 | Charter the forum to ratify two rules: shortage and landing | Planning | A charter; both rules drafted |
+| 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
 | 30 | Gate 1 decision | Planning and finance | Go or stop, with a decision note |
 
 ### Days 31–60: counter-arguments and the record
@@ -197,7 +197,7 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 - **Exit criteria.**
   - The class chosen.
   - The anchor declared.
-  - The forum chartered to ratify two rules: the shortage rule, and the landing rule that planning proposes and finance signs.
+  - The forum chartered for two rules: it agrees the shortage rule, and it ratifies the landing rule that planning proposes and finance signs.
 - **Artifacts.**
   - Contract lines on the supply plan of record ([mechanism 11](concept-operating-mechanisms.md)).
   - The stranded line, owned ([mechanism 4](concept-operating-mechanisms.md)).
