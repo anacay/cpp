@@ -161,7 +161,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 
 | By day | Action | Owner | Output |
 |---|---|---|---|
-| 70 | Sign the spares shortage-to-idle ratio per platform | Finance and tier owners | A signed ratio |
+| 70 | Sign the spares shortage-to-idle ratio per platform and repair-urgency segment | Finance and tier owners | A signed ratio per segment |
 | 70 | Add or confirm the triage sequence before any SSD pull: slot check, cable swap, reboot, re-test | Machine-health engineering | The sequence confirmed, or live at two sites |
 | 75 | Staff the pipeline to the median of expected retirements, with surge crews on contract | Reverse logistics | A staffed rate and booked slots |
 | 80 | Put every planned decommission on the supply register as a dated step, both ways | Fleet provisioning | Hosts out, drives in |
@@ -389,8 +389,17 @@ The thresholds are [unmeasured]. For example, a wear threshold might be half of 
 - The pipeline counts as a recoverer, so it gets credit for part of the capital it saves.
 - Planning proposes it, finance signs it and the forum ratifies it (mechanism 8), before any recovery is counted.
 
+**Spares cover rule** [argued]. Cover comes from the signed shortage-to-idle ratio, one per repair-urgency segment ([cover point](/glossary/#term-cover-point)).
+- A ratio of k to 1 sets cover at the k ÷ (k + 1) quantile of demand over the resupply time.
+- Host-down platforms, with no fail-in-place, get a high ratio. Tiers that can fail in place get a low one, because failing in place is their bridge.
+- For example, 200,000 drives failing at 1.5% a year, with 30 days to resupply, average about 247 failures in that time (illustrative).
+- Cover is then about 246 drives at 1 to 1, 260 at 4 to 1, and 273 at 19 to 1.
+- At 260, the fill rate is about 80%, and about 1.75 drives are on backorder on average.
+- **Failures come in batches.** A firmware fault at a fixed age fails a cohort together. At a variance twice the mean, the 80% and 95% pools become 265 and 284. At four times, 273 and 300.
+- So size a firmware-cliff scenario from the case's known fault ages ([full case, section 6.1](case-kuantillion-cloud-full.md#6-1-what-is-actually-known-about-second-lives)). Size the pool and the cohort cap together.
+
 **Shortage rule** [argued]. "Agree it in the forum beforehand; supply carries it out. Written during the shortage, it's a negotiation. And don't split a shortage pro rata" (Section 9.3). Who goes short, last to first:
-1. Spares for platforms with no other source go short last, because a missed repair has no bridge.
+1. Spares for host-down platforms with no other source go short last, because a missed repair has no bridge.
 2. Spares for platforms that new drives can still serve.
 3. Claims backed by a signed build program.
 4. Workload claims, ranked by next-best-source value.
@@ -408,7 +417,7 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 |---|---|---|---|
 | Purchases avoided | Per TB in the plan of record, under the declared anchor | Rises while stockouts last | Reported without the anchor, or with no displaced purchase |
 | Net value over exit per harvested drive | Per drive harvested: reuse value after pipeline cost and yield, minus what exit would have paid | Positive by cohort | Negative for a cohort two quarters running |
-| Spares fill rate | Per repair, by platform | At or above the signed cover point | Fill below cover while another sink holds idle harvest |
+| Spares fill rate | Per repair, by platform and segment | At or above the signed cover point | Fill below cover while another sink holds idle harvest |
 | Time to repair, old platforms | Per repair | Not rising | Rising as harvest is diverted elsewhere |
 | Stranded flash | Share of installed flash | Falls after the reclaim pilot | Flat after pooling |
 | Harvest-to-redeploy time | Per drive harvested | Falls quarter on quarter | Harvested-but-not-graded drives aging |
@@ -418,14 +427,14 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 | Embodied carbon preserved | Per drive redeployed | Reported with its additionality | Claimed where no purchase was displaced |
 | Harvest promised against actual | Per retirement, by stage | The gap narrows | No narrowing after two cycles |
 | Last-time buys after their commit point | Per last-time buy | Zero | Any order placed late |
-| Bridges for spares | Per platform cohort per year | About one in five at 80% cover | Far fewer two years running, or far more |
+| Expected backorders | Per platform cohort, at any moment | At or below the level the signed ratio implies | Above it two quarters running |
 | Reconciliation gaps | Per off-host state change | Zero, held | Any gap that persists |
 
 **Two of the tests follow the paper's own.**
 - For mechanism 11: "the gap between promised and actual delivery dates narrows" (Section 9.2).
 - For mechanism 13: "fewer orders are placed after their commit point, and their bridge premiums shrink" (Section 9.2).
 
-**The bridge count is an analogy.** At 80% cover, "about one launch in five should need a bridge at that layer" (Section 10.2). The paper calls this "an analogy, not a result" (Section 10.2). Here a platform cohort stands in for a launch. For example, 20 platform cohorts should need about four bridges a year (illustrative).
+**Why not count bridges.** Section 10.2's "about one launch in five should need a bridge" is for one-shot buys. A spares pool is replenished, so fill rate and backorders are the right tests.
 
 ## 8. Experiments
 
