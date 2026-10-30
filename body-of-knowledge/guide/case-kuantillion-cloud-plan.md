@@ -49,7 +49,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 1. Within one week, an answer to whether a program already exists, or was tried and dropped.
 2. Within 30 days, a dollar test of whether the program pays, and its scope: spares continuity, mixed, or supply strategy. Beside it, the value anchor read from the flash contracts.
-3. Within 90 days, the rules signed in advance, spares and the reverse pipeline staffed to a signed plan, and spares allocation running in a standing [forum](/glossary/#term-forum). Wider allocation follows once the drive record is live (G3b).
+3. Within 90 days, the rules signed in advance, spares and the reverse pipeline staffed to a signed plan, and spares allocation running in a standing [forum](/glossary/#term-forum). Wider allocation follows once the drive record is live (G3b, the second half of [gate G3](#gate-3)).
 4. From week 2, in parallel, a track on the stranded flash already installed. It needs no sanitization, custody or qualification, and it may be the larger prize.
 5. From G4, capacity delivered: TB to each sink per quarter, by scope, declared in advance and scored promised against actual.
 6. Over the following year, a pilot of reused flash in tiers that absorb device loss, and experiments that test the case's eight stated assumptions.
@@ -57,7 +57,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 **The clock against the shortage** [argued]. Suppose day 1 is 2 November 2026 (illustrative). Then G1 falls on 1 December, G4 on 30 January 2027, and G5 no earlier than 30 April 2027.
 - Under the case's Path B, the shortage eases from late 2027. Reused flash would then reach workloads with about two quarters of shortage left.
 - Harvest value falls as that window closes. At a 50% yearly price fall, it loses about 16% per quarter of delay; at 10%, under 3% (illustrative). So the gates that don't depend on each other run in parallel: spares, the pipeline, the record build and the stranded track.
-- Under Path A, tight through 2028, the same calendar leaves about six quarters.
+- Under Path A, tight through 2028, the same calendar leaves nearly seven quarters.
 
 **What it rests on.** Five ideas from the seed paper carry it.
 
@@ -104,19 +104,19 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 
 | Decision | R | A | S | C | Change |
 |---|---|---|---|---|---|
-| Program scope, staffing and budget | Planning | The sponsor | Finance | Every group | **Change:** new; a broker still needs a principal |
-| P1 Drive record | Each field's performer | Planning keeps the record | Field owners | Drive security | **Change:** unowned today |
-| P2 Keep, redeploy or harvest | Lifecycle transitions | The forum decides the economics of every keep past plan | Finance confirms the accounting effect | Fleet provisioning, for drive values | **Change:** drive values a required input |
-| P2a Wear price | Flash platform engineering | Flash platform engineering | Finance | Storage systems | **Change:** unowned today |
-| P3 Reused-flash class | Storage systems | Storage systems | Each tier owner accepts, with its evidence bar | Reliability engineering | **Change:** acceptance becomes signed |
-| Stranded line | Storage systems | Storage systems, as service owner | Finance keeps score | Fleet provisioning; planning | **Change:** new line |
-| P4 Spares ratio | Spares planning | Finance and tier owners (product, in the seed's terms) jointly | Finance and tier owners | Drive supply, for idle cost and liability terms | **Change:** signed in advance |
-| P5 Build programs | Fleet shaping and hardware engineering | Same, as declaring team | Declaring team signs the [change bands](/glossary/#term-change-band) | Drive supply and planning set the bands | **Change:** programs declared |
-| P6 Allocation | Planning | The forum, run by planning | Finance, on the rate card | Every sink | **Change:** unowned today |
-| P6 Commitment | Fleet provisioning | Fleet provisioning, answering each claim with a dated commit or a named gap | Finance signs the who-pays default and its exceptions | Planning | **Change:** never firm before supply answers |
-| P7 Pipeline rate | Reverse logistics with data-center operations | Reverse logistics | Drive security, per erasure | Spares planning | **Change:** staffed to a signed plan |
-| P8 Landing rule and metrics | Planning proposes | The forum ratifies | Finance signs | Every group | **Change:** from leadership in general to the forum |
-| Risk budget | Reliability engineering | Reliability engineering, for the cohort cap | Finance, for the incident bound; tier owners, for their bars | Planning | **Change:** new |
+| Program scope, staffing and budget | Planning | The sponsor | Finance | Every group | new; a broker still needs a principal |
+| P1 Drive record | Each field's performer | Planning keeps the record | Field owners | Drive security | unowned today |
+| P2 Keep, redeploy or harvest | Lifecycle transitions | The forum decides the economics of every keep past plan | Finance confirms the accounting effect | Fleet provisioning, for drive values | drive values a required input |
+| P2a Wear price | Flash platform engineering | Flash platform engineering | Finance | Storage systems | unowned today |
+| P3 Reused-flash class | Storage systems | Storage systems | Each tier owner accepts, with its evidence bar | Reliability engineering | acceptance becomes signed |
+| Stranded line | Storage systems | Storage systems, as service owner | Finance keeps score | Fleet provisioning; planning | new line |
+| P4 Spares ratio | Spares planning | Finance and tier owners (product, in the seed's terms) jointly | Finance and tier owners | Drive supply, for idle cost and liability terms | signed in advance |
+| P5 Build programs | Fleet shaping and hardware engineering | Same, as declaring team | Declaring team signs the [change bands](/glossary/#term-change-band) | Drive supply and planning set the bands | programs declared |
+| P6 Allocation | Planning | The forum, run by planning | Finance, on the rate card | Every sink | unowned today |
+| P6 Commitment | Fleet provisioning | Fleet provisioning, answering each claim with a dated commit or a named gap | Finance signs the who-pays default and its exceptions | Planning | never firm before supply answers |
+| P7 Pipeline rate | Reverse logistics with data-center operations | Reverse logistics | Drive security, per erasure | Spares planning | staffed to a signed plan |
+| P8 Landing rule and metrics | Planning proposes | The forum ratifies | Finance signs | Every group | from leadership in general to the forum |
+| Risk budget | Reliability engineering | Reliability engineering, for the cohort cap | Finance, for the incident bound; tier owners, for their bars | Planning | new |
 
 Three rights come straight from the seed paper's list (Section 9.2):
 
@@ -478,7 +478,7 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 - **Internal sinks:** crypto-erase, with custody unbroken from host to new host.
 - **Exit:** purge, then verify and validate each lot before it leaves custody.
 - **Both:** the standing read-back rule under scenario S3, per tool × firmware × model.
-- **Destruction:** shredding is deprecated for flash. Use a listed destruct method, such as melting, and rely on keys held off the drive.
+- **Destruction:** current standards have moved past shredding for flash; the revised federal guideline's FAQ calls it ineffective for medium- and high-security flash. Use a listed destruct method, such as melting or incineration, and rely on keys held off the drive.
 - Price the pipeline separately for each path, since exit costs more per drive.
 
 **Landing rule** [argued] ([landing rule](/glossary/#term-landing-rule)).
