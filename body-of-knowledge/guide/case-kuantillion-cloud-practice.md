@@ -540,15 +540,15 @@ The stranded stock is sized at the same time, on its own line. Its go or no-go i
 
 ### The decision gates, in brief
 
-Seven decision gates, G0 to G6, run the program. They are not the case's eleven technical gates, which a drive must clear; these are points where the program decides. Each opens only on its evidence, and the table copies the plan's. The plan's [gates](case-kuantillion-cloud-plan.md#4-the-gates) give each one's entry, exit, artifacts and owner.
+Seven decision gates, G0 to G6, run the program. They are not the case's eleven technical gates, which a drive must clear; these are points where the program decides. Each opens only on its evidence, and the table copies the plan's. The plan's [gates](case-kuantillion-cloud-plan.md#gate-0) give each one's entry, exit, artifacts and owner.
 
 | Decision gate | Evidence to enter | The work | What it licenses |
 |---|---|---|---|
 | G0 | A named program lead | Interviews: does a program exist, or was it declined? | Design, an audit, or a stop |
-| G1 | G0 reads absent, or a decline that no longer holds | The dollar test and the scope ratio; the stranded stock; contracts into the register; the capacity anchor's inputs | The scope and anchor declared; the [forum](/glossary/#term-forum) chartered to agree the [shortage rule](/glossary/#term-shortage-rule) and ratify the [landing rule](/glossary/#term-landing-rule) |
+| G1 | G0 reads absent, or a decline that no longer holds | The dollar test and the scope ratio; the stranded stock; contracts into the register; the capacity anchor's inputs; the pipeline rate on the commit-point map | The scope and anchor declared; the purchase plan frozen as the savings baseline; the [forum](/glossary/#term-forum) chartered to agree the [shortage rule](/glossary/#term-shortage-rule) and ratify the [landing rule](/glossary/#term-landing-rule) |
 | G2 | G1 says go | Count qualification backlog and solver categories; read decommission records by branch; check whether the solvers reach physical devices | A tier cap; the redeploy-whole test |
-| G3 | G2 exit | An owner for each field, off-host first; each handoff defined; reconciliation with the erasure log | A record every decision can cite; no move on an open reconciliation gap |
-| G4 | G3 exit | Decommissions on the register; spares ratio signed; pipeline staffed; the forum ranking harvest; the risk budget | Allocation: every claim answered and each tested drive pegged |
+| G3 | G1 says go; the build doesn't wait for G2 | An owner for each field, off-host first; each handoff defined; the off-host states built; reconciliation with the erasure log | G3a, designed: a record every decision can cite. G3b, live: drives can move between sinks |
+| G4 | G3a exit, with G3b dated | Decommissions on the register; spares ratio signed; pipeline staffed to the signed rate; the forum ranking harvest; the risk budget | Allocation: every claim answered and each tested drive pegged; beyond spares, after G3b |
 | G5 | G4 exit, and the tier cap | A pilot cohort in caches and replicated tiers; build programs declared | A reused-flash class; a substitution table |
 | G6 | A second-life value from the pilot | The wear price registered; endurance used reported by cohort | The wear price on the rate card |
 
