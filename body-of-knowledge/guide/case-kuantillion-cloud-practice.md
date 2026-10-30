@@ -289,7 +289,7 @@ Burn-in comes before any grade 1 placement, with its yield logged. Infant mortal
 
 Each segment gets its own [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio), signed in advance. For example, 19 : 1 for host-down platforms covers 95%, and 1 : 1 for fail-in-place tiers covers 50% (illustrative). That is what the [shortage rule](/glossary/#term-shortage-rule)'s *spares go short last* means in numbers: high cover where there is no bridge, low cover where fail-in-place is the bridge.
 
-*Second, size the test-and-ship leg on true failures.* Where pulls include healthy drives, read that as intake bias and correct it before sizing. Take one installed cohort of 200,000 drives failing at 1.5% a year (illustrative). That is 3,000 true failures, about 8.2 a day. The case cites Palm's theorem: stock in resupply depends on the mean turnaround, given untested stock on hand to draw from.
+*Second, size the test-and-ship leg on true failures.* Where pulls include healthy drives, read that as intake bias and correct it before sizing. Take one installed cohort of 200,000 drives failing at 1.5% a year (illustrative). That is 3,000 true failures, about 8.2 a day. The case cites Palm's theorem and its extension by Feeney and Sherbrooke (1966): stock in resupply depends on the mean turnaround, given untested stock on hand to draw from.
 
 | Turnaround | Mean in resupply | 80% cover | 95% cover | 95% cover, variance twice the mean | 95% cover, four times |
 |---|---|---|---|---|---|
