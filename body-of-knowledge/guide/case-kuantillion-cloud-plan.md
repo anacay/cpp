@@ -15,7 +15,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 **How to read the labels.** A quote with a Section is the seed paper's own text. Rules this plan adds are marked [argued]. Quantities nobody has published are [unmeasured]. Every number is illustrative unless the case tags it otherwise. Every owner and date is a proposal, to be adjusted to the teams you find. The seed paper is "a practitioner synthesis, not a model, and untested" (Abstract), and so is this plan.
 
-## 1. What this plan delivers, and the decision it serves
+## 1. What this plan delivers, and the decision it serves {#delivers}
 
 **The situation.** Kuantillion Cloud runs a hyperscale fleet. It retires millions of components a year, over 3 million of them drives in 2024. It also holds older flash idle inside running machines. New enterprise flash now costs three to four times last year's price, and next year's supply is largely pledged. The [full case](case-kuantillion-cloud-full.md) sets this out.
 
@@ -45,7 +45,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 **What it doesn't do.** It doesn't settle questions the practice can't yet answer. The [Second lives](note-second-lives.md) working note holds those: supply that is a byproduct, the condition of a drive as a dimension of supply, and exit as a sink.
 
-## 2. Roles and decision rights
+## 2. Roles and decision rights {#roles}
 
 The planner sits in the middle, "usually owning no capacity and no budget" (Section 10). So every change below is a proposal to the forum and finance. Its standing comes, in the paper's experience, "from the number and the team's own signature" (Section 9.1). See [people](people.md) for how that works without a budget.
 
@@ -116,7 +116,7 @@ Assigning them to these groups is this plan's reading [argued]. The ratio and th
 
 **Seams.** Hosts and harvest sit on seam 3, between planning and supply. Keeping hosts, and the split between capital and operating budgets, sit on seam 2, between planning and finance. Grades and wear sit on seam 1, between product and platform (Section 10.1). Mapping them this way is this plan's reading.
 
-## 3. The first 30, 60 and 90 days
+## 3. The first 30, 60 and 90 days {#first-90-days}
 
 Day 1 is the day the sponsor names the program lead. Each action has one owner and one output. Owners and days are proposals [argued].
 
@@ -162,14 +162,14 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 10 | Pull flash deployed, in TB, by quarter | Fleet provisioning, with finance | The materiality denominator |
 | 10 | Pull the decommission schedule with stage dates | Lifecycle transitions | Retirements, staged |
 | 10 | Start the stranded-flash track: measure flash use by resource and site | Storage systems | The stranded stock, sized as a range |
-| 14 | Compute the materiality ratio, as a scope descriptor (experiment 3) | Planning | A proposed scope, from the table under G1 |
-| 20 | Read every flash contract's cancel, push-out and volume terms into the supply register (experiment 2) | Supply chain, with finance and legal | Mechanism 11's contract lines |
+| 14 | Compute the materiality ratio, as a scope descriptor ([materiality test, experiment 3](#experiments)) | Planning | A proposed scope, from the table under G1 |
+| 20 | Read every flash contract's cancel, push-out and volume terms into the supply register ([contract read, experiment 2](#experiments)) | Supply chain, with finance and legal | Mechanism 11's contract lines |
 | 20 | Read the resale and recycling contracts beside them: prices, fees, minimum volumes | Supply chain, with reverse logistics | Net resale by cohort, as the contracts pay it |
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
-| 25 | Compute both value anchors per zone, measuring the drive's attribution share (experiment 1) | Planning, with finance | The anchor, declared for G1 |
-| 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
+| 25 | Compute both value anchors per zone, measuring the drive's attribution share ([value anchors, experiment 1](#experiments)) | Planning, with finance | The anchor, declared for G1 |
+| 25 | Re-test a sample of pulled drives at one site ([pull re-test, experiment 7](#experiments), starts) | Machine-health engineering | A first healthy share |
 | 30 | Write the accounting memo for G1 | Finance: the controller | A signed memo |
-| 30 | Start the reclaim pilot on one tier (experiment 5) | Storage systems | Pooling live on one tier |
+| 30 | Start the reclaim pilot on one tier ([reclaim pilot, experiment 5](#experiments)) | Storage systems | Pooling live on one tier |
 | 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
 | 30 | G1 decision: the dollar test, then the scope, and the clock re-read against the signposts | Planning and finance | Go or stop, with a decision note |
 | 30 | Put the pipeline rate on the commit-point map, and surge crews on [option](/glossary/#term-option) | Reverse logistics, with planning | The staffing commit point, dated |
@@ -183,7 +183,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 40 | Read decommission records by branch: kept, redeployed whole, harvested | Lifecycle transitions | A test for redeploying whole |
 | 45 | Agree the shortage rule in the forum; sign the landing rule | The forum, for the shortage rule; for the landing rule, planning proposes, finance signs, the forum ratifies | Both rules in force |
 | 50 | Name an owner for each drive-record field, off-host fields first | Planning | The record's field list, owned |
-| 55 | Fill the keep, redeploy or harvest sheet for one retiring cohort (experiment 6) | Lifecycle transitions, with finance | One cohort decided |
+| 55 | Fill the keep, redeploy or harvest sheet for one retiring cohort ([keep sheet, experiment 6](#experiments)) | Lifecycle transitions, with finance | One cohort decided |
 | 60 | G2 decision, and G3a: the record designed and owned | Planning | Exit criteria met, or named gaps |
 
 ### Days 61–90: spares and the pipeline first
@@ -200,7 +200,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 
 **Why spares go first.** Spares are the harvest's most predictable claim and its value floor. The paper's order of change is "prove fulfillment first" (Section 10.4); this plan applies it to reused drives.
 
-## 4. The gates
+## 4. The gates {#gates}
 
 This plan uses "gate" in two senses. The program's seven **decision gates**, G0 to G6, are the steps of this plan. The case's eleven **technical gates** are the tests every drive must pass before reuse, such as fit, qualification, sanitization and jurisdiction ([full case, section 6](case-kuantillion-cloud-full.md#6-supply-the-gates)). This section is about the decision gates.
 
@@ -234,11 +234,11 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - The anchor declared.
   - The forum chartered for two rules: it agrees the shortage rule, and it ratifies the landing rule that planning proposes and finance signs.
 - **Artifacts.**
-  - Contract lines on the supply plan of record ([mechanism 11](concept-operating-mechanisms.md)).
+  - Contract lines on the supply plan of record ([mechanism 11](concept-operating-mechanisms.md#m11)).
   - The purchase plan, frozen as the baseline for savings.
   - The controller's accounting memo. It covers the inventory basis, near net book value. It says whether spares are capitalized or expensed, and when drives are held for sale or impaired.
   - The memo also covers resale gain or loss, builds that look cheaper than they are, and a management ledger at fair value: the drive record with a value column.
-  - The stranded line, owned ([mechanism 4](concept-operating-mechanisms.md)).
+  - The stranded line, owned ([mechanism 4](concept-operating-mechanisms.md#m4)).
   - A decision note.
 - **Owner.** Planning, with finance.
 - **The dollar test** [argued]. Go when expected annual net value over exit, under the declared anchor, times usable TB, exceeds the program's fixed cost. That cost is the record, the forum and the pipeline's standing staff.
@@ -293,7 +293,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 - **Exit criteria.**
   - G3a: every field owned, and each off-host state defined, with who accepts it.
   - G3b: the record live for every off-host state, across crews, benches, cages and partners, and reconciled with the erasure log.
-- **Artifacts.** The drive record (the templates below give its fields). The fulfillment ledger, run backwards ([mechanism 5](concept-operating-mechanisms.md)).
+- **Artifacts.** The drive record (the templates below give its fields). The fulfillment ledger, run backwards ([mechanism 5](concept-operating-mechanisms.md#m5)).
 - **Owner.** Planning keeps it; each field's performer owns its entry; fleet provisioning owns the systems build.
 - **Go or stop.** Don't move a drive between sinks on a record with an open reconciliation gap. Until G3b, the spares pilot runs on a manual ledger, by lot.
 
@@ -312,10 +312,10 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - Every harvest claim answered with a dated commit or a [named gap](/glossary/#term-named-gap).
   - Each tested drive pegged to one claim.
 - **Artifacts.**
-  - Ledger lines ([mechanism 5](concept-operating-mechanisms.md)).
-  - Supply answers ([mechanism 11](concept-operating-mechanisms.md)).
-  - The [commit-point map](concept-commit-points.md) for last-time buys and decommissions ([mechanism 13](concept-operating-mechanisms.md)).
-  - The forum's decision log ([mechanism 10](concept-operating-mechanisms.md)).
+  - Ledger lines ([mechanism 5](concept-operating-mechanisms.md#m5)).
+  - Supply answers ([mechanism 11](concept-operating-mechanisms.md#m11)).
+  - The [commit-point map](concept-commit-points.md) for last-time buys and decommissions ([mechanism 13](concept-operating-mechanisms.md#m13)).
+  - The forum's decision log ([mechanism 10](concept-operating-mechanisms.md#m10)).
 - **Owner.** The forum, run by planning; fleet provisioning for supply answers.
 - **Go or stop.** Hold G5 until spares fill holds at the signed cover point for one quarter.
 
@@ -331,8 +331,8 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - A reused-flash class offered, with its guarantee and evidence bar.
   - A substitution table.
 - **Artifacts.**
-  - Declaration entries for builds ([mechanism 12](concept-operating-mechanisms.md)).
-  - The class on the rate card ([mechanism 3](concept-operating-mechanisms.md)).
+  - Declaration entries for builds ([mechanism 12](concept-operating-mechanisms.md#m12)).
+  - The class on the rate card ([mechanism 3](concept-operating-mechanisms.md#m3)).
 - **Owner.** Storage systems; fleet shaping and hardware engineering.
 - **Go or stop.** Stop widening the class if the pilot's failure rate breaks its evidence bar.
 
@@ -345,13 +345,13 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - Register the wear price, owned and versioned.
   - Report endurance used by cohort quarterly.
 - **Exit criteria.** The wear price on the rate card with an effective date.
-- **Artifacts.** The coefficient register and versioned rate card ([mechanism 3](concept-operating-mechanisms.md)).
+- **Artifacts.** The coefficient register and versioned rate card ([mechanism 3](concept-operating-mechanisms.md#m3)).
 - **Owner.** Flash platform engineering, with finance.
 - **Go or stop.** Change first-life placement only where endurance used at harvest is shown to change second-life value.
 
 **Why the wear link goes last.** The case's own best guess is that placement shapes the harvest little today, except in write-heavy and low-endurance cohorts.
 
-## 5. Standing cadence
+## 5. Standing cadence {#cadence}
 
 The cycles nest, slowest outside: "Each cycle commits only what its lead time forces" (Section 9.1). See [annual](stage-annual.md), [quarterly](stage-quarterly.md), [monthly](stage-monthly.md), [weekly](stage-weekly.md) and [post-launch](stage-post-launch.md).
 
@@ -375,7 +375,7 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 
 **The charter overlay.** "Once a year, lay the charters over the chain that delivers the product, end to end, and name an owner for every gap" (Section 10.2).
 
-## 6. Rules agreed in advance
+## 6. Rules agreed in advance {#rules}
 
 "A rule agreed in advance is a contract; one proposed after the savings appear is a request" (Section 9.3). Each rule below is written so the forum can sign it. Each is this plan's [argued], built on the seed text it cites.
 
@@ -476,7 +476,7 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 - If the claim was booked against *uncommitted* harvest, the claiming sink pays.
 - Finance signs the exceptions in advance, as the paper has finance agree "who pays for a change outside" the bands (Section 9.2).
 
-## 7. Measures
+## 7. Measures {#measures}
 
 Finance keeps score: "Finance, not planning, should keep the score, or the indicators become self-assessment" (Section 9.3). Read the measures as a set, because "any indicator in Section 9.2 can be gamed once rewarded" (Section 13).
 
@@ -506,7 +506,7 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 
 **Why not count bridges.** Section 10.2's "about one launch in five should need a bridge" is for one-shot buys. A spares pool is replenished, so fill rate and backorders are the right tests.
 
-## 8. Experiments
+## 8. Experiments {#experiments}
 
 One experiment per stated assumption in the case. Each has an owner, a date in program days (the same clock as section 3), a method, a falsifier and the decision it unlocks. All are proposals [argued]. "The rollout is the measurement" (Section 5.4).
 
@@ -544,7 +544,7 @@ So the capacity anchor passes the case's $190 floor only above about a 31% share
 
 With no reference class, the paper's rule applies: "The planner can only bound it, phase it and buy options" (Section 13).
 
-## 9. Signposts to actions
+## 9. Signposts to actions {#signposts}
 
 The case names public signposts between two futures. Path A stays tight through 2028; Path B eases from late 2027. Read them at the quarterly supply review. Each action is this plan's [argued].
 
@@ -562,7 +562,7 @@ The case names public signposts between two futures. Path A stays tight through 
 | Small, older drive models get scarcer | Review last-time buys |
 | Disk stays allocated, and cold data keeps moving to QLC | Path A evidence; keep the wear watch on QLC cohorts |
 
-## 10. Risk register and incident playbook
+## 10. Risk register and incident playbook {#risks}
 
 **Risk register.** Each risk has a counter, an early sign and an owner [argued]. The risks are the case's failure modes.
 
@@ -635,7 +635,7 @@ A record can say "erased" while the drive still holds data. In one lab study, on
 
 Proving erasure is a security discipline. The practice's part is the record.
 
-## 11. Templates
+## 11. Templates {#templates}
 
 Short field lists for the artifacts this plan produces. Each follows a seed mechanism; the drive-specific fields are this plan's [argued].
 
@@ -694,7 +694,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - **Depreciation is a memo line.** Net book value is near zero past useful life, and depreciation is sunk and non-cash.
 - **Signing.** Finance confirms the accounting effect; the forum decides the economics, for every keep past plan.
 
-**Forum charter** ([mechanism 10](concept-operating-mechanisms.md); [forum](/glossary/#term-forum)) [argued]
+**Forum charter** ([mechanism 10](concept-operating-mechanisms.md#m10); [forum](/glossary/#term-forum)) [argued]
 - Members: the sponsor, as chair; planning, which runs it; finance; drive supply; one seat per sink; a tax seat for claims that cross legal entities
 - Remit: the ranking rule and the cut line across the four sinks; exceptions from the pegging system; the decision log with overrides and brokered trades
 - Rules it holds: the shortage rule; the ranking rule; the landing rule, which it ratifies
