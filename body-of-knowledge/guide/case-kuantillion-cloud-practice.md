@@ -167,7 +167,7 @@ This is reasoning, not a work order. Owners appear only where the argument needs
 
 **The answer.** Keep one record per drive. Its states run in service, harvested, erased, in test and available, then spare or placed, or out of custody. Our reading: that is [the fulfillment ledger (mechanism 5)](concept-operating-mechanisms.md#m5) run backwards. The record's design follows from the lenses.
 
-- Define *harvested*, *erased*, *tested* and *available*, and who accepts each. Applied here, those are seam 3's definitions of done.
+- Define *harvested*, *erased*, *tested* and *available*, and who accepts each. Applied here, those are the definitions of done for [seam 3](/glossary/#term-seam), between planning and supply.
 - Give each field an owner, the group that does that step. Mechanism 5's rule is "each step's performer owns its entry". Planning keeps the record but owns no field.
 - Set freshness by what the field drives: continuous for health telemetry, at every state change for custody [argued].
 - Add the fields the gates name: a SKU for a regraded drive, its grade, its costing basis and its firmware baseline.
