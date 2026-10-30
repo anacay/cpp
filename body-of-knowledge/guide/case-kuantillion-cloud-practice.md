@@ -100,7 +100,7 @@ Six moves carry most of the weight. Each removes a large uncertainty for little 
 
 The first five come first because they share one property. Each one is cheap, fast and decides whether the expensive work is worth doing. Everything else in this page depends on their answers. The [execution plan](case-kuantillion-cloud-plan.md) gives them owners and dates.
 
-**Where the practice runs out.** The page names eight gaps, and six matter most. They are byproduct supply, condition as a dimension of supply, quality that fails after delivery, exit as a sink, the cost of a shape, and wear across two lives. [Where the theory runs out](#where-the-theory-runs-out) maps each to the literature that studied it.
+**Where the practice runs out.** Most of its gaps are already solved in neighboring fields, and this page adopts those answers. Two stay genuinely open: byproduct supply coupled to demand, and quality that fails after delivery, as a cohort. [Where the theory runs out](#where-the-theory-runs-out) maps each to the literature that studied it.
 
 ### What a reused drive is worth
 
