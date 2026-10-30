@@ -49,6 +49,15 @@ The paper's supply machinery is built for things that are ordered. The claim of 
 
 **6. Disassembly regains fungibility at the price of the gates.** A retired machine can be kept, redeployed whole to lighter work, or taken apart. Redeploying it whole skips most gates and keeps the machine's narrow fit. Taking it apart buys wider fit and pays every gate. The paper prices the forward chain, which spends fungibility. It has nothing on the reverse [argued].
 
+**Which of these are new.** Not all six steps are open problems. Neighboring fields already answer four of them, and the practice can adopt those answers [argued]:
+
+- condition as a priced grade, from remanufacturing (Ferguson et al., 2009);
+- exit into a market the seller moves, from lemons theory and paced liquidation (Akerlof, 1970);
+- regained fungibility at the price of the gates, from equipment-replacement analysis;
+- wear across lives, from use-based economic depreciation (Hulten and Wykoff, 1981).
+
+Two stay genuinely open: one decision coupling demand and supply with opposite signs (steps 1 and 2), and quality that fails after delivery, as a cohort (step 4). The [Case 3 strategy](case-kuantillion-cloud-practice.md#where-the-theory-runs-out) maps the same split.
+
 ## How it applies
 
 If capacity can come back out of the fleet, the practice can book it deliberately. Each mechanism below is a candidate, not a recommendation.
@@ -68,12 +77,12 @@ A shortage caused by a delivered unit failing counts against the ratio at the ti
 
 **Exit as a priced floor.** Value exit at realizable resale, net of the buyer's discount and the cost of the gates. Use it as the floor beside the internal shadow price, "What one more unit of the binding resource is worth; zero for slack" (Section 4). Whoever is measured on cash recovered sits on the planning-and-finance seam (Section 10.1), so the floor needs finance's signature [argued].
 
-**Second-life hazard as a step with no record.** Until a cohort's second life has been observed, the paper's fallback applies: "bound it, phase it and buy options" (Section 13). Place the first cohort where device loss is absorbed by design, such as a cache. Spread it across failure domains, and track it by power-on hours [argued, applying Section 13's no-reference-class rule].
+**Second-life hazard as a step with no record.** Until a cohort's second life has been observed, the paper's fallback applies: "bound it, phase it and buy options" (Section 13). Place the first cohort where device loss is absorbed by design, such as a cache. Cap each cohort per redundancy group, and track it by power-on hours [argued, applying Section 13's no-reference-class rule].
 
 **An invented example, labeled illustrative.**
 - A platform has 100,000 installed drives, failing at 2% a year. The plan retires a quarter of the platform mid-year.
 - On the plan, the remaining 75,000 drives need 1,500 spares a year. The retirement releases 25,000 drives, of which 20,000 pass the gates at an 80% yield. Spares are booked from that harvest.
-- Then the platform is kept a year longer. Now 100,000 drives need spares, and older ones fail more: say 2,500 a year at 1.25 times the rate. The harvest is zero.
+- Then the platform is kept a year longer. Now 100,000 drives need spares. Assume the kept drives fail at 1.25 times the rate, 2,500 a year; age alone may not raise it, so this is an assumption to test. The harvest is zero.
 - Two separate lines, each correct for the plan, miss together: demand is 1,000 higher and the supply booked against it never arrives.
 - On one coupled line, the keep decision would have shown both effects before it was made.
 
@@ -84,7 +93,7 @@ Every number here is invented to show the shape.
 Open questions, each an invitation. The thread for all of them is still to be opened.
 
 1. **How strong is the coupling?** How much does keeping a platform raise its spares need, and how much harvest does it forgo, platform by platform? [unmeasured]
-2. **Where does the second-life hazard cross the new-part curve?** Whether reused parts fail like new ones early and faster later, and where any crossover sits, is not published. [unmeasured]
+2. **Where does the second-life hazard cross the new-part curve?** First-life studies disagree on late-life hazard, and two large ones saw no rise at end of life. Firmware, model and error history matter more than age. Nobody has measured a second life, including any infant mortality from handling. [unmeasured]
 3. **What does each gate cost and yield?** Fit, qualification, test and erasure. No operator publishes these yields. [unmeasured]
 4. **Is regained fungibility worth its gates?** When does redeploying a machine whole beat taking it apart? Is the answer a property of the platform or of the shortage? [argued]
 5. **How far does a large seller move the used market?** And does a fleet's own retention set the price its retention is judged against? [unmeasured]
@@ -114,6 +123,8 @@ The note's framing and mistakes are the practice's own.
 - Yano, C. A., & Lee, H. L. (1995). *Lot sizing with random yields: a review.* Operations Research 43(2): https://doi.org/10.1287/opre.43.2.311
 - Simpson, V. P. (1978). *Optimum solution structure for a repairable inventory problem.* Operations Research 26(2): https://doi.org/10.1287/opre.26.2.270
 - Akerlof, G. A. (1970). *The market for ‘lemons’: quality uncertainty and the market mechanism.* Quarterly Journal of Economics 84(3): https://doi.org/10.2307/1879431
+- Ferguson, M., Guide, V. D. R., Koca, E., & Souza, G. C. (2009). *The value of quality grading in remanufacturing.* Production and Operations Management 18(3): https://doi.org/10.1111/j.1937-5956.2009.01033.x
+- Hulten, C. R., & Wykoff, F. C. (1981). *The estimation of economic depreciation using vintage asset prices.* Journal of Econometrics 15: 367–396. Summarized in Hulten (2008): https://www.econ.umd.edu/sites/www.econ.umd.edu/files/pubs/Getting%20Economic%20Depreciation%20Almost%20Right.pdf
 - Hendel, I., & Lizzeri, A. (1999). *Adverse selection in durable goods markets.* American Economic Review 89(5): https://doi.org/10.1257/aer.89.5.1097
 
 Their application to capacity planning is argued, not measured.
