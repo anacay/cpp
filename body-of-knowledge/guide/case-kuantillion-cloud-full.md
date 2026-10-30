@@ -255,7 +255,7 @@ A six-year field study of a large fleet's SSDs found 4–10% replaced over four 
 In 2024, 44% of components in Kuantillion Cloud's builds, maintenance and upgrades came from reused inventory, and its lifecycles are moving to condition-based, modular upgrades.
 
 - **Life extension.** Adding or swapping flash can reshape running machines to serve demand longer, substituting for new machines in a shock (Inferred).
-- **Reused parts in new builds.** One cloud published a server pairing 12 reused 1 TB drives with 2 new 4 TB drives, striped to hide the old drives' speed. It reports about 28–29% lower emissions per core (Third party). Production use is Unknown. Striping evens load, not remaining life or tail latency, and same-age drives in one box sit uneasily with the correlated-failure evidence (Inferred).
+- **Reused parts in new builds.** One cloud published a server pairing 12 reused 1 TB drives with 2 new 4 TB drives, striped to hide the old drives' speed. It reports about 28–29% lower emissions per core (Third party; Wang et al. 2024). That figure is per core. Across that cloud's whole fleet, the modelled net cut is about 8%, or 15% when performance needs are met. Off-the-shelf passive adapters fitted the old M.2 drives into newer E1.S slots, so the fit gate can be crossed cheaply. With 14 drives instead of 6, the server's modelled failure rate rose from 4.8 to 7.2, about 50% more repair events per server (Third party; Arithmetic). Production use is Unknown. Striping evens load, not remaining life or tail latency, and same-age drives in one box sit uneasily with the correlated-failure evidence (Inferred).
 - **Physical fit limits this sink.** Older 2.5-inch and M.2 drives need adapters for EDSFF slots, and SATA or SAS needs a supporting backplane (Third party). Upgrades mostly mean legacy drives in their own or adjacent generations (Inferred).
 
 ### 5.4 Retirement
@@ -908,7 +908,7 @@ The harvest, requalify and redeploy loop is line operations across the industry,
 | One cloud | Repair time, median and 99th percentile; share of technician hours; share of six-year cost | 3 days and 190 days; about half; about 9% | Repair cost and labor |
 | One cloud | Repair tickets cut by fail-in-place | About 55% | Fail-in-place as a substitute for spares |
 | One Asian cloud (2019) | SSD-related failure tickets not caused by the drive; tickets ending in a drive swap | 34.4%; 31.2% | Ticket triage |
-| One cloud | Emissions per core, reused-drive server design | About 28–29% lower | The upgrade-and-build sink |
+| One cloud | Emissions per core, reused-drive server design; fleet-wide net | About 28–29% lower per core; about 8% fleet-wide | The upgrade-and-build sink |
 | A mid-size European cloud (2025) | Outbound components redeployed, resold, recycled | About 30%, 50%, 20% | Internal reuse below hyperscale |
 | A mid-size storage provider (2026) | Quarterly failure rate, driven by drives seven to eight years old | Highest in years | The keep branch's price |
 | The disposition market (2026) | Market size; fastest-growing asset class | About $14B; SSDs | The exit sink's depth (Press, analyst) |
