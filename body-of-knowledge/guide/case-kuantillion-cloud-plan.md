@@ -554,13 +554,20 @@ The challenge channel follows the paper: "A consumer who can challenge a coeffic
 
 **Incident playbook: a data-bearing drive surfaces outside custody (scenario S3)** [argued].
 
+A record can say "erased" while the drive still holds data. In one lab study, only four of seven testable drives erased reliably. One reported success while all its data remained (Wei et al. 2011). So reconciling logs can find a lost drive, but not a failed erasure.
+
 | Step | Action | Owner | Within |
 |---|---|---|---|
 | 1 | Hand the incident to drive security's own response | Drive security engineering | Hours |
-| 2 | Freeze all moves out of custody for the affected batch | Reverse logistics | Hours |
-| 3 | Reconcile the drive record against the erasure log for the batch | Planning, with drive security | Two days |
-| 4 | Find the off-host state where the gap opened, and fix its handoff definition | Planning | One week |
-| 5 | Resume only when every drive in the batch reconciles | Drive security engineering | Before resuming |
+| 2 | Establish whether the data was encrypted at rest, with its keys held off the drive and destroyed | Drive security engineering | Hours |
+| 3 | Bring in legal and privacy for any notification clock | Legal and privacy | Hours |
+| 4 | Freeze moves out of custody for every drive erased by the same tool version, station and firmware since the last validated sample | Reverse logistics | One day |
+| 5 | Ask resale and recycling partners to quarantine or recall resold drives in that scope | Supply chain, with reverse logistics | One day |
+| 6 | Read back the drive, and a sample of its peers, forensically | Drive security engineering | One week |
+| 7 | Reconcile the record against the erasure log, and fix the handoff where any gap opened | Planning, with drive security | One week |
+| 8 | Resume only when the scope reconciles and the read-back sample is clean | Drive security engineering | Before resuming |
+
+**Standing rule** [argued]. No tool × firmware × model combination is trusted until a sampled forensic read-back has passed. Verification inspects each erase's outcome. Validation reviews that evidence and formally accepts the remaining risk (NIST SP 800-88 Rev. 2).
 
 Proving erasure is a security discipline. The practice's part is the record.
 
@@ -578,7 +585,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - Location; host platform; cohort
 - Grade; costing basis; regraded SKU
 - Reuse eligibility: free, constrained or forbidden
-- Erasure record, reconciled at each state change
+- Erasure: method; tool and its firmware; verification result; validation sample ID; reconciled at each state change
 - Field owner, per field
 
 **Declaration entry** (mechanism 12; [declarations](concept-demand-and-declarations.md))
@@ -660,6 +667,8 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
   - Schroeder, Lagisetty and Merchant, Flash Reliability in Production: The Expected and the Unexpected, *USENIX FAST* (2016): https://www.usenix.org/conference/fast16/technical-sessions/presentation/schroeder
   - Ford, Labelle, Popovici, Stokely, Truong, Barroso, Grimes and Quinlan, Availability in Globally Distributed Storage Systems, *USENIX OSDI* (2010): https://www.usenix.org/conference/osdi10/availability-globally-distributed-storage-systems
   - Maneas, Mahdaviani, Emami and Schroeder, A Study of SSD Reliability in Large Scale Enterprise Storage Deployments, *USENIX FAST* (2020): https://www.usenix.org/conference/fast20/presentation/maneas
+  - Wei, Grupp, Spada and Swanson, Reliably Erasing Data From Flash-Based Solid State Drives, *USENIX FAST* (2011): https://static.usenix.org/event/fast11/tech/full_papers/Wei.pdf
+  - NIST, Guidelines for Media Sanitization, SP 800-88 Rev. 2 (2025): https://doi.org/10.6028/NIST.SP.800-88r2
   - Baldenius, Internal Pricing, *Foundations and Trends in Accounting* (2008): https://doi.org/10.1561/1400000013
   - Alter, Xue, Dimnaku and Smirni, SSD Failures in the Field: Symptoms, Causes, and Prediction Models, *SC* (2019): https://par.nsf.gov/servlets/purl/10172650
 
