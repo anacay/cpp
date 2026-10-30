@@ -773,7 +773,7 @@ The last two follow the paper's own tests for mechanisms 11 and 13 (Section 9.2)
 | The contract register can settle the anchor fork | The commitments have no readable liability or reschedule terms |
 | A forum can rank four sinks with unlike units | Ranked lists are reopened as often as negotiated splits ("Decisions reopened", mechanism 10's indicator) |
 | A stated lower-assurance class will be taken up | Uptake stays low after the class's guarantee and evidence are stated |
-| Cohort is the right shared driver | Failures correlate more on site or workload than on model, firmware and age |
+| Cohort is the right shared driver | Failures correlate more on site or workload than on model, firmware and power-on hours |
 | Misdiagnosis is bias, not dispersion | The healthy share of pulled drives swings widely with no persistent level |
 | The dollar test is the right gate | One stockout's shadow price dominates the annual sum, so a failing program is still worth running (scenario S5) |
 
