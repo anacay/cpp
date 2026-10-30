@@ -131,6 +131,20 @@ export function renderGuide(p) {
   });
   // Evidence labels.
   html = html.replace(/\s?\[(argued|unmeasured)\]/g, (m, k) => ` <span class="ev ev--${k}" title="${EV[k]}">${k}</span>`);
+  // Numbered-mechanism tables ("#" and "Mechanism" columns): each row gets a
+  // stable short id (#m5) and a long alias (#m5-fulfillment-ledger), and its
+  // number links to the row. The cell text is unchanged.
+  const rowIds = new Set();
+  html = html.replace(/<table>[\s\S]*?<\/table>/g, (t) => {
+    if (!/<th>#<\/th>\s*<th>Mechanism<\/th>/.test(t)) return t;
+    return t.replace(/<tr>(\s*(?:<td>[^<]*<\/td>\s*)?)<td>(\d+)<\/td>(\s*)<td>([^<]+)<\/td>/g, (m, pre, n, sp, name) => {
+      const id = `m${n}`;
+      if (rowIds.has(id)) return m;
+      rowIds.add(id);
+      const alias = `${id}-${slugify(name)}`;
+      return `<tr id="${id}" class="row-target">${pre}<td><a class="row-link" id="${alias}" href="#${id}" aria-label="Link to mechanism ${n}, ${name}">${n}</a></td>${sp}<td>${name}</td>`;
+    });
+  });
   // Heading anchors and the page's table of contents.
   const toc = [];
   const seen = new Set();
