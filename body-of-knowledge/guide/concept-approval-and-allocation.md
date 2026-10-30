@@ -51,7 +51,7 @@ The gap isn't new. Auxon reports requirements it could not satisfy [1]. The 2026
 
 **Clear by brokering.** Matching a holder with a team that needs the same shape, place and time is Jevons's "double coincidence" [89]. Markets automate it for fungible, short-horizon resources [16, 18]. Elsewhere it runs on knowing who holds what [argued].
 
-In the running example, the forum approved Product A at 4 NMU because the intake asked only about CPU. The data A stores needs memory, and the cheapest fit is 4.8 NMU (illustrative). The 0.8 NMU gap goes on the ledger with a named owner.
+In the running example, the forum approved Product A at 4 NMU because the intake asked only about CPU. An [NMU](/glossary/#term-nmu-normalized-machine-unit) is the example's normalized machine unit: one standard machine. The data A stores needs memory, and the cheapest fit is 4.8 NMU (illustrative). The 0.8 NMU gap goes on the ledger with a named owner.
 
 ![Machine diagrams: four standard machines lack memory; eight strand half their cores; two standard plus two high-memory fit at 4.8 NMU.](../seed/figures/D4.svg)
 

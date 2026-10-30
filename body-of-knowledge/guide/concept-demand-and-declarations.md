@@ -38,8 +38,8 @@ The rule: a stage licenses only its own supply action, and promotion needs the e
 ## Where it shows up on the map
 
 - **Annual**, portfolio and launch rows: intents enter and claim a share of the envelope. See [the annual stage](stage-annual.md).
-- **Quarterly**, launch row: intents become Dated, from about −6; the last review before launch may re-confirm them. See [the quarterly stage](stage-quarterly.md).
-- **Monthly**, launch and portfolio rows: declarations reach Configured at about −3; configured asks are ranked and expiry clocks are checked. See [the monthly stage](stage-monthly.md).
+- **Quarterly**, launch row: intents become Dated, from about −6 months before launch; the last review before launch may re-confirm them. See [the quarterly stage](stage-quarterly.md).
+- **Monthly**, launch and portfolio rows: declarations reach Configured at about −3 months; configured asks are ranked and expiry clocks are checked. See [the monthly stage](stage-monthly.md).
 - **Weekly**, launch row: pre-launch tests measure the coefficient [7]. See [weekly](stage-weekly.md).
 - **Post-launch**, launch and portfolio rows: live, then organic; size and date are scored. See [post-launch](stage-post-launch.md).
 

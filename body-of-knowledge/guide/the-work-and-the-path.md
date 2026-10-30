@@ -77,7 +77,7 @@ One exercise per level, all on the seed paper's worked example: Product A's laun
 - **Learning.** Split A's bill miss into volume, coefficient and rate, and say who owns each term ([the coefficient](concept-the-coefficient.md)).
 - **Practicing.** Fill the [worksheet](/worksheet/) for A's launch: find each layer's commit point, and what the declaration knows by then.
 - **Leading.** Set the shortage-to-idle ratios for machines and for power, and write the re-cut order for a 10% envelope cut ([buffers and reserves](concept-buffers-and-reserves.md), [annual](stage-annual.md)).
-- **Capital.** Price the roughly 1.0 NMU of spare the method holds, and decide who carries it at a 40,000 landing ([the map](the-map.md), [commit points](concept-commit-points.md)).
+- **Capital.** Price the roughly 1.0 NMU of spare the method holds (an [NMU](/glossary/#term-nmu-normalized-machine-unit), or normalized machine unit, is the example's invented unit: one standard machine), and decide who carries it at a 40,000 landing ([the map](the-map.md), [commit points](concept-commit-points.md)).
 - **Supply.** Write the cancel window and reschedule terms for the reschedulable high-memory order ([supply layers and lead times](concept-supply-layers-and-lead-times.md)).
 
 ## What's missing
