@@ -141,7 +141,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 20 | Read every flash contract's cancel, push-out and volume terms into the supply register (experiment 2) | Fleet provisioning, with finance | Mechanism 11's contract lines |
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
 | 20 | Measure flash use by resource and site | Storage systems | The stranded stock, sized |
-| 25 | Compute both value anchors per zone (experiment 1) | Planning, with finance | The anchor, declared for G1 |
+| 25 | Compute both value anchors per zone, measuring the drive's attribution share (experiment 1) | Planning, with finance | The anchor, declared for G1 |
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
 | 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
 | 30 | G1 decision | Planning and finance | Go or stop, with a decision note |
@@ -420,7 +420,7 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 
 | # | Assumption | Owner | By day | Method | Falsifier | Unlocks |
 |---|---|---|---|---|---|---|
-| 1 | Replacement cost is the right value anchor | Planning, with finance | 25 | Compute both anchors per zone from stockout logs and contract terms | The capacity anchor passes replacement cost in most stockout zones | Which price ranks workload claims |
+| 1 | Replacement cost is the right value anchor | Planning, with finance | 25 | Compute both anchors per zone from stockout logs, margins and contract terms; measure the attribution share | The capacity anchor passes replacement cost in most stockout zones | Which price ranks workload claims |
 | 2 | Reuse displaces purchases at all | Fleet provisioning, with finance | 20 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
 | 3 | The materiality ratio is large enough to matter | Planning | 14 | Harvest TB ÷ new flash TB, by quarter | Ratio well under 1% | G1 |
 | 4 | Reuse beats exit after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort, beside that cohort's resale quotes | Net value over exit below zero for the cohort's drive class | Pipeline scope by drive class |
@@ -435,9 +435,15 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 
 **The capacity anchor, as a formula.** Nothing public gives it an input [unmeasured]. So experiment 1 fills a formula:
 
-*Capacity value per TB = value of a short TB-month × months filled before new supply × share of those months with a real stockout.* [argued]
+*Capacity value per usable TB = Σ over months t of P(stockout in t) × contribution margin of a short TB-month × the drive's attribution share × survival to t × P(the TB sits in the binding zone) ÷ (1 + r)ᵗ, plus a terminal value once new supply lands.* [argued]
 
-For example, if a short TB-month is worth $40 (illustrative), and 12 months follow, then 25% filled gives $120 per TB and 75% gives $360. At 75%, the capacity anchor passes the case's $192 floor once a TB-month is worth about $21. It passes the $636 ceiling at about $71.
+- **Contribution margin, not revenue.** The value lands in the product's profit and loss, not in planning's.
+- **The attribution share.** A stockout is usually of a whole host or VM shape. The drive's share is high only where SSD is the binding dimension.
+- **The terminal value.** After new supply, the drive is worth the purchase it avoids if contracts can move, or its net resale if they can't.
+
+For example, take a $40 margin per short TB-month, 12 months, a stockout in 75% of them, 10% cost of capital and a $100 terminal value (illustrative). At a 10% attribution share the anchor is about $121 per usable TB. At 30% it is about $188, and at 100% about $423.
+
+So the capacity anchor passes the case's $190 floor only above about a 31% share. At these inputs it never reaches the $640 ceiling. Experiment 1's real output is the attribution share, zone by zone [unmeasured].
 
 **The pilot cohort.** It carries the case's most load-bearing question: where second-life hazard crosses the new-drive curve [unmeasured].
 - Place it in caches and replicated tiers, which absorb device loss by design.
