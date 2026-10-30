@@ -43,7 +43,7 @@ The gap isn't new. Auxon reports requirements it could not satisfy [1]. The 2026
 
 **Keep a fulfillment ledger** (mechanism 5). Per ask, track approved (gross), net, committed, allocated, delivered, live and adopted, with the firmness class. Planning carries the gap; each step's performer owns its entry.
 
-**Net with care.** Netting sits between approved and allocated on the ledger. Subtract on hand, on order and due back from reclaim; add back what retires that current load depends on. Every one of those is a forecast, so give each a date and an owner. A draw on a stocked pool leaves a replenishment owed. A reclaim that doesn't happen looks like a supply failure. Many undesigned gaps are born in this netting [argued].
+**Net with care.** Netting sits between approved and allocated on the ledger. Subtract on hand, on order and due back from reclaim; add back what retires that current load depends on. Every one of those is a forecast, so give each a date and an owner. A draw on a [stocked pool](/glossary/#term-stocked-pool "Supply held ready for draws") leaves a replenishment owed. A reclaim that doesn't happen looks like a supply failure. Many undesigned gaps are born in this netting [argued].
 
 **Re-shape before you cut.** It's nearly free before the order and costly after. In the SRE chapter's Meet case, doubling CPU and memory per instance halved the instance count [7].
 
@@ -51,7 +51,7 @@ The gap isn't new. Auxon reports requirements it could not satisfy [1]. The 2026
 
 **Clear by brokering.** Matching a holder with a team that needs the same shape, place and time is Jevons's "double coincidence" [89]. Markets automate it for fungible, short-horizon resources [16, 18]. Elsewhere it runs on knowing who holds what [argued].
 
-In the running example, the forum approved Product A at 4 NMU because the intake asked only about CPU. An [NMU](/glossary/#term-nmu-normalized-machine-unit) is the example's normalized machine unit: one standard machine. The data A stores needs memory, and the cheapest fit is 4.8 NMU (illustrative). The 0.8 NMU gap goes on the ledger with a named owner.
+In the running example, the [forum](/glossary/#term-forum "The standing arbitration forum that ranks and decides") approved Product A at 4 NMU because the intake asked only about CPU. An [NMU](/glossary/#term-nmu-normalized-machine-unit) is the example's normalized machine unit: one standard machine. The data A stores needs memory, and the cheapest fit is 4.8 NMU (illustrative). The 0.8 NMU gap goes on the ledger with a named owner.
 
 ![Machine diagrams: four standard machines lack memory; eight strand half their cores; two standard plus two high-memory fit at 4.8 NMU.](../seed/figures/D4.svg)
 
@@ -61,7 +61,7 @@ In the running example, the forum approved Product A at 4 NMU because the intake
 
 - Approval treated as delivery; the team learns of the gap at launch.
 - A reclaim or decommission in the netting doesn't happen, and looks like a supply failure.
-- Delivered-but-not-live backlogs age quietly at turn-up.
+- Delivered-but-not-live backlogs age quietly at [turn-up](/glossary/#term-turn-up "Bringing delivered machines into service").
 - Bridge premiums spread across everyone, so late asks look free.
 
 ## Where this comes from

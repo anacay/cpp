@@ -11,7 +11,7 @@ seed: 1, 9.1, 9.2, 9.3, 9.4
 
 ## The idea
 
-Sections 7 and 8 of the seed paper build the artifacts for one launch. The harder job is keeping them true as people, budgets and coefficients move. Much of this is published. There's a monthly consensus forecast [8] and capacity contracts with a plan of record [31]. There's an intake that knows each team's idle capacity [34], and the SRE chapter's plan of record [7]. What the seed paper offers is one set of artifacts and owners that joins them [argued].
+Sections 7 and 8 of the seed paper build the artifacts for one launch. The harder job is keeping them true as people, budgets and [coefficients](/glossary/#term-coefficient "Resource used per unit of driver") move. Much of this is published. There's a monthly consensus forecast [8] and capacity contracts with a plan of record [31]. There's an intake that knows each team's idle capacity [34], and the SRE chapter's plan of record [7]. What the seed paper offers is one set of artifacts and owners that joins them [argued].
 
 The thirteen do four jobs.
 
@@ -87,7 +87,7 @@ Mechanisms 1, 4, 6, 7, 9 and 10 have no such test yet. Watch their indicators.
 
 - Enforcement depends on one planner's persuasion, which doesn't scale.
 - Overrides are invisible, so the ranked list stops meaning anything.
-- Shortage rules are written during the shortage, as a negotiation.
+- [Shortage rules](/glossary/#term-shortage-rule "Who goes short first, agreed before the shortage") are written during the shortage, as a negotiation.
 - Indicators become self-assessment because planning, not finance, keeps the score.
 
 ## Where this comes from
