@@ -442,7 +442,7 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 
 | Grade | Rule | Where it can go |
 |---|---|---|
-| 1 | No uncorrectable error or critical warning in the last N months; few grown bad blocks, with a flat trend; capacitor test passed; on a safe firmware version, updated at harvest; passes burn-in | Durable tiers, once the evidence bar is met |
+| 1 | No uncorrectable error or critical warning in N months; few grown bad blocks, trend flat; capacitor test passed; safe firmware, updated at harvest; burn-in passed | Durable tiers, once the evidence bar is met |
 | 2 | One event-history flag, or old firmware with no known fault | Loss-absorbing tiers, and like-for-like spares |
 | 3 | Repeat events, a capacitor failure, or no safe firmware | Exit or destroy |
 | Blind | Missing the fields this rule needs | Like-for-like spares only: the platform already runs blind drives of that exact model |
