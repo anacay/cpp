@@ -265,7 +265,7 @@ Retirement is a real sink, not a failure. Some drives cost more to keep than the
 - **Power per terabyte.** A 2015-era 1.6 TB SATA drive draws about 2 to 4 watts per terabyte (3.3–6.8 W). A 2 TB early-NVMe drive draws about 6 to 12.5 (12–25 W). A 2025 122 TB QLC drive draws about 0.2 (24 W) (Arithmetic, from specifications; active and idle differ several-fold). That is about 10–20 times per terabyte for SATA and 30–60 for NVMe. Per IOPS the gap is only about 1.5 to 3 times, and old write-intensive parts close most of it for sustained writes. Old drives cost most when used for capacity (Inferred).
 - **The host costs money, not the drive.** An old drive's extra power is about $2 per terabyte per year against a replacement value of hundreds (Arithmetic). Keeping an old server alive for its flash carries the whole machine's power, space and repairs, and strands its other resources. Retirement is a host decision wearing a drive costume (Inferred).
 - **The keep branch has a visible price.** A mid-size storage provider that publishes drive statistics hit its highest quarterly failure rate in years in mid-2026, driven by seven- to eight-year-old models (Third party). Its fleet is disks, but it traces the keep-or-retire curve in public (Inferred).
-- **Resale value.** Used enterprise drives fetch more in a shortage. The disposition trade reports more residual value in used flash than a year ago, and a shift toward harvesting parts (Press, 2026). That raises the cost of keeping a marginal drive (Inferred).
+- **Resale value.** Used enterprise drives fetch more in a shortage. The disposition trade reports more residual value in used flash than a year ago, and a shift toward harvesting parts (Press, 2026). Retired-generation enterprise NVMe drives sold for about $80–160 per terabyte gross in the year to August 2026 (Press: dealer appraisals and listings; no price index exists). That is about 13–25% of the October new price. Net to a large seller is lower after disposition fees and bulk discounts (Unknown). Resale raises the cost of keeping a marginal drive (Inferred).
 - **Data security.** Drives that fail sanitization, or are dead, are destroyed. Kuantillion Cloud requires two independent verifications before a device leaves custody, and shreds on site on failure.
 
 ## 6. Supply: the gates
@@ -326,7 +326,7 @@ The case carries **about $190 to $640 per terabyte**: from the pre-shock equival
 
 - It is an *upper bound on Kuantillion Cloud's cost*. A buyer this size pays lower contract prices, which are Unknown.
 - It is *gross, not net*. Value is realized only after sanitization, testing, firmware work and shipping, at a cost and yield no operator publishes. For small or old drives, net value can approach zero or go negative.
-- It applies *only where a reuse sink exists*. A drive nothing in the fleet can use is worth its resale or salvage price. Replacement value prices the reuse sinks; resale value prices the exit.
+- It applies *only where a reuse sink exists*. A drive nothing in the fleet can use is worth its resale or salvage price. Replacement value prices the reuse sinks; resale value prices the exit. Even where a sink exists, reuse gives up that resale, so the value of reuse is its margin over the exit (section 7.5).
 
 ### 7.3 What the commitments do to the margin
 
@@ -353,7 +353,7 @@ Even the smallest cell may justify a program, or not, once pipeline cost and yie
 ### 7.5 Pipeline, life and carbon
 
 - **Labor.** At 10 to 30 technician-minutes per drive (Illustrative), 3 million drives take about 250 to 750 technician-years a year. That is a staffing program, not an impossibility (Inferred). The risk is landing on the same sites and quarters as repairs, which take about half of technician hours at one peer. Whether labor is the true ceiling under Path A turns on this number; only time-and-motion data can settle it (Unknown).
-- **Dollars.** With loaded labor at $60–100 an hour plus $5–20 per drive for test, sanitization and shipping, a drive costs about $15–70 to process (Illustrative). Netted against replacement value at 50–90% yield, net value runs about $25 to $570 per terabyte. It is positive across the illustrative range, and thin only for the smallest drives at the lowest prices and yields. The sign turns less on pipeline cost than on whether a sink exists and which anchor applies (Inferred).
+- **Dollars.** With loaded labor at $60–100 an hour plus $5–20 per drive for test, sanitization and shipping, a drive costs about $15–70 to process (Illustrative). Netted against replacement value at 50–90% yield, value before exit runs about $25 to $570 per terabyte. But reuse gives up resale. Used enterprise drives fetched about $80–160 per terabyte gross in the year to August 2026 (Press), an upper bound on what a seller nets. Less that forgone resale, reuse beats exit by about $90 to $490 per terabyte at the $640 anchor. At the $190 anchor the margin runs from about −$135 to +$85, so thin cohorts flip sign (Illustrative; Arithmetic). For example, at 80% yield, $20 per terabyte of pipeline cost and $120 of resale, reuse beats exit by about $370 per terabyte at $640, and by about $10 at $190. Used prices lag new ones, so under Path B resale would likely fall too, after a delay (Inferred). The sign turns on the anchor, the resale band and whether a sink exists, more than on pipeline cost (Inferred).
 - **A year of life.** Kuantillion Cloud's one-year extension avoided about $3.9 billion of first-year depreciation; peers booked about $900 million and $20 million (Press). These price the *host* decision (P2), not the drive, and are the only published dollar anchors for lifecycle flexibility at fleet scale.
 - **Carbon.** At about 0.16 kg CO2e per GB embodied, a 2 TB drive carries about 320 kg (Third party; Arithmetic). Across the flow rows, reuse would preserve about 0.05 to 1 MtCO2e a year (Arithmetic). That holds only if reuse truly displaces a new purchase, the additionality assumption under every avoided-procurement claim (Inferred). Kuantillion Cloud says procurement-centric metrics miss this preserved carbon.
 
@@ -379,7 +379,9 @@ Most rows are Arithmetic on tagged inputs. Read every row as an order of magnitu
 | Spare consumption against true failures, no-triage bound | Up to about 1.5× | 1 ÷ (1 − 0.344): reached only at a site that pulls a drive on every ticket; the studied cloud triaged first, and 31.2% of its tickets ended in a swap |
 | Pipeline labor | About 250–750 technician-years a year | 3M drives × 10–30 min ÷ 60 ÷ 2,000 h (minutes Illustrative) |
 | Pipeline cost per drive | About $15–70 | 10–30 min × $60–100 per hour + $5–20 test, sanitization, shipping (Illustrative) |
-| Net value per TB | About $25–570 | 50–90% yield × $190–640 − $4–70 per TB pipeline cost (Illustrative) |
+| Net value per TB, before exit | About $25–570 | 50–90% yield × $190–640 − $4–70 per TB pipeline cost (Illustrative) |
+| Used enterprise SSD resale, gross | About $80–160 per TB | Dealer appraisals and listings, 12 months to Aug 2026 (Press); about 13–25% of $636 and 42–83% of $192 |
+| Margin of reuse over exit per TB | About −$135 to +$85 at $190; about +$90 to +$490 at $640 | 50–90% yield × anchor − $4–70 pipeline − $80–160 forgone gross resale (Illustrative) |
 | Extra power of an old drive | About $2 per TB per year | (3.0 − 0.2) W per TB × 8,760 h ÷ 1,000 × PUE 1.1 × $0.08 per kWh (PUE and price Illustrative) |
 | Power per TB, 2015 drive against 2025 QLC | About 10–20× (SATA); 30–60× (early NVMe) | 2.1–4.3 and 6–12.5 W per TB ÷ 0.2 W per TB (vendor specifications) |
 | Embodied carbon preserved | About 0.05–1 MtCO2e a year | 0.3–6 EB × 0.16 kg per GB |
@@ -393,6 +395,7 @@ Most rows are Arithmetic on tagged inputs. Read every row as an order of magnitu
 4. **Diagnosis is cheap supply only where triage is missing.** At the studied peer, the non-drive tickets were caught before any drive was pulled. A site that pulls on every ticket could avoid up to a third of its spare consumption. Where triage exists, the prize is the unmeasured share of pulled drives that test healthy.
 5. **Labor is bounded, not prohibitive,** unless it collides with repairs at the same sites.
 6. **The drive's watts are noise; the host decides.** About $2 per terabyte per year against a replacement value of hundreds.
+7. **Reuse must beat the exit, not zero.** Against the resale it gives up, reuse wins clearly at today's prices. At the pre-shock anchor, thin cohorts are worth more sold than reused.
 
 **What one bad incident costs.** The tables are expected values with an unpriced left tail (Inferred). A correlated failure in redeployed cohorts, or worse, a data-bearing drive outside the sanitization record, brings SLA credits, lost trust, regulatory exposure and, most reliably, the program's political death. Either could exceed several years of gross value in the smaller cells. So P6 carries a risk budget beside its prices, and sinks need different evidence: a cache that absorbs device loss tolerates more uncertainty than durable storage.
 
@@ -714,14 +717,14 @@ A good answer treats the four sinks as one system on one record, prices a drive 
 
 1. **Treats all four sinks together.** They draw on the same drives and technicians. Optimizing only job placement starves the spares cage, or the reverse.
 2. **Rests on drive facts that are current, consistent and owned** (P1). Every decision in P2–P8 can cite the same record, and the answer says who keeps it true and how fresh it must be.
-3. **Prices a legacy drive against a declared anchor.** It states whether the value claimed is avoided procurement or marginal capacity; the two differ in size, beneficiary and survival under Path B. On the procurement anchor, it prices at what replacement would cost now: contract reality, net of pipeline cost and yield, bounded by resale where no sink exists, not book value. It is revisited as the market moves and holds up under both supply paths.
+3. **Prices a legacy drive against a declared anchor.** It states whether the value claimed is avoided procurement or marginal capacity; the two differ in size, beneficiary and survival under Path B. On the procurement anchor, it prices at what replacement would cost now: contract reality, net of pipeline cost, yield and the resale reuse gives up, not book value. It is revisited as the market moves and holds up under both supply paths.
 4. **Matches on capability, not age.** It reads remaining endurance, retention margin, latency consistency, firmware and fit. It recognizes that some old drives out-endure new ones per terabyte.
 5. **Respects the gates.** Fit, protocol, qualification, firmware and provenance, observability, condition, change windows, systems of record, systems complexity and sanitization are hard constraints, each with an owner.
 6. **Makes reliability visible to the users of capacity.** It offers guarantees or a capacity class they can plan around, so reuse doesn't feel second class.
 7. **Fixes incentives where the work happens.** The metrics technicians, operations and resource managers answer to don't penalize reuse where it is right. The capital and operating budget boundary is faced, not ignored. It speaks both dialects, the storage organization's supply language and the fleet organization's hardware language, because the program sits on that seam.
 8. **Is measured on a few honest numbers with declared denominators.** For example:
    - new flash purchases avoided, against a stated baseline
-   - net recovered value per harvested drive
+   - net value over exit per harvested drive
    - spares fill rate and time to repair on older platforms
    - stranded flash
    - harvest-to-redeploy time and yield
@@ -819,8 +822,9 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 | 42 | Which way U.2/U.3 tri-mode compatibility runs | Unknown; check per platform |
 | 43 | The share of pulled SSDs that test healthy | Unknown; analogies only: 43% no fault found in one vendor's returned hard disks; about half of one cloud's swapped SSDs never returned to production (Third party) |
 | 44 | First-life field studies: early failures common; no end-of-life rise in two large studies; firmware, model and error history dominate age | Third party |
+| 45 | Used enterprise SSDs fetched about $80–160 per TB gross in the year to August 2026 | Press (dealer appraisals and listings); net to a seller Unknown |
 
-**Assumptions any answer must test.** Replacement cost as the value anchor. Additionality of reuse under the commitments. A materiality ratio large enough to matter. Positive net value after pipeline cost and yield. Stranded capacity recoverable at reasonable cost. The host-cost logic over the holding period. Spares demand net of fail-in-place and misdiagnosis. And internal prices able to carry these values at all.
+**Assumptions any answer must test.** Replacement cost as the value anchor. Additionality of reuse under the commitments. A materiality ratio large enough to matter. Positive net value after pipeline cost, yield and forgone resale. Stranded capacity recoverable at reasonable cost. The host-cost logic over the holding period. Spares demand net of fail-in-place and misdiagnosis. And internal prices able to carry these values at all.
 
 **Retired.** Two analyst reports once counted as flash evidence concern optics and are excluded. An earlier reading of the peer's 34.4% as healthy drives pulled is retired: it counts tickets that cheaper steps resolved before any swap. An earlier claim that no posting used the word obtainability is retired: 2026 postings use it as a formal objective.
 
@@ -840,7 +844,7 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 | The 2026 inventory jump is fleet parts being stockpiled | The filing says inventory is systems for sale and devices; fleet parts are capitalized |
 | The published harvest figures include SSDs | The reports say hard drives and never mention flash |
 | This is a scheduling problem | Workloads are one sink of four, and spares may claim the harvest first |
-| A reused drive is worth its replacement cost | Only if reuse displaces a purchase and the pipeline's share is netted out |
+| A reused drive is worth its replacement cost | Only if reuse displaces a purchase, and the pipeline's share and the forgone resale are netted out |
 | Stranded flash is a legacy problem | Stranding is age-agnostic |
 | No public program means no program | Silence is ambiguous three ways |
 | An old drive's power cost decides its retirement | About $2 per TB per year is noise; the host decides |
