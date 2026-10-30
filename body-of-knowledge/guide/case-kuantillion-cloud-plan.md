@@ -29,6 +29,11 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 4. From week 2, in parallel, a track on the stranded flash already installed. It needs no sanitization, custody or qualification, and it may be the larger prize.
 5. Over the following year, a pilot of reused flash in tiers that absorb device loss, and experiments that test the case's eight stated assumptions.
 
+**The clock against the shortage** [argued]. Suppose day 1 is 2 November 2026 (illustrative). Then G1 falls on 1 December, G4 on 30 January 2027, and G5 no earlier than 30 April 2027.
+- Under the case's Path B, the shortage eases from late 2027. Reused flash would then reach workloads with about two quarters of shortage left.
+- Harvest value falls as that window closes. So the gates that don't depend on each other run in parallel: spares, the pipeline, the record build and the stranded track.
+- Under Path A, tight through 2028, the same calendar leaves about six quarters.
+
 **What it rests on.** Five ideas from the seed paper carry it.
 
 - A retirement is a dated supply step that slips (Section 6.7). Here it also delivers drives.
@@ -163,7 +168,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
 | 30 | Start the reclaim pilot on one tier (experiment 5) | Storage systems | Pooling live on one tier |
 | 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
-| 30 | G1 decision: the dollar test, then the scope | Planning and finance | Go or stop, with a decision note |
+| 30 | G1 decision: the dollar test, then the scope, and the clock re-read against the signposts | Planning and finance | Go or stop, with a decision note |
 | 30 | Put the pipeline rate on the commit-point map, and surge crews on [option](/glossary/#term-option) | Reverse logistics, with planning | The staffing commit point, dated |
 | 30 | Start the drive-record build: name its systems-of-record owner, and date G3b | Fleet provisioning | A dated build plan |
 
