@@ -69,12 +69,13 @@ The method doesn't make the launch more accurate. It moves the hard question to 
 
 Case 1 tells what happened. A problem-space case does something else: it sets out a whole planning problem, as an outside analyst could reconstruct it, and leaves the answers open. It is for practice and discussion, the way a business-school case is.
 
-Problem-space cases follow four rules:
+Problem-space cases follow five rules:
 
 - **Public information only.** Nothing comes from anyone's private experience or an employer's internal data.
 - **A fictional company.** The company, its teams, its people and its events are invented. Team names are generic; how teams relate can follow the industry's real shape.
 - **Evidence labeled.** Every load-bearing claim says how it would be known: reported, inferred, speculated, or a fact about the wider industry. Speculation carries a falsifier.
 - **No quotes from a single company's material.** Paraphrase instead; further reading sits at the end.
+- **Answers on a separate page.** A case may carry a companion answer, such as a strategy or a plan. The case itself stays answer-free.
 
 Because nothing private goes in, a problem-space case may resemble the industry it draws on. The anonymization checklist below protects accounts of what happened inside an organization; it applies in full to cases like Case 1.
 
