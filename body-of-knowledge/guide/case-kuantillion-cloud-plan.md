@@ -81,7 +81,7 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | Fleet provisioning | Supply answers for harvest; state and location fields; systems of record |
 | Flash platform engineering | Condition, qualification and firmware fields; the wear price; grades |
 | Drive security engineering | Erasure and custody |
-| Machine-health engineering | Diagnosis before a pull; the reseat-and-re-test step |
+| Machine-health engineering | Diagnosis before a pull; the triage sequence |
 | Data-center operations | Change windows; physical work |
 | Spares planning | The spares pool, its ratio per segment and its pre-tested float; last-time buys |
 | Reverse logistics and value recovery | The pipeline: harvest, test, erase, ship; exit |
@@ -222,6 +222,8 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 85 | Set the risk budget's three parts | Reliability engineering; finance; tier owners | Cap, bar and bound signed |
 | 90 | Read out the reclaim pilot: go or stop for the stranded track | Storage systems; finance keeps score | Stranded share moved, or a decision note |
 | 90 | The forum ranks its first harvest; drive supply answers each claim | The forum; fleet provisioning | First ledger lines, each pegged; by lot until G3b |
+
+**Why staffing is a commit point.** The case bounds a year's SSD harvest at about 25–375 technician-years of labor, an upper bound. Crews of that size can't be hired in the 15 days after G3a, so the rate is committed at G1.
 
 **Why spares go first.** Spares are the harvest's most predictable claim and its value floor. The paper's order of change is "prove fulfillment first" (Section 10.4); this plan applies it to reused drives.
 
