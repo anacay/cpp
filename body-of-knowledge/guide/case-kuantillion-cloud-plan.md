@@ -95,7 +95,7 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | Finance | Keeps score; signs the rules that say who pays; the controller writes the accounting memo |
 | Legal, privacy and tax | Contract terms; notification clocks; intercompany pricing, customs and e-waste rules for drives that cross legal entities or borders |
 
-"Drive supply" in the tables below means fleet provisioning and spares planning together, the groups that answer for drives. Supply chain is a separate group: it owns vendor contracts.
+*Drive supply* in the tables below means fleet provisioning and spares planning together, the groups that answer for drives. Supply chain is a separate group: it owns vendor contracts.
 
 **Decision rights, RACI-style.** R does the work, A decides, S signs, C is consulted. **Change** marks a move from today's owner in the case.
 
