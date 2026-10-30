@@ -86,7 +86,7 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | P4 Spares ratio | Spares planning | Finance and tier owners (product, in the seed's terms) jointly | Finance and tier owners | Drive supply, for idle cost and liability terms | **Change:** signed in advance |
 | P5 Build programs | Fleet shaping and hardware engineering | Same, as declaring team | Declaring team signs the [change bands](/glossary/#term-change-band) | Drive supply and planning set the bands | **Change:** programs declared |
 | P6 Allocation | Planning | The forum, run by planning | Finance, on the rate card | Every sink | **Change:** unowned today |
-| P6 Commitment | Fleet provisioning | Fleet provisioning, answering each claim with a dated commit or a named gap | Finance agrees who pays if harvest fails | Planning | **Change:** never firm before supply answers |
+| P6 Commitment | Fleet provisioning | Fleet provisioning, answering each claim with a dated commit or a named gap | Finance signs the who-pays default and its exceptions | Planning | **Change:** never firm before supply answers |
 | P7 Pipeline rate | Reverse logistics with data-center operations | Reverse logistics | Drive security, per erasure | Spares planning | **Change:** staffed to a signed plan |
 | P8 Landing rule and metrics | Planning proposes | The forum ratifies | Finance signs | Every group | **Change:** from leadership in general to the forum |
 | Risk budget | Reliability engineering | Reliability engineering, for the cohort cap | Finance, for the incident bound; tier owners, for their bars | Planning | **Change:** new |
@@ -459,7 +459,10 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 4. Workload claims, ranked by next-best-source value.
 5. Exit goes short first.
 
-**Who pays when harvest fails to arrive** [argued]. Finance agrees it in advance, as the paper has finance agree "who pays for a change outside" the bands (Section 9.2).
+**Who pays when harvest fails to arrive** [argued]. The default:
+- If drive supply gave a dated commit and missed it, drive supply pays the bridge.
+- If the claim was booked against *uncommitted* harvest, the claiming sink pays.
+- Finance signs the exceptions in advance, as the paper has finance agree "who pays for a change outside" the bands (Section 9.2).
 
 ## 7. Measures
 
