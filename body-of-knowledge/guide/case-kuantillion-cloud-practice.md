@@ -540,7 +540,7 @@ The stranded stock is sized at the same time, on its own line. Its go or no-go i
 
 ### The decision gates, in brief
 
-Seven decision gates, G0 to G6, run the program. They are not the case's eleven technical gates, which a drive must clear; these are points where the program decides. Each opens only on its evidence, and the table copies the plan's. The plan's [gates](case-kuantillion-cloud-plan.md#gate-0) give each one's entry, exit, artifacts and owner.
+Seven decision gates, G0 to G6, run the program. They are not the case's eleven technical gates, which a drive must clear; these are points where the program decides. Each opens only on its evidence, and the table copies the plan's. The plan's [gates](case-kuantillion-cloud-plan.md#gates) give each one's entry, exit, artifacts and owner.
 
 | Decision gate | Evidence to enter | The work | What it licenses |
 |---|---|---|---|
