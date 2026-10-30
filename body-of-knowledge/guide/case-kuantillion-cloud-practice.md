@@ -574,7 +574,9 @@ The decisions above draw on ten concepts from the guide. This section is the rea
 
 ### The coefficient
 
-**The idea.** A caller's bill on a shared service is roughly volume × [coefficient](/glossary/#term-coefficient) × [rate](/glossary/#term-rate). Read forward, the coefficient forecasts load. Read backward, it is a price. So the paper's first claim is that a coefficient is an agreement. It "holds only while someone owns it, versions it and restates it when hardware or measurement changes" (Abstract). [The coefficient](concept-the-coefficient.md) teaches it in full.
+*Read the concept: [The coefficient](concept-the-coefficient.md).*
+
+**The idea.** A caller's bill on a shared service is roughly volume × [coefficient](/glossary/#term-coefficient) × [rate](/glossary/#term-rate). Read forward, the coefficient forecasts load. Read backward, it is a price. So the paper's first claim is that a coefficient is an agreement. It "holds only while someone owns it, versions it and restates it when hardware or measurement changes" (Abstract).
 
 **What it changes here.** Three of the case's numbers look like physics but act as agreements nobody signed. Our reading is that each needs an owner, a version and an effective date, kept in [the coefficient register (mechanism 3)](concept-operating-mechanisms.md#m3).
 
@@ -588,7 +590,9 @@ Across a generation break, averaging is "Forecasting through breaks" (mechanism 
 
 ### Three prices
 
-**The idea.** "What does capacity cost?" is three questions. Who pays uses the [average loaded rate](/glossary/#term-average-loaded-rate). Should we build uses [long-run incremental cost](/glossary/#term-long-run-incremental-cost). Who gets scarce capacity now uses the [shadow price](/glossary/#term-shadow-price). "One number for all three misleads on at least one" (Executive summary). [Three prices](concept-three-prices.md) gives the hotel example and the table of misuses.
+*Read the concept: [Three prices](concept-three-prices.md).*
+
+**The idea.** "What does capacity cost?" is three questions. Who pays uses the [average loaded rate](/glossary/#term-average-loaded-rate). Should we build uses [long-run incremental cost](/glossary/#term-long-run-incremental-cost). Who gets scarce capacity now uses the [shadow price](/glossary/#term-shadow-price). "One number for all three misleads on at least one" (Executive summary).
 
 **What it changes here.** The question of what a reused drive is worth has no single answer; it depends on which decision asks. Section 4's table rules out the most obvious tool for keeping hosts: long-run incremental cost "Misleads when used for" "Pricing capacity that already exists" (Section 4). And the drive has an outside market, which the paper's average rate doesn't price. [What a reused drive is worth](#what-a-reused-drive-is-worth) works both through: the anchor fork, the capacity anchor, margin over exit, and the internal rate.
 
@@ -596,7 +600,9 @@ Across a generation break, averaging is "Forecasting through breaks" (mechanism 
 
 ### Declarations
 
-**The idea.** A step change has no history to extend, so it enters the plan as a [declaration](/glossary/#term-declaration): a signed statement in units the planner already prices. It firms up in [stages](/glossary/#term-stage), and "promotion needs the evidence in its row" (Section 5.4). Supply has stages too: "planned, contracted, under construction, delivered, live" (Section 6.7). [Demand and declarations](concept-demand-and-declarations.md) has the stage table and the scoring rules.
+*Read the concept: [Demand and declarations](concept-demand-and-declarations.md).*
+
+**The idea.** A step change has no history to extend, so it enters the plan as a [declaration](/glossary/#term-declaration): a signed statement in units the planner already prices. It firms up in [stages](/glossary/#term-stage), and promotion needs the evidence on its row (Section 5.4). Supply has stages too: "planned, contracted, under construction, delivered, live" (Section 6.7).
 
 **What it changes here.** "A retirement is a supply order with a minus sign. It has a date, and it slips, usually because tenants can't migrate off in time" (Section 6.7). Applied here, the same retirement writes a second line with a plus sign: the drives it releases. So a harvest is a staged supply declaration, scored promised against actual by cohort and site. That turns a flow of unknown size into a forecast with a known structure and error bands.
 
@@ -604,7 +610,9 @@ Across a generation break, averaging is "Forecasting through breaks" (mechanism 
 
 ### Approval and allocation
 
-**The idea.** The paper's second claim is that approval is not allocation. An ask approved in a common unit still needs the right shape, place and time. A common unit "prices; it doesn't clear" (Section 6.1). The gap needs an owner and a ledger. A [firmness class](/glossary/#term-firmness-class) tells holders their odds. [Approval and allocation](concept-approval-and-allocation.md) walks the seven steps from declared to productive.
+*Read the concept: [Approval and allocation](concept-approval-and-allocation.md).*
+
+**The idea.** The paper's second claim is that approval is not allocation. An ask approved in a common unit still needs the right shape, place and time. A common unit prices an ask but doesn't clear it (Section 6.1). The gap needs an owner and a ledger. A [firmness class](/glossary/#term-firmness-class) tells holders their odds.
 
 **What it changes here.** Read for drives, the shape has five dimensions: capacity, performance, endurance, fit and condition. Condition has no place in the paper's unit, so terabytes alone can't allocate the harvest. The eleven technical gates are the allocation layer itself: a drive isn't supply until it clears them for a specific sink.
 
@@ -614,9 +622,11 @@ Claim 2 shows up three ways. A drive approved for a sink can fail a technical ga
 
 ### Buffers and reserves
 
-**The idea.** A plan with one line called headroom hides several buffers, each with its own owner. A buffer is a priced decision: the [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio) weighs running short against holding spare, and sets how far up the range to cover, the newsvendor fraction [78]. [Buffers and reserves](concept-buffers-and-reserves.md) covers sizing, pooling and the shortage budget.
+*Read the concept: [Buffers and reserves](concept-buffers-and-reserves.md).*
 
-**What it changes here.** The spares pool is a [stocked pool](/glossary/#term-stocked-pool) with a signed ratio, not a habit. "Someone funds and replenishes it, so a draw on it is a debt with a date" (Section 6.3). The lens separates bias from noise: "Persistent bias is different: correct it at intake (Section 9.3), don't buffer it" (Section 6.3). Read for drives, healthy drives pulled for lack of triage are that bias.
+**The idea.** A plan with one line called headroom hides several buffers, each with its own owner. A buffer is a priced decision: the [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio) weighs running short against holding spare, and sets how far up the range to cover, the newsvendor fraction [78].
+
+**What it changes here.** The spares pool is a [stocked pool](/glossary/#term-stocked-pool) with a signed ratio, not a habit. Someone funds and replenishes it, so a draw is a debt with a date (Section 6.3). The lens separates bias from noise: "Persistent bias is different: correct it at intake (Section 9.3), don't buffer it" (Section 6.3). Read for drives, healthy drives pulled for lack of triage are that bias.
 
 Pooling is the main economy, but "Correlation and heavy tails erode the gain" (Section 6.3). Aged drives of one cohort are where correlation hides. So the pool is sized for overdispersion, and the cohort is capped per redundancy group. The paper's shortage budget counts one-shot buys; a replenished pool is tested by fill rate instead.
 
@@ -624,7 +634,9 @@ Pooling is the main economy, but "Correlation and heavy tails erode the gain" (S
 
 ### Supply layers and lead times
 
-**The idea.** Supply comes in [layers](/glossary/#term-supply-layer), each with its own [lead time](/glossary/#term-lead-time) and contract terms. Turn-up is a layer too: "Turn-up is a rate, not an order. It's set by people, dock space, test positions and network ports, staffed months ahead, so it works like a checkout line" (Section 6.2). [Supply layers and lead times](concept-supply-layers-and-lead-times.md) has the layer table and the contract terms.
+*Read the concept: [Supply layers and lead times](concept-supply-layers-and-lead-times.md).*
+
+**The idea.** Supply comes in [layers](/glossary/#term-supply-layer), each with its own [lead time](/glossary/#term-lead-time) and contract terms. Turn-up is a layer too: a rate set by crews, dock space and test positions, staffed months ahead like a checkout line (Section 6.2).
 
 **What it changes here.** The reverse pipeline is a [turn-up](/glossary/#term-turn-up) layer run backwards, staffed months ahead, not bought. Its layers stack: retirement date, drain, harvest, erase and test, qualification. "a supply slip often shows up twice" (Section 6.2): a slipped retirement lands on top of the next batch. Qualification is a scarce layer too, and every new grade spends it.
 
@@ -634,7 +646,9 @@ The paper keeps supply "generic until the decision that says which shape" (Secti
 
 ### Commit points
 
-**The idea.** Each supply layer has a [commit point](/glossary/#term-commit-point): its need date minus its cautious lead time. The commit-point method (Section 8) walks each layer through eight steps. When a commit point falls before the event that would size it, you have [three choices](/glossary/#term-the-three-choices) (Section 6.5), and you write down which in a [decision note](/glossary/#term-decision-note). [Commit points and the commit-point method](concept-commit-points.md) gives the steps and the worksheet.
+*Read the concept: [Commit points and the commit-point method](concept-commit-points.md).*
+
+**The idea.** Each supply layer has a [commit point](/glossary/#term-commit-point): its need date minus its cautious lead time. The commit-point method (Section 8) walks each layer through eight steps. When a commit point falls before the event that would size it, you have [three choices](/glossary/#term-the-three-choices) (Section 6.5), and you write down which in a [decision note](/glossary/#term-decision-note).
 
 **What it changes here.** Two decisions are commit points in disguise. A last-time buy commits years before the need is known. A decommission date commits when drives arrive and when an old platform's spares need ends. The method's [firm, flexible and named](/glossary/#term-firm-flexible-named) split is how to book a harvest you can't yet count on. And the program itself has a commit point: shredding is irreversible, so the hold comes before the study.
 
@@ -642,7 +656,9 @@ The paper keeps supply "generic until the decision that says which shape" (Secti
 
 ### The measuring loop
 
-**The idea.** Pick a business [driver](/glossary/#term-driver), instrument it with the resources it uses, and "Compute the ratio continuously" (Section 5.2). Alert when the ratio shifts or use departs from forecast. A shift is a new version of a price, not a quiet edit. [The measuring loop](concept-measuring-loop.md) lays out the eight steps and the two alerts.
+*Read the concept: [The measuring loop](concept-measuring-loop.md).*
+
+**The idea.** Pick a business [driver](/glossary/#term-driver), instrument it with the resources it uses, and compute the ratio continuously (Section 5.2). Alert when the ratio shifts or use departs from forecast. A shift is a new version of a price, not a quiet edit.
 
 **What it changes here.** Two ratios matter. Endurance used per year by cohort, with its skew, decides what tomorrow's harvest is worth. The healthy share of pulled drives by site watches triage. Both can be watched before anyone prices them. And the pilot's real job is measurement: "The rollout is the measurement" (Section 5.4).
 
@@ -650,7 +666,9 @@ The paper keeps supply "generic until the decision that says which shape" (Secti
 
 ### The operating mechanisms
 
-**The idea.** Thirteen artifacts keep the agreement true from one cycle to the next, each with an owner and an indicator. Nine decision rights sit beside them. [The operating mechanisms](concept-operating-mechanisms.md) lists them all, with an anchor for each.
+*Read the concept: [The operating mechanisms](concept-operating-mechanisms.md).*
+
+**The idea.** Thirteen artifacts keep the agreement true from one cycle to the next, each with an owner and an indicator. Nine decision rights sit beside them.
 
 **What it changes here.** Six matter most for legacy flash. Check these internally in week one; the [plan](case-kuantillion-cloud-plan.md) carries the full thirteen-row checklist. Every status below is our reading of the public record.
 
@@ -669,7 +687,9 @@ Without the register, approvals are "treated as firm before supply answers" (Sec
 
 ### People and seams
 
-**The idea.** Every capacity plan is a [handshake](/glossary/#term-handshake) among capital, demand and supply. The planner sits in the middle with no budget, trading in information, timing, trust and credible commitments. Conflict runs along three [seams](/glossary/#term-seam): product and platform (seam 1), planning and finance (seam 2), planning and supply (seam 3). [People: brokering the handshake](people.md) covers the seams, the right to refuse, and legitimacy.
+*Read the concept: [People: brokering the handshake](people.md).*
+
+**The idea.** Every capacity plan is a [handshake](/glossary/#term-handshake) among capital, demand and supply. The planner sits in the middle with no budget, trading in information, timing, trust and credible commitments. Conflict runs along three [seams](/glossary/#term-seam): product and platform (seam 1), planning and finance (seam 2), planning and supply (seam 3).
 
 **What it changes here.** The case's organizational findings become the design. Our reading places hosts and harvest on seam 3, and keeping hosts and the capital-operating split on seam 2. Grades and wear sit on seam 1, where the products are the tiers that take reused flash (Section 10.1). Seam 3 needs "a definition of done for each handoff" (Section 10.1); applied here, the handoffs are a drive's off-host states.
 
