@@ -455,7 +455,7 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 
 **Internal showback rate, shown back first** [argued]. Call it a showback rate, not a transfer price, to keep it apart from tax transfer pricing.
 - **The rate** per usable TB is the higher of net realizable resale for the cohort and grade, and pipeline cost per usable TB, plus a risk loading.
-- **Why resale is the floor.** Where an outside market exists, the efficient internal price is the market price (Baldenius 2008, on Hirshleifer's rule). A lower rate invites every sink to over-claim.
+- **Why resale is the floor.** Where an outside market exists, the efficient internal price includes that market price as an opportunity cost (Baldenius 2008, on Hirshleifer's rule). That holds for a seller that takes the price; this program also moves it. A lower rate invites every sink to over-claim.
 - **Net resale** is what the resale and recycling contracts actually pay, after their fees.
 - **Carry** is charged per TB-month while the drive is held, not once.
 - **Risk loading** per usable TB = the chance of a correlated event × its cost, bridges included ÷ usable TB at risk. For example, 5% a year × $1M ÷ 10,000 TB is $5 (illustrative).
