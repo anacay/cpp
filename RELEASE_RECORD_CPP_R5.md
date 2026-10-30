@@ -56,11 +56,11 @@ HOW_IT_GROWS routes small fixes ("corrections that match a cited source") to one
 cpp (`anacay/cpp`):
 - `63bdf07`: "Discoverability: real dates, an RSS feed, and a citation block".
 - `4fec59c`: "Canon errata R5: section credits, version labels, one evidence label".
-- This commit: "Canon errata R5, second pass: labels carried into the practice note, one principle source".
+- `1617900`: "Canon errata R5, second pass: labels carried into the practice note, one principle source".
 
 ## Checks (before deploy)
 
-- **Build:** `npm run build`, all checks passed (69 pages, 5,965 internal links, 150 outbound reference links, sitemap 68 URLs).
+- **Build:** `npm run build`, all checks passed (69 pages, 5,969 internal links, 150 outbound reference links, sitemap 68 URLs).
 - **Rendered note:** no "flag" or "ladder" remains, and the machine-shape read-across links to Section 6.2's anchor.
 - **Text check:** the added lines were searched against the private term list; no matches.
 
