@@ -49,7 +49,7 @@ The paper's supply machinery is built for things that are ordered. The claim of 
 
 **6. Disassembly regains fungibility at the price of the gates.** A retired machine can be kept, redeployed whole to lighter work, or taken apart. Redeploying it whole skips most gates and keeps the machine's narrow fit. Taking it apart buys wider fit and pays every gate. The paper prices the forward chain, which spends fungibility. It has nothing on the reverse [argued].
 
-**Which of these are new.** Not all six steps are open problems. Neighboring fields already answer four of them, and the practice can adopt those answers [argued]:
+**Which of these are new.** Not all six steps are open problems. Neighboring fields already answer three of them, steps 3, 5 and 6, and also wear across lives, which the case raises. The practice can adopt those answers [argued]:
 
 - condition as a priced grade, from remanufacturing (Ferguson et al., 2009);
 - exit into a market the seller moves, from lemons theory and paced liquidation (Akerlof, 1970);
