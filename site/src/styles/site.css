@@ -532,3 +532,15 @@ mark.anno-mark { background: rgba(201, 162, 39, 0.16); color: inherit; border-bo
 tr.row-target { scroll-margin-top: 1.5rem; }
 tr.row-target:target td, tr.row-target:has(.row-link:target) td { background: rgba(201, 162, 39, 0.16) !important; }
 tr.row-target:target td:first-child, tr.row-target:has(.row-link:target) td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
+
+/* ── Glossary: practice and Case 3 parts ───────────────────── */
+.gloss__part { font-family: var(--serif); font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); margin: 3.5rem 0 0.75rem; padding-top: 1rem; border-top: 2px solid var(--gold); }
+.gloss > .gloss__part:first-child { margin-top: 0.5rem; }
+.gloss__group > .muted { font-size: 0.9375rem; margin: 0 0 0.5rem; }
+.gloss h3.letter { font-size: 1.75rem; }
+.gloss .read { font-size: 0.875rem; margin: 0.2rem 0 0; color: var(--ink-muted); }
+.gloss__tag { display: inline-block; font-family: var(--sans); font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; padding: 0 0.45rem; border: 1px solid rgba(201, 162, 39, 0.55); border-radius: 999px; color: var(--gold-soft); vertical-align: 0.2em; }
+.gloss__note { font-size: 0.9375rem; color: var(--ink-muted); margin: 0.2rem 0 0.4rem; }
+.gloss dt { scroll-margin-top: 1.5rem; }
+.gloss dt:target { color: var(--gold-soft); }
+.letters__part a { font-family: var(--sans); font-size: 0.875rem; padding-inline: 0.7rem; }
