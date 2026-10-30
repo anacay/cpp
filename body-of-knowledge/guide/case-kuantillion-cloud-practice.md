@@ -21,14 +21,14 @@ Kuantillion Cloud is a fictional hyperscale operator. It runs one of the largest
 
 **The shock.** New enterprise flash now costs three to four times what it did a year earlier. Next year's supply from the flash makers is largely pledged to their biggest buyers already. Any flash Kuantillion Cloud didn't contract for in advance is hard to get at any price.
 
-**The old flash.** Kuantillion Cloud retires machines every year and takes them apart. In 2024 it wiped and then reused or resold over 3 million drives. Its reports call them hard drives, so how many were solid-state drives (SSDs) is unknown. Older flash also sits idle inside machines that are still running. One peer cloud measured 54% of its server SSD capacity stranded that way ([section 4.1](case-kuantillion-cloud-full.md#4-1-four-populations)).
+**The old flash.** Kuantillion Cloud retires machines every year and takes them apart. In 2024 it wiped and then reused or resold over 3 million drives. Its public environmental reports call them hard drives, so how many were solid-state drives (SSDs) is unknown. Older flash also sits idle inside machines that are still running. One peer cloud measured 54% of its server SSD capacity stranded that way ([section 4.1](case-kuantillion-cloud-full.md#4-1-four-populations)).
 
 **Where a drive can go.** When a host retires, it can be kept, redeployed whole to lighter work, or taken apart. A harvested drive then has four sinks ([section 5](case-kuantillion-cloud-full.md#5-demand-four-places-a-legacy-drive-can-go)):
 
 - a workload that tolerates older flash;
 - the pool of repair spares for old platforms;
 - an upgrade or a new build;
-- exit, through resale, recycling or the shredder.
+- exit, through resale, recycling or destruction.
 
 **Why that is hard.** A drive isn't one quantity. It has five dimensions: capacity, performance, remaining endurance, fit and condition history. Each sink prices a different one. Spares price fit, workloads price capacity and latency, and resale prices provable condition. No shared unit or internal price exists for any of them.
 
@@ -42,7 +42,7 @@ Kuantillion Cloud is a fictional hyperscale operator. It runs one of the largest
 
 **The size.** The SSD harvest could be under 1% or near 30% of a year's new flash, central 3–9% (illustrative). That range sets the program's scope. Whether the program pays at all is a dollar question: its margin over exit against its fixed cost.
 
-**The organization.** Allocation and value recovery sit in different groups. The technicians who pull drives are measured on ticket speed, which pushes drives toward the shredder. Three of the case's decisions have no public owner at all ([section 11](case-kuantillion-cloud-full.md#11-problem-decomposition)). The groups are mapped in [section 10.2](case-kuantillion-cloud-full.md#10-2-the-team-map-and-the-seams-between-them).
+**The organization.** Allocation and value recovery sit in different groups. Its own published material says the technicians who pull drives are measured on ticket speed, which pushes drives toward the shredder. Three of the case's decisions have no public owner at all ([section 11](case-kuantillion-cloud-full.md#11-problem-decomposition)). The groups are mapped in [section 10.2](case-kuantillion-cloud-full.md#10-2-the-team-map-and-the-seams-between-them).
 
 **Two futures.** On Path A, flash stays tight through 2028. On Path B, it eases from late 2027 and high-capacity drives get cheap first ([section 8](case-kuantillion-cloud-full.md#8-two-futures-and-the-signposts-between-them)). A good answer has to work under both.
 
@@ -504,7 +504,7 @@ The decisions depend on each other, and the dependencies fix most of the order.
 
 ### The window
 
-The sequence runs against a clock it doesn't control. Path A keeps flash tight through 2028; Path B eases from late 2027, and high-capacity drives get cheap first. If day 1 falls around November 2026, reused flash reaches workloads no earlier than mid-2027 (illustrative).
+The sequence runs against a clock it doesn't control. Path A keeps flash tight through 2028; Path B eases from late 2027, and high-capacity drives get cheap first. If day 1 falls around November 2026, reused flash reaches workloads no earlier than late April 2027, when the plan's [gate G5](case-kuantillion-cloud-plan.md#gate-5) can open (illustrative).
 
 So the value of starting depends on the path. If harvest value falls 50% a year, as Path B threatens, each quarter of delay costs about 16% of it. At 10% a year, closer to Path A, it costs under 3% (illustrative). Spares and last-time buys keep their value on either path; the workload sink is the one that decays.
 
