@@ -64,7 +64,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 - Every number has an owner, and every gap is named ([principles](principles.md)).
 - [Turn-up](/glossary/#term-turn-up) is a staffed rate (Section 6.2). Applied here, so is the reverse pipeline.
 
-**What it doesn't do.** It doesn't settle questions the practice can't yet answer. The [Second lives](note-second-lives.md) working note holds those: supply that is a byproduct, the condition of a drive as a dimension of supply, and exit as a sink.
+**What it doesn't do.** It doesn't settle questions the practice can't yet answer. The [Second lives](note-second-lives.md) working note holds the two that stay open: supply that is a byproduct of other decisions, coupled to demand, and quality that fails after delivery, as a cohort.
 
 ## 2. Roles and decision rights {#roles}
 
