@@ -137,7 +137,7 @@ Each term guards against a specific overstatement.
 
 For example, take a $40 contribution margin per short TB-month, over 12 months, with a stockout in 75% of them. Add a 10% cost of capital, light attrition and a $100 terminal value (all illustrative). At a 10% attribution share, the capacity anchor is about $121 per usable TB. At 30% it is about $188. Only where SSD alone binds, at 100%, does it reach about $423.
 
-So the capacity anchor passes the $192 floor only when the drive carries more than about 31% of the short shape's margin. At these inputs it never reaches the $636 ceiling. The attribution share decides the stress case where contracts are firm and stockouts persist. Measure it first, zone by zone [unmeasured].
+So the capacity anchor passes the $190 floor only when the drive carries more than about 30% of the short shape's margin. At these inputs it never reaches the $640 ceiling. The attribution share decides the stress case where contracts are firm and stockouts persist. Measure it first, zone by zone [unmeasured].
 
 Net value has to be measured against exit, not against zero, because a harvested drive could be sold instead. Margin over exit = yield × replacement value − pipeline cost − forgone net resale ([section 7.5](case-kuantillion-cloud-full.md#7-5-pipeline-life-and-carbon)). Gross resale runs about $80–160 per TB. At the $640 anchor, the margin is about +$90 to +$490 per TB. At the $190 anchor, it is about −$135 to +$85, so thin cohorts lose money by staying in. The central cell, at 80% yield, $20 pipeline and $120 resale, gives about +$370 and +$10 (illustrative). The old range of about $25 to $570 per TB ignored resale; it is net value before exit.
 
