@@ -382,7 +382,7 @@ This is reasoning, not a work order. Owners appear only where the argument needs
 - Add a reuse-eligibility field: free, constrained or forbidden. Some customer, government or sovereign contracts may limit used parts or data-bearing media. P3 treats it as a placement constraint [argued].
 - Reconcile the record with the erasure log at every off-host state. Treat each gap as the leading sign of a custody incident [argued].
 
-**Blind cohorts.** Older drives that predate newer telemetry fields are partly blind. Our reading is that they are steps with no reference class, where the paper says you "bound it, phase it and buy options" (Section 13). They go first to loss-absorbing tiers or to exit [argued]. [Limits](limits.md) explains the no-reference-class case.
+**Blind cohorts.** A cohort is blind when its drives lack the fields the grade rule needs, not merely newer telemetry. Our reading is that blind cohorts are steps with no reference class, where the paper says you "bound it, phase it and buy options" (Section 13). They go to like-for-like spares only [argued]. Their own platform already runs blind drives of that exact model, so a like-for-like spare adds no new risk. [Limits](limits.md) explains the no-reference-class case.
 
 **Custody.** Proving erasure is a security discipline, not capacity planning. [The practice's Charter](/charter/) says of neighboring fields: "We link to them rather than rewrite them". It doesn't name erasure among them, so treating it that way is our reading. The practice's part is the record, not the erasure method.
 
@@ -455,11 +455,13 @@ Three lines of the paper are new to this decision. An approved unit must still b
 
 | Grade | Rule | Where it can go |
 |---|---|---|
-| 1 | Observable cohort; safe firmware; under the wear and error thresholds | Durable tiers, once the evidence bar is met |
-| 2 | Observable, but outside one threshold, or within a year of a known firmware fault age | Loss-absorbing tiers and spares only |
-| 3 | Blind, or failing any threshold | Exit or destroy |
+| 1 | No uncorrectable error or critical warning in a set window; few grown bad blocks, with a flat trend; capacitor test passed; safe firmware, updated at harvest; burn-in passed | Durable tiers, once the evidence bar is met |
+| 2 | One event-history flag, or old firmware with no known fault | Loss-absorbing tiers, and like-for-like spares only |
+| 3 | Repeat events, a failed capacitor test, or no safe firmware | Exit or destroy |
 
-For example, a wear threshold might be half of rated endurance used (illustrative). The thresholds themselves are [unmeasured].
+Grade on event history, not wear. In the field studies, error history predicts: after one uncorrectable error, the chance of another the next month was about 30%, against 2% in a random month (Schroeder et al., 2016). Firmware version moved replacement rates up to tenfold (Maneas et al., 2020). Wear rarely binds, since most drives use under 1% of their rated endurance a year. Keep wear as a recorded field, and use it as a threshold only for write-heavy or QLC cohorts. Age matters per firmware cohort, measured in power-on hours. The thresholds themselves are [unmeasured].
+
+Burn-in comes before any grade 1 placement, with its yield logged. Infant mortality is common in first lives, and a second life may restart that clock; that is a hypothesis, not a finding [unmeasured].
 
 **Cap the tiers.** Cap the tier count at what the fleet's backlog and solver categories show its systems can carry [argued]. Three grades fit inside a cap of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, spares and exit only.
 
