@@ -17,9 +17,9 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 **How to read the labels.** A quote with a Section is the seed paper's own text. Rules this plan adds are marked [argued]. Quantities nobody has published are [unmeasured]. Every number is illustrative unless the case tags it otherwise. Every owner and date is a proposal, to be adjusted to the teams you find. The seed paper is "a practitioner synthesis, not a model, and untested" (Abstract), and so is this plan.
 
-### Terms used on this page {#terms}
-
 **The small grid** under the contents places this page on [the map](the-map.md). Its columns are the five cadences, annual to post-launch; its rows are the five altitudes, envelope to unit. Every cell is lit, because the plan runs at all of them.
+
+### Terms used on this page {#terms}
 
 - **Sink:** one of four places a usable drive can go: workloads, repair spares, upgrades and builds, or exit ([sink](/glossary/#term-sink)).
 - **Harvest:** drives taken out of retiring hosts for reuse or exit ([harvest](/glossary/#term-harvest)).
