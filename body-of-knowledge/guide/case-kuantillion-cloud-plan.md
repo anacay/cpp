@@ -60,7 +60,7 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | Fleet shaping and hardware engineering | Build and upgrade programs; physical fit, protocol and backplane |
 | Supply chain | Owns the memory-reclaim program, the nearest precedent; vendor terms |
 | Tier owners | The owners of the workloads and storage tiers that take reused flash: the case's resource managers. They are "product" in the seed paper's terms |
-| Reliability engineering | Cohort caps per failure domain |
+| Reliability engineering | Cohort caps per redundancy group; the durability response in an incident |
 | Finance | Keeps score; signs the rules that say who pays |
 
 "Supply" in the tables below means fleet provisioning and spares planning together, the groups that answer for drives.
@@ -508,7 +508,7 @@ The case names public signposts between two futures. Path A stays tight through 
 | Second-class capacity | A stated class; a challenge channel | Asks naming new hardware | Storage systems |
 | Misdiagnosis drain | Triage before any pull; bias corrected at intake | Healthy share of pulls | Machine-health engineering |
 | Shape sprawl | Three grades inside the tier cap | Solver categories growing | Planning |
-| Correlated concentration | Cohort cap per failure domain | Same-cohort racks | Reliability engineering |
+| Correlated concentration | Cohort cap per redundancy group | Same-cohort drives in one group | Reliability engineering |
 | Firmware time bombs | Firmware baseline as a gate | Unpatched redeployed drives | Flash platform engineering |
 | Blind spots | Blind cohorts to loss-absorbing tiers or exit | Missing health fields | Flash platform engineering |
 | Sanitization bottleneck | A staffed rate; one signer per drive | Queue age | Drive security engineering |
@@ -517,10 +517,15 @@ The case names public signposts between two futures. Path A stays tight through 
 | Wear spent blindly | Endurance by cohort, quarterly | Endurance at harvest | Flash platform engineering |
 | Fighting the last shortage | Quarterly rate card; release trigger | Contract prices flattening | The forum |
 
-**The cohort cap.** Name each cohort as a shared driver: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). Cap a cohort's share of any failure domain [argued]. For example, if a domain holds 2,000 drives, a 10% cap is 200 (illustrative).
+**The cohort cap** [argued]. Name each cohort as a shared driver: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). A [cohort](/glossary/#term-cohort) is one model, one firmware and one power-on-hour band.
+- **The rule.** No redundancy group holds more members of one cohort than its failure tolerance minus one.
+- For example, an erasure-coded group that survives three lost drives holds at most two of any cohort (illustrative).
+- A cap on a cohort's share of a rack or other failure domain is secondary.
+- **Why groups, not shares.** Failures cluster. In one study, a drive in a failed drive's RAID group was over 180 times likelier to be replaced within a week (Maneas et al. 2020).
+- In another, 37% of failures came in bursts, and rack-aware placement tripled time to data loss (Ford et al. 2010).
 
 **The risk budget**, set at G4 [argued]:
-1. A cohort cap per failure domain, set by reliability engineering.
+1. A cohort cap per redundancy group, set by reliability engineering. Its test is the chance of losing more cohort drives than the group tolerates within one repair window.
 2. An evidence bar per tier, rising only with scored outcomes. Caches start lower, durable tiers higher.
 3. An incident cost bound, signed by finance before volume grows.
 
@@ -615,8 +620,9 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - Overrides: logged with what moved down
 
 **Risk-budget record** [argued]
-- Cohort: model, firmware, age band
-- Cohort cap per failure domain, and who set it (reliability engineering)
+- Cohort: model, firmware, power-on-hour band
+- Cohort cap per redundancy group, the group's failure tolerance, and who set it (reliability engineering)
+- Chance of a cohort loss beyond tolerance within one repair window
 - Evidence bar per tier, the outcomes it rests on, and the date it last rose
 - Incident cost bound, and who signed it (finance)
 - Draws on the bound to date
@@ -640,6 +646,8 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - **Studies cited on this page.** Other operators' and researchers' fleets, cited as analogies; none is Kuantillion Cloud's:
   - Schroeder and Gibson, Disk failures in the real world, *USENIX FAST* (2007): https://www.usenix.org/legacy/event/fast07/tech/schroeder/schroeder_html/
   - Xu, Zheng, Qin, Xu and Wu, Lessons and Actions: What We Learned from 10K SSD-Related Storage System Failures, *USENIX ATC* (2019): https://www.usenix.org/conference/atc19/presentation/xu
+  - Ford, Labelle, Popovici, Stokely, Truong, Barroso, Grimes and Quinlan, Availability in Globally Distributed Storage Systems, *USENIX OSDI* (2010): https://www.usenix.org/conference/osdi10/availability-globally-distributed-storage-systems
+  - Maneas, Mahdaviani, Emami and Schroeder, A Study of SSD Reliability in Large Scale Enterprise Storage Deployments, *USENIX FAST* (2020): https://www.usenix.org/conference/fast20/presentation/maneas
   - Baldenius, Internal Pricing, *Foundations and Trends in Accounting* (2008): https://doi.org/10.1561/1400000013
   - Alter, Xue, Dimnaku and Smirni, SSD Failures in the Field: Symptoms, Causes, and Prediction Models, *SC* (2019): https://par.nsf.gov/servlets/purl/10172650
 
