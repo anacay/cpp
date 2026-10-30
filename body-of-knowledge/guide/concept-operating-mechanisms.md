@@ -35,7 +35,7 @@ The thirteen do four jobs.
 
 *From the seed paper, Figure 39.* The discipline as thirteen artifacts, grouped by job.
 
-Mechanism 3 keeps [the coefficient](concept-the-coefficient.md) an agreement. Mechanism 5 tracks the gap in [approval and allocation](concept-approval-and-allocation.md). [The commit-point method](concept-commit-points.md) writes into 12 and 13.
+[Mechanism 3](#m3) keeps [the coefficient](concept-the-coefficient.md) an agreement. [Mechanism 5](#m5) tracks the gap in [approval and allocation](concept-approval-and-allocation.md). [The commit-point method](concept-commit-points.md) writes into [12](#m12) and [13](#m13).
 
 ## Where it shows up on the map
 

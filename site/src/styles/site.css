@@ -525,3 +525,10 @@ mark.anno-mark { background: rgba(201, 162, 39, 0.16); color: inherit; border-bo
 @keyframes rfc-select { 0%, 8% { background-size: 0% 100%; } 38%, 88% { background-size: 100% 100%; } 96%, 100% { background-size: 0% 100%; } }
 @keyframes rfc-rise { 0%, 40% { opacity: 0; transform: translateY(8px); } 48%, 88% { opacity: 1; transform: translateY(0); } 96%, 100% { opacity: 0; transform: translateY(8px); } }
 @keyframes rfc-press { 0%, 62% { transform: scale(1); box-shadow: none; } 66% { transform: scale(0.94); box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.35); } 72%, 100% { transform: scale(1); box-shadow: none; } }
+
+/* ── Row anchors (numbered mechanisms) ─────────────────────── */
+.row-link { color: var(--gold-soft); text-decoration: none; font-weight: 600; }
+.row-link:hover { text-decoration: underline; }
+tr.row-target { scroll-margin-top: 1.5rem; }
+tr.row-target:target td, tr.row-target:has(.row-link:target) td { background: rgba(201, 162, 39, 0.16) !important; }
+tr.row-target:target td:first-child, tr.row-target:has(.row-link:target) td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
