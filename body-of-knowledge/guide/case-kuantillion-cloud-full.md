@@ -1,6 +1,6 @@
 ---
 title: Kuantillion Cloud: the full case
-short: The complete case: where old flash sits, the four places it can go, the gates, the money, eight decisions and two sub-decisions, eighteen causal chains and seven scenarios for 2027.
+short: Where old flash sits, the four places it can go, the gates, the money, eight decisions and two sub-decisions, eighteen causal chains and seven scenarios for 2027.
 kind: case
 order: 3.1
 cadence: all
@@ -69,7 +69,7 @@ The problem is to get the most value from that installed base across four sinks:
 1. **Nobody has declared what kind of value this is, or how much there is.** If Kuantillion Cloud's purchase commitments are flexible, a reused drive avoids a purchase. If they are firm, it adds capacity to a sold-out fleet: a different number, with a different beneficiary. And the SSD harvest could be near zero, since the published count is of hard drives, or near 30% of annual flash deployment (Illustrative). That ratio describes whether this is spares hygiene or supply strategy (section 7).
 2. **A drive has five dimensions, and every sink prices a different one.** Capacity, performance, remaining endurance, fit and condition history. Workloads price capacity and latency, spares price fit, upgrades price fit and qualification, and resale prices provable condition. No shared unit or price exists inside the fleet.
 3. **Supply is a byproduct of lifecycle decisions made for other reasons.** Keeping a platform alive raises its need for spares while cutting the harvest that feeds them. Retiring one releases drives that mostly fit its own generation.
-4. **The organization splits the problem in two, everywhere.** Across the industry, allocation and value recovery are hired into different organizations. The people who touch drives are measured on ticket speed. Kuantillion Cloud's own report concedes that its measures miss much of the value reuse adds.
+4. **The organization splits the problem in two, everywhere.** Across the industry, allocation and value recovery are hired into different organizations. Its own published material says the people who touch drives are measured on ticket speed. Kuantillion Cloud's own report concedes that its measures miss much of the value reuse adds.
 5. **Nobody has published how reused drives behave in a second life.** First-life field studies disagree on late-life hazard: two large ones saw no rise at end of life. Firmware, model and error history matter more than age. Second-life hazard, including any early failures that handling causes, is unknown, and so is what one bad incident would cost. Both bound how much risk any allocation can take.
 
 **The five most surprising connections**
@@ -105,7 +105,7 @@ The problem was built in three movements. Drive generations quietly diverged for
 - Through 2026, enterprise SSD contract prices rise about 80% in the first quarter, 50% in the second and 20–25% in the third, with 23–28% forecast for the fourth (Third party). The midpoints compound to about 4.2 times end-2025; one analyst's cumulative figure implies about 3.4. Read the year as roughly 3.4 to 4.2 times (Arithmetic). Small SSDs enter their own squeeze as vendors favor high-capacity parts.
 - Flash makers move their largest buyers onto multi-year, often prepaid agreements; one reports more than 75% of its 2027 output committed, with 2027 supply contracts expected to close as early as Q1 (Press). By January 2026, analysts call the year's memory capacity all but sold out, and module makers get only 30–50% of the chip volumes they request (Third party). Unplanned volume is the hardest to get (Inferred).
 - PC makers halve standard SSD configurations (1 TB to 512 GB, 512 GB to 256 GB). A large content-delivery operator reports server costs up 75–200% and adds a customer surcharge, the response open to an operator too small to win allocation (Press; Inferred).
-- Kuantillion Cloud's disclosed purchase commitments run from about $149 billion at end-2025 to $332 billion in March 2026 and $811 billion by mid-2026. That is 5.4 times in six months, mainly technical infrastructure (Press relaying filings; not re-verified against the note text). Peers disclose hundreds of billions too. Supply risk is being turned into contract at historic scale (Inferred).
+- Kuantillion Cloud's disclosed purchase commitments run from about $149 billion at end-2025 to $332 billion in March 2026 and $811 billion by mid-2026. That is 5.4 times in six months, mainly technical infrastructure (Reported, quarterly filing for the period ended 30 June 2026; Press). Peers disclose hundreds of billions too. Supply risk is being turned into contract at historic scale (Inferred).
 - September 2026: a supply-chain executive at Kuantillion Cloud says it has begun reclaiming older memory from retired servers. It goes into the newest AI servers through a dedicated hardware interface, and it still isn't enough (Press).
 - October 2026: Kuantillion Cloud reaffirms six-year server lives, says it is supply constrained, has started renting third-party compute and expects capital spending to rise significantly in 2027 (Reported; Press). Its cloud advises customers to reserve even some general-purpose capacity ahead of need (Press).
 
@@ -198,7 +198,7 @@ Kuantillion Cloud's own report asks this question, and its only executive remark
 
 *Host retirement and the drive's five outcomes. Three put the drive back into service; which one wins for a given drive is the allocation question in P6.*
 
-### 4.4 The leak upstream of the cage: tickets that weren't the drive {#4-4-the-leak-upstream-of-the-cage-drives-pulled-that-were-never-bad}
+### 4.4 The leak upstream of the cage: tickets that weren't the drive
 
 Drives also leave service one at a time through repair tickets. A published study of about ten thousand SSD-related failure tickets at one Asian cloud found 34.4% weren't caused by the drive at all (Third party; Xu et al. 2019). Human mistakes, such as a drive in the wrong slot, made up 20.5% of all tickets and faulty cables 13.9%. Separately, about 12% of all fixes were simply a reboot.
 
@@ -567,7 +567,7 @@ It breaks into eight decisions and two sub-decisions carried inside them: P2a's 
 - **Beyond the fleet.** The record is the anti-lemons device (Inferred; A.3). Outside buyers can't verify a used drive's history, so the market prices at average quality. A fleet that can prove a history values its healthy drives above the market's price, so internal reuse beats resale for exactly those drives. For what is sold, attested history narrows the discount. In maintenance terms, P1 is the data layer of condition-based maintenance for flash.
 - **Links.** Feeds every other problem.
 
-### P2. When does the host go
+### P2. When does the host go?
 
 - **Decision (owner).** For each platform generation and machine cohort: when to keep the host, when to redeploy it intact to a lower-demand class, and when to take it apart. These choices set the harvest schedule; what happens to harvested drives is P6. Fleet provisioning and lifecycle transitions, with finance on depreciation (Inferred).
 - **Inputs.** Cost to carry the host (power, space, labor, repairs); the value of its capacity to current demand; the value its drives would have across P6's sinks; depreciation; carbon.
@@ -812,7 +812,7 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 | 6 | The fleet provisioning team works on stranding, the reverse supply chain and resource returns | Reported (postings); ownership Inferred |
 | 7 | Obtainability is a formal supply target; solver and fungibility work is hired for; divestments fund new allocations | Reported (postings, 2026) |
 | 8 | The industry hires for these problems in near-identical terms, and splits allocation from value recovery | World; Inferred convergence; Speculated mechanism |
-| 9 | Purchase commitments rose about 5.4× in six months, to about $811B | Press; not re-verified against the filing |
+| 9 | Purchase commitments rose about 5.4× in six months, to about $811B | Reported (quarterly filing, 30 June 2026); Press |
 | 10 | Fleet components are capitalized, so no financial statement shows the drive pool | Reported (note text); Inferred (consequence) |
 | 11 | Capacity errors name local SSD capacity; 2026 stockouts reached general-purpose machines; customers were advised to reserve | Press; error class Reported |
 | 12 | Kuantillion Cloud's patents cover wear control points; none found on grading, refurbishment or redeployment | Reported (two patents); Inferred (absence; a sample) |

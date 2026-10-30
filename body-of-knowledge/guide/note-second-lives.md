@@ -90,7 +90,7 @@ Every number here is invented to show the shape.
 
 ## Where we're unsure
 
-Open questions, each an invitation. The thread for all of them is still to be opened.
+Open questions, each an invitation. To take one up, open a discussion; the [join page](/join/) shows how.
 
 1. **How strong is the coupling?** How much does keeping a platform raise its spares need, and how much harvest does it forgo, platform by platform? [unmeasured]
 2. **Where does the second-life hazard cross the new-part curve?** First-life studies disagree on late-life hazard, and two large ones saw no rise at end of life. Firmware, model and error history matter more than age. Nobody has measured a second life, including any infant mortality from handling. [unmeasured]
@@ -104,19 +104,19 @@ Open questions, each an invitation. The thread for all of them is still to be op
 The note's framing and mistakes are the practice's own.
 
 **Seed paper:**
-- [Section 6](https://cpp.anacay.org/paper/6-approval-is-not-allocation/): netting, shape, supply chain, correlation and supply steps.
-- [Section 8.2](https://cpp.anacay.org/paper/8-the-commit-point-method/): netting, each term dated and owned.
-- [Section 9.2](https://cpp.anacay.org/paper/9-the-operating-discipline/): mechanisms 5 and 11, and the decision rights.
-- [Section 13](https://cpp.anacay.org/paper/13-where-this-breaks/): limits.
-- [Section 4](https://cpp.anacay.org/paper/4-three-prices-three-questions/) and [Section 5](https://cpp.anacay.org/paper/5-coefficients-are-agreements/): prices and versioning.
-- [Section 10](https://cpp.anacay.org/paper/10-people/) and [Section 11](https://cpp.anacay.org/paper/11-what-changes-in-the-ai-era/): the planning-and-finance seam, and failure ownership.
+- [Section 6](/paper/6-approval-is-not-allocation/): netting, shape, supply chain, correlation and supply steps.
+- [Section 8.2](/paper/8-the-commit-point-method/): netting, each term dated and owned.
+- [Section 9.2](/paper/9-the-operating-discipline/): mechanisms 5 and 11, and the decision rights.
+- [Section 13](/paper/13-where-this-breaks/): limits.
+- [Section 4](/paper/4-three-prices-three-questions/) and [Section 5](/paper/5-coefficients-are-agreements/): prices and versioning.
+- [Section 10](/paper/10-people/) and [Section 11](/paper/11-what-changes-in-the-ai-era/): the planning-and-finance seam, and failure ownership.
 
 **Related records:**
-- The Popcorn Pajamas practice note's gap 1, barter supply, shares this note's starting point. The paper assumes supply is bought (practice note, P6), and both cases bring in supply that isn't.
-- Its gap 7 covers opposite-sign coupling across layers; this note covers it across demand and supply.
+- The Popcorn Pajamas practice note's [gap 1](case-popcorn-pajamas-practice.md#where-the-practice-needs-new-work), barter supply, shares this note's starting point. The paper assumes supply is bought (practice note, [P6](case-popcorn-pajamas-practice.md#allocation)), and both cases bring in supply that isn't.
+- Its [gap 7](case-popcorn-pajamas-practice.md#where-the-practice-needs-new-work) covers opposite-sign coupling across layers; this note covers it across demand and supply.
 - Held stock that gains or loses value is carried in a separate Proposals discussion.
 
-**The studied ground.** The sources below are new to this note. Each links to the cited work itself, as the buildings note does (DOIs checked 30 October 2026).
+**The studied ground.** The sources below are new to this note. Each gives the address of the cited work itself, as the buildings note does (DOIs checked 30 October 2026).
 
 - Guide, V. D. R., & Van Wassenhove, L. N. (2009). *The evolution of closed-loop supply chain research.* Operations Research 57(1): https://doi.org/10.1287/opre.1080.0628
 - Fleischmann, M., and colleagues (1997). *Quantitative models for reverse logistics: a review.* European Journal of Operational Research 103(1): https://doi.org/10.1016/S0377-2217(97)00230-0
