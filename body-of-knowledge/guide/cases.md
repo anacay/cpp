@@ -97,6 +97,7 @@ Kuantillion Cloud runs one of the largest computing fleets in the world. It reti
 - [The case page](case-kuantillion-cloud.md): the situation in two minutes.
 - [The full case](case-kuantillion-cloud-full.md).
 - [How the practice solves it](case-kuantillion-cloud-practice.md): the answer, with every judgment that goes past the paper marked.
+- [The execution plan](case-kuantillion-cloud-plan.md): the answer as a plan a program lead can run, with owners, gates, rules to sign and measures.
 
 ## How to write a case
 
