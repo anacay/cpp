@@ -685,8 +685,9 @@ Two of the practice's ideas set the order. The first is the [stage](/glossary/#t
 
 The decisions depend on each other, and the dependencies fix most of the order.
 
+- **Preserve the option before you price it.** Shredding and resale are irreversible, and the ticket-speed flow keeps doing both while you study. So hold SSDs from retiring hosts out of destruction and resale from week one, within secure cage capacity, until the first decision gate [argued]. That is the commit-point logic applied to the program itself.
 - **Existence before design.** You can't design a program that already runs, or one that was declined for a reason that still holds.
-- **Size and anchor before everything priced.** P2's keep sheet, P6's ranking and P8's scorecard all need the anchor. The class decides how much of the rest runs at all.
+- **Size and anchor before everything priced.** P2's keep sheet, P6's ranking and P8's scorecard all need the anchor. The dollar test decides whether the rest runs at all, and the scope ratio how much.
 - **The record before allocation.** P6 can't peg drives that have no record. P1's off-host fields come before the forum ranks.
 - **Hosts and allocation together.** P2 needs drive values from P6, and P6 needs dated retirements from P2. They start in the same gate.
 - **Spares before workloads.** Spares prove fulfillment cheaply and set the value floor. Workloads need trust that spares build.
