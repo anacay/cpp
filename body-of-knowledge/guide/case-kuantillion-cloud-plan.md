@@ -392,6 +392,13 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 - Or release when a drive's shelf time passes two re-test cycles with no claim.
 - Release in steps, under a cap on resale per model per quarter.
 
+**Sanitization by sink** [argued]. The case says internal reuse faces a lower bar than exit. Drive security engineering sets each bar.
+- **Internal sinks:** crypto-erase, with custody unbroken from host to new host.
+- **Exit:** purge, then verify and validate each lot before it leaves custody.
+- **Both:** the standing read-back rule under scenario S3, per tool × firmware × model.
+- **Destruction:** shredding is deprecated for flash. Use a listed destruct method, such as melting, and rely on keys held off the drive.
+- Price the pipeline separately for each path, since exit costs more per drive.
+
 **Landing rule** [argued] ([landing rule](/glossary/#term-landing-rule)).
 - **Capital savings land only on evidence.** That means a purchase-order line cancelled, reduced or pushed out in the supply register (mechanism 11). Or it means a cut against the purchase plan frozen at G1.
 - Once a saving lands, split it: shares booked as savings, returned to the recoverer and held centrally. That is the split Section 9.3 offers as an example.
