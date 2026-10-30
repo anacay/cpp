@@ -120,9 +120,9 @@ Day 1 is the day the sponsor names the program lead. Each action has one owner a
 | 1–2 | Request access for the day-10 and day-20 pulls: harvest log, flash deployed, decommission schedule, contracts | Planning, through the sponsor | Access granted by day 7, or escalated |
 | 1–2 | Book the interviews, group by group (the interview guide below) | Planning | A schedule for days 2–5 |
 | 2 | Open a RAID log: risks, assumptions, issues and decisions | Planning | The log, reviewed weekly |
+| 3 | Hold SSDs from retiring hosts back from destruction and resale, within secure cage space; the hold expires at G1 | Reverse logistics, with drive security; signed by finance and drive security | A signed hold, and cage space tracked daily |
 | 3 | Set the status cadence: a weekly program review and a fortnightly note to the sponsor | Planning | Both on the calendar |
 | 5 | Ask for headcount and budget to day 90: the lead's team, the record build, pipeline surge options | Planning, to the sponsor | A signed ask, or a named gap |
-| 3 | Hold SSDs from retiring hosts back from destruction and resale, within secure cage space; the hold expires at G1 | Reverse logistics, with drive security; signed by finance and drive security | A signed hold, and cage space tracked daily |
 
 **Why hold first** [argued]. Destruction and resale can't be undone, and allocation starts only at day 90. So preserve the option before you price it. When the cages fill, the oldest held lots go to exit first.
 
