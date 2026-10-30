@@ -162,7 +162,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | By day | Action | Owner | Output |
 |---|---|---|---|
 | 70 | Sign the spares shortage-to-idle ratio per platform | Finance and tier owners | A signed ratio |
-| 70 | Add a reseat-and-re-test step before any SSD pull | Machine-health engineering | The step live at two sites |
+| 70 | Add or confirm the triage sequence before any SSD pull: slot check, cable swap, reboot, re-test | Machine-health engineering | The sequence confirmed, or live at two sites |
 | 75 | Staff the pipeline to the median of expected retirements, with surge crews on contract | Reverse logistics | A staffed rate and booked slots |
 | 80 | Put every planned decommission on the supply register as a dated step, both ways | Fleet provisioning | Hosts out, drives in |
 | 85 | Set the risk budget's three parts | Reliability engineering; finance; tier owners | Cap, bar and bound signed |
@@ -400,7 +400,7 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 | Stranded flash | Share of installed flash | Falls after the reclaim pilot | Flat after pooling |
 | Harvest-to-redeploy time | Per drive harvested | Falls quarter on quarter | Harvested-but-not-graded drives aging |
 | Yield | Per drive harvested, by cohort and gate | Known by cohort | Unknown for any cohort in the pilot |
-| Healthy share of pulls | Per drive pulled, by site | Falls after the reseat step | No change after the reseat step |
+| Healthy share of pulls | Per drive pulled, by site | Known by site, then falling where triage was missing | Unknown after day 90, or no change where triage was added |
 | Endurance used at harvest | Per drive, by cohort | Known by cohort | Missing for write-heavy cohorts |
 | Embodied carbon preserved | Per drive redeployed | Reported with its additionality | Claimed where no purchase was displaced |
 | Harvest promised against actual | Per retirement, by stage | The gap narrows | No narrowing after two cycles |
@@ -426,8 +426,10 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 | 4 | Net value stays positive after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort | Net value below zero for the cohort's drive class | Pipeline scope by drive class |
 | 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 180 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
 | 6 | The host-cost logic holds | Lifecycle transitions, with finance | 55 | The keep, redeploy or harvest sheet for one retiring cohort | Drive value, not host cost, decides the branch | How retirement dates are set |
-| 7 | Spares demand is what failure rates say | Machine-health engineering, with spares planning | 25–90 | Re-test every pulled drive at two sites; log fail-in-place | Under 5% of pulled drives test healthy (illustrative threshold) | Whether the pool is sized on pulls or true failures |
+| 7 | Spares demand is what failure rates say | Machine-health engineering, with spares planning | 25–90 | Re-test every pulled drive at two sites; log fail-in-place; publish the healthy share | Under 5% of pulled drives test healthy (illustrative threshold) | Whether the pool is sized on pulls or true failures |
 | 8 | Internal prices can carry these values | Planning, with finance | 91–180 | One full cycle of showback | Decisions reopened as often as under negotiation | Whether to bill |
+
+**What experiment 7 measures.** At the case's peer, triage resolved 34.4% of SSD tickets before any swap, and only 31.2% of tickets ended in a swap. So the peer's healthy share of pulled drives is unknown, and so is Kuantillion Cloud's [unmeasured]. Analogies only: 43% of returned hard drives showed no fault (Schroeder and Gibson 2007). About half of swapped SSDs at one operator never returned to service (Alter et al. 2019). Up to 1.5 times true failures is a bound for a site with no triage at all.
 
 **The capacity anchor, as a formula.** Nothing public gives it an input [unmeasured]. So experiment 1 fills a formula:
 
@@ -471,7 +473,7 @@ The case names public signposts between two futures. Path A stays tight through 
 | Holding past the option's decay | The written release trigger | Drives past re-test date | Reverse logistics |
 | Phantom supply | Booked only once supply answers; pegging | Commit-to-deliver gaps | Fleet provisioning |
 | Second-class capacity | A stated class; a challenge channel | Asks naming new hardware | Storage systems |
-| Misdiagnosis drain | Reseat and re-test; bias corrected at intake | Healthy share of pulls | Machine-health engineering |
+| Misdiagnosis drain | Triage before any pull; bias corrected at intake | Healthy share of pulls | Machine-health engineering |
 | Shape sprawl | Three grades inside the tier cap | Solver categories growing | Planning |
 | Correlated concentration | Cohort cap per failure domain | Same-cohort racks | Reliability engineering |
 | Firmware time bombs | Firmware baseline as a gate | Unpatched redeployed drives | Flash platform engineering |
