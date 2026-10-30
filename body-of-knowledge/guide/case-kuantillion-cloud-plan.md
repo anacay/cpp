@@ -52,7 +52,7 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | Drive security engineering | Erasure and custody |
 | Machine-health engineering | Diagnosis before a pull; the reseat-and-re-test step |
 | Data-center operations | Change windows; physical work |
-| Spares planning | The spares pool and its ratio; last-time buys |
+| Spares planning | The spares pool, its ratio per segment and its pre-tested float; last-time buys |
 | Reverse logistics and value recovery | The pipeline: harvest, test, erase, ship; exit |
 | Lifecycle transitions | Retirement dates and the keep, redeploy or harvest sheet |
 | Storage systems and schedulers | The reused-flash class; the stranded line |
@@ -407,6 +407,9 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 - At 260, the fill rate is about 80%, and about 1.75 drives are on backorder on average.
 - **Failures come in batches.** A firmware fault at a fixed age fails a cohort together. At a variance twice the mean, the 80% and 95% pools become 265 and 284. At four times, 273 and 300.
 - So size a firmware-cliff scenario from the case's known fault ages ([full case, section 6.1](case-kuantillion-cloud-full.md#6-1-what-is-actually-known-about-second-lives)). Size the pool and the cohort cap together.
+- **Two legs, sized apart.** The pool above is the test-and-ship leg, given untested stock in the cage. Harvest reaches the cage in lumps, on decommission dates. So size the untested cage against the decommission calendar.
+- **A pre-tested float.** Keep a burned-in float of tested drives, sized to the resupply quantile, so a repair doesn't wait for a full test.
+- **Retest staleness.** Retest any held drive whose last full test is older than a set limit, such as 90 days (illustrative). Erase, quick-screen and hold stays the default.
 
 **Shortage rule** [argued]. "Agree it in the forum beforehand; supply carries it out. Written during the shortage, it's a negotiation. And don't split a shortage pro rata" (Section 9.3). Who goes short, last to first:
 1. Spares for host-down platforms with no other source go short last, because a missed repair has no bridge.
