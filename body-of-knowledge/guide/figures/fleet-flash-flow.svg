@@ -34,5 +34,5 @@
 <text x="880.0" y="460.5" font-size="17" fill="#1F2933" text-anchor="middle">Destroyed</text>
 <text x="880.0" y="481.5" font-size="14" fill="#3E4C59" text-anchor="middle">on site</text>
 <path d="M830,352 C830,392 880.0,392 880.0,426" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
-<text x="40" y="540" font-size="14" fill="#3E4C59">Host branches decide whether drives are harvested at all; harvested drives then pass one gate before any outcome.</text>
+<text x="40" y="540" font-size="14" fill="#3E4C59">Host branches decide whether drives are harvested at all; harvested drives then pass sanitization and test before any outcome.</text>
 </svg>

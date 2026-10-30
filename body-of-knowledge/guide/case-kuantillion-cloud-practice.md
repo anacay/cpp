@@ -1,25 +1,25 @@
 ---
-title: "the Operator: how the practice solves it"
-short: Each of the case's ten decisions answered from the seed paper, with what to do first, who owns it, how you'll know it's working, and where the body of knowledge runs out.
+title: Kuantillion Cloud: how the practice solves it
+short: Each of the case's eight decisions and two sub-decisions answered from the seed paper, with what to do first, who owns it, how you'll know it's working, and where the body of knowledge runs out.
 kind: case
 order: 3.2
 cadence: all
 altitude: all
 levels: learning, practicing, leading
-seed: 4, 5.2, 5.3, 5.4, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 8.2, 9.1, 9.2, 9.3, 10.1, 10.2, 10.3, 10.4, 11, 13, 14
+seed: 4, 5.1, 5.2, 5.3, 5.4, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 8, 8.2, 9.1, 9.2, 9.3, 10, 10.1, 10.2, 10.3, 10.4, 11, 12, 13, 14, Appendix A
 ---
 
-The [Fleet Flash case](case-fleet-flash-full.md) describes a problem space and stops there. A hyperscale fleet, called the Operator here, harvests millions of components a year and holds older flash in running machines, while new flash costs three to four times last year's price. This page asks the next question: what does the practice tell you to do with them?
+[Case 3](case-kuantillion-cloud-full.md) describes a problem space and stops there. A hyperscale fleet, called Kuantillion Cloud here, harvests millions of components a year. It also holds older flash in running machines, while new flash costs three to four times last year's price. This page asks the next question: what does the practice tell you to do with them?
 
 Section numbers refer to the seed paper, *The Coefficient Is an Agreement*. Mechanism numbers refer to its thirteen mechanisms (Section 9.2). The paper is "a practitioner synthesis, not a model, and untested" (Abstract), and so is everything here.
 
-Read the labels this way. A quote with a Section is the paper's own text. *Applied here* or *our reading* marks the paper's rule used on something it wasn't written for. [argued] marks a rule this page adds. [unmeasured] marks a number nobody has published. Every invented number is labelled illustrative.
+Read the labels this way. A quote with a Section is the paper's own text. *Applied here* or *our reading* marks the paper's rule used on something it wasn't written for. [argued] marks a rule this page adds. [unmeasured] marks a number nobody has published. Every invented number is labeled illustrative.
 
 One scope note. Flash stranded inside running machines is in scope only through matching and allocation, and it is sized separately from the harvest.
 
 ## The short version
 
-The Operator's problem is the paper's problem run backwards. The paper follows capacity from approval to live. Here capacity comes back out of live service, and you must price it, book it and hand it out again.
+Kuantillion Cloud's problem is the paper's problem run backwards. The paper follows capacity from approval to live. Here capacity comes back out of live service, and you must price it, book it and hand it out again.
 
 Five of the paper's ideas carry most of the weight.
 
@@ -52,9 +52,9 @@ Then the work runs through six gates, spares and the pipeline first.
 
 The coefficients here look like physics or accounting. Our reading is that each is an agreement nobody signed. The paper's first claim says a coefficient "holds only while someone owns it, versions it and restates it when hardware or measurement changes" (Abstract). Six exhibits:
 
-- **The wear price.** The Operator prices flash wear per byte written, at a rate set by each model's rated endurance. That is a coefficient and a rate in one number. "If α moves, the fleet plan and the bill move together" (Section 5.2). It is set on rated endurance, not what remains. When a drive starts a second life, the basis changes. Our reading: that is a re-grain, "a change in how the metric is measured" (Section 5.3). Nobody versions it or owns it in public. Mechanism 3 is the register it lacks.
-- **Spares per failure.** Spares need is read from repair tickets. At one peer, about a third of SSD failure tickets weren't the drive at all. Pulls can then run up to about 1.52 times true failures, as a ceiling. When diagnosis improves, the ruler changes: "Price series are adjusted for such events, not forecast through them" (Section 5.3).
-- **Usable terabytes per retiring drive.** The coefficient that turns a retirement into supply is SSD share × capacity × yield. No operator publishes the yield [unmeasured]. The paper says every netting term "is a forecast too", and each needs "a date and an owner" (Section 8.2). A yield that disappoints "looks like a supply failure" (Section 6).
+- **The wear price.** Kuantillion Cloud prices flash wear per byte written, at a rate set by each model's rated endurance. That is a coefficient and a rate in one number. "If α moves, the fleet plan and the bill move together" (Section 5.2). It is set on rated endurance, not what remains. When a drive starts a second life, the basis changes. Our reading: that is a re-grain, "a change in how the metric is measured" (Section 5.3). Nobody versions it or owns it in public. Mechanism 3 is the register it lacks.
+- **Spares per failure.** Spares need is read from repair tickets. At one peer, about a third of SSD failure tickets weren't the drive at all. Pulls can then run up to about 1.5 times true failures, as a ceiling. Read for spares, when diagnosis improves, the ruler changes: "Price series are adjusted for such events, not forecast through them" (Section 5.3).
+- **Usable terabytes per retiring drive.** The coefficient that turns a retirement into supply is SSD share × capacity × yield. No operator publishes the yield [unmeasured]. The paper says every netting term "is a forecast too", and each needs "a date and an owner" (Section 8.2). A yield that disappoints "looks like a supply failure", as the paper says of a slipped decommission (Section 6).
 - **The drive's value.** The case carries a replacement value of about $190–640 per TB. Book value is near zero past the six-year life, and no transfer price exists. "Useful life alone is a large lever that moves both ways" (Section 4). Here a drive past its accounting life is worth far more than its book value.
 - **The planning unit.** Quota and terabytes carry capacity and drop the other four dimensions. "The unit's weights decide which asks look cheap" (Section 6.1). The scarce dimension differs by sink: fit for spares, fit and qualification for upgrades, provable condition for resale. Read for drives, each sink's shadow price falls on a different dimension.
 - **The generation break.** An older write-intensive drive can out-endure a new high-capacity drive per terabyte. Power per terabyte differs about 10–60 times across the same break. Averaging across it is "Forecasting through breaks" (mechanism 6). The paper's answer is to restate "per service, measured" (Section 5.3). Applied here, the unit is the cohort.
@@ -81,9 +81,9 @@ The ratio is the SSD harvest, before yield, divided by a year's new flash. The c
 |---|---|---|
 | SSD harvest | 0.3, 1.8 or 6.0 EB a year | 3M drives × 10/30/50% SSD × 1/2/4 TB |
 | New flash a year | 20–180 EB | Server spend × 5–15% flash ÷ $100–300 per TB |
-| Ratio | 0.17% to 30% | Harvest ÷ new flash |
+| Ratio | 0.2% to 30% | Harvest ÷ new flash |
 
-Both halves are knowable inside the Operator in days. Planning computes them in week two. The ratio then sets the class. The thresholds are this page's [argued]:
+Both halves are knowable inside Kuantillion Cloud in days. Planning computes them in week two. The ratio then sets the class. The thresholds are this page's [argued]:
 
 | Ratio | Class | What runs |
 |---|---|---|
@@ -101,7 +101,7 @@ So size the stock at Gate 1 too, from fleet flash use by resource and site. Put 
 
 ### The anchor fork, from the contract register
 
-The case's central fork is this. If the Operator's flash contracts are flexible in volume, a reused drive avoids a purchase. If they are firm, a reused drive adds capacity to a sold-out fleet.
+The case's central fork is this. If Kuantillion Cloud's flash contracts are flexible in volume, a reused drive avoids a purchase. If they are firm, a reused drive adds capacity to a sold-out fleet.
 
 You already hold the instrument. Mechanism 11's register carries "contracts with liability schedule (owed if cancelled, by date), reschedule terms, owner". So read the flash contracts into it first.
 
@@ -118,9 +118,9 @@ Section 4's table names each price's misuse. Long-run incremental cost "Misleads
 | Who pays when a sink takes a drive? | Average loaded rate (Section 4) | The transfer price, shown back first |
 | Do we keep this old host running? | Avoidable carrying cost [argued] | Power, space, repairs, technician hours, and the stranding of its other parts |
 
-Our reading: keeping a host prices existing capacity, so long-run incremental cost is the wrong tool for it. Under firm contracts and persistent stockouts, the paper says "the cost that matters becomes the best claim displaced" (Section 11). So compute both anchors, and route harvest by the shadow price while stockouts last.
+Our reading: keeping a host prices existing capacity, so long-run incremental cost is the wrong tool for it. Applied here: under firm contracts and persistent stockouts, scarcity is the paper's condition, and "the cost that matters becomes the best claim displaced" (Section 11). So compute both anchors, and route harvest by the shadow price while stockouts last.
 
-Don't price a reused drive at its book value. The [case's measures of success](case-fleet-flash-full.md) rule it out, and Section 4's useful-life lever is the reason: book value depends on a life someone chose.
+Don't price a reused drive at its book value. The [case's measures of success](case-kuantillion-cloud-full.md) rule it out, and Section 4's useful-life lever is the reason: book value depends on a life someone chose.
 
 ### The capacity anchor, as a formula
 
@@ -136,7 +136,7 @@ Fill the terms this way:
 
 For example, if a short TB-month is worth $40 (illustrative), and 12 months follow, then 25% filled gives $120 per TB and 75% gives $360. At 75%, the capacity anchor passes the $192 floor once a TB-month is worth about $21, and the $636 ceiling at about $71. That first term decides the stress case where contracts are firm and stockouts persist. So measure it first.
 
-Net value after the pipeline runs from about $25 to $572 per TB in the case's illustrative range. Its sign turns more on whether a sink exists, and on which anchor applies, than on pipeline cost.
+Net value after the pipeline runs from about $25 to $570 per TB in the case's illustrative range. Its sign turns more on whether a sink exists, and on which anchor applies, than on pipeline cost.
 
 ## The thirteen mechanisms, audited
 
@@ -179,7 +179,7 @@ Ask four questions:
 3. Are last-time buys made for legacy drive models, and by whom?
 4. Which gates did the memory-reclaim program actually cross? That program is the nearest precedent, and its history is the cheapest evidence you can get.
 
-If the decline still holds, stop. The centre then moves to redeploying whole hosts (see P2). Planning runs week one, as broker.
+If the decline still holds, stop. The center then moves to redeploying whole hosts (see P2). Planning runs week one, as broker.
 
 ### The first 30 days
 
@@ -234,7 +234,7 @@ Each decision gives what the paper says, what you do, how the two futures change
 
 **Blind cohorts.** Older drives that predate newer telemetry fields are partly blind. Our reading is that they are steps with no reference class, where the paper says you "bound it, phase it and buy options" (Section 13). They go first to loss-absorbing tiers or to exit [argued].
 
-**Custody.** Proving erasure is a security discipline, not capacity planning. The Charter says of neighbouring fields: "We link to them rather than rewrite them" (`CHARTER.md`). It doesn't name erasure among them, so treating it that way is our reading.
+**Custody.** Proving erasure is a security discipline, not capacity planning. [The practice's Charter](/charter/) says of neighboring fields: "We link to them rather than rewrite them". It doesn't name erasure among them, so treating it that way is our reading.
 
 ### P2. When the host goes: keep, redeploy whole, or harvest
 
@@ -305,7 +305,7 @@ For example, a wear threshold might be half of rated endurance used (illustrativ
 - By pooling where you can reach it. Section 6.3, quoting [7], says to provision for "the peak of the summed demands, rather than the sum of their individual peaks". But "Correlation and heavy tails erode the gain" (Section 6.3).
 - By reclaim, a bridge of "Days to weeks" (Section 6.4). Freed capacity lands under the landing rule (mechanism 8).
 
-**Concentration.** Name each cohort as a shared driver: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). Cap a cohort's share of any one failure domain [argued]. For example, if a domain holds 2,000 drives, a 10% cap is 200 (illustrative).
+**Concentration.** Our reading: name each cohort as a shared driver: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). Cap a cohort's share of any one failure domain [argued]. For example, if a domain holds 2,000 drives, a 10% cap is 200 (illustrative).
 
 **Futures.** Under Path A, workloads are the option on the upside. Under Path B, the case expects this sink to shrink fastest, because new flash competes there directly. The class must be able to close cohort by cohort without stranding its tenants.
 
@@ -316,12 +316,15 @@ For example, a wear threshold might be half of rated endurance used (illustrativ
 - The pool is the "inventory buffer (parts and ready machines in stock)" (Section 6.3). "Someone funds and replenishes it, so a draw on it is a debt with a date" (Section 6.3).
 - Size it by the shortage-to-idle ratio, the newsvendor fraction [78] (Section 6.3). "Component inventory is planned to high quantile forecasts" (Section 6.3).
 - "Persistent bias is different: correct it at intake (Section 9.3), don't buffer it" (Section 6.3). Read for drives, misdiagnosis is that bias. Size the pool on true failures, not pulls.
+
 **The pool, illustrated.** Take one installed cohort of 200,000 drives failing at 1.5% a year (illustrative). That is 3,000 true failures, about 8.2 a day. The case cites Palm's theorem for the pipeline: stock in resupply depends on the mean turnaround.
 
 | Turnaround | Mean in resupply | Pool at 80% cover | Pool at 95% cover |
 |---|---|---|---|
 | 30 days | 247 | 260 | 273 |
 | 10 days | 82 | 90 | 97 |
+
+The table assumes failures arrive as a Poisson process, and uses the normal approximation to it for the cover levels.
 
 - Sized from pulls at a 25% misdiagnosis rate (illustrative), the 30-day pool at 80% would be 344, not 260.
 - Cutting turnaround from 30 to 10 days lowers the pool by about 8.5 drives per day saved. That is roughly one day of true demand, plus a little safety stock.
@@ -345,7 +348,7 @@ Write down which one you chose.
 
 **Fail-in-place.** A server that keeps running with a dead drive declares it can take a shortfall. That is Section 6.7's question, "how much shortfall, for how long, can it take?", which the paper calls its own exploration. Carry the cost of degraded capacity on its own line [argued].
 
-**Count the bridges.** At 80% cover, "about one launch in five should need a bridge at that layer" (Section 10.2). The paper calls this "an analogy, not a result" (Section 10.2). Count one cover decision per cohort per year. For example, 20 platform cohorts should need about 4 bridges a year (illustrative). Far fewer means the pool is padded. Far more means the ratio or the forecast is off. "launches tied to one driver spend the budget together" (Section 10.2), so expect bridges to cluster by cohort.
+**Count the bridges.** At 80% cover, "about one launch in five should need a bridge at that layer" (Section 10.2). The paper calls this "an analogy, not a result" (Section 10.2). Applied here, a cohort stands in for a launch. Count one cover decision per cohort per year. For example, 20 platform cohorts should need about 4 bridges a year (illustrative). Far fewer means the pool is padded. Far more means the ratio or the forecast is off. "launches tied to one driver spend the budget together" (Section 10.2), so expect bridges to cluster by cohort.
 
 **Futures.** Under Path A, harvest is the main source for old platforms, and last-time buys get dearer. Under Path B, the case expects spares to erode more slowly than other sinks. Re-sign the ratio each year as new compatible drives get easier to buy.
 
@@ -406,7 +409,7 @@ Score the rule after two cycles. Under scarcity this approximates the shadow pri
 
 Release in steps, under the cap below.
 
-**The program moves its own market.** At this volume the Operator isn't a price taker in the used market. Its own retention moves the price its retention is judged against, and a rival's program would move it too. Three rules [argued]:
+**The program moves its own market.** At this volume Kuantillion Cloud isn't a price taker in the used market. Its own retention moves the price its retention is judged against, and a rival's program would move it too. Three rules [argued]:
 
 1. Cap resale releases per model per quarter.
 2. Read vendor warranty and end-of-life terms at the annual cycle, and again after any peer announcement.
@@ -458,7 +461,7 @@ Supply chain owns these. Price feedback itself is [unmeasured].
 
 **Where the capacity sits.** Put test and erasure capacity at the large decommissioning sites. Hold untested drives at a regional depot. Ship to demand only against a claim [argued].
 
-**Labour.** The case bounds the work at 250–750 technician-years for three million drives a year (illustrative). That is a staffing program, unless it lands on the same sites and quarters as repairs.
+**Labor.** The case bounds the work at 250–750 technician-years for three million drives a year (illustrative). That is a staffing program, unless it lands on the same sites and quarters as repairs.
 
 **Futures.** Under Path A, the case expects the pipeline to be the program's ceiling. You may argue for staffing above the median there, because a short pipeline starves spares, whose shortage cost is higher than turn-up's [argued]. Under Path B, staff to the median.
 
@@ -490,6 +493,15 @@ Supply chain owns these. Price feedback itself is [unmeasured].
 ## Who does what, and when
 
 The planner sits in the middle, "usually owning no capacity and no budget" (Section 10). So every change below is a proposal to the forum and finance. Its standing, in the paper's experience, comes "from the number and the team's own signature" (Section 9.1).
+
+**Section 14's six roles, applied here.** The paper names six roles and the promises each keeps (Section 14). Who holds each in this case is our reading.
+
+- **Platform leaders** own "the unused and unallocated lines" (Section 14). Here, the storage systems own the stranded line.
+- **Planning** "keeps the fulfillment ledger, carries the gap" (Section 14). Here, it keeps the drive record and the harvest declaration.
+- **Finance** declares what "fully loaded" contains (Section 14). Here, it also signs the transfer price and the incident cost bound.
+- **Product leaders** "sign what they change" (Section 14). Here, they are the workload owners who take the reused class.
+- **A standing forum** "owns the ranked list and the cut line" (Section 14). Here, it ranks the four sinks.
+- **Supply chain** answers every approved ask "with a dated commit or a named gap" (Section 14). Here, harvest is one of its sources.
 
 **Decision rights.** The table names who decides and who signs. **Change** marks a move from today's owner in the case.
 
@@ -603,11 +615,11 @@ For a custody incident, drive security also runs its own response; the practice'
 
 | If this turns out true | Then |
 |---|---|
-| Materiality is well under 1% | Drop to spares continuity, and stop there (Section 12) |
+| Materiality is well under 1% | Drop to spares continuity, and stop there (Section 12, applied here) |
 | A graded program with a shared price exists | Allocation and adoption become an audit, not a build |
 | Second-life failures beat new drives' rates from year one | Close the workload sink; keep spares and exit |
 | Contracts are fully flexible and Path B comes early | The avoided-purchase anchor shrinks; the program shrinks to spares and exit |
-| Reuse was declined for complexity | Re-centre on redeploying whole hosts |
+| Reuse was declined for complexity | Re-center on redeploying whole hosts |
 
 **The case's eight assumptions, each with a test** (owners and dates illustrative):
 
@@ -621,6 +633,18 @@ For a custody incident, drive security also runs its own response; the practice'
 | The host-cost logic holds | The keep sheet for one retiring cohort | Lifecycle transitions and finance, quarter 1 |
 | Spares demand is what failure rates say | Re-test pulled drives at one site; measure fail-in-place's avoided demand | Spares planning, quarter 1 |
 | Internal prices can carry these values | One cycle of showback | Planning and finance, quarters 2–3 |
+
+**Our seven assumptions, each with a falsifier** [argued]. These are the assumptions this page's design rests on.
+
+| Assumption | Falsifier |
+|---|---|
+| The harvest behaves like a supply declaration that firms up in stages | Decommission dates show no stage structure; slips are uniform from plan to drain |
+| The contract register can settle the anchor fork | The commitments have no readable liability or reschedule terms |
+| A forum can rank four sinks with unlike units | Ranked lists are reopened as often as negotiated splits ("Decisions reopened", mechanism 10's indicator) |
+| A stated lower-assurance class will be taken up | Uptake stays low after the class's guarantee and evidence are stated |
+| Cohort is the right shared driver | Failures correlate more on site or workload than on model, firmware and age |
+| Misdiagnosis is bias, not dispersion | The healthy share of pulled drives swings widely with no persistent level |
+| The materiality ratio is the right gate | The program is worth running at a low ratio, because one stockout's shadow price dominates (scenario S5) |
 
 "The rollout is the measurement" (Section 5.4). The pilot cohort answers the case's most load-bearing question: where second-life hazard crosses the new-drive curve [unmeasured].
 
@@ -639,6 +663,16 @@ For a custody incident, drive security also runs its own response; the practice'
 | PC drive configurations are restored | Path B evidence; review workload pricing |
 | Small, older drive models get scarcer | Review last-time buys |
 | Disk stays allocated, and cold data keeps moving to QLC | Path A evidence; keep the wear watch on QLC cohorts |
+
+**The case's seven scenarios, and where this page answers each.**
+
+- **S1. The shortage ends early.** P6, *When to release held stock*, and P6's shortage rule, which keeps a spares floor.
+- **S2. A redeployed cohort fails together.** P3, *Concentration*; the risk budget; and *If something goes wrong*.
+- **S3. A data-bearing drive surfaces outside custody.** P1, reconciliation at every off-host state; and *If something goes wrong*.
+- **S4. Decommissions slip while spares demand rises.** P6, the commitment question, and its booking rule; P4, *Push out, don't cancel*.
+- **S5. The commitments prove firm and stockouts persist.** The anchor fork and the capacity anchor; P6, *How the forum ranks*, by shadow price.
+- **S6. A rival announces flash reuse at scale.** P6, *The program moves its own market*.
+- **S7. Low-endurance flash meets write-heavy work.** P2a, the wear price by cohort. The price across two lives is still a gap (new work, item 6).
 
 ## What the studied ground adds
 
@@ -664,4 +698,4 @@ If you've planned capacity that comes back out of a fleet, the practice would li
 
 ## Where this comes from
 
-Seed paper: Sections 4, 5.1–5.4, 6, 6.1–6.7, 8, 8.2, 9.1–9.3, 10, 10.1–10.4, 11, 12, 13 and 14, and Appendix A. The case: [Fleet Flash](case-fleet-flash-full.md). Literature: the references the case cites in its studied ground. Every number is illustrative unless the case tags it otherwise; the arithmetic is reproducible on request.
+Seed paper: Sections 4, 5.1–5.4, 6, 6.1–6.7, 8, 8.2, 9.1–9.3, 10, 10.1–10.4, 11, 12, 13 and 14, and Appendix A. The case: [Case 3](case-kuantillion-cloud-full.md). Literature: the references the case cites in its studied ground. Every number is illustrative unless the case tags it otherwise; the arithmetic is reproducible on request.
