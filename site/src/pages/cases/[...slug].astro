@@ -33,9 +33,9 @@ const ctx = load();
     {toc.length > 2 && (
       <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">On this page</h2><ol>{toc.map((t) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol></nav>
     )}
-    <RfcHint />
-    <WhereStrip page={page} />
+    <RfcHint compact />
     <article class="prose reading-wrap guide-body" set:html={html} />
+    <WhereStrip page={page} />
     {seeds.length > 0 && (
       <p class="seed-from">Drawn from the seed paper: {seeds.map((s, i) => <>{i > 0 && ', '}{s.url ? <a href={s.url}>{s.label}</a> : s.label}</>)}.</p>
     )}
