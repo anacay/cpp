@@ -271,7 +271,7 @@ Burn-in comes before any grade 1 placement, with its yield logged. Infant mortal
 2. An evidence bar per tier, rising only with scored outcomes. Caches start lower, durable tiers higher.
 3. An incident cost bound, signed by finance before volume grows.
 
-**The stranded stock.** Applied here, stranded flash in running machines goes on its own owned line ([mechanism 4](concept-operating-mechanisms.md#m4)), sized as in [the operating mechanisms](concept-operating-mechanisms.md) lens. Recover it by pooling where you can reach it, or by reclaim, a bridge of "Days to weeks" (Section 6.4, the author's judgment). Freed capacity lands under the [landing rule](/glossary/#term-landing-rule) (mechanism 8).
+**The stranded stock.** Applied here, stranded flash in running machines goes on its own owned line ([mechanism 4](concept-operating-mechanisms.md#m4)), sized as in [the stranded stock, on its own line](#the-stranded-stock-on-its-own-line). Recover it by pooling where you can reach it, or by reclaim, a bridge of "Days to weeks" (Section 6.4, the author's judgment). Freed capacity lands under the [landing rule](/glossary/#term-landing-rule) (mechanism 8).
 
 **Futures.** Under Path A, workloads are the option on the upside. Under Path B, the case expects this sink to shrink fastest, because new flash competes there directly. The class must be able to close cohort by cohort without stranding its tenants.
 
