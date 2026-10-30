@@ -358,7 +358,7 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 | Cycle | Forum | Inputs | Outputs | Decisions |
 |---|---|---|---|---|
 | Weekly | Planning's working session | Ledger lines; reconciliation gaps; cage aging; repair tickets | Pegging by system, run continuously; reconciliation; brokered trades, logged | The exceptions the pegging flags |
-| Monthly | The forum | Supply answers; harvest by stage; spares fill | Re-ranked claims; updated commits and named gaps | The ranking; any override, logged with what moved down |
+| Monthly | The forum | Supply answers; harvest by stage; spares fill; resale prices | Re-ranked claims; updated commits and named gaps | The ranking; any override, logged with what moved down |
 | Quarterly | The supply review | Harvest forecast by stage and cohort; decommission slips; qualification slots; endurance by cohort; the signposts | Rate card version; release trigger tests; last-time-buy commit points | Rate card changes; releases; last-time buys |
 | Annual | The forum, with finance | Materiality; last year's scores; vendor terms | Signed ratios, bands, landing and shortage rules; the charter overlay | Program scope; reuse commitment in the annual capacity agreement |
 | After each pilot | The forum | Second-life outcomes | Updated yield, hazard and evidence bar | Widen, hold or close the class |
@@ -431,7 +431,9 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 - The forum ranks on next-best-source value, not on this rate.
 
 **Release trigger** [argued]. Write it before you hold. The paper's option rule is "write down the trigger for converting options into orders" (Section 6.2).
-- Release a cohort's held drives when their next-best-source value falls below net resale for two quarterly price prints running.
+- Hold a cohort's drives only while the expected discounted value of a claim, minus holding cost, exceeds net resale now.
+- Read resale prices monthly, not quarterly. Waiting for two quarterly prints costs about six months in a falling market.
+- Add a stop-loss: release when resale falls a set share from the hold date, such as 20% (illustrative).
 - Or release when a drive's shelf time passes two re-test cycles with no claim.
 - Release in steps, under a cap on resale per model per quarter.
 
@@ -547,7 +549,7 @@ The case names public signposts between two futures. Path A stays tight through 
 
 | Signpost | Action |
 |---|---|
-| Contract prices flatten two quarters running | Lower the rate card; arm the release trigger |
+| Contract prices flatten two quarters running | Lower the rate card; re-run the release test |
 | Used prices fall, high-capacity models first | Run the release trigger's price test |
 | Makers' committed output passes three-quarters | Raise last-time-buy cover |
 | New fab dates slip | Hold; keep Path A staffing |
