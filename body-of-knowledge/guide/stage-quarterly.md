@@ -53,7 +53,7 @@ Product A's launch on Service X, from about −6 months. All numbers are illustr
 
 - **Envelope.** —
 - **Region or site.** Without the method, −6 is the high-memory commit point, and it passes with no memory question asked. With the method (Appendix A): those machines were ordered at −11. A reclaimed high-memory machine, due at −4 and owned by X, is tracked.
-- **Portfolio.** The forum approves 4 NMU on CPU alone and names a bridge for the high. A's plan is priced at $525,600.
+- **Portfolio.** The forum approves 4 NMU on CPU alone ([NMU](/glossary/#term-nmu-normalized-machine-unit): the example's normalized machine unit, one standard machine) and names a bridge for the high. A's plan is priced at $525,600.
 - **Launch.** A is Dated: base 60,000 and high 90,000 requests per second. With the method (Appendix A), that sits inside the ±50% band signed at intent.
 - **Unit.** X's coefficient stays at 1.0 ms per request, with CPU at $0.12 per busy core-hour. The cheapest fit is really 4.8 NMU, because memory binds. Via standard machines, each extra GB costs five times its weight: memory's shadow price.
 

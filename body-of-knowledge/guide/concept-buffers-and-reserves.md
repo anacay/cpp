@@ -36,7 +36,7 @@ Hixson and Guliani frame the same choice: "That tolerance should define how aggr
 
 ## How to use it
 
-**Let the ratio rise with lead time, for persistent demand.** The seed paper argues the ratio rises with lead time; it's not a published result [argued]. Illustratively: 1 : 1 for turn-up (the median), 4 : 1 for machines, 19 : 1 for power and shell. One operator plans its slow end "to a high quantile demand forecast" [8]. It holds only if the layers work together and the high is held mostly as options.
+**Let the ratio rise with lead time, for persistent demand.** The seed paper argues the ratio rises with lead time; it's not a published result [argued]. Illustratively: 1 : 1 for [turn-up](/glossary/#term-turn-up (Bringing delivered machines into service)) (the median), 4 : 1 for machines, 19 : 1 for power and shell. One operator plans its slow end "to a high quantile demand forecast" [8]. It holds only if the layers work together and the high is held mostly as options.
 
 **Mind timing, size and persistence.** A size miss is paid on the slow and middle layers; a slip, on machines and turn-up. Size owned capacity on a transient spike and you buy permanent capacity for a temporary peak.
 

@@ -9,6 +9,19 @@ levels: all
 seed: 1, 10, 14
 ---
 
+## Where to start
+
+If you're new, follow one path. Read [the one page](/one-page/), then four concepts: [the coefficient](concept-the-coefficient.md), [demand and declarations](concept-demand-and-declarations.md), [commit points](concept-commit-points.md) and [approval and allocation](concept-approval-and-allocation.md). Then read Case 1 on the [cases page](cases.md#case-1-the-launch-that-needed-memory). Fill in the [worksheet](/worksheet/) for it. Last, take one decision in [Case 3](case-kuantillion-cloud.md). The [body of knowledge](/body-of-knowledge/#start-here) lists the same path with reading times.
+
+## Reading this guide by level
+
+- **Learning:** start with [principles](principles.md), [the map](the-map.md), then [weekly](stage-weekly.md) and [monthly](stage-monthly.md). Keep [the coefficient](concept-the-coefficient.md) and [demand and declarations](concept-demand-and-declarations.md) open.
+- **Practicing:** [quarterly](stage-quarterly.md), [post-launch](stage-post-launch.md) (scoring and alerts), [commit points](concept-commit-points.md), [approval and allocation](concept-approval-and-allocation.md), [people](people.md).
+- **Leading:** [annual](stage-annual.md), [post-launch](stage-post-launch.md) (restating and re-baselining), [the operating mechanisms](concept-operating-mechanisms.md), [settings](settings.md).
+- **Capital or supply side:** [three prices](concept-three-prices.md), [buffers and reserves](concept-buffers-and-reserves.md), [supply layers and lead times](concept-supply-layers-and-lead-times.md).
+
+Every page has a strip at the top saying which levels usually do that work. The levels are described under [the path](#the-path), below.
+
 ## What the work is
 
 The 2026 SRE chapter defines capacity planning as "the discipline of forecasting future demand and provisioning the supply to meet it" [7]. That's the core. In practice, the job has a third part: keeping the agreement that pays for it. [argued]
@@ -30,7 +43,7 @@ The planner sits in the middle, usually owning no capacity and no budget. What y
 There's no single entry route. People commonly arrive from: [argued]
 
 - **Hardware and accelerators.** You know the machines well, often the newest ones. The new parts are lead times, contracts, forecasts and people.
-- **Site reliability or infrastructure engineering.** You know load, headroom and failure. The new parts are money, supply and the annual cycle.
+- **Site reliability or infrastructure engineering.** You know load, headroom and failure. The new parts are money, supply and the annual cycle. Start with [approval and allocation](concept-approval-and-allocation.md): it's the bin-packing problem with money attached.
 - **Finance.** You know budgets, depreciation and the envelope. The new parts are shapes, places and lead times.
 - **Supply chain.** You know orders, vendors and lead times. The new parts are declarations and coefficients.
 - **Program management.** You know how to run a cadence and a forum. The new parts are the numbers underneath.
@@ -64,17 +77,8 @@ One exercise per level, all on the seed paper's worked example: Product A's laun
 - **Learning.** Split A's bill miss into volume, coefficient and rate, and say who owns each term ([the coefficient](concept-the-coefficient.md)).
 - **Practicing.** Fill the [worksheet](/worksheet/) for A's launch: find each layer's commit point, and what the declaration knows by then.
 - **Leading.** Set the shortage-to-idle ratios for machines and for power, and write the re-cut order for a 10% envelope cut ([buffers and reserves](concept-buffers-and-reserves.md), [annual](stage-annual.md)).
-- **Capital.** Price the roughly 1.0 NMU of spare the method holds, and decide who carries it at a 40,000 landing ([the map](the-map.md), [commit points](concept-commit-points.md)).
+- **Capital.** Price the roughly 1.0 NMU of spare the method holds (an [NMU](/glossary/#term-nmu-normalized-machine-unit), or normalized machine unit, is the example's invented unit: one standard machine), and decide who carries it at a 40,000 landing ([the map](the-map.md), [commit points](concept-commit-points.md)).
 - **Supply.** Write the cancel window and reschedule terms for the reschedulable high-memory order ([supply layers and lead times](concept-supply-layers-and-lead-times.md)).
-
-## Reading this guide by level
-
-- **Learning:** start with [principles](principles.md), [the map](the-map.md), then [weekly](stage-weekly.md) and [monthly](stage-monthly.md). Keep [the coefficient](concept-the-coefficient.md) and [demand and declarations](concept-demand-and-declarations.md) open.
-- **Practicing:** [quarterly](stage-quarterly.md), [post-launch](stage-post-launch.md) (scoring and alerts), [commit points](concept-commit-points.md), [approval and allocation](concept-approval-and-allocation.md), [people](people.md).
-- **Leading:** [annual](stage-annual.md), [post-launch](stage-post-launch.md) (restating and re-baselining), [the operating mechanisms](concept-operating-mechanisms.md), [settings](settings.md).
-- **Capital or supply side:** [three prices](concept-three-prices.md), [buffers and reserves](concept-buffers-and-reserves.md), [supply layers and lead times](concept-supply-layers-and-lead-times.md).
-
-Every page has a strip at the top saying which levels usually do that work.
 
 ## What's missing
 

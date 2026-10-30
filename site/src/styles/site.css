@@ -34,7 +34,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 1.5rem; }
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+/* Smooth scrolling only once the reader is on the page (a clicked in-page link
+   holds focus). On load, nothing has focus, so a shared #anchor lands at once
+   instead of animating through the whole page. CSS only. */
+@media (prefers-reduced-motion: no-preference) { html:focus-within { scroll-behavior: smooth; } }
 
 body {
   margin: 0;
@@ -525,3 +528,60 @@ mark.anno-mark { background: rgba(201, 162, 39, 0.16); color: inherit; border-bo
 @keyframes rfc-select { 0%, 8% { background-size: 0% 100%; } 38%, 88% { background-size: 100% 100%; } 96%, 100% { background-size: 0% 100%; } }
 @keyframes rfc-rise { 0%, 40% { opacity: 0; transform: translateY(8px); } 48%, 88% { opacity: 1; transform: translateY(0); } 96%, 100% { opacity: 0; transform: translateY(8px); } }
 @keyframes rfc-press { 0%, 62% { transform: scale(1); box-shadow: none; } 66% { transform: scale(0.94); box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.35); } 72%, 100% { transform: scale(1); box-shadow: none; } }
+
+/* ── Row anchors (numbered mechanisms) ─────────────────────── */
+.row-link { color: var(--gold-soft); text-decoration: none; font-weight: 600; }
+.row-link:hover { text-decoration: underline; }
+tr.row-target { scroll-margin-top: 1.5rem; }
+tr.row-target:target td, tr.row-target:has(.row-link:target) td { background: rgba(201, 162, 39, 0.16) !important; }
+tr.row-target:target td:first-child, tr.row-target:has(.row-link:target) td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
+
+/* ── Glossary: practice and Case 3 parts ───────────────────── */
+.gloss__part { font-family: var(--serif); font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); margin: 3.5rem 0 0.75rem; padding-top: 1rem; border-top: 2px solid var(--gold); }
+.gloss > .gloss__part:first-child { margin-top: 0.5rem; }
+.gloss__group > .muted { font-size: 0.9375rem; margin: 0 0 0.5rem; }
+.gloss h3.letter { font-size: 1.75rem; }
+.gloss .read { font-size: 0.875rem; margin: 0.2rem 0 0; color: var(--ink-muted); }
+.gloss__tag { display: inline-block; font-family: var(--sans); font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; padding: 0 0.45rem; border: 1px solid rgba(201, 162, 39, 0.55); border-radius: 999px; color: var(--gold-soft); vertical-align: 0.2em; }
+.gloss__note { font-size: 0.9375rem; color: var(--ink-muted); margin: 0.2rem 0 0.4rem; }
+.gloss dt { scroll-margin-top: 1.5rem; }
+.gloss dt:target { color: var(--gold-soft); }
+.letters__part a { font-family: var(--sans); font-size: 0.875rem; padding-inline: 0.7rem; }
+
+/* ── Start here: the learning path ─────────────────────────── */
+.chapters--path .path-t { display: inline-block; margin-left: 0.35rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.start-here .display { margin-bottom: 1rem; }
+.start-here > .reading { margin: 0 0 1.5rem; }
+
+/* ── Case context bar (sticky, CSS only) ───────────────────── */
+.casebar {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.25rem 1.25rem;
+  max-width: var(--wide); margin: 0 0 1.75rem; padding: 0.5rem 0.9rem;
+  background: rgba(6, 22, 32, 0.96); border: 1px solid var(--water-line); border-left: 3px solid var(--gold); border-radius: var(--radius);
+  box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.7); font-size: 0.875rem; line-height: 1.4;
+}
+@supports (backdrop-filter: blur(4px)) { .casebar { background: rgba(6, 22, 32, 0.96); backdrop-filter: blur(6px); } }
+.casebar__id { margin: 0; min-width: 0; color: var(--ink-muted); }
+.casebar__id strong { color: var(--ink); font-weight: 600; }
+.casebar__tag { display: block; color: var(--ink-muted); }
+.casebar__links { list-style: none; margin: 0; padding: 0; display: flex; gap: 0.15rem 0.35rem; flex-wrap: wrap; }
+.casebar__links a { display: inline-block; padding: 0.2rem 0.55rem; border: 1px solid transparent; border-radius: 999px; color: var(--gold-soft); text-decoration: none; white-space: nowrap; }
+.casebar__links a:hover { border-color: var(--gold); }
+.casebar__links a[aria-current="page"] { color: var(--water-deep); background: var(--gold-soft); font-weight: 600; }
+html:has(.casebar) { scroll-padding-top: 6rem; }
+@media (max-width: 40em) {
+  .casebar { padding: 0.4rem 0.6rem; gap: 0.2rem 0.5rem; }
+  .casebar__tag, .casebar__here { display: none; }
+  .casebar__links { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; }
+  .casebar__links a { padding: 0.15rem 0.45rem; }
+  html:has(.casebar) { scroll-padding-top: 5.5rem; }
+}
+@media print { .casebar { position: static; } }
+
+/* ── Heading self-links (guide, cases, notes) ──────────────── */
+.h-link { margin-left: 0.35rem; font-family: var(--sans); font-size: 0.75em; color: var(--ink-muted); text-decoration: none; opacity: 0; transition: opacity 0.15s; }
+h2:hover > .h-link, h3:hover > .h-link, .h-link:focus-visible, :target > .h-link, h2:has(> .h-alias:target) > .h-link, h3:has(> .h-alias:target) > .h-link { opacity: 1; }
+.h-link:hover { color: var(--gold-soft); }
+@media (hover: none) { .h-link { opacity: 0.45; } }
+@media print { .h-link { display: none; } }

@@ -1,6 +1,6 @@
 ---
 title: Cases
-short: The seed paper's worked example told as a case, a first problem-space case, and the format to use when you write one of your own.
+short: The seed paper's worked example told as a case, two problem-space cases, and the format to use when you write one of your own.
 kind: across
 order: 22
 cadence: all
@@ -69,12 +69,13 @@ The method doesn't make the launch more accurate. It moves the hard question to 
 
 Case 1 tells what happened. A problem-space case does something else: it sets out a whole planning problem, as an outside analyst could reconstruct it, and leaves the answers open. It is for practice and discussion, the way a business-school case is.
 
-Problem-space cases follow four rules:
+Problem-space cases follow five rules:
 
 - **Public information only.** Nothing comes from anyone's private experience or an employer's internal data.
 - **A fictional company.** The company, its teams, its people and its events are invented. Team names are generic; how teams relate can follow the industry's real shape.
 - **Evidence labeled.** Every load-bearing claim says how it would be known: reported, inferred, speculated, or a fact about the wider industry. Speculation carries a falsifier.
 - **No quotes from a single company's material.** Paraphrase instead; further reading sits at the end.
+- **Answers on a separate page.** A case may carry a companion answer, such as a strategy or a plan. The case itself stays answer-free.
 
 Because nothing private goes in, a problem-space case may resemble the industry it draws on. The anonymization checklist below protects accounts of what happened inside an organization; it applies in full to cases like Case 1.
 
@@ -87,6 +88,17 @@ Popcorn Pajamas is a global streaming service with one small planning team, near
 - [The case page](case-popcorn-pajamas.md): the situation in two minutes.
 - [The full case](case-popcorn-pajamas-full.md).
 - [How the practice approaches it](case-popcorn-pajamas-practice.md): each problem mapped to the seed paper, and seven places where the body of knowledge runs out.
+
+## Case 3: Kuantillion Cloud
+
+*A problem-space case with a full answer beside it. Kuantillion Cloud is a fictional company.*
+
+Kuantillion Cloud runs one of the largest computing fleets in the world. It retires machines full of older flash drives while new flash costs three to four times last year's price. Each drive can go to a workload, the spares pool, an upgrade or build, or out of the fleet. The case sets out eight decisions and two sub-decisions, eighteen causal chains and seven stress scenarios for 2027. A companion page then solves it with the practice's body of knowledge, decision by decision, and names where that body of knowledge runs out.
+
+- [The case page](case-kuantillion-cloud.md): the situation in two minutes.
+- [The full case](case-kuantillion-cloud-full.md).
+- [How the practice solves it](case-kuantillion-cloud-practice.md): the answer, with every judgment that goes past the paper marked.
+- [The execution plan](case-kuantillion-cloud-plan.md): the answer as a plan a program lead can run, with owners, gates, rules to sign and measures.
 
 ## How to write a case
 

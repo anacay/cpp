@@ -61,7 +61,7 @@ In the room, have answers ready. When a question has no answer yet, say so, and 
 
 Planning must be able to say no. Your standing rarely comes from rank; planners usually have none [argued]. It comes from the number and the team's own signature. A team far outside a forecast it signed can be asked to wait, because it wrote the terms.
 
-Keep the hold for serious misses, defined in advance; a gate used for small misses gets routed around. Every refusal needs a path forward, such as a re-shaped ask or a dated slot. In the first year, enforcement rests on your persuasion. Writing commitments into the annual agreement moves it off you ([mechanism 7](concept-operating-mechanisms.md)).
+Keep the hold for serious misses, defined in advance; a gate used for small misses gets routed around. Every refusal needs a path forward, such as a re-shaped ask or a dated slot. In the first year, enforcement rests on your persuasion. Writing commitments into the annual agreement moves it off you ([mechanism 7](concept-operating-mechanisms.md#m7)).
 
 ## Overrides, reorganizations and misses
 

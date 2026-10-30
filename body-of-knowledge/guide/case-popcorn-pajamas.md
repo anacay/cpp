@@ -1,6 +1,6 @@
 ---
 title: Case 2: Popcorn Pajamas
-short: A fictional streaming service's whole capacity problem, built from public information, with the answers left open.
+short: A fictional streaming service's whole capacity problem, built from public information. The case leaves the answers open; a companion page shows how the practice approaches it.
 kind: case
 order: 2
 cadence: all
