@@ -59,12 +59,12 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | Storage systems and schedulers | The reused-flash class; the stranded line |
 | The solver team, inside capacity planning | Counts solver categories; tests whether the solvers reach physical devices |
 | Fleet shaping and hardware engineering | Build and upgrade programs; physical fit, protocol and backplane |
-| Supply chain | Owns the memory-reclaim program, the nearest precedent; vendor terms |
+| Supply chain | Owns the memory-reclaim program, the nearest precedent; vendor terms; the contract read, including resale and recycling contracts |
 | Tier owners | The owners of the workloads and storage tiers that take reused flash: the case's resource managers. They are "product" in the seed paper's terms |
 | Reliability engineering | Cohort caps per redundancy group; the durability response in an incident |
 | Finance | Keeps score; signs the rules that say who pays |
 
-"Supply" in the tables below means fleet provisioning and spares planning together, the groups that answer for drives.
+"Drive supply" in the tables below means fleet provisioning and spares planning together, the groups that answer for drives. Supply chain is a separate group: it owns vendor contracts.
 
 **Decision rights, RACI-style.** R does the work, A decides, S signs, C is consulted. **Change** marks a move from today's owner in the case.
 
@@ -76,8 +76,8 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | P2a Wear price | Flash platform engineering | Flash platform engineering | Finance | Storage systems | **Change:** unowned today |
 | P3 Reused-flash class | Storage systems | Storage systems | Each tier owner accepts, with its evidence bar | Reliability engineering | **Change:** acceptance becomes signed |
 | Stranded line | Storage systems | Storage systems, as service owner | Finance keeps score | Fleet provisioning; planning | **Change:** new line |
-| P4 Spares ratio | Spares planning | Finance and tier owners (product, in the seed's terms) jointly | Finance and tier owners | Supply, for idle cost and liability terms | **Change:** signed in advance |
-| P5 Build programs | Fleet shaping and hardware engineering | Same, as declaring team | Declaring team signs the [change bands](/glossary/#term-change-band) | Supply and planning set the bands | **Change:** programs declared |
+| P4 Spares ratio | Spares planning | Finance and tier owners (product, in the seed's terms) jointly | Finance and tier owners | Drive supply, for idle cost and liability terms | **Change:** signed in advance |
+| P5 Build programs | Fleet shaping and hardware engineering | Same, as declaring team | Declaring team signs the [change bands](/glossary/#term-change-band) | Drive supply and planning set the bands | **Change:** programs declared |
 | P6 Allocation | Planning | The forum, run by planning | Finance, on the rate card | Every sink | **Change:** unowned today |
 | P6 Commitment | Fleet provisioning | Fleet provisioning, answering each claim with a dated commit or a named gap | Finance agrees who pays if harvest fails | Planning | **Change:** never firm before supply answers |
 | P7 Pipeline rate | Reverse logistics with data-center operations | Reverse logistics | Drive security, per erasure | Spares planning | **Change:** staffed to a signed plan |
@@ -151,7 +151,8 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 10 | Pull flash deployed, in TB, by quarter | Fleet provisioning, with finance | The materiality denominator |
 | 10 | Pull the decommission schedule with stage dates | Lifecycle transitions | Retirements, staged |
 | 14 | Compute the materiality ratio, as a scope descriptor (experiment 3) | Planning | A proposed scope, from the table under G1 |
-| 20 | Read every flash contract's cancel, push-out and volume terms into the supply register (experiment 2) | Fleet provisioning, with finance | Mechanism 11's contract lines |
+| 20 | Read every flash contract's cancel, push-out and volume terms into the supply register (experiment 2) | Supply chain, with finance and legal | Mechanism 11's contract lines |
+| 20 | Read the resale and recycling contracts beside them: prices, fees, minimum volumes | Supply chain, with reverse logistics | Net resale by cohort, as the contracts pay it |
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
 | 20 | Measure flash use by resource and site | Storage systems | The stranded stock, sized |
 | 25 | Compute both value anchors per zone, measuring the drive's attribution share (experiment 1) | Planning, with finance | The anchor, declared for G1 |
@@ -345,7 +346,7 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 **Annual signatures, kept separate.**
 
 - Finance and tier owners sign the spares ratio.
-- Supply and planning set the harvest change bands, and each declaring sink signs them.
+- Drive supply and planning set the harvest change bands, and each declaring sink signs them.
 - Planning proposes the landing rule, finance signs it and the forum ratifies it (mechanism 8).
 
 **The charter overlay.** "Once a year, lay the charters over the chain that delivers the product, end to end, and name an owner for every gap" (Section 10.2).
@@ -476,7 +477,7 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 | # | Assumption | Owner | By day | Method | Falsifier | Unlocks |
 |---|---|---|---|---|---|---|
 | 1 | Replacement cost is the right value anchor | Planning, with finance | 25 | Compute both anchors per zone from stockout logs, margins and contract terms; measure the attribution share | The capacity anchor passes replacement cost in most stockout zones | Which price ranks workload claims |
-| 2 | Reuse displaces purchases at all | Fleet provisioning, with finance | 20 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
+| 2 | Reuse displaces purchases at all | Supply chain, with finance and legal | 20 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
 | 3 | The program pays at some scope | Planning, with finance | 14–30 | Net value over exit × usable TB a year, against fixed program cost; harvest TB ÷ new flash TB, as a descriptor | Net value falls short of fixed cost in every price cell | G1 |
 | 4 | Reuse beats exit after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort, beside that cohort's resale quotes | Net value over exit below zero for the cohort's drive class | Pipeline scope by drive class |
 | 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 180 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
@@ -658,7 +659,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - **Signing.** Finance confirms the accounting effect; the forum decides the economics, for every keep past plan.
 
 **Forum charter** ([mechanism 10](concept-operating-mechanisms.md); [forum](/glossary/#term-forum)) [argued]
-- Members: the sponsor, as chair; planning, which runs it; finance; supply; one seat per sink
+- Members: the sponsor, as chair; planning, which runs it; finance; drive supply; one seat per sink
 - Remit: the ranked list of harvest claims across the four sinks, the cut line, and the decision log with overrides and brokered trades
 - Rules it holds: the shortage rule; the ranking unit; the landing rule, which it ratifies
 - Cadence: monthly, plus the quarterly supply review
