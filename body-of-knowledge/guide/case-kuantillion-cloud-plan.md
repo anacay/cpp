@@ -289,7 +289,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 - **Stranded stock, beside it.** Neither the dollar test nor the ratio gates the stranded stock, which runs as its own track from week 2. The case puts installed flash at 60–100 EB.
 - Recovering the gap between one peer's 54% and 19% stranding, after a haircut for reach, frees about 11–35 EB, once (illustrative). That is two to six times the top harvest row.
 - The reclaim pilot reads out by day 90, and that is the track's own go or stop.
-- **Go or stop.** Go at the class's scope. "Stop at the step where the next one costs more than it saves" (Section 12). The paper writes that for mid-sized companies; this plan applies it to the program's own steps.
+- **Go or stop.** Go at the chosen scope. "Stop at the step where the next one costs more than it saves" (Section 12). The paper writes that for mid-sized companies; this plan applies it to the program's own steps.
 
 ### G2: counter-arguments
 
@@ -451,7 +451,7 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 - Firmware version can move the annual replacement rate tenfold (Maneas et al. 2020).
 - **Wear** stays a recorded field. It is a threshold only for write-heavy or QLC cohorts, because most drives use little of their rated endurance.
 - **Age** matters per firmware cohort, measured in power-on hours. At grading, reject or stagger drives near a known fault age.
-- N and the counts are [unmeasured]; set them from the first cohorts' telemetry. Three grades fit inside a [tier cap](/glossary/#term-tier-cap) of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, G2's rule governs: run spares and exit only.
+- N and the counts are [unmeasured]; set them from the first cohorts' telemetry. Three grades fit inside a [tier cap](/glossary/#term-tier-cap) of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and like-for-like spares, and keep grade 3 for exit [argued]. At a cap of one, G2's rule governs: run spares and exit only.
 
 **Internal showback rate, shown back first** [argued]. Call it a showback rate, not a transfer price, to keep it apart from tax transfer pricing.
 - **The rate** per usable TB is the higher of net realizable resale for the cohort and grade, and pipeline cost per usable TB, plus a risk loading.
@@ -560,7 +560,7 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 
 **What experiment 4 measures.** The bar is exit, not zero. Resale pays about $80–160 per TB gross. So the margin over exit is about +$90 to +$490 per TB at the case's $640 high price, and about −$135 to +$85 at its $190 low (illustrative). The central cells are about +$370 and +$10. At low prices, reuse barely beats selling.
 
-**What experiment 7 measures.** At the case's peer (Xu et al. 2019), triage resolved 34.4% of SSD tickets before any swap. Only 31.2% of tickets ended in a swap. So the peer's healthy share of pulled drives is unknown, and so is Kuantillion Cloud's [unmeasured]. Analogies only: 43% of returned hard drives showed no fault (Schroeder and Gibson 2007). About half of swapped SSDs at one operator never returned to service (Alter et al. 2019). Up to 1.5 times true failures is a bound for a site with no triage at all.
+**What experiment 7 measures.** At the case's peer (Xu et al. 2019), triage resolved 34.4% of SSD tickets before any swap. Only 31.2% of tickets ended in a swap. So the peer's healthy share of pulled drives is unknown, and so is Kuantillion Cloud's [unmeasured]. Analogies only: 43% of one vendor's returned hard drives showed no fault (Schroeder and Gibson 2007). About half of swapped SSDs at one operator never returned to service (Alter et al. 2019). Up to 1.5 times true failures is a bound for a site with no triage at all.
 
 **The capacity anchor, as a formula.** Nothing public gives it an input [unmeasured]. So experiment 1 fills a formula:
 
