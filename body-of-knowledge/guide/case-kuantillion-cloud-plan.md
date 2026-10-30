@@ -53,7 +53,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 **The clock against the shortage** [argued]. Suppose day 1 is 2 November 2026 (illustrative). Then G1 falls on 1 December, G4 on 30 January 2027, and G5 no earlier than 30 April 2027.
 - Under the case's Path B, the shortage eases from late 2027. Reused flash would then reach workloads with about two quarters of shortage left.
-- Harvest value falls as that window closes. So the gates that don't depend on each other run in parallel: spares, the pipeline, the record build and the stranded track.
+- Harvest value falls as that window closes. At a 50% yearly price fall, it loses about 16% per quarter of delay; at 10%, under 3% (illustrative). So the gates that don't depend on each other run in parallel: spares, the pipeline, the record build and the stranded track.
 - Under Path A, tight through 2028, the same calendar leaves about six quarters.
 
 **What it rests on.** Five ideas from the seed paper carry it.
@@ -442,7 +442,7 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 
 | Grade | Rule | Where it can go |
 |---|---|---|
-| 1 | No uncorrectable error or critical warning in the last N months; few grown bad blocks, with a flat trend; capacitor test passed; on a safe firmware version; passes burn-in | Durable tiers, once the evidence bar is met |
+| 1 | No uncorrectable error or critical warning in the last N months; few grown bad blocks, with a flat trend; capacitor test passed; on a safe firmware version, updated at harvest; passes burn-in | Durable tiers, once the evidence bar is met |
 | 2 | One event-history flag, or old firmware with no known fault | Loss-absorbing tiers, and like-for-like spares |
 | 3 | Repeat events, a capacitor failure, or no safe firmware | Exit or destroy |
 | Blind | Missing the fields this rule needs | Like-for-like spares only: the platform already runs blind drives of that exact model |
@@ -526,7 +526,7 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 | Time to repair, old platforms | Per repair | Not rising | Rising as harvest is diverted elsewhere |
 | Stranded flash | Share of installed flash | Falls after the reclaim pilot | Flat after pooling |
 | Harvest-to-redeploy time | Per drive harvested | Falls quarter on quarter | Harvested-but-not-graded drives aging |
-| Yield | Per drive harvested, by cohort and gate | Known by cohort | Unknown for any cohort in the pilot |
+| Yield | Per drive harvested, by cohort and gate, burn-in included | Known by cohort | Unknown for any cohort in the pilot |
 | Healthy share of pulls | Per drive pulled, by site | Known by site, then falling where triage was missing | Unknown after day 90, or no change where triage was added |
 | Endurance used at harvest | Per drive, by cohort | Known by cohort | Missing for write-heavy cohorts |
 | Embodied carbon preserved | Per drive redeployed | Reported with its additionality | Claimed where no purchase was displaced |
@@ -736,7 +736,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - **Harvest is deferred, not lost.** For example, harvest now is worth $300 per drive. Keep a year at $60 carry, then harvest: about $185 if prices fall 10%, about $76 if they fall 50% (illustrative).
 - So keeping must earn over $115–224 of capacity value that year.
 - **Power-forced retirements.** Where the site needs the slot's power, keep isn't available. The sheet then chooses between redeploying whole elsewhere and harvesting.
-- **Depreciation is a memo line.** Net book value is near zero past useful life, and depreciation is sunk and non-cash.
+- **Depreciation is a memo line.** Net book value is near zero past useful life, and depreciation is sunk and non-cash. Useful-life changes come from the controller's annual review.
 - **Signing.** Finance confirms the accounting effect; the forum decides the economics, for every keep past plan.
 
 **Forum charter** ([mechanism 10](concept-operating-mechanisms.md#m10); [forum](/glossary/#term-forum)) [argued]
