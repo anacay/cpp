@@ -148,7 +148,7 @@ a.cite:hover { border-bottom-style: solid; }
 }
 .table-wrap:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 2px; }
 table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; line-height: 1.5; }
-th, td { text-align: left; vertical-align: top; padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--water-line); min-width: 9rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--water-line); min-width: 6rem; }
 th { font-weight: 600; color: var(--ink); background: var(--water-line); white-space: nowrap; }
 td:first-child { color: var(--ink); }
 tr:last-child td { border-bottom: 0; }
@@ -585,3 +585,16 @@ h2:hover > .h-link, h3:hover > .h-link, .h-link:focus-visible, :target > .h-link
 .h-link:hover { color: var(--gold-soft); }
 @media (hover: none) { .h-link { opacity: 0.45; } }
 @media print { .h-link { display: none; } }
+
+/* Compact comment hint on case pages */
+.rfc--compact > summary { cursor: pointer; list-style: none; margin: 0; }
+.rfc--compact > summary::-webkit-details-marker { display: none; }
+.rfc--compact > summary::after { content: " ▸"; color: var(--ink-muted); }
+.rfc--compact[open] > summary::after { content: " ▾"; }
+.rfc--compact[open] > summary { margin-bottom: 0.75rem; }
+
+/* Wide figures stay legible on phones: scroll sideways instead of shrinking */
+@media (max-width: 40em) {
+  .guide-body .plate__card { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .guide-body .plate__card img { min-width: 720px; }
+}

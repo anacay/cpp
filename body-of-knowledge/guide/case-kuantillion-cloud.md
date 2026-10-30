@@ -13,6 +13,36 @@ seed: 4, 5.4, 6, 8, 9.2
 
 This is the practice's second problem-space case, and the first with a full answer beside it. The case sets out the problem in full and prescribes nothing. A companion page then works the problem through the practice's body of knowledge, and names where that body of knowledge runs out.
 
+## The situation
+
+Kuantillion Cloud runs one of the largest computing fleets in the world. It plans about $200 billion of capital spending in 2026 and still calls itself supply constrained. Every year it harvests millions of components from the machines it retires, over 3 million of them drives in 2024. Its public environmental reports call them hard drives, so how many were solid-state drives isn't public. Older flash also sits idle inside machines that are still running.
+
+New enterprise flash now costs three to four times what it did a year earlier. Next year's supply is largely pledged. So the old drives look valuable. Each one can go four ways. It can go into a workload that tolerates it, into the pool of repair spares, or into an upgrade or a new build. Or it can leave through resale, recycling or destruction.
+
+No public source shows Kuantillion Cloud running a program for this. The public record shows every ingredient such a program would need, and every seam it would fall through.
+
+## The answer, in brief
+
+The [strategy](case-kuantillion-cloud-practice.md) works the problem through the practice's body of knowledge. The [execution plan](case-kuantillion-cloud-plan.md) turns it into owners, gates and dates. Six moves carry most of the weight, and the first five are cheap tests that decide whether the expensive work is worth doing [argued]:
+
+1. **Find out what exists.** The public record is silent on a program, so the first test is whether one already runs. In the plan: [days 1–5](case-kuantillion-cloud-plan.md#days-1-5-does-a-program-already-exist) and [gate G0](case-kuantillion-cloud-plan.md#gate-0).
+2. **Size it in dollars and name the value anchor.** Below materiality, a program costs more than it returns. The flash contracts decide whether a reused drive avoids a purchase or adds capacity. In the plan: [gate G1](case-kuantillion-cloud-plan.md#gate-1).
+3. **Book each retirement in both directions.** A retiring host is also a dated delivery of drives, so the harvest becomes supply the plan can count on. In the plan: [days 6–30](case-kuantillion-cloud-plan.md#days-6-30-size-it-and-read-the-contracts).
+4. **Give every drive one record and every gap an owner.** A drive record, a standing forum, and shortage rules signed before the shortage. In the plan: [gate G3](case-kuantillion-cloud-plan.md#gate-3) and [rules agreed in advance](case-kuantillion-cloud-plan.md#6-rules-agreed-in-advance).
+5. **Prove it with spares, then extend.** Spares are the harvest's most predictable claim; workloads come after trust exists. In the plan: [gate G4](case-kuantillion-cloud-plan.md#gate-4), then [G5](case-kuantillion-cloud-plan.md#gate-5).
+6. **Reach the idle flash in running machines, in parallel.** A reclaim pilot on one tier reads out by day 90 as its own go or stop. In the plan: [days 61–90](case-kuantillion-cloud-plan.md#days-61-90-spares-and-the-pipeline-first).
+
+## Why it is hard
+
+Three words recur. A [sink](/glossary/#term-sink) is a place a drive can go: a workload, the spares pool, an upgrade or build, or exit. The [harvest](/glossary/#term-harvest) is the parts a retiring machine releases. The technical gates are the checks a drive must clear before it is supply again, such as fit, firmware and provable erasure. [Second lives](note-second-lives.md#agreeing-on-the-words) defines these terms most clearly.
+
+- **Nobody has said what kind of value it is.** If Kuantillion Cloud's purchase commitments can be rescheduled, a reused drive avoids a purchase. If they are firm, it adds capacity to a sold-out fleet. Those are different numbers, with different beneficiaries.
+- **Nobody knows how big it is.** The drive harvest could be under 1% or near 30% of a year's flash deployment, central 3–9% (illustrative). That sets whether this is spares housekeeping or supply strategy. Whether it pays at all is a dollar question.
+- **Supply is a byproduct.** Drives come back when a platform retires, for reasons that have nothing to do with drives. Keeping a platform alive raises its need for spares while cutting the harvest that would feed them.
+- **A drive has five dimensions, and every sink prices a different one.** Capacity, performance, remaining endurance, fit and condition history. No common unit or price exists inside the fleet.
+- **Nobody has published how reused drives behave in a second life.** First-life studies disagree on late-life hazard; firmware, model and error history matter more than age, and failures cluster. Second-life hazard is unmeasured. One bad incident could cost more than the program saves.
+- **The organization splits the problem in two.** The people who allocate capacity and the people who recover value sit in different organizations. Its own published material says the technicians who pull drives are measured on ticket speed, which nudges drives toward the shredder.
+
 ## Before you start
 
 Case 3 runs to about 50,000 words across four pages. You don't need all of it, and you don't need to start cold.
@@ -30,25 +60,6 @@ Case 3 runs to about 50,000 words across four pages. You don't need all of it, a
 **Reading times,** at a steady pace: this page, 5 minutes. [The full case](case-kuantillion-cloud-full.md), about 100. [The strategy](case-kuantillion-cloud-practice.md), about 70. [The execution plan](case-kuantillion-cloud-plan.md), about 55. [Second lives](note-second-lives.md), about 10.
 
 **A newcomer's route,** about an hour: this page; the strategy's [problem in brief](case-kuantillion-cloud-practice.md#the-problem-in-brief); one lens, such as [buffers and reserves](case-kuantillion-cloud-practice.md#buffers-and-reserves); the spares decision, [P4](case-kuantillion-cloud-practice.md#p4-size-and-source-legacy-spares); then the plan's [first 30 days](case-kuantillion-cloud-plan.md#3-the-first-30-60-and-90-days).
-
-## The situation
-
-Kuantillion Cloud runs one of the largest computing fleets in the world. It plans about $200 billion of capital spending in 2026 and still calls itself supply constrained. Every year it harvests millions of components from the machines it retires, over 3 million of them drives in 2024. Its reports call them hard drives, so how many were solid-state drives isn't public. Older flash also sits idle inside machines that are still running.
-
-New enterprise flash now costs three to four times what it did a year earlier. Next year's supply is largely pledged. So the old drives look valuable. Each one can go four ways. It can go into a workload that tolerates it, into the pool of repair spares, or into an upgrade or a new build. Or it can leave through resale, recycling or the shredder.
-
-No public source shows Kuantillion Cloud running a program for this. The public record shows every ingredient such a program would need, and every seam it would fall through.
-
-## Why it is hard
-
-Three words recur. A [sink](/glossary/#term-sink) is a place a drive can go: a workload, the spares pool, an upgrade or build, or exit. The [harvest](/glossary/#term-harvest) is the parts a retiring machine releases. The technical gates are the checks a drive must clear before it is supply again, such as fit, firmware and provable erasure. [Second lives](note-second-lives.md#agreeing-on-the-words) defines these terms most clearly.
-
-- **Nobody has said what kind of value it is.** If Kuantillion Cloud's purchase commitments can be rescheduled, a reused drive avoids a purchase. If they are firm, it adds capacity to a sold-out fleet. Those are different numbers, with different beneficiaries.
-- **Nobody knows how big it is.** The drive harvest could be under 1% or near 30% of a year's flash deployment, central 3–9% (illustrative). That sets whether this is spares housekeeping or supply strategy. Whether it pays at all is a dollar question.
-- **Supply is a byproduct.** Drives come back when a platform retires, for reasons that have nothing to do with drives. Keeping a platform alive raises its need for spares while cutting the harvest that would feed them.
-- **A drive has five dimensions, and every sink prices a different one.** Capacity, performance, remaining endurance, fit and condition history. No common unit or price exists inside the fleet.
-- **Nobody has published how reused drives behave in a second life.** First-life studies disagree on late-life hazard; firmware, model and error history matter more than age, and failures cluster. Second-life hazard is unmeasured. One bad incident could cost more than the program saves.
-- **The organization splits the problem in two.** The people who allocate capacity and the people who recover value sit in different organizations. The technicians who pull drives are measured on ticket speed.
 
 ## What's in the case
 
@@ -74,7 +85,7 @@ Where the practice runs out, the strategy page says so. Most gaps are already so
 - **Read the eight decisions** and pick the one closest to your own work. Ask how your organization would decide it before you read the answer.
 - **Read the answer critically.** Every judgment that goes past the paper is marked. Challenge the ones you'd do differently.
 - **Join the discussion.** Challenge a number, add a reference class, or tell us where the case gets your fleet wrong.
-- **Try an exercise at your level** [argued].
+- **Try an exercise at your level.**
   - *Learning:* a spares plan missed because pulls ran above true failures. Split the miss: how much came from weak triage, and how much from the failure rate?
   - *Practicing:* book one retirement as two ledger lines, minus hosts and plus drives, with stage dates for each.
   - *Leading:* draft the shortage rule for the four sinks, and say who signs it before any shortage.
