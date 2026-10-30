@@ -9,6 +9,19 @@ levels: all
 seed: 1, 10, 14
 ---
 
+## Where to start
+
+If you're new, follow one path. Read [the one page](/one-page/), then four concepts: [the coefficient](concept-the-coefficient.md), [demand and declarations](concept-demand-and-declarations.md), [commit points](concept-commit-points.md) and [approval and allocation](concept-approval-and-allocation.md). Then read Case 1 on the [cases page](cases.md#case-1-the-launch-that-needed-memory). Fill in the [worksheet](/worksheet/) for it. Last, take one decision in [Case 3](case-kuantillion-cloud.md). The [body of knowledge](/body-of-knowledge/#start-here) lists the same path with reading times.
+
+## Reading this guide by level
+
+- **Learning:** start with [principles](principles.md), [the map](the-map.md), then [weekly](stage-weekly.md) and [monthly](stage-monthly.md). Keep [the coefficient](concept-the-coefficient.md) and [demand and declarations](concept-demand-and-declarations.md) open.
+- **Practicing:** [quarterly](stage-quarterly.md), [post-launch](stage-post-launch.md) (scoring and alerts), [commit points](concept-commit-points.md), [approval and allocation](concept-approval-and-allocation.md), [people](people.md).
+- **Leading:** [annual](stage-annual.md), [post-launch](stage-post-launch.md) (restating and re-baselining), [the operating mechanisms](concept-operating-mechanisms.md), [settings](settings.md).
+- **Capital or supply side:** [three prices](concept-three-prices.md), [buffers and reserves](concept-buffers-and-reserves.md), [supply layers and lead times](concept-supply-layers-and-lead-times.md).
+
+Every page has a strip at the top saying which levels usually do that work. The levels are described under [the path](#the-path), below.
+
 ## What the work is
 
 The 2026 SRE chapter defines capacity planning as "the discipline of forecasting future demand and provisioning the supply to meet it" [7]. That's the core. In practice, the job has a third part: keeping the agreement that pays for it. [argued]
@@ -66,15 +79,6 @@ One exercise per level, all on the seed paper's worked example: Product A's laun
 - **Leading.** Set the shortage-to-idle ratios for machines and for power, and write the re-cut order for a 10% envelope cut ([buffers and reserves](concept-buffers-and-reserves.md), [annual](stage-annual.md)).
 - **Capital.** Price the roughly 1.0 NMU of spare the method holds, and decide who carries it at a 40,000 landing ([the map](the-map.md), [commit points](concept-commit-points.md)).
 - **Supply.** Write the cancel window and reschedule terms for the reschedulable high-memory order ([supply layers and lead times](concept-supply-layers-and-lead-times.md)).
-
-## Reading this guide by level
-
-- **Learning:** start with [principles](principles.md), [the map](the-map.md), then [weekly](stage-weekly.md) and [monthly](stage-monthly.md). Keep [the coefficient](concept-the-coefficient.md) and [demand and declarations](concept-demand-and-declarations.md) open.
-- **Practicing:** [quarterly](stage-quarterly.md), [post-launch](stage-post-launch.md) (scoring and alerts), [commit points](concept-commit-points.md), [approval and allocation](concept-approval-and-allocation.md), [people](people.md).
-- **Leading:** [annual](stage-annual.md), [post-launch](stage-post-launch.md) (restating and re-baselining), [the operating mechanisms](concept-operating-mechanisms.md), [settings](settings.md).
-- **Capital or supply side:** [three prices](concept-three-prices.md), [buffers and reserves](concept-buffers-and-reserves.md), [supply layers and lead times](concept-supply-layers-and-lead-times.md).
-
-Every page has a strip at the top saying which levels usually do that work.
 
 ## What's missing
 
