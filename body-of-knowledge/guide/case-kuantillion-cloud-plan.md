@@ -394,7 +394,7 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 | Measure | Denominator | Target | Test that can fail |
 |---|---|---|---|
 | Purchases avoided | Per TB in the plan of record, under the declared anchor | Rises while stockouts last | Reported without the anchor, or with no displaced purchase |
-| Net value per harvested drive | Per drive harvested, after pipeline cost and yield | Positive by cohort | Negative for a cohort two quarters running |
+| Net value over exit per harvested drive | Per drive harvested: reuse value after pipeline cost and yield, minus what exit would have paid | Positive by cohort | Negative for a cohort two quarters running |
 | Spares fill rate | Per repair, by platform | At or above the signed cover point | Fill below cover while another sink holds idle harvest |
 | Time to repair, old platforms | Per repair | Not rising | Rising as harvest is diverted elsewhere |
 | Stranded flash | Share of installed flash | Falls after the reclaim pilot | Flat after pooling |
@@ -423,11 +423,13 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 | 1 | Replacement cost is the right value anchor | Planning, with finance | 25 | Compute both anchors per zone from stockout logs and contract terms | The capacity anchor passes replacement cost in most stockout zones | Which price ranks workload claims |
 | 2 | Reuse displaces purchases at all | Fleet provisioning, with finance | 20 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
 | 3 | The materiality ratio is large enough to matter | Planning | 14 | Harvest TB ÷ new flash TB, by quarter | Ratio well under 1% | G1 |
-| 4 | Net value stays positive after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort | Net value below zero for the cohort's drive class | Pipeline scope by drive class |
+| 4 | Reuse beats exit after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort, beside that cohort's resale quotes | Net value over exit below zero for the cohort's drive class | Pipeline scope by drive class |
 | 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 180 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
 | 6 | The host-cost logic holds | Lifecycle transitions, with finance | 55 | The keep, redeploy or harvest sheet for one retiring cohort | Drive value, not host cost, decides the branch | How retirement dates are set |
 | 7 | Spares demand is what failure rates say | Machine-health engineering, with spares planning | 25–90 | Re-test every pulled drive at two sites; log fail-in-place; publish the healthy share | Under 5% of pulled drives test healthy (illustrative threshold) | Whether the pool is sized on pulls or true failures |
 | 8 | Internal prices can carry these values | Planning, with finance | 91–180 | One full cycle of showback | Decisions reopened as often as under negotiation | Whether to bill |
+
+**What experiment 4 measures.** The bar is exit, not zero. Resale pays about $80–160 per TB gross. So the margin over exit is about +$90 to +$490 per TB at the case's $640 high price, and about −$135 to +$85 at its $190 low (illustrative). The central cells are about +$370 and +$10. At low prices, reuse barely beats selling.
 
 **What experiment 7 measures.** At the case's peer (Xu et al. 2019), triage resolved 34.4% of SSD tickets before any swap, and only 31.2% of tickets ended in a swap. So the peer's healthy share of pulled drives is unknown, and so is Kuantillion Cloud's [unmeasured]. Analogies only: 43% of returned hard drives showed no fault (Schroeder and Gibson 2007). About half of swapped SSDs at one operator never returned to service (Alter et al. 2019). Up to 1.5 times true failures is a bound for a site with no triage at all.
 
