@@ -70,7 +70,7 @@ The problem is to get the most value from that installed base across four sinks:
 2. **A drive has five dimensions, and every sink prices a different one.** Capacity, performance, remaining endurance, fit and condition history. Workloads price capacity and latency, spares price fit, upgrades price fit and qualification, and resale prices provable condition. No shared unit or price exists inside the fleet.
 3. **Supply is a byproduct of lifecycle decisions made for other reasons.** Keeping a platform alive raises its need for spares while cutting the harvest that feeds them. Retiring one releases drives that mostly fit its own generation.
 4. **The organization splits the problem in two, everywhere.** Across the industry, allocation and value recovery are hired into different organizations. The people who touch drives are measured on ticket speed. Kuantillion Cloud's own report concedes that its measures miss much of the value reuse adds.
-5. **Nobody has published how reused drives behave in a second life.** The evidence says parity early, then rising and correlated hazard. Where the crossover sits, and what one bad incident would cost, are unknown. Both bound how much risk any allocation can take.
+5. **Nobody has published how reused drives behave in a second life.** First-life field studies disagree on late-life hazard: two large ones saw no rise at end of life. Firmware, model and error history matter more than age. Second-life hazard, including any early failures that handling causes, is unknown, and so is what one bad incident would cost. Both bound how much risk any allocation can take.
 
 **The five most surprising connections**
 
@@ -295,12 +295,15 @@ A legacy drive is only supply if it can reach a sink. Ten gates sit in the way. 
 
 ### 6.1 What is actually known about second lives
 
-These findings describe different points on one curve, not a for-and-against pair (Inferred).
+The field studies below measure first lives, at other operators and researchers. They don't agree on what happens late in life (Third party; mapping Inferred).
 
-- **Early parity is plausible.** One cloud's reused-drive design assumed reused drives fail no more than new. Its reused parts showed lower or equal failure rates before redeployment, and after seven years most drives kept over half their rated erase cycles (Third party). That is a first-life observation carried into an assumption.
-- **Hazard rises with age and concentration.** At one operator, out-of-warranty legacy PCIe drives were 22% of drives but 77% of failures in a quarter. Each failed card meant replacing the host chassis, which couldn't take a modern part (Third party). A million-drive study found failures cluster in nodes and racks, more so with age, and advises against concentrating aged drives in one failure domain (Third party).
+- **Early failures are common; a late rise is not established.** A study of 1.4 million enterprise SSDs over 30 months saw failure rates rise for 12–15 months, then fall for a long period, with no sign of a rise at end of life (Maneas et al. 2020). A six-year trace of about 30,000 SSDs found an infancy of about 90 days, then a roughly constant rate. Its oldest drives failed about as often as young ones past infancy (Alter et al. 2019; Pinciroli et al. 2020). Another large fleet found failure rates don't rise steadily with wear (Meza et al. 2015). A fourth found age raises raw bit errors, but raw errors don't predict uncorrectable ones (Schroeder et al. 2016).
+- **Firmware, model and history matter more than age.** In the 1.4-million-drive study, early firmware versions had from over 2 to over 10 times the replacement rate of later ones, and most drives never changed version. Model was a direct factor in a half-million-drive study (Narayanan et al. 2016). After one uncorrectable error, the chance of another the next month was nearly 30%, against 2% in a random month (Schroeder et al. 2016).
 - **Firmware time bombs.** Two published bugs killed drives at about 3.7 and 4.6 power-on years without a fix (Third party). Redeploying without firmware baselines redeploys the bomb (Inferred).
-- **The read.** Parity early, rising and correlated hazard later, and nobody has published the crossover (Inferred). No operator publishes second-life failure rates, requalification yield or sanitization yield (Unknown). This is the case's single most load-bearing unknown.
+- **Failures cluster.** In the 1.4-million-drive study, one replacement in a RAID group raised the chance of another there within a week about 180-fold (Maneas et al. 2020). A million-drive study found correlated failures within a node or rack common (Han et al. 2021).
+- **One operator's bad quarter.** Out-of-warranty legacy PCIe drives were 22% of one operator's drives but 77% of its failures in a quarter. Each failed card meant replacing the host chassis, which couldn't take a modern part (Third party). It is one quarter at one operator, confounded with model, firmware and warranty (Inferred).
+- **Second life is unmeasured.** One cloud's reused-drive design assumed reused drives fail no more than new. It reported lower or equal failure rates for its reused parts before redeployment, without the rates, and most drives kept over half their rated erase cycles after seven years (Third party). That is a first-life observation carried into an assumption. Removal, shipping and reinsertion may restart the infancy clock; nobody has measured it (Speculated).
+- **The read.** First-life studies disagree on late-life hazard, and two large ones saw no end-of-life rise. Firmware, model and error history dominate age. Second-life hazard, including any early failures that handling causes, is unmeasured (Unknown). No operator publishes second-life failure rates, requalification yield or sanitization yield. This is the case's single most load-bearing unknown.
 
 ## 7. The money: what the flow is worth
 
@@ -630,7 +633,7 @@ Eighteen chains connect markets, the organization and the physics of flash to co
 10. At one peer, about a third of SSD failure tickets weren't the drive (human error, cables), and cheaper steps resolved them before any swap → a site that skips that triage pulls drives that didn't need pulling → spare consumption runs up to about 1.5× true failures, and healthy flash leaves service → triage quality becomes a supply source (Third party → Inferred → Arithmetic).
 11. Older drives predate newer telemetry fields → whole cohorts are partly blind → grading can't see what it must price → the observability gate fails cohorts, not drives (Reported → Inferred).
 12. Health counters are forgeable outside custody → a million-drive counter-reset fraud in 2025 → outside used supply becomes untrustworthy → unbroken internal custody becomes the asset the grey market can't copy → provably healthy drives are worth more inside than outside (Press → Inferred).
-13. Same-cohort drives are redeployed together → correlated failures rise with age and concentration → one incident in a redeployed cohort → trust collapses for all legacy capacity: P8's second-class problem, made by one event (Third party → Speculated).
+13. Same-cohort drives are redeployed together → failures cluster by node, rack and redundancy group, and firmware faults strike whole cohorts → one incident in a redeployed cohort → trust collapses for all legacy capacity: P8's second-class problem, made by one event (Third party → Speculated).
 
 **Organization and incentives**
 
@@ -802,7 +805,7 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 | 28 | Peers meet 85% (obsolete) and 13% (all) of spares from reuse; a European cloud redeploys about 30% internally; another claims 99.7% recycled or reused | Third party; the 99.7% unverified |
 | 29 | One cloud's filing names both obsolescence risk and failure risk as live | Third party |
 | 30 | Reused SSDs fail no more often than new ones in a second life | Unknown; one cloud assumes parity from first-life data |
-| 31 | Unmanaged legacy drives can dominate failures (22% of drives, 77% of failures) | Third party |
+| 31 | Unmanaged legacy drives can dominate failures (22% of drives, 77% of failures, in one operator's quarter) | Third party; confounded with model, firmware and warranty |
 | 32 | About half of one cloud's server SSD capacity is stranded | Third party; no figure for Kuantillion Cloud |
 | 33 | Sanitization yield on legacy SSDs; qualification cost and time | Unknown |
 | 34 | Kuantillion Cloud reuses older memory from retired servers in new AI servers | Press (no transcript) |
@@ -815,6 +818,7 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 | 41 | Ticket-metric incentives predict scrapping wherever harvest value is unmeasured | Third party (result); Inferred (mapping) |
 | 42 | Which way U.2/U.3 tri-mode compatibility runs | Unknown; check per platform |
 | 43 | The share of pulled SSDs that test healthy | Unknown; analogies only: 43% no fault found in one vendor's returned hard disks; about half of one cloud's swapped SSDs never returned to production (Third party) |
+| 44 | First-life field studies: early failures common; no end-of-life rise in two large studies; firmware, model and error history dominate age | Third party |
 
 **Assumptions any answer must test.** Replacement cost as the value anchor. Additionality of reuse under the commitments. A materiality ratio large enough to matter. Positive net value after pipeline cost and yield. Stranded capacity recoverable at reasonable cost. The host-cost logic over the holding period. Spares demand net of fail-in-place and misdiagnosis. And internal prices able to carry these values at all.
 
@@ -851,7 +855,7 @@ Sixteen questions decide whether this problem statement is right, ranked by how 
 | 2 | Are Kuantillion Cloud's flash commitments flexible or firm in volume? | Mixed: firm cores with flexible bands (Speculated) | The commitments note in its filings; flexibility language in makers' agreements and calls |
 | 3 | Does Kuantillion Cloud already reuse SSDs at scale, and through what program? | Some SSDs sit inside the 3-million-drive flow; no graded program is public (Inferred) | A circularity report that names SSDs; a posting that names flash reuse |
 | 4 | Was flash reuse evaluated and declined? | Unknown; held live beside trade secret (Speculated) | Internal records, if they surface; a talk or paper describing a pilot |
-| 5 | Where does second-life hazard cross the new-drive curve? | Parity early, rising after several years and with concentration (Inferred) | A pilot cohort tracked by power-on hours and placement |
+| 5 | Where does second-life hazard sit against the new-drive curve? | Unknown. First-life studies disagree on late-life hazard; firmware, model and error history dominate age; handling may restart infancy (Speculated) | A pilot cohort tracked by power-on hours, firmware, error history and placement, beside a new-drive control |
 | 6 | What are requalification and sanitization yields? | Plausibly high for recent cohorts, low for telemetry-blind ones (Speculated) | Pipeline logs by cohort and failure cause |
 | 7 | How often is a host redeployed intact rather than taken apart? | Intact wins where whole platforms suit lower-demand work (Speculated) | Decommission records by branch |
 | 8 | Does the fungibility solver reach physical devices? | No: virtual capacity only today (Inferred) | The solver's input schema; a posting that uses both dialects |
@@ -885,7 +889,7 @@ The harvest, requalify and redeploy loop is line operations across the industry,
 | One cloud (2024) | Obsolete spare parts met from harvested inventory | 85% | How far harvest can carry aging-platform spares |
 | Another cloud | All spare parts supplied from reuse | 13% | Harvest's share of spares fleet-wide |
 | One cloud | Server SSD capacity stranded; with small-group pooling (research estimate) | 54%; about 19% | The stranded stock |
-| One operator (2020) | Legacy out-of-warranty PCIe drives: share of drives against share of failures in a quarter | 22% against 77% | The far end of the hazard curve |
+| One operator (2020) | Legacy out-of-warranty PCIe drives: share of drives against share of failures in a quarter | 22% against 77% | One bad quarter; confounded with model, firmware and warranty |
 | One cloud | Repair time, median and 99th percentile; share of technician hours; share of six-year cost | 3 days and 190 days; about half; about 9% | Repair cost and labor |
 | One cloud | Repair tickets cut by fail-in-place | About 55% | Fail-in-place as a substitute for spares |
 | One Asian cloud (2019) | SSD-related failure tickets not caused by the drive; tickets ending in a drive swap | 34.4%; 31.2% | Ticket triage |
