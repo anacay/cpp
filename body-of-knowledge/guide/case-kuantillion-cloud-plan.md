@@ -70,7 +70,7 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | Decision | R | A | S | C | Change |
 |---|---|---|---|---|---|
 | P1 Drive record | Each field's performer | Planning keeps the record | Field owners | Drive security | **Change:** unowned today |
-| P2 Keep, redeploy or harvest | Lifecycle transitions | Lifecycle transitions with fleet provisioning | Finance, for every keep past plan | The forum, for drive values | **Change:** drive values a required input |
+| P2 Keep, redeploy or harvest | Lifecycle transitions | The forum decides the economics of every keep past plan | Finance confirms the accounting effect | Fleet provisioning, for drive values | **Change:** drive values a required input |
 | P2a Wear price | Flash platform engineering | Flash platform engineering | Finance | Storage systems | **Change:** unowned today |
 | P3 Reused-flash class | Storage systems | Storage systems | Each tier owner accepts, with its evidence bar | Reliability engineering | **Change:** acceptance becomes signed |
 | Stranded line | Storage systems | Storage systems, as service owner | Finance keeps score | Fleet provisioning; planning | **Change:** new line |
@@ -490,7 +490,7 @@ The case names public signposts between two futures. Path A stays tight through 
 | Risk | Counter | Early sign | Owner |
 |---|---|---|---|
 | Placement-only program | Spares first; one ranked list | Repair times on old platforms | The forum |
-| Keep everything | Keep priced at avoidable carry; finance signs | Cost per useful TB on old cohorts | Lifecycle transitions |
+| Keep everything | Keep priced per period, resale decay and slot cost included; the forum decides | Cost per useful TB on old cohorts | Lifecycle transitions |
 | Holding past the option's decay | The written release trigger | Drives past re-test date | Reverse logistics |
 | Phantom supply | Booked only once supply answers; pegging | Commit-to-deliver gaps | Fleet provisioning |
 | Second-class capacity | A stated class; a challenge channel | Asks naming new hardware | Storage systems |
@@ -574,19 +574,26 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - Either a dated commit: quantity, date, confidence, any substituted grade or shape
 - Or a named gap: how much, by when, why, and a proposed bridge with its owner
 
-**Keep, redeploy or harvest sheet** (one per retiring cohort; P2) [argued]
+**Keep, redeploy or harvest sheet** (one per retiring cohort, filled per period; P2) [argued]
 
-| Line | Keep | Redeploy whole | Harvest |
+- Cohort; platform; host count; planned retirement date; horizon, such as four quarters
+- Harvest value = yield × each sink's next-best-source value − pipeline cost.
+
+| Line, for the next period | Keep | Redeploy whole | Harvest now |
 |---|---|---|---|
-| Avoidable carry: power, space, repairs, technician hours, stranding of its other parts | Paid | Paid, in a lighter class | Avoided |
-| Value of the host's capacity: the shadow price in stockout zones, zero in slack | Kept | Kept, at the lower class's price | Lost |
-| Harvest value: yield × each sink's next-best-source value − pipeline cost | — | — | Gained |
-| The lighter class's value to its tenants | — | Gained | — |
-| Depreciation, noted by finance | Extended | Extended | Written off |
+| Capacity value: the [shadow price](/glossary/#term-shadow-price) in stockout zones, zero in slack | Earned | Earned, at the lighter class's price | Lost |
+| Avoidable cash carry: power, repairs, technician hours | Paid | Paid, in a lighter class | Avoided |
+| Slot cost: the power and space a new machine could use | Paid | Paid | Freed |
+| Change in harvest value as prices fall | Lost while held | Lost while held | Locked in |
+| Capital charge on the harvest value held | Paid | Paid | None |
+| Depreciation, memo only | No decision weight | No decision weight | Loss on disposal, or none |
 
-- Cohort; platform; host count; planned retirement date
-- Read it down each column. Keep a host when its capacity's value exceeds its avoidable carry; harvest when the harvest value is larger.
-- Signed by finance for every keep past plan.
+- **The rule.** Keep while next period's value exceeds next period's total carry, decay included. In accounting terms it is a relevant-cost, equipment-replacement decision.
+- **Harvest is deferred, not lost.** For example, harvest now is worth $300 per drive. Keep a year at $60 carry, then harvest: about $185 if prices fall 10%, about $76 if they fall 50% (illustrative).
+- So keeping must earn over $115–224 of capacity value that year.
+- **Power-forced retirements.** Where the site needs the slot's power, keep isn't available. The sheet then chooses between redeploying whole elsewhere and harvesting.
+- **Depreciation is a memo line.** Net book value is near zero past useful life, and depreciation is sunk and non-cash.
+- **Signing.** Finance confirms the accounting effect; the forum decides the economics, for every keep past plan.
 
 **Forum charter** ([mechanism 10](concept-operating-mechanisms.md); [forum](/glossary/#term-forum)) [argued]
 - Members: a named executive chair; planning, which runs it; finance; supply; one seat per sink
