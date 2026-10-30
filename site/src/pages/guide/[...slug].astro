@@ -5,6 +5,7 @@ import HelpBuild from '../../components/HelpBuild.astro';
 import WhereStrip from '../../components/WhereStrip.astro';
 import { guide, renderGuide, seedLinks, neighboursOf, KINDS } from '../../lib/guide.mjs';
 import { load, renderInline } from '../../lib/paper.mjs';
+import { guideDates } from '../../lib/dates.mjs';
 
 export function getStaticPaths() {
   return guide().pages.filter((p) => p.kind !== 'case' && p.kind !== 'note').map((p) => ({ params: { slug: p.url.replace(/^\/guide\/|\/$/g, '') }, props: { file: p.file } }));
@@ -17,7 +18,7 @@ const { prev, next } = neighboursOf(page);
 const c = load().config.community;
 const ctx = load();
 ---
-<Base title={page.title} description={page.short} nav="bok" commentable={{ name: `Guide: ${page.title}` }} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
+<Base title={page.title} description={page.short} nav="bok" commentable={{ name: `Guide: ${page.title}` }} article={guideDates(page.file) ? { published: guideDates(page.file).first, modified: guideDates(page.file).last } : undefined} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, ...(guideDates(page.file) ? { datePublished: guideDates(page.file).first, dateModified: guideDates(page.file).last } : {}), isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
   <div class="wrap wrap--reading">
     <div class="page-head">
       <p class="crumbs"><a href="/body-of-knowledge/">Body of knowledge</a> <span aria-hidden="true">›</span> <a href={`/body-of-knowledge/#${page.kind}`}>{KINDS[page.kind].label}</a></p>

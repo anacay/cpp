@@ -1,13 +1,13 @@
 # Guide spec (for writers; not published)
 
-The **guide** is the body of knowledge written as reference, not argument. The seed paper (*The Coefficient Is an Agreement*, v7.6, `body-of-knowledge/seed/`) stays whole beside it. Every guide page draws from the seed and says where. This is a **draft for the author's review** (version label: "Guide, draft v0.2").
+The **guide** is the body of knowledge written as reference, not argument. The seed paper (*The Coefficient Is an Agreement*, v7.9, `body-of-knowledge/seed/`) stays whole beside it. Every guide page draws from the seed and says where. Where a guide page and the seed differ, the seed governs until the guide is corrected. This is a **draft for the author's review** (version label: "Guide, draft v0.2").
 
 ## The two organizing ideas
 
 **1. The map: altitude × cadence, run as a living loop.**
 
 Cadence columns (the paper's §9.1 cadence; "weekly" is the paper's "continuous steering"):
-`annual` → `quarterly` → `monthly` → `weekly` → `post-launch` ↺ (post-launch feeds the next annual plan).
+`annual` → `quarterly` → `monthly` → `weekly` → `post-launch` ↺ (post-launch feeds the next quarterly intake and, through it, the next annual plan).
 
 Altitude rows, high to low:
 - `envelope`: capital and the whole fleet. Budget, the cut line, strategic bets, depreciation.
@@ -64,7 +64,7 @@ Then the body. No H1 (the title is the H1). Use `##` for sections, `###` sparing
 4. `## The example, at this cadence`: what happens to Product A's launch on Service X at this cadence.
 5. `## What goes wrong`: 3–5 bullets.
 6. `## How to tell it's working`: indicators, from the paper's tests where they exist; otherwise say none is tested yet.
-7. `## What it hands on`: what this cadence receives from the one before and passes to the next (and for post-launch, back to annual).
+7. `## What it hands on`: what this cadence receives from the one before and passes to the next (and for post-launch, to the next quarterly intake and, through it, the annual plan).
 8. `## Where this comes from`: seed-paper sections, and the public sources behind them with their [n] numbers. Credit prior art generously.
 
 ### Page pattern: concept pages
