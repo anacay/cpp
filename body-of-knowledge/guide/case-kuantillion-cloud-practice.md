@@ -398,23 +398,28 @@ The paper adds one more line here, from experience. "In my experience, the faste
 
 **Where they pull against each other.** The natural price for keeping capacity is long-run incremental cost. But Section 4 says that price "Misleads when used for" "Pricing capacity that already exists" (Section 4). So the paper's own price table rules out its most obvious tool. We add a fourth price, avoidable carrying cost [argued].
 
-**The answer.** Put all three branches on one sheet, per cohort. The case finds that the answer differs by cohort, not by generation. The sheet's lines are this page's [argued]:
+**The answer.** Put all three branches on one sheet, per cohort, and read it one period at a time. The case finds that the answer differs by cohort, not by generation. Keeping a host doesn't lose its harvest; it defers it, at a price that may fall. So this is a replacement decision: keep one more period, or harvest now. The sheet's lines are this page's [argued]:
 
-| Line | Keep | Redeploy whole | Harvest |
+| Line, per period | Keep | Redeploy whole | Harvest now |
 |---|---|---|---|
-| Avoidable carry: power, space, repairs, technician hours, stranding of its other parts | Paid | Paid, in a lighter class | Avoided |
-| Value of the host's capacity: the shadow price in stockout zones, zero in slack | Kept | Kept, at the lower class's price | Lost |
-| Harvest value: yield × each sink's next-best-source value − pipeline cost | — | — | Gained |
-| The lighter class's value to its tenants | — | Gained | — |
-| Depreciation, noted by finance | Extended | Extended | Written off |
+| Capacity value: the shadow price in stockout zones, zero in slack | Earned | Earned, at the lighter class's price | — |
+| Avoidable cash carry: power, repairs, technician hours, stranding of its other parts | Paid | Paid | Avoided |
+| The slot's opportunity cost: space and power that incoming hardware needs | Paid | Paid | Freed |
+| Change in realizable harvest or resale value | Decays | Decays, more slowly | Realized now |
+| Capital charge on that realizable value | Paid | Paid | — |
+| Memo, not a decision line: P&L effect of disposal | — | — | A loss on disposal, or none if fully depreciated |
 
-Read it down each column. Keep a host when its capacity's value exceeds its avoidable carry. Harvest when the harvest value is larger [argued].
+Keep while next period's value exceeds next period's total carry, including the fall in what the harvest would fetch. Otherwise harvest. In the economics literature this is avoidable or relevant cost, the standard equipment-replacement rule, and the fall in value is economic depreciation (Hulten and Wykoff, 1981).
+
+For example, take a harvest worth $300 now, $60 a year of carry, no capacity value in slack and a 10% cost of capital (illustrative). Keeping a year, then harvesting, is worth about $185 if harvest value falls 10%. It is worth about $76 if it falls 50%, as Path B threatens for high-capacity parts. Harvesting now is worth $300.
+
+Some keeps aren't available at all. Where incoming hardware needs the slot's power, the retirement is forced or pulled in, and the sheet only chooses between redeploying whole elsewhere and harvesting. Section 6.4's own bridge condition says the same: "if its space and power aren't needed by incoming hardware" (Section 6.4).
 
 **Redeploying whole.** A whole host can go to a lighter workload class. That is a stated firmness class (Section 6.1) applied to a whole host. Our reading is that Section 6.4's bridge condition is this branch's test. Where the host isn't in the way and a lighter class exists, redeploy it whole before you take it apart [argued].
 
 **The coupling.** Keeping a platform raises its spares need and cuts the harvest that feeds it. Net both effects on the same ledger line: minus host capacity, plus drives [argued]. The paper checks shared drivers among launches (Section 6.6) and within supply (Section 6.7). It never checks one driver across demand and supply with opposite signs. [Second lives](note-second-lives.md) takes this up.
 
-**Who must sign.** Finance signs every keep past plan, because the depreciation line is theirs. Drive values from the forum become a required input to the retirement decision. That is the one ownership change this decision needs.
+**Who must sign.** Finance confirms the accounting effect; the forum decides on the economic lines. Depreciation is sunk and non-cash, so it can't decide a keep. A change in useful life is a class-level accounting estimate, set in the controller's annual review, not host by host. Drive values from the forum become a required input to the retirement decision.
 
 **Futures.** Under Path A, keeping and redeploying whole win more often. Under Path B, retire sooner, because harvest value falls first for high-capacity parts.
 
