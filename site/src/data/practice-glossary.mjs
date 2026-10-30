@@ -39,7 +39,7 @@ export const PRACTICE_TERMS = [
 ];
 
 export const CASE3_TERMS = [
-  { term: 'Sink', def: 'One of four places a usable legacy drive can go: workloads, repair spares, upgrades and builds, or retirement.',
+  { term: 'Sink', def: 'One of four places a usable legacy drive can go: workloads, repair spares, upgrades and builds, or exit through resale, recycling or destruction (the full case calls this sink retirement).',
     read: [['case-kuantillion-cloud-full.md#how-to-read-this', 'The full case, Terms used']] },
   { term: 'Harvest', def: 'The parts a retirement releases: drives, memory, cards. A harvested part must fit a slot, run on a platform, pass a test and, if it held data, be provably erased before it counts as supply.',
     read: [['note-second-lives.md#agreeing-on-the-words', 'Second lives']] },
@@ -48,15 +48,15 @@ export const CASE3_TERMS = [
   { term: 'Byproduct supply', def: 'Supply nobody ordered. It falls out of a decision made for another reason, most often retiring a machine. That decision, not a purchase order, sets its size, timing and quality.',
     read: [['note-second-lives.md#agreeing-on-the-words', 'Second lives']] },
   { term: 'Tier cap', def: 'The most graded tiers the fleet’s systems can absorb. It is read from the qualification backlog and the solver’s categories, and recorded as a decision note.',
-    read: [['case-kuantillion-cloud-plan.md', 'The execution plan']] },
+    read: [['case-kuantillion-cloud-plan.md#gate-2', 'The execution plan, G2']] },
   { term: 'Grading tax', def: 'The complexity cost of grading. Every tier is a new SKU, qualification combination, placement constraint and forecast category. It is Case 3’s strongest counter-argument to fine-grained reuse.',
-    read: [['case-kuantillion-cloud-full.md', 'The full case'], ['case-kuantillion-cloud-practice.md', 'How the practice solves it']] },
+    read: [['case-kuantillion-cloud-full.md#6-supply-the-gates', 'The full case, the gates'], ['case-kuantillion-cloud-practice.md#p3', 'How the practice solves it, P3']] },
   { term: 'Cohort', def: 'Drives that share a model, firmware and power-on-hour band. Case 3 treats a cohort as a shared driver of failure, caps it per redundancy group, and uses it as the grain for failure, wear and power figures.',
-    read: [['case-kuantillion-cloud-practice.md', 'How the practice solves it']] },
+    read: [['case-kuantillion-cloud-practice.md#p3', 'How the practice solves it, P3']] },
   { term: 'Cover point', def: 'How far up its demand range a pool or layer is stocked, set by its shortage-to-idle ratio. In Case 3 spares cover is signed per repair-urgency segment: high where a dead drive takes a host down, low where a tier can fail in place. The seed’s worksheet calls it the [cover-to point](/glossary/#term-cover-to-point).',
     seed: 'Section 6.5', read: [['concept-buffers-and-reserves.md', 'Buffers and reserves']] },
   { term: 'Showback', def: 'Showing teams an internal price without billing them. The seed’s order is to “Move to attributed cost only after a full cycle of showback.” Case 3 shows back an internal rate for drives, the higher of net resale and pipeline cost plus a risk loading, before anyone is billed.',
-    seed: 'Section 10.4', read: [['case-kuantillion-cloud-plan.md', 'The execution plan'], ['settings.md', 'Settings']] },
+    seed: 'Section 10.4', read: [['case-kuantillion-cloud-plan.md#rules', 'The execution plan, rules'], ['settings.md', 'Settings']] },
 ];
 
 // Seed-glossary terms with a guide page that teaches them (by term id).
