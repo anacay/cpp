@@ -9,11 +9,11 @@ levels: practicing, leading, supply
 seed: 4, 5.2, 5.4, 6, 6.1, 6.2, 6.3, 6.4, 6.6, 6.7, 8.2, 9.2, 10.1, 11, 13
 ---
 
-*Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when supply comes back out of the fleet in parts, of uncertain condition, as a byproduct of decisions made for other reasons, and what replaces it? Related: Section 6, Section 6.2, Section 6.6, Section 6.7, Section 8.2. Discussion: to be opened under Proposals.*
+*Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when supply comes back out of the fleet in parts, of uncertain condition, as a byproduct of decisions made for other reasons? And what replaces it? Related: Section 6, Section 6.2, Section 6.6, Section 6.7, Section 8.2. Discussion: to be opened under Proposals.*
 
 ## The seed
 
-This note grew from a problem-space case, [Case 3](case-fleet-flash.md). The case is a hyperscale fleet trying to reuse its older solid-state drives during a flash shortage. Two independent applications of the practice to that case hit the same wall at the same place.
+This note grew from a problem-space case, [Case 3](case-kuantillion-cloud.md). The case is a hyperscale fleet trying to reuse its older solid-state drives during a flash shortage. Applying the practice to that case runs into a wall, and the wall is where this note starts.
 
 The seed paper already has the starting line. "Decommission is negative supply" (Section 6.7). "A retirement is a supply order with a minus sign. It has a date, and it slips, usually because tenants can't migrate off in time" (Section 6.7). Netting already counts what is "due back from reclaim" (Section 6).
 
@@ -45,7 +45,7 @@ The paper's supply machinery is built for things that are ordered. The claim of 
 
 **4. Condition can fail after delivery, and as a cohort.** The paper already buffers failures. Redundancy (N+k) is one of its named buffers, and it cites one operator's split of "2% for random failures and 4% for correlated failures" (Section 6.3). For accelerator fleets, work lost to failures is "owned by its cause: infrastructure for hardware failures" (Section 11). The correlation rule applies directly: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). What is missing is narrower: a failure rate that depends on the grade of the supply delivered, so that choosing a grade changes the buffer it needs. Today the buffer is sized for the fleet, not priced into the grade [argued].
 
-**5. A fleet can sell what it doesn't use, and its sales move the price.** The paper prices excess as, in its author's reading of the literature, "mainly carrying a unit until demand grows into it" (Section 6.3), and limits it through contract terms (Section 6.2). Its three prices are all internal (Section 4). Byproduct supply adds a fourth sink: resale. A buyer outside the fleet can't see a part's history, so the market prices used parts at average quality. A large fleet that holds back its sales also thins the used market it is judging against [argued; the price effect is unmeasured].
+**5. A fleet can sell what it doesn't use, and its sales move the price.** In its author's reading of the literature, the paper prices excess as "mainly carrying a unit until demand grows into it" (Section 6.3). It limits excess through contract terms (Section 6.2). Its three prices are all internal (Section 4). Byproduct supply adds a fourth sink: resale. A buyer outside the fleet can't see a part's history, so the market prices used parts at average quality. A large fleet that holds back its sales also thins the used market it is judging against [argued; the price effect is unmeasured].
 
 **6. Disassembly regains fungibility at the price of the gates.** A retired machine can be kept, redeployed whole to lighter work, or taken apart. Redeploying it whole skips most gates and keeps the machine's narrow fit. Taking it apart buys wider fit and pays every gate. The paper prices the forward chain, which spends fungibility. It has nothing on the reverse [argued].
 
@@ -55,7 +55,7 @@ If capacity can come back out of the fleet, the practice can book it deliberatel
 
 **One ledger line for coupled demand and supply.** Where one decision moves a part's demand and its supply in opposite directions, net both on the same fulfillment ledger line (mechanism 5). Register the decision as a shared driver of both. The supply register already names "shared dependencies" (Section 6.7); this extends it across the demand side [argued].
 
-**Harvest as a staged supply declaration.** Book a harvest the way the paper books supply steps: in stages, "planned, contracted, under construction, delivered, live" (Section 6.7), scored promised against actual. For harvest, the stages might read planned retirement, machine drained, parts pulled, gates passed, available. Book into plans only what a stage's record supports, and label the rest uncommitted (Section 6.1) [argued].
+**Harvest as a staged supply declaration.** Book a harvest the way the paper books supply steps: in stages, "planned, contracted, under construction, delivered, live" (Section 6.7), scored promised against actual. For harvest, the stages read planned, dated, drained, harvested, tested and available, as on the [Case 3 practice page](case-kuantillion-cloud-practice.md). Book into plans only what a stage's record supports, and label the rest uncommitted (Section 6.1) [argued].
 
 **Condition on the rate card and in the score.** Carry condition as its own dimension where supply varies in it. Price each grade, and version the price "like a price list, with effective dates and a change log" (Section 5.2). Score supply on delivered quality by cohort, beside size and date [argued].
 
