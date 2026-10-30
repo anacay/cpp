@@ -459,7 +459,7 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 - **Net resale** is what the resale and recycling contracts actually pay, after their fees.
 - **Carry** is charged per TB-month while the drive is held, not once.
 - **Risk loading** per usable TB = the chance of a correlated event × its cost, bridges included ÷ usable TB at risk. For example, 5% a year × $1M ÷ 10,000 TB is $5 (illustrative).
-- For example, a 2 TB drive costing $40 to process at 80% yield is $25 per usable TB. If net resale is $100 and risk loading $5, the rate is about $105. Carry is about $0.17 per TB-month (illustrative).
+- For example, a 2 TB drive costing $40 to process at 80% yield is $25 per usable TB. If net resale is $100 and risk loading $5, the rate is about $105. Carry is cage space plus a capital charge on the held value. At $100 and a 10% cost of capital, the charge alone is about $0.83 per TB-month (illustrative).
 - **The gap** between resale and pipeline cost is a credit to recovery in the management ledger. It is never booked as a saving.
 - Show it back for a full cycle before anyone is billed: "Move to attributed cost only after a full cycle of showback" (Section 10.4).
 - The forum ranks on next-best-source value, not on this rate.
