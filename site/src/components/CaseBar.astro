@@ -1,0 +1,37 @@
+---
+// A slim context bar for case pages: which case, which page, what the case is
+// about, and links to its sibling pages. It sticks to the top of the window
+// as the reader scrolls (CSS only, position: sticky), so a reader who lands
+// on a deep link always knows where they are. No script.
+import { guide } from '../lib/guide.mjs';
+interface Props { page: any }
+const { page } = Astro.props;
+const g = guide();
+const cases = g.pages.filter((p) => p.kind === 'case');
+const n = Math.floor(page.order);
+const door = cases.find((p) => p.order === n);
+const family = cases.filter((p) => Math.floor(p.order) === n).sort((a, b) => a.order - b.order);
+// One line on what each case is about, keyed by the door page's file.
+const TAGLINES: Record<string, string> = {
+  'case-popcorn-pajamas.md': 'A streaming service’s whole capacity problem, from public information.',
+  'case-kuantillion-cloud.md': 'Reusing older SSDs during a flash shortage.',
+};
+const name = door ? door.title.replace(/^[^:]+:\s*/, '') : page.title.split(':')[0];
+const label = (p) => {
+  if (p === door) return 'In brief';
+  if (/-full\.md$/.test(p.file)) return 'Full case';
+  if (/-plan\.md$/.test(p.file)) return 'Plan';
+  if (/-practice\.md$/.test(p.file)) return /solves/.test(p.title) ? 'Strategy' : 'Practice';
+  return p.title.replace(/^[^:]+:\s*/, '');
+};
+const here = page === door ? 'Case page' : ((t) => t.charAt(0).toUpperCase() + t.slice(1))(page.title.replace(/^[^:]+:\s*/, ''));
+const tag = door ? TAGLINES[door.file] : undefined;
+---
+{door && family.length > 1 && (
+  <nav class="casebar" aria-label={`Case ${n}, ${name}: pages`}>
+    <p class="casebar__id"><strong>Case {n} · {name}</strong><span class="casebar__here"> · {here}</span>{tag && <span class="casebar__tag">{tag}</span>}</p>
+    <ul class="casebar__links">
+      {family.map((p) => <li><a href={p.url} aria-current={p === page ? 'page' : undefined}>{label(p)}</a></li>)}
+    </ul>
+  </nav>
+)}
