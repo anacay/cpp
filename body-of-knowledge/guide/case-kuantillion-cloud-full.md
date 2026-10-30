@@ -66,7 +66,7 @@ The problem is to get the most value from that installed base across four sinks:
 
 **The five hardest sub-problems**
 
-1. **Nobody has declared what kind of value this is, or how much there is.** If Kuantillion Cloud's purchase commitments are flexible, a reused drive avoids a purchase. If they are firm, it adds capacity to a sold-out fleet: a different number, with a different beneficiary. And the SSD harvest could be under 1% or near 30% of annual flash deployment (Illustrative). That decides whether this is spares hygiene or supply strategy (section 7).
+1. **Nobody has declared what kind of value this is, or how much there is.** If Kuantillion Cloud's purchase commitments are flexible, a reused drive avoids a purchase. If they are firm, it adds capacity to a sold-out fleet: a different number, with a different beneficiary. And the SSD harvest could be near zero, since the published count is of hard drives, or near 30% of annual flash deployment (Illustrative). That ratio describes whether this is spares hygiene or supply strategy (section 7).
 2. **A drive has five dimensions, and every sink prices a different one.** Capacity, performance, remaining endurance, fit and condition history. Workloads price capacity and latency, spares price fit, upgrades price fit and qualification, and resale prices provable condition. No shared unit or price exists inside the fleet.
 3. **Supply is a byproduct of lifecycle decisions made for other reasons.** Keeping a platform alive raises its need for spares while cutting the harvest that feeds them. Retiring one releases drives that mostly fit its own generation.
 4. **The organization splits the problem in two, everywhere.** Across the industry, allocation and value recovery are hired into different organizations. The people who touch drives are measured on ticket speed. Kuantillion Cloud's own report concedes that its measures miss much of the value reuse adds.
@@ -320,7 +320,7 @@ The anchors differ in size, since capacity value during stockouts can exceed rep
 
 ### 7.2 What a legacy drive is worth now: an upper bound
 
-One mainstream 3.84 TB enterprise drive listed at $2,442 new in October 2026, about $640 per terabyte (Press; a seller with an interest). Dividing by the rise through the third quarter, about 3.3 times, implies about $190 per terabyte at end-2025 (Arithmetic). A mid-2026 listing near $120 per terabyte on a high-capacity QLC part sits below that, as the cheapest tier would (Press; one listing with internal inconsistencies).
+One mainstream 3.84 TB enterprise drive listed at $2,442 new in October 2026, about $640 per terabyte (Press; a seller with an interest). Dividing by the rise through the third quarter, about 3.3 times, implies about $190 per terabyte at end-2025 (Arithmetic). The forecast fourth-quarter rise of 23–28% is left out; if it lands, the top would be about $780–815 (Arithmetic on a forecast). A mid-2026 listing near $120 per terabyte on a high-capacity QLC part sits below that, as the cheapest tier would (Press; one listing with internal inconsistencies).
 
 The case carries **about $190 to $640 per terabyte**: from the pre-shock equivalent, about where Path B would return, to today's open-market price. Small or older-interface drives sit toward the top while the shortage lasts. Three limits apply (Inferred).
 
@@ -336,7 +336,7 @@ It isn't the only such margin. The record also shows third-party compute rental,
 
 ### 7.4 The flow, the denominator and the stock
 
-Every row below rests on an invented SSD share of the 3 million drives harvested in 2024 (Illustrative).
+Every row below rests on an invented SSD share of the 3 million drives harvested in 2024 (Illustrative). The report calls that count hard drives, so the true SSD share could be near zero.
 
 | If SSDs are… | …of the 3M flow, at an average… | …the flow is | Gross replacement value at $190–640/TB |
 | --- | --- | --- | --- |
@@ -344,15 +344,21 @@ Every row below rests on an invented SSD share of the 3 million drives harvested
 | 30% | 2 TB per drive | 900K SSDs a year, 1.8 EB | About $0.3–1.2B a year |
 | 50% | 4 TB per drive | 1.5M SSDs a year, 6 EB | About $1.1–3.8B a year |
 
-Even the smallest cell may justify a program, or not, once pipeline cost and yield are netted out; the largest clearly would (Inferred). The SSD share is the numerator's biggest unknown.
+Even the smallest cell may justify a program, or not, once pipeline cost, yield and forgone resale are netted out; the largest clearly would (Inferred). The SSD share is the numerator's biggest unknown.
 
-**The denominator.** Capital guidance near $200 billion, with 60–65% of technical-infrastructure spend on servers, implies server spend near $120 billion a year (low end, since not all capital is technical infrastructure). If flash is 5–15% of server cost, at $100–300 per terabyte, annual flash deployment is some 20 to 180 EB (Illustrative). The harvest rows then run from about 0.2% to 30% of deployment, central cells 1–10%. This materiality ratio is gross, before yield. It, not the numerator, decides the problem's class (Inferred). Near the bottom, this is spares continuity and cost hygiene; near the top, supply strategy. Both halves are knowable inside Kuantillion Cloud in days, and neither is public.
+**The denominator.** Capital guidance near $200 billion, with 60–65% of technical-infrastructure spend on servers, implies server spend near $120 billion a year (low end, since not all capital is technical infrastructure). If flash is 5–15% of server cost, at $100–300 per terabyte, the spend arithmetic gives 20 to 180 EB a year (Illustrative). The top of that isn't credible. The whole industry shipped about 156 EB of enterprise SSD in the first three quarters of 2024, to all buyers (Third party: an industry tracker). The case carries 20–60 EB a year for Kuantillion Cloud (Illustrative); 60 EB is about two-fifths of those three quarters' industry total.
 
-**The stock and the stranded slice.** Three million drives a year over a five-to-six-year life suggests at least 15 to 18 million installed drives, disk and flash mixed. That is a floor, for two reasons: the 3 million counts only drives wiped and reused or resold, and the fleet is growing (Illustrative steady state). The deployment bound suggests an installed flash base on the order of 100 EB. One cloud measured 54% of its server SSD capacity stranded, and a research estimate puts small-group pooling at about 19% (Third party). Closing that gap on 100 EB frees about 35 EB once, several times the largest annual harvest row (Illustrative). The 54% is a peer's figure. Stranded capacity is worth recovering only where pooling or placement can reach it, pooling costs money, and a stranded terabyte is worth less than a bought one (Inferred). Even so, the quiet stock is likely larger than the visible flow.
+The harvest rows then run from about 0.5% to 30% of deployment, with the central row at about 3–9% (Arithmetic on Illustrative inputs). If the 3 million really are all hard drives, the ratio is near zero. The ratio is gross, before yield, and every input is invented, so read it as a wide band, not an estimate. It describes the problem's scope (Inferred). Near the bottom, this is spares continuity and cost hygiene; near the top, supply strategy. Whether a program pays is a separate dollar question: its margin over exit times usable terabytes, against its fixed cost (Inferred). Both halves of the ratio are knowable inside Kuantillion Cloud in days, and neither is public.
+
+**One price basis at a time.** The ratio is in exabytes, so it mixes no prices. Each dollar row uses one anchor per end: $190 at its low end and $640 at its high end. The $100–300 deployment price is an assumed contract price, a third basis that enters only the denominator (Illustrative).
+
+**A cross-check from the other end.** Drives retiring now were bought about six years ago, when the fleet was smaller. If deployment is 20 EB a year today and grew 15–30% a year, about 4–9 EB a year was bought six years ago (Illustrative; Arithmetic). That is roughly what retires each year now, before intact redeployment and yield. It is the same order as the top harvest row, 6 EB, not several times it. Dividing a flat 100 EB by a 5–6-year life gives 17–20 EB a year, but only for a fleet that isn't growing. And 4–9 EB is about 2–4% of all SSD bits the whole industry shipped in 2020, 207 EB (Third party: an industry tracker).
+
+**The stock and the stranded slice.** Three million drives a year over a five-to-six-year life suggests at least 15 to 18 million installed drives, disk and flash mixed. That is a floor, for two reasons: the 3 million counts only drives wiped and reused or resold, and the fleet is growing (Illustrative steady state). The low deployment bound suggests an installed flash base of about 100 EB if the fleet were flat. If deployment grew 15–30% a year, the last five to six years' purchases sum to about 60–90 EB (Illustrative). One cloud measured 54% of its server SSD capacity stranded, and a research estimate puts small-group pooling at about 19% (Third party). The 54% is a peer's figure, and not all stranding can be reached. Applying the 35-point gap to 60–100 EB, with half to all of it reachable, frees about 11–35 EB once (Illustrative). Stranded capacity is worth recovering only where pooling or placement can reach it, pooling costs money, and a stranded terabyte is worth less than a bought one (Inferred). Even so, the quiet stock is likely larger than the visible flow: about two to six times the largest annual harvest row, once.
 
 ### 7.5 Pipeline, life and carbon
 
-- **Labor.** At 10 to 30 technician-minutes per drive (Illustrative), 3 million drives take about 250 to 750 technician-years a year. That is a staffing program, not an impossibility (Inferred). The risk is landing on the same sites and quarters as repairs, which take about half of technician hours at one peer. Whether labor is the true ceiling under Path A turns on this number; only time-and-motion data can settle it (Unknown).
+- **Labor.** At 10 to 30 technician-minutes per drive (Illustrative), all 3 million drives would take about 250 to 750 technician-years a year. Those drives are already wiped today, though. The SSD share in the flow rows, 300,000 to 1.5 million drives, takes about 25 to 375 technician-years: an upper bound on the extra load a graded SSD program adds (Illustrative; Arithmetic). That is a staffing program, not an impossibility (Inferred). The risk is landing on the same sites and quarters as repairs, which take about half of technician hours at one peer. Whether labor is the true ceiling under Path A turns on this number; only time-and-motion data can settle it (Unknown).
 - **Dollars.** With loaded labor at $60–100 an hour plus $5–20 per drive for test, sanitization and shipping, a drive costs about $15–70 to process (Illustrative). Netted against replacement value at 50–90% yield, value before exit runs about $25 to $570 per terabyte. But reuse gives up resale. Used enterprise drives fetched about $80–160 per terabyte gross in the year to August 2026 (Press), an upper bound on what a seller nets. Less that forgone resale, reuse beats exit by about $90 to $490 per terabyte at the $640 anchor. At the $190 anchor the margin runs from about −$135 to +$85, so thin cohorts flip sign (Illustrative; Arithmetic). For example, at 80% yield, $20 per terabyte of pipeline cost and $120 of resale, reuse beats exit by about $370 per terabyte at $640, and by about $10 at $190. Used prices lag new ones, so under Path B resale would likely fall too, after a delay (Inferred). The sign turns on the anchor, the resale band and whether a sink exists, more than on pipeline cost (Inferred).
 - **A year of life.** Kuantillion Cloud's one-year extension avoided about $3.9 billion of first-year depreciation; peers booked about $900 million and $20 million (Press). These price the *host* decision (P2), not the drive, and are the only published dollar anchors for lifecycle flexibility at fleet scale.
 - **Carbon.** At about 0.16 kg CO2e per GB embodied, a 2 TB drive carries about 320 kg (Third party; Arithmetic). Across the flow rows, reuse would preserve about 0.05 to 1 MtCO2e a year (Arithmetic). That holds only if reuse truly displaces a new purchase, the additionality assumption under every avoided-procurement claim (Inferred). Kuantillion Cloud says procurement-centric metrics miss this preserved carbon.
@@ -364,20 +370,23 @@ Most rows are Arithmetic on tagged inputs. Read every row as an order of magnitu
 | Quantity | Estimate | Formula and inputs |
 | --- | --- | --- |
 | 2026 enterprise SSD price multiple | About 3.4–4.2× end-2025 | 1.80 × 1.50 × 1.225 × 1.255 ≈ 4.15 on quarterly midpoints; one analyst's cumulative figure ≈ 3.4 |
-| Replacement-value range | About $190–640 per TB | $2,442 ÷ 3.84 TB ≈ $636 (Oct 2026); ÷ 3.31 (1.80 × 1.50 × 1.225) ≈ $192 at end-2025 |
+| Replacement-value range | About $190–640 per TB | $2,442 ÷ 3.84 TB ≈ $636 (Oct 2026); ÷ 3.31 (1.80 × 1.50 × 1.225) ≈ $192 at end-2025. The forecast Q4 rise is left out; with it, about $780–815 |
 | Growth in purchase commitments | About 5.4× in six months | $811B ÷ $149.1B (Press inputs) |
 | Annual drive harvest | 3 million+ drives | Reported, as hard drives |
 | SSD harvest flow | 0.3–6 EB a year | 3M × 10–50% SSD share × 1–4 TB per drive (Illustrative) |
-| Gross value of the flow | About $0.06–3.8B a year | SSD flow × $190–640 per TB |
+| Gross value of the flow | About $0.06–3.8B a year | SSD flow × $190 (low end) to $640 (high end) per TB; one anchor per end |
 | Flow value against the commitments | About 0.01–0.5% | $0.06–3.8B ÷ $811B; an annual flow against a multi-year, mixed aggregate |
-| Annual flash deployment | About 20–180 EB a year | About $120B server spend × 5–15% flash share ÷ $100–300 per TB (Illustrative) |
-| Materiality ratio (gross) | About 0.2–30%; central cells 1–10% | SSD flow before yield ÷ flash deployment |
+| Enterprise SSD shipped, whole industry | About 156 EB in Q1–Q3 2024, all buyers | 41.9 + 52.5 + 61.5 EB by quarter (Third party: an industry tracker) |
+| Annual flash deployment | About 20–60 EB a year | Spend arithmetic: about $120B × 5–15% ÷ $100–300 per TB gives 20–180; the top is capped well below the industry total (Illustrative) |
+| Materiality ratio (gross) | About 0.5–30%; central row about 3–9%; near zero if the count is all hard drives | SSD flow before yield ÷ 20–60 EB (all inputs Illustrative) |
+| Flash retiring a year, cohort check | About 4–9 EB a year | 20 EB ÷ (1 + g)^6, g = 15–30% (Illustrative); a flat 100 EB ÷ 5–6 years would give 17–20 |
 | Installed drive base | At least 15–18 million | 3M a year × 5–6-year life (steady state, Illustrative; a floor) |
-| Installed flash base | On the order of 100 EB | 20 EB a year × 5 years (low bound, Illustrative; overstates a growing fleet) |
-| Stranded flash recoverable | About 35 EB, once | 100 EB × (54% − 19%) (peer figures) |
+| Installed flash base | About 60–100 EB | 100 EB flat (20 EB × 5 years); about 60–90 EB if deployment grew 15–30% a year (Illustrative) |
+| Stranded flash recoverable | About 11–35 EB, once | 60–100 EB × (54% − 19%) × 50–100% reachable (peer figures; reach Illustrative) |
 | Spares demand | About 10,000–25,000 drives a year per million installed | 4–10% replaced over four years ÷ 4 |
 | Spare consumption against true failures, no-triage bound | Up to about 1.5× | 1 ÷ (1 − 0.344): reached only at a site that pulls a drive on every ticket; the studied cloud triaged first, and 31.2% of its tickets ended in a swap |
-| Pipeline labor | About 250–750 technician-years a year | 3M drives × 10–30 min ÷ 60 ÷ 2,000 h (minutes Illustrative) |
+| Pipeline labor, all drives | About 250–750 technician-years a year | 3M drives × 10–30 min ÷ 60 ÷ 2,000 h (minutes Illustrative) |
+| Pipeline labor, SSD share only | About 25–375 technician-years a year | 0.3–1.5M SSDs × 10–30 min ÷ 60 ÷ 2,000 h (Illustrative) |
 | Pipeline cost per drive | About $15–70 | 10–30 min × $60–100 per hour + $5–20 test, sanitization, shipping (Illustrative) |
 | Net value per TB, before exit | About $25–570 | 50–90% yield × $190–640 − $4–70 per TB pipeline cost (Illustrative) |
 | Used enterprise SSD resale, gross | About $80–160 per TB | Dealer appraisals and listings, 12 months to Aug 2026 (Press); about 13–25% of $636 and 42–83% of $192 |
@@ -389,8 +398,8 @@ Most rows are Arithmetic on tagged inputs. Read every row as an order of magnitu
 
 **What the model shows** (Inferred)
 
-1. **The stakes span two orders of magnitude, and the ratio decides the class.** The same record fits a spares-continuity problem and a supply-strategy problem.
-2. **The quiet stock is likely larger than the visible flow,** several times the largest annual harvest, once.
+1. **The stakes span two orders of magnitude, and the ratio describes the class.** The same record fits a spares-continuity problem and a supply-strategy problem. Whether a program pays is a dollar test, not the ratio.
+2. **The quiet stock is likely larger than the visible flow,** about two to six times the largest annual harvest row, once.
 3. **The program is unlikely to be a balance-sheet item.** Even the largest flow row is under 0.5% of the commitments. Its case rests on the margin: the unplanned repair, the late build, the zone stockout. That is the capacity anchor's territory.
 4. **Diagnosis is cheap supply only where triage is missing.** At the studied peer, the non-drive tickets were caught before any drive was pulled. A site that pulls on every ticket could avoid up to a third of its spare consumption. Where triage exists, the prize is the unmeasured share of pulled drives that test healthy.
 5. **Labor is bounded, not prohibitive,** unless it collides with repairs at the same sites.
@@ -796,7 +805,7 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 | 16 | Enterprise SSD prices rose roughly 3.4–4.2× across 2026; a listing implies about $640/TB in October | Third party; Press; Arithmetic |
 | 17 | 2026 memory capacity was all but sold out by January; module makers got 30–50% of requests | Third party; Press |
 | 18 | The SSD harvest flow is plausibly worth $0.06–3.8B a year gross | Arithmetic on Illustrative shares; net Unknown |
-| 19 | The gross materiality ratio runs about 0.2–30%, central 1–10% | Arithmetic on Illustrative inputs |
+| 19 | The gross materiality ratio runs about 0.5–30%, central row 3–9%, and near zero if the count is all hard drives | Arithmetic on Illustrative inputs |
 | 20 | Even the largest cell is under 0.5% of the commitments | Arithmetic on Press and Illustrative inputs |
 | 21 | The value anchor: avoided procurement or marginal capacity | Unknown; it can invert the money section |
 | 22 | Flash stays tight through 2027–28 | Third party, disputed |
@@ -823,6 +832,7 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 | 43 | The share of pulled SSDs that test healthy | Unknown; analogies only: 43% no fault found in one vendor's returned hard disks; about half of one cloud's swapped SSDs never returned to production (Third party) |
 | 44 | First-life field studies: early failures common; no end-of-life rise in two large studies; firmware, model and error history dominate age | Third party |
 | 45 | Used enterprise SSDs fetched about $80–160 per TB gross in the year to August 2026 | Press (dealer appraisals and listings); net to a seller Unknown |
+| 46 | One operator's flash deployment can't approach 180 EB a year: the whole industry shipped about 156 EB of enterprise SSD in Q1–Q3 2024 | Third party; Inferred |
 
 **Assumptions any answer must test.** Replacement cost as the value anchor. Additionality of reuse under the commitments. A materiality ratio large enough to matter. Positive net value after pipeline cost, yield and forgone resale. Stranded capacity recoverable at reasonable cost. The host-cost logic over the holding period. Spares demand net of fail-in-place and misdiagnosis. And internal prices able to carry these values at all.
 
@@ -855,7 +865,7 @@ Sixteen questions decide whether this problem statement is right, ranked by how 
 
 | # | Question | Current best guess | What would answer it |
 | --- | --- | --- | --- |
-| 1 | What share of the harvest is SSDs, and what is the materiality ratio? | Central 1–10% of annual flash deployment (Illustrative) | Kuantillion Cloud's own harvest log and flash deployment; publicly, the next circularity report's wording |
+| 1 | What share of the harvest is SSDs, and what is the materiality ratio? | A wide band: about 0.5–30% on invented shares, central row 3–9%; near zero if the count is all hard drives (Illustrative) | Kuantillion Cloud's own harvest log and flash deployment; publicly, the next circularity report's wording |
 | 2 | Are Kuantillion Cloud's flash commitments flexible or firm in volume? | Mixed: firm cores with flexible bands (Speculated) | The commitments note in its filings; flexibility language in makers' agreements and calls |
 | 3 | Does Kuantillion Cloud already reuse SSDs at scale, and through what program? | Some SSDs sit inside the 3-million-drive flow; no graded program is public (Inferred) | A circularity report that names SSDs; a posting that names flash reuse |
 | 4 | Was flash reuse evaluated and declined? | Unknown; held live beside trade secret (Speculated) | Internal records, if they surface; a talk or paper describing a pilot |
