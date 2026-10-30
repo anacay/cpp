@@ -34,7 +34,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 1.5rem; }
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+/* Smooth scrolling only once the reader is on the page (a clicked in-page link
+   holds focus). On load, nothing has focus, so a shared #anchor lands at once
+   instead of animating through the whole page. CSS only. */
+@media (prefers-reduced-motion: no-preference) { html:focus-within { scroll-behavior: smooth; } }
 
 body {
   margin: 0;
