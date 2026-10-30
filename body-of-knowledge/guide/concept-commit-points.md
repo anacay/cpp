@@ -32,7 +32,7 @@ Commit points are not a column. Each lands in the cadence its lead time forces (
 | Turn-up and allocation | Weeks per job; the rate is staffed months ahead | Monthly | Configured |
 | Job placement and admission | Minutes to days | Weekly | Live |
 
-Layers that commit before any declaration exists are served by the portfolio envelope. With the method, the worked example's high-memory commit point moves to −11, at Intent, so it lands in the [annual](stage-annual.md) column. The stage pages say what lands in each: [annual](stage-annual.md), [quarterly](stage-quarterly.md), [monthly](stage-monthly.md) and [weekly](stage-weekly.md).
+Layers that commit before any declaration exists are served by the portfolio envelope. With the method, the worked example's high-memory commit point moves to −11 months, at Intent, so it lands in the [annual](stage-annual.md) column. The stage pages say what lands in each: [annual](stage-annual.md), [quarterly](stage-quarterly.md), [monthly](stage-monthly.md) and [weekly](stage-weekly.md).
 
 ## How to use it
 
