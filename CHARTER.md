@@ -40,7 +40,7 @@ It is a guide to how capacity planning is practiced: the terms, the methods, the
 
 It isn't a standard or a certification. It isn't any one company's process, and it isn't a vendor's method. It isn't a pitch for anyone's services, including the steward's. And it isn't finished. It starts small, on purpose.
 
-The seed is one working paper, *The Coefficient Is an Agreement* (v7.6). It makes two claims and offers one method. It's published as a request for comments: anyone can select a passage on the site and open a thread on it, and the author has pinned the first open questions himself. Everything in it is open to challenge, starting now.
+The seed is one working paper, *The Coefficient Is an Agreement* (v7.9). It makes two claims and offers one method. It's published as a request for comments: anyone can select a passage on the site and open a thread on it, and the author has pinned the first open questions himself. Everything in it is open to challenge, starting now.
 
 ## Principles
 

@@ -47,7 +47,7 @@ Read against Section 9.2, from what the case makes public:
 | 6 | Discontinuity register | Missing |
 | 7 | Commitments that become institutions | Missing: pushing back on asks is persuasion, not a signed forecast |
 | 8 | Efficiency landing rule | Missing: codec gains are booked, their backfill nights are not |
-| 9 | Cadence aligned to lead time | Partial: the cadence exists, but its trigger was calibrated when hardware was the fast part |
+| 9 | Cadence aligned to lead time and launch calendar | Partial: the cadence exists, but its trigger was calibrated when hardware was the fast part |
 | 10 | Standing arbitration forum | Missing: "arbitration by negotiation" is one of the case's own failure modes |
 | 11 | Supply plan of record and commitment register | Missing: no dated-commit-or-named-gap discipline from hosts, vendors or the cloud |
 | 12 | Declaration register | Partial: the rights calendar and staged games investment are the raw material, with no stages, scoring or expiry |
@@ -61,9 +61,9 @@ The ones that matter most here: the commit-point map (13), because the binding f
 
 **P2. Inorganic demand on a smooth-curve plan.** This is the paper's core. Section 5.4 replaces "double it" with a declaration in units the planner already prices, firmed up in five stages from intent to organic. A launch is a rumor at the annual plan and a configuration weeks out, the staircase the paper draws. Mechanism 12 (the declaration register) keeps each step change's owner, stage, size range and record. Where a team can't declare, the planner scales the nearest analog and names the differences.
 
-**P3. Live events on partner-hosted hardware.** Live is a declaration with an unusually long calendar: dates are known years out, sizes are not. The paper's stages fit, with one twist. The reference class has to come from the world record, not Popcorn Pajamas' own history, because a rival's peak now sits above it. Shortfall tolerance (part of mechanism 12) decides how much of the high scenario to hold. And Q4 is a shared driver (Section 6.6): the holiday peak, the football slate and the biggest premieres land together by construction, so no pooling credit applies inside it. The paper doesn't cover the host side: the reserve sits in buildings Popcorn Pajamas doesn't control.
+**P3. Live events on partner-hosted hardware.** Live is a declaration with an unusually long calendar: dates are known years out, sizes are not. The paper's stages fit, with one twist. The reference class has to come from the world record, not Popcorn Pajamas' own history, because a rival's peak now sits above it. Shortfall tolerance (a field in mechanism 12, proposed in Section 6.7 as the author's exploration) says how much shortfall, for how long, each event can take, which bounds how much early or partial supply it can use. And Q4 is a shared driver (Section 6.6): the holiday peak, the football slate and the biggest premieres land together by construction, so no pooling credit applies inside it. The paper doesn't cover the host side: the reserve sits in buildings Popcorn Pajamas doesn't control.
 
-**P7. Games under censored demand.** The paper's forecast record assumes you can see actual use. Games break that: rejected sessions never appear in the actuals. The practice would treat rejection telemetry as part of the declaration's record, so the stage scores measure demand, not admitted demand. Section 11 goes further: where the owner holds the dial, the declaration can be the admission policy itself — the sites, the cap and the accepted rejection band — with the team scored on keeping it. This is new ground and worth a thread of its own.
+**P7. Games under censored demand.** The paper's forecast record assumes you can see actual use. Games break that: rejected sessions never appear in the actuals. The practice would treat rejection telemetry as part of the declaration's record, so the stage scores measure demand, not admitted demand. Section 11 offers, as one way to think about it, that where an agent fleet's owner holds the dial, the declaration can be the policy itself. Carried over to games, which is this note's extension, the declaration becomes the admission policy — the sites, the cap and the accepted rejection band — with the team scored on keeping it. This is new ground and worth a thread of its own.
 
 ### Supply
 
@@ -87,7 +87,7 @@ The ones that matter most here: the commit-point map (13), because the binding f
 
 **P8. Compare streams for the same capital.** Section 6.1 says a common unit prices but doesn't clear. Popcorn Pajamas has no common unit at all. The paper suggests three prices for three questions (Section 4). An average rate answers who pays. Long-run incremental cost answers what to build. A shadow price answers who gets scarce capacity now. The standing forum (mechanism 10) ranks the streams against a cut line and logs overrides.
 
-**P13. Reserve per failure domain.** The paper treats buffers as a priced decision (Section 6.3) and leaves reliability buffers to reliability engineering (Figure 40). Sign the shortage-to-idle ratio per layer in advance, then backtest it: count bridges per layer against what the signed ratio implies (Section 10.2). The case adds a useful demand on the plan: overlay the live calendar on the evacuation math, because a failure and a peak can coincide.
+**P13. Reserve per failure domain.** The paper treats buffers as a priced decision (Section 6.3) and leaves reliability buffers to reliability engineering (Figure 40). Sign the shortage-to-idle ratio per layer in advance, then backtest it: count bridges per layer against what the signed ratio implies (Section 10.2, which calls this backtest "an analogy, not a result"). The case adds a useful demand on the plan: overlay the live calendar on the evacuation math, because a failure and a peak can coincide.
 
 ### Governance
 
