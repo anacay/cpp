@@ -697,6 +697,14 @@ The decisions depend on each other, and the dependencies fix most of the order.
 
 *The case's dependency map. Solid arrows feed. Dashed arrows are slower feedback or a slow link; two of them close loops (P6 to P2, P8 to P3).*
 
+### The window
+
+The sequence runs against a clock it doesn't control. Path A keeps flash tight through 2028; Path B eases from late 2027, and high-capacity drives get cheap first. If day 1 falls around November 2026, reused flash reaches workloads no earlier than mid-2027 (illustrative).
+
+So the value of starting depends on the path. If harvest value falls 50% a year, as Path B threatens, each quarter of delay costs about 16% of it. At 10% a year, closer to Path A, it costs under 3% (illustrative). Spares and last-time buys keep their value on either path; the workload sink is the one that decays.
+
+Three things can run in parallel to buy back time [argued]. The stranded-stock track needs no gates from the harvest. The drive record's build can start at the first decision gate, not after the second. And pipeline staffing goes on the commit-point map at the first decision gate, because crews are staffed months ahead.
+
 ### Week one: does a program already exist?
 
 The public record is silent, and silence could mean a program run quietly, one tried and dropped, or none. So test all three before you design anything, talking to owners one to one before any form goes out. If a decline still holds, stop, and re-center on redeploying whole hosts ([P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest)). The plan's [days 1–5](case-kuantillion-cloud-plan.md#days-1-5-does-a-program-already-exist) carry the questions and dates.
