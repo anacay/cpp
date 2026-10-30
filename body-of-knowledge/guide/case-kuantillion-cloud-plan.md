@@ -353,13 +353,15 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 
 | Cycle | Forum | Inputs | Outputs | Decisions |
 |---|---|---|---|---|
-| Weekly | Planning's working session | Ledger lines; reconciliation gaps; cage aging; repair tickets | Pegging and reconciliation, run continuously and reviewed weekly; brokered trades, logged | Which tested drive goes where |
+| Weekly | Planning's working session | Ledger lines; reconciliation gaps; cage aging; repair tickets | Pegging by system, run continuously; reconciliation; brokered trades, logged | The exceptions the pegging flags |
 | Monthly | The forum | Supply answers; harvest by stage; spares fill | Re-ranked claims; updated commits and named gaps | The ranking; any override, logged with what moved down |
 | Quarterly | The supply review | Harvest forecast by stage and cohort; decommission slips; qualification slots; endurance by cohort; the signposts | Rate card version; release trigger tests; last-time-buy commit points | Rate card changes; releases; last-time buys |
 | Annual | The forum, with finance | Materiality; last year's scores; vendor terms | Signed ratios, bands, landing and shortage rules; the charter overlay | Program scope; reuse commitment in the annual capacity agreement |
 | After each pilot | The forum | Second-life outcomes | Updated yield, hazard and evidence bar | Widen, hold or close the class |
 
 "In my experience, the step most often missing is the supply review" (Section 9.1). Here it is the main meeting, because supply is a byproduct of other decisions [argued]. A vendor's end-of-life notice triggers an off-cycle review.
+
+**The forum sets rules; a system pegs** [argued]. Millions of drives can't be allocated by hand. The forum owns the ranking rule, the cut line and overrides. The solver, or fleet provisioning's tools, peg each tested drive to a claim. The forum reviews only the exceptions.
 
 **Annual signatures, kept separate.**
 
@@ -679,7 +681,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 
 **Forum charter** ([mechanism 10](concept-operating-mechanisms.md); [forum](/glossary/#term-forum)) [argued]
 - Members: the sponsor, as chair; planning, which runs it; finance; drive supply; one seat per sink
-- Remit: the ranked list of harvest claims across the four sinks, the cut line, and the decision log with overrides and brokered trades
+- Remit: the ranking rule and the cut line across the four sinks; exceptions from the pegging system; the decision log with overrides and brokered trades
 - Rules it holds: the shortage rule; the ranking unit; the landing rule, which it ratifies
 - Cadence: monthly, plus the quarterly supply review
 - Overrides: logged with what moved down
