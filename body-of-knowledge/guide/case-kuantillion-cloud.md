@@ -67,13 +67,17 @@ Every load-bearing claim carries an evidence tier, so you can see which parts ar
 
 Two companion pages answer the case. [The strategy](case-kuantillion-cloud-practice.md) is the practitioner's approach. It frames the problem through the practice's concepts, breaks it into the case's decisions and argues the order to work them in, with links to the theory behind each move. [The execution plan](case-kuantillion-cloud-plan.md) turns that strategy into something a program lead can run: owners, gates, cadence, measures and experiments.
 
-Where the practice runs out, the strategy page says so. The largest gap is supply that comes back out of the fleet in parts, of uncertain condition, as a byproduct of other decisions. That gap now has its own working note, [Second lives](note-second-lives.md).
+Where the practice runs out, the strategy page says so. Most gaps are already solved in neighboring fields, and the strategy adopts those answers. Two stay open: supply that is a byproduct of other decisions, coupled to demand for the same parts, and reused capacity that fails after delivery, as a cohort. Both have a working note, [Second lives](note-second-lives.md).
 
 ## How to use it
 
 - **Read the eight decisions** and pick the one closest to your own work. Ask how your organization would decide it before you read the answer.
 - **Read the answer critically.** Every judgment that goes past the paper is marked. Challenge the ones you'd do differently.
 - **Join the discussion.** Challenge a number, add a reference class, or tell us where the case gets your fleet wrong.
+- **Try an exercise at your level** [argued].
+  - *Learning:* a spares plan missed because pulls ran above true failures. Split the miss: how much came from weak triage, and how much from the failure rate?
+  - *Practicing:* book one retirement as two ledger lines, minus hosts and plus drives, with stage dates for each.
+  - *Leading:* draft the shortage rule for the four sinks, and say who signs it before any shortage.
 
 - [The full case](case-kuantillion-cloud-full.md)
 - [How the practice solves it](case-kuantillion-cloud-practice.md)
