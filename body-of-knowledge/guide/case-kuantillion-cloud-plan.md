@@ -204,6 +204,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - The forum chartered for two rules: it agrees the shortage rule, and it ratifies the landing rule that planning proposes and finance signs.
 - **Artifacts.**
   - Contract lines on the supply plan of record ([mechanism 11](concept-operating-mechanisms.md)).
+  - The purchase plan, frozen as the baseline for savings.
   - The stranded line, owned ([mechanism 4](concept-operating-mechanisms.md)).
   - A decision note.
 - **Owner.** Planning, with finance.
@@ -384,9 +385,11 @@ The thresholds are [unmeasured]. For example, a wear threshold might be half of 
 - Or release when a drive's shelf time passes two re-test cycles with no claim.
 - Release in steps, under a cap on resale per model per quarter.
 
-**Landing rule** [argued].
-- Shares are booked as savings, returned to the recoverer and held centrally. That is the split Section 9.3 offers as an example.
-- The pipeline counts as a recoverer, so it gets credit for part of the capital it saves.
+**Landing rule** [argued] ([landing rule](/glossary/#term-landing-rule)).
+- **Capital savings land only on evidence.** That means a purchase-order line cancelled, reduced or pushed out in the supply register (mechanism 11). Or it means a cut against the purchase plan frozen at G1.
+- Once a saving lands, split it: shares booked as savings, returned to the recoverer and held centrally. That is the split Section 9.3 offers as an example.
+- Under the capacity anchor, avoided stockout cost is credited to the product's profit and loss. It is not capital saved.
+- The pipeline counts as a recoverer. Its credit for the gap between resale and pipeline cost stays in the management ledger.
 - Planning proposes it, finance signs it and the forum ratifies it (mechanism 8), before any recovery is counted.
 
 **Spares cover rule** [argued]. Cover comes from the signed shortage-to-idle ratio, one per repair-urgency segment ([cover point](/glossary/#term-cover-point)).
@@ -415,7 +418,7 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 
 | Measure | Denominator | Target | Test that can fail |
 |---|---|---|---|
-| Purchases avoided | Per TB in the plan of record, under the declared anchor | Rises while stockouts last | Reported without the anchor, or with no displaced purchase |
+| Purchases avoided | Per TB against the purchase plan frozen at G1, under the declared anchor | Rises while stockouts last | Reported without a moved purchase-order line or the frozen baseline |
 | Net value over exit per harvested drive | Per drive harvested: reuse value after pipeline cost and yield, minus what exit would have paid | Positive by cohort | Negative for a cohort two quarters running |
 | Spares fill rate | Per repair, by platform and segment | At or above the signed cover point | Fill below cover while another sink holds idle harvest |
 | Time to repair, old platforms | Per repair | Not rising | Rising as harvest is diverted elsewhere |
