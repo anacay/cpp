@@ -24,7 +24,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 **What the plan delivers, in order.**
 
 1. Within one week, an answer to whether a program already exists, or was tried and dropped.
-2. Within 30 days, the problem's class: spares continuity, mixed, or supply strategy. Beside it, the value anchor read from the flash contracts.
+2. Within 30 days, a dollar test of whether the program pays, and its scope: spares continuity, mixed, or supply strategy. Beside it, the value anchor read from the flash contracts.
 3. Within 90 days, the rules signed in advance, spares and the reverse pipeline staffed to a signed plan, and allocation running in a standing [forum](/glossary/#term-forum).
 4. Over the following year, a pilot of reused flash in tiers that absorb device loss, and experiments that test the case's eight stated assumptions.
 
@@ -137,14 +137,14 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 10 | Pull the harvest log, split by SSD and disk, and by cohort | Reverse logistics | Harvest TB by quarter and cohort |
 | 10 | Pull flash deployed, in TB, by quarter | Fleet provisioning, with finance | The materiality denominator |
 | 10 | Pull the decommission schedule with stage dates | Lifecycle transitions | Retirements, staged |
-| 14 | Compute the materiality ratio and the class (experiment 3) | Planning | The class, from the table under G1 |
+| 14 | Compute the materiality ratio, as a scope descriptor (experiment 3) | Planning | A proposed scope, from the table under G1 |
 | 20 | Read every flash contract's cancel, push-out and volume terms into the supply register (experiment 2) | Fleet provisioning, with finance | Mechanism 11's contract lines |
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
 | 20 | Measure flash use by resource and site | Storage systems | The stranded stock, sized |
 | 25 | Compute both value anchors per zone, measuring the drive's attribution share (experiment 1) | Planning, with finance | The anchor, declared for G1 |
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
 | 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
-| 30 | G1 decision | Planning and finance | Go or stop, with a decision note |
+| 30 | G1 decision: the dollar test, then the scope | Planning and finance | Go or stop, with a decision note |
 
 ### Days 31–60: counter-arguments and the record
 
@@ -190,15 +190,16 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 ### G1: size and anchor
 
 - **When.** Day 30.
-- **Purpose.** Know the problem's class and its value anchor before building anything. "Below materiality, the mechanisms cost more than they return" (Section 13).
+- **Purpose.** Know whether the program pays, at what scope, and on which value anchor, before building anything. "Below materiality, the mechanisms cost more than they return" (Section 13). The paper writes that of elastic-cloud customers; reading it as a dollar test here is this plan's [argued].
 - **Entry evidence.** G0 reads absent, or a decline that no longer holds.
 - **Work.**
-  - The materiality ratio.
+  - The dollar test.
+  - The materiality ratio, as a scope descriptor.
   - The stranded stock, sized on its own.
   - The contracts read into the supply register.
   - The capacity anchor's inputs.
 - **Exit criteria.**
-  - The class chosen.
+  - The dollar test passed, and the scope chosen.
   - The anchor declared.
   - The forum chartered for two rules: it agrees the shortage rule, and it ratifies the landing rule that planning proposes and finance signs.
 - **Artifacts.**
@@ -206,13 +207,21 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - The stranded line, owned ([mechanism 4](concept-operating-mechanisms.md)).
   - A decision note.
 - **Owner.** Planning, with finance.
-- **Class table** [argued]. The ratio is the SSD harvest, before yield, divided by a year's new flash. The case bounds it at about 0.2–30%, with central cells near 1–10% (illustrative).
+- **The dollar test** [argued]. Go when expected annual net value over exit, under the declared anchor, times usable TB, exceeds the program's fixed cost. That cost is the record, the forum and the pipeline's standing staff.
+  - For example, a central harvest of about 1.8 EB a year at 80% yield is about 1.44 million usable TB (illustrative).
+  - At +$10 per TB over exit, that is about $14M a year. At +$370 it is about $530M.
+  - Against a fixed cost of $20–60M a year (illustrative), the low-price cell fails and the high-price cell passes easily.
+- **The ratio describes scope; it doesn't decide go.** It is the SSD harvest, before yield, divided by a year's new flash ([materiality](/glossary/#term-materiality)). The case puts it at about 0.5–30%, central 3–9% (illustrative).
+- **Its numerator is a hard-drive count.** The company's report calls the 3 million retired drives hard drives. If they all are, the ratio is near zero. A vintage check gives about 4–9 EB of flash retiring a year. So the day-10 pull splits harvest by drive type and vintage.
+- **Scope table** [argued]. One price basis per scenario: the ratio and the dollar test use the same one.
 
-| Ratio | Class | What runs |
+| Ratio | Scope | What runs |
 |---|---|---|
 | Under 1% | Spares continuity | A minimum drive record, spares, the pipeline and exit |
 | 1–5% | Mixed | The above, plus allocation as a monthly forum line and one workload pilot |
 | Over 5% | Supply strategy | Every decision gate below |
+
+- **Tie-break.** If the ratio's range spans two rows, run the smaller scope, and re-test at the first quarterly supply review [argued].
 
 - **Stranded stock, beside it.** The ratio doesn't gate the stranded stock, which the case says is likely larger than the flow. Illustratively, recovering the gap between 54% and 19% stranding on about 100 EB installed frees about 35 EB, once.
 - **Go or stop.** Go at the class's scope. "Stop at the step where the next one costs more than it saves" (Section 12). The paper writes that for mid-sized companies; this plan applies it to the program's own steps.
@@ -426,7 +435,7 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 |---|---|---|---|---|---|---|
 | 1 | Replacement cost is the right value anchor | Planning, with finance | 25 | Compute both anchors per zone from stockout logs, margins and contract terms; measure the attribution share | The capacity anchor passes replacement cost in most stockout zones | Which price ranks workload claims |
 | 2 | Reuse displaces purchases at all | Fleet provisioning, with finance | 20 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
-| 3 | The materiality ratio is large enough to matter | Planning | 14 | Harvest TB ÷ new flash TB, by quarter | Ratio well under 1% | G1 |
+| 3 | The program pays at some scope | Planning, with finance | 14–30 | Net value over exit × usable TB a year, against fixed program cost; harvest TB ÷ new flash TB, as a descriptor | Net value falls short of fixed cost in every price cell | G1 |
 | 4 | Reuse beats exit after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort, beside that cohort's resale quotes | Net value over exit below zero for the cohort's drive class | Pipeline scope by drive class |
 | 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 180 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
 | 6 | The host-cost logic holds | Lifecycle transitions, with finance | 55 | The keep, redeploy or harvest sheet for one retiring cohort | Drive value, not host cost, decides the branch | How retirement dates are set |
