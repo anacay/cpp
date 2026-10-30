@@ -57,5 +57,6 @@ Where the practice runs out, the page says so. The largest gap is supply that co
 
 - [The full case](case-kuantillion-cloud-full.md)
 - [How the practice solves it](case-kuantillion-cloud-practice.md)
+- [The execution plan](case-kuantillion-cloud-plan.md)
 - [The working note: Second lives](note-second-lives.md)
 - [Discuss it on GitHub](https://github.com/anacay/cpp/discussions)
