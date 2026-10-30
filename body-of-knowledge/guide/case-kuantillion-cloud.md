@@ -27,7 +27,7 @@ No public source shows Kuantillion Cloud running a program for this. The public 
 - **Nobody knows how big it is.** The drive harvest could be under 1% or near 30% of a year's flash deployment (illustrative). That decides whether this is spares housekeeping or supply strategy.
 - **Supply is a byproduct.** Drives come back when a platform retires, for reasons that have nothing to do with drives. Keeping a platform alive raises its need for spares while cutting the harvest that would feed them.
 - **A drive has five dimensions, and every sink prices a different one.** Capacity, performance, remaining endurance, fit and condition history. No common unit or price exists inside the fleet.
-- **Nobody has published how reused drives behave in a second life.** The evidence suggests parity early, then rising and correlated failure. One bad incident could cost more than the program saves.
+- **Nobody has published how reused drives behave in a second life.** First-life studies disagree on late-life hazard; firmware, model and error history matter more than age, and failures cluster. Second-life hazard is unmeasured. One bad incident could cost more than the program saves.
 - **The organization splits the problem in two.** The people who allocate capacity and the people who recover value sit in different organizations. The technicians who pull drives are measured on ticket speed.
 
 ## What's in the case

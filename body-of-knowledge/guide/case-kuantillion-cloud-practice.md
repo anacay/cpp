@@ -38,7 +38,7 @@ Kuantillion Cloud is a fictional hyperscale operator. It runs one of the largest
 
 **The technical gates.** Eleven technical gates stand between a retired host and a second life ([section 6](case-kuantillion-cloud-full.md#6-supply-the-gates)). They are physical fit, protocol, qualification, firmware, observability, condition, change windows, systems of record, systems complexity, jurisdiction and sanitization. A drive whose data can't be shown to be gone is destroyed. This page calls them technical gates, to keep them apart from the program's own decision gates.
 
-**The risk.** Nobody has published how reused drives behave in a second life. The evidence suggests parity early, then rising and correlated failure. At one operator, out-of-warranty legacy drives were 22% of drives but 77% of failures in a quarter. Two firmware bugs killed drives at fixed ages, about 3.7 and 4.6 years ([section 6.1](case-kuantillion-cloud-full.md#6-1-what-is-actually-known-about-second-lives)).
+**The risk.** Nobody has published how reused drives behave in a second life. First-life studies disagree on late-life hazard, and two large ones saw no rise at end of life. Firmware, model and error history matter more than age. Failures cluster: in one fleet, a second replacement in the same RAID group was 180 times likelier within a week. Two firmware bugs killed drives at fixed power-on ages, about 3.7 and 4.6 years. One operator's figure, legacy drives at 22% of drives but 77% of failures, covers one quarter and is confounded with model and warranty ([section 6.1](case-kuantillion-cloud-full.md#6-1-what-is-actually-known-about-second-lives)).
 
 **A leak upstream, where triage is weak.** At one large cloud, 34.4% of SSD-related tickets weren't the drive: human error and cables. Its repair sequence fixed those with cheaper steps first, and only 31.2% of tickets ended in a drive swap. A site that pulls a drive on every ticket would use up to about 1.5 times true failures. Kuantillion Cloud's own healthy share of pulled drives is unknown ([section 4.4](case-kuantillion-cloud-full.md#4-4-the-leak-upstream-of-the-cage-tickets-that-werent-the-drive)).
 
@@ -814,7 +814,7 @@ The last two follow the paper's own tests for mechanisms 11 and 13 (Section 9.2)
 
 **The case's eight assumptions.** The case lists eight assumptions any answer must test, from the anchor to whether internal prices can carry these values. Each has a cheap test, and most run in the first quarter. The plan's [experiments](case-kuantillion-cloud-plan.md#8-experiments) give each one's test, owner and date.
 
-"The rollout is the measurement" (Section 5.4). The pilot cohort answers the case's most load-bearing question: where second-life hazard crosses the new-drive curve [unmeasured].
+"The rollout is the measurement" (Section 5.4). The pilot cohort answers the case's most load-bearing question: where second-life hazard, including any handling-induced infant mortality, crosses the new-drive curve [unmeasured].
 
 **Our seven assumptions, each with a falsifier** [argued]. These are the assumptions this strategy rests on.
 
