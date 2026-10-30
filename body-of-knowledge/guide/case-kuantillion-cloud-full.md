@@ -270,7 +270,7 @@ Retirement is a real sink, not a failure. Some drives cost more to keep than the
 
 ## 6. Supply: the gates
 
-A legacy drive is only supply if it can reach a sink. Ten gates sit in the way. They are concurrent constraints, not a sequence, though sanitization comes first in time, because nothing moves until data is dealt with (Inferred). Each removes some drives, and each has its own owner and cost.
+A legacy drive is only supply if it can reach a sink. Eleven gates sit in the way. They are concurrent constraints, not a sequence, though sanitization comes first in time, because nothing moves until data is dealt with (Inferred). Each removes some drives, and each has its own owner and cost.
 
 | Gate | Question | What fails it |
 | --- | --- | --- |
@@ -283,6 +283,7 @@ A legacy drive is only supply if it can reach a sink. Ten gates sit in the way. 
 | Change window | Can the change be scheduled? | Maintenance freezes, evacuation cost for live hosts, limits on capacity touched at once. A reuse that can't book a window doesn't happen (Inferred) |
 | Systems of record | Does the drive exist, correctly, in the fleet's systems? | A used part needs an identity: a SKU for a regraded drive, a grade, a cost basis, a location. Systems built for new parts may not hold it (Inferred; Kuantillion Cloud says it lacks a common classification) |
 | Systems complexity | Can the fleet afford another shape? | Every graded tier is a new SKU, qualification combination, placement constraint and forecast category. A scheme the solvers and quota systems can't absorb fails here (Inferred) |
+| Jurisdiction | Can it legally and economically cross this boundary? | A drive moving between legal entities or countries can trigger tax transfer-pricing rules, customs duty on used goods and e-waste export rules. Since January 2025, an international convention requires prior consent for e-waste shipments (Third party). Whether drives shipped for reuse count as waste is Unknown |
 | Sanitization | Can its data be provably erased? | Dead, unresponsive or unverifiable drives are destroyed; two independent verifications are required before a device leaves custody. Shredding no longer meets current standards for flash (section 9) |
 
 **The provenance gate has a real event behind it.** In 2025 one drive maker uncovered up to a million used hard drives, worn in a storage-based cryptocurrency boom, with their standard health counters reset and sold as new (Press). In a later wave, the maker's own protected field log was forged too. Raids seized drives and reset gear, and the maker restricted resale to verified distributors. The fraud involved hard drives, not SSDs; SSD health counters are, if anything, easier to reset (Speculated). Once a drive leaves custody, its history is forgeable, the best argument against outside used supply (Inferred). It is also the best argument for internal reuse, where custody and telemetry never break. An attested per-drive history (P1) is the asset the grey market can't counterfeit.
@@ -728,7 +729,7 @@ A good answer treats the four sinks as one system on one record, prices a drive 
 2. **Rests on drive facts that are current, consistent and owned** (P1). Every decision in P2–P8 can cite the same record, and the answer says who keeps it true and how fresh it must be.
 3. **Prices a legacy drive against a declared anchor.** It states whether the value claimed is avoided procurement or marginal capacity; the two differ in size, beneficiary and survival under Path B. On the procurement anchor, it prices at what replacement would cost now: contract reality, net of pipeline cost, yield and the resale reuse gives up, not book value. It is revisited as the market moves and holds up under both supply paths.
 4. **Matches on capability, not age.** It reads remaining endurance, retention margin, latency consistency, firmware and fit. It recognizes that some old drives out-endure new ones per terabyte.
-5. **Respects the gates.** Fit, protocol, qualification, firmware and provenance, observability, condition, change windows, systems of record, systems complexity and sanitization are hard constraints, each with an owner.
+5. **Respects the gates.** Fit, protocol, qualification, firmware and provenance, observability, condition, change windows, systems of record, systems complexity, jurisdiction and sanitization are hard constraints, each with an owner.
 6. **Makes reliability visible to the users of capacity.** It offers guarantees or a capacity class they can plan around, so reuse doesn't feel second class.
 7. **Fixes incentives where the work happens.** The metrics technicians, operations and resource managers answer to don't penalize reuse where it is right. The capital and operating budget boundary is faced, not ignored. It speaks both dialects, the storage organization's supply language and the fleet organization's hardware language, because the program sits on that seam.
 8. **Is measured on a few honest numbers with declared denominators.** For example:
