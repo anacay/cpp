@@ -11,7 +11,7 @@ seed: 5.2, 5.4, 7, 10.2
 
 ## The idea
 
-Who notices when a [coefficient](/glossary/#term-coefficient "Resource used per unit of driver") drifts? The 2026 SRE chapter answers that, and this loop builds on it [7]. It starts from a [driver](/glossary/#term-driver "What causes load: the volume a caller does") that makes sense for the product, which it calls "intrinsic product metrics" [7]. It graphs ratios such as "cores per 1,000 active users," alerts when they shift or when consumption "deviates from predictions," reuses them before launch and re-validates them periodically [7]. As steps (the arrangement is the seed paper's, not the chapter's):
+Who notices when a [coefficient](/glossary/#term-coefficient (Resource used per unit of driver)) drifts? The 2026 SRE chapter answers that, and this loop builds on it [7]. It starts from a [driver](/glossary/#term-driver (What causes load: the volume a caller does)) that makes sense for the product, which it calls "intrinsic product metrics" [7]. It graphs ratios such as "cores per 1,000 active users," alerts when they shift or when consumption "deviates from predictions," reuses them before launch and re-validates them periodically [7]. As steps (the arrangement is the seed paper's, not the chapter's):
 
 1. **Pick a business driver**, such as daily active users, sales transactions or page views [7].
 2. **Instrument the driver and the infrastructure together**, including allocations and utilization [7].
@@ -33,7 +33,7 @@ The chapter treats the mapping as "a living model that evolves alongside the sys
 ## Where it shows up on the map
 
 - **Weekly**, unit row: the ratio is computed continuously while the service is tuned. See [weekly](stage-weekly.md).
-- **Weekly**, launch row: ratios feed pre-launch tests, so a configured [declaration](/glossary/#term-declaration "A team’s statement of a step change in demand, by stage") carries a measured coefficient [7]. See also [declarations](concept-demand-and-declarations.md).
+- **Weekly**, launch row: ratios feed pre-launch tests, so a configured [declaration](/glossary/#term-declaration (A team’s statement of a step change in demand, by stage)) carries a measured coefficient [7]. See also [declarations](concept-demand-and-declarations.md).
 - **Monthly**, unit row: the ratio is compared with its published version. See [monthly](stage-monthly.md).
 - **Post-launch**, unit and portfolio rows: the two alerts are read against the published version, tickets reach planning, and the plan is re-validated or re-baselined. See [post-launch](stage-post-launch.md).
 
