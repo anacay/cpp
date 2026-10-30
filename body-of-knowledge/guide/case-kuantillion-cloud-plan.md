@@ -379,13 +379,18 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 
 "A rule agreed in advance is a contract; one proposed after the savings appear is a request" (Section 9.3). Each rule below is written so the forum can sign it. Each is this plan's [argued], built on the seed text it cites.
 
-**Booking rule** [argued]. Applies to every planned retirement's harvest.
-- Book harvest firm only to the stage record's lower quantile until the drives are drained.
+**Booking rule** [argued]. Applies to every planned retirement's harvest, cohort by cohort.
+- In the first cycle, with no stage record yet, book firm only drives already tested.
+- After that, book harvest firm only to the stage record's lower quantile until the drives are drained.
 - Then book to the stage record's middle.
 - Above the firm slice, hold [options](/glossary/#term-option) on new purchase. Above that, name a [bridge](/glossary/#term-bridge) with an owner.
 - Label harvest *uncommitted* until supply answers with a dated commit or a named gap.
 - Basis: "Until then, label it *uncommitted*, a firmness class of its own" (Section 6.1); the [firm, flexible and named](/glossary/#term-firm-flexible-named) split (Section 8.2).
-- **Working estimate:** about 50–70% of scheduled retirements land on their date [argued]. Technical-gate yield is about 80% for observable cohorts [argued; the real yield is unmeasured]. So expect about 40–56% of scheduled drives on the date. For a batch of 40,000 drives (illustrative), that is about 16,000–22,400.
+- The stage record carries pull-ins as well as slips. A power-forced retirement delivers drives early.
+- **Working estimate, by cohort mix** [argued]. Suppose 50–70% of scheduled retirements land on their date. Yield is near all-or-nothing within a cohort, so draw it per cohort, not as one average.
+- For example, 60% of drives in observable cohorts yield about 90%, and 40% in blind ones about 40% (illustrative; the real yields are [unmeasured]).
+- The central share is then about 35–49% of scheduled drives. The firm slice, from observable cohorts at the low on-time share, is about 27%.
+- For a batch of 40,000 drives, that is about 14,000–19,600 central, and about 10,800 firm.
 
 **Ranking unit** [argued]. The forum ranks each claim at the cost of that sink's next-best source on that date:
 
