@@ -17,7 +17,7 @@ This is the practice's second problem-space case, and the first with a full answ
 
 Case 3 runs to about 50,000 words across four pages. You don't need all of it, and you don't need to start cold.
 
-**Five concepts to know first.** Each takes ten to fifteen minutes.
+**Five concepts to know first.** Each takes about five minutes.
 
 - [The coefficient](concept-the-coefficient.md): one number both forecasts load and prices growth, so someone has to own it.
 - [Demand and declarations](concept-demand-and-declarations.md): a step change enters the plan as a signed statement that firms up in stages.
@@ -27,7 +27,7 @@ Case 3 runs to about 50,000 words across four pages. You don't need all of it, a
 
 **A warm-up.** [Case 1](cases.md#case-1) traces one launch through the practice in a few pages. Read it before this one if the concepts are new.
 
-**Reading times,** at a steady pace: this page, 5 minutes. [The full case](case-kuantillion-cloud-full.md), about 100. [The strategy](case-kuantillion-cloud-practice.md), about 70. [The execution plan](case-kuantillion-cloud-plan.md), about 45. [Second lives](note-second-lives.md), about 10.
+**Reading times,** at a steady pace: this page, 5 minutes. [The full case](case-kuantillion-cloud-full.md), about 100. [The strategy](case-kuantillion-cloud-practice.md), about 70. [The execution plan](case-kuantillion-cloud-plan.md), about 55. [Second lives](note-second-lives.md), about 10.
 
 **A newcomer's route,** about an hour: this page; the strategy's [problem in brief](case-kuantillion-cloud-practice.md#the-problem-in-brief); one lens, such as [buffers and reserves](case-kuantillion-cloud-practice.md#buffers-and-reserves); the spares decision, [P4](case-kuantillion-cloud-practice.md#p4-size-and-source-legacy-spares); then the plan's [first 30 days](case-kuantillion-cloud-plan.md#3-the-first-30-60-and-90-days).
 
