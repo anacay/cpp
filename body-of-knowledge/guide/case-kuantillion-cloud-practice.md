@@ -25,7 +25,7 @@ Kuantillion Cloud is a fictional hyperscale operator. It runs one of the largest
 
 **The shock.** New enterprise flash now costs three to four times what it did a year earlier. Next year's supply from the flash makers is largely pledged to their biggest buyers already. Any flash Kuantillion Cloud didn't contract for in advance is hard to get at any price.
 
-**The old flash.** Kuantillion Cloud retires machines every year and takes them apart. In 2024 it wiped and then reused or resold over 3 million drives. Its reports never say how many of those were solid-state drives (SSDs). Older flash also sits idle inside machines that are still running. One peer cloud measured 54% of its server SSD capacity stranded that way ([section 4.1](case-kuantillion-cloud-full.md#4-1-four-populations)).
+**The old flash.** Kuantillion Cloud retires machines every year and takes them apart. In 2024 it wiped and then reused or resold over 3 million drives. Its reports call them hard drives, so how many were solid-state drives (SSDs) is unknown. Older flash also sits idle inside machines that are still running. One peer cloud measured 54% of its server SSD capacity stranded that way ([section 4.1](case-kuantillion-cloud-full.md#4-1-four-populations)).
 
 **Where a drive can go.** When a host retires, it can be kept, redeployed whole to lighter work, or taken apart. A harvested drive then has four sinks ([section 5](case-kuantillion-cloud-full.md#5-demand-four-places-a-legacy-drive-can-go)):
 
@@ -44,7 +44,7 @@ Kuantillion Cloud is a fictional hyperscale operator. It runs one of the largest
 
 **The money.** A used drive's replacement value runs about $190–640 per terabyte across the case's range. Its book value is near zero past a six-year accounting life. The central fork is what kind of value a reused drive creates ([section 7.1](case-kuantillion-cloud-full.md#7-1-the-anchor-question-what-kind-of-value-is-this)). If flash contracts can be rescheduled, it avoids a purchase. If they are firm, it adds capacity to a sold-out fleet. Those are different numbers, with different beneficiaries.
 
-**The size.** The SSD harvest could be under 1% or near 30% of a year's new flash (illustrative). That range decides whether this is spares housekeeping or supply strategy.
+**The size.** The SSD harvest could be under 1% or near 30% of a year's new flash, central 3–9% (illustrative). That range sets the program's scope. Whether the program pays at all is a dollar question: its margin over exit against its fixed cost.
 
 **The organization.** Allocation and value recovery sit in different groups. The technicians who pull drives are measured on ticket speed, which pushes drives toward the shredder. Three of the case's decisions have no public owner at all ([section 11](case-kuantillion-cloud-full.md#11-problem-decomposition)). The groups are mapped in [section 10.2](case-kuantillion-cloud-full.md#10-2-the-team-map-and-the-seams-between-them).
 
@@ -90,7 +90,7 @@ The practice's [principles](principles.md) set the stance. Each one points at a 
 Five moves carry most of the weight. Each removes a large uncertainty for little cost, and each sets up the next.
 
 1. **Find out what exists.** The public record is silent on any program. Silence could mean a program run quietly, one tried and dropped, or none. Designing before you know wastes the most effort of anything here.
-2. **Size the problem and name its value anchor.** "Below materiality, the mechanisms cost more than they return" (Section 13). The ratio of harvest to new flash sets the program's class. The flash contracts settle which kind of value a drive creates. Nothing else can be priced until both are known.
+2. **Size the problem in dollars and name its value anchor.** Our reading of Section 13 is that a program below materiality costs more than it returns. The test is the annual margin over exit against the program's fixed cost; the ratio of harvest to new flash sets scope. The flash contracts settle which kind of value a drive creates. Nothing else can be priced until both are known.
 3. **Book each retirement in both directions.** The register of mechanism 11 already holds "decommissions as dated supply steps" (Section 9.2). Applied here, the same retirement is also a delivery of drives, booked the same way. That one move turns a byproduct into supply you can plan against.
 4. **Give every drive one record and every gap an owner.** Without a record, a drive can be promised twice or lost from custody. Without a forum, the loudest sink wins. And "Shortage rules come before the shortage" (Section 9.3), so the forum must exist early to agree them.
 5. **Prove fulfillment with spares, then extend.** Spares are the harvest's most predictable claim and its value floor. The paper's order of change is "prove fulfillment first" (Section 10.4); we apply it to reused drives. Workloads, the riskier sink, come after trust exists.
@@ -686,17 +686,25 @@ The public record is silent, and silence could mean a program run quietly, one t
 
 ### Size it before you build it
 
-Nothing gets built until you know the problem's class. "Below materiality, the mechanisms cost more than they return" (Section 13).
+Nothing gets built until you know whether the program pays. Our reading, applied here: "Below materiality, the mechanisms cost more than they return" (Section 13). The paper says that of elastic-cloud customers, and it is a statement about dollars. So the go or no-go is a dollar test [argued].
 
-The ratio is the SSD harvest, before yield, divided by a year's new flash. The case bounds it at 0.2% to 30% (illustrative), from 0.3–6.0 EB of harvest against 20–180 EB of new flash ([section 7.4](case-kuantillion-cloud-full.md#7-4-the-flow-the-denominator-and-the-stock)). Both halves are knowable inside Kuantillion Cloud in days. The ratio then sets the class. The thresholds are this page's [argued]:
+*The test.* Compare the expected annual margin over exit, under the declared anchor, with the program's fixed cost: the drive record, the forum and the fixed part of pipeline staffing. Next year's purchase doesn't enter it.
 
-| Ratio | Class | What runs |
+For example, take the case's central harvest row of 1.8 EB a year at 80% yield, about 1.44 million usable TB. At the $190 anchor's central margin of about $10 per TB, that is about $14 million a year. At the $640 anchor's central $370, it is about $530 million. Against a fixed program cost of $20–60 million a year (all illustrative), the low anchor fails and the high anchor passes easily. The anchor fork decides the program's fate before its size does.
+
+*The ratio, as a descriptor.* The ratio of SSD harvest to a year's new flash still sets scope, but it no longer decides go or no-go. The case now puts it at about 0.5–30%, central 3–9%, from harvest rows against 20–60 EB of new flash a year ([section 7.4](case-kuantillion-cloud-full.md#7-4-the-flow-the-denominator-and-the-stock)). Its numerator is a count the report calls hard drives, so the ratio is near zero if they were all disks.
+
+A vintage check bounds it from the other side. Drives retiring now were bought about six years ago. At 20 EB a year of deployment growing 15–30% a year, about 4–9 EB a year of flash is retiring. That is the same order as the top harvest row. Inside the company, measure retired flash TB by vintage, not drive counts. Use one price basis per scenario.
+
+The scope bands are this page's [argued]:
+
+| Ratio | Scope | What runs |
 |---|---|---|
 | Under 1% | Spares continuity | A minimum drive record, spares, the pipeline and exit |
 | 1–5% | Mixed | The above, plus allocation as a monthly forum line and one workload pilot |
 | Over 5% | Supply strategy | Everything on this page |
 
-"Stop at the step where the next one costs more than it saves" (Section 12). The paper writes that for mid-sized companies; we apply it to the program's steps. [Settings](settings.md) explains how much of the discipline a setting needs.
+If the measured range spans two bands, run the smaller scope and re-test at the first quarterly supply review [argued]. "Stop at the step where the next one costs more than it saves" (Section 12). The paper writes that for mid-sized companies; we apply it to the program's steps. [Settings](settings.md) explains how much of the discipline a setting needs.
 
 The stranded stock is sized at the same time, on its own line. Its go or no-go is a reclaim pilot, not the flow ratio.
 
@@ -707,7 +715,7 @@ Six gates follow week one. Each opens only on its evidence, and the table copies
 | Gate | Evidence to enter | The work | What it licenses |
 |---|---|---|---|
 | 0 | A named program lead | Interviews: does a program exist, or was it declined? | Design, an audit, or a stop |
-| 1 | Gate 0 reads absent, or a decline that no longer holds | Materiality; the stranded stock; contracts into the register; the capacity anchor's inputs | The class and anchor declared; the forum chartered to agree the shortage rule and ratify the landing rule |
+| 1 | Gate 0 reads absent, or a decline that no longer holds | The dollar test and the scope ratio; the stranded stock; contracts into the register; the capacity anchor's inputs | The scope and anchor declared; the forum chartered to agree the shortage rule and ratify the landing rule |
 | 2 | Gate 1 says go | Count qualification backlog and solver categories; read decommission records by branch; check whether the solvers reach physical devices | A tier cap; the redeploy-whole test |
 | 3 | Gate 2 exit | An owner for each field, off-host first; each handoff defined; reconciliation with the erasure log | A record every decision can cite; no move on an open reconciliation gap |
 | 4 | Gate 3 exit | Decommissions on the register; spares ratio signed; pipeline staffed; the forum ranking harvest; the risk budget | Allocation: every claim answered and each tested drive pegged |
@@ -787,7 +795,7 @@ The last two follow the paper's own tests for mechanisms 11 and 13 (Section 9.2)
 
 | If this turns out true | Then |
 |---|---|
-| Materiality is well under 1% | Drop to spares continuity, and stop there (Section 12, applied here) |
+| The dollar test fails, or the ratio is well under 1% | Drop to spares continuity, and stop there (Section 12, applied here) |
 | A graded program with a shared price exists | Allocation and adoption become an audit, not a build |
 | Second-life failures exceed new drives' rates from year one | Close the workload sink; keep spares and exit |
 | Contracts are fully flexible and Path B comes early | The avoided-purchase anchor shrinks; the program shrinks to spares and exit |
@@ -807,7 +815,7 @@ The last two follow the paper's own tests for mechanisms 11 and 13 (Section 9.2)
 | A stated lower-assurance class will be taken up | Uptake stays low after the class's guarantee and evidence are stated |
 | Cohort is the right shared driver | Failures correlate more on site or workload than on model, firmware and age |
 | Misdiagnosis is bias, not dispersion | The healthy share of pulled drives swings widely with no persistent level |
-| The materiality ratio is the right gate | The program is worth running at a low ratio, because one stockout's shadow price dominates (scenario S5) |
+| The dollar test is the right gate | One stockout's shadow price dominates the annual sum, so a failing program is still worth running (scenario S5) |
 
 **Signposts between the two futures.** The case's signposts are read at the quarterly supply review ([section 8](case-kuantillion-cloud-full.md#8-two-futures-and-the-signposts-between-them)). Each points toward Path A or Path B, and the strategy's levers move with them [argued].
 
