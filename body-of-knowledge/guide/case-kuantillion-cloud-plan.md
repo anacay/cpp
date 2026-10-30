@@ -360,11 +360,15 @@ Under scarcity this approximates the shadow price, "What one more unit of the bi
 
 The thresholds are [unmeasured]. For example, a wear threshold might be half of rated endurance used (illustrative). Three grades fit inside a tier cap of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, G2's rule governs: run spares and exit only.
 
-**Transfer price, with showback first** [argued].
-- The price is set on usable, yield-adjusted capacity: pipeline cost per usable TB, plus carry, plus a risk loading drawn from the incident bound.
-- For example, a 2 TB drive costing $40 to process at 80% yield is $25 per usable TB. Add $2 of carry and $5 of risk loading, and it is about $32 per TB (illustrative).
+**Internal showback rate, shown back first** [argued]. Call it a showback rate, not a transfer price, to keep it apart from tax transfer pricing.
+- **The rate** per usable TB is the higher of net realizable resale for the cohort and grade, and pipeline cost per usable TB, plus a risk loading.
+- **Why resale is the floor.** Where an outside market exists, the efficient internal price is the market price (Baldenius 2008, on Hirshleifer's rule). A lower rate invites every sink to over-claim.
+- **Net resale** is what the resale and recycling contracts actually pay, after their fees.
+- **Carry** is charged per TB-month while the drive is held, not once.
+- For example, a 2 TB drive costing $40 to process at 80% yield is $25 per usable TB. If net resale is $100 and risk loading $5, the rate is about $105. Carry is about $0.17 per TB-month (illustrative).
+- **The gap** between resale and pipeline cost is a credit to recovery in the management ledger. It is never booked as a saving.
 - Show it back for a full cycle before anyone is billed: "Move to attributed cost only after a full cycle of showback" (Section 10.4).
-- The forum ranks on next-best-source value, not on this price.
+- The forum ranks on next-best-source value, not on this rate.
 
 **Release trigger** [argued]. Write it before you hold. The paper's option rule is "write down the trigger for converting options into orders" (Section 6.2).
 - Release a cohort's held drives when their next-best-source value falls below net resale for two quarterly price prints running.
@@ -608,6 +612,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - **Studies cited on this page.** Other operators' and researchers' fleets, cited as analogies; none is Kuantillion Cloud's:
   - Schroeder and Gibson, Disk failures in the real world, *USENIX FAST* (2007): https://www.usenix.org/legacy/event/fast07/tech/schroeder/schroeder_html/
   - Xu, Zheng, Qin, Xu and Wu, Lessons and Actions: What We Learned from 10K SSD-Related Storage System Failures, *USENIX ATC* (2019): https://www.usenix.org/conference/atc19/presentation/xu
+  - Baldenius, Internal Pricing, *Foundations and Trends in Accounting* (2008): https://doi.org/10.1561/1400000013
   - Alter, Xue, Dimnaku and Smirni, SSD Failures in the Field: Symptoms, Causes, and Prediction Models, *SC* (2019): https://par.nsf.gov/servlets/purl/10172650
 
 Every number on this page is illustrative unless the case tags it otherwise.
