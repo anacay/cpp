@@ -561,7 +561,7 @@ tr.row-target:target td:first-child, tr.row-target:has(.row-link:target) td:firs
   background: rgba(6, 22, 32, 0.96); border: 1px solid var(--water-line); border-left: 3px solid var(--gold); border-radius: var(--radius);
   box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.7); font-size: 0.875rem; line-height: 1.4;
 }
-@supports (backdrop-filter: blur(4px)) { .casebar { background: rgba(6, 22, 32, 0.86); backdrop-filter: blur(6px); } }
+@supports (backdrop-filter: blur(4px)) { .casebar { background: rgba(6, 22, 32, 0.96); backdrop-filter: blur(6px); } }
 .casebar__id { margin: 0; min-width: 0; color: var(--ink-muted); }
 .casebar__id strong { color: var(--ink); font-weight: 600; }
 .casebar__tag { display: block; color: var(--ink-muted); }
