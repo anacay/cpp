@@ -677,7 +677,7 @@ Several lines of the paper are new to this decision. Recovered capacity "has to 
 
 ## Sequencing: why this order
 
-The order of work follows one rule. Each step waits on the evidence in its row. The paper's rule for declarations is that "promotion needs the evidence in its row" (Section 5.4). We apply it to the program's own gates.
+The order of work follows one rule. Each step waits on the evidence in its row. The paper's rule for declarations is that "promotion needs the evidence in its row" (Section 5.4). We apply it to the program's own decision gates.
 
 Two of the practice's ideas set the order. The first is the [stage](/glossary/#term-stage): a step licenses only the action its evidence supports. The second is the commit point: commit only what the lead time forces, and hold the rest as options. Read together, they say this. Do first what is cheap and decides whether the rest is worth doing. Do last what is slow to learn and easy to reverse.
 
@@ -733,24 +733,24 @@ If the measured range spans two bands, run the smaller scope and re-test at the 
 
 The stranded stock is sized at the same time, on its own line. Its go or no-go is a reclaim pilot, not the flow ratio.
 
-### The gates, in brief
+### The decision gates, in brief
 
-Six gates follow week one. Each opens only on its evidence, and the table copies the plan's. The plan's [gates](case-kuantillion-cloud-plan.md#4-the-gates) give each one's entry, exit, artifacts and owner.
+Seven decision gates, G0 to G6, run the program. They are not the case's eleven technical gates, which a drive must clear; these are points where the program decides. Each opens only on its evidence, and the table copies the plan's. The plan's [gates](case-kuantillion-cloud-plan.md#4-the-gates) give each one's entry, exit, artifacts and owner.
 
-| Gate | Evidence to enter | The work | What it licenses |
+| Decision gate | Evidence to enter | The work | What it licenses |
 |---|---|---|---|
-| 0 | A named program lead | Interviews: does a program exist, or was it declined? | Design, an audit, or a stop |
-| 1 | Gate 0 reads absent, or a decline that no longer holds | The dollar test and the scope ratio; the stranded stock; contracts into the register; the capacity anchor's inputs | The scope and anchor declared; the forum chartered to agree the shortage rule and ratify the landing rule |
-| 2 | Gate 1 says go | Count qualification backlog and solver categories; read decommission records by branch; check whether the solvers reach physical devices | A tier cap; the redeploy-whole test |
-| 3 | Gate 2 exit | An owner for each field, off-host first; each handoff defined; reconciliation with the erasure log | A record every decision can cite; no move on an open reconciliation gap |
-| 4 | Gate 3 exit | Decommissions on the register; spares ratio signed; pipeline staffed; the forum ranking harvest; the risk budget | Allocation: every claim answered and each tested drive pegged |
-| 5 | Gate 4 exit, and the tier cap | A pilot cohort in caches and replicated tiers; build programs declared | A reused-flash class; a substitution table |
-| 6 | A second-life value from the pilot | The wear price registered; endurance used reported by cohort | The wear price on the rate card |
+| G0 | A named program lead | Interviews: does a program exist, or was it declined? | Design, an audit, or a stop |
+| G1 | G0 reads absent, or a decline that no longer holds | The dollar test and the scope ratio; the stranded stock; contracts into the register; the capacity anchor's inputs | The scope and anchor declared; the forum chartered to agree the shortage rule and ratify the landing rule |
+| G2 | G1 says go | Count qualification backlog and solver categories; read decommission records by branch; check whether the solvers reach physical devices | A tier cap; the redeploy-whole test |
+| G3 | G2 exit | An owner for each field, off-host first; each handoff defined; reconciliation with the erasure log | A record every decision can cite; no move on an open reconciliation gap |
+| G4 | G3 exit | Decommissions on the register; spares ratio signed; pipeline staffed; the forum ranking harvest; the risk budget | Allocation: every claim answered and each tested drive pegged |
+| G5 | G4 exit, and the tier cap | A pilot cohort in caches and replicated tiers; build programs declared | A reused-flash class; a substitution table |
+| G6 | A second-life value from the pilot | The wear price registered; endurance used reported by cohort | The wear price on the rate card |
 
 Three ordering choices need their reasons.
 
-- **The forum starts small.** You charter it at Gate 1 only for two rules. It agrees the shortage rule, and it ratifies the landing rule: planning proposes, finance signs, the forum ratifies. "Shortage rules come before the shortage" (Section 9.3), so the forum must exist to agree them. It starts ranking claims at Gate 4 [argued].
-- **Spares go first inside Gate 4.** Spares are the harvest's most predictable claim and its value floor. Starting there proves fulfillment before you ask anyone to trust reused capacity.
+- **The forum starts small.** You charter it at G1 only for two rules. It agrees the shortage rule, and it ratifies the landing rule: planning proposes, finance signs, the forum ratifies. "Shortage rules come before the shortage" (Section 9.3), so the forum must exist to agree them. It starts ranking claims at G4 [argued].
+- **Spares go first inside G4.** Spares are the harvest's most predictable claim and its value floor. Starting there proves fulfillment before you ask anyone to trust reused capacity.
 - **The wear link goes last.** The case's own best guess is that placement shapes the harvest little today, except in write-heavy and low-endurance cohorts.
 
 ### The cadence, in brief
