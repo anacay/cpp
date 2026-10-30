@@ -616,15 +616,15 @@ The key line is the label for harvest not yet answered. "An approval becomes cap
 
 **The answer.** Applied here, a retirement's harvest is a staged supply declaration. Its stages are planned, dated, drained, harvested, tested and available. Score each stage promised against actual.
 
-**One booking rule** [argued]. Book firm only to the stage record's lower quantile until the drives are drained. Then book to the base, the stage record's middle, as Section 8.2's split uses a base scenario. Above the firm slice, hold options on new purchase. Above that, name a bridge with an owner.
+**One booking rule** [argued]. Book firm only to the stage record's lower quantile until the drives are drained. Then book to the base, the stage record's middle, as Section 8.2's split uses a base scenario. Above the firm slice, hold options on new purchase. Above that, name a bridge with an owner. In the first cycle, before any stage record exists, book firm only drives already tested. The stage record carries pull-ins as well as slips, since power-forced retirements arrive early.
 
-**An estimate.** Read the booking as a share of what is scheduled.
+**An estimate, by cohort.** Read the booking as a share of what is scheduled, built cohort by cohort. Yield is close to all-or-nothing within a cohort, so averaging it across cohorts hides the risk.
 
 - On-time share, about 50–70%. Our estimate rests on retirements waiting for new halls, and on the case's report that 30–50% of large 2026 data-center capacity may be delayed [argued].
-- Gate yield is unpublished [unmeasured]. Our working figure is about 80% for recent, observable cohorts, and lower for blind ones [argued].
-- So expect about 40–56% of scheduled drives on the date. For a retiring batch of 40,000 drives (illustrative), that is about 16,000–22,400.
+- Yield through the technical gates is unpublished [unmeasured]. Take a batch that is 60% observable cohorts at about 90% yield and 40% blind cohorts at about 40% (illustrative).
+- The central expectation is then about 35–49% of scheduled drives on the date. For a retiring batch of 40,000 drives, that is about 14,000–19,600. The firm slice, at the low on-time share and observable cohorts only, is about 27%, or 10,800 drives (all illustrative).
 
-**Who pays when harvest fails to arrive.** Finance agrees it in advance. The paper's right for bands has finance "agreeing who pays for a change outside them" (Section 9.2); we extend it to harvest.
+**Who pays when harvest fails to arrive.** Finance agrees it in advance. The paper's right for bands has finance "agreeing who pays for a change outside them" (Section 9.2); we extend it to harvest. A default keeps that from becoming a negotiation [argued]. If supply gave a dated commit, supply pays the bridge. If the sink claimed against harvest still labeled uncommitted, the sink pays. Finance signs the exceptions.
 
 **Futures.** Under Path A, decommissions slip more, so the lower quantile sits lower. Under Path B it can rise.
 
