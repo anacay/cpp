@@ -683,17 +683,17 @@ Each concept below does work in this case. The table tells you where to read the
 
 | Concept | Guide page | Seed | Glossary term | Where it does work here |
 |---|---|---|---|---|
-| The coefficient | [The coefficient](concept-the-coefficient.md) | Sections 5.1–5.3 | [coefficient](/glossary/#term-coefficient) | The wear price, spares per failure, usable terabytes per retiring drive; [P2a](#p2a-the-wear-sub-decision), [P4](#p4-size-and-source-legacy-spares) |
-| Three prices | [Three prices](concept-three-prices.md) | Section 4 | — | The value anchor, keeping hosts, ranking sinks; [P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest), [P6](#p6-allocate-the-harvest-across-sinks) |
+| The coefficient | [The coefficient](concept-the-coefficient.md) | Sections 5.1–5.3 | [coefficient](/glossary/#term-coefficient), [cohort](/glossary/#term-cohort) | The wear price, spares per failure, usable terabytes per retiring drive; [P2a](#p2a-the-wear-sub-decision), [P4](#p4-size-and-source-legacy-spares) |
+| Three prices | [Three prices](concept-three-prices.md) | Section 4 | [shadow price](/glossary/#term-shadow-price), [showback](/glossary/#term-showback) | The value anchor, keeping hosts, ranking sinks; [P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest), [P6](#p6-allocate-the-harvest-across-sinks) |
 | Declarations | [Demand and declarations](concept-demand-and-declarations.md) | Sections 5.4, 6.7 | [declaration](/glossary/#term-declaration), [stage](/glossary/#term-stage) | Harvest as a staged supply declaration; build programs; [P5](#p5-use-legacy-flash-in-upgrades-and-builds), [P6 commitment](#p6-the-commitment-question) |
 | Approval and allocation | [Approval and allocation](concept-approval-and-allocation.md) | Sections 6, 6.1, 6.4 | [fulfillment](/glossary/#term-fulfillment), [pegging](/glossary/#term-pegging) | Five dimensions, the drive ledger, bridges; [P1](#p1-one-record-per-drive), [P3](#p3-match-legacy-flash-to-workloads), [P6](#p6-allocate-the-harvest-across-sinks) |
-| Buffers and reserves | [Buffers and reserves](concept-buffers-and-reserves.md) | Sections 6.3, 6.6, 10.2 | [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio), [stocked pool](/glossary/#term-stocked-pool) | The spares pool, misdiagnosis, cohort risk; [P4](#p4-size-and-source-legacy-spares), [P3](#p3-match-legacy-flash-to-workloads) |
+| Buffers and reserves | [Buffers and reserves](concept-buffers-and-reserves.md) | Sections 6.3, 6.6, 10.2 | [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio), [stocked pool](/glossary/#term-stocked-pool), [cover point](/glossary/#term-cover-point) | The spares pool, misdiagnosis, cohort risk; [P4](#p4-size-and-source-legacy-spares), [P3](#p3-match-legacy-flash-to-workloads) |
 | Supply layers and lead times | [Supply layers and lead times](concept-supply-layers-and-lead-times.md) | Sections 6.2, 6.4, 6.7 | [supply layer](/glossary/#term-supply-layer), [turn-up](/glossary/#term-turn-up) | The reverse pipeline as turn-up; contracts and push-out; [P7](#p7-run-the-reverse-pipeline-at-the-needed-rate), [P5](#p5-use-legacy-flash-in-upgrades-and-builds) |
 | Commit points | [Commit points](concept-commit-points.md) | Sections 6.5, 8, Appendix A | [commit point](/glossary/#term-commit-point), [the three choices](/glossary/#term-the-three-choices) | Last-time buys; decommission dates; the booking rule; [P4](#p4-size-and-source-legacy-spares), [P6 commitment](#p6-the-commitment-question) |
-| The measuring loop | [The measuring loop](concept-measuring-loop.md) | Sections 5.2, 5.4 | — | Endurance used by cohort; the healthy share of pulls; [P2a](#p2a-the-wear-sub-decision), [P4](#p4-size-and-source-legacy-spares) |
+| The measuring loop | [The measuring loop](concept-measuring-loop.md) | Sections 5.2, 5.4 | [driver](/glossary/#term-driver) | Endurance used by cohort; the healthy share of pulls; [P2a](#p2a-the-wear-sub-decision), [P4](#p4-size-and-source-legacy-spares) |
 | The operating mechanisms | [The operating mechanisms](concept-operating-mechanisms.md) | Sections 9.1–9.3 | [forum](/glossary/#term-forum), [unallocated line](/glossary/#term-unallocated-line) | The audit of thirteen; the forum; the stranded line; [P6](#p6-allocate-the-harvest-across-sinks), [P8](#p8-make-reuse-something-teams-choose) |
-| People and seams | [People](people.md) | Sections 10, 10.1–10.4, 14 | [forum](/glossary/#term-forum) | Owners, seams, incentives, legitimacy; [P1](#p1-one-record-per-drive), [P8](#p8-make-reuse-something-teams-choose) |
-| Limits | [Limits](limits.md), [Settings](settings.md) | Sections 12, 13 | — | Materiality, no reference class, the stop rule; sequencing |
+| People and seams | [People](people.md) | Sections 10, 10.1–10.4, 14 | [seam](/glossary/#term-seam), [forum](/glossary/#term-forum) | Owners, seams, incentives, legitimacy; [P1](#p1-one-record-per-drive), [P8](#p8-make-reuse-something-teams-choose) |
+| Limits | [Limits](limits.md), [Settings](settings.md) | Sections 12, 13 | [materiality](/glossary/#term-materiality) | Materiality, no reference class, the stop rule; sequencing |
 
 ## Where the theory runs out
 
@@ -796,3 +796,23 @@ Signs of Path B, such as flattening contract prices or falling used prices, move
 Seed paper: Sections 4, 5.1–5.4, 6, 6.1–6.7, 8, 8.2, 9.1–9.3, 10, 10.1–10.4, 11, 12, 13 and 14, and Appendix A. The guide's concept pages on price and demand: [the coefficient](concept-the-coefficient.md), [three prices](concept-three-prices.md), [demand and declarations](concept-demand-and-declarations.md) and [approval and allocation](concept-approval-and-allocation.md). On supply and operations: [buffers and reserves](concept-buffers-and-reserves.md), [supply layers and lead times](concept-supply-layers-and-lead-times.md), [commit points](concept-commit-points.md), [the measuring loop](concept-measuring-loop.md) and [the operating mechanisms](concept-operating-mechanisms.md). Also [people](people.md), [principles](principles.md), [settings](settings.md) and [limits](limits.md).
 
 The case: [Case 3](case-kuantillion-cloud-full.md), and its [execution plan](case-kuantillion-cloud-plan.md). Literature: the references the case cites in its studied ground. Every number is illustrative unless the case tags it otherwise.
+
+**Sources new to this page.** Each mapping to SSDs is [argued].
+
+- Akerlof, G. A. (1970). The market for ‘lemons’. *Quarterly Journal of Economics* 84(3): https://doi.org/10.2307/1879431
+- Baldenius, T. (2008). Internal pricing. *Foundations and Trends in Accounting* 3(4): https://doi.org/10.1561/1400000013
+- Ferguson, M., Guide, V. D. R., Koca, E., & Souza, G. C. (2009). The value of quality grading in remanufacturing. *Production and Operations Management* 18(3): https://doi.org/10.1111/j.1937-5956.2009.01033.x
+- Ford, D., et al. (2010). Availability in globally distributed storage systems. OSDI '10: https://www.usenix.org/conference/osdi10/availability-globally-distributed-storage-systems
+- Galbreth, M. R., & Blackburn, J. D. (2006). Optimal acquisition and sorting policies for remanufacturing. *Production and Operations Management* 15(3): https://cdn.vanderbilt.edu/vu-web/owen/files/publications/GalbrethoptacqandsortpolforremfgfinalPoms.pdf
+- Han, S., et al. (2021). An in-depth study of correlated failures in production SSD-based data centers. FAST '21: https://www.usenix.org/conference/fast21/presentation/han
+- Hirshleifer, J. (1956). On the economics of transfer pricing. *Journal of Business* 29: 172–184.
+- Hulten, C. R., & Wykoff, F. C. (1981). The estimation of economic depreciation using vintage asset prices. *Journal of Econometrics* 15: 367–396.
+- Maneas, S., et al. (2020). A study of SSD reliability in large scale enterprise storage deployments. FAST '20: https://www.usenix.org/conference/fast20/presentation/maneas
+- Maneas, S., et al. (2022). Operational characteristics of SSDs in enterprise storage systems. FAST '22: https://www.usenix.org/conference/fast22/presentation/maneas
+- NIST (2025). SP 800-88 Rev. 2, Guidelines for Media Sanitization: https://csrc.nist.gov/pubs/sp/800/88/r2/final
+- Schroeder, B., Lagisetty, R., & Merchant, A. (2016). Flash reliability in production: the expected and the unexpected. FAST '16: https://www.usenix.org/conference/fast16/technical-sessions/presentation/schroeder
+- Veeraraghavan, S., & Scheller-Wolf, A. (2008). Now or later: a simple policy for effective dual sourcing in capacitated systems. *Operations Research* 56(4): https://ideas.repec.org/a/inm/oropre/v56y2008i4p850-864.html
+- Wei, M., Grupp, L. M., Spada, F. E., & Swanson, S. (2011). Reliably erasing data from flash-based solid state drives. FAST '11: https://static.usenix.org/event/fast11/tech/full_papers/Wei.pdf
+- Xu, E., et al. (2019). Lessons and actions: what we learned from 10K SSD-related storage system failures. USENIX ATC '19: https://www.usenix.org/conference/atc19/presentation/xu
+
+The other studies named here, such as Simpson (1978), Yano and Lee (1995), Tomlin (2006), Anupindi and Akella (1993), Working (1949), Hendel and Lizzeri (1999) and Holmström and Milgrom (1991), are listed in the case's studied ground.
