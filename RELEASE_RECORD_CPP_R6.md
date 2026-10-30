@@ -6,7 +6,7 @@ Case 3: Kuantillion Cloud, the second working note ("Second lives"), and a site-
 |---|---|
 | Date | 30 October 2026 |
 | Worker | `cpp-anacay` |
-| Live version | *(filled in at deploy)* |
+| Live version | `0f5907c3-e62f-480d-88e9-ec44ebcef81c` |
 | Previous version | `70fab4fd-8b15-4f81-910c-bc6e8709ff30` (R5, 30 Oct) |
 | Indexable | Yes (unchanged) |
 
@@ -38,6 +38,7 @@ The case was written from public sources and tested before release:
 - **Independent drafts.** A lead application and an independent design were written blind to each other, then compared and merged.
 - **Review panel.** Six reviewers browsed the draft from different entry points: a hyperscale planner, a finance and FinOps lead, a storage reliability engineer, a newcomer, a program manager arriving cold, and an operations-research academic. Their 94-item backlog was implemented in full, and the problem space was revised to match (revision 2).
 - **Verification.** Independent rounds checked meaning against the seed, links, consistency across pages and arithmetic, until clean.
+- **Pre-deploy pass.** A final pass (a hiring-manager read, visual and mobile checks, and a link and copy proof) led to 10 fixes, listed in [PR #24](https://github.com/anacay/cpp/pull/24).
 
 ## Process
 
@@ -45,22 +46,38 @@ The guide edits are small fixes under HOW_IT_GROWS: links, definitions and wordi
 
 ## Commits
 
-cpp (`anacay/cpp`): branch `case3-fleet-flash`, 147 commits on `81b523c`, one per change. The numbered change list, with each commit, is kept with the release materials.
+cpp (`anacay/cpp`), one commit per change:
+- Branch `case3-fleet-flash`: 147 commits on `81b523c`, ending `6ba4afc`. The numbered change list, with each commit, is kept with the release materials.
+- Branch `case3-r6-fixes`: the 10 pre-deploy fixes on `6ba4afc`, ending `f1a6537`.
 
 ## Checks (before deploy)
 
-- **Build:** `npm run build`, all checks passed (74 pages, 7,612 internal links and anchors resolved).
+- **Build:** `npm run build`, all checks passed (74 pages; 7,612 internal links and anchors resolved before the fixes, 7,639 after).
 - **Seed text:** unchanged (check 1).
 - **Scripts:** no new scripts; the case bar is CSS only (check 4).
 - **Text check:** the Case 3 pages, the note and the changed pages were scanned for the private terms and real company names; no matches.
 
 ## Deploy
 
-*(filled in at deploy)*
+Merged as [PR #23](https://github.com/anacay/cpp/pull/23) with a merge commit, `60835af`, on 30 October 2026. Its version (`ac2c2693-5f8b-492b-96c9-41fbd3b91273`) was uploaded and previewed but not deployed. The pre-deploy fixes were merged as [PR #24](https://github.com/anacay/cpp/pull/24) with a merge commit, `14669ff`, then rebuilt from main (74 pages, all checks passed) and deployed in two stages:
+
+```
+npx wrangler versions upload                                          # version 0f5907c3-e62f-480d-88e9-ec44ebcef81c
+npx wrangler versions deploy 0f5907c3-e62f-480d-88e9-ec44ebcef81c@100%  # after preview checks and approval
+npx wrangler triggers deploy                                          # cpp.anacay.org (custom domain)
+```
+
+Preview checks passed on both version preview URLs. On `ac2c2693`: /, /body-of-knowledge/#start-here, /glossary/#case-3-terms, /cases/, /cases/kuantillion-cloud/, /cases/kuantillion-cloud-practice/#p4, /cases/kuantillion-cloud-plan/#gate-3, /notes/second-lives/ and /guide/concepts/operating-mechanisms/#m5. On `0f5907c3`: the case page shows "The answer, in brief" second, with the comment box collapsed; /cases/kuantillion-cloud-plan/#gate-3, /cases/kuantillion-cloud-full/, /notes/second-lives/ and /cases/ ("five rules", "five minutes").
 
 ## Live checks
 
-*(filled in at deploy)*
+On 30 October 2026, at https://cpp.anacay.org:
+- 200 for /, /body-of-knowledge/, /glossary/, /cases/, the four Case 3 pages, /notes/second-lives/ and /guide/concepts/operating-mechanisms/.
+- No `X-Robots-Tag` header and no noindex meta on those pages; robots.txt allows all.
+- The case bar shows on the four Case 3 pages. /cases/kuantillion-cloud/ shows "The situation", then "The answer, in brief", with the comment box collapsed.
+- #start-here, #case-3-terms, #p4 ("P4. Size and source legacy spares"), #gate-3 ("G3: the drive record, designed (G3a) and live (G3b)") and #m5 (the Fulfillment ledger row) land on the right targets.
+- `/sitemap.xml` lists 73 URLs, including the four Case 3 URLs and /notes/second-lives/.
+- `/feed.xml` has 16 items, including "New case study: Kuantillion Cloud" and "New working note: Second lives".
 
 ## Rollback
 
