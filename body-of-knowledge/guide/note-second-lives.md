@@ -69,7 +69,7 @@ If capacity can come back out of the fleet, the practice can book it deliberatel
 **Condition on the rate card and in the score.** Carry condition as its own dimension where supply varies in it. Price each grade, and version the price "like a price list, with effective dates and a change log" (Section 5.2). Score supply on delivered quality by cohort, beside size and date [argued].
 
 **A three-part risk budget, signed before volume grows.**
-- A cohort cap per failure domain, set by reliability engineering, which already holds the right to set reliability buffers (Section 9.2).
+- A cohort cap per redundancy group, set by reliability engineering, which already holds the right to set reliability buffers (Section 9.2).
 - An evidence bar per grade, raised only as outcomes come in. The paper's own phrase fits: "The rollout is the measurement" (Section 5.4).
 - An incident cost bound, signed by finance before the first large redeployment.
 
