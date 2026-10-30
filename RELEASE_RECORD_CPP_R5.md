@@ -6,8 +6,8 @@ Discoverability and canon errata. Discoverability (pass 2): real dates, an RSS f
 |---|---|
 | Date | 30 October 2026 |
 | Worker | `cpp-anacay` |
-| Live version | *(filled in at deploy)* |
-| Previous version | `bb587cd0` (Emerging topics and note 1, 28 Oct) |
+| Live version | `70fab4fd-8b15-4f81-910c-bc6e8709ff30` |
+| Previous version | `bb587cd0-334c-43e2-b6cb-5ea0854a95c0` (Emerging topics and note 1, 28 Oct) |
 | Indexable | Yes (unchanged) |
 
 ## Why the errata went in without an open period
@@ -66,12 +66,27 @@ cpp (`anacay/cpp`):
 
 ## Deploy
 
-*(filled in at deploy)*
+Merged as [PR #22](https://github.com/anacay/cpp/pull/22) with a merge commit, `2ad6588`, on 30 October 2026, then rebuilt from main (69 pages, all checks passed) and deployed in two stages:
+
+```
+npx wrangler versions upload                                          # version 70fab4fd-8b15-4f81-910c-bc6e8709ff30
+npx wrangler versions deploy 70fab4fd-8b15-4f81-910c-bc6e8709ff30@100%  # after preview checks and approval
+npx wrangler triggers deploy                                          # cpp.anacay.org (custom domain)
+```
+
+Preview checks on the version preview URL passed: the feed, /about/#cite, the buildings note (no "flag", Section 6.2 linked, sources line updated), /guide/principles/ and the practice page's P3, P7 and P13 labels.
 
 ## Live checks
 
-*(filled in at deploy)*
+On 30 October 2026, at https://cpp.anacay.org:
+- `curl -I` returns 200.
+- `/feed.xml` is valid RSS 2.0, with 14 items, each with a title, link, guid and date.
+- /about/ has the "Cite it" section.
+- `/sitemap.xml` lists 68 URLs with 25 lastmod values.
+- /notes/buildings-at-ai-density/: no "flag" or "ladder", the machine-shape read-across links to Section 6.2, and the sources line is the corrected one. `article:modified_time` (2026-10-30T00:58:41Z) is later than `article:published_time` (2026-10-28T15:52:59-04:00).
+- /guide/principles/: "Commit only what the lead time forces" ends in [argued] (7 labels, up from 6), and "Name the gap" has its source line.
+- The Popcorn Pajamas practice page carries the P3, P7 and P13 labels.
 
 ## Rollback
 
-`npx wrangler versions deploy bb587cd0@100%` returns the site to R4 plus note 1 (28 Oct).
+`npx wrangler versions deploy bb587cd0-334c-43e2-b6cb-5ea0854a95c0@100%` returns the site to R4 plus note 1 (28 Oct).
