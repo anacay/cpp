@@ -13,7 +13,7 @@ seed: 4, 5.2, 5.4, 6, 6.1, 6.2, 6.3, 6.4, 6.6, 6.7, 8.2, 9.2, 10.1, 11, 13
 
 ## The seed
 
-This note grew from a problem-space case in preparation. The case is a hyperscale fleet trying to reuse its older solid-state drives during a flash shortage. Two independent applications of the practice to that case hit the same wall at the same place.
+This note grew from a problem-space case, [Case 3](case-fleet-flash.md). The case is a hyperscale fleet trying to reuse its older solid-state drives during a flash shortage. Two independent applications of the practice to that case hit the same wall at the same place.
 
 The seed paper already has the starting line. "Decommission is negative supply" (Section 6.7). "A retirement is a supply order with a minus sign. It has a date, and it slips, usually because tenants can't migrate off in time" (Section 6.7). Netting already counts what is "due back from reclaim" (Section 6).
 
@@ -109,11 +109,11 @@ The note's framing and mistakes are the practice's own.
 
 **The studied ground.** The sources below are new to this note. Each links to the cited work itself, as the buildings note does (DOIs checked 30 October 2026).
 
-- Guide, V. D. R., & Van Wassenhove, L. N. (2009). *The evolution of closed-loop supply chain research.* Operations Research 57(1). [doi:10.1287/opre.1080.0628](https://doi.org/10.1287/opre.1080.0628)
-- Fleischmann, M., and colleagues (1997). *Quantitative models for reverse logistics: a review.* European Journal of Operational Research 103(1). [doi:10.1016/S0377-2217(97)00230-0](https://doi.org/10.1016/S0377-2217(97)00230-0)
-- Yano, C. A., & Lee, H. L. (1995). *Lot sizing with random yields: a review.* Operations Research 43(2). [doi:10.1287/opre.43.2.311](https://doi.org/10.1287/opre.43.2.311)
-- Simpson, V. P. (1978). *Optimum solution structure for a repairable inventory problem.* Operations Research 26(2). [doi:10.1287/opre.26.2.270](https://doi.org/10.1287/opre.26.2.270)
-- Akerlof, G. A. (1970). *The market for ‘lemons’: quality uncertainty and the market mechanism.* Quarterly Journal of Economics 84(3). [doi:10.2307/1879431](https://doi.org/10.2307/1879431)
-- Hendel, I., & Lizzeri, A. (1999). *Adverse selection in durable goods markets.* American Economic Review 89(5). [doi:10.1257/aer.89.5.1097](https://doi.org/10.1257/aer.89.5.1097)
+- Guide, V. D. R., & Van Wassenhove, L. N. (2009). *The evolution of closed-loop supply chain research.* Operations Research 57(1): https://doi.org/10.1287/opre.1080.0628
+- Fleischmann, M., and colleagues (1997). *Quantitative models for reverse logistics: a review.* European Journal of Operational Research 103(1): https://doi.org/10.1016/S0377-2217(97)00230-0
+- Yano, C. A., & Lee, H. L. (1995). *Lot sizing with random yields: a review.* Operations Research 43(2): https://doi.org/10.1287/opre.43.2.311
+- Simpson, V. P. (1978). *Optimum solution structure for a repairable inventory problem.* Operations Research 26(2): https://doi.org/10.1287/opre.26.2.270
+- Akerlof, G. A. (1970). *The market for ‘lemons’: quality uncertainty and the market mechanism.* Quarterly Journal of Economics 84(3): https://doi.org/10.2307/1879431
+- Hendel, I., & Lizzeri, A. (1999). *Adverse selection in durable goods markets.* American Economic Review 89(5): https://doi.org/10.1257/aer.89.5.1097
 
 Their application to capacity planning is argued, not measured.
