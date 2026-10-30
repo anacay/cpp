@@ -46,7 +46,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 1. Within one week, an answer to whether a program already exists, or was tried and dropped.
 2. Within 30 days, a dollar test of whether the program pays, and its scope: spares continuity, mixed, or supply strategy. Beside it, the value anchor read from the flash contracts.
-3. Within 90 days, the rules signed in advance, spares and the reverse pipeline staffed to a signed plan, and allocation running in a standing [forum](/glossary/#term-forum).
+3. Within 90 days, the rules signed in advance, spares and the reverse pipeline staffed to a signed plan, and spares allocation running in a standing [forum](/glossary/#term-forum). Wider allocation follows once the drive record is live (G3b).
 4. From week 2, in parallel, a track on the stranded flash already installed. It needs no sanitization, custody or qualification, and it may be the larger prize.
 5. From G4, capacity delivered: TB to each sink per quarter, by scope, declared in advance and scored promised against actual.
 6. Over the following year, a pilot of reused flash in tiers that absorb device loss, and experiments that test the case's eight stated assumptions.
