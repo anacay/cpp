@@ -41,8 +41,10 @@ No public source shows Kuantillion Cloud running a program for this. The public 
 
 ## Why it is hard
 
+Three words recur. A [sink](/glossary/#term-sink) is a place a drive can go: a workload, the spares pool, an upgrade or build, or exit. The [harvest](/glossary/#term-harvest) is the parts a retiring machine releases. The technical gates are the checks a drive must clear before it is supply again, such as fit, firmware and provable erasure. [Second lives](note-second-lives.md#agreeing-on-the-words) defines these terms most clearly.
+
 - **Nobody has said what kind of value it is.** If Kuantillion Cloud's purchase commitments can be rescheduled, a reused drive avoids a purchase. If they are firm, it adds capacity to a sold-out fleet. Those are different numbers, with different beneficiaries.
-- **Nobody knows how big it is.** The drive harvest could be under 1% or near 30% of a year's flash deployment (illustrative). That decides whether this is spares housekeeping or supply strategy.
+- **Nobody knows how big it is.** The drive harvest could be under 1% or near 30% of a year's flash deployment, central 3–9% (illustrative). That sets whether this is spares housekeeping or supply strategy. Whether it pays at all is a dollar question.
 - **Supply is a byproduct.** Drives come back when a platform retires, for reasons that have nothing to do with drives. Keeping a platform alive raises its need for spares while cutting the harvest that would feed them.
 - **A drive has five dimensions, and every sink prices a different one.** Capacity, performance, remaining endurance, fit and condition history. No common unit or price exists inside the fleet.
 - **Nobody has published how reused drives behave in a second life.** First-life studies disagree on late-life hazard; firmware, model and error history matter more than age, and failures cluster. Second-life hazard is unmeasured. One bad incident could cost more than the program saves.
