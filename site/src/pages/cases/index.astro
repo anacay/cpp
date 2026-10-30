@@ -27,13 +27,13 @@ const subTitle = (t) => { const x = t.replace(/^[^:]+:\s*/, ''); return x.charAt
           <h2>{d.title}</h2>
           <p>{d.short}</p>
           <ul>
-            <li><a href={d.url}>The case page</a>: the situation in two minutes.</li>
+            <li><a href={d.url}>The case page</a>: the situation, in about five minutes.</li>
             {subsOf(d).map((s) => <li><a href={s.url}>{subTitle(s.title)}</a>: {s.short}</li>)}
           </ul>
         </>
       ))}
       <h2>Add a case</h2>
-      <p>Cases from your own experience follow the anonymization checklist; problem-space cases follow the four rules. Both are on the <a href="/guide/cases/">Cases page</a>, and every case starts as a <a href="https://github.com/anacay/cpp/discussions">discussion</a>.</p>
+      <p>Cases from your own experience follow the anonymization checklist; problem-space cases follow the five rules. Both are on the <a href="/guide/cases/">Cases page</a>, and every case starts as a <a href="https://github.com/anacay/cpp/discussions">discussion</a>.</p>
     </article>
   </div>
 </Base>
