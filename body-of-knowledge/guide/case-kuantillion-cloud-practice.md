@@ -666,7 +666,7 @@ Several lines of the paper are new to this decision. Recovered capacity "has to 
 
 **The answer.**
 
-- [Agree the landing rule early](principles.md#agree-the-rules-before-you-need-them): shares booked as savings, returned to the recoverer and held centrally (Section 9.3). Applied here, the pipeline is a recoverer, so it gets credit for part of the capital it saves.
+- [Agree the landing rule early](principles.md#agree-the-rules-before-you-need-them): shares booked as savings, returned to the recoverer and held centrally (Section 9.3). Applied here, the pipeline is a recoverer, so it gets credit for part of the capital it saves. Book a capital saving only on evidence: a purchase order cancelled, reduced or pushed out in the commitment register, or a cut against a purchase plan frozen at the first decision gate [argued]. Under firm contracts no capital is saved; there, avoided stockout cost is credited to the product's P&L.
 - Write the reuse commitment into the annual capacity agreement. Mechanism 7 does that for forecasts and efficiency; applied here, so enforcement doesn't rest on one person.
 - Let tiers challenge a grade or a price, and sometimes win. Our reading: a grade is a coefficient. [People](people.md#legitimacy-change-and-staffing) explains why a challenge channel builds legitimacy.
 - Enter reused capacity where loss is cheapest: caches and replicated tiers first. That rests on Section 5.4's phasing, not on Section 10.4.
