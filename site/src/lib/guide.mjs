@@ -148,13 +148,31 @@ export function renderGuide(p) {
   // Heading anchors and the page's table of contents.
   const toc = [];
   const seen = new Set();
+  // Each heading also gets a self-link (CSS shows it on hover or focus), and,
+  // where one applies, a short alias id that survives heading edits:
+  //   "Gate 3: …" → #gate-3; "P5. …" → #p5; "Case 1: …" → #case-1;
+  //   or an explicit "{#alias}" at the end of the heading's Markdown.
+  const autoAlias = (text) => {
+    let m = text.match(/^(?:(?:Decision |Stage )?[Gg]ate G?(\d+)\b|G(\d+)[.:]\s)/); if (m) return `gate-${m[1] ?? m[2]}`;
+    m = text.match(/^P(\d+[a-z]?)\.\s/); if (m) return `p${m[1]}`;
+    m = text.match(/^Case (\d+):/); if (m) return `case-${m[1]}`;
+    return null;
+  };
+  const taken = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((x) => x[1]));
   html = html.replace(/<h([23])>([\s\S]*?)<\/h\1>/g, (m, lvl, inner) => {
+    let alias = null;
+    inner = inner.replace(/\s*\{#([a-z0-9][a-z0-9-]*)\}\s*$/, (x, a) => { alias = a; return ''; });
     const text = inner.replace(/<[^>]+>/g, '');
     let id = slugify(text) || 'section';
-    while (seen.has(id)) id += '-2';
+    while (seen.has(id) || taken.has(id)) id += '-2';
     seen.add(id);
+    alias = alias ?? autoAlias(text);
+    if (alias && (alias === id || seen.has(alias) || taken.has(alias))) alias = null;
+    if (alias) seen.add(alias);
     if (lvl === '2') toc.push({ id, text });
-    return `<h${lvl} id="${id}">${inner}</h${lvl}>`;
+    const anchor = alias ? `<span class="h-alias" id="${alias}"></span>` : '';
+    const self = `<a class="h-link" href="#${alias ?? id}" aria-label="Link to this section: ${text.replace(/"/g, '&quot;')}">#</a>`;
+    return `<h${lvl} id="${id}">${anchor}${inner} ${self}</h${lvl}>`;
   });
   return { html, toc };
 }

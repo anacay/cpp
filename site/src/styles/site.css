@@ -578,3 +578,10 @@ html:has(.casebar) { scroll-padding-top: 6rem; }
   html:has(.casebar) { scroll-padding-top: 5.5rem; }
 }
 @media print { .casebar { position: static; } }
+
+/* ── Heading self-links (guide, cases, notes) ──────────────── */
+.h-link { margin-left: 0.35rem; font-family: var(--sans); font-size: 0.75em; color: var(--ink-muted); text-decoration: none; opacity: 0; transition: opacity 0.15s; }
+h2:hover > .h-link, h3:hover > .h-link, .h-link:focus-visible, :target > .h-link, h2:has(> .h-alias:target) > .h-link, h3:has(> .h-alias:target) > .h-link { opacity: 1; }
+.h-link:hover { color: var(--gold-soft); }
+@media (hover: none) { .h-link { opacity: 0.45; } }
+@media print { .h-link { display: none; } }
