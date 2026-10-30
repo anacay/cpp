@@ -76,7 +76,7 @@ The problem is to get the most value from that installed base across four sinks:
 
 1. **The AI boom reaches the drive pool three ways at once.** It repriced flash. It pledged future supply under hundreds of billions of dollars of commitments, so the unplanned margin is what's left to fight over. And it put local SSD capacity into the cloud's own stockout errors.
 2. **Today's placement can shape tomorrow's harvest.** Kuantillion Cloud patents software that can set each drive's wear rate, and nothing downstream of it. Where wear binds, placement policy now shapes the condition of the harvest arriving in two or three years. No team owns that link (P2a).
-3. **A third of failed drives aren't failed.** At one large cloud, 34.4% of SSD-related failure tickets weren't caused by the drive. At that rate, misdiagnosis inflates spare consumption by up to half and quietly strands healthy flash. Diagnosis is a supply source.
+3. **Triage is a supply source where it is missing.** At one large cloud, 34.4% of SSD-related failure tickets weren't caused by the drive. Cheaper steps (reboot, slot check, cable swap) resolved them before any replacement; only 31.2% of tickets ended in a drive swap. A site that pulls a drive on every ticket would use spares at up to about 1.5 times true failures, and strand healthy flash. How many of Kuantillion Cloud's pulled drives are healthy is unknown (section 4.4).
 4. **The customer toolkit is the internal problem turned inside out.** Reservations, queues, preemptible pools and shape fallbacks reshape customer demand to fit scarce supply. Matching legacy flash is the same reshaping, pointed inward.
 5. **The incentive problem may be by design.** Multitask agency theory predicts that measuring technicians on ticket speed produces scrapping. It also favors the job split the industry uses. On that reading, the gap is in what is measured, not in how the jobs are cut (A.3).
 
@@ -198,11 +198,13 @@ Kuantillion Cloud's own report asks this question, and its only executive remark
 
 *Host retirement and the drive's five outcomes. Three put the drive back into service; which one wins for a given drive is the allocation question in P6.*
 
-### 4.4 The leak upstream of the cage: drives pulled that were never bad
+### 4.4 The leak upstream of the cage: tickets that weren't the drive {#4-4-the-leak-upstream-of-the-cage-drives-pulled-that-were-never-bad}
 
-Drives also leave service one at a time through repair tickets. A published study of about ten thousand SSD-related failure tickets at one Asian cloud found 34.4% weren't caused by the drive at all (Third party). Human mistakes made up 20.5% of all tickets and faulty cables 13.9%. Separately, about 12% of all fixes were simply a reboot.
+Drives also leave service one at a time through repair tickets. A published study of about ten thousand SSD-related failure tickets at one Asian cloud found 34.4% weren't caused by the drive at all (Third party; Xu et al. 2019). Human mistakes, such as a drive in the wrong slot, made up 20.5% of all tickets and faulty cables 13.9%. Separately, about 12% of all fixes were simply a reboot.
 
-Every wrongly pulled drive inflates spare consumption. If the misdiagnosis sticks, a healthy drive also leaves the reusable pool: stranding by misdiagnosis (Inferred). Diagnosis quality is a supply-side variable that sets how much of the failed stream is really harvestable (Inferred).
+Those tickets didn't consume drives. That cloud's repair sequence runs from a remote reboot to a slot check, then a cable swap, with replacing the drive as the last resort. Only 31.2% of tickets ended in a drive swap (Third party). So the study doesn't say a third of pulled drives were healthy. It says a third of tickets weren't the drive, and triage caught them first.
+
+Where a site skips that triage and pulls a drive on every ticket, each non-drive ticket inflates spare consumption. If the misdiagnosis sticks, a healthy drive also leaves the reusable pool: stranding by misdiagnosis (Inferred). How many pulled SSDs actually test healthy isn't published anywhere (Unknown). The nearest evidence is one analogy and one signal. One disk vendor found no fault in 43% of hard disks customers returned (Third party, hard drives; Schroeder and Gibson 2007). And at one large cloud, about half of swapped SSDs never returned to production, so up to about half did, after repair (Third party; Alter et al. 2019). Diagnosis quality is a supply-side variable where triage is weak; at any one operator, its size has to be measured (Inferred).
 
 ### 4.5 Scale of the flow
 
@@ -244,7 +246,7 @@ A six-year field study of a large fleet's SSDs found 4–10% replaced over four 
 
 - **New spares for old platforms get scarce.** Since late 2025, allocation has favored high-capacity drives, making 960 GB and 1.9 TB parts hard to buy (Third party). Harvest becomes the practical source once any last-time-buy stock runs out (Inferred). Whether Kuantillion Cloud makes last-time buys is Unknown.
 - **Other big clouds already do this.** One meets 85% of obsolete-spares demand from harvest; another supplies 13% of all spares from reuse (Third party). Kuantillion Cloud says its harvested spares buffer it against outside shocks. Even small operators hire to defend the working capital spares tie up (section 10). The pool is a financed position, not a parts bin (Inferred).
-- **Not every failed drive is a demand event.** Better diagnosis (4.4) cuts drive consumption, and drives cleared instead of pulled stay in service (Inferred). One internet platform rates drives into four health levels rather than pass or fail, and deliberately leaves some flagged drives in place, counting migration and retirement as overheads (Third party). Telemetry is becoming an instrument of life extension (Inferred).
+- **Not every failed drive is a demand event.** Where triage is weak, better diagnosis (4.4) cuts drive consumption, and drives cleared instead of pulled stay in service (Inferred). One internet platform rates drives into four health levels rather than pass or fail, and deliberately leaves some flagged drives in place, counting migration and retirement as overheads (Third party). Telemetry is becoming an instrument of life extension (Inferred).
 - **Repairs are expensive.** One cloud reports repairs taking 3 days at the median and 190 at the 99th percentile, using about half of technician hours and about 9% of six-year cost. Fail-in-place, running on with a dead drive switched off, cut its repair tickets about 55% (Third party). A spares decision becomes a scheduling decision (Inferred).
 - **Supply is the decommission schedule.** Once bought stock is gone, spares for generation N come from retiring generation-N machines. A pool is sized against two moving schedules, failures and retirements (Inferred).
 
@@ -371,7 +373,7 @@ Most rows are Arithmetic on tagged inputs. Read every row as an order of magnitu
 | Installed flash base | On the order of 100 EB | 20 EB a year × 5 years (low bound, Illustrative; overstates a growing fleet) |
 | Stranded flash recoverable | About 35 EB, once | 100 EB × (54% − 19%) (peer figures) |
 | Spares demand | About 10,000–25,000 drives a year per million installed | 4–10% replaced over four years ÷ 4 |
-| Spare consumption against true failures | Up to about 1.5× | 1 ÷ (1 − 0.344): a ceiling, reached only if every non-drive ticket used a drive |
+| Spare consumption against true failures, no-triage bound | Up to about 1.5× | 1 ÷ (1 − 0.344): reached only at a site that pulls a drive on every ticket; the studied cloud triaged first, and 31.2% of its tickets ended in a swap |
 | Pipeline labor | About 250–750 technician-years a year | 3M drives × 10–30 min ÷ 60 ÷ 2,000 h (minutes Illustrative) |
 | Pipeline cost per drive | About $15–70 | 10–30 min × $60–100 per hour + $5–20 test, sanitization, shipping (Illustrative) |
 | Net value per TB | About $25–570 | 50–90% yield × $190–640 − $4–70 per TB pipeline cost (Illustrative) |
@@ -385,7 +387,7 @@ Most rows are Arithmetic on tagged inputs. Read every row as an order of magnitu
 1. **The stakes span two orders of magnitude, and the ratio decides the class.** The same record fits a spares-continuity problem and a supply-strategy problem.
 2. **The quiet stock is likely larger than the visible flow,** several times the largest annual harvest, once.
 3. **The program is unlikely to be a balance-sheet item.** Even the largest flow row is under 0.5% of the commitments. Its case rests on the margin: the unplanned repair, the late build, the zone stockout. That is the capacity anchor's territory.
-4. **Diagnosis is the cheapest supply.** At the peer's misdiagnosis rate, up to a third of spare consumption is avoidable before any harvest is touched.
+4. **Diagnosis is cheap supply only where triage is missing.** At the studied peer, the non-drive tickets were caught before any drive was pulled. A site that pulls on every ticket could avoid up to a third of its spare consumption. Where triage exists, the prize is the unmeasured share of pulled drives that test healthy.
 5. **Labor is bounded, not prohibitive,** unless it collides with repairs at the same sites.
 6. **The drive's watts are noise; the host decides.** About $2 per terabyte per year against a replacement value of hundreds.
 
@@ -625,7 +627,7 @@ Eighteen chains connect markets, the organization and the physics of flash to co
 
 **Diagnosis, health and trust**
 
-10. At one peer, about a third of SSD failure tickets weren't the drive (human error, cables, transient faults) → drives are pulled that didn't need pulling → spare consumption runs up to about 1.5× true failures, and healthy flash leaves service → diagnosis quality becomes a supply source (Third party → Inferred → Arithmetic).
+10. At one peer, about a third of SSD failure tickets weren't the drive (human error, cables), and cheaper steps resolved them before any swap → a site that skips that triage pulls drives that didn't need pulling → spare consumption runs up to about 1.5× true failures, and healthy flash leaves service → triage quality becomes a supply source (Third party → Inferred → Arithmetic).
 11. Older drives predate newer telemetry fields → whole cohorts are partly blind → grading can't see what it must price → the observability gate fails cohorts, not drives (Reported → Inferred).
 12. Health counters are forgeable outside custody → a million-drive counter-reset fraud in 2025 → outside used supply becomes untrustworthy → unbroken internal custody becomes the asset the grey market can't copy → provably healthy drives are worth more inside than outside (Press → Inferred).
 13. Same-cohort drives are redeployed together → correlated failures rise with age and concentration → one incident in a redeployed cohort → trust collapses for all legacy capacity: P8's second-class problem, made by one event (Third party → Speculated).
@@ -794,7 +796,7 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 | 22 | Flash stays tight through 2027–28 | Third party, disputed |
 | 23 | Small and older-interface SSDs are scarce new; discontinued SKUs don't return when supply eases | Third party; Speculated |
 | 24 | The spares sink is the program's value floor | Inferred, qualified (erodes with platform retirement and fail-in-place) |
-| 25 | About a third of SSD-related tickets weren't the SSD; spare use runs up to about 1.5× true failures (a ceiling) | Third party; Arithmetic; Kuantillion Cloud's rate Unknown |
+| 25 | At one peer, about a third of SSD-related tickets weren't the SSD, and triage resolved them before any swap; a site with no triage would use spares at up to about 1.5× true failures | Third party; Arithmetic; Kuantillion Cloud's healthy-pull share Unknown |
 | 26 | Drives rated as failing are deliberately kept in service under graded risk | Third party |
 | 27 | Health counters were reset and used drives sold as new, at up to million-drive scale | Press |
 | 28 | Peers meet 85% (obsolete) and 13% (all) of spares from reuse; a European cloud redeploys about 30% internally; another claims 99.7% recycled or reused | Third party; the 99.7% unverified |
@@ -812,10 +814,11 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 | 40 | The grading tax explains scrap over reuse as a rational choice | Speculated; the strongest counter-hypothesis |
 | 41 | Ticket-metric incentives predict scrapping wherever harvest value is unmeasured | Third party (result); Inferred (mapping) |
 | 42 | Which way U.2/U.3 tri-mode compatibility runs | Unknown; check per platform |
+| 43 | The share of pulled SSDs that test healthy | Unknown; analogies only: 43% no fault found in one vendor's returned hard disks; about half of one cloud's swapped SSDs never returned to production (Third party) |
 
 **Assumptions any answer must test.** Replacement cost as the value anchor. Additionality of reuse under the commitments. A materiality ratio large enough to matter. Positive net value after pipeline cost and yield. Stranded capacity recoverable at reasonable cost. The host-cost logic over the holding period. Spares demand net of fail-in-place and misdiagnosis. And internal prices able to carry these values at all.
 
-**Retired.** Two analyst reports once counted as flash evidence concern optics and are excluded. An earlier claim that no posting used the word obtainability is retired: 2026 postings use it as a formal objective.
+**Retired.** Two analyst reports once counted as flash evidence concern optics and are excluded. An earlier reading of the peer's 34.4% as healthy drives pulled is retired: it counts tickets that cheaper steps resolved before any swap. An earlier claim that no posting used the word obtainability is retired: 2026 postings use it as a formal objective.
 
 **What the record can't show.** No hyperscaler publishes an SSD-specific reuse rate, requalification yield, sanitization failure rate, second-life failure rate or spares-sizing method. No statement by Kuantillion Cloud on flash reuse during the shortage was found, nor any talk on drive harvesting from 2022 to 2026. Its commitments aren't broken down by category or duration. Its public voice on reuse is sustainability and supply chain, never storage engineering. Five blind spots qualify everything (Inferred).
 
@@ -854,7 +857,7 @@ Sixteen questions decide whether this problem statement is right, ranked by how 
 | 8 | Does the fungibility solver reach physical devices? | No: virtual capacity only today (Inferred) | The solver's input schema; a posting that uses both dialects |
 | 9 | Who, if anyone, owns allocation of physical harvest across sinks? | Nobody, as one role (Inferred) | Organization accounts; a posting with that remit |
 | 10 | How many graded tiers can the fleet's systems absorb? | Few; the grading tax binds early (Speculated) | Qualification backlog and solver category counts |
-| 11 | What is Kuantillion Cloud's misdiagnosis rate? | The same order as the peer's third (Speculated) | Share of pulled drives that test healthy |
+| 11 | What share of Kuantillion Cloud's pulled drives test healthy? | Unknown. The peer's 34.4% counts tickets triage resolved, not healthy pulls. Analogies only: 43% of one vendor's returned hard disks had no fault; about half of one cloud's swapped SSDs never returned to production (Third party) | Re-test a sample of pulled drives, by site and by triage step |
 | 12 | How many technician-minutes does one drive take through the pipeline? | 10–30 (Illustrative) | Time-and-motion data by site |
 | 13 | Does Kuantillion Cloud make last-time buys for legacy SKUs? | Yes, informally (Speculated) | Procurement records; vendor end-of-life notices |
 | 14 | How large is Kuantillion Cloud's stranded flash stock? | The same order as the peer's half (Speculated) | Utilization by resource across the fleet |
@@ -885,7 +888,7 @@ The harvest, requalify and redeploy loop is line operations across the industry,
 | One operator (2020) | Legacy out-of-warranty PCIe drives: share of drives against share of failures in a quarter | 22% against 77% | The far end of the hazard curve |
 | One cloud | Repair time, median and 99th percentile; share of technician hours; share of six-year cost | 3 days and 190 days; about half; about 9% | Repair cost and labor |
 | One cloud | Repair tickets cut by fail-in-place | About 55% | Fail-in-place as a substitute for spares |
-| One Asian cloud (2019) | SSD-related failure tickets not caused by the drive | 34.4% | Misdiagnosis |
+| One Asian cloud (2019) | SSD-related failure tickets not caused by the drive; tickets ending in a drive swap | 34.4%; 31.2% | Ticket triage |
 | One cloud | Emissions per core, reused-drive server design | About 28–29% lower | The upgrade-and-build sink |
 | A mid-size European cloud (2025) | Outbound components redeployed, resold, recycled | About 30%, 50%, 20% | Internal reuse below hyperscale |
 | A mid-size storage provider (2026) | Quarterly failure rate, driven by drives seven to eight years old | Highest in years | The keep branch's price |
