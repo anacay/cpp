@@ -29,7 +29,7 @@ See it at work: [approval and allocation](concept-approval-and-allocation.md), [
 
 ## Commit only what the lead time forces
 
-Each supply layer has its own lead time. Commit each layer at its commit point, and hold earlier claims as options. What's still uncertain at that moment picks how you buy: owned, optioned or bridged.
+Each supply layer has its own lead time. Commit each layer at its commit point, and hold earlier claims as options. What's still uncertain at that moment picks how you buy: owned, optioned or bridged. [argued]
 
 The seed paper builds its cadence on this: "Each cycle commits only what its lead time forces" (Section 9.1).
 
