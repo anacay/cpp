@@ -36,7 +36,7 @@ Kuantillion Cloud is a fictional hyperscale operator. It runs one of the largest
 
 **Why that is hard.** A drive isn't one quantity. It has five dimensions: capacity, performance, remaining endurance, fit and condition history. Each sink prices a different one. Spares price fit, workloads price capacity and latency, and resale prices provable condition. No shared unit or internal price exists for any of them.
 
-**The gates.** Ten gates stand between a retired host and a second life ([section 6](case-kuantillion-cloud-full.md#6-supply-the-gates)). They include physical fit, protocol, qualification, firmware, observability, condition, change windows, systems of record, systems complexity and sanitization. A drive that can't be provably erased is destroyed.
+**The technical gates.** Eleven technical gates stand between a retired host and a second life ([section 6](case-kuantillion-cloud-full.md#6-supply-the-gates)). They are physical fit, protocol, qualification, firmware, observability, condition, change windows, systems of record, systems complexity, jurisdiction and sanitization. A drive whose data can't be shown to be gone is destroyed. This page calls them technical gates, to keep them apart from the program's own decision gates.
 
 **The risk.** Nobody has published how reused drives behave in a second life. The evidence suggests parity early, then rising and correlated failure. At one operator, out-of-warranty legacy drives were 22% of drives but 77% of failures in a quarter. Two firmware bugs killed drives at fixed ages, about 3.7 and 4.6 years ([section 6.1](case-kuantillion-cloud-full.md#6-1-what-is-actually-known-about-second-lives)).
 
@@ -173,7 +173,7 @@ Fill the first term from internal stockout cost per zone, starting with capacity
 
 For example, if a short TB-month is worth $40 (illustrative), and 12 months follow, then 25% filled gives $120 per TB and 75% gives $360. At 75%, the capacity anchor passes the $192 floor once a TB-month is worth about $21. It passes the $636 ceiling at about $71. That first term decides the stress case where contracts are firm and stockouts persist. So measure it first.
 
-Net value after the pipeline runs from about $25 to $570 per TB in the case's illustrative range. Its sign turns more on whether a sink exists, and on which anchor applies, than on pipeline cost.
+Net value has to be measured against exit, not against zero, because a harvested drive could be sold instead. Margin over exit = yield × replacement value − pipeline cost − forgone net resale ([section 7.5](case-kuantillion-cloud-full.md#7-5-pipeline-life-and-carbon)). Gross resale runs about $80–160 per TB. At the $640 anchor, the margin is about +$90 to +$490 per TB. At the $190 anchor, it is about −$135 to +$85, so thin cohorts lose money by staying in. The central cell, at 80% yield, $20 pipeline and $120 resale, gives about +$370 and +$10 (illustrative). The old range of about $25 to $570 per TB ignored resale; it is net value before exit.
 
 **What it reveals.** Two things the case leaves open. First, book value is the wrong price for a reused drive. Section 4's useful-life lever is the reason: book value depends on a life someone chose. The [case's measures of success](case-kuantillion-cloud-full.md#14-1-criteria) rule it out too.
 
@@ -211,7 +211,7 @@ Three kinds of gap exist. Capped issue limits approval to what supply can source
 
 Claim 2 shows up three ways in this case.
 
-- A drive approved for a sink can still fail one of the case's ten gates.
+- A drive approved for a sink can still fail one of the case's eleven technical gates.
 - A drive promised to two sinks is an undesigned gap on both.
 - A decommission that slips leaves a booked harvest with nowhere to come from. "A reclaim that doesn't happen, or a decommission that slips, becomes a shortage that looks like a supply failure" (Section 6).
 
@@ -325,7 +325,7 @@ On mechanism 7, the artifact is a "Signed forecast and efficiency commitment in 
 
 The audit also reveals that most of the work is extension, not invention. Eight of the thirteen exist in part somewhere in the fleet. The program's job is to carry them past the point where a drive leaves its host.
 
-**The stranded stock, on its own line.** The flow ratio doesn't gate the stranded stock. The case says the stock is likely larger than the flow. Illustratively, recovering the gap between 54% and 19% stranding on about 100 EB installed frees about 35 EB, once.
+**The stranded stock, on its own line.** The flow ratio doesn't gate the stranded stock. The case says the stock is likely larger than the flow. Illustratively, closing the gap between one peer's 54% stranding and a pooled 19%, on 60–100 EB installed, frees about 11–35 EB once, after a haircut for what pooling can reach. That is two to six times the top harvest row.
 
 So size the stock early too, from flash use across the fleet, by resource and site. Put it on its own owned line. The artifact of mechanism 4 is "Each its own line in every report", owned by the "Service owner (not necessarily the cause)". Section 14 gives the unused lines to platform leaders. Applied here, the storage systems own the stranded line, and finance keeps score. The stock's own go or no-go is a reclaim pilot.
 
@@ -382,7 +382,7 @@ This is reasoning, not a work order. Owners appear only where the argument needs
 
 ### P2. When the host goes: keep, redeploy whole, or harvest
 
-*Every retiring host has three options, not two. Keep it running, redeploy it whole to a lighter workload class, or take it apart and harvest its drives. Redeploying whole skips most of the ten gates. A program that prices drives without pricing that option will take apart hosts it should have moved ([case, P2](case-kuantillion-cloud-full.md#p2-when-does-the-host-go)).*
+*Every retiring host has three options, not two. Keep it running, redeploy it whole to a lighter workload class, or take it apart and harvest its drives. Redeploying whole skips most of the eleven technical gates. A program that prices drives without pricing that option will take apart hosts it should have moved ([case, P2](case-kuantillion-cloud-full.md#p2-when-does-the-host-go)).*
 
 **The lenses that combine.** [Three prices](#three-prices) supplies the cost comparison. [Approval and allocation](#approval-and-allocation) supplies the [bridge](/glossary/#term-bridge) condition for keeping old hardware, whose cost is a "Power, efficiency and reliability penalty" (Section 6.4). [Declarations](#declarations) supplies the retirement as a dated, slipping supply step, the first stage of its harvest. [People and seams](#people-and-seams) says who must sign, because "Deferring a decommission extends depreciation on an asset finance had written off its plan" (Section 10.1).
 
@@ -621,7 +621,7 @@ The key line is the label for harvest not yet answered. "An approval becomes cap
 
 **Where the capacity sits.** Put test and erasure capacity at the large decommissioning sites. Hold untested drives at a regional depot. Ship to demand only against a claim [argued].
 
-**Labor.** The case bounds the work at 250–750 technician-years for three million drives a year (illustrative). That is a staffing program, not an impossibility. The risk is that it lands on the same sites and quarters as repairs.
+**Labor.** The case bounds the SSD share of the work at 25–375 technician-years a year, an upper bound (illustrative). That is a staffing program, not an impossibility. The risk is that it lands on the same sites and quarters as repairs.
 
 **Futures.** Under Path A, the case expects the pipeline to be the program's ceiling. You may argue for staffing above the median there, because a short pipeline starves spares, whose shortage cost is higher than turn-up's [argued]. Under Path B, staff to the median.
 
@@ -765,7 +765,7 @@ Each test can fail, and each maps to one of the case's criteria ([section 14.1](
 
 The last two follow the paper's own tests for mechanisms 11 and 13 (Section 9.2). Error bands come from scoring each retirement stage by cohort and site [argued].
 
-**Report numbers as a set.** The case names eight numbers, each with a denominator [argued]. They are purchases avoided, net value per drive, spares fill, and the stranded share. The rest are harvest-to-redeploy time and yield, the healthy share of pulls, endurance at harvest, and embodied carbon. Finance keeps score. The paper says so for the unallocated line: "Finance, not planning, should keep the score, or the indicators become self-assessment" (Section 9.3). Any one rewarded alone gets gamed. The plan's [measures](case-kuantillion-cloud-plan.md#7-measures) give each one's definition and cadence.
+**Report numbers as a set.** The case names eight numbers, each with a denominator [argued]. They are purchases avoided, net value over exit per harvested drive, spares fill, and the stranded share. The rest are harvest-to-redeploy time and yield, the healthy share of pulls, endurance at harvest, and embodied carbon. Finance keeps score. The paper says so for the unallocated line: "Finance, not planning, should keep the score, or the indicators become self-assessment" (Section 9.3). Any one rewarded alone gets gamed. The plan's [measures](case-kuantillion-cloud-plan.md#7-measures) give each one's definition and cadence.
 
 **How it fails, and the counter built in.** The case names fifteen failure modes ([section 14.2](case-kuantillion-cloud-full.md#14-2-failure-modes-and-indicators)), and each has a counter in this strategy. Five carry the argument. Phantom supply is countered by booking harvest only as capped issue, with pegging. Second-class capacity is countered by a stated class with a challenge channel. Misdiagnosis drain is countered at intake, by reseat and re-test. Correlated concentration is countered by the cohort cap. Fighting the last shortage is countered by the quarterly rate card and the release trigger. The plan's [risk register](case-kuantillion-cloud-plan.md#10-risk-register-and-incident-playbook) lists all fifteen, with early signs and owners.
 
