@@ -23,7 +23,7 @@ No public source shows Kuantillion Cloud running a program for this. The public 
 
 ## Why it is hard
 
-- **Nobody has said what kind of value it is.** If Kuantillion Cloud's purchase commitments can flex, a reused drive avoids a purchase. If they are firm, it adds capacity to a sold-out fleet. Those are different numbers, with different beneficiaries.
+- **Nobody has said what kind of value it is.** If Kuantillion Cloud's purchase commitments can be rescheduled, a reused drive avoids a purchase. If they are firm, it adds capacity to a sold-out fleet. Those are different numbers, with different beneficiaries.
 - **Nobody knows how big it is.** The drive harvest could be under 1% or near 30% of a year's flash deployment (illustrative). That decides whether this is spares housekeeping or supply strategy.
 - **Supply is a byproduct.** Drives come back when a platform retires, for reasons that have nothing to do with drives. Keeping a platform alive raises its need for spares while cutting the harvest that would feed them.
 - **A drive has five dimensions, and every sink prices a different one.** Capacity, performance, remaining endurance, fit and condition history. No common unit or price exists inside the fleet.
@@ -45,7 +45,7 @@ Every load-bearing claim carries an evidence tier, so you can see which parts ar
 
 ## How the practice solves it
 
-The companion page works the case through the seed paper, decision by decision. It starts by sizing the problem and deciding what kind of value it is, before designing anything. It then audits the paper's thirteen mechanisms against the case and sets out a gated sequence, with owners, cadences, measures and an experiment for every stated assumption.
+Two companion pages answer the case. [The strategy](case-kuantillion-cloud-practice.md) is the practitioner's approach. It frames the problem through the practice's concepts, breaks it into the case's decisions and argues the order to work them in, with links to the theory behind each move. [The execution plan](case-kuantillion-cloud-plan.md) turns that strategy into something a program lead can run: owners, gates, cadence, measures and experiments.
 
 Where the practice runs out, the page says so. The largest gap is supply that comes back out of the fleet in parts, of uncertain condition, as a byproduct of other decisions. That gap now has its own working note, [Second lives](note-second-lives.md).
 
