@@ -26,7 +26,8 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 1. Within one week, an answer to whether a program already exists, or was tried and dropped.
 2. Within 30 days, a dollar test of whether the program pays, and its scope: spares continuity, mixed, or supply strategy. Beside it, the value anchor read from the flash contracts.
 3. Within 90 days, the rules signed in advance, spares and the reverse pipeline staffed to a signed plan, and allocation running in a standing [forum](/glossary/#term-forum).
-4. Over the following year, a pilot of reused flash in tiers that absorb device loss, and experiments that test the case's eight stated assumptions.
+4. From week 2, in parallel, a track on the stranded flash already installed. It needs no sanitization, custody or qualification, and it may be the larger prize.
+5. Over the following year, a pilot of reused flash in tiers that absorb device loss, and experiments that test the case's eight stated assumptions.
 
 **What it rests on.** Five ideas from the seed paper carry it.
 
@@ -153,13 +154,14 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 10 | Pull the harvest log, split by SSD and disk, and by cohort | Reverse logistics | Harvest TB by quarter and cohort |
 | 10 | Pull flash deployed, in TB, by quarter | Fleet provisioning, with finance | The materiality denominator |
 | 10 | Pull the decommission schedule with stage dates | Lifecycle transitions | Retirements, staged |
+| 10 | Start the stranded-flash track: measure flash use by resource and site | Storage systems | The stranded stock, sized as a range |
 | 14 | Compute the materiality ratio, as a scope descriptor (experiment 3) | Planning | A proposed scope, from the table under G1 |
 | 20 | Read every flash contract's cancel, push-out and volume terms into the supply register (experiment 2) | Supply chain, with finance and legal | Mechanism 11's contract lines |
 | 20 | Read the resale and recycling contracts beside them: prices, fees, minimum volumes | Supply chain, with reverse logistics | Net resale by cohort, as the contracts pay it |
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
-| 20 | Measure flash use by resource and site | Storage systems | The stranded stock, sized |
 | 25 | Compute both value anchors per zone, measuring the drive's attribution share (experiment 1) | Planning, with finance | The anchor, declared for G1 |
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
+| 30 | Start the reclaim pilot on one tier (experiment 5) | Storage systems | Pooling live on one tier |
 | 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
 | 30 | G1 decision: the dollar test, then the scope | Planning and finance | Go or stop, with a decision note |
 | 30 | Put the pipeline rate on the commit-point map, and surge crews on [option](/glossary/#term-option) | Reverse logistics, with planning | The staffing commit point, dated |
@@ -185,6 +187,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 75 | Staff the pipeline to the signed rate, calling surge options as retirements land | Reverse logistics | A staffed rate and booked slots |
 | 80 | Put every planned decommission on the supply register as a dated step, both ways | Fleet provisioning | Hosts out, drives in |
 | 85 | Set the risk budget's three parts | Reliability engineering; finance; tier owners | Cap, bar and bound signed |
+| 90 | Read out the reclaim pilot: go or stop for the stranded track | Storage systems; finance keeps score | Stranded share moved, or a decision note |
 | 90 | The forum ranks its first harvest; drive supply answers each claim | The forum; fleet provisioning | First ledger lines, each pegged; by lot until G3b |
 
 **Why spares go first.** Spares are the harvest's most predictable claim and its value floor. The paper's order of change is "prove fulfillment first" (Section 10.4); this plan applies it to reused drives.
@@ -244,7 +247,9 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 
 - **Tie-break.** If the ratio's range spans two rows, run the smaller scope, and re-test at the first quarterly supply review [argued].
 
-- **Stranded stock, beside it.** The ratio doesn't gate the stranded stock, which the case says is likely larger than the flow. Illustratively, recovering the gap between 54% and 19% stranding on about 100 EB installed frees about 35 EB, once.
+- **Stranded stock, beside it.** Neither the dollar test nor the ratio gates the stranded stock, which runs as its own track from week 2. The case puts installed flash at 60–100 EB.
+- Recovering the gap between one peer's 54% and 19% stranding, after a haircut for reach, frees about 11–35 EB, once (illustrative). That is two to six times the top harvest row.
+- The reclaim pilot reads out by day 90, and that is the track's own go or stop.
 - **Go or stop.** Go at the class's scope. "Stop at the step where the next one costs more than it saves" (Section 12). The paper writes that for mid-sized companies; this plan applies it to the program's own steps.
 
 ### G2: counter-arguments
@@ -487,7 +492,7 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 | 2 | Reuse displaces purchases at all | Supply chain, with finance and legal | 20 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
 | 3 | The program pays at some scope | Planning, with finance | 14–30 | Net value over exit × usable TB a year, against fixed program cost; harvest TB ÷ new flash TB, as a descriptor | Net value falls short of fixed cost in every price cell | G1 |
 | 4 | Reuse beats exit after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort, beside that cohort's resale quotes | Net value over exit below zero for the cohort's drive class | Pipeline scope by drive class |
-| 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 180 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
+| 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 30–90 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
 | 6 | The host-cost logic holds | Lifecycle transitions, with finance | 55 | The keep, redeploy or harvest sheet for one retiring cohort | Drive value, not host cost, decides the branch | How retirement dates are set |
 | 7 | Spares demand is what failure rates say | Machine-health engineering, with spares planning | 25–90 | Re-test every pulled drive at two sites; log fail-in-place; publish the healthy share | Under 5% of pulled drives test healthy (illustrative threshold) | Whether the pool is sized on pulls or true failures |
 | 8 | Internal prices can carry these values | Planning, with finance | 91–180 | One full cycle of showback | Decisions reopened as often as under negotiation | Whether to bill |
