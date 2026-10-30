@@ -43,7 +43,7 @@ The planner sits in the middle, usually owning no capacity and no budget. What y
 There's no single entry route. People commonly arrive from: [argued]
 
 - **Hardware and accelerators.** You know the machines well, often the newest ones. The new parts are lead times, contracts, forecasts and people.
-- **Site reliability or infrastructure engineering.** You know load, headroom and failure. The new parts are money, supply and the annual cycle.
+- **Site reliability or infrastructure engineering.** You know load, headroom and failure. The new parts are money, supply and the annual cycle. Start with [approval and allocation](concept-approval-and-allocation.md): it's the bin-packing problem with money attached.
 - **Finance.** You know budgets, depreciation and the envelope. The new parts are shapes, places and lead times.
 - **Supply chain.** You know orders, vendors and lead times. The new parts are declarations and coefficients.
 - **Program management.** You know how to run a cadence and a forum. The new parts are the numbers underneath.
