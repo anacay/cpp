@@ -522,7 +522,7 @@ The case names public signposts between two futures. Path A stays tight through 
 - For example, an erasure-coded group that survives three lost drives holds at most two of any cohort (illustrative).
 - A cap on a cohort's share of a rack or other failure domain is secondary.
 - **Why groups, not shares.** Failures cluster. In one study, a drive in a failed drive's RAID group was over 180 times likelier to be replaced within a week (Maneas et al. 2020).
-- In another, 37% of failures came in bursts, and rack-aware placement tripled time to data loss (Ford et al. 2010).
+- In another, 37% of node failures came in bursts, and rack-aware placement typically tripled a stripe's mean time to failure (Ford et al. 2010).
 
 **The risk budget**, set at G4 [argued]:
 1. A cohort cap per redundancy group, set by reliability engineering. Its test is the chance of losing more cohort drives than the group tolerates within one repair window.
