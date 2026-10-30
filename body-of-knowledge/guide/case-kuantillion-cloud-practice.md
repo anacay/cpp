@@ -165,13 +165,21 @@ The contracts settle the fork, and you already hold the instrument. Mechanism 11
 
 Read the push-out terms, not only the cancel terms. "the right to push out is often worth more than the right to walk away" (Section 6.2). Where a firm contract can be pushed out, reuse avoids a purchase *in time*. Our reading: the avoided-purchase anchor then holds for the length of the push.
 
-**The capacity anchor, as a formula.** Nothing public gives the capacity anchor an input [unmeasured]. So carry it as a formula [argued], with each term a parameter you fill from internal data:
+**The capacity anchor, as a formula.** Nothing public gives the capacity anchor an input [unmeasured]. So carry it as a formula [argued], with each term a parameter you fill from internal data. Our earlier version priced revenue and gave the drive the whole stockout; this one doesn't.
 
-*Capacity value per TB = value of a short TB-month × months filled before new supply × share of those months with a real stockout.*
+*Capacity value per usable TB = Σ over months t of P(stockout in t) × contribution margin of a short TB-month × the drive's attribution share × survival to t × P(the TB sits in the binding zone) ÷ (1 + r)ᵗ, plus a terminal value once new supply lands.*
 
-Fill the first term from internal stockout cost per zone, starting with capacity errors that name local SSD. Fill the second from the lead time on new flash. Fill the third from stockout counts by zone.
+Each term guards against a specific overstatement.
 
-For example, if a short TB-month is worth $40 (illustrative), and 12 months follow, then 25% filled gives $120 per TB and 75% gives $360. At 75%, the capacity anchor passes the $192 floor once a TB-month is worth about $21. It passes the $636 ceiling at about $71. That first term decides the stress case where contracts are firm and stockouts persist. So measure it first.
+- **Contribution margin, not revenue.** A lost sale is worth its margin. Fill it from internal stockout cost per zone, starting with capacity errors that name local SSD.
+- **The attribution share.** A local-SSD stockout is usually a stockout of a whole host or VM shape. The drive is one input among CPU, memory, power and slot. Its share is high only where SSD is the binding dimension, which is the [shadow price](/glossary/#term-shadow-price) idea.
+- **Survival and the binding zone.** A reused drive can fail, and a terabyte outside the short zone fills nothing.
+- **Discounting and the terminal value.** After new supply arrives, the drive is worth the purchase it avoids if contracts can be rescheduled, or its net resale if they can't. Multiply by yield to turn a usable TB into a harvested one.
+- **Whose value it is.** Value that lands as margin belongs to the product's P&L, not to procurement. The scorecard has to say so.
+
+For example, take a $40 contribution margin per short TB-month, 12 months, a stockout in 75% of them, 10% cost of capital, light attrition and a $100 terminal value (all illustrative). At a 10% attribution share, the capacity anchor is about $121 per usable TB. At 30% it is about $188. Only where SSD alone binds, at 100%, does it reach about $423.
+
+So the capacity anchor passes the $192 floor only when the drive carries more than about 31% of the short shape's margin. At these inputs it never reaches the $636 ceiling. The attribution share decides the stress case where contracts are firm and stockouts persist. Measure it first, zone by zone [unmeasured].
 
 Net value has to be measured against exit, not against zero, because a harvested drive could be sold instead. Margin over exit = yield × replacement value − pipeline cost − forgone net resale ([section 7.5](case-kuantillion-cloud-full.md#7-5-pipeline-life-and-carbon)). Gross resale runs about $80–160 per TB. At the $640 anchor, the margin is about +$90 to +$490 per TB. At the $190 anchor, it is about −$135 to +$85, so thin cohorts lose money by staying in. The central cell, at 80% yield, $20 pipeline and $120 resale, gives about +$370 and +$10 (illustrative). The old range of about $25 to $570 per TB ignored resale; it is net value before exit.
 
