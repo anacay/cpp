@@ -135,7 +135,7 @@ Each term guards against a specific overstatement.
 - **Discounting and the terminal value.** After new supply arrives, the drive is worth the purchase it avoids if contracts can be rescheduled, or its net resale if they can't. Multiply by yield to turn a usable TB into a harvested one.
 - **Whose value it is.** Value that lands as margin belongs to the product's P&L, not to procurement. The scorecard has to say so.
 
-For example, take a $40 contribution margin per short TB-month, 12 months, a stockout in 75% of them, 10% cost of capital, light attrition and a $100 terminal value (all illustrative). At a 10% attribution share, the capacity anchor is about $121 per usable TB. At 30% it is about $188. Only where SSD alone binds, at 100%, does it reach about $423.
+For example, take a $40 contribution margin per short TB-month, over 12 months, with a stockout in 75% of them. Add a 10% cost of capital, light attrition and a $100 terminal value (all illustrative). At a 10% attribution share, the capacity anchor is about $121 per usable TB. At 30% it is about $188. Only where SSD alone binds, at 100%, does it reach about $423.
 
 So the capacity anchor passes the $192 floor only when the drive carries more than about 31% of the short shape's margin. At these inputs it never reaches the $636 ceiling. The attribution share decides the stress case where contracts are firm and stockouts persist. Measure it first, zone by zone [unmeasured].
 
@@ -253,7 +253,7 @@ Three lines of the paper are new to this decision. An approved unit must still b
 | 2 | One event-history flag, or old firmware with no known fault | Loss-absorbing tiers, and like-for-like spares only |
 | 3 | Repeat events, a failed capacitor test, or no safe firmware | Exit or destroy |
 
-Grade on event history, not wear. In the field studies, error history predicts: after one uncorrectable error, the chance of another the next month was about 30%, against 2% in a random month (Schroeder et al., 2016). Firmware version moved replacement rates up to tenfold (Maneas et al., 2020). Wear rarely binds, since most drives use under 1% of their rated endurance a year. Keep wear as a recorded field, and use it as a threshold only for write-heavy or QLC cohorts. Age matters per firmware cohort, measured in power-on hours. The thresholds themselves are [unmeasured].
+Grade on event history, not wear. In the field studies, error history predicts. After one uncorrectable error, the chance of another the next month was about 30%, against 2% in a random month (Schroeder et al., 2016). Firmware version moved replacement rates up to tenfold (Maneas et al., 2020). Wear rarely binds, since most drives use under 1% of their rated endurance a year. Keep wear as a recorded field, and use it as a threshold only for write-heavy or QLC cohorts. Age matters per firmware cohort, measured in power-on hours. The thresholds themselves are [unmeasured].
 
 Burn-in comes before any grade 1 placement, with its yield logged. Infant mortality is common in first lives, and a second life may restart that clock; that is a hypothesis, not a finding [unmeasured].
 
@@ -468,7 +468,7 @@ Several lines of the paper are new to this decision. Recovered capacity "has to 
 
 **The answer.**
 
-- [Agree the landing rule early](principles.md#agree-the-rules-before-you-need-them): shares booked as savings, returned to the recoverer and held centrally (Section 9.3). Applied here, the pipeline is a recoverer, so it gets credit for part of the capital it saves. Book a capital saving only on evidence: a purchase order cancelled, reduced or pushed out in the commitment register, or a cut against a purchase plan frozen at the first decision gate [argued]. Under firm contracts no capital is saved; there, avoided stockout cost is credited to the product's P&L.
+- [Agree the landing rule early](principles.md#agree-the-rules-before-you-need-them): shares booked as savings, returned to the recoverer and held centrally (Section 9.3). Applied here, the pipeline is a recoverer, so it gets credit for part of the capital it saves. Book a capital saving only on evidence [argued]. That means a purchase order cancelled, reduced or pushed out in the commitment register. Or it means a cut against a purchase plan frozen at the first decision gate. Under firm contracts no capital is saved; there, avoided stockout cost is credited to the product's P&L.
 - Write the reuse commitment into the annual capacity agreement. [Commitments that become institutions (mechanism 7)](concept-operating-mechanisms.md#m7) does that for forecasts and efficiency; applied here, so enforcement doesn't rest on one person.
 - Let tiers challenge a grade or a price, and sometimes win. Our reading: a grade is a coefficient. [People](people.md#legitimacy-change-and-staffing) explains why a challenge channel builds legitimacy.
 - Enter reused capacity where loss is cheapest: caches and replicated tiers first. That rests on Section 5.4's phasing, not on Section 10.4.
@@ -671,7 +671,7 @@ Without the register, approvals are "treated as firm before supply answers" (Sec
 
 **The idea.** Every capacity plan is a [handshake](/glossary/#term-handshake) among capital, demand and supply. The planner sits in the middle with no budget, trading in information, timing, trust and credible commitments. Conflict runs along three [seams](/glossary/#term-seam): product and platform (seam 1), planning and finance (seam 2), planning and supply (seam 3). [People: brokering the handshake](people.md) covers the seams, the right to refuse, and legitimacy.
 
-**What it changes here.** The case's organizational findings become the design. Our reading of where they sit: hosts and harvest on seam 3; keeping hosts and the capital-operating split on seam 2; grades and wear on seam 1, where the products are the tiers that take reused flash (Section 10.1). Seam 3 needs "a definition of done for each handoff" (Section 10.1); applied here, the handoffs are a drive's off-host states.
+**What it changes here.** The case's organizational findings become the design. Our reading places hosts and harvest on seam 3, and keeping hosts and the capital-operating split on seam 2. Grades and wear sit on seam 1, where the products are the tiers that take reused flash (Section 10.1). Seam 3 needs "a definition of done for each handoff" (Section 10.1); applied here, the handoffs are a drive's off-host states.
 
 Three decisions have no public owner: the drive record, the wear price and allocation. The paper's remedy is to "lay the charters over the chain that delivers the product, end to end, and name an owner for every gap" (Section 10.2). And adoption is a legitimacy problem, not a pricing one: "Past a point, legitimacy matters more than precision in whether anyone acts on the number" (Section 10.4).
 
@@ -697,7 +697,7 @@ Each concept below does work in this case. The table tells you where to read the
 
 ## Where the theory runs out
 
-The practice was built for capacity that is ordered. Kuantillion Cloud's supply comes back out of the fleet, so some of the body of knowledge stops short. Most of those gaps were filled long ago by neighboring fields. The case's studied ground ([section A.3](case-kuantillion-cloud-full.md#a-3-the-studied-ground)) lists eight shelves of older literature: closed loops, random yield and dual sourcing, capacity expansion, storage theory, lemons, maintenance and replacement, repairables queueing, and multitask incentives. Every mapping below is [argued]; none of those authors wrote about SSDs.
+The practice was built for capacity that is ordered. Kuantillion Cloud's supply comes back out of the fleet, so some of the body of knowledge stops short. Most of those gaps were filled long ago by neighboring fields. The case's studied ground ([section A.3](case-kuantillion-cloud-full.md#a-3-the-studied-ground)) lists eight shelves of older literature. They are closed loops, random yield and dual sourcing, capacity expansion, storage theory, lemons, maintenance and replacement, repairables queueing, and multitask incentives. Every mapping below is [argued]; none of those authors wrote about SSDs.
 
 ### What the practice lacks, but the literature has solved: adopt it
 
@@ -815,4 +815,4 @@ The case: [Case 3](case-kuantillion-cloud-full.md), and its [execution plan](cas
 - Wei, M., Grupp, L. M., Spada, F. E., & Swanson, S. (2011). Reliably erasing data from flash-based solid state drives. FAST '11: https://static.usenix.org/event/fast11/tech/full_papers/Wei.pdf
 - Xu, E., et al. (2019). Lessons and actions: what we learned from 10K SSD-related storage system failures. USENIX ATC '19: https://www.usenix.org/conference/atc19/presentation/xu
 
-The other studies named here, such as Simpson (1978), Yano and Lee (1995), Tomlin (2006), Anupindi and Akella (1993), Working (1949), Hendel and Lizzeri (1999) and Holmström and Milgrom (1991), are listed in the case's studied ground.
+The case's studied ground lists the other studies named here. They include Simpson (1978), Yano and Lee (1995), Tomlin (2006), Anupindi and Akella (1993), Working (1949), Hendel and Lizzeri (1999) and Holmström and Milgrom (1991).
