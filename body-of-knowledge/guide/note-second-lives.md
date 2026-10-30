@@ -112,7 +112,7 @@ The note's framing and mistakes are the practice's own.
 - [Section 10](https://cpp.anacay.org/paper/10-people/) and [Section 11](https://cpp.anacay.org/paper/11-what-changes-in-the-ai-era/): the planning-and-finance seam, and failure ownership.
 
 **Related records:**
-- The Popcorn Pajamas practice note's gap 1, barter supply, shares this note's starting point: the paper assumes supply is bought (practice note, P6), and both cases bring in supply that isn't.
+- The Popcorn Pajamas practice note's gap 1, barter supply, shares this note's starting point. The paper assumes supply is bought (practice note, P6), and both cases bring in supply that isn't.
 - Its gap 7 covers opposite-sign coupling across layers; this note covers it across demand and supply.
 - Held stock that gains or loses value is carried in a separate Proposals discussion.
 
