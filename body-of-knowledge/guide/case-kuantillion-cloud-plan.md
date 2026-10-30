@@ -392,7 +392,7 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 - The central share is then about 35–49% of scheduled drives. The firm slice, from observable cohorts at the low on-time share, is about 27%.
 - For a batch of 40,000 drives, that is about 14,000–19,600 central, and about 10,800 firm.
 
-**Ranking unit** [argued]. The forum ranks each claim at the cost of that sink's next-best source on that date:
+**Ranking: priority classes, priced within class** [argued]. The shortage rule below sets the classes. Within a class, the forum ranks each claim at the cost of that sink's next-best source on that date:
 
 | Sink | Next-best source, and its cost |
 |---|---|
@@ -401,7 +401,7 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 | Builds and upgrades | The cost of the new machine the drives displace |
 | Exit | Net resale, after the discount for unseen history and the pipeline's cost |
 
-Under scarcity this approximates the shadow price, "What one more unit of the binding resource is worth; zero for slack" (Section 4). Score the rule after two cycles.
+The spares row's cost is qualitative, so spares rank by class, not by price. Score the rule after two cycles.
 
 **Three-grade starter rule** [argued]. Revisit after the pilot.
 
@@ -696,7 +696,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 **Forum charter** ([mechanism 10](concept-operating-mechanisms.md); [forum](/glossary/#term-forum)) [argued]
 - Members: the sponsor, as chair; planning, which runs it; finance; drive supply; one seat per sink; a tax seat for claims that cross legal entities
 - Remit: the ranking rule and the cut line across the four sinks; exceptions from the pegging system; the decision log with overrides and brokered trades
-- Rules it holds: the shortage rule; the ranking unit; the landing rule, which it ratifies
+- Rules it holds: the shortage rule; the ranking rule; the landing rule, which it ratifies
 - Cadence: monthly, plus the quarterly supply review
 - Overrides: logged with what moved down
 
