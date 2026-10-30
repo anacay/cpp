@@ -291,7 +291,7 @@ A legacy drive is only supply if it can reach a sink. Ten gates sit in the way. 
 
 **Health is predictable, but not from one reading.** Large-fleet research, including a six-year study of about 30,000 drives, finds high infant mortality and good recall for machine-learned predictors. Another finds static health values weak alone and much better with wear history (Third party). One Asian cloud's slow-drive detector watched about 248,000 drives for ten months, with near-perfect precision, and found 304 fail-slow cases. Its released dataset holds 315 verified fail-slow drives beside 41,000 normal ones. Among verified slow drives, about two-thirds were slowed by software scheduling, not hardware. Isolating confirmed slow drives cut node tail latency by close to half (Third party; Lu et al. 2023). History matters as much as the current reading, and the frontier is graded risk, not binary scrapping (Inferred).
 
-**Location, labor and waiting.** Drives sit at one site and demand at others, and moving them takes technician time repairs also need (Inferred). Unpowered flash loses retention over months, faster when worn, which spoils diagnostics (Third party). Stored drives need re-powering and re-testing on a cadence (Inferred).
+**Location, labor and waiting.** Drives sit at one site and demand at others, and moving them takes technician time repairs also need (Inferred). The retention standard requires an enterprise drive to hold data unpowered for at least three months at the end of its rated endurance (Third party). A lightly worn drive should hold far longer (Inferred). For an erased drive, data loss is moot. The issue is a stale test: health readings taken before storage age on the shelf. Stored drives need re-powering and re-testing on a cadence (Inferred).
 
 ### 6.1 What is actually known about second lives
 
@@ -751,7 +751,7 @@ A good answer treats the four sinks as one system on one record, prices a drive 
 | --- | --- | --- |
 | Placement-only program | Good job matching; spares for old platforms run out | Rising repair times on older platforms; new-drive purchases for obsolete models |
 | Keep everything | Old platforms kept alive for their flash, at high power and repair cost | Cost per useful terabyte rising on old cohorts; technician hours shifting to old platforms |
-| Holding past the option's decay | Some holding is rational under uncertainty; the failure is holding after the option has decayed | Inventory aging past its re-test cadence; drives failing retention checks; used prices falling while cages stay full |
+| Holding past the option's decay | Some holding is rational under uncertainty; the failure is holding after the option has decayed | Inventory aging past its re-test cadence; test results gone stale; used prices falling while cages stay full |
 | Phantom supply | Plans book harvest that never arrives, or promise the same drives to two sinks | Commit-to-deliver gaps on reused capacity; the same inventory in two plans |
 | Second-class capacity | Teams refuse legacy capacity and hoard new | Low uptake of offered legacy capacity; quota requests specifying new hardware |
 | Misdiagnosis drain | Healthy drives pulled on bad tickets, burning spares and shrinking the pool | Share of pulled drives that later test healthy; reboot or cable fixes recurring as drive pulls |
