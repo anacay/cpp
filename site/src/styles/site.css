@@ -544,3 +544,8 @@ tr.row-target:target td:first-child, tr.row-target:has(.row-link:target) td:firs
 .gloss dt { scroll-margin-top: 1.5rem; }
 .gloss dt:target { color: var(--gold-soft); }
 .letters__part a { font-family: var(--sans); font-size: 0.875rem; padding-inline: 0.7rem; }
+
+/* ── Start here: the learning path ─────────────────────────── */
+.chapters--path .path-t { display: inline-block; margin-left: 0.35rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.start-here .display { margin-bottom: 1rem; }
+.start-here > .reading { margin: 0 0 1.5rem; }
