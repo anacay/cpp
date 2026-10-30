@@ -123,7 +123,7 @@ The contracts settle the fork, and you already hold the instrument. [The commitm
 
 Read the push-out terms, not only the cancel terms. "the right to push out is often worth more than the right to walk away" (Section 6.2). Where a firm contract can be pushed out, reuse avoids a purchase *in time*. Our reading: the avoided-purchase anchor then holds for the length of the push.
 
-**The capacity anchor, as a formula.** Nothing public gives the capacity anchor an input [unmeasured]. So carry it as a formula [argued], with each term a parameter you fill from internal data. Our earlier version priced revenue and gave the drive the whole stockout; this one doesn't.
+**The capacity anchor, as a formula.** Nothing public gives the capacity anchor an input [unmeasured]. So carry it as a formula [argued], with each term a parameter you fill from internal data.
 
 *Capacity value per usable TB = Σ over months t of P(stockout in t) × contribution margin of a short TB-month × the drive's attribution share × survival to t × P(the TB sits in the binding zone) ÷ (1 + r)ᵗ, plus a terminal value once new supply lands.*
 
@@ -139,7 +139,7 @@ For example, take a $40 contribution margin per short TB-month, over 12 months, 
 
 So the capacity anchor passes the $190 floor only when the drive carries more than about 30% of the short shape's margin. At these inputs it never reaches the $640 ceiling. The attribution share decides the stress case where contracts are firm and stockouts persist. Measure it first, zone by zone [unmeasured].
 
-Net value has to be measured against exit, not against zero, because a harvested drive could be sold instead. Margin over exit = yield × replacement value − pipeline cost − forgone net resale ([section 7.5](case-kuantillion-cloud-full.md#7-5-pipeline-life-and-carbon)). Gross resale runs about $80–160 per TB. At the $640 anchor, the margin is about +$90 to +$490 per TB. At the $190 anchor, it is about −$135 to +$85, so thin cohorts lose money by staying in. The central cell, at 80% yield, $20 pipeline and $120 resale, gives about +$370 and +$10 (illustrative). The old range of about $25 to $570 per TB ignored resale; it is net value before exit.
+Net value has to be measured against exit, not against zero, because a harvested drive could be sold instead. Margin over exit = yield × replacement value − pipeline cost − forgone net resale ([section 7.5](case-kuantillion-cloud-full.md#7-5-pipeline-life-and-carbon)). Gross resale runs about $80–160 per TB. At the $640 anchor, the margin is about +$90 to +$490 per TB. At the $190 anchor, it is about −$135 to +$85, so thin cohorts lose money by staying in. The central cell, at 80% yield, $20 pipeline and $120 resale, gives about +$370 and +$10 (illustrative). Net value before exit, about $25 to $570 per TB, leaves resale out, so it overstates reuse.
 
 Two things follow that the case leaves open. First, book value is the wrong price for a reused drive. Section 4's useful-life lever is the reason: book value depends on a life someone chose. The [case's measures of success](case-kuantillion-cloud-full.md#14-1-criteria) rule it out too.
 
@@ -401,7 +401,7 @@ Show it back for a full cycle before anyone is billed. The paper's order is "Mov
 - release on a stop-loss, a set fall in resale value from the hold date, even before the next review; and
 - release when a drive's shelf time passes two re-test cycles with no claim.
 
-Waiting for two quarterly prints, as an earlier version proposed, lags a falling market by about six months. That lag is the cost Path B would charge.
+Waiting for two quarterly prints would lag a falling market by about six months. That lag is the cost Path B would charge.
 
 Release in steps, under the cap below.
 
@@ -522,7 +522,7 @@ Nothing gets built until you know whether the program pays. Our reading, applied
 
 For example, take the case's central harvest row of 1.8 EB a year at 80% yield, about 1.44 million usable TB. At the $190 anchor's central margin of about $10 per TB, that is about $14 million a year. At the $640 anchor's central $370, it is about $530 million. Against a fixed program cost of $20–60 million a year (all illustrative), the low anchor fails and the high anchor passes easily. The anchor fork decides the program's fate before its size does.
 
-*The ratio, as a descriptor.* The ratio of SSD harvest to a year's new flash still sets scope, but it no longer decides go or no-go. The case now puts it at about 0.5–30%, central 3–9%, from harvest rows against 20–60 EB of new flash a year ([section 7.4](case-kuantillion-cloud-full.md#7-4-the-flow-the-denominator-and-the-stock)). Its numerator is a count the report calls hard drives, so the ratio is near zero if they were all disks.
+*The ratio, as a descriptor.* The ratio of SSD harvest to a year's new flash sets scope; it doesn't decide go or no-go. The case puts it at about 0.5–30%, central 3–9%, from harvest rows against 20–60 EB of new flash a year ([section 7.4](case-kuantillion-cloud-full.md#7-4-the-flow-the-denominator-and-the-stock)). Its numerator is a count the report calls hard drives, so the ratio is near zero if they were all disks.
 
 A vintage check bounds it from the other side. Drives retiring now were bought about six years ago. At 20 EB a year of deployment growing 15–30% a year, about 4–9 EB a year of flash is retiring. That is the same order as the top harvest row. Inside the company, measure retired flash TB by vintage, not drive counts. Use one price basis per scenario.
 
