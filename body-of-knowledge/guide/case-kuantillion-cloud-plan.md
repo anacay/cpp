@@ -162,6 +162,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
 | 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
 | 30 | G1 decision: the dollar test, then the scope | Planning and finance | Go or stop, with a decision note |
+| 30 | Start the drive-record build: name its systems-of-record owner, and date G3b | Fleet provisioning | A dated build plan |
 
 ### Days 31–60: counter-arguments and the record
 
@@ -172,7 +173,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 45 | Agree the shortage rule in the forum; sign the landing rule | The forum, for the shortage rule; for the landing rule, planning proposes, finance signs, the forum ratifies | Both rules in force |
 | 50 | Name an owner for each drive-record field, off-host fields first | Planning | The record's field list, owned |
 | 55 | Fill the keep, redeploy or harvest sheet for one retiring cohort (experiment 6) | Lifecycle transitions, with finance | One cohort decided |
-| 60 | G2 and G3 decisions | Planning | Exit criteria met, or named gaps |
+| 60 | G2 decision, and G3a: the record designed and owned | Planning | Exit criteria met, or named gaps |
 
 ### Days 61–90: spares and the pipeline first
 
@@ -183,7 +184,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 75 | Staff the pipeline to the median of expected retirements, with surge crews on contract | Reverse logistics | A staffed rate and booked slots |
 | 80 | Put every planned decommission on the supply register as a dated step, both ways | Fleet provisioning | Hosts out, drives in |
 | 85 | Set the risk budget's three parts | Reliability engineering; finance; tier owners | Cap, bar and bound signed |
-| 90 | The forum ranks its first harvest; supply answers each claim | The forum; fleet provisioning | First ledger lines, each pegged |
+| 90 | The forum ranks its first harvest; drive supply answers each claim | The forum; fleet provisioning | First ledger lines, each pegged; by lot until G3b |
 
 **Why spares go first.** Spares are the harvest's most predictable claim and its value floor. The paper's order of change is "prove fulfillment first" (Section 10.4); this plan applies it to reused drives.
 
@@ -262,27 +263,28 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 - **Owner.** Planning, with the solver team and lifecycle transitions.
 - **Go or stop.** If the systems can carry no more than one grade, run spares and exit only. If redeploying whole usually wins, re-center there.
 
-### G3: the drive record
+### G3: the drive record, designed (G3a) and live (G3b)
 
-- **When.** Day 60, decided with G2.
-- **Purpose.** One record every decision can cite.
-- **Entry evidence.** G2 exit.
+- **When.** G3a at day 60. G3b when the record is live for the off-host states, on the date fleet provisioning estimates at G1.
+- **Purpose.** One record every decision can cite. It is a systems build, not a meeting.
+- **Entry evidence.** G1 says go. The build starts then; it doesn't wait for G2.
 - **Work.**
   - Name an owner for each field, off-host fields first.
   - Define each handoff.
+  - Build the off-host states into the systems of record.
   - Reconcile the record with the erasure log.
 - **Exit criteria.**
-  - Every field owned.
-  - Each off-host state defined, with who accepts it.
+  - G3a: every field owned, and each off-host state defined, with who accepts it.
+  - G3b: the record live for every off-host state, across crews, benches, cages and partners, and reconciled with the erasure log.
 - **Artifacts.** The drive record (the templates below give its fields). The fulfillment ledger, run backwards ([mechanism 5](concept-operating-mechanisms.md)).
-- **Owner.** Planning keeps it; each field's performer owns its entry.
-- **Go or stop.** Don't move a drive between sinks on a record with an open reconciliation gap.
+- **Owner.** Planning keeps it; each field's performer owns its entry; fleet provisioning owns the systems build.
+- **Go or stop.** Don't move a drive between sinks on a record with an open reconciliation gap. Until G3b, the spares pilot runs on a manual ledger, by lot.
 
 ### G4: hosts and allocation, spares and pipeline first
 
-- **When.** Day 90.
+- **When.** Day 90 for spares and the pipeline. Allocation beyond spares waits for G3b.
 - **Purpose.** Clear the coupled decisions together: when hosts go, how harvest is split, how many spares, how fast the pipeline.
-- **Entry evidence.** G3 exit.
+- **Entry evidence.** G3a exit, with G3b dated. Until G3b, a manual lot-level ledger serves the spares pilot.
 - **Work.**
   - Decommissions on the register.
   - The spares ratio signed.
