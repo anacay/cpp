@@ -138,7 +138,7 @@ Each lens below is one concept from the guide. For each, you get the idea in bri
 
 It also reveals why the generation break matters so much. A fleet-wide average of failure rate, endurance or power per terabyte blends cohorts that behave differently. Planning on that average forecasts through a break. The cohort, not the fleet or the generation, becomes the grain of every coefficient here.
 
-**Decisions it bears on.** P2a, the wear price, is a coefficient read backward. P4 sizes spares on a per-failure coefficient that misdiagnosis distorts. P6 needs a transfer price, which is a rate. P1 holds the fields every coefficient is computed from.
+**Decisions it bears on.** P2a, the wear price, is a coefficient read backward. P4 sizes spares on a per-failure coefficient that misdiagnosis distorts. P6 needs an internal rate for drives, which is a rate. P1 holds the fields every coefficient is computed from.
 
 ### Three prices
 
@@ -152,10 +152,10 @@ So each decision in the case gets its own price. The third column is our reading
 |---|---|---|
 | Should we buy new flash? | Long-run incremental cost (Section 4) | The cost of the purchase a reused drive would avoid |
 | Who gets the scarce drive now? | Shadow price (Section 4) | The value of capacity where it binds; zero in slack |
-| Who pays when a sink takes a drive? | Average loaded rate (Section 4) | The transfer price, shown back first |
+| Who pays when a sink takes a drive? | An internal showback rate [argued] | Net resale or pipeline cost, whichever is higher, plus a risk loading; shown back first |
 | Do we keep this old host running? | Avoidable carrying cost [argued] | Power, space, repairs, technician hours, and the stranding of its other parts |
 
-Our reading: keeping a host prices existing capacity, so long-run incremental cost is the wrong tool for it. That is why the last row adds a price the paper doesn't name.
+Our reading: keeping a host prices existing capacity, so long-run incremental cost is the wrong tool for it. That is why the last row adds a price the paper doesn't name. The third row departs too. The paper's average loaded rate splits a pool's cost, but a drive can also be sold. Where an outside market exists, the efficient internal price includes that opportunity cost (Hirshleifer, 1956; Baldenius, 2008).
 
 **The anchor fork.** The case's central fork is what kind of value a reused drive creates. If Kuantillion Cloud's flash contracts are flexible in volume, a reused drive avoids a purchase. That is the long-run incremental cost row. If they are firm, a reused drive adds capacity to a sold-out fleet. That is the shadow price row.
 
@@ -187,7 +187,7 @@ Net value has to be measured against exit, not against zero, because a harvested
 
 Second, the anchor fork isn't a research question. It is a contract-reading question, and the register to answer it already exists in the practice. That turns the case's biggest unknown into a few weeks of work.
 
-**Decisions it bears on.** P2 compares avoidable carry with capacity value. P6 ranks sinks by shadow price and charges by transfer price. P6's commitment question decides who pays when harvest fails. P8's scorecard must state which anchor it uses.
+**Decisions it bears on.** P2 compares avoidable carry with capacity value. P6 ranks sinks by shadow price and shows back an internal rate. P6's commitment question decides who pays when harvest fails. P8's scorecard must state which anchor it uses.
 
 ### Declarations
 
@@ -349,7 +349,7 @@ Our reading of where they sit: hosts and harvest sit on seam 3, between planning
 
 Seam 3 needs five artifacts both sides sign. One is "a definition of done for each handoff" (Section 10.1). The paper writes that for handoffs such as "delivered" and "live". Applied here, the handoffs are a drive's off-host states.
 
-**Section 14's six roles, applied here.** The paper names six roles and the promises each keeps (Section 14). Our reading of who holds them here follows. Platform leaders own the stranded line, planning keeps the drive record, and finance signs the transfer price. Product leaders are the tiers that take reused flash. The forum ranks the four sinks, and supply chain treats harvest as one of its sources. The plan's [roles and decision rights](case-kuantillion-cloud-plan.md#2-roles-and-decision-rights) carry the full mapping.
+**Section 14's six roles, applied here.** The paper names six roles and the promises each keeps (Section 14). Our reading of who holds them here follows. Platform leaders own the stranded line, planning keeps the drive record, and finance signs the internal rate. Product leaders are the tiers that take reused flash. The forum ranks the four sinks, and supply chain treats harvest as one of its sources. The plan's [roles and decision rights](case-kuantillion-cloud-plan.md#2-roles-and-decision-rights) carry the full mapping.
 
 **What it reveals.** Three decisions have no public owner: the drive record, the wear price and allocation. The paper's remedy is to "lay the charters over the chain that delivers the product, end to end, and name an owner for every gap" (Section 10.2). Applied here, allocation gets a standing forum (mechanism 10).
 
@@ -552,7 +552,7 @@ The case warns that planning these separately overbooks the same technicians and
 
 Two lines of the paper are new to this decision. The shortage rule: "Agree it in the forum beforehand; supply carries it out. Written during the shortage, it's a negotiation. And don't split a shortage pro rata" (Section 9.3). And the broker's log: "what the broker knows should outlive the broker" (Section 6.4).
 
-**Where they pull against each other.** The shadow price ranks claims, but it can't be computed directly across unlike units. The transfer price charges sinks, but it isn't a ranking. And holding drives for a better claim conflicts with releasing them before prices fall.
+**Where they pull against each other.** The shadow price ranks claims, but it can't be computed directly across unlike units. The internal rate charges sinks, but it isn't a ranking. And holding drives for a better claim conflicts with releasing them before prices fall.
 
 **The answer: rank by next-best source.** Value each claim at the cost of that sink's next-best source on that date [argued]:
 
@@ -571,7 +571,9 @@ Score the rule after two cycles. Under scarcity this approximates the shadow pri
 
 **One storage policy** [argued]. Erase, quick-screen and hold. Run the full test when a claim arrives. Applied here, that keeps supply "generic until the decision that says which shape" (Section 6.2).
 
-**Who pays.** Set the transfer price on usable, yield-adjusted capacity. It is pipeline cost per usable TB, plus carry, plus a risk loading drawn from the incident bound [argued]. For example, a 2 TB drive costing $40 to process at 80% yield is $25 per usable TB. Add $2 of carry and $5 of risk loading, and it is about $32 per TB (illustrative).
+**Who pays.** Set an internal showback rate on usable, yield-adjusted capacity [argued]. It is the higher of net realizable resale for that cohort and grade, and pipeline cost per usable TB, plus a risk loading drawn from the incident bound. Carry is charged per TB-month while the drive is held. Call it a showback rate, not a transfer price, to keep it apart from tax transfer pricing.
+
+The floor at resale matters. A drive that could be sold is never free to a sink. For example, take net resale of $100 per usable TB, pipeline cost of $25 and a $5 risk loading. The rate is about $105 per TB, plus about $0.17 per TB-month held (illustrative). A cost-plus price of about $32 would show reuse at an 83–95% discount to new flash, and every sink would over-claim. Where resale exceeds pipeline cost, the gap is a management-ledger credit to the recovery team, not a booked saving.
 
 Show it back for a full cycle before anyone is billed. The paper's order is "Move to attributed cost only after a full cycle of showback" (Section 10.4). The forum ranks on next-best-source value, not on this price.
 
