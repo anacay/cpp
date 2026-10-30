@@ -572,7 +572,7 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 
 For example, take a $40 margin per short TB-month, 12 months, a stockout in 75% of them, 10% cost of capital and a $100 terminal value (illustrative). At a 10% attribution share the anchor is about $121 per usable TB. At 30% it is about $188, and at 100% about $423.
 
-So the capacity anchor passes the case's $190 floor only above about a 31% share. At these inputs it never reaches the $640 ceiling. Experiment 1's real output is the attribution share, zone by zone [unmeasured].
+So the capacity anchor passes the case's $190 floor only above about a 30% share. At these inputs it never reaches the $640 ceiling. Experiment 1's real output is the attribution share, zone by zone [unmeasured].
 
 **The pilot cohort.** It carries the case's most load-bearing question: where second-life hazard crosses the new-drive curve [unmeasured].
 - Place it in caches and replicated tiers, which absorb device loss by design.
