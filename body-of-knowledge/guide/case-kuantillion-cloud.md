@@ -13,9 +13,27 @@ seed: 4, 5.4, 6, 8, 9.2
 
 This is the practice's second problem-space case, and the first with a full answer beside it. The case sets out the problem in full and prescribes nothing. A companion page then works the problem through the practice's body of knowledge, and names where that body of knowledge runs out.
 
+## Before you start
+
+Case 3 runs to about 50,000 words across four pages. You don't need all of it, and you don't need to start cold.
+
+**Five concepts to know first.** Each takes ten to fifteen minutes.
+
+- [The coefficient](concept-the-coefficient.md): one number both forecasts load and prices growth, so someone has to own it.
+- [Demand and declarations](concept-demand-and-declarations.md): a step change enters the plan as a signed statement that firms up in stages.
+- [Commit points](concept-commit-points.md): each supply layer has a last date to order, often before the demand is known.
+- [Approval and allocation](concept-approval-and-allocation.md): an approved ask still needs the right shape, place and time.
+- [Buffers and reserves](concept-buffers-and-reserves.md): a buffer is priced by which mistake costs more, running short or holding spare.
+
+**A warm-up.** [Case 1](cases.md#case-1) traces one launch through the practice in a few pages. Read it before this one if the concepts are new.
+
+**Reading times,** at a steady pace: this page, 5 minutes. [The full case](case-kuantillion-cloud-full.md), about 100. [The strategy](case-kuantillion-cloud-practice.md), about 70. [The execution plan](case-kuantillion-cloud-plan.md), about 45. [Second lives](note-second-lives.md), about 10.
+
+**A newcomer's route,** about an hour: this page; the strategy's [problem in brief](case-kuantillion-cloud-practice.md#the-problem-in-brief); one lens, such as [buffers and reserves](case-kuantillion-cloud-practice.md#buffers-and-reserves); the spares decision, [P4](case-kuantillion-cloud-practice.md#p4-size-and-source-legacy-spares); then the plan's [first 30 days](case-kuantillion-cloud-plan.md#3-the-first-30-60-and-90-days).
+
 ## The situation
 
-Kuantillion Cloud runs one of the largest computing fleets in the world. It plans about $200 billion of capital spending in 2026 and still calls itself supply constrained. Every year it harvests millions of components from the machines it retires, over 3 million of them drives in 2024. How many of those are solid-state drives isn't public. Older flash also sits idle inside machines that are still running.
+Kuantillion Cloud runs one of the largest computing fleets in the world. It plans about $200 billion of capital spending in 2026 and still calls itself supply constrained. Every year it harvests millions of components from the machines it retires, over 3 million of them drives in 2024. Its reports call them hard drives, so how many were solid-state drives isn't public. Older flash also sits idle inside machines that are still running.
 
 New enterprise flash now costs three to four times what it did a year earlier. Next year's supply is largely pledged. So the old drives look valuable. Each one can go four ways. It can go into a workload that tolerates it, into the pool of repair spares, or into an upgrade or a new build. Or it can leave through resale, recycling or the shredder.
 
