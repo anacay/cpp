@@ -1,6 +1,6 @@
 ---
 title: Kuantillion Cloud: the full case
-short: The complete case: where old flash sits, the four places it can go, the gates, the money, eight decisions and two sub-decisions, eighteen causal chains and seven scenarios for 2027.
+short: Where old flash sits, the four places it can go, the gates, the money, eight decisions and two sub-decisions, eighteen causal chains and seven scenarios for 2027.
 kind: case
 order: 3.1
 cadence: all
