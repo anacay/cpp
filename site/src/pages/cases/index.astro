@@ -1,6 +1,6 @@
 ---
-// Case studies: whole problem spaces, described without answers, for the
-// practice to work on. Door pages carry integer orders; their sub-pages x.1, x.2.
+// Case studies: whole problem spaces, set out in full for the practice to work
+// on; some carry the practice's answer on a companion page. Door pages carry integer orders; their sub-pages x.1, x.2.
 import Base from '../../layouts/Base.astro';
 import RfcHint from '../../components/RfcHint.astro';
 import { guide } from '../../lib/guide.mjs';
@@ -10,16 +10,16 @@ const doors = cases.filter((p) => Number.isInteger(p.order));
 const subsOf = (d) => cases.filter((p) => !Number.isInteger(p.order) && Math.floor(p.order) === d.order);
 const subTitle = (t) => { const x = t.replace(/^[^:]+:\s*/, ''); return x.charAt(0).toUpperCase() + x.slice(1); };
 ---
-<Base title="Case studies" description="Whole capacity-planning problem spaces, described without answers, for the practice to work on." nav="cases">
+<Base title="Case studies" description="Whole capacity-planning problem spaces, set out in full for the practice to work on. Some carry the practice's answer on a companion page." nav="cases">
   <div class="wrap wrap--reading">
     <div class="page-head">
       <p class="draft-tag">Guide · draft for review</p>
       <h1>Case studies</h1>
-      <p class="in-short guide-short"><em>Whole problem spaces, described without answers, for the practice to work on.</em></p>
+      <p class="in-short guide-short"><em>Whole problem spaces, set out in full for the practice to work on. Some carry the practice’s answer on a companion page.</em></p>
     </div>
     <RfcHint />
     <article class="prose reading-wrap">
-      <p>A framework is easier to judge against a real-shaped problem. Each case here describes one capacity-planning problem space and leaves the answers open. The rules for writing one, and the case format, are on the guide's <a href="/guide/cases/">Cases page</a>.</p>
+      <p>A framework is easier to judge against a real-shaped problem. Each case here describes one capacity-planning problem space. The case page itself leaves the answers open; where the practice has worked out an answer, it sits on a separate companion page. The rules for writing a case, and the case format, are on the guide's <a href="/guide/cases/">Cases page</a>.</p>
       <h2>Case 1: the launch that needed memory</h2>
       <p>The seed paper's worked example, told as a case: a launch approved on CPU alone, a memory question asked after its commit point, and a bill 30% over plan. <a href="/guide/cases/#case-1-the-launch-that-needed-memory">Read it on the Cases page</a>.</p>
       {doors.map((d) => (

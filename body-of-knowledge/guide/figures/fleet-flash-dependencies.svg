@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 720" width="100%" role="img" aria-labelledby="t d" preserveAspectRatio="xMidYMid meet" style="max-width:100%;height:auto;display:block" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"><title id="t">How the eight decisions depend on each other</title><desc id="d">P1, one record per drive, feeds every other decision. P2, when the host goes, feeds P3 workloads, P4 spares, P5 upgrades and builds, and P7 the reverse pipeline. P2a, the wear policy, shapes P2 years later. P4 spares and P7 the pipeline depend on each other. P3, P4, P5 and P7 all feed P6, allocating the harvest, which feeds P8, adoption. Two slower loops run backwards: drive values from P6 flow back to P2, and adoption in P8 flows back to P3.</desc><rect x="0" y="0" width="1180" height="720" fill="#FFFFFF"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E4C59"/></marker><marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B8794"/></marker></defs>
+<rect x="30" y="60" width="170" height="530" rx="6" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1.5"/><text x="115" y="300" font-size="17" fill="#1F2933" text-anchor="middle" font-weight="600">P1</text><text x="115" y="326" font-size="14" fill="#3E4C59" text-anchor="middle">One record</text><text x="115" y="347" font-size="14" fill="#3E4C59" text-anchor="middle">per drive</text><text x="115" y="368" font-size="14" fill="#3E4C59" text-anchor="middle"></text><text x="115" y="389" font-size="14" fill="#3E4C59" text-anchor="middle">feeds every</text><text x="115" y="410" font-size="14" fill="#3E4C59" text-anchor="middle">decision</text><rect x="560" y="60" width="190" height="62" rx="6" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1.5"/>
+<text x="655.0" y="86.5" font-size="17" fill="#1F2933" text-anchor="middle" font-weight="600">P5</text>
+<text x="655.0" y="107.5" font-size="14" fill="#3E4C59" text-anchor="middle">Upgrades and builds</text>
+<rect x="560" y="170" width="190" height="62" rx="6" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1.5"/>
+<text x="655.0" y="196.5" font-size="17" fill="#1F2933" text-anchor="middle" font-weight="600">P4</text>
+<text x="655.0" y="217.5" font-size="14" fill="#3E4C59" text-anchor="middle">Spares</text>
+<rect x="560" y="280" width="190" height="62" rx="6" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1.5"/>
+<text x="655.0" y="306.5" font-size="17" fill="#1F2933" text-anchor="middle" font-weight="600">P7</text>
+<text x="655.0" y="327.5" font-size="14" fill="#3E4C59" text-anchor="middle">Reverse pipeline</text>
+<rect x="560" y="390" width="190" height="62" rx="6" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1.5"/>
+<text x="655.0" y="416.5" font-size="17" fill="#1F2933" text-anchor="middle" font-weight="600">P3</text>
+<text x="655.0" y="437.5" font-size="14" fill="#3E4C59" text-anchor="middle">Workloads</text>
+<rect x="290" y="500" width="200" height="62" rx="6" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1.5"/>
+<text x="390.0" y="526.5" font-size="17" fill="#1F2933" text-anchor="middle" font-weight="600">P2</text>
+<text x="390.0" y="547.5" font-size="14" fill="#3E4C59" text-anchor="middle">When the host goes</text>
+<rect x="290" y="620" width="200" height="56" rx="6" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1.5"/>
+<text x="390.0" y="643.5" font-size="17" fill="#1F2933" text-anchor="middle" font-weight="600">P2a</text>
+<text x="390.0" y="664.5" font-size="14" fill="#3E4C59" text-anchor="middle">Wear policy</text>
+<rect x="830" y="225" width="180" height="62" rx="6" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1.5"/>
+<text x="920.0" y="251.5" font-size="17" fill="#1F2933" text-anchor="middle" font-weight="600">P6</text>
+<text x="920.0" y="272.5" font-size="14" fill="#3E4C59" text-anchor="middle">Allocate the harvest</text>
+<rect x="1020" y="225" width="130" height="62" rx="6" fill="#F5F7FA" stroke="#CBD2D9" stroke-width="1.5"/>
+<text x="1085.0" y="251.5" font-size="17" fill="#1F2933" text-anchor="middle" font-weight="600">P8</text>
+<text x="1085.0" y="272.5" font-size="14" fill="#3E4C59" text-anchor="middle">Adoption</text>
+<path d="M200,91.0 L556,91.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M200,201.0 L556,201.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M200,311.0 L556,311.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M200,421.0 L556,421.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M200,531.0 L286,531.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M115,60 L115,30 L920,30 L920,221" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M100,60 L100,18 L1085,18 L1085,221" fill="none" stroke="#7B8794" stroke-width="1.75" stroke-dasharray="6 5" marker-end="url(#ad)"/>
+<path d="M390,620 L390,566" fill="none" stroke="#7B8794" stroke-width="1.75" stroke-dasharray="6 5" marker-end="url(#ad)"/>
+<rect x="398.7" y="585" width="106.6" height="21" fill="#FFFFFF"/><text x="452" y="600" font-size="14" fill="#3E4C59" text-anchor="middle" font-style="italic">years later</text>
+<path d="M490,513.0 C518,513.0 518,435.0 556,435.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M490,519.0 C518,519.0 518,325.0 556,325.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M490,525.0 C518,525.0 518,215.0 556,215.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M490,531.0 C518,531.0 518,105.0 556,105.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M655,280 L655,236" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)" marker-start="url(#a)"/>
+<path d="M750,91.0 C790,91.0 790,232.0 826,232.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M750,201.0 C790,201.0 790,246.0 826,246.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M750,311.0 C790,311.0 790,262.0 826,262.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M750,421.0 C790,421.0 790,278.0 826,278.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M1010,256.0 L1016,256.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M1010,256.0 L1016,256.0" fill="none" stroke="#3E4C59" stroke-width="1.75" marker-end="url(#a)"/>
+<path d="M900,287 C900,600 700,552 494,552" fill="none" stroke="#7B8794" stroke-width="1.75" stroke-dasharray="6 5" marker-end="url(#ad)"/>
+<rect x="662.4" y="570" width="115.19999999999999" height="21" fill="#FFFFFF"/><text x="720" y="585" font-size="14" fill="#3E4C59" text-anchor="middle" font-style="italic">drive values</text>
+<path d="M1085,287 C1085,470 900,421 754,421" fill="none" stroke="#7B8794" stroke-width="1.75" stroke-dasharray="6 5" marker-end="url(#ad)"/>
+<rect x="939.6" y="440" width="80.8" height="21" fill="#FFFFFF"/><text x="980" y="455" font-size="14" fill="#3E4C59" text-anchor="middle" font-style="italic">adoption</text>
+<text x="30" y="712" font-size="14" fill="#3E4C59">Solid: one decision's output is another's input. Dashed: slower feedback or a slow link; two close loops (P6 to P2, P8 to P3).</text>
+</svg>

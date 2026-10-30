@@ -51,7 +51,7 @@ Product A's launch on Service X, from about −3 months. All numbers are illustr
 
 - **Envelope.** —
 - **Region or site.** Without the method, the high-memory machines are ordered now and arrive at +3. With the method (Appendix A): −3 is the standard-machine commit point. Two standard machines come from X's pool as firm, one as a named reserve. Four turn-up slots are booked.
-- **Portfolio.** Without the method, the ledger records 4.0 NMU approved, 4.8 as the cheapest fit, and a 0.8 gap with a named owner. It needs a dated bridge, and a pool draw leaves a replenishment owed. With the method (Appendix A): the ledger line drops from 7.2 to 5.8 NMU after a push-out.
+- **Portfolio.** Without the method, the ledger records 4.0 NMU approved ([NMU](/glossary/#term-nmu-normalized-machine-unit): the example's normalized machine unit, one standard machine), 4.8 as the cheapest fit, and a 0.8 gap with a named owner. It needs a dated bridge, and a pool draw leaves a replenishment owed. With the method (Appendix A): the ledger line drops from 7.2 to 5.8 NMU after a push-out.
 - **Launch.** A is Configured: two regions and its stored data. With the method (Appendix A): the eighth-lowest configured outcome is 70,000. So the second high-memory order is pushed out and re-pegged, and a bridge owned by X is named above 70,000.
 - **Unit.** Without the method, memory surfaces here. A's data in X grows 16 TB, needing 1.6 TB of memory; four standard machines supply 0.8 TB. X's rate card prices only CPU, so it can't see this.
 

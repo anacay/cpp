@@ -39,7 +39,7 @@ const covers = [
 ];
 
 const forWhom = [
-  ['New to the role', 'You know the hardware, maybe the latest accelerators inside out. Now the job is lead times, forecasts, contracts and people. Start with the one page and the executive summary.'],
+  ['New to the role', 'You may come from hardware, site reliability, finance or supply chain. Each route brings part of the work, and the job asks for all of it. Start with <a href="/one-page/">the one page</a> and <a href="/summary/">the executive summary</a>. Then read <a href="/guide/the-work-and-the-path/">The work and the path</a>: your route in, and what to read next. Or follow the <a href="/body-of-knowledge/#start-here">learning path</a>.'],
   ['Practicing planners', 'You’ve run planning cycles and seen where plans break. The seed needs your corrections, your terms and your cases.'],
   ['Finance and supply partners', 'You fund the capacity or build it. The handshake below is about you, too.'],
   ['People who hire planners', 'What does the job actually ask? The roadmap’s competency map starts from that question.'],
@@ -93,7 +93,7 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
       <h2 class="kicker" id="who-h">Who it’s for</h2>
       <p class="display">Planners new and seasoned, and the people they plan with.</p>
       <ul class="cards">
-        {forWhom.map(([t, d]) => <li><h3>{t}</h3><p>{d}</p></li>)}
+        {forWhom.map(([t, d]) => <li><h3>{t}</h3><p set:html={d} /></li>)}
       </ul>
     </section>
 

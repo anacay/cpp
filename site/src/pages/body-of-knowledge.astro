@@ -14,6 +14,20 @@ const stages = of('stage');
 const cadLabel = (p) => CADENCES.find((x) => x.id === p.cadence[0])?.label ?? '';
 const p = (id) => ctx.pages.get(id);
 const deep = ctx.chapters.reduce((n, ch) => n + wordCount(ch.blocks), 0);
+// Start here: one learning path, end to end (understand, practise, apply).
+const gp = (f) => g.byFile.get(f);
+const words = (f) => gp(f).body.split(/\s+/).filter(Boolean).length;
+const case1Words = (() => { const m = gp('cases.md').body.match(/## Case 1:[\s\S]*?(?=\n## )/); return m ? m[0].split(/\s+/).length : 0; })();
+const learn = [
+  { href: '/one-page/', name: 'The one page', what: 'The seed paper’s two claims and its method, on one page.', t: readingTime(wordCount(p('one-page').blocks)) },
+  { href: gp('concept-the-coefficient.md').url, name: 'The coefficient', what: 'Cost = volume × coefficient × rate, and who owns each term.', t: readingTime(words('concept-the-coefficient.md')) },
+  { href: gp('concept-demand-and-declarations.md').url, name: 'Demand and declarations', what: 'How firm a forecast is by the time someone must act on it.', t: readingTime(words('concept-demand-and-declarations.md')) },
+  { href: gp('concept-commit-points.md').url, name: 'Commit points', what: 'When each supply layer must be committed, and what to do when that is too early.', t: readingTime(words('concept-commit-points.md')) },
+  { href: gp('concept-approval-and-allocation.md').url, name: 'Approval and allocation', what: 'Why approved capacity is not yet delivered capacity, and who carries the gap.', t: readingTime(words('concept-approval-and-allocation.md')) },
+  { href: `${gp('cases.md').url}#case-1-the-launch-that-needed-memory`, name: 'Case 1: the launch that needed memory', what: 'The seed paper’s worked example as a short story: the ideas above, on one launch.', t: readingTime(case1Words) },
+  { href: '/worksheet/', name: 'The worksheet', what: 'Walk one launch through the commit-point method yourself.', t: 'Practise' },
+  { href: gp('case-kuantillion-cloud.md').url, name: 'Case 3: Kuantillion Cloud', what: 'Read the case page, then one lens and one decision on the strategy page. Don’t read it all at once.', t: 'Apply' },
+];
 const shelf = [
   { href: '/cases/', name: 'Case studies', what: 'Whole problem spaces to practice the discipline on.' },
   { href: '/notes/', name: 'Emerging topics', what: 'Working notes on questions the field is still arguing about.' },
@@ -37,12 +51,22 @@ const seedLayers = [
       <h1>The body of knowledge</h1>
       <p class="lede">How capacity planning is practiced, laid out on one map: from the annual budget to a single service, and from a year out to the week after launch. It’s written for you, the planner, at whatever level you work.</p>
       <div class="rfc-panel">
-        <p class="kicker">Start here: the seed paper, open for comments</p>
+        <p class="kicker">The seed paper, open for comments</p>
         <p>Everything below grows out of one paper. It’s published as a request for comments: select any passage to open a thread, or reply to one of the author’s open questions.</p>
         <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on <em>{manifest.title}</em></a> <a class="btn btn--quiet" href="/open-questions/">Open questions</a> <a class="more" href="/downloads/">PDF and EPUB</a></p>
       </div>
       <p class="note"><strong>An early draft.</strong> The guide below (v0.2) is a first sketch of how the body of knowledge could be organized, drawn from the seed paper. Comment on it the same way.</p>
     </div>
+
+    <section class="band start-here" aria-labelledby="start-here">
+      <h2 class="kicker" id="start-here">Start here: a learning path</h2>
+      <p class="display">New to the work? Read these in order.</p>
+      <p class="reading">Understand the core ideas first, then see them in one story, then practise and apply them. Coming from site reliability, finance or supply chain? <a href={gp('the-work-and-the-path.md').url}>The work and the path</a> says where your route starts and what to read next, by level.</p>
+      <ol class="chapters chapters--path">
+        {learn.map((x, i) => <li><a href={x.href}><span class="n" aria-hidden="true">{i + 1}</span><span class="ct">{x.name}</span><span class="cs">{x.what} <span class="path-t">{x.t}</span></span></a></li>)}
+      </ol>
+      <p class="muted">Keep the <a href="/glossary/">glossary</a> open beside you. Reading times are estimates at 220 words a minute.</p>
+    </section>
 
     <section class="band" aria-labelledby="foundation">
       <h2 class="kicker" id="foundation">The guide, in progress</h2>

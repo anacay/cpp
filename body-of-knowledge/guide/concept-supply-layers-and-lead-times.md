@@ -26,9 +26,9 @@ A large new power load waits in the utility's own process, and little is publish
 
 *From the seed paper, Figure 16.* Supply is already on the highway; the slower the layer, the longer ago it had to leave.
 
-**Usual and cautious lead times.** Late arrivals are common and early ones rare [argued]. So plan on a cautious lead time, near the slow end of what you've seen. For example, if machines usually take one quarter but one order in five takes two, plan on two.
+**Usual and cautious lead times.** Late arrivals are common and early ones rare [argued]. So plan on a [cautious lead time](/glossary/#term-usual-and-cautious-lead-time (The lead time in the slow case)), near the slow end of what you've seen. For example, if machines usually take one quarter but one order in five takes two, plan on two.
 
-**Layers stack.** The hall comes before the machines, the machines before turn-up. So a layer's need date is the next layer's start, not launch day. Microsoft's chief executive described the failure: "I don't have warm shells to plug into" [66].
+**Layers stack.** The hall comes before the machines, the machines before turn-up. So a layer's [need date](/glossary/#term-need-date (When a supply layer must be ready for the next one to start)) is the next layer's start, not launch day. Microsoft's chief executive described the failure: "I don't have warm shells to plug into" [66].
 
 **Turn-up is a rate, not an order.** Crews, dock space and test positions set it, like a checkout line. A slipped batch queues behind the next one, so a slip often shows up twice [argued].
 
@@ -38,11 +38,11 @@ A cancel window is rarely one date. What you owe usually rises in steps toward d
 
 **Options and postponement.** An option is a small payment now for the right to buy later. Keep supply generic until the decision that says which shape [73]. Meta describes staging data center sites so it can "spring up capacity quickly," and partnerships that give "option value for future compute needs" [74]. Quantity-flexibility contracts let an order move less as delivery nears [70, 71].
 
-**Supply has step changes too.** New sites, hardware generations, rationed parts and decommissions all move in steps. Supply firms up in its own stages: planned, contracted, under construction, delivered, live [68, 92]. Decommission is negative supply [2]. Score supply promises like demand declarations.
+**Supply has step changes too.** New sites, hardware generations, rationed parts and decommissions all move in steps. Supply firms up in its own stages: planned, contracted, under construction, delivered, live [68, 92]. Decommission is negative supply [2]. Score supply promises like demand [declarations](/glossary/#term-declaration (A team’s statement of a step change in demand, by stage)).
 
 ## Where it shows up on the map
 
-Each layer's commit point lands in the cadence its lead time forces. The table is the one on [the map](the-map.md); timings vary by operator and market:
+Each layer's [commit point](/glossary/#term-commit-point (The need date minus the cautious lead time)) lands in the cadence its lead time forces. The table is the one on [the map](the-map.md); timings vary by operator and market:
 
 | Supply layer | Typical commit point | Lands in | The declaration is usually |
 |---|---|---|---|

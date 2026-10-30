@@ -1,0 +1,838 @@
+---
+title: Kuantillion Cloud: how the practice solves it
+short: A practitioner's strategy for Case 3. How to see the problem through the body of knowledge, break it into decisions and sequence the work, with every move linked to its theory.
+kind: case
+order: 3.2
+cadence: all
+altitude: all
+levels: learning, practicing, leading
+seed: 4, 5.1, 5.2, 5.3, 5.4, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 8, 8.2, 9.1, 9.2, 9.3, 10, 10.1, 10.2, 10.3, 10.4, 11, 12, 13, 14, Appendix A
+---
+
+This page is the strategy for [Case 3](case-kuantillion-cloud.md). It shows how a practitioner would tackle the case with the practice's body of knowledge. You'll see how to frame the problem, how to break it down and what order to work it in.
+
+Two companion pages sit beside it. The [full case](case-kuantillion-cloud-full.md) sets out the problem in detail and prescribes nothing. The [execution plan](case-kuantillion-cloud-plan.md) turns this strategy into owners, dates, gates and tables. You don't need either to follow this page. Each section carries enough context to stand on its own.
+
+Section numbers refer to the seed paper, *The Coefficient Is an Agreement*. Mechanism numbers refer to its thirteen mechanisms (Section 9.2), explained on [the operating mechanisms](concept-operating-mechanisms.md). The paper is "a practitioner synthesis, not a model, and untested" (Abstract), and so is everything here.
+
+## The problem in brief
+
+Kuantillion Cloud is a fictional hyperscale operator. It runs one of the largest computing fleets in the world and plans about $200 billion of capital spending in 2026. Even so, it reports more demand than it can supply ([the full case, section 1](case-kuantillion-cloud-full.md#1-executive-summary)).
+
+**The shock.** New enterprise flash now costs three to four times what it did a year earlier. Next year's supply from the flash makers is largely pledged to their biggest buyers already. Any flash Kuantillion Cloud didn't contract for in advance is hard to get at any price.
+
+**The old flash.** Kuantillion Cloud retires machines every year and takes them apart. In 2024 it wiped and then reused or resold over 3 million drives. Its reports call them hard drives, so how many were solid-state drives (SSDs) is unknown. Older flash also sits idle inside machines that are still running. One peer cloud measured 54% of its server SSD capacity stranded that way ([section 4.1](case-kuantillion-cloud-full.md#4-1-four-populations)).
+
+**Where a drive can go.** When a host retires, it can be kept, redeployed whole to lighter work, or taken apart. A harvested drive then has four sinks ([section 5](case-kuantillion-cloud-full.md#5-demand-four-places-a-legacy-drive-can-go)):
+
+- a workload that tolerates older flash;
+- the pool of repair spares for old platforms;
+- an upgrade or a new build;
+- exit, through resale, recycling or the shredder.
+
+**Why that is hard.** A drive isn't one quantity. It has five dimensions: capacity, performance, remaining endurance, fit and condition history. Each sink prices a different one. Spares price fit, workloads price capacity and latency, and resale prices provable condition. No shared unit or internal price exists for any of them.
+
+**The technical gates.** Eleven technical gates stand between a retired host and a second life ([section 6](case-kuantillion-cloud-full.md#6-supply-the-gates)). They are physical fit, protocol, qualification, firmware, observability, condition, change windows, systems of record, systems complexity, jurisdiction and sanitization. A drive whose data can't be shown to be gone is destroyed. This page calls them technical gates, to keep them apart from the program's own decision gates.
+
+**The risk.** Nobody has published how reused drives behave in a second life. First-life studies disagree on late-life hazard, and two large ones saw no rise at end of life. Firmware, model and error history matter more than age. Failures cluster: in one fleet, a second replacement in the same RAID group was 180 times likelier within a week. Two firmware bugs killed drives at fixed power-on ages, about 3.7 and 4.6 years. One operator's figure, legacy drives at 22% of drives but 77% of failures, covers one quarter and is confounded with model and warranty ([section 6.1](case-kuantillion-cloud-full.md#6-1-what-is-actually-known-about-second-lives)).
+
+**A leak upstream, where triage is weak.** At one large cloud, 34.4% of SSD-related tickets weren't the drive: human error and cables. Its repair sequence fixed those with cheaper steps first, and only 31.2% of tickets ended in a drive swap. A site that pulls a drive on every ticket would use up to about 1.5 times true failures. Kuantillion Cloud's own healthy share of pulled drives is unknown ([section 4.4](case-kuantillion-cloud-full.md#4-4-the-leak-upstream-of-the-cage-tickets-that-werent-the-drive)).
+
+**The money.** A used drive's replacement value runs about $190–640 per terabyte across the case's range. Its book value is near zero past a six-year accounting life. The central fork is what kind of value a reused drive creates ([section 7.1](case-kuantillion-cloud-full.md#7-1-the-anchor-question-what-kind-of-value-is-this)). If flash contracts can be rescheduled, it avoids a purchase. If they are firm, it adds capacity to a sold-out fleet. Those are different numbers, with different beneficiaries.
+
+**The size.** The SSD harvest could be under 1% or near 30% of a year's new flash, central 3–9% (illustrative). That range sets the program's scope. Whether the program pays at all is a dollar question: its margin over exit against its fixed cost.
+
+**The organization.** Allocation and value recovery sit in different groups. The technicians who pull drives are measured on ticket speed, which pushes drives toward the shredder. Three of the case's decisions have no public owner at all ([section 11](case-kuantillion-cloud-full.md#11-problem-decomposition)). The groups are mapped in [section 10.2](case-kuantillion-cloud-full.md#10-2-the-team-map-and-the-seams-between-them).
+
+**Two futures.** On Path A, flash stays tight through 2028. On Path B, it eases from late 2027 and high-capacity drives get cheap first ([section 8](case-kuantillion-cloud-full.md#8-two-futures-and-the-signposts-between-them)). A good answer has to work under both.
+
+**The decisions.** The case breaks the problem into eight decisions and two sub-decisions ([section 11](case-kuantillion-cloud-full.md#11-problem-decomposition)):
+
+| | Decision |
+|---|---|
+| P1 | One record per drive |
+| P2 | When the host goes: keep, redeploy whole or harvest |
+| P2a | The wear policy that shapes tomorrow's harvest |
+| P3 | Match legacy flash to workloads |
+| P4 | Size and source legacy spares |
+| P5 | Use legacy flash in upgrades and builds |
+| P6 | Allocate the harvest across sinks |
+| P6, commitment | How much of a harvest to count on before it arrives |
+| P7 | Run the reverse pipeline at the needed rate |
+| P8 | Make reuse something teams choose |
+
+### How to read this page
+
+Read the labels this way. A quote with a Section is the paper's own text. *Applied here* or *our reading* marks the paper's rule used on something it wasn't written for. [argued] marks a rule this page adds. [unmeasured] marks a number nobody has published. Every invented number is labeled illustrative.
+
+One scope note. Flash stranded inside running machines is a second prize, possibly the larger one. It needs no sanitization, custody or qualification, only scheduling and pooling. So it runs as its own track, beside the harvest, and is sized on its own.
+
+## How a practitioner tackles it: the strategy
+
+### The stance
+
+Kuantillion Cloud's problem is the paper's problem run backwards. The paper follows capacity from approval to live service. Here capacity comes back out of live service. You must price it, book it and hand it out again.
+
+That inversion is the key to using the body of knowledge here. Almost every tool in the practice still works, pointed the other way. A retirement becomes a delivery. The reverse pipeline becomes a turn-up layer. A harvest becomes a supply declaration that firms up in stages. Where a tool doesn't turn around, you've found a limit of the practice.
+
+You also start from the planner's real position. The planner sits in the middle, "usually owning no capacity and no budget" (Section 10). So your strategy is a set of agreements, not a set of orders. A broker still needs a principal, though. A sponsor who appoints the lead, chairs the forum and funds the pipeline until the [landing rule](/glossary/#term-landing-rule) (who gets credit for recovered capacity) credits it comes first [argued]. [People: brokering the handshake](people.md) explains where that standing comes from.
+
+The practice's [principles](principles.md) set the stance. Each one points at a specific move in this case.
+
+- **A coefficient is an agreement.** The wear price, spares per failure and usable terabytes per retiring drive all look like physics. Each moves someone's plan or bill, and nobody owns them.
+- **Approval is not allocation.** A drive approved for a sink can still fail a gate, or be promised twice. The gap needs a ledger.
+- **Commit only what the lead time forces.** Last-time buys and decommission dates commit long before the need is known. Map them.
+- **Every number has an owner.** Three decisions have none. Name them.
+- **Name the gap.** A harvest that won't arrive on time is a named gap, not a surprise.
+- **Agree the rules before you need them.** The [shortage rule](/glossary/#term-shortage-rule) (who goes short first) and the landing rule must exist before drives are scarce or savings appear.
+- **Say what's unmeasured.** Second-life failure rates, gate yields and the capacity value of a terabyte are unpublished. Build the strategy so the first pilot measures them.
+
+### The moves that matter most, and why they come first
+
+Six moves carry most of the weight. Each removes a large uncertainty for little cost, and the first five set up the next.
+
+1. **Find out what exists.** The public record is silent on any program. Silence could mean a program run quietly, one tried and dropped, or none. Designing before you know wastes the most effort of anything here.
+2. **Size the problem in dollars and name its value anchor.** Our reading of Section 13 is that a program below materiality costs more than it returns. The test is the annual margin over exit against the program's fixed cost; the ratio of harvest to new flash sets scope. The flash contracts settle which kind of value a drive creates. Nothing else can be priced until both are known.
+3. **Book each retirement in both directions.** [The supply plan of record and commitment register (mechanism 11)](concept-operating-mechanisms.md#m11) already holds "decommissions as dated supply steps" (Section 9.2). Applied here, the same retirement is also a delivery of drives, booked the same way. That one move turns a byproduct into supply you can plan against.
+4. **Give every drive one record and every gap an owner.** Without a record, a drive can be promised twice or lost from custody. Without a forum, the loudest sink wins. And "Shortage rules come before the shortage" (Section 9.3), so the forum must exist early to agree them.
+5. **Prove fulfillment with spares, then extend.** Spares are the harvest's most predictable claim and its value floor. The paper's order of change is "prove fulfillment first" (Section 10.4); we apply it to reused drives. Workloads, the riskier sink, come after trust exists.
+6. **Reach the stranded stock in parallel.** Idle flash in running machines may be worth two to six times the top harvest row, at 11–35 EB once after a haircut. Reclaiming it is a scheduler and pooling problem, so storage systems and the schedulers can start in week two. A reclaim pilot, read out by day 90, is its go or no-go [argued].
+
+The first five come first because they share one property. Each one is cheap, fast and decides whether the expensive work is worth doing. Everything else in this page depends on their answers. The [execution plan](case-kuantillion-cloud-plan.md) gives them owners and dates.
+
+**Where the practice runs out.** Most of its gaps are already solved in neighboring fields, and this page adopts those answers. Two stay genuinely open: byproduct supply coupled to demand, and quality that fails after delivery, as a cohort. [Where the theory runs out](#where-the-theory-runs-out) maps each to the literature that studied it.
+
+### What a reused drive is worth
+
+*Every later decision needs a price for a drive. This is where the [three prices](concept-three-prices.md) do their work.* So each decision in the case gets its own price. The third column is our reading:
+
+| Question | Price | In this case |
+|---|---|---|
+| Should we buy new flash? | Long-run incremental cost (Section 4) | The cost of the purchase a reused drive would avoid |
+| Who gets the scarce drive now? | Shadow price (Section 4) | The value of capacity where it binds; zero in slack |
+| Who pays when a sink takes a drive? | An internal showback rate [argued] | Net resale or pipeline cost, whichever is higher, plus a risk loading; shown back first |
+| Do we keep this old host running? | Avoidable carrying cost [argued] | Power, space, repairs, technician hours, and the stranding of its other parts |
+
+Our reading: keeping a host prices existing capacity, so long-run incremental cost is the wrong tool for it. That is why the last row adds a price the paper doesn't name. The third row departs too. The paper's average loaded rate splits a pool's cost, but a drive can also be sold. Where an outside market exists, the efficient internal price includes that opportunity cost (Hirshleifer, 1956; Baldenius, 2008).
+
+**The anchor fork.** The case's central fork is what kind of value a reused drive creates. If Kuantillion Cloud's flash contracts are flexible in volume, a reused drive avoids a purchase. That is the long-run incremental cost row. If they are firm, a reused drive adds capacity to a sold-out fleet. That is the shadow price row.
+
+Applied here: under firm contracts and persistent stockouts, scarcity is the paper's condition, and "the cost that matters becomes the best claim displaced" (Section 11). So compute both anchors, and route harvest by the shadow price while stockouts last.
+
+The contracts settle the fork, and you already hold the instrument. [The commitment register (mechanism 11)](concept-operating-mechanisms.md#m11) carries "contracts with liability schedule (owed if cancelled, by date), reschedule terms, owner". So read the flash contracts into it first.
+
+Read the push-out terms, not only the cancel terms. "the right to push out is often worth more than the right to walk away" (Section 6.2). Where a firm contract can be pushed out, reuse avoids a purchase *in time*. Our reading: the avoided-purchase anchor then holds for the length of the push.
+
+**The capacity anchor, as a formula.** Nothing public gives the capacity anchor an input [unmeasured]. So carry it as a formula [argued], with each term a parameter you fill from internal data.
+
+*Capacity value per usable TB = Σ over months t of P(stockout in t) × contribution margin of a short TB-month × the drive's attribution share × survival to t × P(the TB sits in the binding zone) ÷ (1 + r)ᵗ, plus a terminal value once new supply lands.*
+
+Each term guards against a specific overstatement.
+
+- **Contribution margin, not revenue.** A lost sale is worth its margin. Fill it from internal stockout cost per zone, starting with capacity errors that name local SSD.
+- **The attribution share.** A local-SSD stockout is usually a stockout of a whole host or VM shape. The drive is one input among CPU, memory, power and slot. Its share is high only where SSD is the binding dimension, which is the [shadow price](/glossary/#term-shadow-price) idea.
+- **Survival and the binding zone.** A reused drive can fail, and a terabyte outside the short zone fills nothing.
+- **Discounting and the terminal value.** After new supply arrives, the drive is worth the purchase it avoids if contracts can be rescheduled, or its net resale if they can't. Multiply by yield to turn a usable TB into a harvested one.
+- **Whose value it is.** Value that lands as margin belongs to the product's P&L, not to procurement. The scorecard has to say so.
+
+For example, take a $40 contribution margin per short TB-month, over 12 months, with a stockout in 75% of them. Add a 10% cost of capital, light attrition and a $100 terminal value (all illustrative). At a 10% attribution share, the capacity anchor is about $121 per usable TB. At 30% it is about $188. Only where SSD alone binds, at 100%, does it reach about $423.
+
+So the capacity anchor passes the $190 floor only when the drive carries more than about 30% of the short shape's margin. At these inputs it never reaches the $640 ceiling. The attribution share decides the stress case where contracts are firm and stockouts persist. Measure it first, zone by zone [unmeasured].
+
+Net value has to be measured against exit, not against zero, because a harvested drive could be sold instead. Margin over exit = yield × replacement value − pipeline cost − forgone net resale ([section 7.5](case-kuantillion-cloud-full.md#7-5-pipeline-life-and-carbon)). Gross resale runs about $80–160 per TB. The case uses gross resale as an upper bound on what a seller nets, so the margin is a floor. At the $640 anchor, the margin is about +$90 to +$490 per TB. At the $190 anchor, it is about −$135 to +$85, so thin cohorts lose money by staying in. The central cell, at 80% yield, $20 pipeline and $120 resale, gives about +$370 and +$10 (illustrative). Net value before exit, about $25 to $570 per TB, leaves resale out, so it overstates reuse.
+
+Two things follow that the case leaves open. First, book value is the wrong price for a reused drive. Section 4's useful-life lever is the reason: book value depends on a life someone chose. The [case's measures of success](case-kuantillion-cloud-full.md#14-1-criteria) rule it out too.
+
+Second, the anchor fork isn't a research question. It is a contract-reading question, and the register to answer it already exists in the practice. That turns the case's biggest unknown into a few weeks of work.
+
+### The stranded stock, on its own line
+
+*The sixth move, in more detail.* The flow ratio doesn't gate the stranded stock. The case says the stock is likely larger than the flow. Illustratively, closing the gap between one peer's 54% stranding and a pooled 19%, on 60–100 EB installed, frees about 11–35 EB once, after a haircut for what pooling can reach. That is two to six times the top harvest row.
+
+So size the stock early too, from flash use across the fleet, by resource and site. Put it on its own owned line. The artifact of [owned unused and unallocated lines (mechanism 4)](concept-operating-mechanisms.md#m4) is "Each its own line in every report", owned by the "Service owner (not necessarily the cause)". Section 14 gives the unused lines to platform leaders. Applied here, the storage systems own the stranded line, and finance keeps score. The stock's own go or no-go is a reclaim pilot.
+
+## Breaking it down: the decisions
+
+The case breaks the problem into eight decisions and two sub-decisions. Each section below opens with what the decision is and why it's hard here. Then it argues the answer: which lenses combine, where they pull against each other, and where it lands. The futures are the case's two: Path A, where flash stays tight through 2028, and Path B, where it eases from late 2027. Each decision links its concepts to the guide; [the reasoning](#the-reasoning-the-practices-lenses) below works each one through.
+
+This is reasoning, not a work order. Owners appear only where the argument needs them. The [execution plan](case-kuantillion-cloud-plan.md) assigns the rest.
+
+### P1. One record per drive
+
+*A drive passes through many hands after it leaves its host: decommission crews, test benches, cages, security and resale partners. Each keeps its own records, and no single record follows the drive. Without one, a drive can be promised twice, graded on stale data or lost from custody ([case, P1](case-kuantillion-cloud-full.md#p1-one-record-per-drive)).*
+
+**The lenses that combine.** [The coefficient](concept-the-coefficient.md) needs the fields every price is computed from. [Approval and allocation](concept-approval-and-allocation.md) needs a [fulfillment](/glossary/#term-fulfillment) ledger, run backwards. [People and seams](people.md) needs an owner and a definition of done for each handoff. The grain problem names the trap: "Someone has to own the roll-up, and the data a decision needs often sits one level below it" (Section 5.1).
+
+**Where they pull against each other.** A record rich enough to grade drives is expensive to keep fresh. A record cheap enough to keep is too thin to grade on. The paper doesn't settle that trade, because its unit has no condition.
+
+**The answer.** Keep one record per drive. Its states run in service, harvested, erased, in test and available, then spare or placed, or out of custody. Our reading: that is [the fulfillment ledger (mechanism 5)](concept-operating-mechanisms.md#m5) run backwards. The record's design follows from the lenses.
+
+- Define *harvested*, *erased*, *tested* and *available*, and who accepts each. Applied here, those are the definitions of done for [seam 3](/glossary/#term-seam), between planning and supply.
+- Give each field an owner, the group that does that step. Mechanism 5's rule is "each step's performer owns its entry". Planning keeps the record but owns no field.
+- Set freshness by what the field drives: continuous for health telemetry, at every state change for custody [argued].
+- Add the fields the gates name: a SKU for a regraded drive, its grade, its costing basis and its firmware baseline.
+- Add a reuse-eligibility field: free, constrained or forbidden. Some customer, government or sovereign contracts may limit used parts or data-bearing media. P3 treats it as a placement constraint [argued].
+- Reconcile the record with the erasure log at every off-host state. Treat each gap as the leading sign of a custody incident [argued].
+
+**Blind cohorts.** A cohort is blind when its drives lack the fields the grade rule needs, not merely newer telemetry. Our reading is that blind cohorts are steps with no reference class, where the paper says you "bound it, phase it and buy options" (Section 13). They go to like-for-like spares only [argued]. Their own platform already runs blind drives of that exact model, so a like-for-like spare adds no new risk. [Limits](limits.md) explains the no-reference-class case.
+
+**Custody.** Proving erasure is a security discipline, not capacity planning. [The practice's Charter](/charter/) says of neighboring fields: "We link to them rather than rewrite them". It doesn't name erasure among them, so treating it that way is our reading. The practice's part is the record, not the erasure method.
+
+The record can still carry one structural choice: split the bar by sink [argued]. A drive staying inside the fleet needs crypto-erase plus custody that never breaks. A drive leaving needs purge, verification and validation. Both need sampled forensic read-back for each tool, firmware and model before that combination is trusted. Erasure can report success falsely: in one lab study, 1 of 7 testable drives did (Wei et al., 2011). NIST's guideline separates verifying one erase from validating the process (NIST SP 800-88 Rev. 2).
+
+**Why it comes early.** Every later decision reads from this record. But it doesn't need to be complete to start. Build the off-host fields first, because that is where the record is missing today.
+
+### P2. When the host goes: keep, redeploy whole, or harvest
+
+*Every retiring host has three options, not two. Keep it running, redeploy it whole to a lighter workload class, or take it apart and harvest its drives. Redeploying whole skips most of the eleven technical gates. A program that prices drives without pricing that option will take apart hosts it should have moved ([case, P2](case-kuantillion-cloud-full.md#p2-when-does-the-host-go)).*
+
+**The lenses that combine.** [Three prices](concept-three-prices.md) supplies the cost comparison. [Approval and allocation](concept-approval-and-allocation.md) supplies the [bridge](/glossary/#term-bridge) condition for keeping old hardware, whose cost is a "Power, efficiency and reliability penalty" (Section 6.4). [Declarations](concept-demand-and-declarations.md) supplies the retirement as a dated, slipping supply step, the first stage of its harvest. [People and seams](people.md) says who must sign, because "Deferring a decommission extends depreciation on an asset finance had written off its plan" (Section 10.1).
+
+The paper adds one more line here, from experience. "In my experience, the fastest bridge for a late new site is often an older one" (Section 6.7).
+
+**Where they pull against each other.** The natural price for keeping capacity is long-run incremental cost. But Section 4 says that price "Misleads when used for" "Pricing capacity that already exists" (Section 4). So the paper's own price table rules out its most obvious tool. We add a fourth price, avoidable carrying cost [argued].
+
+**The answer.** Put all three branches on one sheet, per cohort, and read it one period at a time. The case finds that the answer differs by cohort, not by generation. Keeping a host doesn't lose its harvest; it defers it, at a price that may fall. So this is a replacement decision: keep one more period, or harvest now. The sheet's lines are this page's [argued]:
+
+| Line, per period | Keep | Redeploy whole | Harvest now |
+|---|---|---|---|
+| Capacity value: the shadow price in stockout zones, zero in slack | Earned | Earned, at the lighter class's price | — |
+| Avoidable cash carry: power, repairs, technician hours, stranding of its other parts | Paid | Paid | Avoided |
+| The slot's opportunity cost: space and power that incoming hardware needs | Paid | Paid | Freed |
+| Change in realizable harvest or resale value | Decays | Decays, more slowly | Realized now |
+| Capital charge on that realizable value | Paid | Paid | — |
+| Memo, not a decision line: P&L effect of disposal | — | — | A loss on disposal, or none if fully depreciated |
+
+Keep while next period's value exceeds next period's total carry, including the fall in what the harvest would fetch. Otherwise harvest. In the economics literature this is avoidable or relevant cost, the standard equipment-replacement rule, and the fall in value is economic depreciation (Hulten and Wykoff, 1981).
+
+For example, take a harvest worth $300 now, $60 a year of carry, no capacity value in slack and a 10% cost of capital (illustrative). Keeping a year, then harvesting, is worth about $185 if harvest value falls 10%. It is worth about $76 if it falls 50%, as Path B threatens for high-capacity parts. Harvesting now is worth $300.
+
+Some keeps aren't available at all. Where incoming hardware needs the slot's power, the retirement is forced or pulled in, and the sheet only chooses between redeploying whole elsewhere and harvesting. Section 6.4's own bridge condition says the same: "if its space and power aren't needed by incoming hardware" (Section 6.4).
+
+**Redeploying whole.** A whole host can go to a lighter workload class. That is a stated [firmness class](/glossary/#term-firmness-class) (Section 6.1), firm, best-effort or preemptible, applied to a whole host. Our reading is that Section 6.4's bridge condition is this branch's test. Where the host isn't in the way and a lighter class exists, redeploy it whole before you take it apart [argued].
+
+**The coupling.** Keeping a platform raises its spares need and cuts the harvest that feeds it. Net both effects on the same ledger line: minus host capacity, plus drives [argued]. The paper checks shared drivers among launches (Section 6.6) and within supply (Section 6.7). It never checks one driver across demand and supply with opposite signs. [Second lives](note-second-lives.md) takes this up.
+
+**Who must sign.** Finance confirms the accounting effect; the forum decides on the economic lines. Depreciation is sunk and non-cash, so it can't decide a keep. A change in useful life is a class-level accounting estimate, set in the controller's annual review, not host by host. Drive values from the forum become a required input to the retirement decision.
+
+**Futures.** Under Path A, keeping and redeploying whole win more often. Under Path B, retire sooner, because harvest value falls first for high-capacity parts.
+
+### P2a. The wear sub-decision
+
+*Kuantillion Cloud can set each drive's wear rate in software, and prices wear per byte written. Where wear binds, today's placement decides the condition of the drives harvested two or three years from now. No team owns that link, and no price carries the second life's value back to the first ([case, P2](case-kuantillion-cloud-full.md#p2-when-does-the-host-go)).*
+
+**The lenses that combine.** The coefficient: a coefficient read backward is a price (Section 5.2), and our reading is that the wear price is one. It needs "a version, an effective date, an owner and a valid range" (Section 9.2), [the coefficient register (mechanism 3)](concept-operating-mechanisms.md#m3) that [the coefficient](concept-the-coefficient.md) page explains. The measuring loop: "Compute the ratio continuously" (Section 5.2). Applied here, the ratio is endurance used per year, by cohort and tier. On its own it will read near zero, since most drives use under 1% of rated endurance a year. So watch the skew too: in one fleet, 5% of drives wore their most-used block more than six times faster than average (Maneas et al., 2022). Watch event-history rates beside it.
+
+**Where they pull against each other.** The coefficient lens says price the wear now. The measuring loop says watch it first. Pricing wear today would need a second-life value, and nobody has one yet.
+
+**The answer.** Measure now, price later. [The measuring loop](concept-measuring-loop.md) runs before anyone versions a price, and the coefficient page says how to version it when the time comes. Report endurance used by cohort at the quarterly supply review. Change first-life placement only after the workload pilot gives a second-life value to price against [argued].
+
+Ownership follows mechanism 3, whose owner is the "Service owner, with finance". Our reading makes the flash platform the service owner, because it holds qualification and health telemetry.
+
+**Futures.** Under Path A endurance is dearer, so the wear price rises. Under Path B it falls.
+
+**Where the paper runs out.** The paper prices use per unit of time. Endurance is a stock one tenant depletes, lowering the drive's value in a later use. Nothing carries that second-life value back into the first-life price.
+
+### P3. Match legacy flash to workloads
+
+*Older flash can serve workloads that tolerate it: caches, replicated tiers, cold data. But no tier has agreed to take reused capacity, no grades exist, and every new grade adds a shape the fleet's systems must carry. Stranded flash in running machines belongs here too ([case, P3](case-kuantillion-cloud-full.md#p3-match-legacy-flash-to-workloads)).*
+
+**The lenses that combine.** [Approval and allocation](concept-approval-and-allocation.md) supplies the firmness class of Section 6.1 and the five-dimension shape. [Buffers and reserves](concept-buffers-and-reserves.md) supplies pooling and the cohort as a shared driver. [The coefficient](concept-the-coefficient.md) supplies the price per dimension. [The measuring loop](concept-measuring-loop.md) supplies the pilot that measures second-life hazard.
+
+Three lines of the paper are new to this decision. An approved unit must still become "storage capacity *and* access rate (IOPS), which are separate resources" (Section 6.1). And "Much efficiency comes from re-shaping an ask rather than cutting it" (Section 6.1). In a passage the paper marks as experience, it questions the assumption, not the total. Applied here, ask which part of a tier really needs new drives. A higher availability tier "is a driver and belongs in the rate" (Section 5.2).
+
+**Where they pull against each other.** Approval and allocation wants grades fine enough to match each drive to its best use. Every grade is a new SKU, qualification combination, placement constraint and forecast category. That is the case's grading tax, and its strongest counter-argument. The paper has no price for a shape's complexity.
+
+**The answer.** Offer reused flash as its own class. State its guarantee and its evidence bar, and price it by dimension: capacity, IOPS, remaining endurance and fit. The class is the inward version of the customer tools the case describes: preemptible pools, queues and fallbacks across shapes.
+
+**Start with a provisional three-grade rule** [argued]. Revisit it after the pilot.
+
+| Grade | Rule | Where it can go |
+|---|---|---|
+| 1 | No uncorrectable error or critical warning in a set window; few grown bad blocks, with a flat trend; capacitor test passed; safe firmware, updated at harvest; burn-in passed | Durable tiers, once the evidence bar is met |
+| 2 | One event-history flag, or old firmware with no known fault | Loss-absorbing tiers, and like-for-like spares only |
+| 3 | Repeat events, a failed capacitor test, or no safe firmware | Exit or destroy |
+
+Grade on event history, not wear. In the field studies, error history predicts. After one uncorrectable error, the chance of another the next month was about 30%, against 2% in a random month (Schroeder et al., 2016). Firmware version moved replacement rates up to tenfold (Maneas et al., 2020). Wear rarely binds, since most drives use under 1% of their rated endurance a year. Keep wear as a recorded field, and use it as a threshold only for write-heavy or QLC cohorts. Age matters per firmware cohort, measured in power-on hours. The thresholds themselves are [unmeasured].
+
+Burn-in comes before any grade 1 placement, with its yield logged. Infant mortality is common in first lives, and a second life may restart that clock; that is a hypothesis, not a finding [unmeasured].
+
+**Cap the tiers.** Cap the tier count at what the fleet's backlog and solver categories show its systems can carry [argued]. Three grades fit inside a cap of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, spares and exit only. The grading tax is bounded: in one remanufacturing study, grading added about 4% to profit, more as return volume grew (Ferguson et al., 2009). So let the tier cap rise with the dollar test's result, not ahead of it.
+
+**Chain the classes, don't multiply them.** Jordan and Graves found that limited flexibility "yields most of the benefits of total flexibility" [77] (Section 6.2). Their limit is on links: each plant builds "only a few products" (Section 6.2). The paper reads that across to two machine shapes per workload, linked in a chain. It calls that "an analogy, not a result tested on fleets" (Section 6.2). Applied here, link each tier to a few sinks and each sink to a few tiers.
+
+**Pilot small.** "Phasing the first region small buys the real coefficient cheaply" (Section 5.4). Applied here, the first unit is a cohort, placed in caches and replicated tiers that absorb device loss by design.
+
+**Concentration.** Our reading: name each [cohort](/glossary/#term-cohort) as a shared driver: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). Here a cohort is model × firmware × power-on-hour band. Data is lost when same-cohort drives in one erasure or replication group exceed what it can tolerate. So the cap is placement, not a percentage [argued]. No redundancy group holds more members of one cohort than its failure tolerance minus one. A 12+2 erasure group tolerates two losses, so it holds at most one drive of a given cohort. A share cap per rack or domain is secondary. Our reading is that placement buys more than grading. In one large study, rack-aware placement raised stripe MTTF about threefold (Ford et al., 2010).
+
+**The risk budget** [argued]. Reused capacity needs a signed limit on how much risk it may carry, agreed before volume grows. It is a named buffer in the sense of [buffers and reserves](concept-buffers-and-reserves.md). It has three parts.
+
+1. The cohort cap per redundancy group. Reliability engineering sets it, because the paper gives that group the right: "Reliability buffers: reliability engineering" (Section 9.2). Its budget is a probability: the chance of more than the group's tolerance of same-cohort failures within one repair window.
+2. An evidence bar per tier, rising only with scored outcomes. Caches start lower, durable tiers higher.
+3. An incident cost bound, signed by finance before volume grows.
+
+**The stranded stock.** Applied here, stranded flash in running machines goes on its own owned line ([mechanism 4](concept-operating-mechanisms.md#m4)), sized as in [the stranded stock, on its own line](#the-stranded-stock-on-its-own-line). Recover it by pooling where you can reach it, or by reclaim, a bridge of "Days to weeks" (Section 6.4, the author's judgment). Freed capacity lands under the [landing rule](/glossary/#term-landing-rule) (mechanism 8).
+
+**Futures.** Under Path A, workloads are the option on the upside. Under Path B, the case expects this sink to shrink fastest, because new flash competes there directly. The class must be able to close cohort by cohort without stranding its tenants.
+
+### P4. Size and source legacy spares
+
+*Old platforms need spare drives that fit them, and vendors stop making small, older models. Harvest is the cheap source, but it arrives only when another platform retires. Spares demand is read from repair tickets, and at one peer a third of SSD tickets weren't the drive, though triage caught them before any swap ([case, P4](case-kuantillion-cloud-full.md#p4-size-and-source-legacy-spares)).*
+
+**The lenses that combine.** [Buffers and reserves](concept-buffers-and-reserves.md) sizes the pool as a [stocked pool](/glossary/#term-stocked-pool) on a [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio). [Commit points](concept-commit-points.md) handles last-time buys. [Supply layers and lead times](concept-supply-layers-and-lead-times.md) treats harvest and new purchase as two sources. [Three prices](concept-three-prices.md) carries the push-out right (Section 6.2). [The coefficient](concept-the-coefficient.md) corrects the per-failure ratio for misdiagnosis.
+
+**Where they pull against each other.** The buffers lens wants a pool sized to a high quantile. The commit-points lens says the biggest choice, the last-time buy, must be made before the quantile is known. And the declarations lens says harvest, the cheapest source, is itself uncertain.
+
+**The answer, in five parts.**
+
+*First, set cover from a signed ratio, by repair urgency.* Not every failure costs the same. Split spares demand into two segments [argued]. Where a dead drive takes a host down, or the chassis must be swapped with it, a missed repair has no bridge. Where an erasure-coded tier can fail in place, a late spare costs only degraded capacity. Fail-in-place already cuts tickets by about 55% where it is used ([section 5.2](case-kuantillion-cloud-full.md#5-2-repairs-and-spares)).
+
+Each segment gets its own [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio), signed in advance. For example, 19 : 1 for host-down platforms covers 95%, and 1 : 1 for fail-in-place tiers covers 50% (illustrative). That is what the [shortage rule](/glossary/#term-shortage-rule)'s *spares go short last* means in numbers: high cover where there is no bridge, low cover where fail-in-place is the bridge.
+
+*Second, size the test-and-ship leg on true failures.* Where pulls include healthy drives, read that as intake bias and correct it before sizing. Take one installed cohort of 200,000 drives failing at 1.5% a year (illustrative). That is 3,000 true failures, about 8.2 a day. The case cites Palm's theorem and its extension by Feeney and Sherbrooke (1966): stock in resupply depends on the mean turnaround, given untested stock on hand to draw from.
+
+| Turnaround | Mean in resupply | 80% cover | 95% cover | 95% cover, variance twice the mean | 95% cover, four times |
+|---|---|---|---|---|---|
+| 30 days | 247 | 260 | 273 | 284 | 300 |
+| 10 days | 82 | 90 | 97 | — | — |
+
+The first two cover columns assume failures arrive as a Poisson process, each an exact Poisson quantile. Cohorts break that assumption, because drives of one cohort fail together. The last two columns use a negative binomial with the same mean (all illustrative). Size the pool and the cohort cap together.
+
+- In a no-triage scenario, sized from pulls at a 25% misdiagnosis rate (illustrative), the 30-day pool at 80% would be 344, not 260.
+- Cutting turnaround from 30 to 10 days lowers the pool by about 8.5 drives per day saved. That is roughly one day of true demand, plus a little safety stock.
+- A firmware fault keyed to power-on hours is batch demand, not a rate. No pool absorbs a cohort crossing its fault age together. The defense is updating firmware at harvest and staggering drives near a known fault age.
+
+*Third, size the untested cage against the decommission calendar.* Palm's theorem assumes each failure is resupplied one for one. Harvest arrives in lumps, on retirement dates. So the cage of untested drives has its own sizing: enough to bridge the gaps between retirements, with yield drawn per cohort [argued]. The random-yield literature gives the shape (Yano and Lee, 1995; Simpson, 1978). Keep a small float of drives already tested and burned in, sized to the resupply quantile. Re-test anything held past a set staleness limit, because a test ages on the shelf.
+
+First check whether triage already exists. The peer's sequence is the reference design: remote reboot, slot check, cable swap, and a drive swap only as the last step. Where a site lacks it, add it before any pull. Either way, measure the healthy share of pulled drives by site [argued]. Fewer wrongful pulls are cheap supply only where pulls are wrongful today.
+
+*Fourth, choose consciously at each last-time buy.* A last-time buy is a commit point before the event that would size it. Section 6.5 gives three choices for that. Applied here:
+
+1. "Ask for the decision earlier" (Section 6.5): get the platform's retirement dated before the vendor's end-of-life window.
+2. "Buy an option that carries the commitment past the event" (Section 6.5): a reschedulable last-time buy.
+3. "Commit to the stage's record and name the owner of the residual" (Section 6.5): commit on the harvest forecast, with spares planning as owner.
+
+Write down which one you chose.
+
+**A worked last-time buy.** Walk one legacy model through the [worksheet](/worksheet/)'s eight steps (Appendix A). All numbers are illustrative.
+
+1. **Layers.** The vendor's last-time buy, harvest from another retiring platform, and the test-and-ship pipeline.
+2. **Need date and commit point.** Platform P needs this model's spares until it retires, around 30 months out. The vendor's last-time-buy window closes in 3 months, long before P's retirement is dated.
+3. **Stage and open range.** P's retirement is still an intent: 18 to 42 months. P runs 20,000 of these drives at 1.5% a year, so 300 true failures a year, or 450 to 1,050 over the range.
+4. **Cover.** A dead drive takes a P host down, so the segment's ratio is high, 19 : 1. Cover sits near the top of the range, about 1,000 drives.
+5. **Net.** 150 spares are on hand. Platform Q retires 2,000 compatible drives next year, booked firm at the 27% lower-quantile share, about 540. The base need, 750 at 30 months, nets to about 60.
+6. **Split.** Buy the 60 firm. Hold about 250 more as a reschedulable last-time buy, an option to the cover point. Name the rest as a bridge: harvest Q's hosts early, owned by spares planning.
+7. **Bands.** P's retirement may move six months either way at this stage. Supply signs the same band.
+8. **Write it down.** The decision note records choice 2 for the option, choice 3 for the harvest, and who owns the residual.
+
+*Fifth, run two sources as one policy.* Harvest is the cheap, uncertain source; new purchase is the dear, nominally reliable one. The case's studied ground gives the shape: one order-up-to level for each source [argued]. In 2026, new purchase may be the slower one.
+
+When harvested drives land, a planned new order for the same platform isn't needed for a while. Later harvest may still slip. So push the new order out rather than cancel it. That is the push-out right from the supply-layers lens, applied to orders behind an uncertain harvest.
+
+**Test it with fill rate, not bridge counts.** A replenished pool runs short many times a year, even at 80% cover. At 260 drives against a mean of about 247 in resupply, the pool is empty about 20% of the time, with about 1.75 drives on backorder on average (illustrative). So score fill rate and expected backorders by cohort and segment [argued]. The paper's "one launch in five" count is for one-shot buys (Section 10.2), so it doesn't fit a replenished pool.
+
+**Where to stock.** Stock drives at site cages. Stock whole spare hosts only for platforms whose chassis must be replaced with the drive, the case's legacy-card example. Hold untested harvest at a regional depot [argued].
+
+**Fail-in-place.** A server that keeps running with a dead drive declares it can take a shortfall. That is Section 6.7's question, "how much shortfall, for how long, can it take?", which the paper calls its own exploration. Carry the cost of degraded capacity on its own line [argued].
+
+**Who signs.** The ratio is signed by finance and product, as Section 9.2's decision rights require. Finance funds the pool. A signed ratio is what stops "Reliability as trump card" (Section 10.3) from setting it instead.
+
+**Futures.** Under Path A, harvest is the main source for old platforms, and last-time buys get dearer. Under Path B, the case expects spares to erode more slowly than other sinks. Re-sign the ratio each year as new compatible drives get easier to buy.
+
+### P5. Use legacy flash in upgrades and builds
+
+*Harvested drives can extend the life of machines that need more flash, or go into new builds that accept older parts. But each pairing of drive and platform must clear fit and qualification. Planning hosts, spares and builds separately overbooks the same technicians and drives ([case, P5](case-kuantillion-cloud-full.md#p5-use-legacy-flash-in-upgrades-and-builds)).*
+
+**The lenses that combine.** [Declarations](concept-demand-and-declarations.md) treats each program as a step change, entered as a [declaration](/glossary/#term-declaration). [Commit points](concept-commit-points.md) walks each through [the commit-point method](concept-commit-points.md). [Supply layers and lead times](concept-supply-layers-and-lead-times.md) treats qualification as a staffed layer. [Buffers and reserves](concept-buffers-and-reserves.md) keeps cohorts apart.
+
+One line of the paper is new to this decision. "A written table of substitutions per workload class keeps commitments fungible, and needn't be complete" (Section 6.2).
+
+**Where they pull against each other.** Upgrades want the drives that fit best. Spares want the same drives, for the same old platforms. Without one ranked list, both sinks plan on the same stock.
+
+**The answer.**
+
+- Walk each program through the commit-point method (Section 8). Applied here, the layers are qualification slots, harvest of the fitting generation, technician hours and change windows.
+- Staff qualification as a rate, like turn-up: "set by people, dock space, test positions and network ports" (Section 6.2). That is our reading.
+- Fill the substitution table from the fit gate, the first of the technical gates: which drives fit which slots, backplanes and platforms.
+- Choose machines for added flash by binding dimension: upgrade the machines whose flash binds while their other parts sit idle [argued].
+- Register firmware baselines as cohort breaks on [the discontinuity register (mechanism 6)](concept-operating-mechanisms.md#m6). Its artifact lists "Hardware changes, migrations, re-grains"; a firmware baseline is our addition.
+- Don't pack same-age drives into one box. Name the cohort as a shared driver, as Section 6.6 asks for any shared driver, and spread reused drives across redundancy groups inside a build [argued].
+
+The case warns that planning these separately overbooks the same technicians and drives. Our reading: one ranked list in one forum (mechanism 10) is the guard.
+
+**Futures.** Under Path A, life extension substitutes for new machines. Under both paths, this sink closes as the build mix moves to new form factors. Our reading: record the closing date in [the commit-point map (mechanism 13)](concept-operating-mechanisms.md#m13)'s column for "cost to change shape after commit".
+
+### P6. Allocate the harvest across sinks
+
+*Four sinks want the same drives, and each prices a different dimension. Nobody allocates physical harvest across them today. Without a rule, the loudest sink wins, or one drive is promised to two. Holding drives for later is a bet on prices, and the program's own volume moves those prices ([case, P6](case-kuantillion-cloud-full.md#p6-allocate-the-harvest-across-sinks)).*
+
+**The lenses that combine.** [Three prices](concept-three-prices.md) supplies the ranking price, the shadow price. [The operating mechanisms](concept-operating-mechanisms.md) supply the [forum](/glossary/#term-forum), which holds the "Ranked list, cut line, decision log with overrides and brokered trades" (Section 9.2). [Approval and allocation](concept-approval-and-allocation.md) supplies [pegging](/glossary/#term-pegging). [Supply layers and lead times](concept-supply-layers-and-lead-times.md) supplies postponement. [Three prices](concept-three-prices.md) also supplies the internal showback rate, which answers who pays. The showback order is Section 10.4's, part of the legitimacy argument on [people](people.md#legitimacy-change-and-staffing).
+
+Two lines of the paper are new to this decision. The shortage rule: "Agree it in the forum beforehand; supply carries it out. Written during the shortage, it's a negotiation. And don't split a shortage pro rata" (Section 9.3). And the broker's log: "what the broker knows should outlive the broker" (Section 6.4).
+
+**Where they pull against each other.** The shadow price ranks claims, but it can't be computed directly across unlike units. The internal rate charges sinks, but it isn't a ranking. And holding drives for a better claim conflicts with releasing them before prices fall.
+
+**The answer: priority classes, priced within class.** The shortage rule sets the classes, and spares for platforms with no other source sit in the top one. Within a class, value each claim at the cost of that sink's next-best source on that date [argued]:
+
+| Sink | Next-best source, and its cost |
+|---|---|
+| Spares | The bridge for a missed repair, from Section 6.4's bridge table |
+| Workloads | The capacity value in stockout zones; elsewhere, the cost of new flash |
+| Builds and upgrades | The cost of the new machine the drives displace |
+| Exit | Net resale, after the discount for unseen history and pipeline cost |
+
+Score the rule after two cycles. It is a rule, not a computed shadow price: the spares row points at a qualitative bridge table, and the classes are strict. Its value is that it avoids converting units nobody agreed on.
+
+**The shortage rule.** Agree it before the shortage. Our proposal: spares for platforms with no other source go short last, because a missed repair has no bridge [argued].
+
+**Peg and log.** Peg every tested drive to one claim, and log every trade, so one drive is never promised twice. The log is how the broker's knowledge outlives the broker.
+
+**One storage policy** [argued]. Erase, quick-screen and hold. Run the full test when a claim arrives. Applied here, that keeps supply "generic until the decision that says which shape" (Section 6.2).
+
+**Who pays.** Set an internal showback rate on usable, yield-adjusted capacity [argued]. It is the higher of net realizable resale for that cohort and grade, and pipeline cost per usable TB, plus a risk loading drawn from the incident bound. Carry is charged per TB-month while the drive is held. Call it a showback rate, not a transfer price, to keep it apart from tax transfer pricing.
+
+The floor at resale matters. A drive that could be sold is never free to a sink. For example, take net resale of $100 per usable TB, pipeline cost of $25 and a $5 risk loading. The rate is about $105 per TB, plus about $0.83 per TB-month held, the capital charge on $100 at 10% (illustrative). A cost-plus price of about $32 would show reuse at an 83–95% discount to new flash, and every sink would over-claim. Where resale exceeds pipeline cost, the gap is a management-ledger credit to the recovery team, not a booked saving.
+
+Show it back for a full cycle before anyone is billed. The paper's order is "Move to attributed cost only after a full cycle of showback" (Section 10.4). The forum ranks on next-best-source value, not on this price.
+
+**When to release held stock.** Holding is a priced position. The paper's option rule is "write down the trigger for converting options into orders" (Section 6.2). Applied here, write the release trigger before you hold [argued]:
+
+- hold a cohort only while its expected discounted claim value, minus holding cost, exceeds net resale today, read on monthly prices;
+- release on a stop-loss, a set fall in resale value from the hold date, even before the next review; and
+- release when a drive's shelf time passes two re-test cycles with no claim.
+
+Waiting for two quarterly prints would lag a falling market by about six months. That lag is the cost Path B would charge.
+
+Release in steps, under the cap below.
+
+**The program moves its own market.** At this volume Kuantillion Cloud isn't a price taker in the used market. Its own retention moves the price its retention is judged against, and a rival's program would move it too. Three rules follow [argued]. Cap resale releases per model per quarter. Read vendor warranty and end-of-life terms at the annual cycle, and again after any peer announcement. Track the large operators' resale volumes as a signpost. Price feedback itself is [unmeasured].
+
+**Futures.** Under Path A, the shadow price is high and holding is rational. Under Path B, release on the trigger; the rate card falls toward resale value, and exit rises in rank.
+
+### P6, the commitment question
+
+*A harvest is promised long before the drives exist. Retirements slip when tenants can't move, and gates reject an unknown share. Count on too much and every sink plans on drives that never come. Count on too little and new flash is bought that wasn't needed ([case, P6](case-kuantillion-cloud-full.md#p6-allocate-the-harvest-across-sinks)).*
+
+**The lenses that combine.** [Declarations](concept-demand-and-declarations.md) supplies the stages and their scoring, each with [a stage's record](/glossary/#term-a-stages-record). [Approval and allocation](concept-approval-and-allocation.md) supplies the uncommitted label and [supply's answer](/glossary/#term-supplys-answer). [Commit points](concept-commit-points.md) supplies the [firm, flexible and named](/glossary/#term-firm-flexible-named) split.
+
+The key line is the label for harvest not yet answered. "An approval becomes capped issue when supply answers it with a dated commit or a named gap" (Section 6.1). Until then, "label it *uncommitted*, a firmness class of its own, so its holder knows the odds" (Section 6.1).
+
+**Where they pull against each other.** The commit-point method books firm to the base. But a harvest's base is unknown until its stage record builds up. Booking to the base too early books phantom supply.
+
+**The answer.** Applied here, a retirement's harvest is a staged supply declaration. Its stages are planned, dated, drained, harvested, tested and available. Score each stage promised against actual.
+
+**One booking rule** [argued]. Book firm only to the stage record's lower quantile until the drives are drained. Then book to the base, the stage record's middle, as Section 8.2's split uses a base scenario. Above the firm slice, hold options on new purchase. Above that, name a bridge with an owner. In the first cycle, before any stage record exists, book firm only drives already tested. The stage record carries pull-ins as well as slips, since power-forced retirements arrive early.
+
+**An estimate, by cohort.** Read the booking as a share of what is scheduled, built cohort by cohort. Yield is close to all-or-nothing within a cohort, so averaging it across cohorts hides the risk.
+
+- On-time share, about 50–70%. Our estimate rests on retirements waiting for new halls, and on the case's report that 30–50% of large 2026 data-center capacity may be delayed [argued].
+- Yield through the technical gates is unpublished [unmeasured]. Take a batch that is 60% observable cohorts at about 90% yield and 40% blind cohorts at about 40% (illustrative).
+- The central expectation is then about 35–49% of scheduled drives on the date. For a retiring batch of 40,000 drives, that is about 14,000–19,600. The firm slice, at the low on-time share and observable cohorts only, is about 27%, or 10,800 drives (all illustrative).
+
+**Who pays when harvest fails to arrive.** Finance agrees it in advance. The paper's right for bands has finance "agreeing who pays for a change outside them" (Section 9.2); we extend it to harvest. A default keeps that from becoming a negotiation [argued]. If supply gave a dated commit, supply pays the bridge. If the sink claimed against harvest still labeled uncommitted, the sink pays. Finance signs the exceptions.
+
+**Futures.** Under Path A, decommissions slip more, so the lower quantile sits lower. Under Path B it can rise.
+
+### P7. Run the reverse pipeline at the needed rate
+
+*Harvesting, erasing, testing and shipping drives takes skilled hands. The same technicians also repair machines, and they are measured on ticket speed. If the pipeline is short, harvest piles up untested and spares starve. If it is padded, crews sit idle ([case, P7](case-kuantillion-cloud-full.md#p7-run-the-reverse-pipeline-at-the-needed-rate)).*
+
+**The lenses that combine.** [Supply layers and lead times](concept-supply-layers-and-lead-times.md) treats the pipeline as [turn-up](/glossary/#term-turn-up), a rate staffed months ahead. [Buffers and reserves](concept-buffers-and-reserves.md) sets the cover point for that rate. [Commit points](concept-commit-points.md) says when staffing must be committed. For turn-up, "its ratio sets how much rate to staff, not how much to buy" (Section 6.5).
+
+**Where they pull against each other.** The paper staffs turn-up at the median, because a short rate costs little. But a short pipeline here starves spares, whose shortage cost is higher. The lenses agree on the method and disagree on the ratio.
+
+**The answer.**
+
+- Applied here, staff the pipeline to the median of expected retirements. Section 6.5 sets turn-up, a rate, at the median, in "this paper's argument (not a published result)" (Section 6.5). Keep surge crews on contract, as an [option](/glossary/#term-option) on the high.
+- Book harvest and re-power slots like turn-up slots, "booked ahead like an appointment" (Appendix A). That is our reading, using the [turn-up slot](/glossary/#term-turn-up-slot).
+- Level retirements across quarters where change windows allow, so slipped batches don't arrive together.
+- Watch harvested-but-not-graded drives. The paper says "delivered-but-not-live is where fulfillment backlogs quietly age" (Section 6.2); we apply it to the cage.
+
+**Turnaround is inventory, with a condition.** Each day cut from mean turnaround frees about one day of true demand from the spares pool. Per million installed drives, that is about 27–68 drives a day. It holds while untested harvest is on hand. When harvest itself is short, the decommission date binds.
+
+**Where the capacity sits.** Price the internal and exit pipelines separately, since their sanitization bars differ [argued]. Put test and erasure capacity at the large decommissioning sites. Hold untested drives at a regional depot. Ship to demand only against a claim [argued].
+
+**Labor.** The case bounds the SSD share of the work at 25–375 technician-years a year, an upper bound (illustrative). That is a staffing program, not an impossibility. The risk is that it lands on the same sites and quarters as repairs.
+
+**Futures.** Under Path A, the case expects the pipeline to be the program's ceiling. You may argue for staffing above the median there, because a short pipeline starves spares, whose shortage cost is higher than turn-up's [argued]. Under Path B, staff to the median.
+
+### P8. Make reuse something teams choose
+
+*Reused capacity works only if tiers accept it and technicians harvest rather than shred. Today tiers have no reason to trust it, technicians have a reason to scrap, and the program's costs land in a different budget from its benefits ([case, P8](case-kuantillion-cloud-full.md#p8-make-reuse-something-teams-choose)).*
+
+**The lenses that combine.** [People and seams](people.md) carries most of this, through legitimacy and the right to challenge. [The operating mechanisms](concept-operating-mechanisms.md) supply the landing rule ([mechanism 8](concept-operating-mechanisms.md#m8)) and signed commitments (mechanism 7). [Approval and allocation](concept-approval-and-allocation.md) supplies the bridge premium charged to its cause (Section 6.4).
+
+Several lines of the paper are new to this decision. Recovered capacity "has to land where the recoverer sees it" (Section 9.3). "A rule agreed in advance is a contract; one proposed after the savings appear is a request" (Section 9.3). "A consumer who can challenge a coefficient, and sometimes wins, trusts the rest of the bill" (Section 10.4). "Engineers need their own coefficient, reproducible from their telemetry, with forecast error treated as data, not fault" (Section 10.4). Escalate in steps: "nudges before bills, bills before constraints" (Section 10.4).
+
+**Where they pull against each other.** Pricing pressure would push tiers to take reused capacity. Legitimacy says pressure before trust backfires. The paper's answer is order: prove fulfillment, show back, then bill.
+
+**The answer.**
+
+- [Agree the landing rule early](principles.md#agree-the-rules-before-you-need-them): shares booked as savings, returned to the recoverer and held centrally (Section 9.3). Applied here, the pipeline is a recoverer, so it gets credit for part of the capital it saves. Book a capital saving only on evidence [argued]. That means a purchase order cancelled, reduced or pushed out in the commitment register. Or it means a cut against a purchase plan frozen at the first decision gate. Under firm contracts no capital is saved; there, avoided stockout cost is credited to the product's P&L.
+- Write the reuse commitment into the annual capacity agreement. [Commitments that become institutions (mechanism 7)](concept-operating-mechanisms.md#m7) does that for forecasts and efficiency; applied here, so enforcement doesn't rest on one person.
+- Let tiers challenge a grade or a price, and sometimes win. Our reading: a grade is a coefficient. [People](people.md#legitimacy-change-and-staffing) explains why a challenge channel builds legitimacy.
+- Enter reused capacity where loss is cheapest: caches and replicated tiers first. That rests on Section 5.4's phasing, not on Section 10.4.
+- Prove fulfillment first, with spares, and give tiers that take reused capacity a right of recall (Section 10.4). Applied here, a tier can hand reused capacity back and recall new; the paper wrote these for moving teams onto shared pools.
+- Fix the technician incentive one of two ways [argued]. The case's multitask finding predicts scrapping wherever harvest value goes unmeasured. One fix is a second metric, harvest value recovered per site, paired with the downstream gate pass rate so speed can't be bought with bad harvest. The other is a separate harvest crew, which the same theory favors when one metric is noisy. Choose by site volume.
+- Change the value-recovery team's cash measure, so it stops pulling drives toward resale ahead of internal reuse [argued].
+- Face the capital and operating split. The pipeline's cost lands in this quarter's operating budget, its benefit in next year's capital. Our reading: that is seam 2's ground (Section 10.1), and the landing rule is how you face it.
+- Show the premium back first. When a sink refuses harvest and its new drives need a bridge, the paper's rule is "Charge the premium to whoever caused it" (Section 6.4). Extending it to refused harvest is ours. For the first cycle, show it back; bill it only after.
+
+**Futures.** Under Path B, new drives get cheap and the second-class risk grows. The scorecard must report the stated anchor and whether reuse displaced a purchase, not just dollars.
+
+## Sequencing: why this order
+
+The order of work follows one rule. Each step waits on the evidence in its row. The paper's rule for declarations is that "promotion needs the evidence in its row" (Section 5.4). We apply it to the program's own decision gates.
+
+Two of the practice's ideas set the order. The first is the [stage](/glossary/#term-stage): a step licenses only the action its evidence supports. The second is the commit point: commit only what the lead time forces, and hold the rest as options. Read together, they say this. Do first what is cheap and decides whether the rest is worth doing. Do last what is slow to learn and easy to reverse.
+
+### What must be known before what
+
+The decisions depend on each other, and the dependencies fix most of the order.
+
+- **Preserve the option before you price it.** Shredding and resale are irreversible, and the ticket-speed flow keeps doing both while you study. So hold SSDs from retiring hosts out of destruction and resale from week one, within secure cage capacity, until the first decision gate [argued]. That is the commit-point logic applied to the program itself.
+- **Existence before design.** You can't design a program that already runs, or one that was declined for a reason that still holds.
+- **Size and anchor before everything priced.** P2's keep sheet, P6's ranking and P8's scorecard all need the anchor. The dollar test decides whether the rest runs at all, and the scope ratio how much.
+- **The record before allocation.** P6 can't peg drives that have no record. P1's off-host fields come before the forum ranks.
+- **Hosts and allocation together.** P2 needs drive values from P6, and P6 needs dated retirements from P2. They start in the same gate.
+- **Spares before workloads.** Spares prove fulfillment cheaply and set the value floor. Workloads need trust that spares build.
+- **The pilot before the wear price.** P2a can't price wear until the pilot gives a second-life value.
+
+![How the eight decisions depend on each other: P1 feeds every decision, P2 feeds the four sinks, and all feed P6.](figures/fleet-flash-dependencies.svg)
+
+*The case's dependency map. Solid arrows feed. Dashed arrows are slower feedback or a slow link; two of them close loops (P6 to P2, P8 to P3).*
+
+### The window
+
+The sequence runs against a clock it doesn't control. Path A keeps flash tight through 2028; Path B eases from late 2027, and high-capacity drives get cheap first. If day 1 falls around November 2026, reused flash reaches workloads no earlier than mid-2027 (illustrative).
+
+So the value of starting depends on the path. If harvest value falls 50% a year, as Path B threatens, each quarter of delay costs about 16% of it. At 10% a year, closer to Path A, it costs under 3% (illustrative). Spares and last-time buys keep their value on either path; the workload sink is the one that decays.
+
+Three things can run in parallel to buy back time [argued]. The stranded-stock track needs no gates from the harvest. The drive record's build can start at the first decision gate, not after the second. And pipeline staffing goes on the commit-point map at the first decision gate, because crews are staffed months ahead.
+
+### Week one: does a program already exist?
+
+The public record is silent, and silence could mean a program run quietly, one tried and dropped, or none. So test all three before you design anything, talking to owners one to one before any form goes out. If a decline still holds, stop, and re-center on redeploying whole hosts ([P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest)). The plan's [days 1–5](case-kuantillion-cloud-plan.md#days-1-5-does-a-program-already-exist) carry the questions and dates.
+
+### Size it before you build it
+
+Nothing gets built until you know whether the program pays. Our reading, applied here: "Below materiality, the mechanisms cost more than they return" (Section 13). The paper says that of elastic-cloud customers, and it is a statement about dollars. So the go or no-go is a dollar test [argued].
+
+*The test.* Compare the expected annual margin over exit, under the declared anchor, with the program's fixed cost: the drive record, the forum and the fixed part of pipeline staffing. Next year's purchase doesn't enter it.
+
+For example, take the case's central harvest row of 1.8 EB a year at 80% yield, about 1.44 million usable TB. At the $190 anchor's central margin of about $10 per TB, that is about $14 million a year. At the $640 anchor's central $370, it is about $530 million. Against a fixed program cost of $20–60 million a year (all illustrative), the low anchor fails and the high anchor passes easily. The anchor fork decides the program's fate before its size does.
+
+*The ratio, as a descriptor.* The ratio of SSD harvest to a year's new flash sets scope; it doesn't decide go or no-go. The case puts it at about 0.5–30%, central 3–9%, from harvest rows against 20–60 EB of new flash a year ([section 7.4](case-kuantillion-cloud-full.md#7-4-the-flow-the-denominator-and-the-stock)). Its numerator is a count the report calls hard drives, so the ratio is near zero if they were all disks.
+
+A vintage check bounds it from the other side. Drives retiring now were bought about six years ago. At 20 EB a year of deployment growing 15–30% a year, about 4–9 EB a year of flash is retiring. That is the same order as the top harvest row. Inside the company, measure retired flash TB by vintage, not drive counts. Use one price basis per scenario.
+
+The scope bands are this page's [argued]:
+
+| Ratio | Scope | What runs |
+|---|---|---|
+| Under 1% | Spares continuity | A minimum drive record, spares, the pipeline and exit |
+| 1–5% | Mixed | The above, plus allocation as a monthly forum line and one workload pilot |
+| Over 5% | Supply strategy | Everything on this page |
+
+If the measured range spans two bands, run the smaller scope and re-test at the first quarterly supply review [argued]. "Stop at the step where the next one costs more than it saves" (Section 12). The paper writes that for mid-sized companies; we apply it to the program's steps. [Settings](settings.md) explains how much of the discipline a setting needs.
+
+The stranded stock is sized at the same time, on its own line. Its go or no-go is a reclaim pilot, not the flow ratio.
+
+### The decision gates, in brief
+
+Seven decision gates, G0 to G6, run the program. They are not the case's eleven technical gates, which a drive must clear; these are points where the program decides. Each opens only on its evidence, and the table copies the plan's. The plan's [gates](case-kuantillion-cloud-plan.md#gates) give each one's entry, exit, artifacts and owner.
+
+| Decision gate | Evidence to enter | The work | What it licenses |
+|---|---|---|---|
+| G0 | A named program lead | Interviews: does a program exist, or was it declined? | Design, an audit, or a stop |
+| G1 | G0 reads absent, or a decline that no longer holds | The dollar test and the scope ratio; the stranded stock; contracts into the register; the capacity anchor's inputs; the pipeline rate on the commit-point map | The scope and anchor declared; the purchase plan frozen as the savings baseline; the [forum](/glossary/#term-forum) chartered to agree the [shortage rule](/glossary/#term-shortage-rule) and ratify the [landing rule](/glossary/#term-landing-rule) |
+| G2 | G1 says go | Count qualification backlog and solver categories; read decommission records by branch; check whether the solvers reach physical devices | A tier cap; the redeploy-whole test |
+| G3 | G1 says go; the build doesn't wait for G2 | An owner for each field, off-host first; each handoff defined; the off-host states built; reconciliation with the erasure log | G3a, designed: a record every decision can cite. G3b, live: drives can move between sinks |
+| G4 | G3a exit, with G3b dated | Decommissions on the register; spares ratio signed; pipeline staffed to the signed rate; the forum ranking harvest; the risk budget | Allocation: every claim answered and each tested drive pegged; beyond spares, after G3b |
+| G5 | G4 exit, and the tier cap | A pilot cohort in caches and replicated tiers; build programs declared | A reused-flash class; a substitution table |
+| G6 | A second-life value from the pilot | The wear price registered; endurance used reported by cohort | The wear price on the rate card |
+
+Three ordering choices need their reasons.
+
+- **The forum starts small.** You charter it at G1 only for two rules. It agrees the shortage rule, and it ratifies the landing rule: planning proposes, finance signs, the forum ratifies. "Shortage rules come before the shortage" (Section 9.3), so the forum must exist to agree them. It starts ranking claims at G4 [argued].
+- **Spares go first inside G4.** Spares are the harvest's most predictable claim and its value floor. Starting there proves fulfillment before you ask anyone to trust reused capacity.
+- **The wear link goes last.** The case's own best guess is that placement shapes the harvest little today, except in write-heavy and low-endurance cohorts.
+
+### The cadence, in brief
+
+The cycles nest, slowest outside (Section 9.1). Annual work signs ratios, rules and last-time buys. The quarterly supply review reads the harvest forecast by stage. Monthly, supply updates harvest commits and the forum re-ranks. Pegging and reconciliation run continuously, reviewed weekly.
+
+"In my experience, the step most often missing is the supply review" (Section 9.1). Our reading: here it is the main meeting, because supply is a byproduct of other decisions. A vendor's end-of-life notice triggers an off-cycle review. [The map](the-map.md) shows where each cadence sits, and the plan's [standing cadence](case-kuantillion-cloud-plan.md#5-standing-cadence) gives the agenda.
+
+### If your fleet is a thousand hosts, not millions
+
+Most of this strategy survives at mid-size, scaled down [argued]. Keep the hold on shredding, the dollar test, the spares ratio by repair urgency, and one record per drive, even a spreadsheet. Skip the forum, the grades and the workload pilot; at that scale, spares and exit are the program. The paper's advice for smaller settings applies: "Stop at the step where the next one costs more than it saves" (Section 12). [Settings](settings.md) explains how much of the discipline a setting needs.
+
+## The reasoning: the practice's lenses
+
+The decisions above draw on ten concepts from the guide. This section is the reasoning behind them. For each, you get the idea in brief, what it changes in this case, and the decisions it bears on. Each lens stands alone, and each links to the concept page that teaches it in full.
+
+### The coefficient
+
+*Read the concept: [The coefficient](concept-the-coefficient.md).*
+
+**The idea.** A caller's bill on a shared service is roughly volume × [coefficient](/glossary/#term-coefficient) × [rate](/glossary/#term-rate). Read forward, the coefficient forecasts load. Read backward, it is a price. So the paper's first claim is that a coefficient is an agreement. It "holds only while someone owns it, versions it and restates it when hardware or measurement changes" (Abstract).
+
+**What it changes here.** Three of the case's numbers look like physics but act as agreements nobody signed. Our reading is that each needs an owner, a version and an effective date, kept in [the coefficient register (mechanism 3)](concept-operating-mechanisms.md#m3).
+
+- **The wear price.** Kuantillion Cloud prices flash wear per byte written, at a rate set by each model's rated endurance. "If α moves, the fleet plan and the bill move together" (Section 5.2). When a drive starts a second life, the basis changes. Our reading: that is a re-grain, "a change in how the metric is measured" (Section 5.3).
+- **Spares per failure.** Spares need is read from repair tickets. Where triage is weak, pulls overstate true failures, by up to about 1.5 times at a site with none. Read for spares, when diagnosis improves, the ruler changes: "Price series are adjusted for such events, not forecast through them" (Section 5.3).
+- **Usable terabytes per retiring drive.** The coefficient that turns a retirement into supply is SSD share × capacity × yield. No operator publishes the yield [unmeasured]. The paper says every netting term "is a forecast too", and each needs "a date and an owner" (Section 8.2).
+
+Across a generation break, averaging is "Forecasting through breaks" (mechanism 6). The paper's answer is to restate "per service, measured" (Section 5.3). Applied here, the unit is the cohort.
+
+**Decisions it bears on.** [P2a](#p2a-the-wear-sub-decision) prices wear. [P4](#p4-size-and-source-legacy-spares) corrects the per-failure ratio. [P6, the commitment question](#p6-the-commitment-question) books yield. [P1](#p1-one-record-per-drive) holds the fields all three are computed from.
+
+### Three prices
+
+*Read the concept: [Three prices](concept-three-prices.md).*
+
+**The idea.** "What does capacity cost?" is three questions. Who pays uses the [average loaded rate](/glossary/#term-average-loaded-rate). Should we build uses [long-run incremental cost](/glossary/#term-long-run-incremental-cost). Who gets scarce capacity now uses the [shadow price](/glossary/#term-shadow-price). "One number for all three misleads on at least one" (Executive summary).
+
+**What it changes here.** The question of what a reused drive is worth has no single answer; it depends on which decision asks. Section 4's table rules out the most obvious tool for keeping hosts: long-run incremental cost "Misleads when used for" "Pricing capacity that already exists" (Section 4). And the drive has an outside market, which the paper's average rate doesn't price. [What a reused drive is worth](#what-a-reused-drive-is-worth) works both through: the anchor fork, the capacity anchor, margin over exit, and the internal rate.
+
+**Decisions it bears on.** [P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest) prices a keep. [P6](#p6-allocate-the-harvest-across-sinks) ranks and shows back. [P8](#p8-make-reuse-something-teams-choose)'s scorecard states its anchor.
+
+### Declarations
+
+*Read the concept: [Demand and declarations](concept-demand-and-declarations.md).*
+
+**The idea.** A step change has no history to extend, so it enters the plan as a [declaration](/glossary/#term-declaration): a signed statement in units the planner already prices. It firms up in [stages](/glossary/#term-stage), and promotion needs the evidence on its row (Section 5.4). Supply has stages too: "planned, contracted, under construction, delivered, live" (Section 6.7).
+
+**What it changes here.** "A retirement is a supply order with a minus sign. It has a date, and it slips, usually because tenants can't migrate off in time" (Section 6.7). Applied here, the same retirement writes a second line with a plus sign: the drives it releases. So a harvest is a staged supply declaration, scored promised against actual by cohort and site. That turns a flow of unknown size into a forecast with a known structure and error bands.
+
+**Decisions it bears on.** [P6, the commitment question](#p6-the-commitment-question) applies it directly. [P5](#p5-use-legacy-flash-in-upgrades-and-builds) declares build programs. [P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest) sets the first stage.
+
+### Approval and allocation
+
+*Read the concept: [Approval and allocation](concept-approval-and-allocation.md).*
+
+**The idea.** The paper's second claim is that approval is not allocation. An ask approved in a common unit still needs the right shape, place and time. A common unit prices an ask but doesn't clear it (Section 6.1). The gap needs an owner and a ledger. A [firmness class](/glossary/#term-firmness-class) tells holders their odds.
+
+**What it changes here.** Read for drives, the shape has five dimensions: capacity, performance, endurance, fit and condition. Condition has no place in the paper's unit, so terabytes alone can't allocate the harvest. The eleven technical gates are the allocation layer itself: a drive isn't supply until it clears them for a specific sink.
+
+Claim 2 shows up three ways. A drive approved for a sink can fail a technical gate. A drive promised to two sinks is an undesigned gap on both. And "A reclaim that doesn't happen, or a decommission that slips, becomes a shortage that looks like a supply failure" (Section 6). [The fulfillment ledger (mechanism 5)](concept-operating-mechanisms.md#m5) tracks the gap, run backwards from in service to available. [Pegging](/glossary/#term-pegging) ties each drive to one claim: "Pegging makes the cheapest bridge possible" (Section 6.4).
+
+**Decisions it bears on.** [P1](#p1-one-record-per-drive) is the ledger. [P3](#p3-match-legacy-flash-to-workloads) offers a firmness class. [P6](#p6-allocate-the-harvest-across-sinks) pegs. [P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest) uses the bridge condition. [P8](#p8-make-reuse-something-teams-choose) charges the bridge premium to its cause.
+
+### Buffers and reserves
+
+*Read the concept: [Buffers and reserves](concept-buffers-and-reserves.md).*
+
+**The idea.** A plan with one line called headroom hides several buffers, each with its own owner. A buffer is a priced decision: the [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio) weighs running short against holding spare, and sets how far up the range to cover, the newsvendor fraction [78].
+
+**What it changes here.** The spares pool is a [stocked pool](/glossary/#term-stocked-pool) with a signed ratio, not a habit. Someone funds and replenishes it, so a draw is a debt with a date (Section 6.3). The lens separates bias from noise: "Persistent bias is different: correct it at intake (Section 9.3), don't buffer it" (Section 6.3). Read for drives, healthy drives pulled for lack of triage are that bias.
+
+Pooling is the main economy, but "Correlation and heavy tails erode the gain" (Section 6.3). Aged drives of one cohort are where correlation hides. So the pool is sized for overdispersion, and the cohort is capped per redundancy group. The paper's shortage budget counts one-shot buys; a replenished pool is tested by fill rate instead.
+
+**Decisions it bears on.** [P4](#p4-size-and-source-legacy-spares) is this lens. [P3](#p3-match-legacy-flash-to-workloads) needs the cohort cap. [P5](#p5-use-legacy-flash-in-upgrades-and-builds) spreads reused drives across redundancy groups. [P7](#p7-run-the-reverse-pipeline-at-the-needed-rate)'s turnaround sets stock in resupply.
+
+### Supply layers and lead times
+
+*Read the concept: [Supply layers and lead times](concept-supply-layers-and-lead-times.md).*
+
+**The idea.** Supply comes in [layers](/glossary/#term-supply-layer), each with its own [lead time](/glossary/#term-lead-time) and contract terms. Turn-up is a layer too: a rate set by crews, dock space and test positions, staffed months ahead like a checkout line (Section 6.2).
+
+**What it changes here.** The reverse pipeline is a [turn-up](/glossary/#term-turn-up) layer run backwards, staffed months ahead, not bought. Its layers stack: retirement date, drain, harvest, erase and test, qualification. "a supply slip often shows up twice" (Section 6.2): a slipped retirement lands on top of the next batch. Qualification is a scarce layer too, and every new grade spends it.
+
+The paper keeps supply "generic until the decision that says which shape" (Section 6.2). Applied here, that is a storage policy: erase, quick-screen and hold. Galbreth and Blackburn (2006) add a correction: more intake permits stricter sorting, and under scarcity the sorting threshold moves with volume. So the test gate tightens as the harvest grows.
+
+**Decisions it bears on.** [P7](#p7-run-the-reverse-pipeline-at-the-needed-rate) is this lens. [P5](#p5-use-legacy-flash-in-upgrades-and-builds) needs qualification slots. [P4](#p4-size-and-source-legacy-spares) runs two sources. [P6](#p6-allocate-the-harvest-across-sinks) uses postponement.
+
+### Commit points
+
+*Read the concept: [Commit points and the commit-point method](concept-commit-points.md).*
+
+**The idea.** Each supply layer has a [commit point](/glossary/#term-commit-point): its need date minus its cautious lead time. The commit-point method (Section 8) walks each layer through eight steps. When a commit point falls before the event that would size it, you have [three choices](/glossary/#term-the-three-choices) (Section 6.5), and you write down which in a [decision note](/glossary/#term-decision-note).
+
+**What it changes here.** Two decisions are commit points in disguise. A last-time buy commits years before the need is known. A decommission date commits when drives arrive and when an old platform's spares need ends. The method's [firm, flexible and named](/glossary/#term-firm-flexible-named) split is how to book a harvest you can't yet count on. And the program itself has a commit point: shredding is irreversible, so the hold comes before the study.
+
+**Decisions it bears on.** [P4](#p4-size-and-source-legacy-spares)'s last-time buys, with a worked example. [P6, the commitment question](#p6-the-commitment-question). [P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest)'s retirement dates. [P5](#p5-use-legacy-flash-in-upgrades-and-builds)'s build programs.
+
+### The measuring loop
+
+*Read the concept: [The measuring loop](concept-measuring-loop.md).*
+
+**The idea.** Pick a business [driver](/glossary/#term-driver), instrument it with the resources it uses, and compute the ratio continuously (Section 5.2). Alert when the ratio shifts or use departs from forecast. A shift is a new version of a price, not a quiet edit.
+
+**What it changes here.** Two ratios matter. Endurance used per year by cohort, with its skew, decides what tomorrow's harvest is worth. The healthy share of pulled drives by site watches triage. Both can be watched before anyone prices them. And the pilot's real job is measurement: "The rollout is the measurement" (Section 5.4).
+
+**Decisions it bears on.** [P2a](#p2a-the-wear-sub-decision) watches endurance. [P4](#p4-size-and-source-legacy-spares) watches the healthy share. [P3](#p3-match-legacy-flash-to-workloads)'s pilot measures second-life hazard.
+
+### The operating mechanisms
+
+*Read the concept: [The operating mechanisms](concept-operating-mechanisms.md).*
+
+**The idea.** Thirteen artifacts keep the agreement true from one cycle to the next, each with an owner and an indicator. Nine decision rights sit beside them.
+
+**What it changes here.** Six matter most for legacy flash. Check these internally in week one; the [plan](case-kuantillion-cloud-plan.md) carries the full thirteen-row checklist. Every status below is our reading of the public record.
+
+| Mechanism | What to check | What the record shows |
+|---|---|---|
+| [11, supply plan of record and commitment register](concept-operating-mechanisms.md#m11) | Does harvest get a dated commit, and are flash contracts read in? | Partial: supply has service levels; harvest gets no dated commit |
+| [5, fulfillment ledger](concept-operating-mechanisms.md#m5) | Does it follow a drive after it leaves its host? | Partial for virtual quota; missing off-host |
+| [10, standing arbitration forum](concept-operating-mechanisms.md#m10) | Does anyone allocate physical harvest across sinks? | Missing |
+| [3, coefficient register and versioned rate card](concept-operating-mechanisms.md#m3) | Are the wear price and a drive rate versioned and owned? | Partial: wear priced by model; no versions or grades |
+| [13, commit-point map](concept-operating-mechanisms.md#m13) | Are last-time buys and decommission dates mapped? | Missing |
+| [8, efficiency landing rule](concept-operating-mechanisms.md#m8) | Do physical drives earn credit when recovered? | Partial: virtual capacity does; drives don't |
+
+Without the register, approvals are "treated as firm before supply answers" (Section 9.2). Without the forum, "Escalation by volume" decides (Section 9.2). Most of the work is extension, not invention: eight of the thirteen exist in part somewhere in the fleet.
+
+**Decisions it bears on.** [P6](#p6-allocate-the-harvest-across-sinks) and its commitment question (5, 10, 11). [P8](#p8-make-reuse-something-teams-choose) (7, 8). [P4](#p4-size-and-source-legacy-spares) and [P5](#p5-use-legacy-flash-in-upgrades-and-builds) (13). [P2a](#p2a-the-wear-sub-decision) (3).
+
+### People and seams
+
+*Read the concept: [People: brokering the handshake](people.md).*
+
+**The idea.** Every capacity plan is a [handshake](/glossary/#term-handshake) among capital, demand and supply. The planner sits in the middle with no budget, trading in information, timing, trust and credible commitments. Conflict runs along three [seams](/glossary/#term-seam): product and platform (seam 1), planning and finance (seam 2), planning and supply (seam 3).
+
+**What it changes here.** The case's organizational findings become the design. Our reading places hosts and harvest on seam 3, and keeping hosts and the capital-operating split on seam 2. Grades and wear sit on seam 1, where the products are the tiers that take reused flash (Section 10.1). Seam 3 needs "a definition of done for each handoff" (Section 10.1); applied here, the handoffs are a drive's off-host states.
+
+Three decisions have no public owner: the drive record, the wear price and allocation. The paper's remedy is to "lay the charters over the chain that delivers the product, end to end, and name an owner for every gap" (Section 10.2). And adoption is a legitimacy problem, not a pricing one: "Past a point, legitimacy matters more than precision in whether anyone acts on the number" (Section 10.4).
+
+**Decisions it bears on.** [P8](#p8-make-reuse-something-teams-choose) is this lens. [P1](#p1-one-record-per-drive) assigns field owners. [P6](#p6-allocate-the-harvest-across-sinks) needs the [forum](/glossary/#term-forum). [P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest) sits on seam 2.
+
+### The theory map, as a study aid
+
+Each concept below does work in this case. The table tells you where to read the theory, and where on this page it is applied.
+
+| Concept | Guide page | Seed | Glossary term | Where it does work here |
+|---|---|---|---|---|
+| The coefficient | [The coefficient](concept-the-coefficient.md) | Sections 5.1–5.3 | [coefficient](/glossary/#term-coefficient), [cohort](/glossary/#term-cohort) | The wear price, spares per failure, usable terabytes per retiring drive; [P2a](#p2a-the-wear-sub-decision), [P4](#p4-size-and-source-legacy-spares) |
+| Three prices | [Three prices](concept-three-prices.md) | Section 4 | [shadow price](/glossary/#term-shadow-price), [showback](/glossary/#term-showback) | The value anchor, keeping hosts, ranking sinks; [P2](#p2-when-the-host-goes-keep-redeploy-whole-or-harvest), [P6](#p6-allocate-the-harvest-across-sinks) |
+| Declarations | [Demand and declarations](concept-demand-and-declarations.md) | Sections 5.4, 6.7 | [declaration](/glossary/#term-declaration), [stage](/glossary/#term-stage) | Harvest as a staged supply declaration; build programs; [P5](#p5-use-legacy-flash-in-upgrades-and-builds), [P6 commitment](#p6-the-commitment-question) |
+| Approval and allocation | [Approval and allocation](concept-approval-and-allocation.md) | Sections 6, 6.1, 6.4 | [fulfillment](/glossary/#term-fulfillment), [pegging](/glossary/#term-pegging) | Five dimensions, the drive ledger, bridges; [P1](#p1-one-record-per-drive), [P3](#p3-match-legacy-flash-to-workloads), [P6](#p6-allocate-the-harvest-across-sinks) |
+| Buffers and reserves | [Buffers and reserves](concept-buffers-and-reserves.md) | Sections 6.3, 6.6, 10.2 | [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio), [stocked pool](/glossary/#term-stocked-pool), [cover point](/glossary/#term-cover-point) | The spares pool, misdiagnosis, cohort risk; [P4](#p4-size-and-source-legacy-spares), [P3](#p3-match-legacy-flash-to-workloads) |
+| Supply layers and lead times | [Supply layers and lead times](concept-supply-layers-and-lead-times.md) | Sections 6.2, 6.4, 6.7 | [supply layer](/glossary/#term-supply-layer), [turn-up](/glossary/#term-turn-up) | The reverse pipeline as turn-up; contracts and push-out; [P7](#p7-run-the-reverse-pipeline-at-the-needed-rate), [P5](#p5-use-legacy-flash-in-upgrades-and-builds) |
+| Commit points | [Commit points](concept-commit-points.md) | Sections 6.5, 8, Appendix A | [commit point](/glossary/#term-commit-point), [the three choices](/glossary/#term-the-three-choices) | Last-time buys; decommission dates; the booking rule; [P4](#p4-size-and-source-legacy-spares), [P6 commitment](#p6-the-commitment-question) |
+| The measuring loop | [The measuring loop](concept-measuring-loop.md) | Sections 5.2, 5.4 | [driver](/glossary/#term-driver) | Endurance used by cohort; the healthy share of pulls; [P2a](#p2a-the-wear-sub-decision), [P4](#p4-size-and-source-legacy-spares) |
+| The operating mechanisms | [The operating mechanisms](concept-operating-mechanisms.md) | Sections 9.1–9.3 | [forum](/glossary/#term-forum), [unallocated line](/glossary/#term-unallocated-line) | The audit of thirteen; the forum; the stranded line; [P6](#p6-allocate-the-harvest-across-sinks), [P8](#p8-make-reuse-something-teams-choose) |
+| People and seams | [People](people.md) | Sections 10, 10.1–10.4, 14 | [seam](/glossary/#term-seam), [forum](/glossary/#term-forum) | Owners, seams, incentives, legitimacy; [P1](#p1-one-record-per-drive), [P8](#p8-make-reuse-something-teams-choose) |
+| Limits | [Limits](limits.md), [Settings](settings.md) | Sections 12, 13 | [materiality](/glossary/#term-materiality) | Materiality, no reference class, the stop rule; sequencing |
+
+## Where the theory runs out
+
+The practice was built for capacity that is ordered. Kuantillion Cloud's supply comes back out of the fleet, so some of the body of knowledge stops short. Most of those gaps were filled long ago by neighboring fields. The case's studied ground ([section A.3](case-kuantillion-cloud-full.md#a-3-the-studied-ground)) lists eight shelves of older literature. They are closed loops, random yield and dual sourcing, capacity expansion, storage theory, lemons, maintenance and replacement, repairables queueing, and multitask incentives. Every mapping below is [argued]; none of those authors wrote about SSDs.
+
+### What the practice lacks, but the literature has solved: adopt it
+
+- **Condition as a dimension of supply.** The paper's unit has shape, place and time, not condition. Condition-based maintenance and remanufacturing grading supply the method. Grading adds about 4% to profit, more as volume grows (Ferguson et al., 2009). P3's grades adopt it.
+- **Wear across two lives.** First-life use spends second-life value. That is use-based economic depreciation: the fall in used-market value per unit of age or wear, with dead drives valued at zero (Hulten and Wykoff, 1981). Fit it on pre-shortage prices, since 2026 used prices are rising.
+- **Exit into a market you move.** Selling out of the fleet, at a volume that moves the price, is paced liquidation. Lemons theory explains the discount for unseen history (Akerlof, 1970; Hendel and Lizzeri, 1999). P6's release cap and trigger adopt both.
+- **Stock that gains or loses value while held.** Storage theory's convenience yield is high when stocks are thin and gone in a glut (Working, 1949). A caged drive is worth resale plus that yield. The same gap appears in [Popcorn Pajamas](case-popcorn-pajamas-practice.md) (Case 2, a streaming supply case), whose components appreciate.
+- **Two uncertain sources.** Harvest and new purchase are two channels, one cheap and unreliable. Switching between uncertain suppliers is computable (Anupindi and Akella, 1993), and against rare but long disruptions an alternate source beats a stockpile (Tomlin, 2006). One order-up-to level per channel is a useful shape (Veeraraghavan and Scheller-Wolf, 2008), by analogy only, since that model assumes two reliable channels.
+- **Thresholds for allocation.** With random demand and random returns, the optimal policy is a few thresholds: repair, buy and scrap levels (Simpson, 1978). The release trigger and the grades take that shape.
+- **Correlated failure in redundant storage.** Failures arrive in bursts, and placement buys more availability than per-drive quality (Ford et al., 2010). Same-group replacements cluster in SSD fleets too (Maneas et al., 2020; Han et al., 2021). P3's cohort cap adopts it.
+- **The cost of a shape, and the wrong form factor.** The planning cost of one more grade is bounded by the grading studies above, and chaining limits it further. The missing mix term is proposed in [Buildings at AI density](note-buildings-at-ai-density.md) for halls; drives need it too.
+- **Incentives.** Multitask agency theory predicts scrapping where only ticket speed is measured (Holmström and Milgrom, 1991). P8 adopts its remedy.
+
+### What is genuinely open
+
+Two gaps have no ready answer, in the practice or in the literature we found. [Second lives](note-second-lives.md) takes both up.
+
+1. **Byproduct supply, coupled to demand.** One retirement moves demand and supply for the same parts in opposite directions. The paper checks shared drivers within demand and within supply, never across them. Closed-loop supply chains price returns, but not returns that are a byproduct of a decision made for other reasons.
+2. **Quality that fails after delivery, together.** The shortage-to-idle frame assumes delivered capacity works. Reused drives can fail after delivery, and as a cohort. First-life studies don't settle the second-life hazard, and no study measures it [unmeasured]. The pilot is the only instrument.
+
+[Limits](limits.md) lists what the practice as a whole hasn't measured. If you've planned capacity that comes back out of a fleet, the practice would like to hear how you handled it.
+
+## How you'll know the strategy is working
+
+The tests below are this page's, and none has been run. The paper says the same of its own: "the tests of Section 9.2 have not been run" (Section 13).
+
+Each test can fail, and each maps to one of the case's criteria ([section 14.1](case-kuantillion-cloud-full.md#14-1-criteria)).
+
+| Criterion from the case | Test that can fail |
+|---|---|
+| All four sinks together | No sink's fill falls below its signed cover point while another holds idle harvest |
+| Current, owned drive facts | Reconciliation gaps fall to zero and stay there |
+| A declared anchor under both futures | Rate-card versions track the signposts within a quarter |
+| Capability, not age | Grade predicts second-life failure better than age alone |
+| Gates as hard constraints | No drive reaches a sink with an open gate |
+| Reliability visible to users | Uptake of the class rises as its record builds |
+| Incentives where the work happens | Reuse holds at sites under ticket pressure |
+| A few honest numbers | Numbers reported as a set, none rewarded alone |
+| Held to outcomes | Predicted and realized failures converge by cohort |
+| Known separated from assumed | Every assumption has an owner and a test date |
+| Harvest forecast with error bands | The promised-actual gap on harvest narrows |
+| Cadence matched to clocks | No last-time buy placed after its commit point |
+
+The last two follow the paper's own tests for mechanisms 11 and 13 (Section 9.2). Error bands come from scoring each retirement stage by cohort and site [argued].
+
+**Report numbers as a set.** The case names eight numbers, each with a denominator [argued]. They are purchases avoided, net value over exit per harvested drive, spares fill, and the stranded share. The rest are harvest-to-redeploy time and yield, the healthy share of pulls, endurance at harvest, and embodied carbon. Finance keeps score. The paper says so for the unallocated line: "Finance, not planning, should keep the score, or the indicators become self-assessment" (Section 9.3). Any one rewarded alone gets gamed. The plan's [measures](case-kuantillion-cloud-plan.md#7-measures) give each one's definition and cadence.
+
+**How it fails, and the counter built in.** The case names fifteen failure modes ([section 14.2](case-kuantillion-cloud-full.md#14-2-failure-modes-and-indicators)), and each has a counter in this strategy. Five carry the argument. Phantom supply is countered by booking harvest only as capped issue, with pegging. Second-class capacity is countered by a stated class with a challenge channel. Misdiagnosis drain is countered at intake, by confirming the triage sequence before any pull. Correlated concentration is countered by the cohort cap. Fighting the last shortage is countered by the quarterly rate card and the release trigger. The plan's [risk register](case-kuantillion-cloud-plan.md#10-risk-register-and-incident-playbook) lists all fifteen, with early signs and owners.
+
+**When something goes wrong** [argued]. A cohort that fails together, or a drive found outside custody, tests trust more than capacity. The response follows from the risk budget. First re-protect every redundancy group the cohort overloads, and throttle rebuilds. Then freeze the cohort, draw on the incident bound, re-rank its claims and publish its record to the affected tiers. Resume only after the evidence bar is re-tested. For a custody incident, drive security also runs its own response; the practice's part is the record. The plan's [risk register and playbook](case-kuantillion-cloud-plan.md#10-risk-register-and-incident-playbook) has the steps.
+
+## What would change the answer
+
+**Five findings would change the strategy.**
+
+| If this turns out true | Then |
+|---|---|
+| The dollar test fails, or the ratio is well under 1% | Drop to spares continuity, and stop there (Section 12, applied here) |
+| A graded program with a shared price exists | Allocation and adoption become an audit, not a build |
+| Second-life failures exceed new drives' rates from year one | Close the workload sink; keep spares and exit |
+| Contracts are fully flexible and Path B comes early | The avoided-purchase anchor shrinks; the program shrinks to spares and exit |
+| Reuse was declined for complexity | Re-center on redeploying whole hosts |
+
+**The case's eight assumptions.** The case lists eight assumptions any answer must test, from the anchor to whether internal prices can carry these values. Each has a cheap test, and most run in the first quarter. The plan's [experiments](case-kuantillion-cloud-plan.md#8-experiments) give each one's test, owner and date.
+
+"The rollout is the measurement" (Section 5.4). The pilot cohort answers the case's most load-bearing question: where second-life hazard, including any handling-induced infant mortality, crosses the new-drive curve [unmeasured].
+
+**Our seven assumptions, each with a falsifier** [argued]. These are the assumptions this strategy rests on.
+
+| Assumption | Falsifier |
+|---|---|
+| The harvest behaves like a supply declaration that firms up in stages | Decommission dates show no stage structure; slips are uniform from plan to drain |
+| The contract register can settle the anchor fork | The commitments have no readable liability or reschedule terms |
+| A forum can rank four sinks with unlike units | Ranked lists are reopened as often as negotiated splits ("Decisions reopened", mechanism 10's indicator) |
+| A stated lower-assurance class will be taken up | Uptake stays low after the class's guarantee and evidence are stated |
+| Cohort is the right shared driver | Failures correlate more on site or workload than on model, firmware and power-on hours |
+| Misdiagnosis is bias, not dispersion | The healthy share of pulled drives swings widely with no persistent level |
+| The dollar test is the right gate | One stockout's shadow price dominates the annual sum, so a failing program is still worth running (scenario S5) |
+
+**Signposts between the two futures.** The case's signposts are read at the quarterly supply review ([section 8](case-kuantillion-cloud-full.md#8-two-futures-and-the-signposts-between-them)). Each points toward Path A (tight through 2028) or Path B (easing from late 2027), and the strategy's levers move with them [argued].
+
+Signs of Path B, such as flattening contract prices or falling used prices, move the strategy toward releasing stock and lowering the rate card. Signs of Path A, such as makers committing more of next year's output, move it toward the capacity anchor, last-time-buy cover and pipeline staffing. The plan's [signposts to actions](case-kuantillion-cloud-plan.md#9-signposts-to-actions) table pairs each signpost with its action.
+
+**The case's seven scenarios, and where this page answers each.** Each links to the scenario in the full case, then to its answer here.
+
+- **[S1. The shortage ends early](case-kuantillion-cloud-full.md#s1-the-shortage-ends-early).** [P6](#p6-allocate-the-harvest-across-sinks): the release trigger, and the shortage rule, which keeps a spares floor.
+- **[S2. A redeployed cohort fails together](case-kuantillion-cloud-full.md#s2-a-redeployed-cohort-fails-together).** [P3](#p3-match-legacy-flash-to-workloads): the cohort cap and the risk budget; and the incident response above.
+- **[S3. A data-bearing drive surfaces outside custody](case-kuantillion-cloud-full.md#s3-a-data-bearing-drive-surfaces-outside-custody).** [P1](#p1-one-record-per-drive): reconciliation at every off-host state; and the incident response above.
+- **[S4. Decommissions slip while spares demand rises](case-kuantillion-cloud-full.md#s4-decommissions-slip-while-spares-demand-rises).** [P6, the commitment question](#p6-the-commitment-question): the booking rule; and [P4](#p4-size-and-source-legacy-spares): push out, don't cancel.
+- **[S5. The commitments prove firm and stockouts persist](case-kuantillion-cloud-full.md#s5-the-commitments-prove-firm-and-stockouts-persist).** [Three prices](#three-prices): the anchor fork and the capacity anchor; and P6's ranking by shadow price.
+- **[S6. A rival announces flash reuse at scale](case-kuantillion-cloud-full.md#s6-a-rival-announces-flash-reuse-at-scale).** [P6](#p6-allocate-the-harvest-across-sinks): the program moves its own market.
+- **[S7. Low-endurance flash meets write-heavy work](case-kuantillion-cloud-full.md#s7-low-endurance-flash-meets-write-heavy-work).** [P2a](#p2a-the-wear-sub-decision): the wear ratio by cohort. The price across two lives is adopted from use-based depreciation but not yet fitted ([where the theory runs out](#what-the-practice-lacks-but-the-literature-has-solved-adopt-it)).
+
+## Where this comes from
+
+Seed paper: Sections 4, 5.1–5.4, 6, 6.1–6.7, 8, 8.2, 9.1–9.3, 10, 10.1–10.4, 11, 12, 13 and 14, and Appendix A. The guide's concept pages on price and demand: [the coefficient](concept-the-coefficient.md), [three prices](concept-three-prices.md), [demand and declarations](concept-demand-and-declarations.md) and [approval and allocation](concept-approval-and-allocation.md). On supply and operations: [buffers and reserves](concept-buffers-and-reserves.md), [supply layers and lead times](concept-supply-layers-and-lead-times.md), [commit points](concept-commit-points.md), [the measuring loop](concept-measuring-loop.md) and [the operating mechanisms](concept-operating-mechanisms.md). Also [people](people.md), [principles](principles.md), [settings](settings.md) and [limits](limits.md).
+
+The case: [Case 3](case-kuantillion-cloud-full.md), and its [execution plan](case-kuantillion-cloud-plan.md). Literature: the references the case cites in its studied ground. Every number is illustrative unless the case tags it otherwise.
+
+**Sources new to this page.** Each mapping to SSDs is [argued].
+
+- Akerlof, G. A. (1970). The market for ‘lemons’. *Quarterly Journal of Economics* 84(3): https://doi.org/10.2307/1879431
+- Baldenius, T. (2008). Internal pricing. *Foundations and Trends in Accounting* 3(4): https://doi.org/10.1561/1400000013
+- Ferguson, M., Guide, V. D. R., Koca, E., & Souza, G. C. (2009). The value of quality grading in remanufacturing. *Production and Operations Management* 18(3): https://doi.org/10.1111/j.1937-5956.2009.01033.x
+- Ford, D., et al. (2010). Availability in globally distributed storage systems. OSDI '10: https://www.usenix.org/conference/osdi10/availability-globally-distributed-storage-systems
+- Galbreth, M. R., & Blackburn, J. D. (2006). Optimal acquisition and sorting policies for remanufacturing. *Production and Operations Management* 15(3): https://cdn.vanderbilt.edu/vu-web/owen/files/publications/GalbrethoptacqandsortpolforremfgfinalPoms.pdf
+- Han, S., et al. (2021). An in-depth study of correlated failures in production SSD-based data centers. FAST '21: https://www.usenix.org/conference/fast21/presentation/han
+- Hirshleifer, J. (1956). On the economics of transfer pricing. *Journal of Business* 29: 172–184.
+- Hulten, C. R., & Wykoff, F. C. (1981). The estimation of economic depreciation using vintage asset prices. *Journal of Econometrics* 15: 367–396.
+- Maneas, S., et al. (2020). A study of SSD reliability in large scale enterprise storage deployments. FAST '20: https://www.usenix.org/conference/fast20/presentation/maneas
+- Maneas, S., et al. (2022). Operational characteristics of SSDs in enterprise storage systems. FAST '22: https://www.usenix.org/conference/fast22/presentation/maneas
+- NIST (2025). SP 800-88 Rev. 2, Guidelines for Media Sanitization: https://csrc.nist.gov/pubs/sp/800/88/r2/final
+- Schroeder, B., Lagisetty, R., & Merchant, A. (2016). Flash reliability in production: the expected and the unexpected. FAST '16: https://www.usenix.org/conference/fast16/technical-sessions/presentation/schroeder
+- Veeraraghavan, S., & Scheller-Wolf, A. (2008). Now or later: a simple policy for effective dual sourcing in capacitated systems. *Operations Research* 56(4): https://ideas.repec.org/a/inm/oropre/v56y2008i4p850-864.html
+- Wei, M., Grupp, L. M., Spada, F. E., & Swanson, S. (2011). Reliably erasing data from flash-based solid state drives. FAST '11: https://static.usenix.org/event/fast11/tech/full_papers/Wei.pdf
+- Xu, E., et al. (2019). Lessons and actions: what we learned from 10K SSD-related storage system failures. USENIX ATC '19: https://www.usenix.org/conference/atc19/presentation/xu
+
+The case's studied ground lists the other studies named here. They include Simpson (1978), Yano and Lee (1995), Tomlin (2006), Anupindi and Akella (1993), Working (1949), Hendel and Lizzeri (1999) and Holmström and Milgrom (1991).

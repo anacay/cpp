@@ -47,7 +47,7 @@ The shadow price is the textbooks' dual value of the capacity constraint [35]. M
 
 **Read the shadow price off the binding dimension.** In the running example, Product A needed 0.8 TB more memory than its CPU-sized machines brought. With only standard machines, each extra GB costs five times its unit weight (illustrative). That premium is memory's shadow price. See [approval and allocation](concept-approval-and-allocation.md).
 
-After the review, the three prices give three answers. Average rates for CPU and memory set A's budget. Long-run incremental cost is memory-driven: 4.8 NMU, not 4.0. The shadow price falls on whichever dimension binds.
+After the review, the three prices give three answers. Average rates for CPU and memory set A's budget. Long-run incremental cost is memory-driven: 4.8 NMU, not 4.0. An [NMU](/glossary/#term-nmu-normalized-machine-unit) is the example's normalized machine unit: one standard machine of 50 cores and 200 GB. The shadow price falls on whichever dimension binds.
 
 ## What goes wrong
 
