@@ -34,7 +34,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 - Each pricing question gets its own price ([three prices](concept-three-prices.md); Section 4).
 - An approval is not an allocation ([approval and allocation](concept-approval-and-allocation.md); Section 6.1).
 - Every number has an owner, and every gap is named ([principles](principles.md)).
-- The reverse pipeline is a staffed rate, like [turn-up](/glossary/#term-turn-up) (Section 6.2).
+- [Turn-up](/glossary/#term-turn-up) is a staffed rate (Section 6.2). Applied here, so is the reverse pipeline.
 
 **What it doesn't do.** It doesn't settle questions the practice can't yet answer. The [Second lives](note-second-lives.md) working note holds those: supply that is a byproduct, the condition of a drive as a dimension of supply, and exit as a sink.
 
@@ -42,7 +42,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 The planner sits in the middle, "usually owning no capacity and no budget" (Section 10). So every change below is a proposal to the forum and finance. Its standing comes, in the paper's experience, "from the number and the team's own signature" (Section 9.1). See [people](people.md) for how that works without a budget.
 
-**The groups.** These are the case's team map, with each group's role in this plan.
+**The groups.** This table extends the case's team map. The first nine rows are the case's; the rest are groups the case names elsewhere, or that this plan defines [argued].
 
 | Group | Role in this plan |
 |---|---|
@@ -56,8 +56,14 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | Reverse logistics and value recovery | The pipeline: harvest, test, erase, ship; exit |
 | Lifecycle transitions | Retirement dates and the keep, redeploy or harvest sheet |
 | Storage systems and schedulers | The reused-flash class; the stranded line |
+| The solver team, inside capacity planning | Counts solver categories; tests whether the solvers reach physical devices |
+| Fleet shaping and hardware engineering | Build and upgrade programs; physical fit, protocol and backplane |
+| Supply chain | Owns the memory-reclaim program, the nearest precedent; vendor terms |
+| Tier owners | The owners of the workloads and storage tiers that take reused flash: the case's resource managers. They are "product" in the seed paper's terms |
 | Reliability engineering | Cohort caps per failure domain |
 | Finance | Keeps score; signs the rules that say who pays |
+
+"Supply" in the tables below means fleet provisioning and spares planning together, the groups that answer for drives.
 
 **Decision rights, RACI-style.** R does the work, A decides, S signs, C is consulted. **Change** marks a move from today's owner in the case.
 
@@ -67,13 +73,13 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | P2 Keep, redeploy or harvest | Lifecycle transitions | Lifecycle transitions with fleet provisioning | Finance, for every keep past plan | The forum, for drive values | **Change:** drive values a required input |
 | P2a Wear price | Flash platform engineering | Flash platform engineering | Finance | Storage systems | **Change:** unowned today |
 | P3 Reused-flash class | Storage systems | Storage systems | Each tier owner accepts, with its evidence bar | Reliability engineering | **Change:** acceptance becomes signed |
-| Stranded line | Storage systems | Storage systems, as service owner | Finance keeps score | Planning | **Change:** new line |
-| P4 Spares ratio | Spares planning | Finance and product jointly | Finance and product | Supply, for idle cost and liability terms | **Change:** signed in advance |
+| Stranded line | Storage systems | Storage systems, as service owner | Finance keeps score | Fleet provisioning; planning | **Change:** new line |
+| P4 Spares ratio | Spares planning | Finance and tier owners jointly | Finance and tier owners | Supply, for idle cost and liability terms | **Change:** signed in advance |
 | P5 Build programs | Fleet shaping and hardware engineering | Same, as declaring team | Declaring team signs the [change bands](/glossary/#term-change-band) | Supply and planning set the bands | **Change:** programs declared |
 | P6 Allocation | Planning | The forum, run by planning | Finance, on the rate card | Every sink | **Change:** unowned today |
-| P6 Commitment | Fleet provisioning | Supply answers with a commit or a gap | Finance agrees who pays if harvest fails | Planning | **Change:** never firm before supply answers |
+| P6 Commitment | Fleet provisioning | Fleet provisioning, answering each claim with a dated commit or a named gap | Finance agrees who pays if harvest fails | Planning | **Change:** never firm before supply answers |
 | P7 Pipeline rate | Reverse logistics with data-center operations | Reverse logistics | Drive security, per erasure | Spares planning | **Change:** staffed to a signed plan |
-| P8 Landing rule and metrics | Planning | The forum | Planning with finance | Every group | **Change:** from leadership in general to the forum |
+| P8 Landing rule and metrics | Planning proposes | The forum ratifies | Finance signs | Every group | **Change:** from leadership in general to the forum |
 | Risk budget | Reliability engineering | Reliability engineering, for the cohort cap | Finance, for the incident bound; tier owners, for their bars | Planning | **Change:** new |
 
 Three rights come straight from the seed paper's list (Section 9.2):
@@ -84,14 +90,18 @@ Three rights come straight from the seed paper's list (Section 9.2):
 
 Assigning them to these groups is this plan's reading [argued]. The ratio and the bands are separate rights, signed separately.
 
+**Why storage systems own the stranded line.** The case's team map gives stranding to fleet provisioning. Mechanism 4's owner is the "Service owner (not necessarily the cause)" (Section 9.2), and the storage systems serve the stranded flash. So they own the line, and fleet provisioning is consulted [argued].
+
+**The landing rule, one statement used everywhere** [argued]. Planning proposes it, finance signs it, and the forum ratifies it.
+
 **Gate owners.** Each of the case's ten gates has one owner [argued]:
 
-- hardware engineering: physical fit, and protocol and backplane;
+- fleet shaping and hardware engineering: physical fit, and protocol and backplane;
 - flash platform engineering: qualification, firmware and provenance, observability, and condition;
 - data-center operations: change windows;
 - fleet provisioning: systems of record;
 - planning, with the solver team: systems complexity;
-- drive security engineering: erasure.
+- drive security engineering: sanitization.
 
 **Seams.** Hosts and harvest sit on seam 3, between planning and supply. Keeping hosts, and the split between capital and operating budgets, sit on seam 2, between planning and finance. Grades and wear sit on seam 1, between product and platform (Section 10.1). Mapping them this way is this plan's reading.
 
@@ -126,11 +136,12 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 10 | Pull the harvest log, split by SSD and disk, and by cohort | Reverse logistics | Harvest TB by quarter and cohort |
 | 10 | Pull flash deployed, in TB, by quarter | Fleet provisioning, with finance | The materiality denominator |
 | 10 | Pull the decommission schedule with stage dates | Lifecycle transitions | Retirements, staged |
-| 14 | Compute the materiality ratio and the class | Planning | The class, from the table under Gate 1 |
-| 20 | Read every flash contract's cancel, push-out and volume terms into the supply register | Fleet provisioning, with finance | Mechanism 11's contract lines |
+| 14 | Compute the materiality ratio and the class (experiment 3) | Planning | The class, from the table under Gate 1 |
+| 20 | Read every flash contract's cancel, push-out and volume terms into the supply register (experiment 2) | Fleet provisioning, with finance | Mechanism 11's contract lines |
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
+| 25 | Compute both value anchors per zone (experiment 1) | Planning, with finance | The anchor, declared for Gate 1 |
 | 20 | Measure flash use by resource and site | Storage systems | The stranded stock, sized |
-| 25 | Re-test a sample of pulled drives at one site | Machine-health engineering | A first healthy share |
+| 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
 | 30 | Charter the forum to sign two rules: shortage and landing | Planning | A charter; both rules drafted |
 | 30 | Gate 1 decision | Planning and finance | Go or stop, with a decision note |
 
@@ -140,9 +151,9 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 |---|---|---|---|
 | 40 | Count the qualification backlog and solver categories | Planning, with the solver team | A tier cap |
 | 40 | Read decommission records by branch: kept, redeployed whole, harvested | Lifecycle transitions | A test for redeploying whole |
-| 45 | Sign the shortage rule and the landing rule in the forum | The forum, with finance | Both rules signed |
+| 45 | Agree the shortage rule in the forum; sign the landing rule | The forum, for the shortage rule; for the landing rule, planning proposes, finance signs, the forum ratifies | Both rules in force |
 | 50 | Name an owner for each drive-record field, off-host fields first | Planning | The record's field list, owned |
-| 55 | Fill the keep, redeploy or harvest sheet for one retiring cohort | Lifecycle transitions, with finance | One cohort decided |
+| 55 | Fill the keep, redeploy or harvest sheet for one retiring cohort (experiment 6) | Lifecycle transitions, with finance | One cohort decided |
 | 60 | Gates 2 and 3 decisions | Planning | Exit criteria met, or named gaps |
 
 ### Days 61–90: spares and the pipeline first
@@ -160,10 +171,11 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 
 ## 4. The gates
 
-Each gate opens only on the evidence in its row. The paper's rule for declarations is that "promotion needs the evidence in its row" (Section 5.4). This plan applies it to the program's own gates [argued]. Each artifact links to its mechanism in [the operating mechanisms](concept-operating-mechanisms.md).
+Each gate opens only on the evidence in its row. The paper's rule for declarations is that "promotion needs the evidence in its row" (Section 5.4). This plan applies it to the program's own gates [argued]. Each artifact names its mechanism, linked to [the operating mechanisms](concept-operating-mechanisms.md).
 
 ### Gate 0: existence test
 
+- **When.** Days 1–5.
 - **Purpose.** Don't build what exists, or what was rightly declined.
 - **Entry evidence.** A named program lead.
 - **Work.** The days 1–5 interviews.
@@ -174,6 +186,7 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 
 ### Gate 1: size and anchor
 
+- **When.** Day 30.
 - **Purpose.** Know the problem's class and its value anchor before building anything. "Below materiality, the mechanisms cost more than they return" (Section 13).
 - **Entry evidence.** Gate 0 reads absent, or a decline that no longer holds.
 - **Work.**
@@ -186,8 +199,8 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
   - The anchor declared.
   - The forum chartered to sign two rules.
 - **Artifacts.**
-  - Contract lines on the supply plan of record (mechanism 11).
-  - The stranded line, owned (mechanism 4).
+  - Contract lines on the supply plan of record ([mechanism 11](concept-operating-mechanisms.md)).
+  - The stranded line, owned ([mechanism 4](concept-operating-mechanisms.md)).
   - A decision note.
 - **Owner.** Planning, with finance.
 - **Class table** [argued]. The ratio is the SSD harvest, before yield, divided by a year's new flash. The case bounds it at about 0.2–30%, with central cells near 1–10% (illustrative).
@@ -203,6 +216,7 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 
 ### Gate 2: counter-arguments
 
+- **When.** Day 60.
 - **Purpose.** Test the two hypotheses that could move the center: the grading tax, and redeploying whole hosts.
 - **Entry evidence.** Gate 1 says go.
 - **Work.**
@@ -220,6 +234,7 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 
 ### Gate 3: the drive record
 
+- **When.** Day 60, decided with Gate 2.
 - **Purpose.** One record every decision can cite.
 - **Entry evidence.** Gate 2 exit.
 - **Work.**
@@ -229,12 +244,13 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 - **Exit criteria.**
   - Every field owned.
   - Each off-host state defined, with who accepts it.
-- **Artifacts.** The drive record (the templates below give its fields). The fulfillment ledger, run backwards (mechanism 5).
+- **Artifacts.** The drive record (the templates below give its fields). The fulfillment ledger, run backwards ([mechanism 5](concept-operating-mechanisms.md)).
 - **Owner.** Planning keeps it; each field's performer owns its entry.
 - **Go or stop.** Don't move a drive between sinks on a record with an open reconciliation gap.
 
 ### Gate 4: hosts and allocation, spares and pipeline first
 
+- **When.** Day 90.
 - **Purpose.** Clear the coupled decisions together: when hosts go, how harvest is split, how many spares, how fast the pipeline.
 - **Entry evidence.** Gate 3 exit.
 - **Work.**
@@ -247,15 +263,16 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
   - Every harvest claim answered with a dated commit or a [named gap](/glossary/#term-named-gap).
   - Each tested drive pegged to one claim.
 - **Artifacts.**
-  - Ledger lines (mechanism 5).
-  - Supply answers (mechanism 11).
-  - The [commit-point map](concept-commit-points.md) for last-time buys and decommissions (mechanism 13).
-  - The forum's decision log (mechanism 10).
+  - Ledger lines ([mechanism 5](concept-operating-mechanisms.md)).
+  - Supply answers ([mechanism 11](concept-operating-mechanisms.md)).
+  - The [commit-point map](concept-commit-points.md) for last-time buys and decommissions ([mechanism 13](concept-operating-mechanisms.md)).
+  - The forum's decision log ([mechanism 10](concept-operating-mechanisms.md)).
 - **Owner.** The forum, run by planning; fleet provisioning for supply answers.
 - **Go or stop.** Hold Gate 5 until spares fill holds at the signed cover point for one quarter.
 
 ### Gate 5: workloads and builds
 
+- **When.** No earlier than day 180: one quarter of spares fill after Gate 4.
 - **Purpose.** Offer reused flash as its own class, and declare build programs.
 - **Entry evidence.** Gate 4 exit, and the tier cap from Gate 2.
 - **Work.**
@@ -265,20 +282,21 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
   - A reused-flash class offered, with its guarantee and evidence bar.
   - A substitution table.
 - **Artifacts.**
-  - Declaration entries for builds (mechanism 12).
-  - The class on the rate card (mechanism 3).
+  - Declaration entries for builds ([mechanism 12](concept-operating-mechanisms.md)).
+  - The class on the rate card ([mechanism 3](concept-operating-mechanisms.md)).
 - **Owner.** Storage systems; fleet shaping and hardware engineering.
 - **Go or stop.** Stop widening the class if the pilot's failure rate breaks its evidence bar.
 
 ### Gate 6: the wear link
 
+- **When.** After the pilot's first second-life outcomes; no date is set.
 - **Purpose.** Price first-life wear against second-life value.
 - **Entry evidence.** Gate 5's pilot gives a second-life value to price against.
 - **Work.**
   - Register the wear price, owned and versioned.
   - Report endurance used by cohort quarterly.
 - **Exit criteria.** The wear price on the rate card with an effective date.
-- **Artifacts.** The coefficient register and versioned rate card (mechanism 3).
+- **Artifacts.** The coefficient register and versioned rate card ([mechanism 3](concept-operating-mechanisms.md)).
 - **Owner.** Flash platform engineering, with finance.
 - **Go or stop.** Change first-life placement only where endurance used at harvest is shown to change second-life value.
 
@@ -290,7 +308,7 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 
 | Cycle | Forum | Inputs | Outputs | Decisions |
 |---|---|---|---|---|
-| Weekly | Planning's working session | Ledger lines; reconciliation gaps; cage aging; repair tickets | Pegging; brokered trades, logged | Which tested drive goes where |
+| Weekly | Planning's working session | Ledger lines; reconciliation gaps; cage aging; repair tickets | Pegging and reconciliation, run continuously and reviewed weekly; brokered trades, logged | Which tested drive goes where |
 | Monthly | The forum | Supply answers; harvest by stage; spares fill | Re-ranked claims; updated commits and named gaps | The ranking; any override, logged with what moved down |
 | Quarterly | The supply review | Harvest forecast by stage and cohort; decommission slips; qualification slots; endurance by cohort; the signposts | Rate card version; release trigger tests; last-time-buy commit points | Rate card changes; releases; last-time buys |
 | Annual | The forum, with finance | Materiality; last year's scores; vendor terms | Signed ratios, bands, landing and shortage rules; the charter overlay | Program scope; reuse commitment in the annual capacity agreement |
@@ -302,7 +320,7 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 
 - Finance and product sign the spares ratio.
 - Supply and planning set the harvest change bands, and each declaring sink signs them.
-- Planning and finance agree the landing rule (mechanism 8).
+- Planning proposes the landing rule, finance signs it and the forum ratifies it (mechanism 8).
 
 **The charter overlay.** "Once a year, lay the charters over the chain that delivers the product, end to end, and name an owner for every gap" (Section 10.2).
 
@@ -337,7 +355,7 @@ Under scarcity this approximates the shadow price, "What one more unit of the bi
 | 2 | Observable, but outside one threshold, or within a year of a known firmware fault age | Loss-absorbing tiers and spares only |
 | 3 | Blind, or failing any threshold | Exit or destroy |
 
-The thresholds are [unmeasured]. For example, a wear threshold might be half of rated endurance used (illustrative). Three grades fit inside any tier cap Gate 2 sets.
+The thresholds are [unmeasured]. For example, a wear threshold might be half of rated endurance used (illustrative). Three grades fit inside a tier cap of three or more. Below that, Gate 2's rule governs: if the systems carry only one grade, run spares and exit only.
 
 **Transfer price, with showback first** [argued].
 - The price is set on usable, yield-adjusted capacity: pipeline cost per usable TB, plus carry, plus a risk loading drawn from the incident bound.
@@ -353,7 +371,7 @@ The thresholds are [unmeasured]. For example, a wear threshold might be half of 
 **Landing rule** [argued].
 - Shares are booked as savings, returned to the recoverer and held centrally. That is the split Section 9.3 offers as an example.
 - The pipeline counts as a recoverer, so it gets credit for part of the capital it saves.
-- Signed by planning with finance (mechanism 8), before any recovery is counted.
+- Planning proposes it, finance signs it and the forum ratifies it (mechanism 8), before any recovery is counted.
 
 **Shortage rule** [argued]. "Agree it in the forum beforehand; supply carries it out. Written during the shortage, it's a negotiation. And don't split a shortage pro rata" (Section 9.3). Who goes short, last to first:
 1. Spares for platforms with no other source go short last, because a missed repair has no bridge.
@@ -395,22 +413,22 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 
 ## 8. Experiments
 
-One experiment per stated assumption in the case. Each has an owner, a date in program weeks, a method, a falsifier and the decision it unlocks. All are proposals [argued]. "The rollout is the measurement" (Section 5.4).
+One experiment per stated assumption in the case. Each has an owner, a date in program days (the same clock as section 3), a method, a falsifier and the decision it unlocks. All are proposals [argued]. "The rollout is the measurement" (Section 5.4).
 
-| # | Assumption | Owner | Week | Method | Falsifier | Unlocks |
+| # | Assumption | Owner | By day | Method | Falsifier | Unlocks |
 |---|---|---|---|---|---|---|
-| 1 | Replacement cost is the right value anchor | Planning, with finance | 6 | Compute both anchors per zone from stockout logs and contract terms | The capacity anchor passes replacement cost in most stockout zones | Which price ranks workload claims |
-| 2 | Reuse displaces purchases at all | Fleet provisioning, with finance | 6 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
-| 3 | The materiality ratio is large enough to matter | Planning | 2 | Harvest TB ÷ new flash TB, by quarter | Ratio well under 1% | Gate 1 |
-| 4 | Net value stays positive after the pipeline | Reverse logistics | 13 | Time-and-motion and yield logs at one site, one cohort | Net value below zero for the cohort's drive class | Pipeline scope by drive class |
-| 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 26 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
-| 6 | The host-cost logic holds | Lifecycle transitions, with finance | 13 | The keep, redeploy or harvest sheet for one retiring cohort | Drive value, not host cost, decides the branch | How retirement dates are set |
-| 7 | Spares demand is what failure rates say | Machine-health engineering, with spares planning | 13 | Re-test every pulled drive at two sites; log fail-in-place | Under 5% of pulled drives test healthy (illustrative threshold) | Whether the pool is sized on pulls or true failures |
-| 8 | Internal prices can carry these values | Planning, with finance | 26–39 | One full cycle of showback | Decisions reopened as often as under negotiation | Whether to bill |
+| 1 | Replacement cost is the right value anchor | Planning, with finance | 25 | Compute both anchors per zone from stockout logs and contract terms | The capacity anchor passes replacement cost in most stockout zones | Which price ranks workload claims |
+| 2 | Reuse displaces purchases at all | Fleet provisioning, with finance | 20 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
+| 3 | The materiality ratio is large enough to matter | Planning | 14 | Harvest TB ÷ new flash TB, by quarter | Ratio well under 1% | Gate 1 |
+| 4 | Net value stays positive after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort | Net value below zero for the cohort's drive class | Pipeline scope by drive class |
+| 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 180 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
+| 6 | The host-cost logic holds | Lifecycle transitions, with finance | 55 | The keep, redeploy or harvest sheet for one retiring cohort | Drive value, not host cost, decides the branch | How retirement dates are set |
+| 7 | Spares demand is what failure rates say | Machine-health engineering, with spares planning | 25–90 | Re-test every pulled drive at two sites; log fail-in-place | Under 5% of pulled drives test healthy (illustrative threshold) | Whether the pool is sized on pulls or true failures |
+| 8 | Internal prices can carry these values | Planning, with finance | 91–180 | One full cycle of showback | Decisions reopened as often as under negotiation | Whether to bill |
 
 **The capacity anchor, as a formula.** Nothing public gives it an input [unmeasured]. So experiment 1 fills a formula:
 
-*Capacity value per TB = value of a short TB-month × months filled before new supply × share of those months with a real stockout.*
+*Capacity value per TB = value of a short TB-month × months filled before new supply × share of those months with a real stockout.* [argued]
 
 For example, if a short TB-month is worth $40 (illustrative), and 12 months follow, then 25% filled gives $120 per TB and 75% gives $360. At 75%, the capacity anchor passes the case's $192 floor once a TB-month is worth about $21. It passes the $636 ceiling at about $71.
 
@@ -455,7 +473,7 @@ The case names public signposts between two futures. Path A stays tight through 
 | Correlated concentration | Cohort cap per failure domain | Same-cohort racks | Reliability engineering |
 | Firmware time bombs | Firmware baseline as a gate | Unpatched redeployed drives | Flash platform engineering |
 | Blind spots | Blind cohorts to loss-absorbing tiers or exit | Missing health fields | Flash platform engineering |
-| Erasure bottleneck | A staffed rate; one signer per drive | Queue age | Drive security engineering |
+| Sanitization bottleneck | A staffed rate; one signer per drive | Queue age | Drive security engineering |
 | Custody incident | Reconciliation at every off-host state | Any record–log gap | Drive security engineering |
 | Incentive drift | Landing rule; a second technician metric | Reuse at pressured sites | Planning |
 | Wear spent blindly | Endurance by cohort, quarterly | Endurance at harvest | Flash platform engineering |
@@ -502,7 +520,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - Firmware version; safe version obtainable (yes or no)
 - Health: wear, spare blocks, media errors, latency history, retention margin, capacitor health
 - Power-on hours
-- State: in service, harvested, in test, spare, out of custody
+- State: in service, harvested, in test, erased, available, spare, out of custody
 - Location; host platform; cohort
 - Grade; costing basis; regraded SKU
 - Reuse eligibility: free, constrained or forbidden
@@ -530,6 +548,35 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - Either a dated commit: quantity, date, confidence, any substituted grade or shape
 - Or a named gap: how much, by when, why, and a proposed bridge with its owner
 
+**Keep, redeploy or harvest sheet** (one per retiring cohort; P2) [argued]
+
+| Line | Keep | Redeploy whole | Harvest |
+|---|---|---|---|
+| Avoidable carry: power, space, repairs, technician hours, stranding of its other parts | Paid | Paid, in a lighter class | Avoided |
+| Value of the host's capacity: the shadow price in stockout zones, zero in slack | Kept | Kept, at the lower class's price | Lost |
+| Harvest value: yield × each sink's next-best-source value − pipeline cost | — | — | Gained |
+| The lighter class's value to its tenants | — | Gained | — |
+| Depreciation, noted by finance | Extended | Extended | Written off |
+
+- Cohort; platform; host count; planned retirement date
+- Read it down each column. Keep a host when its capacity's value exceeds its avoidable carry; harvest when the harvest value is larger.
+- Signed by finance for every keep past plan.
+
+**Forum charter** ([mechanism 10](concept-operating-mechanisms.md); [forum](/glossary/#term-forum)) [argued]
+- Members: a named executive chair; planning, which runs it; finance; supply; one seat per sink
+- Remit: the ranked list of harvest claims across the four sinks, the cut line, and the decision log with overrides and brokered trades
+- Rules it holds: the shortage rule; the ranking unit; the landing rule, which it ratifies
+- Cadence: monthly, plus the quarterly supply review
+- Overrides: logged with what moved down
+
+**Risk-budget record** [argued]
+- Cohort: model, firmware, age band
+- Cohort cap per failure domain, and who set it (reliability engineering)
+- Evidence bar per tier, the outcomes it rests on, and the date it last rose
+- Incident cost bound, and who signed it (finance)
+- Draws on the bound to date
+- Next review date
+
 **Decision note** ([decision note](/glossary/#term-decision-note))
 - The decision
 - What was known
@@ -546,4 +593,4 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - **The case:** [the full case](case-kuantillion-cloud-full.md), its team map, scenarios, signposts and stated assumptions.
 - **The reasoning:** [the strategy page](case-kuantillion-cloud-practice.md).
 
-Every number on this page is illustrative unless the case tags it otherwise. The arithmetic is reproducible on request.
+Every number on this page is illustrative unless the case tags it otherwise.
