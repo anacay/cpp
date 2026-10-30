@@ -47,7 +47,7 @@ Every load-bearing claim carries an evidence tier, so you can see which parts ar
 
 Two companion pages answer the case. [The strategy](case-kuantillion-cloud-practice.md) is the practitioner's approach. It frames the problem through the practice's concepts, breaks it into the case's decisions and argues the order to work them in, with links to the theory behind each move. [The execution plan](case-kuantillion-cloud-plan.md) turns that strategy into something a program lead can run: owners, gates, cadence, measures and experiments.
 
-Where the practice runs out, the page says so. The largest gap is supply that comes back out of the fleet in parts, of uncertain condition, as a byproduct of other decisions. That gap now has its own working note, [Second lives](note-second-lives.md).
+Where the practice runs out, the strategy page says so. The largest gap is supply that comes back out of the fleet in parts, of uncertain condition, as a byproduct of other decisions. That gap now has its own working note, [Second lives](note-second-lives.md).
 
 ## How to use it
 
