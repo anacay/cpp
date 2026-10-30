@@ -362,13 +362,20 @@ Under scarcity this approximates the shadow price, "What one more unit of the bi
 
 **Three-grade starter rule** [argued]. Revisit after the pilot.
 
+Grade on event history, firmware and burn-in, not on wear. Those are the signals that predict failure in published fleets.
+
 | Grade | Rule | Where it can go |
 |---|---|---|
-| 1 | Observable cohort; safe firmware; under the wear and error thresholds | Durable tiers, once the evidence bar is met |
-| 2 | Observable, but outside one threshold, or within a year of a known firmware fault age | Loss-absorbing tiers and spares only |
-| 3 | Blind, or failing any threshold | Exit or destroy |
+| 1 | No uncorrectable error or critical warning in the last N months; few grown bad blocks, with a flat trend; capacitor test passed; on a safe firmware version; passes burn-in | Durable tiers, once the evidence bar is met |
+| 2 | One event-history flag, or old firmware with no known fault | Loss-absorbing tiers, and like-for-like spares |
+| 3 | Repeat events, a capacitor failure, or no safe firmware | Exit or destroy |
+| Blind | Missing the fields this rule needs | Like-for-like spares only: the platform already runs blind drives of that exact model |
 
-The thresholds are [unmeasured]. For example, a wear threshold might be half of rated endurance used (illustrative). Three grades fit inside a tier cap of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, G2's rule governs: run spares and exit only.
+- **Why event history.** After one uncorrectable error, the chance of another next month was about 30%, against 2% in a random month (Schroeder et al. 2016).
+- Firmware version can move the annual replacement rate tenfold (Maneas et al. 2020).
+- **Wear** stays a recorded field. It is a threshold only for write-heavy or QLC cohorts, because most drives use little of their rated endurance.
+- **Age** matters per firmware cohort, measured in power-on hours. At grading, reject or stagger drives near a known fault age.
+- N and the counts are [unmeasured]; set them from the first cohorts' telemetry. Three grades fit inside a [tier cap](/glossary/#term-tier-cap) of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, G2's rule governs: run spares and exit only.
 
 **Internal showback rate, shown back first** [argued]. Call it a showback rate, not a transfer price, to keep it apart from tax transfer pricing.
 - **The rate** per usable TB is the higher of net realizable resale for the cohort and grade, and pipeline cost per usable TB, plus a risk loading.
@@ -510,7 +517,7 @@ The case names public signposts between two futures. Path A stays tight through 
 | Shape sprawl | Three grades inside the tier cap | Solver categories growing | Planning |
 | Correlated concentration | Cohort cap per redundancy group | Same-cohort drives in one group | Reliability engineering |
 | Firmware time bombs | Firmware baseline as a gate | Unpatched redeployed drives | Flash platform engineering |
-| Blind spots | Blind cohorts to loss-absorbing tiers or exit | Missing health fields | Flash platform engineering |
+| Blind spots | Blind cohorts to like-for-like spares only | Missing health fields | Flash platform engineering |
 | Sanitization bottleneck | A staffed rate; one signer per drive | Queue age | Drive security engineering |
 | Custody incident | Reconciliation at every off-host state | Any record–log gap | Drive security engineering |
 | Incentive drift | Landing rule; a second technician metric | Reuse at pressured sites | Planning |
@@ -561,7 +568,8 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 **Drive record** (mechanism 5, run backwards)
 - Drive ID; model; capacity; interface; form factor
 - Firmware version; safe version obtainable (yes or no)
-- Health: wear, spare blocks, media errors, latency history, retention margin, capacitor health
+- Health: uncorrectable errors and critical warnings, with dates; grown bad blocks and their trend; available spare; capacitor test; wear; latency history
+- Burn-in result and date; last full test date, for the retest-staleness limit
 - Power-on hours
 - State: in service → harvested → erased → in test → available → spare or placed; or out of custody (the erase-first order of the storage policy)
 - Location; host platform; cohort
@@ -646,6 +654,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - **Studies cited on this page.** Other operators' and researchers' fleets, cited as analogies; none is Kuantillion Cloud's:
   - Schroeder and Gibson, Disk failures in the real world, *USENIX FAST* (2007): https://www.usenix.org/legacy/event/fast07/tech/schroeder/schroeder_html/
   - Xu, Zheng, Qin, Xu and Wu, Lessons and Actions: What We Learned from 10K SSD-Related Storage System Failures, *USENIX ATC* (2019): https://www.usenix.org/conference/atc19/presentation/xu
+  - Schroeder, Lagisetty and Merchant, Flash Reliability in Production: The Expected and the Unexpected, *USENIX FAST* (2016): https://www.usenix.org/conference/fast16/technical-sessions/presentation/schroeder
   - Ford, Labelle, Popovici, Stokely, Truong, Barroso, Grimes and Quinlan, Availability in Globally Distributed Storage Systems, *USENIX OSDI* (2010): https://www.usenix.org/conference/osdi10/availability-globally-distributed-storage-systems
   - Maneas, Mahdaviani, Emami and Schroeder, A Study of SSD Reliability in Large Scale Enterprise Storage Deployments, *USENIX FAST* (2020): https://www.usenix.org/conference/fast20/presentation/maneas
   - Baldenius, Internal Pricing, *Foundations and Trends in Accounting* (2008): https://doi.org/10.1561/1400000013
