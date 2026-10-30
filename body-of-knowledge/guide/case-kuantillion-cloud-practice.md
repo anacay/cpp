@@ -17,7 +17,7 @@ Section numbers refer to the seed paper, *The Coefficient Is an Agreement*. Mech
 
 Read the labels this way. A quote with a Section is the paper's own text. *Applied here* or *our reading* marks the paper's rule used on something it wasn't written for. [argued] marks a rule this page adds. [unmeasured] marks a number nobody has published. Every invented number is labeled illustrative.
 
-One scope note. Flash stranded inside running machines is in scope only through matching and allocation, and it is sized separately from the harvest.
+One scope note. Flash stranded inside running machines is a second prize, possibly the larger one. It needs no sanitization, custody or qualification, only scheduling and pooling. So it runs as its own track, beside the harvest, and is sized on its own.
 
 ## The problem in brief
 
@@ -87,15 +87,16 @@ The practice's [principles](principles.md) set the stance. Each one points at a 
 
 ### The moves that matter most, and why they come first
 
-Five moves carry most of the weight. Each removes a large uncertainty for little cost, and each sets up the next.
+Six moves carry most of the weight. Each removes a large uncertainty for little cost, and the first five set up the next.
 
 1. **Find out what exists.** The public record is silent on any program. Silence could mean a program run quietly, one tried and dropped, or none. Designing before you know wastes the most effort of anything here.
 2. **Size the problem in dollars and name its value anchor.** Our reading of Section 13 is that a program below materiality costs more than it returns. The test is the annual margin over exit against the program's fixed cost; the ratio of harvest to new flash sets scope. The flash contracts settle which kind of value a drive creates. Nothing else can be priced until both are known.
 3. **Book each retirement in both directions.** The register of mechanism 11 already holds "decommissions as dated supply steps" (Section 9.2). Applied here, the same retirement is also a delivery of drives, booked the same way. That one move turns a byproduct into supply you can plan against.
 4. **Give every drive one record and every gap an owner.** Without a record, a drive can be promised twice or lost from custody. Without a forum, the loudest sink wins. And "Shortage rules come before the shortage" (Section 9.3), so the forum must exist early to agree them.
 5. **Prove fulfillment with spares, then extend.** Spares are the harvest's most predictable claim and its value floor. The paper's order of change is "prove fulfillment first" (Section 10.4); we apply it to reused drives. Workloads, the riskier sink, come after trust exists.
+6. **Reach the stranded stock in parallel.** Idle flash in running machines may be worth two to six times the top harvest row, at 11–35 EB once after a haircut. Reclaiming it is a scheduler and pooling problem, so storage systems and the schedulers can start in week two. A reclaim pilot, read out by day 90, is its go or no-go [argued].
 
-These five come first because they share one property. Each one is cheap, fast and decides whether the expensive work is worth doing. Everything else in this page depends on their answers. The [execution plan](case-kuantillion-cloud-plan.md) gives them owners and dates.
+The first five come first because they share one property. Each one is cheap, fast and decides whether the expensive work is worth doing. Everything else in this page depends on their answers. The [execution plan](case-kuantillion-cloud-plan.md) gives them owners and dates.
 
 **Where the practice runs out.** The page names eight gaps, and six matter most. They are byproduct supply, condition as a dimension of supply, quality that fails after delivery, exit as a sink, the cost of a shape, and wear across two lives. [Where the theory runs out](#where-the-theory-runs-out) maps each to the literature that studied it.
 
