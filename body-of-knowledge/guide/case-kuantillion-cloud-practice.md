@@ -247,7 +247,7 @@ The lens also separates two kinds of error. "Persistent bias is different: corre
 
 That is where the correlation rule comes in. "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). Our reading: a cohort of drives, by model, firmware and age, is a shared driver. A million-drive study in the case found failures cluster by node and rack, more so with age.
 
-**The shortage budget.** At 80% cover, "about one launch in five should need a bridge at that layer" (Section 10.2). The paper calls this "an analogy, not a result" (Section 10.2). Applied here, a cohort stands in for a launch. That gives the spares pool a backtest: count the bridges.
+**The shortage budget, and where it stops.** At 80% cover, "about one launch in five should need a bridge at that layer" (Section 10.2). The paper calls this "an analogy, not a result" (Section 10.2), and it counts one-shot buys. A spares pool is replenished, so it runs short many times a year at the same cover. Its test is fill rate and backorders, not a bridge count ([P4](#p4-size-and-source-legacy-spares)).
 
 **What it reveals.** The case asks how many spares to hold. The lens asks two prior questions. How much is a missed repair worth against an idle spare? And how much of the observed demand is bias? Where triage is weak, answering the second shrinks the pool before any sizing begins. Where triage already works, as at the peer, the gain is already taken.
 
@@ -487,24 +487,30 @@ For example, a wear threshold might be half of rated endurance used (illustrativ
 
 **Where they pull against each other.** The buffers lens wants a pool sized to a high quantile. The commit-points lens says the biggest choice, the last-time buy, must be made before the quantile is known. And the declarations lens says harvest, the cheapest source, is itself uncertain.
 
-**The answer, in four parts.**
+**The answer, in five parts.**
 
-*First, size on true failures.* Where pulls include healthy drives, read that as intake bias and correct it before sizing. Take one installed cohort of 200,000 drives failing at 1.5% a year (illustrative). That is 3,000 true failures, about 8.2 a day. The case cites Palm's theorem for the pipeline: stock in resupply depends on the mean turnaround.
+*First, set cover from a signed ratio, by repair urgency.* Not every failure costs the same. Split spares demand into two segments [argued]. Where a dead drive takes a host down, or the chassis must be swapped with it, a missed repair has no bridge. Where an erasure-coded tier can fail in place, a late spare costs only degraded capacity. Fail-in-place already cuts tickets by about 55% where it is used ([section 5.2](case-kuantillion-cloud-full.md#5-2-repairs-and-spares)).
 
-| Turnaround | Mean in resupply | Pool at 80% cover | Pool at 95% cover |
-|---|---|---|---|
-| 30 days | 247 | 260 | 273 |
-| 10 days | 82 | 90 | 97 |
+Each segment gets its own [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio), signed in advance. For example, 19 : 1 for host-down platforms covers 95%, and 1 : 1 for fail-in-place tiers covers 50% (illustrative). That is what the shortage rule's "spares go short last" means in numbers: high cover where there is no bridge, low cover where fail-in-place is the bridge.
 
-The table assumes failures arrive as a Poisson process. Each cover level is the exact Poisson quantile.
+*Second, size the test-and-ship leg on true failures.* Where pulls include healthy drives, read that as intake bias and correct it before sizing. Take one installed cohort of 200,000 drives failing at 1.5% a year (illustrative). That is 3,000 true failures, about 8.2 a day. The case cites Palm's theorem: stock in resupply depends on the mean turnaround, given untested stock on hand to draw from.
+
+| Turnaround | Mean in resupply | 80% cover | 95% cover | 95% cover, variance twice the mean | 95% cover, four times |
+|---|---|---|---|---|---|
+| 30 days | 247 | 260 | 273 | 284 | 300 |
+| 10 days | 82 | 90 | 97 | — | — |
+
+The first two cover columns assume failures arrive as a Poisson process, each an exact Poisson quantile. Cohorts break that assumption, because drives of one cohort fail together. The last two columns use a negative binomial with the same mean (all illustrative). Size the pool and the cohort cap together.
 
 - In a no-triage scenario, sized from pulls at a 25% misdiagnosis rate (illustrative), the 30-day pool at 80% would be 344, not 260.
 - Cutting turnaround from 30 to 10 days lowers the pool by about 8.5 drives per day saved. That is roughly one day of true demand, plus a little safety stock.
-- This holds while untested harvest is on hand. If harvest itself is short, the decommission date binds, not the turnaround.
+- A firmware fault keyed to power-on hours is batch demand, not a rate. No pool absorbs a cohort crossing its fault age together. The defense is updating firmware at harvest and staggering drives near a known fault age.
+
+*Third, size the untested cage against the decommission calendar.* Palm's theorem assumes each failure is resupplied one for one. Harvest arrives in lumps, on retirement dates. So the cage of untested drives has its own sizing: enough to bridge the gaps between retirements, with yield drawn per cohort [argued]. The random-yield literature gives the shape (Yano and Lee, 1995; Simpson, 1978). Keep a small float of drives already tested and burned in, sized to the resupply quantile. Re-test anything held past a set staleness limit, because a test ages on the shelf.
 
 First check whether triage already exists. The peer's sequence is the reference design: remote reboot, slot check, cable swap, and a drive swap only as the last step. Where a site lacks it, add it before any pull. Either way, measure the healthy share of pulled drives by site [argued]. Fewer wrongful pulls are cheap supply only where pulls are wrongful today.
 
-*Second, choose consciously at each last-time buy.* A last-time buy is a commit point before the event that would size it. Section 6.5 gives three choices for that. Applied here:
+*Fourth, choose consciously at each last-time buy.* A last-time buy is a commit point before the event that would size it. Section 6.5 gives three choices for that. Applied here:
 
 1. "Ask for the decision earlier" (Section 6.5): get the platform's retirement dated before the vendor's end-of-life window.
 2. "Buy an option that carries the commitment past the event" (Section 6.5): a reschedulable last-time buy.
@@ -512,11 +518,11 @@ First check whether triage already exists. The peer's sequence is the reference 
 
 Write down which one you chose.
 
-*Third, run two sources as one policy.* Harvest is the cheap, uncertain source; new purchase is the dear, nominally reliable one. The case's studied ground gives the shape: one order-up-to level for each source [argued]. In 2026, new purchase may be the slower one.
+*Fifth, run two sources as one policy.* Harvest is the cheap, uncertain source; new purchase is the dear, nominally reliable one. The case's studied ground gives the shape: one order-up-to level for each source [argued]. In 2026, new purchase may be the slower one.
 
 When harvested drives land, a planned new order for the same platform isn't needed for a while. Later harvest may still slip. So push the new order out rather than cancel it. That is the push-out right from the supply-layers lens, applied to orders behind an uncertain harvest.
 
-*Fourth, backtest with bridges.* Applied here, a cohort stands in for a launch (Section 10.2). Count one cover decision per cohort per year. For example, 20 platform cohorts should need about 4 bridges a year (illustrative). Far fewer means the pool is padded. Far more means the ratio or the forecast is off. "launches tied to one driver spend the budget together" (Section 10.2), so expect bridges to cluster by cohort.
+**Test it with fill rate, not bridge counts.** A replenished pool runs short many times a year, even at 80% cover. At 260 drives against a mean of about 247 in resupply, the pool is empty about 20% of the time, with about 1.75 drives on backorder on average (illustrative). So score fill rate and expected backorders by cohort and segment [argued]. The paper's "one launch in five" count is for one-shot buys (Section 10.2), so it doesn't fit a replenished pool.
 
 **Where to stock.** Stock drives at site cages. Stock whole spare hosts only for platforms whose chassis must be replaced with the drive, the case's legacy-card example. Hold untested harvest at a regional depot [argued].
 
