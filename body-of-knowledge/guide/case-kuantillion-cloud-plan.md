@@ -74,7 +74,7 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | P2a Wear price | Flash platform engineering | Flash platform engineering | Finance | Storage systems | **Change:** unowned today |
 | P3 Reused-flash class | Storage systems | Storage systems | Each tier owner accepts, with its evidence bar | Reliability engineering | **Change:** acceptance becomes signed |
 | Stranded line | Storage systems | Storage systems, as service owner | Finance keeps score | Fleet provisioning; planning | **Change:** new line |
-| P4 Spares ratio | Spares planning | Finance and tier owners jointly | Finance and tier owners | Supply, for idle cost and liability terms | **Change:** signed in advance |
+| P4 Spares ratio | Spares planning | Finance and tier owners (product, in the seed's terms) jointly | Finance and tier owners | Supply, for idle cost and liability terms | **Change:** signed in advance |
 | P5 Build programs | Fleet shaping and hardware engineering | Same, as declaring team | Declaring team signs the [change bands](/glossary/#term-change-band) | Supply and planning set the bands | **Change:** programs declared |
 | P6 Allocation | Planning | The forum, run by planning | Finance, on the rate card | Every sink | **Change:** unowned today |
 | P6 Commitment | Fleet provisioning | Fleet provisioning, answering each claim with a dated commit or a named gap | Finance agrees who pays if harvest fails | Planning | **Change:** never firm before supply answers |
@@ -139,10 +139,10 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 14 | Compute the materiality ratio and the class (experiment 3) | Planning | The class, from the table under Gate 1 |
 | 20 | Read every flash contract's cancel, push-out and volume terms into the supply register (experiment 2) | Fleet provisioning, with finance | Mechanism 11's contract lines |
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
-| 25 | Compute both value anchors per zone (experiment 1) | Planning, with finance | The anchor, declared for Gate 1 |
 | 20 | Measure flash use by resource and site | Storage systems | The stranded stock, sized |
+| 25 | Compute both value anchors per zone (experiment 1) | Planning, with finance | The anchor, declared for Gate 1 |
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
-| 30 | Charter the forum to sign two rules: shortage and landing | Planning | A charter; both rules drafted |
+| 30 | Charter the forum to ratify two rules: shortage and landing | Planning | A charter; both rules drafted |
 | 30 | Gate 1 decision | Planning and finance | Go or stop, with a decision note |
 
 ### Days 31–60: counter-arguments and the record
@@ -160,7 +160,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 
 | By day | Action | Owner | Output |
 |---|---|---|---|
-| 70 | Sign the spares shortage-to-idle ratio per platform | Finance and product | A signed ratio |
+| 70 | Sign the spares shortage-to-idle ratio per platform | Finance and tier owners | A signed ratio |
 | 70 | Add a reseat-and-re-test step before any SSD pull | Machine-health engineering | The step live at two sites |
 | 75 | Staff the pipeline to the median of expected retirements, with surge crews on contract | Reverse logistics | A staffed rate and booked slots |
 | 80 | Put every planned decommission on the supply register as a dated step, both ways | Fleet provisioning | Hosts out, drives in |
@@ -182,7 +182,7 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 - **Exit criteria.** One of three readings recorded: exists, declined, or absent.
 - **Artifacts.** A decision note.
 - **Owner.** Planning.
-- **Go or stop.** Go if absent, or if a decline fails today's prices. Stop if a decline still holds. Audit instead if a program exists.
+- **Go or stop.** Go if absent, or if a decline fails today's prices. Stop if a decline still holds. If a program exists, audit it against the thirteen mechanisms. Then either enter Gate 1 with that program as the base, or stop with a decision note.
 
 ### Gate 1: size and anchor
 
@@ -197,7 +197,7 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 - **Exit criteria.**
   - The class chosen.
   - The anchor declared.
-  - The forum chartered to sign two rules.
+  - The forum chartered to ratify two rules: the shortage rule, and the landing rule that planning proposes and finance signs.
 - **Artifacts.**
   - Contract lines on the supply plan of record ([mechanism 11](concept-operating-mechanisms.md)).
   - The stranded line, owned ([mechanism 4](concept-operating-mechanisms.md)).
@@ -318,7 +318,7 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 
 **Annual signatures, kept separate.**
 
-- Finance and product sign the spares ratio.
+- Finance and tier owners sign the spares ratio.
 - Supply and planning set the harvest change bands, and each declaring sink signs them.
 - Planning proposes the landing rule, finance signs it and the forum ratifies it (mechanism 8).
 
@@ -355,7 +355,7 @@ Under scarcity this approximates the shadow price, "What one more unit of the bi
 | 2 | Observable, but outside one threshold, or within a year of a known firmware fault age | Loss-absorbing tiers and spares only |
 | 3 | Blind, or failing any threshold | Exit or destroy |
 
-The thresholds are [unmeasured]. For example, a wear threshold might be half of rated endurance used (illustrative). Three grades fit inside a tier cap of three or more. Below that, Gate 2's rule governs: if the systems carry only one grade, run spares and exit only.
+The thresholds are [unmeasured]. For example, a wear threshold might be half of rated endurance used (illustrative). Three grades fit inside a tier cap of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, Gate 2's rule governs: run spares and exit only.
 
 **Transfer price, with showback first** [argued].
 - The price is set on usable, yield-adjusted capacity: pipeline cost per usable TB, plus carry, plus a risk loading drawn from the incident bound.
@@ -520,7 +520,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - Firmware version; safe version obtainable (yes or no)
 - Health: wear, spare blocks, media errors, latency history, retention margin, capacitor health
 - Power-on hours
-- State: in service, harvested, in test, erased, available, spare, out of custody
+- State: in service → harvested → erased → in test → available → spare or placed; or out of custody (the erase-first order of the storage policy)
 - Location; host platform; cohort
 - Grade; costing basis; regraded SKU
 - Reuse eligibility: free, constrained or forbidden
