@@ -466,7 +466,7 @@ Grade on event history, not wear. In the field studies, error history predicts: 
 
 Burn-in comes before any grade 1 placement, with its yield logged. Infant mortality is common in first lives, and a second life may restart that clock; that is a hypothesis, not a finding [unmeasured].
 
-**Cap the tiers.** Cap the tier count at what the fleet's backlog and solver categories show its systems can carry [argued]. Three grades fit inside a cap of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, spares and exit only.
+**Cap the tiers.** Cap the tier count at what the fleet's backlog and solver categories show its systems can carry [argued]. Three grades fit inside a cap of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, spares and exit only. The grading tax is bounded: in one remanufacturing study, grading added about 4% to profit, more as return volume grew (Ferguson et al., 2009). So let the tier cap rise with the dollar test's result, not ahead of it.
 
 **Chain the classes, don't multiply them.** Jordan and Graves found that limited flexibility "yields most of the benefits of total flexibility" [77] (Section 6.2). Their limit is on links: each plant builds "only a few products" (Section 6.2). The paper reads that across to two machine shapes per workload, linked in a chain. It calls that "an analogy, not a result tested on fleets" (Section 6.2). Applied here, link each tier to a few sinks and each sink to a few tiers.
 
