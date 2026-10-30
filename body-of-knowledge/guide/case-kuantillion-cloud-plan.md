@@ -541,14 +541,18 @@ The case names public signposts between two futures. Path A stays tight through 
 
 **Incident playbook: a redeployed cohort fails together (scenario S2)** [argued].
 
+Durability comes first: protect the data, then fix the schedule. Faults keyed to power-on hours fire together across a co-harvested cohort. In one fleet, 46% of consecutive replacements came within a day of the previous one (Maneas et al. 2020).
+
 | Step | Action | Owner | Within |
 |---|---|---|---|
-| 1 | Freeze redeployment of the affected cohort | Planning | Hours |
-| 2 | Draw on the incident bound for bridges | Finance | One day |
-| 3 | Re-rank the cohort's claims in the forum | The forum | One week |
-| 4 | Publish the cohort's record to the affected tiers, through the challenge channel | Planning | One week |
-| 5 | Check the firmware baseline and power-on hours for a shared cause | Flash platform engineering | One week |
-| 6 | Re-test the evidence bar before you resume | Reliability engineering | Before resuming |
+| 1 | Re-protect every redundancy group holding more cohort members than its tolerance; throttle rebuilds so they don't trigger more failures | Reliability engineering, with storage systems | Minutes to hours |
+| 2 | Freeze redeployment of the affected cohort | Reliability engineering | Hours |
+| 3 | Check firmware and power-on hours on every drive of the model, first life and second | Flash platform engineering | One day |
+| 4 | Quarantine failed drives for failure analysis; authorize any vendor analysis | Flash platform engineering | One day |
+| 5 | Draw on the incident bound for bridges | Finance | One day |
+| 6 | Re-rank the cohort's claims in the forum | The forum | One week |
+| 7 | Publish the cohort's record to the affected tiers, through the challenge channel | Planning | One week |
+| 8 | Re-test the evidence bar before you resume | Reliability engineering | Before resuming |
 
 The challenge channel follows the paper: "A consumer who can challenge a coefficient, and sometimes wins, trusts the rest of the bill" (Section 10.4).
 
