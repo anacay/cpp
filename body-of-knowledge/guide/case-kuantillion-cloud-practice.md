@@ -251,9 +251,9 @@ That is where the correlation rule comes in. "Name the driver; don't infer indep
 
 **What it reveals.** The case asks how many spares to hold. The lens asks two prior questions. How much is a missed repair worth against an idle spare? And how much of the observed demand is bias? Where triage is weak, answering the second shrinks the pool before any sizing begins. Where triage already works, as at the peer, the gain is already taken.
 
-It also reveals that risk from reused drives is a buffer question. Redundancy already absorbs some device loss. A cohort cap per failure domain keeps correlated failure inside what redundancy was sized for [argued].
+It also reveals that risk from reused drives is a buffer question. Redundancy already absorbs some device loss. A cohort cap per redundancy group keeps correlated failure inside what redundancy was sized for [argued]. In one storage vendor's fleet, a second replacement in the same RAID group was more than 180 times likelier within a week (Maneas et al., 2020).
 
-**Decisions it bears on.** P4 is this lens. P3 needs the cohort cap. P5 spreads reused drives across failure domains. P7's turnaround sets how much stock sits in resupply.
+**Decisions it bears on.** P4 is this lens. P3 needs the cohort cap. P5 spreads reused drives across redundancy groups. P7's turnaround sets how much stock sits in resupply.
 
 ### Supply layers and lead times
 
@@ -467,11 +467,11 @@ For example, a wear threshold might be half of rated endurance used (illustrativ
 
 **Pilot small.** "Phasing the first region small buys the real coefficient cheaply" (Section 5.4). Applied here, the first unit is a cohort, placed in caches and replicated tiers that absorb device loss by design.
 
-**Concentration.** Our reading: name each cohort as a shared driver: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). Cap a cohort's share of any one failure domain [argued]. For example, if a domain holds 2,000 drives, a 10% cap is 200 (illustrative).
+**Concentration.** Our reading: name each [cohort](/glossary/#term-cohort) as a shared driver: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). Here a cohort is model × firmware × power-on-hour band. Data is lost when same-cohort drives in one erasure or replication group exceed what it can tolerate. So the cap is placement, not a percentage [argued]. No redundancy group holds more members of one cohort than its failure tolerance minus one. A 12+2 erasure group tolerates two losses, so it holds at most one drive of a given cohort. A share cap per rack or domain is secondary. Placement buys more than grading: in one large study, rack-aware placement raised stripe MTTF about threefold (Ford et al., 2010).
 
 **The risk budget** [argued]. Reused capacity needs a signed limit on how much risk it may carry, agreed before volume grows. It is a named buffer in the sense of [buffers and reserves](concept-buffers-and-reserves.md). It has three parts.
 
-1. A cohort cap per failure domain. Reliability engineering sets it, because the paper gives that group the right: "Reliability buffers: reliability engineering" (Section 9.2).
+1. The cohort cap per redundancy group. Reliability engineering sets it, because the paper gives that group the right: "Reliability buffers: reliability engineering" (Section 9.2). Its budget is a probability: the chance of more than the group's tolerance of same-cohort failures within one repair window.
 2. An evidence bar per tier, rising only with scored outcomes. Caches start lower, durable tiers higher.
 3. An incident cost bound, signed by finance before volume grows.
 
@@ -549,7 +549,7 @@ One line of the paper is new to this decision. "A written table of substitutions
 - Fill the substitution table from the fit gate: which drives fit which slots, backplanes and platforms.
 - Choose machines for added flash by binding dimension: upgrade the machines whose flash binds while their other parts sit idle [argued].
 - Register firmware baselines as cohort breaks on mechanism 6. Its artifact lists "Hardware changes, migrations, re-grains"; a firmware baseline is our addition.
-- Don't pack same-age drives into one box. Name the cohort as a shared driver, as Section 6.6 asks for any shared driver, and spread reused drives across failure domains inside a build [argued].
+- Don't pack same-age drives into one box. Name the cohort as a shared driver, as Section 6.6 asks for any shared driver, and spread reused drives across redundancy groups inside a build [argued].
 
 The case warns that planning these separately overbooks the same technicians and drives. Our reading: one ranked list in one forum (mechanism 10) is the guard.
 
