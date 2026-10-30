@@ -73,7 +73,7 @@ Kuantillion Cloud's problem is the paper's problem run backwards. The paper foll
 
 That inversion is the key to using the body of knowledge here. Almost every tool in the practice still works, pointed the other way. A retirement becomes a delivery. The reverse pipeline becomes a turn-up layer. A harvest becomes a supply declaration that firms up in stages. Where a tool doesn't turn around, you've found a limit of the practice.
 
-You also start from the planner's real position. The planner sits in the middle, "usually owning no capacity and no budget" (Section 10). So your strategy is a set of agreements, not a set of orders. [People: brokering the handshake](people.md) explains where that standing comes from.
+You also start from the planner's real position. The planner sits in the middle, "usually owning no capacity and no budget" (Section 10). So your strategy is a set of agreements, not a set of orders. A broker still needs a principal, though. A sponsor who appoints the lead, chairs the forum and funds the pipeline until the landing rule credits it comes first [argued]. [People: brokering the handshake](people.md) explains where that standing comes from.
 
 The practice's [principles](principles.md) set the stance. Each one points at a specific move in this case.
 
