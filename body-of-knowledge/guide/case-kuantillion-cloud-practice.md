@@ -595,8 +595,11 @@ Show it back for a full cycle before anyone is billed. The paper's order is "Mov
 
 **When to release held stock.** Holding is a priced position. The paper's option rule is "write down the trigger for converting options into orders" (Section 6.2). Applied here, write the release trigger before you hold [argued]:
 
-- release a cohort's held drives when their next-best-source value falls below net resale for two quarterly price prints running; or
+- hold a cohort only while its expected discounted claim value, minus holding cost, exceeds net resale today, read on monthly prices;
+- release on a stop-loss, a set fall in resale value from the hold date, even before the next review; and
 - release when a drive's shelf time passes two re-test cycles with no claim.
+
+Waiting for two quarterly prints, as an earlier version proposed, lags a falling market by about six months. That lag is the cost Path B would charge.
 
 Release in steps, under the cap below.
 
