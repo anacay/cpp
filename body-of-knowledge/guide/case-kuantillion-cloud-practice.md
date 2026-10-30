@@ -391,7 +391,7 @@ Score the rule after two cycles. It is a rule, not a computed shadow price: the 
 
 **Who pays.** Set an internal showback rate on usable, yield-adjusted capacity [argued]. It is the higher of net realizable resale for that cohort and grade, and pipeline cost per usable TB, plus a risk loading drawn from the incident bound. Carry is charged per TB-month while the drive is held. Call it a showback rate, not a transfer price, to keep it apart from tax transfer pricing.
 
-The floor at resale matters. A drive that could be sold is never free to a sink. For example, take net resale of $100 per usable TB, pipeline cost of $25 and a $5 risk loading. The rate is about $105 per TB, plus about $0.17 per TB-month held (illustrative). A cost-plus price of about $32 would show reuse at an 83–95% discount to new flash, and every sink would over-claim. Where resale exceeds pipeline cost, the gap is a management-ledger credit to the recovery team, not a booked saving.
+The floor at resale matters. A drive that could be sold is never free to a sink. For example, take net resale of $100 per usable TB, pipeline cost of $25 and a $5 risk loading. The rate is about $105 per TB, plus about $0.83 per TB-month held, the capital charge on $100 at 10% (illustrative). A cost-plus price of about $32 would show reuse at an 83–95% discount to new flash, and every sink would over-claim. Where resale exceeds pipeline cost, the gap is a management-ledger credit to the recovery team, not a booked saving.
 
 Show it back for a full cycle before anyone is billed. The paper's order is "Move to attributed cost only after a full cycle of showback" (Section 10.4). The forum ranks on next-best-source value, not on this price.
 
