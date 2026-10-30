@@ -386,6 +386,8 @@ This is reasoning, not a work order. Owners appear only where the argument needs
 
 **Custody.** Proving erasure is a security discipline, not capacity planning. [The practice's Charter](/charter/) says of neighboring fields: "We link to them rather than rewrite them". It doesn't name erasure among them, so treating it that way is our reading. The practice's part is the record, not the erasure method.
 
+The record can still carry one structural choice: split the bar by sink [argued]. A drive staying inside the fleet needs crypto-erase plus custody that never breaks. A drive leaving needs purge, verification and validation. Both need sampled forensic read-back for each tool, firmware and model before that combination is trusted. Erasure can report success falsely: in one lab study, 1 of 7 testable drives did (Wei et al., 2011). NIST's guideline separates verifying one erase from validating the process (NIST SP 800-88 Rev. 2).
+
 **Why it comes early.** Every later decision reads from this record. But it doesn't need to be complete to start. Build the off-host fields first, because that is where the record is missing today.
 
 ### P2. When the host goes: keep, redeploy whole, or harvest
@@ -642,7 +644,7 @@ The key line is the label for harvest not yet answered. "An approval becomes cap
 
 **Turnaround is inventory, with a condition.** Each day cut from mean turnaround frees about one day of true demand from the spares pool. Per million installed drives, that is about 27–68 drives a day. It holds while untested harvest is on hand. When harvest itself is short, the decommission date binds.
 
-**Where the capacity sits.** Put test and erasure capacity at the large decommissioning sites. Hold untested drives at a regional depot. Ship to demand only against a claim [argued].
+**Where the capacity sits.** Price the internal and exit pipelines separately, since their sanitization bars differ [argued]. Put test and erasure capacity at the large decommissioning sites. Hold untested drives at a regional depot. Ship to demand only against a claim [argued].
 
 **Labor.** The case bounds the SSD share of the work at 25–375 technician-years a year, an upper bound (illustrative). That is a staffing program, not an impossibility. The risk is that it lands on the same sites and quarters as repairs.
 
