@@ -27,7 +27,8 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 2. Within 30 days, a dollar test of whether the program pays, and its scope: spares continuity, mixed, or supply strategy. Beside it, the value anchor read from the flash contracts.
 3. Within 90 days, the rules signed in advance, spares and the reverse pipeline staffed to a signed plan, and allocation running in a standing [forum](/glossary/#term-forum).
 4. From week 2, in parallel, a track on the stranded flash already installed. It needs no sanitization, custody or qualification, and it may be the larger prize.
-5. Over the following year, a pilot of reused flash in tiers that absorb device loss, and experiments that test the case's eight stated assumptions.
+5. From G4, capacity delivered: TB to each sink per quarter, by scope, declared in advance and scored promised against actual.
+6. Over the following year, a pilot of reused flash in tiers that absorb device loss, and experiments that test the case's eight stated assumptions.
 
 **The clock against the shortage** [argued]. Suppose day 1 is 2 November 2026 (illustrative). Then G1 falls on 1 December, G4 on 30 January 2027, and G5 no earlier than 30 April 2027.
 - Under the case's Path B, the shortage eases from late 2027. Reused flash would then reach workloads with about two quarters of shortage left.
@@ -466,6 +467,7 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 
 | Measure | Denominator | Target | Test that can fail |
 |---|---|---|---|
+| TB to each sink | Per quarter, by sink and scope | As declared at the quarterly supply review | Actual below promised two quarters running |
 | Purchases avoided | Per TB against the purchase plan frozen at G1, under the declared anchor | Rises while stockouts last | Reported without a moved purchase-order line or the frozen baseline |
 | Net value over exit per harvested drive | Per drive harvested: reuse value after pipeline cost and yield, minus what exit would have paid | Positive by cohort | Negative for a cohort two quarters running |
 | Spares fill rate | Per repair, by platform and segment | At or above the signed cover point | Fill below cover while another sink holds idle harvest |
