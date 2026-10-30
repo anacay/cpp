@@ -69,7 +69,8 @@ The planner sits in the middle, "usually owning no capacity and no budget" (Sect
 | Supply chain | Owns the memory-reclaim program, the nearest precedent; vendor terms; the contract read, including resale and recycling contracts |
 | Tier owners | The owners of the workloads and storage tiers that take reused flash: the case's resource managers. They are "product" in the seed paper's terms |
 | Reliability engineering | Cohort caps per redundancy group; the durability response in an incident |
-| Finance | Keeps score; signs the rules that say who pays |
+| Finance | Keeps score; signs the rules that say who pays; the controller writes the accounting memo |
+| Legal, privacy and tax | Contract terms; notification clocks; intercompany pricing, customs and e-waste rules for drives that cross legal entities or borders |
 
 "Drive supply" in the tables below means fleet provisioning and spares planning together, the groups that answer for drives. Supply chain is a separate group: it owns vendor contracts.
 
@@ -167,6 +168,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
 | 25 | Compute both value anchors per zone, measuring the drive's attribution share (experiment 1) | Planning, with finance | The anchor, declared for G1 |
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
+| 30 | Write the accounting memo for G1 | Finance: the controller | A signed memo |
 | 30 | Start the reclaim pilot on one tier (experiment 5) | Storage systems | Pooling live on one tier |
 | 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
 | 30 | G1 decision: the dollar test, then the scope, and the clock re-read against the signposts | Planning and finance | Go or stop, with a decision note |
@@ -234,6 +236,8 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 - **Artifacts.**
   - Contract lines on the supply plan of record ([mechanism 11](concept-operating-mechanisms.md)).
   - The purchase plan, frozen as the baseline for savings.
+  - The controller's accounting memo. It covers the inventory basis, near net book value. It says whether spares are capitalized or expensed, and when drives are held for sale or impaired.
+  - The memo also covers resale gain or loss, builds that look cheaper than they are, and a management ledger at fair value: the drive record with a value column.
   - The stranded line, owned ([mechanism 4](concept-operating-mechanisms.md)).
   - A decision note.
 - **Owner.** Planning, with finance.
@@ -683,7 +687,7 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - **Signing.** Finance confirms the accounting effect; the forum decides the economics, for every keep past plan.
 
 **Forum charter** ([mechanism 10](concept-operating-mechanisms.md); [forum](/glossary/#term-forum)) [argued]
-- Members: the sponsor, as chair; planning, which runs it; finance; drive supply; one seat per sink
+- Members: the sponsor, as chair; planning, which runs it; finance; drive supply; one seat per sink; a tax seat for claims that cross legal entities
 - Remit: the ranking rule and the cut line across the four sinks; exceptions from the pegging system; the decision log with overrides and brokered trades
 - Rules it holds: the shortage rule; the ranking unit; the landing rule, which it ratifies
 - Cadence: monthly, plus the quarterly supply review
