@@ -1,6 +1,6 @@
 ---
 title: Kuantillion Cloud: the execution plan
-short: The practice's answer to Case 3, turned into a plan a program lead can run: who decides what, the first 90 days, six gates, the standing cadence, the rules to sign, the measures, the experiments and the playbook.
+short: The practice's answer to Case 3, turned into a plan a program lead can run: who decides what, the first 90 days, seven decision gates (G0–G6), the standing cadence, the rules to sign, the measures, the experiments and the playbook.
 kind: case
 order: 3.3
 cadence: all
@@ -94,14 +94,15 @@ Assigning them to these groups is this plan's reading [argued]. The ratio and th
 
 **The landing rule, one statement used everywhere** [argued]. Planning proposes it, finance signs it, and the forum ratifies it.
 
-**Gate owners.** Each of the case's ten gates has one owner [argued]:
+**Technical-gate owners.** Each of the case's eleven technical gates has one owner [argued]:
 
 - fleet shaping and hardware engineering: physical fit, and protocol and backplane;
 - flash platform engineering: qualification, firmware and provenance, observability, and condition;
 - data-center operations: change windows;
 - fleet provisioning: systems of record;
 - planning, with the solver team: systems complexity;
-- drive security engineering: sanitization.
+- drive security engineering: sanitization;
+- finance, with legal and tax: jurisdiction, for any drive that crosses a legal entity or a border.
 
 **Seams.** Hosts and harvest sit on seam 3, between planning and supply. Keeping hosts, and the split between capital and operating budgets, sit on seam 2, between planning and finance. Grades and wear sit on seam 1, between product and platform (Section 10.1). Mapping them this way is this plan's reading.
 
@@ -127,7 +128,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 
 - If a program runs, audit it against the [thirteen mechanisms](concept-operating-mechanisms.md) and add only what's missing.
 - If a decline still holds at today's prices, stop. The center then moves to redeploying whole hosts.
-- If neither, go to Gate 1.
+- If neither, go to G1.
 
 ### Days 6–30: size it and read the contracts
 
@@ -136,14 +137,14 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 10 | Pull the harvest log, split by SSD and disk, and by cohort | Reverse logistics | Harvest TB by quarter and cohort |
 | 10 | Pull flash deployed, in TB, by quarter | Fleet provisioning, with finance | The materiality denominator |
 | 10 | Pull the decommission schedule with stage dates | Lifecycle transitions | Retirements, staged |
-| 14 | Compute the materiality ratio and the class (experiment 3) | Planning | The class, from the table under Gate 1 |
+| 14 | Compute the materiality ratio and the class (experiment 3) | Planning | The class, from the table under G1 |
 | 20 | Read every flash contract's cancel, push-out and volume terms into the supply register (experiment 2) | Fleet provisioning, with finance | Mechanism 11's contract lines |
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
 | 20 | Measure flash use by resource and site | Storage systems | The stranded stock, sized |
-| 25 | Compute both value anchors per zone (experiment 1) | Planning, with finance | The anchor, declared for Gate 1 |
+| 25 | Compute both value anchors per zone (experiment 1) | Planning, with finance | The anchor, declared for G1 |
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
 | 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
-| 30 | Gate 1 decision | Planning and finance | Go or stop, with a decision note |
+| 30 | G1 decision | Planning and finance | Go or stop, with a decision note |
 
 ### Days 31–60: counter-arguments and the record
 
@@ -154,7 +155,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 45 | Agree the shortage rule in the forum; sign the landing rule | The forum, for the shortage rule; for the landing rule, planning proposes, finance signs, the forum ratifies | Both rules in force |
 | 50 | Name an owner for each drive-record field, off-host fields first | Planning | The record's field list, owned |
 | 55 | Fill the keep, redeploy or harvest sheet for one retiring cohort (experiment 6) | Lifecycle transitions, with finance | One cohort decided |
-| 60 | Gates 2 and 3 decisions | Planning | Exit criteria met, or named gaps |
+| 60 | G2 and G3 decisions | Planning | Exit criteria met, or named gaps |
 
 ### Days 61–90: spares and the pipeline first
 
@@ -171,9 +172,11 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 
 ## 4. The gates
 
-Each gate opens only on the evidence in its row. The paper's rule for declarations is that "promotion needs the evidence in its row" (Section 5.4). This plan applies it to the program's own gates [argued]. Each artifact names its mechanism, linked to [the operating mechanisms](concept-operating-mechanisms.md).
+This plan uses "gate" in two senses. The program's seven **decision gates**, G0 to G6, are the steps of this plan. The case's eleven **technical gates** are the tests every drive must pass before reuse, such as fit, qualification, sanitization and jurisdiction ([full case, section 6](case-kuantillion-cloud-full.md#6-supply-the-gates)). This section is about the decision gates.
 
-### Gate 0: existence test
+Each decision gate opens only on the evidence in its row. The paper's rule for declarations is that "promotion needs the evidence in its row" (Section 5.4). This plan applies it to the program's own gates [argued]. Each artifact names its mechanism, linked to [the operating mechanisms](concept-operating-mechanisms.md).
+
+### G0: existence test
 
 - **When.** Days 1–5.
 - **Purpose.** Don't build what exists, or what was rightly declined.
@@ -182,13 +185,13 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 - **Exit criteria.** One of three readings recorded: exists, declined, or absent.
 - **Artifacts.** A decision note.
 - **Owner.** Planning.
-- **Go or stop.** Go if absent, or if a decline fails today's prices. Stop if a decline still holds. If a program exists, audit it against the thirteen mechanisms. Then either enter Gate 1 with that program as the base, or stop with a decision note.
+- **Go or stop.** Go if absent, or if a decline fails today's prices. Stop if a decline still holds. If a program exists, audit it against the thirteen mechanisms. Then either enter G1 with that program as the base, or stop with a decision note.
 
-### Gate 1: size and anchor
+### G1: size and anchor
 
 - **When.** Day 30.
 - **Purpose.** Know the problem's class and its value anchor before building anything. "Below materiality, the mechanisms cost more than they return" (Section 13).
-- **Entry evidence.** Gate 0 reads absent, or a decline that no longer holds.
+- **Entry evidence.** G0 reads absent, or a decline that no longer holds.
 - **Work.**
   - The materiality ratio.
   - The stranded stock, sized on its own.
@@ -209,16 +212,16 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 |---|---|---|
 | Under 1% | Spares continuity | A minimum drive record, spares, the pipeline and exit |
 | 1–5% | Mixed | The above, plus allocation as a monthly forum line and one workload pilot |
-| Over 5% | Supply strategy | Every gate below |
+| Over 5% | Supply strategy | Every decision gate below |
 
 - **Stranded stock, beside it.** The ratio doesn't gate the stranded stock, which the case says is likely larger than the flow. Illustratively, recovering the gap between 54% and 19% stranding on about 100 EB installed frees about 35 EB, once.
 - **Go or stop.** Go at the class's scope. "Stop at the step where the next one costs more than it saves" (Section 12). The paper writes that for mid-sized companies; this plan applies it to the program's own steps.
 
-### Gate 2: counter-arguments
+### G2: counter-arguments
 
 - **When.** Day 60.
 - **Purpose.** Test the two hypotheses that could move the center: the grading tax, and redeploying whole hosts.
-- **Entry evidence.** Gate 1 says go.
+- **Entry evidence.** G1 says go.
 - **Work.**
   - Count the qualification backlog and solver categories.
   - Read decommission records by branch.
@@ -232,11 +235,11 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 - **Owner.** Planning, with the solver team and lifecycle transitions.
 - **Go or stop.** If the systems can carry no more than one grade, run spares and exit only. If redeploying whole usually wins, re-center there.
 
-### Gate 3: the drive record
+### G3: the drive record
 
-- **When.** Day 60, decided with Gate 2.
+- **When.** Day 60, decided with G2.
 - **Purpose.** One record every decision can cite.
-- **Entry evidence.** Gate 2 exit.
+- **Entry evidence.** G2 exit.
 - **Work.**
   - Name an owner for each field, off-host fields first.
   - Define each handoff.
@@ -248,11 +251,11 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 - **Owner.** Planning keeps it; each field's performer owns its entry.
 - **Go or stop.** Don't move a drive between sinks on a record with an open reconciliation gap.
 
-### Gate 4: hosts and allocation, spares and pipeline first
+### G4: hosts and allocation, spares and pipeline first
 
 - **When.** Day 90.
 - **Purpose.** Clear the coupled decisions together: when hosts go, how harvest is split, how many spares, how fast the pipeline.
-- **Entry evidence.** Gate 3 exit.
+- **Entry evidence.** G3 exit.
 - **Work.**
   - Decommissions on the register.
   - The spares ratio signed.
@@ -268,13 +271,13 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
   - The [commit-point map](concept-commit-points.md) for last-time buys and decommissions ([mechanism 13](concept-operating-mechanisms.md)).
   - The forum's decision log ([mechanism 10](concept-operating-mechanisms.md)).
 - **Owner.** The forum, run by planning; fleet provisioning for supply answers.
-- **Go or stop.** Hold Gate 5 until spares fill holds at the signed cover point for one quarter.
+- **Go or stop.** Hold G5 until spares fill holds at the signed cover point for one quarter.
 
-### Gate 5: workloads and builds
+### G5: workloads and builds
 
-- **When.** No earlier than day 180: one quarter of spares fill after Gate 4.
+- **When.** No earlier than day 180: one quarter of spares fill after G4.
 - **Purpose.** Offer reused flash as its own class, and declare build programs.
-- **Entry evidence.** Gate 4 exit, and the tier cap from Gate 2.
+- **Entry evidence.** G4 exit, and the tier cap from G2.
 - **Work.**
   - A pilot cohort in caches and replicated tiers.
   - Build programs declared, with stages and bands.
@@ -287,11 +290,11 @@ Each gate opens only on the evidence in its row. The paper's rule for declaratio
 - **Owner.** Storage systems; fleet shaping and hardware engineering.
 - **Go or stop.** Stop widening the class if the pilot's failure rate breaks its evidence bar.
 
-### Gate 6: the wear link
+### G6: the wear link
 
 - **When.** After the pilot's first second-life outcomes; no date is set.
 - **Purpose.** Price first-life wear against second-life value.
-- **Entry evidence.** Gate 5's pilot gives a second-life value to price against.
+- **Entry evidence.** G5's pilot gives a second-life value to price against.
 - **Work.**
   - Register the wear price, owned and versioned.
   - Report endurance used by cohort quarterly.
@@ -334,7 +337,7 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 - Above the firm slice, hold [options](/glossary/#term-option) on new purchase. Above that, name a [bridge](/glossary/#term-bridge) with an owner.
 - Label harvest *uncommitted* until supply answers with a dated commit or a named gap.
 - Basis: "Until then, label it *uncommitted*, a firmness class of its own" (Section 6.1); the [firm, flexible and named](/glossary/#term-firm-flexible-named) split (Section 8.2).
-- **Working estimate:** about 50–70% of scheduled retirements land on their date [argued]. Gate yield is about 80% for observable cohorts [argued; the real yield is unmeasured]. So expect about 40–56% of scheduled drives on the date. For a batch of 40,000 drives (illustrative), that is about 16,000–22,400.
+- **Working estimate:** about 50–70% of scheduled retirements land on their date [argued]. Technical-gate yield is about 80% for observable cohorts [argued; the real yield is unmeasured]. So expect about 40–56% of scheduled drives on the date. For a batch of 40,000 drives (illustrative), that is about 16,000–22,400.
 
 **Ranking unit** [argued]. The forum ranks each claim at the cost of that sink's next-best source on that date:
 
@@ -355,7 +358,7 @@ Under scarcity this approximates the shadow price, "What one more unit of the bi
 | 2 | Observable, but outside one threshold, or within a year of a known firmware fault age | Loss-absorbing tiers and spares only |
 | 3 | Blind, or failing any threshold | Exit or destroy |
 
-The thresholds are [unmeasured]. For example, a wear threshold might be half of rated endurance used (illustrative). Three grades fit inside a tier cap of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, Gate 2's rule governs: run spares and exit only.
+The thresholds are [unmeasured]. For example, a wear threshold might be half of rated endurance used (illustrative). Three grades fit inside a tier cap of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and spares, and keep grade 3 for exit [argued]. At a cap of one, G2's rule governs: run spares and exit only.
 
 **Transfer price, with showback first** [argued].
 - The price is set on usable, yield-adjusted capacity: pipeline cost per usable TB, plus carry, plus a risk loading drawn from the incident bound.
@@ -419,7 +422,7 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 |---|---|---|---|---|---|---|
 | 1 | Replacement cost is the right value anchor | Planning, with finance | 25 | Compute both anchors per zone from stockout logs and contract terms | The capacity anchor passes replacement cost in most stockout zones | Which price ranks workload claims |
 | 2 | Reuse displaces purchases at all | Fleet provisioning, with finance | 20 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
-| 3 | The materiality ratio is large enough to matter | Planning | 14 | Harvest TB ÷ new flash TB, by quarter | Ratio well under 1% | Gate 1 |
+| 3 | The materiality ratio is large enough to matter | Planning | 14 | Harvest TB ÷ new flash TB, by quarter | Ratio well under 1% | G1 |
 | 4 | Net value stays positive after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort | Net value below zero for the cohort's drive class | Pipeline scope by drive class |
 | 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 180 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
 | 6 | The host-cost logic holds | Lifecycle transitions, with finance | 55 | The keep, redeploy or harvest sheet for one retiring cohort | Drive value, not host cost, decides the branch | How retirement dates are set |
@@ -481,7 +484,7 @@ The case names public signposts between two futures. Path A stays tight through 
 
 **The cohort cap.** Name each cohort as a shared driver: "Name the driver; don't infer independence from a low measured correlation" (Section 6.6). Cap a cohort's share of any failure domain [argued]. For example, if a domain holds 2,000 drives, a 10% cap is 200 (illustrative).
 
-**The risk budget**, set at Gate 4 [argued]:
+**The risk budget**, set at G4 [argued]:
 1. A cohort cap per failure domain, set by reliability engineering.
 2. An evidence bar per tier, rising only with scored outcomes. Caches start lower, durable tiers higher.
 3. An incident cost bound, signed by finance before volume grows.
