@@ -38,7 +38,7 @@ The case was written from public sources and tested before release:
 - **Independent drafts.** A lead application and an independent design were written blind to each other, then compared and merged.
 - **Review panel.** Six reviewers browsed the draft from different entry points: a hyperscale planner, a finance and FinOps lead, a storage reliability engineer, a newcomer, a program manager arriving cold, and an operations-research academic. Their 94-item backlog was implemented in full, and the problem space was revised to match (revision 2).
 - **Verification.** Independent rounds checked meaning against the seed, links, consistency across pages and arithmetic, until clean.
-- **Pre-deploy pass.** A final pass (a hiring-manager read, visual and mobile checks, and a link and copy proof) led to 10 fixes, listed in [PR #24](https://github.com/anacay/cpp/pull/24).
+- **Pre-deploy pass.** A final pass (a cold read by a senior practitioner, visual and mobile checks, and a link and copy proof) led to 10 fixes, listed in [PR #24](https://github.com/anacay/cpp/pull/24).
 
 ## Process
 
