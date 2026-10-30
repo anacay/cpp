@@ -240,7 +240,7 @@ Most data-center SSDs use a small share of rated endurance: typically under 2%, 
 
 ### 5.2 Repairs and spares
 
-Kuantillion Cloud's own field study found 4–10% of SSDs replaced over four years, with strong error clustering. That is about 10,000 to 25,000 replacements a year per million drives of a generation (Arithmetic). Each needs a drive that fits that generation's slots, protocol and qualification.
+A six-year field study of a large fleet's SSDs found 4–10% replaced over four years, with errors strongly clustered (Third party; Schroeder et al. 2016). That is about 10,000 to 25,000 replacements a year per million drives of a generation (Arithmetic). Each needs a drive that fits that generation's slots, protocol and qualification.
 
 - **New spares for old platforms get scarce.** Since late 2025, allocation has favored high-capacity drives, making 960 GB and 1.9 TB parts hard to buy (Third party). Harvest becomes the practical source once any last-time-buy stock runs out (Inferred). Whether Kuantillion Cloud makes last-time buys is Unknown.
 - **Other big clouds already do this.** One meets 85% of obsolete-spares demand from harvest; another supplies 13% of all spares from reuse (Third party). Kuantillion Cloud says its harvested spares buffer it against outside shocks. Even small operators hire to defend the working capital spares tie up (section 10). The pool is a financed position, not a parts bin (Inferred).
@@ -287,7 +287,7 @@ A legacy drive is only supply if it can reach a sink. Ten gates sit in the way. 
 
 **The memory precedent is a partial answer key** (Inferred). Kuantillion Cloud's one confirmed reclaim program moves old memory into new AI builds. Memory dodges the hardest gates. It holds no data, so sanitization and custody collapse; it has no wear state, so grading collapses; and the dedicated interface collapses fit. The program must still have crossed qualification, change windows and systems of record, inside the same budgets and seams. The supply chain runs it into new builds, not storage engineering into workloads. The distance between memory and flash (wear, grading, data) measures this case's residual problem.
 
-**Health is predictable, but not from one reading.** Large-fleet research, including a six-year study of about 30,000 drives, finds high infant mortality and good recall for machine-learned predictors. Another finds static health values weak alone and much better with wear history (Third party). One Asian cloud's slow-drive detector ran across about 300,000 drives with near-perfect precision. Of 315 drives verified as pathologically slow, about two-thirds were slowed by software scheduling, not hardware. Isolating confirmed slow drives cut node tail latency by close to half (Third party). History matters as much as the current reading, and the frontier is graded risk, not binary scrapping (Inferred).
+**Health is predictable, but not from one reading.** Large-fleet research, including a six-year study of about 30,000 drives, finds high infant mortality and good recall for machine-learned predictors. Another finds static health values weak alone and much better with wear history (Third party). One Asian cloud's slow-drive detector watched about 248,000 drives for ten months, with near-perfect precision, and found 304 fail-slow cases. Its released dataset holds 315 verified fail-slow drives beside 41,000 normal ones. Among verified slow drives, about two-thirds were slowed by software scheduling, not hardware. Isolating confirmed slow drives cut node tail latency by close to half (Third party; Lu et al. 2023). History matters as much as the current reading, and the frontier is graded risk, not binary scrapping (Inferred).
 
 **Location, labor and waiting.** Drives sit at one site and demand at others, and moving them takes technician time repairs also need (Inferred). Unpowered flash loses retention over months, faster when worn, which spoils diagnostics (Third party). Stored drives need re-powering and re-testing on a cadence (Inferred).
 
@@ -948,4 +948,19 @@ These cover the wider field.
 - Maintenance and replacement: Barlow and Proschan, *Mathematical Theory of Reliability* (1965); Jardine, Lin and Banjevic, *Mechanical Systems and Signal Processing* (2006); Hartman and Tan, *The Engineering Economist* (2014); Karabakal, Lohmann and Bean, *Management Science* (1994); Islam and Lownes, *Transportation Research Part D* (2019)
 - Repairables queueing: Feeney and Sherbrooke, *Management Science* (1966); Muckstadt, *Management Science* (1973)
 - Incentives and job design: Holmström and Milgrom, Multitask Principal-Agent Analyses: Incentive Contracts, Asset Ownership, and Job Design, *Journal of Law, Economics, & Organization* (1991)
-- Media sanitization: the US federal media sanitization guideline, NIST Special Publication 800-88, Revision 2 (September 2025), and the international storage-sanitization standard it points to
+- SSD field studies. These are other operators' and researchers' fleets, cited as studies; none is Kuantillion Cloud's:
+  - Schroeder and Gibson, Disk failures in the real world: what does an MTTF of 1,000,000 hours mean to you?, *USENIX FAST* (2007): https://www.usenix.org/legacy/event/fast07/tech/schroeder/schroeder_html/
+  - Meza, Wu, Kumar and Mutlu, A Large-Scale Study of Flash Memory Failures in the Field, *ACM SIGMETRICS* (2015): https://doi.org/10.1145/2745844.2745848
+  - Schroeder, Lagisetty and Merchant, Flash Reliability in Production: The Expected and the Unexpected, *USENIX FAST* (2016): https://www.usenix.org/conference/fast16/technical-sessions/presentation/schroeder
+  - Narayanan et al., SSD Failures in Datacenters: What? When? and Why?, *ACM SYSTOR* (2016): https://doi.org/10.1145/2928275.2928278
+  - Xu, Zheng, Qin, Xu and Wu, Lessons and Actions: What We Learned from 10K SSD-Related Storage System Failures, *USENIX ATC* (2019): https://www.usenix.org/conference/atc19/presentation/xu
+  - Alter, Xue, Dimnaku and Smirni, SSD Failures in the Field: Symptoms, Causes, and Prediction Models, *SC* (2019): https://par.nsf.gov/servlets/purl/10172650 ; with Pinciroli, Yang, Alter and Smirni (2020): https://arxiv.org/abs/2012.12373
+  - Maneas, Mahdaviani, Emami and Schroeder, A Study of SSD Reliability in Large Scale Enterprise Storage Deployments, *USENIX FAST* (2020): https://www.usenix.org/conference/fast20/presentation/maneas
+  - Han, Lee, Xu, Liu, He and Liu, An In-Depth Study of Correlated Failures in Production SSD-Based Data Centers, *USENIX FAST* (2021): https://www.usenix.org/conference/fast21/presentation/han
+  - Maneas et al., Operational Characteristics of SSDs in Enterprise Storage Systems: A Large-Scale Field Study, *USENIX FAST* (2022): https://www.usenix.org/conference/fast22/presentation/maneas
+  - Lu, Xu, Zhang et al., Perseus: A Fail-Slow Detection Framework for Cloud Storage Systems, *USENIX FAST* (2023): https://www.usenix.org/conference/fast23/presentation/lu
+  - Wang, Berger et al., Designing Cloud Servers for Lower Carbon, *ISCA* (2024): https://www.pdl.cmu.edu/ftp/CloudComputing/Wang_ISCA24.pdf
+- Media sanitization:
+  - Wei, Grupp, Spada and Swanson, Reliably Erasing Data From Flash-Based Solid State Drives, *USENIX FAST* (2011): https://static.usenix.org/event/fast11/tech/full_papers/Wei.pdf
+  - The US federal media sanitization guideline, NIST Special Publication 800-88, Revision 2 (September 2025): https://doi.org/10.6028/NIST.SP.800-88r2 ; its FAQ: https://csrc.nist.gov/files/pubs/sp/800/88/r2/final/docs/sp800-88r2-faq.pdf
+  - The international storage-sanitization standard it points to, IEEE 2883-2022: https://standards.ieee.org/ieee/2883/10277/
