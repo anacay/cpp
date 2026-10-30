@@ -661,7 +661,7 @@ The challenge channel follows the paper: "A consumer who can challenge a coeffic
 
 **Incident playbook: a data-bearing drive surfaces outside custody (scenario S3)** [argued].
 
-A record can say "erased" while the drive still holds data. In one lab study, only four of seven testable drives erased reliably. One reported success while all its data remained (Wei et al. 2011). So reconciling logs can find a lost drive, but not a failed erasure.
+A record can say *erased* while the drive still holds data. In one lab study, only four of seven testable drives erased reliably. One reported success while all its data remained (Wei et al. 2011). So reconciling logs can find a lost drive, but not a failed erasure.
 
 | Step | Action | Owner | Within |
 |---|---|---|---|
