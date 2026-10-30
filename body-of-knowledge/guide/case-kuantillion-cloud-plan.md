@@ -11,11 +11,32 @@ seed: 4, 5.2, 5.3, 5.4, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 8.2, 9.1, 9.2, 9.3
 
 *Kuantillion Cloud is a fictional company. Any resemblance to real companies reflects problems the industry shares.*
 
+**What this program is.** Kuantillion Cloud retires drives by the million and holds idle flash in running machines, while new flash costs three to four times last year's price. The program decides where each older drive goes: a workload, a repair spare, a build, or exit. This page is its runbook: owners, dates, seven decision gates, rules, measures and playbooks.
+
 This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The strategy page](case-kuantillion-cloud-practice.md) says why each move is right. This page says who does it, in what order, and how you'll know it worked.
 
 **How to read the labels.** A quote with a Section is the seed paper's own text. Rules this plan adds are marked [argued]. Quantities nobody has published are [unmeasured]. Every number is illustrative unless the case tags it otherwise. Every owner and date is a proposal, to be adjusted to the teams you find. The seed paper is "a practitioner synthesis, not a model, and untested" (Abstract), and so is this plan.
 
+**Terms used on this page.**
+- **Sink:** one of four places a usable drive can go: workloads, repair spares, upgrades and builds, or exit ([sink](/glossary/#term-sink)).
+- **Harvest:** drives taken out of retiring hosts for reuse or exit ([harvest](/glossary/#term-harvest)).
+- **Cohort:** drives sharing a model, firmware and power-on-hour band, which tend to fail together ([cohort](/glossary/#term-cohort)).
+- **Grade:** this plan's three-level rule for where a tested drive may go (the rules section).
+- **Tier cap and grading tax:** how many grades the systems can carry, and the cost of each extra one ([tier cap](/glossary/#term-tier-cap); [grading tax](/glossary/#term-grading-tax)).
+- **Cover point:** the spares level a signed shortage-to-idle ratio sets ([cover point](/glossary/#term-cover-point)).
+- **Showback:** a price shown to a team before anyone is billed ([showback](/glossary/#term-showback)).
+- **Decision gates and technical gates:** the program's seven steps, G0–G6, and the case's eleven tests on each drive.
+- **P1–P8:** the case's eight decision problems, such as P1 the drive record and P6 allocation ([full case, section 11](case-kuantillion-cloud-full.md#11-problem-decomposition)).
+- **Off-host states:** where a drive sits once it leaves a running machine: harvested, erased, in test or held.
+- **Supply register:** the supply plan of record and commitment register, [mechanism 11](concept-operating-mechanisms.md#m11).
+- **Commit point:** the last date to commit without paying to change shape ([commit point](/glossary/#term-commit-point)).
+- **Named gap and bridge:** a shortfall with an owner, and the costly stopgap that covers it ([named gap](/glossary/#term-named-gap); [bridge](/glossary/#term-bridge)).
+- **Seam:** a standing line of conflict between groups ([seam](/glossary/#term-seam)).
+- **Path A and Path B:** the case's two futures. Path A stays tight through 2028; Path B eases from late 2027.
+
 ## 1. What this plan delivers, and the decision it serves {#delivers}
+
+*The Kuantillion Cloud flash program: what it must decide, by when, and on what ideas.*
 
 **The situation.** Kuantillion Cloud runs a hyperscale fleet. It retires millions of components a year, over 3 million of them drives in 2024. It also holds older flash idle inside running machines. New enterprise flash now costs three to four times last year's price, and next year's supply is largely pledged. The [full case](case-kuantillion-cloud-full.md) sets this out.
 
@@ -46,6 +67,8 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 **What it doesn't do.** It doesn't settle questions the practice can't yet answer. The [Second lives](note-second-lives.md) working note holds those: supply that is a byproduct, the condition of a drive as a dimension of supply, and exit as a sink.
 
 ## 2. Roles and decision rights {#roles}
+
+*Who runs the Kuantillion Cloud flash program, who decides each of the case's eight problems, and who signs.*
 
 The planner sits in the middle, "usually owning no capacity and no budget" (Section 10). So every change below is a proposal to the forum and finance. Its standing comes, in the paper's experience, "from the number and the team's own signature" (Section 9.1). See [people](people.md) for how that works without a budget.
 
@@ -117,6 +140,8 @@ Assigning them to these groups is this plan's reading [argued]. The ratio and th
 **Seams.** Hosts and harvest sit on seam 3, between planning and supply. Keeping hosts, and the split between capital and operating budgets, sit on seam 2, between planning and finance. Grades and wear sit on seam 1, between product and platform (Section 10.1). Mapping them this way is this plan's reading.
 
 ## 3. The first 30, 60 and 90 days {#first-90-days}
+
+*The program's first quarter, day by day: one owner and one output per action.*
 
 Day 1 is the day the sponsor names the program lead. Each action has one owner and one output. Owners and days are proposals [argued].
 
@@ -201,6 +226,8 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 **Why spares go first.** Spares are the harvest's most predictable claim and its value floor. The paper's order of change is "prove fulfillment first" (Section 10.4); this plan applies it to reused drives.
 
 ## 4. The gates {#gates}
+
+*The program's seven decision gates, G0–G6, each with the evidence that opens it and the call it makes.*
 
 This plan uses "gate" in two senses. The program's seven **decision gates**, G0 to G6, are the steps of this plan. The case's eleven **technical gates** are the tests every drive must pass before reuse, such as fit, qualification, sanitization and jurisdiction ([full case, section 6](case-kuantillion-cloud-full.md#6-supply-the-gates)). This section is about the decision gates.
 
@@ -353,6 +380,8 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 
 ## 5. Standing cadence {#cadence}
 
+*The meetings that keep the flash program running once the first 90 days are over.*
+
 The cycles nest, slowest outside: "Each cycle commits only what its lead time forces" (Section 9.1). See [annual](stage-annual.md), [quarterly](stage-quarterly.md), [monthly](stage-monthly.md), [weekly](stage-weekly.md) and [post-launch](stage-post-launch.md).
 
 | Cycle | Forum | Inputs | Outputs | Decisions |
@@ -376,6 +405,8 @@ The cycles nest, slowest outside: "Each cycle commits only what its lead time fo
 **The charter overlay.** "Once a year, lay the charters over the chain that delivers the product, end to end, and name an owner for every gap" (Section 10.2).
 
 ## 6. Rules agreed in advance {#rules}
+
+*The rules the program's forum and finance sign before any drive is allocated or any saving counted.*
 
 "A rule agreed in advance is a contract; one proposed after the savings appear is a request" (Section 9.3). Each rule below is written so the forum can sign it. Each is this plan's [argued], built on the seed text it cites.
 
@@ -478,6 +509,8 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 
 ## 7. Measures {#measures}
 
+*How the flash program is scored, each measure with a denominator and a test that can fail.*
+
 Finance keeps score: "Finance, not planning, should keep the score, or the indicators become self-assessment" (Section 9.3). Read the measures as a set, because "any indicator in Section 9.2 can be gamed once rewarded" (Section 13).
 
 Targets are this plan's proposals [argued]. None of these tests has been run.
@@ -507,6 +540,8 @@ Targets are this plan's proposals [argued]. None of these tests has been run.
 **Why not count bridges.** Section 10.2's "about one launch in five should need a bridge" is for one-shot buys. A spares pool is replenished, so fill rate and backorders are the right tests.
 
 ## 8. Experiments {#experiments}
+
+*One experiment for each assumption the case states, each able to change the program.*
 
 One experiment per stated assumption in the case. Each has an owner, a date in program days (the same clock as section 3), a method, a falsifier and the decision it unlocks. All are proposals [argued]. "The rollout is the measurement" (Section 5.4).
 
@@ -546,6 +581,8 @@ With no reference class, the paper's rule applies: "The planner can only bound i
 
 ## 9. Signposts to actions {#signposts}
 
+*Public market signs, read quarterly, and what the program does when each one moves.*
+
 The case names public signposts between two futures. Path A stays tight through 2028; Path B eases from late 2027. Read them at the quarterly supply review. Each action is this plan's [argued].
 
 | Signpost | Action |
@@ -563,6 +600,8 @@ The case names public signposts between two futures. Path A stays tight through 
 | Disk stays allocated, and cold data keeps moving to QLC | Path A evidence; keep the wear watch on QLC cohorts |
 
 ## 10. Risk register and incident playbook {#risks}
+
+*What can go wrong with reused flash, and the first hours of the two worst incidents.*
 
 **Risk register.** Each risk has a counter, an early sign and an owner [argued]. The risks are the case's failure modes.
 
@@ -636,6 +675,8 @@ A record can say "erased" while the drive still holds data. In one lab study, on
 Proving erasure is a security discipline. The practice's part is the record.
 
 ## 11. Templates {#templates}
+
+*Field lists for the records, sheets and notes the program produces.*
 
 Short field lists for the artifacts this plan produces. Each follows a seed mechanism; the drive-specific fields are this plan's [argued].
 
