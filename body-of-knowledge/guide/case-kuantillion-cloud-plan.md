@@ -560,11 +560,13 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 
 **What experiment 4 measures.** The bar is exit, not zero. Resale pays about $80–160 per TB gross. So the margin over exit is about +$90 to +$490 per TB at the case's $640 high price, and about −$135 to +$85 at its $190 low (illustrative). The central cells are about +$370 and +$10. At low prices, reuse barely beats selling.
 
-**What experiment 7 measures.** At the case's peer (Xu et al. 2019), triage resolved 34.4% of SSD tickets before any swap, and only 31.2% of tickets ended in a swap. So the peer's healthy share of pulled drives is unknown, and so is Kuantillion Cloud's [unmeasured]. Analogies only: 43% of returned hard drives showed no fault (Schroeder and Gibson 2007). About half of swapped SSDs at one operator never returned to service (Alter et al. 2019). Up to 1.5 times true failures is a bound for a site with no triage at all.
+**What experiment 7 measures.** At the case's peer (Xu et al. 2019), triage resolved 34.4% of SSD tickets before any swap. Only 31.2% of tickets ended in a swap. So the peer's healthy share of pulled drives is unknown, and so is Kuantillion Cloud's [unmeasured]. Analogies only: 43% of returned hard drives showed no fault (Schroeder and Gibson 2007). About half of swapped SSDs at one operator never returned to service (Alter et al. 2019). Up to 1.5 times true failures is a bound for a site with no triage at all.
 
 **The capacity anchor, as a formula.** Nothing public gives it an input [unmeasured]. So experiment 1 fills a formula:
 
-*Capacity value per usable TB = Σ over months t of P(stockout in t) × contribution margin of a short TB-month × the drive's attribution share × survival to t × P(the TB sits in the binding zone) ÷ (1 + r)ᵗ, plus a terminal value once new supply lands.* [argued]
+*Capacity value per usable TB = Σₜ [P(stockout) × margin × attribution share × survival × P(binding zone)] ÷ (1 + r)ᵗ + terminal value.* [argued]
+
+Here t counts months until new supply lands, and the margin is that of a short TB-month.
 
 - **Contribution margin, not revenue.** The value lands in the product's profit and loss, not in planning's.
 - **The attribution share.** A stockout is usually of a whole host or VM shape. The drive's share is high only where SSD is the binding dimension.
