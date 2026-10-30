@@ -162,6 +162,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 25 | Re-test a sample of pulled drives at one site (experiment 7 starts) | Machine-health engineering | A first healthy share |
 | 30 | Charter the forum for two rules: it agrees the shortage rule and ratifies the landing rule | Planning | A charter; both rules drafted |
 | 30 | G1 decision: the dollar test, then the scope | Planning and finance | Go or stop, with a decision note |
+| 30 | Put the pipeline rate on the commit-point map, and surge crews on [option](/glossary/#term-option) | Reverse logistics, with planning | The staffing commit point, dated |
 | 30 | Start the drive-record build: name its systems-of-record owner, and date G3b | Fleet provisioning | A dated build plan |
 
 ### Days 31–60: counter-arguments and the record
@@ -181,7 +182,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 |---|---|---|---|
 | 70 | Sign the spares shortage-to-idle ratio per platform and repair-urgency segment | Finance and tier owners | A signed ratio per segment |
 | 70 | Add or confirm the triage sequence before any SSD pull: slot check, cable swap, reboot, re-test | Machine-health engineering | The sequence confirmed, or live at two sites |
-| 75 | Staff the pipeline to the median of expected retirements, with surge crews on contract | Reverse logistics | A staffed rate and booked slots |
+| 75 | Staff the pipeline to the signed rate, calling surge options as retirements land | Reverse logistics | A staffed rate and booked slots |
 | 80 | Put every planned decommission on the supply register as a dated step, both ways | Fleet provisioning | Hosts out, drives in |
 | 85 | Set the risk budget's three parts | Reliability engineering; finance; tier owners | Cap, bar and bound signed |
 | 90 | The forum ranks its first harvest; drive supply answers each claim | The forum; fleet provisioning | First ledger lines, each pegged; by lot until G3b |
@@ -216,6 +217,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - The stranded stock, sized on its own.
   - The contracts read into the supply register.
   - The capacity anchor's inputs.
+  - The pipeline rate on the commit-point map, with surge crews on option.
 - **Exit criteria.**
   - The dollar test passed, and the scope chosen.
   - The anchor declared.
@@ -288,7 +290,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 - **Work.**
   - Decommissions on the register.
   - The spares ratio signed.
-  - The pipeline staffed.
+  - The pipeline staffed to the signed rate, at its commit point.
   - The forum ranking harvest.
   - The risk budget set.
 - **Exit criteria.**
