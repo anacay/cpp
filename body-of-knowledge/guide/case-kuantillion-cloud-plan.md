@@ -134,16 +134,16 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 
 | Day | Action | Owner | Output |
 |---|---|---|---|
-| 1–3 | Ask what happens to a pulled SSD today, site by site | Planning | A one-page flow, each step owned |
-| 1–3 | Ask whether flash reuse was ever evaluated and declined | Planning | The record, read as a [decision note](/glossary/#term-decision-note) |
-| 2–4 | Ask whether last-time buys are made for legacy drive models, and by whom | Planning, with spares planning | A list of models and windows |
-| 2–4 | Ask which gates the memory-reclaim program crossed | Planning, with supply chain | Its gate history |
+| 1–3 | Ask what happens to a pulled SSD today, at two or three representative sites | Planning, interviewing reverse logistics, data-center operations and drive security | A one-page flow, each step owned |
+| 1–3 | Ask whether flash reuse was ever evaluated and declined | Planning, interviewing lifecycle transitions, finance and flash platform engineering | The record, read as a [decision note](/glossary/#term-decision-note) |
+| 2–4 | Ask whether last-time buys are made for legacy drive models, and by whom | Planning, interviewing spares planning and supply chain | A list of models and windows |
+| 2–4 | Ask which gates the memory-reclaim program crossed | Planning, interviewing supply chain | Its gate history |
 | 5 | Record one of the three readings | Planning | A decision note: "what was known, when, by whom, and what would have changed it" (Section 6.5) |
 
 **Go or stop.**
 
 - If a program runs, audit it against the [thirteen mechanisms](concept-operating-mechanisms.md) and add only what's missing.
-- If a decline still holds at today's prices, stop. The center then moves to redeploying whole hosts.
+- If a decline still holds at today's prices, stop the full program and re-center on redeploying whole hosts. Run only G2's redeploy-whole test and the keep sheet.
 - If neither, go to G1.
 
 ### Days 6–30: size it and read the contracts
@@ -195,14 +195,14 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 
 ### G0: existence test
 
-- **When.** Days 1–5.
+- **When.** Days 1–5, as an initial reading. If interviews run long, extend to day 10.
 - **Purpose.** Don't build what exists, or what was rightly declined.
 - **Entry evidence.** A named program lead.
 - **Work.** The days 1–5 interviews.
 - **Exit criteria.** One of three readings recorded: exists, declined, or absent.
 - **Artifacts.** A decision note.
 - **Owner.** Planning.
-- **Go or stop.** Go if absent, or if a decline fails today's prices. Stop if a decline still holds. If a program exists, audit it against the thirteen mechanisms. Then either enter G1 with that program as the base, or stop with a decision note.
+- **Go or stop.** Go if absent, or if a decline fails today's prices. If a decline still holds, stop and re-center on redeploying whole hosts: G2's redeploy-whole test and the keep sheet only. If a program exists, audit it against the thirteen mechanisms. Then either enter G1 with that program as the base, or stop with a decision note.
 
 ### G1: size and anchor
 
