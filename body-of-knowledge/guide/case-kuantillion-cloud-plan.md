@@ -429,7 +429,7 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 | 7 | Spares demand is what failure rates say | Machine-health engineering, with spares planning | 25–90 | Re-test every pulled drive at two sites; log fail-in-place; publish the healthy share | Under 5% of pulled drives test healthy (illustrative threshold) | Whether the pool is sized on pulls or true failures |
 | 8 | Internal prices can carry these values | Planning, with finance | 91–180 | One full cycle of showback | Decisions reopened as often as under negotiation | Whether to bill |
 
-**What experiment 7 measures.** At the case's peer, triage resolved 34.4% of SSD tickets before any swap, and only 31.2% of tickets ended in a swap. So the peer's healthy share of pulled drives is unknown, and so is Kuantillion Cloud's [unmeasured]. Analogies only: 43% of returned hard drives showed no fault (Schroeder and Gibson 2007). About half of swapped SSDs at one operator never returned to service (Alter et al. 2019). Up to 1.5 times true failures is a bound for a site with no triage at all.
+**What experiment 7 measures.** At the case's peer (Xu et al. 2019), triage resolved 34.4% of SSD tickets before any swap, and only 31.2% of tickets ended in a swap. So the peer's healthy share of pulled drives is unknown, and so is Kuantillion Cloud's [unmeasured]. Analogies only: 43% of returned hard drives showed no fault (Schroeder and Gibson 2007). About half of swapped SSDs at one operator never returned to service (Alter et al. 2019). Up to 1.5 times true failures is a bound for a site with no triage at all.
 
 **The capacity anchor, as a formula.** Nothing public gives it an input [unmeasured]. So experiment 1 fills a formula:
 
@@ -597,5 +597,9 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
   - Sections 12, 13 and 14, and Appendix A.
 - **The case:** [the full case](case-kuantillion-cloud-full.md), its team map, scenarios, signposts and stated assumptions.
 - **The reasoning:** [the strategy page](case-kuantillion-cloud-practice.md).
+- **Studies cited on this page.** Other operators' and researchers' fleets, cited as analogies; none is Kuantillion Cloud's:
+  - Schroeder and Gibson, Disk failures in the real world, *USENIX FAST* (2007): https://www.usenix.org/legacy/event/fast07/tech/schroeder/schroeder_html/
+  - Xu, Zheng, Qin, Xu and Wu, Lessons and Actions: What We Learned from 10K SSD-Related Storage System Failures, *USENIX ATC* (2019): https://www.usenix.org/conference/atc19/presentation/xu
+  - Alter, Xue, Dimnaku and Smirni, SSD Failures in the Field: Symptoms, Causes, and Prediction Models, *SC* (2019): https://par.nsf.gov/servlets/purl/10172650
 
 Every number on this page is illustrative unless the case tags it otherwise.
