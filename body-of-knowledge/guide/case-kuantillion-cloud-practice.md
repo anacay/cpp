@@ -523,6 +523,17 @@ First check whether triage already exists. The peer's sequence is the reference 
 
 Write down which one you chose.
 
+**A worked last-time buy.** Walk one legacy model through the [worksheet](/worksheet/)'s eight steps (Appendix A). All numbers are illustrative.
+
+1. **Layers.** The vendor's last-time buy, harvest from another retiring platform, and the test-and-ship pipeline.
+2. **Need date and commit point.** Platform P needs this model's spares until it retires, around 30 months out. The vendor's last-time-buy window closes in 3 months, long before P's retirement is dated.
+3. **Stage and open range.** P's retirement is still an intent: 18 to 42 months. P runs 20,000 of these drives at 1.5% a year, so 300 true failures a year, or 450 to 1,050 over the range.
+4. **Cover.** A dead drive takes a P host down, so the segment's ratio is high, 19 : 1. Cover sits near the top of the range, about 1,000 drives.
+5. **Net.** 150 spares are on hand. Platform Q retires 2,000 compatible drives next year, booked firm at the 27% lower-quantile share, about 540. The base need, 750 at 30 months, nets to about 60.
+6. **Split.** Buy the 60 firm. Hold about 250 more as a reschedulable last-time buy, an option to the cover point. Name the rest as a bridge: harvest Q's hosts early, owned by spares planning.
+7. **Bands.** P's retirement may move six months either way at this stage. Supply signs the same band.
+8. **Write it down.** The decision note records choice 2 for the option, choice 3 for the harvest, and who owns the residual.
+
 *Fifth, run two sources as one policy.* Harvest is the cheap, uncertain source; new purchase is the dear, nominally reliable one. The case's studied ground gives the shape: one order-up-to level for each source [argued]. In 2026, new purchase may be the slower one.
 
 When harvested drives land, a planned new order for the same platform isn't needed for a while. Later harvest may still slip. So push the new order out rather than cancel it. That is the push-out right from the supply-layers lens, applied to orders behind an uncertain harvest.
