@@ -211,7 +211,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 - **When.** Days 1–5, as an initial reading. If interviews run long, extend to day 10.
 - **Purpose.** Don't build what exists, or what was rightly declined.
 - **Entry evidence.** A named program lead.
-- **Work.** The days 1–5 interviews.
+- **Work.** The days 1–5 interviews, using the interview guide and the mechanism audit checklist in the templates.
 - **Exit criteria.** One of three readings recorded: exists, declined, or absent.
 - **Artifacts.** A decision note.
 - **Owner.** Planning.
@@ -709,6 +709,32 @@ Short field lists for the artifacts this plan produces. Each follows a seed mech
 - Incident cost bound, and who signed it (finance)
 - Draws on the bound to date
 - Next review date
+
+**Mechanism audit checklist** (for G0, when a program exists) [argued]. Fill the last column in the days 1–5 interviews. The [strategy page](case-kuantillion-cloud-practice.md) names six to check first.
+
+| # | Mechanism | What to ask about legacy flash | Exists in part? Where? |
+|---|---|---|---|
+| 1 | Declared demand in priced units | Do sinks declare drive needs in units that carry price and shape? | |
+| 2 | Prior ask beside prior actual | Are spares sized on ticket history, or on true failures? | |
+| 3 | Coefficient register and versioned rate card | Is there a versioned price for reused drives, by grade? | |
+| 4 | Owned unused and unallocated lines | Does anyone own the stranded-flash line? | |
+| 5 | Fulfillment ledger | Is a drive tracked after it leaves its host? | |
+| 6 | Discontinuity register | Are firmware faults and generation breaks registered? | |
+| 7 | Commitments that become institutions | Is reuse a signed commitment, or stated policy? | |
+| 8 | Efficiency landing rule | Where does value recovered from a drive land? | |
+| 9 | Cadence aligned to lead time and launch calendar | Is there a harvest cadence beside the build cadence? | |
+| 10 | Standing arbitration forum | Who splits harvest across sinks today? | |
+| 11 | Supply plan of record and commitment register | Does harvest get a dated commit or a named gap? | |
+| 12 | Declaration register | Are decommissions and builds on reused drives declared? | |
+| 13 | Commit-point map | Are last-time buys and decommission dates mapped? | |
+
+**Interview guide** (days 1–5) [argued]. Two or three questions per group; record each answer as a fact, an assumption or an ask.
+- **Reverse logistics and data-center operations:** What happens to a pulled SSD, step by step? Where does it wait, and for how long? Who signs each handoff?
+- **Drive security engineering:** Which erase method runs for which sink? How is an erase validated? What does the cage hold today?
+- **Lifecycle transitions and finance:** Was reuse ever evaluated and declined? On what numbers? Who decides when a host retires?
+- **Flash platform engineering:** Which health fields exist per model? Which firmware versions have known faults?
+- **Spares planning and supply chain:** Which legacy models have last-time buys open? What do the resale contracts pay, and what volumes do they require?
+- **Supply chain, on the memory-reclaim program:** Which gates did it cross, and which stopped it?
 
 **Decision note** ([decision note](/glossary/#term-decision-note))
 - The decision
