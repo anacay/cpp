@@ -17,7 +17,10 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 **How to read the labels.** A quote with a Section is the seed paper's own text. Rules this plan adds are marked [argued]. Quantities nobody has published are [unmeasured]. Every number is illustrative unless the case tags it otherwise. Every owner and date is a proposal, to be adjusted to the teams you find. The seed paper is "a practitioner synthesis, not a model, and untested" (Abstract), and so is this plan.
 
-**Terms used on this page.**
+### Terms used on this page {#terms}
+
+**The small grid** under the contents places this page on [the map](the-map.md). Its columns are the five cadences, annual to post-launch; its rows are the five altitudes, envelope to unit. Every cell is lit, because the plan runs at all of them.
+
 - **Sink:** one of four places a usable drive can go: workloads, repair spares, upgrades and builds, or exit ([sink](/glossary/#term-sink)).
 - **Harvest:** drives taken out of retiring hosts for reuse or exit ([harvest](/glossary/#term-harvest)).
 - **Cohort:** drives sharing a model, firmware and power-on-hour band, which tend to fail together ([cohort](/glossary/#term-cohort)).
@@ -40,7 +43,7 @@ This page is the execution plan for [Case 3](case-kuantillion-cloud.md). [The st
 
 **The situation.** Kuantillion Cloud runs a hyperscale fleet. It retires millions of components a year, over 3 million of them drives in 2024. It also holds older flash idle inside running machines. New enterprise flash now costs three to four times last year's price, and next year's supply is largely pledged. The [full case](case-kuantillion-cloud-full.md) sets this out.
 
-**The decision this plan serves.** Should Kuantillion Cloud run a program for its older flash, and at what size? If yes, how should it split each usable drive among four sinks? Those sinks are workloads, repair spares, upgrades and builds, and exit through resale or recycling.
+**The decision this plan serves.** Should Kuantillion Cloud run a program for its older flash, and at what size? If yes, how should it split each usable drive among four [sinks](#terms)? Those sinks are workloads, repair spares, upgrades and builds, and exit through resale or recycling.
 
 **What the plan delivers, in order.**
 
@@ -137,7 +140,7 @@ Assigning them to these groups is this plan's reading [argued]. The ratio and th
 - drive security engineering: sanitization;
 - finance, with legal and tax: jurisdiction, for any drive that crosses a legal entity or a border.
 
-**Seams.** Hosts and harvest sit on seam 3, between planning and supply. Keeping hosts, and the split between capital and operating budgets, sit on seam 2, between planning and finance. Grades and wear sit on seam 1, between product and platform (Section 10.1). Mapping them this way is this plan's reading.
+**[Seams](#terms).** Hosts and harvest sit on seam 3, between planning and supply. Keeping hosts, and the split between capital and operating budgets, sit on seam 2, between planning and finance. Grades and wear sit on seam 1, between product and platform (Section 10.1). Mapping them this way is this plan's reading.
 
 ## 3. The first 30, 60 and 90 days {#first-90-days}
 
@@ -188,7 +191,7 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 | 10 | Pull the decommission schedule with stage dates | Lifecycle transitions | Retirements, staged |
 | 10 | Start the stranded-flash track: measure flash use by resource and site | Storage systems | The stranded stock, sized as a range |
 | 14 | Compute the materiality ratio, as a scope descriptor ([materiality test, experiment 3](#experiments)) | Planning | A proposed scope, from the table under G1 |
-| 20 | Read every flash contract's cancel, push-out and volume terms into the supply register ([contract read, experiment 2](#experiments)) | Supply chain, with finance and legal | Mechanism 11's contract lines |
+| 20 | Read every flash contract's cancel, push-out and volume terms into the [supply register](#terms) ([contract read, experiment 2](#experiments)) | Supply chain, with finance and legal | Mechanism 11's contract lines |
 | 20 | Read the resale and recycling contracts beside them: prices, fees, minimum volumes | Supply chain, with reverse logistics | Net resale by cohort, as the contracts pay it |
 | 20 | Count zone stockouts that name local SSD | Planning | The capacity anchor's inputs |
 | 25 | Compute both value anchors per zone, measuring the drive's attribution share ([value anchors, experiment 1](#experiments)) | Planning, with finance | The anchor, declared for G1 |
@@ -204,10 +207,10 @@ Talk to the owners one to one, before any form goes out. Section 9.3 gives that 
 
 | By day | Action | Owner | Output |
 |---|---|---|---|
-| 40 | Count the qualification backlog and solver categories | Planning, with the solver team | A tier cap |
+| 40 | Count the qualification backlog and solver categories | Planning, with the solver team | A [tier cap](#terms) |
 | 40 | Read decommission records by branch: kept, redeployed whole, harvested | Lifecycle transitions | A test for redeploying whole |
 | 45 | Agree the shortage rule in the forum; sign the landing rule | The forum, for the shortage rule; for the landing rule, planning proposes, finance signs, the forum ratifies | Both rules in force |
-| 50 | Name an owner for each drive-record field, off-host fields first | Planning | The record's field list, owned |
+| 50 | Name an owner for each drive-record field, [off-host](#terms) fields first | Planning | The record's field list, owned |
 | 55 | Fill the keep, redeploy or harvest sheet for one retiring cohort ([keep sheet, experiment 6](#experiments)) | Lifecycle transitions, with finance | One cohort decided |
 | 60 | G2 decision, and G3a: the record designed and owned | Planning | Exit criteria met, or named gaps |
 
@@ -301,7 +304,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - Read decommission records by branch.
   - Check whether the solvers reach physical devices.
 - **Exit criteria.**
-  - A tier cap.
+  - A [tier cap](#terms): how many grades the systems can carry.
   - A test for redeploying whole.
 - **Artifacts.**
   - The tier cap, as a decision note.
@@ -311,7 +314,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 
 ### G3: the drive record, designed (G3a) and live (G3b)
 
-- **When.** G3a at day 60. G3b when the record is live for the off-host states, on the date fleet provisioning estimates at G1.
+- **When.** G3a at day 60. G3b when the record is live for the [off-host states](#terms), on the date fleet provisioning estimates at G1.
 - **Purpose.** One record every decision can cite. It is a systems build, not a meeting.
 - **Entry evidence.** G1 says go. The build starts then; it doesn't wait for G2.
 - **Work.**
@@ -346,7 +349,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - The [commit-point map](concept-commit-points.md) for last-time buys and decommissions ([mechanism 13](concept-operating-mechanisms.md#m13)).
   - The forum's decision log ([mechanism 10](concept-operating-mechanisms.md#m10)).
 - **Owner.** The forum, run by planning; fleet provisioning for supply answers.
-- **Go or stop.** Hold G5 until spares fill holds at the signed cover point for one quarter.
+- **Go or stop.** Hold G5 until spares fill holds at the signed [cover point](#terms) for one quarter.
 
 ### G5: workloads and builds
 
