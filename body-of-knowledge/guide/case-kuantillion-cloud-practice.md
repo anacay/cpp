@@ -40,7 +40,7 @@ Kuantillion Cloud is a fictional hyperscale operator. It runs one of the largest
 
 **The risk.** Nobody has published how reused drives behave in a second life. The evidence suggests parity early, then rising and correlated failure. At one operator, out-of-warranty legacy drives were 22% of drives but 77% of failures in a quarter. Two firmware bugs killed drives at fixed ages, about 3.7 and 4.6 years ([section 6.1](case-kuantillion-cloud-full.md#6-1-what-is-actually-known-about-second-lives)).
 
-**A leak upstream.** At one large cloud, 34.4% of SSD failure tickets weren't the drive at all. Every wrongly pulled drive inflates spare use and can strand a healthy drive ([section 4.4](case-kuantillion-cloud-full.md#4-4-the-leak-upstream-of-the-cage-drives-pulled-that-were-never-bad)).
+**A leak upstream, where triage is weak.** At one large cloud, 34.4% of SSD-related tickets weren't the drive: human error and cables. Its repair sequence fixed those with cheaper steps first, and only 31.2% of tickets ended in a drive swap. A site that pulls a drive on every ticket would use up to about 1.5 times true failures. Kuantillion Cloud's own healthy share of pulled drives is unknown ([section 4.4](case-kuantillion-cloud-full.md#4-4-the-leak-upstream-of-the-cage-tickets-that-werent-the-drive)).
 
 **The money.** A used drive's replacement value runs about $190–640 per terabyte across the case's range. Its book value is near zero past a six-year accounting life. The central fork is what kind of value a reused drive creates ([section 7.1](case-kuantillion-cloud-full.md#7-1-the-anchor-question-what-kind-of-value-is-this)). If flash contracts can be rescheduled, it avoids a purchase. If they are firm, it adds capacity to a sold-out fleet. Those are different numbers, with different beneficiaries.
 
@@ -128,7 +128,7 @@ Each lens below is one concept from the guide. For each, you get the idea in bri
 **How it reframes the problem.** The case's numbers look like physics or accounting. Our reading is that each is an agreement nobody signed. Six exhibits show it.
 
 - **The wear price.** Kuantillion Cloud prices flash wear per byte written, at a rate set by each model's rated endurance. That is a coefficient and a rate in one number. "If α moves, the fleet plan and the bill move together" (Section 5.2). It is set on rated endurance, not what remains. When a drive starts a second life, the basis changes. Our reading: that is a re-grain, "a change in how the metric is measured" (Section 5.3). Nobody versions it or owns it in public. Mechanism 3 is the register it lacks.
-- **Spares per failure.** Spares need is read from repair tickets. At one peer, about a third of SSD failure tickets weren't the drive at all. Pulls can then run up to about 1.5 times true failures, as a ceiling. Read for spares, when diagnosis improves, the ruler changes: "Price series are adjusted for such events, not forecast through them" (Section 5.3).
+- **Spares per failure.** Spares need is read from repair tickets. At one peer, about a third of SSD-related tickets weren't the drive, but triage caught them before any swap. Only at a site that pulls on every ticket would pulls run up to about 1.5 times true failures. Read for spares, when diagnosis improves, the ruler changes: "Price series are adjusted for such events, not forecast through them" (Section 5.3).
 - **Usable terabytes per retiring drive.** The coefficient that turns a retirement into supply is SSD share × capacity × yield. No operator publishes the yield [unmeasured]. The paper says every netting term "is a forecast too", and each needs "a date and an owner" (Section 8.2). A yield that disappoints "looks like a supply failure", as the paper says of a slipped decommission (Section 6).
 - **The drive's value.** The case carries a replacement value of about $190–640 per TB. Book value is near zero past the six-year life, and no transfer price exists. "Useful life alone is a large lever that moves both ways" (Section 4). Here a drive past its accounting life is worth far more than its book value.
 - **The planning unit.** Quota and terabytes carry capacity and drop the other four dimensions. "The unit's weights decide which asks look cheap" (Section 6.1). The scarce dimension differs by sink: fit for spares, fit and qualification for upgrades, provable condition for resale. Read for drives, each sink's shadow price falls on a different dimension.
@@ -233,7 +233,7 @@ And it reveals a bridge the case only hints at. Keeping old hardware is a [bridg
 
 **How it reframes the problem.** The spares pool is the "inventory buffer (parts and ready machines in stock)" (Section 6.3). "Someone funds and replenishes it, so a draw on it is a debt with a date" (Section 6.3). "Component inventory is planned to high quantile forecasts" (Section 6.3). So spares are a [stocked pool](/glossary/#term-stocked-pool) with a signed ratio, not a habit.
 
-The lens also separates two kinds of error. "Persistent bias is different: correct it at intake (Section 9.3), don't buffer it" (Section 6.3). Read for drives, misdiagnosis is that bias. Size the pool on true failures, not pulls. The difference is large: sized from pulls at a 25% misdiagnosis rate (illustrative), a pool runs about a third larger.
+The lens also separates two kinds of error. "Persistent bias is different: correct it at intake (Section 9.3), don't buffer it" (Section 6.3). Read for drives, misdiagnosis is that bias. Size the pool on true failures, not pulls. Where triage is weak, the difference is large. In a no-triage scenario with a 25% misdiagnosis rate (illustrative), a pool sized from pulls runs about a third larger.
 
 **Pooling and its limit.** Pooling is the main economy of buffers. Section 6.3, quoting [7], says to provision for "the peak of the summed demands, rather than the sum of their individual peaks". But "Correlation and heavy tails erode the gain" (Section 6.3). Aged drives are exactly where correlation hides.
 
@@ -241,7 +241,7 @@ That is where the correlation rule comes in. "Name the driver; don't infer indep
 
 **The shortage budget.** At 80% cover, "about one launch in five should need a bridge at that layer" (Section 10.2). The paper calls this "an analogy, not a result" (Section 10.2). Applied here, a cohort stands in for a launch. That gives the spares pool a backtest: count the bridges.
 
-**What it reveals.** The case asks how many spares to hold. The lens asks two prior questions. How much is a missed repair worth against an idle spare? And how much of the observed demand is bias? Answering the second shrinks the pool before any sizing begins. The case calls diagnosis the cheapest supply; the lens says why.
+**What it reveals.** The case asks how many spares to hold. The lens asks two prior questions. How much is a missed repair worth against an idle spare? And how much of the observed demand is bias? Where triage is weak, answering the second shrinks the pool before any sizing begins. Where triage already works, as at the peer, the gain is already taken.
 
 It also reveals that risk from reused drives is a buffer question. Redundancy already absorbs some device loss. A cohort cap per failure domain keeps correlated failure inside what redundancy was sized for [argued].
 
@@ -468,7 +468,7 @@ For example, a wear threshold might be half of rated endurance used (illustrativ
 
 ### P4. Size and source legacy spares
 
-*Old platforms need spare drives that fit them, and vendors stop making small, older models. Harvest is the cheap source, but it arrives only when another platform retires. Spares demand is read from repair tickets, and a third of SSD tickets at one peer weren't the drive ([case, P4](case-kuantillion-cloud-full.md#p4-size-and-source-legacy-spares)).*
+*Old platforms need spare drives that fit them, and vendors stop making small, older models. Harvest is the cheap source, but it arrives only when another platform retires. Spares demand is read from repair tickets, and at one peer a third of SSD tickets weren't the drive, though triage caught them before any swap ([case, P4](case-kuantillion-cloud-full.md#p4-size-and-source-legacy-spares)).*
 
 **The lenses that combine.** [Buffers and reserves](#buffers-and-reserves) sizes the pool as a [stocked pool](/glossary/#term-stocked-pool) on a [shortage-to-idle ratio](/glossary/#term-shortage-to-idle-ratio). [Commit points](#commit-points) handles last-time buys. [Supply layers and lead times](#supply-layers-and-lead-times) treats harvest and new purchase as two sources. [Three prices](#three-prices) carries the push-out right (Section 6.2). [The coefficient](#the-coefficient) corrects the per-failure ratio for misdiagnosis.
 
@@ -476,7 +476,7 @@ For example, a wear threshold might be half of rated endurance used (illustrativ
 
 **The answer, in four parts.**
 
-*First, size on true failures.* Read misdiagnosis as intake bias and correct it before sizing. Take one installed cohort of 200,000 drives failing at 1.5% a year (illustrative). That is 3,000 true failures, about 8.2 a day. The case cites Palm's theorem for the pipeline: stock in resupply depends on the mean turnaround.
+*First, size on true failures.* Where pulls include healthy drives, read that as intake bias and correct it before sizing. Take one installed cohort of 200,000 drives failing at 1.5% a year (illustrative). That is 3,000 true failures, about 8.2 a day. The case cites Palm's theorem for the pipeline: stock in resupply depends on the mean turnaround.
 
 | Turnaround | Mean in resupply | Pool at 80% cover | Pool at 95% cover |
 |---|---|---|---|
@@ -485,11 +485,11 @@ For example, a wear threshold might be half of rated endurance used (illustrativ
 
 The table assumes failures arrive as a Poisson process. Each cover level is the exact Poisson quantile.
 
-- Sized from pulls at a 25% misdiagnosis rate (illustrative), the 30-day pool at 80% would be 344, not 260.
+- In a no-triage scenario, sized from pulls at a 25% misdiagnosis rate (illustrative), the 30-day pool at 80% would be 344, not 260.
 - Cutting turnaround from 30 to 10 days lowers the pool by about 8.5 drives per day saved. That is roughly one day of true demand, plus a little safety stock.
 - This holds while untested harvest is on hand. If harvest itself is short, the decommission date binds, not the turnaround.
 
-The cheapest supply is fewer wrongful pulls. For SSD tickets, add a reseat-and-re-test step before any pull. The healthy share of pulled drives, by site, is its test [argued].
+First check whether triage already exists. The peer's sequence is the reference design: remote reboot, slot check, cable swap, and a drive swap only as the last step. Where a site lacks it, add it before any pull. Either way, measure the healthy share of pulled drives by site [argued]. Fewer wrongful pulls are cheap supply only where pulls are wrongful today.
 
 *Second, choose consciously at each last-time buy.* A last-time buy is a commit point before the event that would size it. Section 6.5 gives three choices for that. Applied here:
 
