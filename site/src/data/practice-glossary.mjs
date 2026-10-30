@@ -34,7 +34,7 @@ export const PRACTICE_TERMS = [
     seed: 'Section 6.1', read: [['concept-approval-and-allocation.md', 'Approval and allocation']] },
   { term: 'Reference class', def: 'The record of comparable past cases, used as an outside view of a forecast [10]. Start from all teams’ record at a stage, and weight a team’s own record as it grows.',
     seed: 'Section 3', read: [['concept-demand-and-declarations.md', 'Demand and declarations']] },
-  { term: 'Materiality', def: 'The scale below which the planning mechanisms cost more than they return. Skipping the discipline below it is a fair choice. Case 3 uses a materiality test to set its program’s scope.',
+  { term: 'Materiality', def: 'The scale below which the planning mechanisms cost more than they return. Skipping the discipline below it is a fair choice. Case 3 tests it in dollars, annual margin over exit against the program’s fixed cost, and uses a harvest ratio only to set scope.',
     seed: 'Section 13', read: [['limits.md', 'Limits']] },
 ];
 
@@ -51,11 +51,11 @@ export const CASE3_TERMS = [
     read: [['case-kuantillion-cloud-plan.md', 'The execution plan']] },
   { term: 'Grading tax', def: 'The complexity cost of grading. Every tier is a new SKU, qualification combination, placement constraint and forecast category. It is Case 3’s strongest counter-argument to fine-grained reuse.',
     read: [['case-kuantillion-cloud-full.md', 'The full case'], ['case-kuantillion-cloud-practice.md', 'How the practice solves it']] },
-  { term: 'Cohort', def: 'Drives that share a model, firmware and age. Case 3 treats a cohort as a shared driver of failure, and as the grain for failure, wear and power figures.',
+  { term: 'Cohort', def: 'Drives that share a model, firmware and power-on-hour band. Case 3 treats a cohort as a shared driver of failure, caps it per redundancy group, and uses it as the grain for failure, wear and power figures.',
     read: [['case-kuantillion-cloud-practice.md', 'How the practice solves it']] },
-  { term: 'Cover point', def: 'How far up its demand range a pool or layer is stocked, set by its shortage-to-idle ratio. In Case 3 each sink signs one. The seed’s worksheet calls it the [cover-to point](/glossary/#term-cover-to-point).',
+  { term: 'Cover point', def: 'How far up its demand range a pool or layer is stocked, set by its shortage-to-idle ratio. In Case 3 spares cover is signed per repair-urgency segment: high where a dead drive takes a host down, low where a tier can fail in place. The seed’s worksheet calls it the [cover-to point](/glossary/#term-cover-to-point).',
     seed: 'Section 6.5', read: [['concept-buffers-and-reserves.md', 'Buffers and reserves']] },
-  { term: 'Showback', def: 'Showing teams an internal price without billing them. The seed’s order is to “Move to attributed cost only after a full cycle of showback.” Case 3 shows its transfer price back first.',
+  { term: 'Showback', def: 'Showing teams an internal price without billing them. The seed’s order is to “Move to attributed cost only after a full cycle of showback.” Case 3 shows back an internal rate for drives, the higher of net resale and pipeline cost plus a risk loading, before anyone is billed.',
     seed: 'Section 10.4', read: [['case-kuantillion-cloud-plan.md', 'The execution plan'], ['settings.md', 'Settings']] },
 ];
 
