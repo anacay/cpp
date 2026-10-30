@@ -659,7 +659,7 @@ Eighteen chains connect markets, the organization and the physics of flash to co
 
 **Diagnosis, health and trust**
 
-10. At one peer, about a third of SSD failure tickets weren't the drive (human error, cables), and cheaper steps resolved them before any swap → a site that skips that triage pulls drives that didn't need pulling → spare consumption runs up to about 1.5× true failures, and healthy flash leaves service → triage quality becomes a supply source (Third party → Inferred → Arithmetic).
+10. At one peer, about a third of SSD failure tickets weren't the drive (human error, cables); cheaper steps resolved them before any swap (Third party). A site that skips triage → pulls drives needlessly → spares run up to about 1.5× true failures, and healthy flash leaves service → triage becomes a supply source (Inferred → Arithmetic).
 11. Older drives predate newer telemetry fields → whole cohorts are partly blind → grading can't see what it must price → the observability gate fails cohorts, not drives (Reported → Inferred).
 12. Health counters are forgeable outside custody → a million-drive counter-reset fraud in hard drives in 2025, whose later wave forged even the maker's protected log → outside used supply becomes untrustworthy → unbroken internal custody becomes the asset the grey market can't copy → provably healthy drives are worth more inside than outside (Press → Inferred).
 13. Same-cohort drives are redeployed together → failures cluster by node, rack and redundancy group, and firmware faults strike whole cohorts → one incident in a redeployed cohort → trust collapses for all legacy capacity: P8's second-class problem, made by one event (Third party → Speculated).
@@ -692,7 +692,7 @@ Seven stress scenarios show what breaks first and what an answer must already co
 - **Setup.** A firmware fault keyed to power-on age hits a drive model redeployed in volume, concentrated in a few rack groups.
 - **Propagation.** Correlated failures across failure domains believed independent; a spike in repair tickets; thinning durability margins.
 - **Breaks first.** Trust, not capacity. Every user of legacy capacity asks for new hardware again.
-- **The answer must already cover.** Firmware baselines enforced as a gate; cohort concentration per failure domain known and bounded; a risk budget per sink; an incident cost bounded before the incident.
+- **The answer must already cover.** Firmware baselines enforced as a gate; cohort concentration per redundancy group known and bounded; a risk budget per sink; an incident cost bounded before the incident.
 - **Early indicators.** Same-cohort drives clustering in racks; failure rates by power-on hours bending upward.
 
 ### S3. A data-bearing drive surfaces outside custody
