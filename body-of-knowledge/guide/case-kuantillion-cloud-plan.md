@@ -425,6 +425,7 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 - **Why resale is the floor.** Where an outside market exists, the efficient internal price is the market price (Baldenius 2008, on Hirshleifer's rule). A lower rate invites every sink to over-claim.
 - **Net resale** is what the resale and recycling contracts actually pay, after their fees.
 - **Carry** is charged per TB-month while the drive is held, not once.
+- **Risk loading** per usable TB = the chance of a correlated event × its cost, bridges included ÷ usable TB at risk. For example, 5% a year × $1M ÷ 10,000 TB is $5 (illustrative).
 - For example, a 2 TB drive costing $40 to process at 80% yield is $25 per usable TB. If net resale is $100 and risk loading $5, the rate is about $105. Carry is about $0.17 per TB-month (illustrative).
 - **The gap** between resale and pipeline cost is a credit to recovery in the management ledger. It is never booked as a saving.
 - Show it back for a full cycle before anyone is billed: "Move to attributed cost only after a full cycle of showback" (Section 10.4).
@@ -596,7 +597,7 @@ The case names public signposts between two futures. Path A stays tight through 
 **The risk budget**, set at G4 [argued]:
 1. A cohort cap per redundancy group, set by reliability engineering. Its test is the chance of losing more cohort drives than the group tolerates within one repair window.
 2. An evidence bar per tier, rising only with scored outcomes. Caches start lower, durable tiers higher.
-3. An incident cost bound, signed by finance before volume grows.
+3. An incident cost bound, signed by finance before volume grows. Finance states whether it is accrued as a reserve or expensed when drawn.
 
 **Incident playbook: a redeployed cohort fails together (scenario S2)** [argued].
 
