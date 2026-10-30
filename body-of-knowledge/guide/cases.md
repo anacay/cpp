@@ -1,6 +1,6 @@
 ---
 title: Cases
-short: The seed paper's worked example told as a case, a first problem-space case, and the format to use when you write one of your own.
+short: The seed paper's worked example told as a case, two problem-space cases, and the format to use when you write one of your own.
 kind: across
 order: 22
 cadence: all
@@ -87,6 +87,16 @@ Popcorn Pajamas is a global streaming service with one small planning team, near
 - [The case page](case-popcorn-pajamas.md): the situation in two minutes.
 - [The full case](case-popcorn-pajamas-full.md).
 - [How the practice approaches it](case-popcorn-pajamas-practice.md): each problem mapped to the seed paper, and seven places where the body of knowledge runs out.
+
+## Case 3: the Operator
+
+*A problem-space case with a full answer beside it. The Operator is a fictional company.*
+
+The Operator runs one of the largest computing fleets in the world, and retires machines full of older flash drives while new flash costs three to four times last year's price. Each drive can go to a workload, the spares pool, an upgrade or build, or out of the fleet. The case sets out eight decisions, eighteen causal chains and seven stress scenarios for 2027. A companion page then solves it with the practice's body of knowledge, decision by decision, and names where that body of knowledge runs out.
+
+- [The case page](case-fleet-flash.md): the situation in two minutes.
+- [The full case](case-fleet-flash-full.md).
+- [How the practice solves it](case-fleet-flash-practice.md): the answer, with every judgment that goes past the paper marked.
 
 ## How to write a case
 
