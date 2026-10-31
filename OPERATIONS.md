@@ -84,6 +84,7 @@ v0.x for the seed: small and frequent. Numbered editions come later, each after 
 - [ ] `npx wrangler versions upload`, then review the preview URL.
 - [ ] `npx wrangler versions deploy` to promote.
 - [ ] Check live: a section, Discuss, Suggest an edit, the selection bar.
+- [ ] `bash scripts/indexnow-submit.sh` from `site/` to submit the sitemap to IndexNow. 200 or 202 is success. The key file `site/public/921f6f2cf2490490cf43e1c4b329031c.txt` must stay in place.
 - [ ] Write `RELEASE_RECORD_CPP_R<n>.md`: date, live and previous version IDs, changes, checks, rollback line.
 
 **Rollback:** `npx wrangler versions deploy <previous-id>@100%` from `site/`. The ID is in the last release record. Record the rollback too.
