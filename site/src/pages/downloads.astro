@@ -14,7 +14,7 @@ const version = manifest.version.replace(/^v/, '').replace(/\s*draft$/, '');
     </div>
     <ul class="downloads">
       {downloads.map((d) => (
-        <li><a href={d.href} download><span class="dn">{d.label}</span><span class="ds">{d.detail}. <span class="muted">{d.name}</span></span><span class="dz">{d.name.split('.').pop().toUpperCase()} · {mb(d.bytes)}</span></a></li>
+        <li><a href={d.href} download><span class="dn">{d.label}</span><span class="ds">{d.detail}. <span class="muted">{d.name}</span></span><span class="sr-only">&nbsp;· </span><span class="dz">{d.name.split('.').pop().toUpperCase()} · {mb(d.bytes)}</span></a></li>
       ))}
     </ul>
     <p class="note">Each appendix also stands on its own here: <a href="/worksheet/">the worksheet</a> (Appendix A) and <a href="/public-record/">the public record on supply</a> (Appendix B). To print one, use your browser's print command on its page.</p>
