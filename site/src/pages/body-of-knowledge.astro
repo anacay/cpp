@@ -63,7 +63,7 @@ const seedLayers = [
       <p class="display">New to the work? Read these in order.</p>
       <p class="reading">Understand the core ideas first, then see them in one story, then practise and apply them. Coming from site reliability, finance or supply chain? <a href={gp('the-work-and-the-path.md').url}>The work and the path</a> says where your route starts and what to read next, by level.</p>
       <ol class="chapters chapters--path">
-        {learn.map((x, i) => <li><a href={x.href}><span class="n" aria-hidden="true">{i + 1}</span><span class="ct">{x.name}</span><span class="sr-only">: </span><span class="cs">{x.what} <span class="path-t">{x.t}</span></span></a></li>)}
+        {learn.map((x, i) => <li><a href={x.href}><span class="n" aria-hidden="true">{i + 1}</span><span class="sr-only">.&nbsp;</span><span class="ct">{x.name}</span><span class="sr-only">:&nbsp;</span><span class="cs">{x.what} <span class="path-t">{x.t}</span></span></a></li>)}
       </ol>
       <p class="muted">Keep the <a href="/glossary/">glossary</a> open beside you. Reading times are estimates at 220 words a minute.</p>
     </section>
@@ -75,7 +75,7 @@ const seedLayers = [
       </ul>
       <figure class="plate plate--pullout hub-map">
         <a class="plate__card" href="/guide/the-map/"><img src="/guide/figures/G1_map.svg" alt="The map: a grid of five planning cadences (annual, quarterly, monthly, weekly, post-launch, looping back) across five altitudes (envelope, region or site, portfolio, launch, unit), with supply commit points marked." width="1280" height="925" loading="lazy" decoding="async"></a>
-        <figcaption><span class="plate__caption"><strong class="plate__label">The map.</strong> Every page of the guide sits on it. Read a column for one cycle, a row for one thing firming up over time.</span><span class="plate__meta"><a class="plate__open" href="/guide/the-map/">Read the map</a></span></figcaption>
+        <figcaption><span class="plate__caption"><strong class="plate__label">The map.</strong> Every page of the guide sits on it. Read a column for one cycle, a row for one thing firming up over time.</span><span class="sr-only">&nbsp;· </span><span class="plate__meta"><a class="plate__open" href="/guide/the-map/">Read the map</a></span></figcaption>
       </figure>
     </section>
 
@@ -83,7 +83,7 @@ const seedLayers = [
       <h2 class="kicker" id="stage">Through the cycle</h2>
       <p class="display">Five cadences, one loop. Each commits what its lead time forces.</p>
       <ol class="cycle">
-        {stages.map((x) => <li><a href={x.url}><span class="time">{cadLabel(x)}</span><span class="sr-only">: </span><span class="name">{((t) => t.charAt(0).toUpperCase() + t.slice(1))(x.title.replace(/^[^:]+:\s*/, ''))}</span><span class="sr-only">: </span><span class="what">{x.short}</span></a></li>)}
+        {stages.map((x) => <li><a href={x.url}><span class="time">{cadLabel(x)}</span><span class="sr-only">:&nbsp;</span><span class="name">{((t) => t.charAt(0).toUpperCase() + t.slice(1))(x.title.replace(/^[^:]+:\s*/, ''))}</span><span class="sr-only">:&nbsp;</span><span class="what">{x.short}</span></a></li>)}
       </ol>
       <p class="cycle__loop muted">↺ Post-launch feeds the next annual plan.</p>
     </section>
@@ -99,14 +99,14 @@ const seedLayers = [
       <h2 class="kicker" id="concept">Concepts</h2>
       <p class="reading muted">The ideas that recur across the map. Stage pages link here instead of repeating them.</p>
       <ol class="chapters">
-        {of('concept').map((x) => <li><a href={x.url}><span class="n" aria-hidden="true">·</span><span class="ct">{x.title}</span><span class="sr-only">: </span><span class="cs">{x.short}</span></a></li>)}
+        {of('concept').map((x) => <li><a href={x.url}><span class="n" aria-hidden="true">·</span><span class="ct">{x.title}</span><span class="sr-only">:&nbsp;</span><span class="cs">{x.short}</span></a></li>)}
       </ol>
     </section>
 
     <section class="band" aria-labelledby="shelf">
       <h2 class="kicker" id="shelf">Reference shelf</h2>
       <ol class="chapters">
-        {shelf.map((x) => <li><a href={x.href}><span class="n" aria-hidden="true">·</span><span class="ct">{x.name}</span><span class="sr-only">: </span><span class="cs">{x.what}</span></a></li>)}
+        {shelf.map((x) => <li><a href={x.href}><span class="n" aria-hidden="true">·</span><span class="ct">{x.name}</span><span class="sr-only">:&nbsp;</span><span class="cs">{x.what}</span></a></li>)}
       </ol>
     </section>
 
@@ -119,7 +119,7 @@ const seedLayers = [
           <p><a class="more" href="/changes/">What changed</a> · <a class="more" href="/downloads/">Downloads</a></p>
         </div>
         <ul class="paths paths--stack">
-          {seedLayers.map((x) => <li><a href={x.href}><span class="time">{x.t}</span><span class="sr-only">: </span><span class="name">{x.name}</span></a></li>)}
+          {seedLayers.map((x) => <li><a href={x.href}><span class="time">{x.t}</span><span class="sr-only">:&nbsp;</span><span class="name">{x.name}</span></a></li>)}
         </ul>
       </div>
     </section>
