@@ -29,7 +29,7 @@ const tag = door ? TAGLINES[door.file] : undefined;
 ---
 {door && family.length > 1 && (
   <nav class="casebar" aria-label={`Case ${n}, ${name}: pages`}>
-    <p class="casebar__id"><strong>Case {n} · {name}</strong><span class="casebar__here"> · {here}</span>{tag && <span class="casebar__tag">{tag}</span>}</p>
+    <p class="casebar__id"><strong>Case {n} · {name}</strong><span class="casebar__here"> · {here}</span>{tag && <><span class="sr-only">:&nbsp;</span><span class="casebar__tag">{tag}</span></>}</p>
     <ul class="casebar__links">
       {family.map((p) => <li><a href={p.url} aria-current={p === page ? 'page' : undefined}>{label(p)}</a></li>)}
     </ul>

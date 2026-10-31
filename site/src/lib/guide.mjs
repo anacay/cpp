@@ -127,7 +127,7 @@ export function renderGuide(p) {
     const f = figureInfo(src);
     const caption = cap ? cap.replace(/^<em>([\s\S]*?)<\/em>/, '<strong class="plate__label">$1</strong>') : '';
     return `<figure class="plate plate--${f.canvas}"><a class="plate__card" href="${f.url}"><img src="${f.url}" alt="${alt}" width="${f.w}" height="${f.h}" loading="lazy" decoding="async"></a>
-<figcaption><span class="plate__caption">${caption}</span><span class="plate__meta"><a class="plate__open" href="${f.url}">Open full size</a></span></figcaption></figure>`;
+<figcaption><span class="plate__caption">${caption}</span><span class="sr-only">&nbsp;· </span><span class="plate__meta"><a class="plate__open" href="${f.url}">Open full size</a></span></figcaption></figure>`;
   });
   // Evidence labels.
   html = html.replace(/\s?\[(argued|unmeasured)\]/g, (m, k) => ` <span class="ev ev--${k}" title="${EV[k]}">${k}</span>`);

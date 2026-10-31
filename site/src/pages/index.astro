@@ -78,7 +78,7 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
       <p class="display">The build-out is steep, and all of it has to be planned.</p>
       <ul class="facts-grid">
         {facts.map((f) => (
-          <li><span class="fg-big">{f.big}</span><span class="fg-what">{f.what}</span><a class="fg-src" href={f.href}>{f.src}</a></li>
+          <li><span class="fg-big">{f.big}</span><span class="sr-only">:&nbsp;</span><span class="fg-what">{f.what}</span><span class="sr-only">&nbsp;· </span><a class="fg-src" href={f.href}>{f.src}</a></li>
         ))}
       </ul>
       <div class="reading prose">
@@ -121,9 +121,9 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
           <p class="display">One map of the work, from the budget to a single service.</p>
           <p class="reading">The guide lays capacity planning on two axes: the planning cycle, from annual to the week after launch, and the altitude, from the whole fleet down to one service. Every page sits on that map, and says which levels of the path usually do that work.</p>
           <ul class="paths paths--stack">
-            <li><a href="/guide/principles/"><span class="time">Start</span><span class="sr-only">: </span><span class="name">Principles</span></a></li>
-            <li><a href="/guide/the-work-and-the-path/"><span class="time">For you</span><span class="sr-only">: </span><span class="name">The work and the path</span></a></li>
-            <li><a href="/guide/the-map/"><span class="time">The spine</span><span class="sr-only">: </span><span class="name">The map: altitude and cadence</span></a></li>
+            <li><a href="/guide/principles/"><span class="time">Start</span><span class="sr-only">:&nbsp;</span><span class="name">Principles</span></a></li>
+            <li><a href="/guide/the-work-and-the-path/"><span class="time">For you</span><span class="sr-only">:&nbsp;</span><span class="name">The work and the path</span></a></li>
+            <li><a href="/guide/the-map/"><span class="time">The spine</span><span class="sr-only">:&nbsp;</span><span class="name">The map: altitude and cadence</span></a></li>
           </ul>
           <p><a class="more" href="/body-of-knowledge/">The whole guide</a> · <span class="muted">Draft for review</span></p>
         </div>
@@ -145,7 +145,7 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
         </div>
         <div>
           <ul class="paths paths--stack">
-            {paths.map((x) => <li><a href={x.href}><span class="time">{x.time}</span><span class="sr-only">: </span><span class="name">{x.name}</span></a></li>)}
+            {paths.map((x) => <li><a href={x.href}><span class="time">{x.time}</span><span class="sr-only">:&nbsp;</span><span class="name">{x.name}</span></a></li>)}
           </ul>
           <p><a class="more" href="/body-of-knowledge/#seed">The seed paper, whole</a></p>
         </div>
