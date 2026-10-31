@@ -280,7 +280,7 @@ export function renderFigure(block, ctx, { canonical = true, idPrefix = '', head
   return `<figure class="plate plate--${esc(f.canvas)}" ${attrs}>
 <a class="plate__card" href="${fig.file}"><img src="${fig.file}" alt="${esc(f.alt)}" width="${fig.width}" height="${fig.height}" loading="lazy" decoding="async"></a>
 <figcaption><span class="plate__caption">${caption}</span>
-<span class="plate__meta">${pageNote}${headingNote}<a class="plate__open" href="${fig.file}">Open full size<span class="sr-only">: ${esc(f.label)}${f.page ? `, page ${esc(f.page)}` : ''}</span></a></span></figcaption>
+<span class="plate__meta">${[pageNote, headingNote].filter(Boolean).map((x) => x + '<span class="sr-only">&nbsp;· </span>').join('')}<a class="plate__open" href="${fig.file}">Open full size<span class="sr-only">: ${esc(f.label)}${f.page ? `, page ${esc(f.page)}` : ''}</span></a></span></figcaption>
 </figure>`;
 }
 

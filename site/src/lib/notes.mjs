@@ -73,7 +73,7 @@ export function annotate(html, page) {
     const needle = esc(note.quote).replace(/&quot;/g, '"');
     const at = html.indexOf(needle);
     if (at < 0) throw new Error(`author-notes: passage not found in ${page.url}: "${note.quote}"`);
-    const mark = `<mark class="anno-mark" id="${note.id}-at"><a href="#${note.id}" class="anno-ref" data-apparatus aria-label="Author's note ${note.n}">${note.n}</a>${needle}</mark>`;
+    const mark = `<mark class="anno-mark" id="${note.id}-at"><a href="#${note.id}" class="anno-ref" data-apparatus aria-label="Author's note ${note.n}">${note.n}<span class="sr-only">&nbsp;</span></a>${needle}</mark>`;
     html = html.slice(0, at) + mark + html.slice(at + needle.length);
     const close = html.slice(at).search(/<\/(p|li)>/);
     if (close < 0) throw new Error(`author-notes: no paragraph end after "${note.quote}"`);

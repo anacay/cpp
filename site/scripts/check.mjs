@@ -7,13 +7,16 @@
 //      lists (.refs), the steward's site, and the site's own canonical URL;
 //   4. no <script> tags;
 //   5. every internal link resolves, anchors included;
-//   6. every page has a <title>, a meta description and exactly one <h1>.
+//   6. every page has a <title>, a meta description and exactly one <h1>;
+//   7. no two words fuse across a tag boundary once tags are stripped
+//      ("CloudRead", "1Introduction"), as a search snippet would show them.
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import * as cheerio from 'cheerio';
 import MarkdownIt from 'markdown-it';
+import { fusedText } from './fused-text.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.chdir(root);
@@ -234,6 +237,12 @@ const mdText = (m) => squash(cheerio.load(md.render(m)).root().text());
 }
 
 // ── Extras: robots, sitemap, llms, headers ───────────────────────────────────
+{
+  const c = check('7. No words fused across a tag boundary');
+  for (const [url, $] of docs) for (const h of fusedText($)) c.fails.push(`${url}: ${h.component}: "${h.text}"`);
+  c.notes.push('inline tags joined with no space, as a search snippet reads them; see scripts/fused-text.mjs');
+}
+
 {
   const c = check('Extras: robots, sitemap, llms.txt, _headers, 404');
   const read = (f) => (fs.existsSync(path.join(dist, f)) ? fs.readFileSync(path.join(dist, f), 'utf8') : null);

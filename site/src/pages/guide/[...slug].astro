@@ -37,8 +37,8 @@ const ctx = load();
     )}
     <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a draft of the guide to the body of knowledge." />
     <nav class="pager" aria-label="Reading order">
-      {prev && <a class="prev" href={prev.url} rel="prev"><span class="dir">Previous</span><span class="t">{prev.title}</span></a>}
-      {next && <a class="next" href={next.url} rel="next"><span class="dir">Next</span><span class="t">{next.title}</span></a>}
+      {prev && <a class="prev" href={prev.url} rel="prev"><span class="dir">Previous</span><span class="sr-only">:&nbsp;</span><span class="t">{prev.title}</span></a>}
+      {next && <a class="next" href={next.url} rel="next"><span class="dir">Next</span><span class="sr-only">:&nbsp;</span><span class="t">{next.title}</span></a>}
     </nav>
   </div>
 </Base>
