@@ -41,7 +41,8 @@ The Practice Room. R8 is the community release: a room for capacity planners to 
   - A "Changes to this page" footer renders from `changed-because.json` on guide, case, note, paper and founding-document pages. The file is empty, so nothing shows yet.
 - **/glossary/:** a `#your-words` crosswalk, labeled "Pointers, not definitions." It adds no new definitions.
 - **/related-work/:** "CPP and FinOps: who does what" (`#cpp-and-finops`), with the licence note.
-- **Private routes:** wherever ROADMAP.md and GOVERNANCE.md say "say so in Governance", they now add "or write to cpp@anacay.org". Both also point to /roles/.
+- **Private routes:** wherever ROADMAP.md says "say so in Governance", it now adds "or write to cpp@anacay.org", and points to /roles/. Every private route says who reads the inbox: today the founder, then the co-organizers once named. GOVERNANCE.md is unchanged from R7 (see Process).
+- **Status:** /community/ and /join/ carry a "Status: being set up" block from `room.mjs`. Until the room opens, the Slack, greeters, hosts, the digest and the call are described in the future tense.
 - **Consistency fixes:**
   - CONTRIBUTORS.md credits the paper at v7.9.
   - The guide is "draft v0.2, inside seed edition v0.1".
@@ -59,7 +60,7 @@ People, dates and statuses live in `site/src/data/room.mjs`. A confirmed call da
 | R8-01 | /join/ reworked around the room | `join.astro` |
 | R8-02 | Home page reframed (steering S§3.1) | `index.astro` |
 | R8-03 | Four inconsistency fixes | `CONTRIBUTORS.md`, `body-of-knowledge.astro`, `index.astro`, `summary.astro`, `join.astro`, `privacy.astro`, `paper.config.json` |
-| R8-04 | Private route beside every "say so in Governance" | `ROADMAP.md`, `GOVERNANCE.md` |
+| R8-04 | Private route beside "say so in Governance" (GOVERNANCE.md part reverted in R8-fix-3) | `ROADMAP.md` |
 | R8-05 | /community/ | `community.astro` |
 | R8-06 | /circle/ | `circle.astro` |
 | R8-07 | /sharing-safely/; linked from CONTRIBUTING and the case templates | `SHARING_SAFELY.md`, `CONTRIBUTING.md`, `.github/…/cases.yml`, `4-share-a-case.yml` |
@@ -74,6 +75,15 @@ People, dates and statuses live in `site/src/data/room.mjs`. A confirmed call da
 | R8-16 | CPP and FinOps: who does what | `related-work.astro` |
 | R8-17 | /tools/ starter pack | `tools.astro`, `site/public/tools/` |
 | R8-18 | Integration: links in and out, footer, llms.txt | several |
+| R8-fix-1 | Private routes say who reads cpp@anacay.org today (the founder), and that it moves to co-organizers once named; no reply promises in a co-organizer's name | `room.mjs` (`inboxLine()`), `join.astro`, `roles.astro`, `circle.astro`, `community.astro`, `SHARING_SAFELY.md`, `github-kit.md` |
+| R8-fix-2 | "Status: being set up" block; the future tense for the Slack, greeters, hosts, digest and call; how to hear when the call is set | `room.mjs` (`status`), `RoomStatus.astro`, `NextCall.astro`, `community.astro`, `join.astro`, `start/[door].astro`, `github-kit.md` |
+| R8-fix-3 | One account of who runs CPP today (`ownershipLine()`); co-organizer rules marked proposed; GOVERNANCE.md restored to R7 | `community.astro`, `circle.astro`, `roles.astro`, `index.astro`, `GOVERNANCE.md` |
+| R8-fix-4 | Code of Conduct proposal argued on the merits, no invented claims; 60-day open period, closable at 30 | `coc-proposal.md`, `github-kit.md`, `community.astro` |
+| R8-fix-5 | "Open volunteer roles"; home source cited as a public role description | `community.astro`, `index.astro` |
+| R8-fix-6 | Door times summed from steps; agenda counts and good-first flags; WG1 attribution; "a reviewer who knows supply" | `start-paths.mjs`, `agenda.mjs`, `working-groups.astro`, `roles.astro`, `review-intake.yml` |
+| R8-fix-7 | Doors fit their readers: answer key, newcomer problems, head-of-planning circle step and Q3, supply writing line | `start-paths.mjs`, `start/[door].astro`, `notes/[...slug].astro`, `glossary.astro`, `the-work-and-the-path.md` |
+| R8-fix-8 | Illustrative labels on the ladder; estimated hours; one open-roles count; README | `SHARING_SAFELY.md`, `roles.astro`, `README.md` |
+| R8-fix-9 | Re-check after the fixes | `community.astro` |
 
 **New checks**, run on every build:
 - **8.** No banned term and no placeholder text, on every page. Reference lists are exempt, because one cited paper's title matches a term.
@@ -83,20 +93,22 @@ People, dates and statuses live in `site/src/data/room.mjs`. A confirmed call da
 
 ## Process
 
-The new pages and the hand-raise lines change no body-of-knowledge claim. So they are treated as small fixes under HOW_IT_GROWS, with no open period (ROADMAP §6.7, a founder decision). The Code of Conduct proposal is staged in `community/coc-proposal.md`; `CODE_OF_CONDUCT.md` is unchanged until it closes. The open proposals (#9, #12, #17, #18, #20) are untouched.
+The new pages and the ROADMAP.md hand-raise lines change no body-of-knowledge claim or governance rule. So they are treated as small fixes under HOW_IT_GROWS, with no open period (ROADMAP §6.7, a founder decision). Two independent reviews (a persona re-walk and an audit) found that R8-04's GOVERNANCE.md edit changed how editors are nominated without the 30-day (60 with one editor) open period. It was reverted, so GOVERNANCE.md is unchanged from R7. Rules on /roles/ that go beyond GOVERNANCE.md are marked proposed. The Code of Conduct proposal is staged in `community/coc-proposal.md`, with a 60-day open period, closable at 30 once two editors are confirmed; `CODE_OF_CONDUCT.md` is unchanged until it closes. The open proposals (#9, #12, #17, #18, #20) are untouched.
 
 ## Commits
 
-cpp (`anacay/cpp`), branch `r8-community` from main `f3b9a18`: 25 item commits (foundations, one or more per item, follow-ups and integration), ending `ba88669`, then this record. This record is the last commit on the branch.
+cpp (`anacay/cpp`), branch `r8-community` from main `f3b9a18`: 35 commits for the items, follow-ups, integration and nine review fixes (R8-fix-1 to R8-fix-9), ending `21c0d1b`, then this record, 36 in all. This record is the last commit on the branch.
 - Merged as PR (filled in at deploy), with merge commit (filled in at deploy).
 
 ## Checks (before deploy)
 
-- **Build:** `npm run build` on `r8-community` passes all checks: 87 pages, 86 sitemap URLs and 9,145 internal links and anchors resolved.
+- **Build:** `npm run build` on `r8-community` passes all checks: 87 pages, 86 sitemap URLs and 9,180 internal links and anchors resolved. Refresh the figure from the build on main at deploy.
 - **Seed text:** unchanged (check 1). Figures and captions are unchanged (check 2).
 - **Scripts:** no new scripts (check 4). Interactive needs are `mailto:` or GitHub links.
-- **Public writing:** checks 8–11 pass. A separate grep of every line added since `f3b9a18` found no banned terms, including the case-sensitive ones. Its hiring words all sit in rule statements or in the staged Code of Conduct proposal. The `/tools/` static files are clean.
-- **Consent:** `room.mjs` lists only the founder, and the circle is empty. The call status is `pending`, so no date appears anywhere.
+- **Public writing:** checks 8–11 pass. A separate grep of every line added since `f3b9a18` found no banned terms, including the case-sensitive ones. Its hiring words all sit in rule statements, source comments, the GitHub kit or the staged Code of Conduct proposal, plus the steering decision's home lead-in. The `/tools/` static files are clean.
+- **Consent:** `room.mjs` lists only the founder, and the circle is empty. The call status is `pending`, so no date appears anywhere. `status.state` is `setting-up`.
+- **Reviews:** VERIFY_PERSONAS (B1–B3, S1–S9, N1–N6) and VERIFY_AUDIT (1–18), both on 2 November 2026. All blockers and shoulds are fixed in R8-fix-1 to R8-fix-9, except those left to the founder (below).
+- **Left to the founder:** whether to replace or unlink the home page's cited role description; whether to disclose the founder's next employer; the program-manager claim on the home card (steering copy, unsourced); proposing in Governance the co-organizer role, private nominations and the LinkedIn-group wording in GOVERNANCE.md, CHARTER.md and CODE_OF_CONDUCT.md.
 - **From main:** (filled in at deploy)
 - **Preview:** (filled in at deploy)
 
