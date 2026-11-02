@@ -48,6 +48,8 @@ Seniority doesn't matter. A planner two years in, who remembers what was confusi
 3. The current editors decide by consensus. While there's only one editor, the founder decides and writes down why.
 4. The steward confirms. It can only refuse for a Code of Conduct reason, and it has to say so.
 
+The [roles](https://cpp.anacay.org/roles/) page describes the editor role and the others, with hours and terms.
+
 Editors serve one edition at a time and can renew. Anyone can step down at any time, no explanation needed. An editor who's been inactive for six months moves to emeritus and is still credited.
 
 ## Conflicts of interest
