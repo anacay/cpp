@@ -72,7 +72,7 @@ No pinned post is needed: the form carries its own instructions.
 >
 > **Where next.** A basic question goes in [First questions](https://github.com/anacay/cpp/discussions/categories/first-questions). A first thread at your stage is under the `good-first` label. The [Start here](https://cpp.anacay.org/start/) page picks a reading path for you.
 >
-> Rather not post in public? Write to cpp@anacay.org. Today the founder reads it; once co-organizers are named, the inbox moves to them.
+> Rather not post in public? Write to cpp@anacay.org. The founder reads it.
 
 ---
 
@@ -250,4 +250,4 @@ Then:
 
 - Link the two pinned posts from the room's #welcome channel description or bookmarks, not only a pin (the free plan hides history after 90 days).
 - When `/agenda/` statuses change, update §3 the same day.
-- Add `good-first` to any new thread that fits. The co-organizers own this from day one.
+- Add `good-first` to any new thread that fits. Whoever triages new threads does this: the founder today, with co-organizers as they step forward.
