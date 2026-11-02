@@ -1,7 +1,7 @@
 // RSS feed: paper versions (from the reader-facing history), new case
 // studies and working notes (dated from git), Practice Room calls and agenda
 // status changes. One feed, newest first.
-//  - Calls appear only once `call.status` in room.mjs is no longer 'pending',
+//  - Calls appear only once `call.status` in room.mjs is 'confirmed' or 'held',
 //    so no date is ever announced here before the circle confirms it.
 //  - Agenda items appear only from their dated `history` in agenda.mjs; the
 //    starting status ('open') is not a change and has no item.
@@ -10,7 +10,7 @@ import { load } from '../lib/paper.mjs';
 import { guide } from '../lib/guide.mjs';
 import { guideDates } from '../lib/dates.mjs';
 import versions from '../data/versions.json';
-import { call, callLine } from '../data/room.mjs';
+import { call } from '../data/room.mjs';
 import { agendaChanges, STATUS } from '../data/agenda.mjs';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -43,7 +43,7 @@ export function GET() {
       description: p.short,
     });
   }
-  if (call.status !== 'pending' && call.date) {
+  if ((call.status === 'confirmed' || call.status === 'held') && call.date) {
     const day = new Date(`${call.date}T${call.startUtc}:00Z`);
     const label = day.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
     items.push({
@@ -51,7 +51,7 @@ export function GET() {
       link: new URL('/community/', site.url).href,
       guid: `${site.url}/community/#call-${call.date}`,
       date: day,
-      description: callLine(),
+      description: `An open call, ${call.startUtc}–${call.endUtc} UTC. The agenda is in the stream.`,
     });
     if (call.status === 'held' && call.notes) {
       items.push({
@@ -90,7 +90,7 @@ export function GET() {
     <title>${esc(site.name)}</title>
     <link>${site.url}</link>
     <atom:link href="${new URL('/feed.xml', site.url).href}" rel="self" type="application/rss+xml"/>
-    <description>New versions of the seed paper, new case studies and working notes, Practice Room calls and changes to the open-problems agenda, from the open body of knowledge for capacity planning.</description>
+    <description>New versions of the seed paper, new case studies and working notes, open calls (later) and changes to the open-problems agenda, from the open body of knowledge for capacity planning.</description>
     <language>en</language>
 ${body}
   </channel>

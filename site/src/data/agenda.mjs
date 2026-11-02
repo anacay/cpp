@@ -44,7 +44,7 @@ const it = (id, problem, source, sourceLabel, extra = {}) => ({ id, problem, sou
 
 export const workstreams = [
   {
-    id: 'drift', name: 'Coefficient drift and attribution', channel: 'demand-forecasting',
+    id: 'drift', name: 'Coefficient drift and attribution', tag: 'forecasting',
     why: 'How the ratio between a driver and its resources moves, and who owns the part that moves.',
     items: [
       q(1, 'No public time series of coefficient drift exists, as far as the sources show. Is drift a slow creep, or mostly big steps?'),
@@ -55,7 +55,7 @@ export const workstreams = [
     ],
   },
   {
-    id: 'declarations', name: 'Declaration calibration and pooled data', channel: 'demand-forecasting',
+    id: 'declarations', name: 'Declaration calibration and pooled data', tag: 'forecasting',
     why: 'How well teams’ statements of future demand land, and how much to trust each team’s record.',
     items: [
       q(2, 'How well do declarations land, by stage? The paper’s illustrative rule of 60% for intents and within 10% for configured asks is “a guess dressed as a number”.'),
@@ -67,7 +67,7 @@ export const workstreams = [
     ],
   },
   {
-    id: 'supply', name: 'Supply evidence: lead times, contracts and power', channel: 'fleets-supply-buildings',
+    id: 'supply', name: 'Supply evidence: lead times, contracts and power', tag: 'supply',
     why: 'Supply is the least documented side. Public evidence moves it most.',
     items: [
       q(4, 'Find public sources for order-to-dock time, turn-up duration, cancel windows and reschedule terms. A filing, a talk or a vendor document, with a link and the quote.', { goodFirst: true }),
@@ -77,7 +77,7 @@ export const workstreams = [
     ],
   },
   {
-    id: 'buffers', name: 'Buffers, prices and optimization', channel: 'cost-pricing',
+    id: 'buffers', name: 'Buffers, prices and optimization', tag: 'cost',
     why: 'How much spare to hold, layer by layer, and what running short really costs.',
     items: [
       q(7, 'The method buys each supply layer to its own percentile. Can a simulation or a closed form do better, or show the rule is good enough?'),
@@ -90,7 +90,7 @@ export const workstreams = [
     ],
   },
   {
-    id: 'arbitration', name: 'Arbitration and incentives', channel: 'ai-capacity',
+    id: 'arbitration', name: 'Arbitration and incentives', tag: 'gpu',
     why: 'Who decides when capacity is short, and what makes honest reporting the sensible choice.',
     items: [
       q(3, 'When accelerators are short, who decides between internal teams and external customers? Operators publish splits and priority orders. What are the forum, the rule and the appeal?'),
@@ -100,7 +100,7 @@ export const workstreams = [
     ],
   },
   {
-    id: 'ai', name: 'AI capacity: agent demand, tokens and accelerators', channel: 'ai-capacity',
+    id: 'ai', name: 'AI capacity: agent demand, tokens and accelerators', tag: 'gpu',
     why: 'Where the structure holds and the units move: power, topology, tokens and agents.',
     note: 'Arbitrating scarce accelerators (Q3) sits under arbitration and incentives. It is the planned topic of the second working group.',
     items: [
@@ -109,7 +109,7 @@ export const workstreams = [
     ],
   },
   {
-    id: 'buildings', name: 'Buildings and fungibility', channel: 'fleets-supply-buildings',
+    id: 'buildings', name: 'Buildings and fungibility', tag: 'power',
     why: 'What planning loses when halls stop being interchangeable, and what replaces it.',
     items: [
       it('putty-clay', 'Where is the putty-clay moment in a modern build: the pour, the power topology, the cooling headers or the fit-out? Does postponement move it?', BLD, 'Buildings at AI density', { thread: 18 }),
@@ -121,7 +121,7 @@ export const workstreams = [
     ],
   },
   {
-    id: 'reuse', name: 'Byproduct and reused supply', channel: 'fleets-supply-buildings',
+    id: 'reuse', name: 'Byproduct and reused supply', tag: 'supply',
     why: 'Supply that comes back out of the fleet, and the gaps neither the practice nor the literature has closed.',
     items: [
       it('byproduct', 'One retirement moves demand and supply for the same parts in opposite directions. How do you plan supply that is a byproduct of other decisions?', KC, 'Case 3, Kuantillion Cloud'),
@@ -134,7 +134,7 @@ export const workstreams = [
     ],
   },
   {
-    id: 'tests', name: 'Mechanism tests and evidence', channel: 'demand-forecasting', channelNote: 'until this workstream has a channel of its own',
+    id: 'tests', name: 'Mechanism tests and evidence', tag: 'forecasting',
     why: 'The discipline is mostly argued, not measured. This is where experience becomes evidence.',
     items: [
       it('method-untested', 'The commit-point method is untested. If it works, there should be fewer orders after their commit point and smaller bridge premiums.', `${LIM}#what-the-method-doesnt-claim`, 'Limits'),
@@ -144,13 +144,13 @@ export const workstreams = [
       it('joined', 'The thirteen mechanisms joined together are argued, not measured. So is the cover point rising with lead time.', `${LIM}#what-has-and-hasnt-been-measured`, 'Limits'),
       it('map-path', 'Nobody has checked the guide’s map and path against how planning teams divide the work. The “what to fix first” table is judgment too.', `${LIM}#what-this-guide-adds-and-how-sure-it-is`, 'Limits'),
       it('multi-org', 'Multi-organization data on forecast bias, unallocated share and fulfillment age, before and after adoption. The guide calls it the best contribution you could bring.', `${LIM}#what-would-help-most`, 'Limits'),
-      it('elastic-cloud', 'In elastic cloud, shortage comes back as regional stockouts and reservation planning. What does a single-cloud team need beyond the guide’s one paragraph?', `${LIM}#where-the-ideas-break`, 'Limits', { channel: 'cloud-reliability' }),
+      it('elastic-cloud', 'In elastic cloud, shortage comes back as regional stockouts and reservation planning. What does a single-cloud team need beyond the guide’s one paragraph?', `${LIM}#where-the-ideas-break`, 'Limits', { tag: 'cloud' }),
       it('case3-tests', 'Case 3 sets twelve strategy tests and eight experiments. None has been run.', '/cases/kuantillion-cloud-practice/#how-youll-know-the-strategy-is-working', 'Case 3, Kuantillion Cloud'),
       it('falsifiers', 'Case 2 lists 15 open questions with falsifiers, and Case 3 lists 16. Pick one and argue it.', '/cases/popcorn-pajamas-full/#14-open-questions-and-falsifiers', 'Case 2, full case'),
     ],
   },
   {
-    id: 'path', name: 'Competency map and onboarding', channel: 'first-questions', channelNote: 'until this workstream has a channel of its own',
+    id: 'path', name: 'Competency map and onboarding', tag: 'first-question',
     why: 'What a planner at each level should be able to do, and how newcomers find their way in.',
     items: [
       it('competency-map', 'No published competency map for capacity planners exists. What should a planner at each level be able to do? What confused you early on?', '/roadmap/#3-a-capacity-planner-competency-map', 'Roadmap, seed 3', { goodFirst: true }),

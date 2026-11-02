@@ -2,32 +2,30 @@
 // /agenda/: every open problem the body of knowledge names, in ten
 // workstreams. Each item gives the problem, its source, its thread, a status
 // and a good-first flag. Items and statuses live in site/src/data/agenda.mjs;
-// channels and working groups in room.mjs. Statuses are the room's own
+// tags and working groups in room.mjs. Statuses are this page's own
 // record and never claim anything about live GitHub state.
 import Base from '../layouts/Base.astro';
 import { workstreams, allItems, STATUS, statusLine } from '../data/agenda.mjs';
-import { channels, workingGroups, consented } from '../data/room.mjs';
+import { stream, tags, tagUrl, workingGroups } from '../data/room.mjs';
 import { community } from '../lib/community.mjs';
 const c = community();
 const thread = (n) => `${c.repo}/discussions/${n}`;
-const channel = (id) => {
-  const ch = channels.find((x) => x.id === id);
-  if (!ch) throw new Error(`agenda: unknown channel ${id}`);
-  const host = consented([ch.host])[0];
-  return { name: ch.name, host: host ? host.name : 'open' };
+const tag = (id) => {
+  if (!tags.some((t) => t.tag === id)) throw new Error(`agenda: unknown tag ${id}`);
+  return { name: `#${id}`, url: tagUrl(id) };
 };
 // Questions a chartered or planned working group covers, e.g. Q2 → WG1.
 const wgFor = (i) => workingGroups.find((w) => i.label && w.questions.includes(i.label));
 const items = allItems();
 const goodFirst = items.filter((i) => i.goodFirst);
 ---
-<Base title="Agenda" description={`The open problems the Practice Room works on: ${items.length} problems in ${workstreams.length} workstreams, each with its source, its thread and a status.`} nav="room">
+<Base title="Agenda" description={`The open problems the stream works on: ${items.length} problems in ${workstreams.length} workstreams, each with its source, its thread and a status.`} nav="room">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">The Practice Room</p>
       <h1>Open problems</h1>
-      <p class="lede">Pick one. Reply in its thread, or ask in the room.</p>
-      <p>These are the problems the body of knowledge names but cannot answer yet. They come from the open questions, the limits page, the cases and the working notes. They are grouped into {workstreams.length} workstreams, each with a channel in <a href="/community/">the Practice Room</a>.</p>
+      <p class="lede">Pick one. Reply in its thread, or ask in <a href={stream.url}>the stream</a>.</p>
+      <p>These are the problems the body of knowledge names but cannot answer yet. They come from the open questions, the limits page, the cases and the working notes. They are grouped into {workstreams.length} workstreams, each with a tag in <a href="/community/">the stream</a>.</p>
     </div>
 
     <section class="reading" aria-labelledby="status-h">
@@ -35,7 +33,7 @@ const goodFirst = items.filter((i) => i.goodFirst);
       <dl class="legend">
         {Object.entries(STATUS).map(([k, s]) => <div><dt><span class={`st st--${k}`}>{s.label}</span></dt><dd>{s.what}</dd></div>)}
       </dl>
-      <p class="note">A status is the room’s own record. It does not mirror GitHub, and this page does not read GitHub. A thread may already hold replies, so read it before you post. Every problem starts as open.</p>
+      <p class="note">A status is this page’s own record. It does not mirror GitHub, and this page does not read GitHub. A thread may already hold replies, so read it before you post. Every problem starts as open.</p>
     </section>
 
     <nav class="toc reading" aria-labelledby="ws-toc">
@@ -53,18 +51,18 @@ const goodFirst = items.filter((i) => i.goodFirst);
 
     <div data-outbound>
       {workstreams.map((w, n) => {
-        const ch = channel(w.channel);
+        const tg = tag(w.tag);
         return (
           <section class="ws reading" id={w.id} aria-labelledby={`${w.id}-h`}>
             <p class="ws__n">Workstream {n + 1}</p>
             <h2 id={`${w.id}-h`}>{w.name}</h2>
             <p>{w.why}</p>
-            <p class="ws__ch">Channel: <strong>{ch.name}</strong>{w.channelNote && `, ${w.channelNote}`}. Host: {ch.host}.</p>
+            <p class="ws__ch">Tag in the stream: <a href={tg.url}><strong>{tg.name}</strong></a>.</p>
             {w.note && <p class="muted">{w.note}</p>}
             <ul class="items">
               {w.items.map((i) => {
                 const wg = wgFor(i);
-                const own = i.channel && channel(i.channel);
+                const own = i.tag && tag(i.tag);
                 return (
                   <li id={i.id}>
                     <p class="items__problem">{i.label && <strong>{i.label}. </strong>}{i.problem}</p>
@@ -75,11 +73,11 @@ const goodFirst = items.filter((i) => i.goodFirst);
                     <p class="items__links">
                       Source: <a href={i.source}>{i.sourceLabel}</a>
                       {' · '}Thread: {i.thread ? <a href={thread(i.thread)}>Discussion #{i.thread}</a> : <span>none yet</span>}
-                      {own && <>{' · '}Channel: {own.name}</>}
+                      {own && <>{' · '}Tag: <a href={own.url}>{own.name}</a></>}
                     </p>
                     {wg && (wg.status === 'next'
-                      ? <p class="items__wg">Planned for <a href="/working-groups/">{wg.id.toUpperCase()}, {wg.name}</a>, in {wg.when}.</p>
-                      : <p class="items__wg">Chartered for <a href="/working-groups/">{wg.id.toUpperCase()}, {wg.name}</a>.{wg.status === 'chartered' && ' It has not started yet.'}</p>)}
+                      ? <p class="items__wg">Later, a topic for <a href="/working-groups/">{wg.id.toUpperCase()}, {wg.name}</a>.</p>
+                      : <p class="items__wg">A topic for <a href="/working-groups/">{wg.id.toUpperCase()}, {wg.name}</a>, once the stream asks for a group.</p>)}
                   </li>
                 );
               })}
@@ -93,11 +91,11 @@ const goodFirst = items.filter((i) => i.goodFirst);
       <h2 id="how-h">How to pick one up</h2>
       <ol>
         <li><strong>Read the source first.</strong> Each problem links the passage that names it.</li>
-        <li><strong>Reply in its thread.</strong> No thread yet? Open one in <a href={`${c.repo}/discussions`}>Discussions</a>, quoting the source. Or write to <a href="mailto:cpp@anacay.org">cpp@anacay.org</a>, and it is posted for you.</li>
+        <li><strong>Reply in its thread.</strong> No thread yet? Post it in <a href={stream.newPost}>the stream</a>, quoting the source, with its tag.</li>
         <li><strong>Share safely.</strong> Shapes, indexes and bands, never real figures or names. See <a href="/sharing-safely/">Sharing safely</a>.</li>
-        <li><strong>Say you are working on it.</strong> Tell a co-organizer, in the room or by email. The status changes to “Being worked”, with the date.</li>
+        <li><strong>Say you are working on it.</strong> Say so in the thread. The status changes to “Being worked”, with the date.</li>
       </ol>
-      <p>Status changes appear in the site’s <a href="/feed.xml">feed</a>. A problem that needs a team becomes a <a href="/working-groups/">working group</a>. New to all of this? <a href="/start/">Start here</a> picks three problems for each kind of reader.</p>
+      <p>Status changes appear in the site’s <a href="/feed.xml">feed</a>. Later, a problem that outgrows its thread can become a <a href="/working-groups/">working group</a>. New to all of this? <a href="/start/">Start here</a> picks three problems for each kind of reader.</p>
     </section>
   </div>
 </Base>

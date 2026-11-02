@@ -23,12 +23,12 @@ The full text, figures' alt text and captions included, is in one file: ${abs('/
 - [Contributors](${abs('/contributors/')}): everyone credited, by edition.
 
 ## The Practice Room
-- [The Practice Room](${abs('/community/')}): the community's room, its rhythm, channels and rules.
+- [The Practice Room](${abs('/community/')}): one stream on GitHub Discussions, its rules and tags.
 - [Start here](${abs('/start/')}): doors by kind of reader, each ending in open problems and a first contribution.
 ${doorPages().map((d) => `  - [Start here: ${d.name}](${abs(`/start/${d.id}/`)})`).join('\n')}
 - [The founding circle](${abs('/circle/')}): what members commit to, and who they are, with consent.
 - [Roles](${abs('/roles/')}): eight roles, each with duties, hours, a term and a way out.
-- [Working groups](${abs('/working-groups/')}): dated sprints that publish credited work.
+- [Working groups](${abs('/working-groups/')}): later, when a topic in the stream outgrows a thread.
 - [Agenda](${abs('/agenda/')}): the open problems, each with a thread and a status.
 - [Sharing safely](${abs('/sharing-safely/')}): how to share planning experience without confidential detail.
 
