@@ -1,6 +1,7 @@
 // llms.txt (https://llmstxt.org): what this site is, and where the text lives.
 import { load, pageMeta } from '../lib/paper.mjs';
 import { guide } from '../lib/guide.mjs';
+import { doorPages } from '../data/start-paths.mjs';
 export function GET() {
   const { manifest, chapters, pages, config } = load();
   const abs = (u) => new URL(u, config.site.url).href;
@@ -24,6 +25,7 @@ The full text, figures' alt text and captions included, is in one file: ${abs('/
 ## The Practice Room
 - [The Practice Room](${abs('/community/')}): the community's room, its rhythm, channels and rules.
 - [Start here](${abs('/start/')}): doors by kind of reader, each ending in open problems and a first contribution.
+${doorPages().map((d) => `  - [Start here: ${d.name}](${abs(`/start/${d.id}/`)})`).join('\n')}
 - [The founding circle](${abs('/circle/')}): what members commit to, and who they are, with consent.
 - [Roles](${abs('/roles/')}): eight roles, each with duties, hours, a term and a way out.
 - [Working groups](${abs('/working-groups/')}): dated sprints that publish credited work.

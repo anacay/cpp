@@ -4,7 +4,7 @@ These are the next seeds the community could build, in order. Each one stands on
 
 There are no dates. A seed is done when it's useful and it has been through an open comment round, not when a calendar says so.
 
-Want to lead one? Say so in the "Governance" discussion category, or write to [cpp@anacay.org](mailto:cpp@anacay.org).
+Want to lead one? Say so in the "Governance" discussion category, or write to [cpp@anacay.org](mailto:cpp@anacay.org). The [roles](https://cpp.anacay.org/roles/) page lists what each role asks.
 
 ## Open work on the seed paper
 
