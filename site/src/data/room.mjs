@@ -1,7 +1,6 @@
-// The Practice Room: the people, dates and statuses behind the community
-// pages, kept in one place. Changing the call date, naming a channel host or
-// adding a consented name is an edit to this file and a redeploy; no page
-// changes. Read it through the helpers at the bottom.
+// The Practice Room: the stream, its tags and the people behind the
+// community pages, kept in one place. Adding a tag or a consented name is an
+// edit to this file and a redeploy; no page changes. Read it through the helpers at the bottom.
 //
 // Consent rule: a person's name renders only when `consent: true`. Until then
 // pages show "Open" (roles) or nothing (circle). The build fails if the name
@@ -12,71 +11,65 @@ export const room = {
   name: 'The Practice Room',
   url: '/community/',
   contact: 'cpp@anacay.org',
-  // Promises the pages make. Change them here, and every page follows.
-  firstAnswerHours: 24, // once greeters are named, a first question gets a kind answer within 24 hours
   precheckHours: 72, // a private pre-check gets a written reply within 72 hours
 };
 
-// One open call a month, with a newcomer half-hour first.
-export const rhythm = {
-  call: 'One open call a month',
-  newcomer: 'A newcomer half-hour before each call, cameras optional',
-  length: 'One hour, with a hard stop',
-  agendaDaysAhead: 7,
-  notesHours: 48,
-  recordings: false,
-  slots: 'The call alternates between 17:00 UTC and 00:00 UTC, so the Pacific gets a slot',
-  digest: 'A monthly digest, by RSS, and by email once a list exists',
+// One place to interact: one stream, a single GitHub Discussions category.
+// A new community needs many interactions in one place, not a few in many.
+// More places (calls, groups, other categories) come later, when the stream
+// asks for them. The repository URL matches paper.config.json.
+const repo = 'https://github.com/anacay/cpp';
+export const stream = {
+  name: 'Practice', // the Discussions category
+  slug: 'practice',
+  url: `${repo}/discussions/categories/practice`,
+  newPost: `${repo}/discussions/new?category=practice`,
+  all: `${repo}/discussions`,
+  signup: 'https://github.com/signup',
 };
 
-// Where the room stands. While `state` is 'setting-up', /community/ and /join/
-// show a "Status: being set up" block, and the pages describe greeters, hosts,
-// the Slack, the digest and the call in the future tense. The founder sets
-// `state` to 'open' (and update `asOf`) on the day the Slack opens.
-export const status = {
-  state: 'setting-up', // 'setting-up' | 'open'
-  asOf: '2026-11-02',
-  pending: ['the Slack room', 'greeters and channel hosts', 'the email digest', 'the first call'],
-};
-export const settingUp = () => status.state !== 'open';
+// Starter tags. Write them as words in a post (#supply) or add them as
+// labels. More tags emerge from use; add one here once it is in use.
+export const tags = [
+  { tag: 'first-question', what: 'No question too basic.' },
+  { tag: 'forecasting', what: 'Demand, declarations and drift.' },
+  { tag: 'supply', what: 'Lead times, contracts and reused parts.' },
+  { tag: 'gpu', what: 'Accelerators and their allocation.' },
+  { tag: 'cost', what: 'Rates, coefficients and the unallocated line.' },
+  { tag: 'power', what: 'Power, buildings and halls.' },
+  { tag: 'cloud', what: 'Single-cloud teams, reservations and stockouts.' },
+];
+export const tagUrl = (t) => `${repo}/discussions?discussions_q=${encodeURIComponent(`label:${t}`)}`;
 
-// The next call. While `status` is 'pending', pages say the call is announced
-// once the founding circle confirms, and show no date. Set `status` to
-// 'confirmed' and fill `date` (YYYY-MM-DD) and the times to publish it.
-export const call = {
-  status: 'pending', // 'pending' | 'confirmed' | 'held'
-  date: null,
-  newcomerUtc: '16:30',
-  startUtc: '17:00',
-  endUtc: '18:00',
-  confirmAt: 8, // circle confirmations needed before a date is announced (not rendered)
-  notes: null, // URL of the notes thread once posted
-};
-
-// Topic channels in the room. A channel opens only with a named host; until
-// then the page says "Host: open". `host` is a person id from `people`.
-export const channels = [
-  { id: 'welcome', name: '#welcome', purpose: 'Rules, dates and the digest. Only co-organizers post here.', host: null, hostRole: 'Co-organizers' },
-  { id: 'introductions', name: '#introductions', purpose: 'Your sector, your stage and one problem you care about. No employer needed.', host: null, hostRole: 'Greeters' },
-  { id: 'first-questions', name: '#first-questions', purpose: 'No question too basic. A kind answer within 24 hours.', host: null, hostRole: 'Greeter rota' },
-  { id: 'fleets-supply-buildings', name: '#fleets-supply-buildings', purpose: 'Fleets, supply layers, lead times, power and halls.', host: null, topic: true },
-  { id: 'demand-forecasting', name: '#demand-forecasting', purpose: 'Declarations, drift and reference classes.', host: null, topic: true },
-  { id: 'cost-pricing', name: '#cost-pricing', purpose: 'Rates, coefficients and the unallocated line.', host: null, topic: true },
-  { id: 'ai-capacity', name: '#ai-capacity', purpose: 'Accelerators, agent demand and allocation.', host: null, topic: true },
-  { id: 'cloud-reliability', name: '#cloud-reliability', purpose: 'Single-cloud teams, stockouts and headroom.', host: null, topic: true },
+// Later, when the stream asks for it. Nothing here is a place to interact now.
+export const later = [
+  'a monthly open call',
+  'bring-your-problem reviews',
+  'working groups',
+  'a digest',
+  'more roles',
 ];
 
-// The eight roles: open volunteer roles that fill as people step forward.
-// `holders` are person ids; an empty list renders "Open".
+// A call, for later. While `status` is 'later', no page or feed item
+// mentions a date. Set 'confirmed' and fill `date` once the stream asks for one.
+export const call = {
+  status: 'later', // 'later' | 'confirmed' | 'held'
+  date: null,
+  startUtc: '17:00',
+  endUtc: '18:00',
+  notes: null,
+};
+
+// Roles: open volunteer roles that fill as people step forward.
+// `holders` are person ids; an empty list renders "Open". `later: true` marks
+// a role that waits until the stream asks for it.
 export const roles = [
   { id: 'co-organizer', name: 'Co-organizer', holders: [] },
   { id: 'editor', name: 'Editor', holders: ['founder'] },
   { id: 'conduct-reviewer', name: 'Independent conduct reviewer', holders: [] },
-  { id: 'wg-lead', name: 'Working-group lead', holders: [] },
-  { id: 'channel-host', name: 'Channel host', holders: [] },
-  { id: 'call-host', name: 'Call host', holders: [] },
-  { id: 'greeter', name: 'Greeter', holders: [] },
   { id: 'pre-check', name: 'Pre-check reviewer', holders: [] },
+  { id: 'wg-lead', name: 'Working-group lead', holders: [], later: true },
+  { id: 'call-host', name: 'Call host', holders: [], later: true },
 ];
 
 // Everyone the pages may name. Add a person with `consent: false` while you
@@ -99,12 +92,11 @@ export const workingGroups = [
   {
     id: 'wg1', name: 'Scoring declarations', status: 'chartered',
     questions: ['Q2', 'Q10', 'Q7'], lead: null, members: [], size: '3–5',
-    start: '2027-01-11', publishBy: '2027-03-05', datesNote: 'The lead confirms the dates.',
-    channel: '#wg-scoring',
+    datesNote: 'It forms when the topic outgrows a thread in the stream. The lead sets the dates.',
   },
   {
     id: 'wg2', name: 'Accelerator allocation and the unallocated line', status: 'next',
-    questions: ['Q3'], lead: null, members: [], when: 'Q2 2027',
+    questions: ['Q3'], lead: null, members: [], when: 'later',
   },
 ];
 
@@ -125,12 +117,6 @@ export const circleNames = () => {
   const c = consented(all);
   return c.length >= circle.showNamesAt ? { coOrganizers: consented(circle.coOrganizers), members: consented(circle.members) } : null;
 };
-// One line on the next call, for any page.
-export function callLine() {
-  if (call.status !== 'confirmed' || !call.date) return 'The first call will be announced once the founding circle confirms.';
-  const d = new Date(`${call.date}T12:00:00Z`).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-  return `Next open call: ${d}, ${call.startUtc}–${call.endUtc} UTC. Newcomer half-hour from ${call.newcomerUtc} UTC.`;
-}
 // Who reads cpp@anacay.org. The founder, as steward, reads it.
 export const inboxLine = () => `The founder reads ${room.contact}.`;
 // Who runs CPP, in one line. It matches GOVERNANCE.md; the full passage is
