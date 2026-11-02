@@ -7,6 +7,8 @@ cadence: all
 altitude: all
 levels: learning, practicing, leading
 seed: 4, 5.1, 5.2, 5.3, 5.4, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 8, 8.2, 9.1, 9.2, 9.3, 10, 10.1, 10.2, 10.3, 10.4, 11, 12, 13, 14, Appendix A
+author: Guillermo Martinez
+reviewers:
 ---
 
 This page is the strategy for [Case 3](case-kuantillion-cloud.md). It shows how a practitioner would tackle the case with the practice's body of knowledge. You'll see how to frame the problem, how to break it down and what order to work it in.

@@ -7,6 +7,7 @@ import HelpBuild from './HelpBuild.astro';
 import { bokFile, pageName } from '../lib/community.mjs';
 import { annotate } from '../lib/notes.mjs';
 import RfcHint from './RfcHint.astro';
+import ChangedBecause from './ChangedBecause.astro';
 import { load, renderBlocks, pageMeta } from '../lib/paper.mjs';
 interface Props { id: string; nav?: string; kicker?: string }
 const { id, nav = 'paper', kicker } = Astro.props;
@@ -24,6 +25,7 @@ const html = annotate(renderBlocks(page, ctx), page);
     {bokFile(page) && <RfcHint page={page} />}
     <article class="prose reading-wrap" set:html={html} />
     <slot />
+    <ChangedBecause />
     {bokFile(page) && <HelpBuild page={page} />}
     <Pager page={page} />
   </div>

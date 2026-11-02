@@ -7,6 +7,8 @@ cadence: all
 altitude: all
 levels: learning, practicing, leading
 seed: 4, 5.4, 6, 8, 9.2
+author: Guillermo Martinez
+reviewers:
 ---
 
 *Kuantillion Cloud is a fictional company. Any resemblance to real companies reflects problems the industry shares.*
