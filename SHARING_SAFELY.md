@@ -18,9 +18,9 @@ The [Code of Conduct](CODE_OF_CONDUCT.md) and [How it grows](HOW_IT_GROWS.md#wha
 Climb down the ladder until what you share is safe. Each rung shares less than the one above it. Most problems teach just as well from the second or third rung.
 
 1. **Shape only.** Words, no numbers. "Demand arrived a quarter early, and the supply layer couldn't move that fast."
-2. **Indexed.** Set the plan to 100 and show everything against it. "We planned 100. Declared demand reached 130. Delivered supply was 85."
-3. **Ratios.** Show relationships, not counts. "Headroom fell from about a fifth to about a twentieth."
-4. **Banded ranges.** Give a range wide enough to hide the true value. "A lead time of 26 to 40 weeks."
+2. **Indexed.** Set the plan to 100 and show everything against it. "We planned 100. Declared demand reached 130. Delivered supply was 85." (illustrative)
+3. **Ratios.** Show relationships, not counts. "Headroom fell from about a fifth to about a twentieth." (illustrative)
+4. **Banded ranges.** Give a range wide enough to hide the true value. "A lead time of 26 to 40 weeks." (illustrative)
 
 Never share, at any rung:
 
