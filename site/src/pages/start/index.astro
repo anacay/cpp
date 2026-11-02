@@ -3,9 +3,11 @@
 // crosswalk and reading times live in site/src/data/start-paths.mjs; the open
 // problems each door ends with come from site/src/data/agenda.mjs by id.
 import Base from '../../layouts/Base.astro';
-import { doors, yourWords } from '../../data/start-paths.mjs';
+import { doors, yourWords, DOOR_TAGS } from '../../data/start-paths.mjs';
 import { agendaItem } from '../../data/agenda.mjs';
 import { community } from '../../lib/community.mjs';
+import { streamPost } from '../../data/room.mjs';
+const firstPost = (d) => streamPost({ title: d.id === 'new' ? '' : `${d.name}: `, text: d.first.text, tag: DOOR_TAGS[d.id] });
 const c = community();
 const thread = (n) => `${c.repo}/discussions/${n}`;
 const probs = (d) => d.problems.map(agendaItem);
@@ -68,7 +70,7 @@ const probs = (d) => d.problems.map(agendaItem);
           ))}
         </ul>
         <h3>One first contribution</h3>
-        <p>{d.first.text} <a href={`/agenda/#${d.first.item}`}>Where it goes</a>.</p>
+        <p>{d.first.text} <a href={`/agenda/#${d.first.item}`}>Where it goes</a>. <a href={firstPost(d)}>Post it in the stream</a>.</p>
       </section>
     ))}
 

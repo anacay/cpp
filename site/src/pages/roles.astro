@@ -4,7 +4,7 @@
 // holder shows "Open". The duties and hours below are this page's own text.
 // Every role in room.mjs must have an entry in `detail`, or the build fails.
 import Base from '../layouts/Base.astro';
-import { room, stream, roles, holderLine, ownershipLine } from '../data/room.mjs';
+import { room, stream, roles, holderLine, ownershipLine, streamPost } from '../data/room.mjs';
 
 const contact = room.contact;
 
@@ -120,7 +120,7 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
               <div><dt>Step down</dt><dd>One message, with emeritus credit</dd></div>
             </dl>
             <p class="acts">
-              <a class="more" href={stream.newPost}>Raise your hand in the stream</a>
+              <a class="more" href={streamPost({ title: `Role: ${r.name}`, text: `I’d like to help as ${r.name.toLowerCase()}.` })}>Raise your hand in the stream</a>
               {d.link && <> · <a class="more" href={d.link[0]}>{d.link[1]}</a></>}
             </p>
           </li>
