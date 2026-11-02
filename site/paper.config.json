@@ -39,7 +39,7 @@
     "$indexable": "false keeps search engines out (robots.txt, meta robots, X-Robots-Tag). Set true when you want the site found by search. Sharing the link works either way."
   },
   "community": {
-    "$comment": "Where the community lives. 'open' is false during the private preview: the links are shown but marked as opening at launch. Set it to true when the repository is public. 'linkedinPage' is the practice's LinkedIn Page (live now); 'linkedin' is the discussion group, once it opens.",
+    "$comment": "Where the community lives. 'open' is false during the private preview: the links are shown but marked as opening at launch. Set it to true when the repository is public. 'linkedinPage' is the practice's LinkedIn Page, which carries news only. 'linkedin' (a discussion group) stays empty: the community's room is the Practice Room (/community/), not LinkedIn.",
     "repo": "https://github.com/anacay/cpp",
     "branch": "main",
     "bokDir": "body-of-knowledge/seed",
