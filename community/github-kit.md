@@ -122,7 +122,7 @@ No pinned post is needed: the form carries its own instructions.
 >
 > | Proposal | Category | Opened | Closes | Thread |
 > |---|---|---|---|---|
-> | Code of Conduct: add "No recruiting", and cover the Practice Room | Proposals | [date] | [date, at least 30 days on] | [#N] |
+> | Code of Conduct: add "No recruiting", and cover the Practice Room | Proposals | [date] | [date + 60 days, or 30 once two editors are confirmed] | [#N] |
 > | Editor nominations: [Name A] and [Name B] | Governance | [date] | [date + 14 days] | [#N] |
 >
 > **Open questions, always open.** The author's 15 questions each have a thread, from #2 to #16. The [open problems](https://cpp.anacay.org/agenda/) page lists them with their status.
@@ -248,6 +248,6 @@ Then:
 
 ## After setup
 
-- Link the two pinned posts from the room's #welcome channel.
+- Link the two pinned posts from the room's #welcome channel description or bookmarks, not only a pin (the free plan hides history after 90 days).
 - When `/agenda/` statuses change, update §3 the same day.
 - Add `good-first` to any new thread that fits. The co-organizers own this from day one.
