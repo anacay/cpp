@@ -6,11 +6,13 @@ Everything the founder sets up by hand in GitHub for R8. Paste each block as is.
 
 **Order.**
 1. **First, before R8 goes live:** create the "Review intake" category and the `review` label (§0). The intake link on /community/#reviews fails until both exist.
-2. Create the two newcomer categories (§1, §2).
-3. Post and pin the three threads (§1, §2, §3).
-4. Create the six stage and `good-first` labels (§4).
-5. Check the 15 thread numbers, then label them (§5).
-6. Tell the co-organizers the kit is live, and hand them the weekly update of §3.
+2. **Also before R8 goes live:** confirm the live state of threads #2 to #16 and #18 (§7). /agenda/ shows every item as "open" until you do.
+3. Create the two newcomer categories (§1, §2).
+4. Post and pin the three threads (§1, §2, §3).
+5. Create the six stage and `good-first` labels (§4).
+6. Label the 15 open-question threads (§5).
+7. Open the three Terms threads (§6).
+8. Tell the co-organizers the kit is live, and hand them the weekly update of §3.
 
 The GitHub state behind this kit is unverified from the cloud session. Check each thread number against its title before you label it.
 
@@ -192,6 +194,53 @@ The labels below are a proposal from the plan. Change any that read wrong.
 **Why these four are `good-first`.** Q4 and Q5 move forward with one public source. Q11 and Q13 move forward with one account from your own work, told at the shape level.
 
 **A note on #16.** It asks about preconditions only. No real data is pooled before written rules and a legal-safe protocol exist.
+
+---
+
+## 6. Three Terms threads to open
+
+These words are used in the guide and the seed paper, but the glossary doesn't define them yet. A new definition needs the open period in HOW_IT_GROWS.md. So R8 opens a thread for each, rather than adding them. The glossary's "Your words, our words" box only points to them.
+
+Post each in **Terms**, using the Terms form. Each starting sentence is a draft for comment, not a definition.
+
+### Fungibility
+
+- **Term:** Fungibility
+- **Proposed definition:** How readily one unit of capacity can stand in for another: another shape, another place or another use.
+- **How people use it in practice:** The 2026 SRE chapter lists it as a supply dimension, beside lead time and elasticity. The seed paper says a shell stays fungible only if its specification is written against the high scenario (Section 6.2). The Buildings note asks what planning loses when buildings stop being interchangeable (#18). Is fungibility a property of the hardware, the contract or the plan?
+- **Public source:** the 2026 SRE chapter, reference [7] at https://cpp.anacay.org/references/
+
+### Stranded capacity
+
+- **Term:** Stranded capacity
+- **Proposed definition:** Capacity that is installed and paid for but can't be used, because another resource it needs ran out first.
+- **How people use it in practice:** In the guide's running example, four standard machines run for their memory, with their CPU stranded (illustrative). The 2026 SRE chapter covers reclaiming it. Some teams use the word for idle capacity in general. Should it mean only capacity blocked by another dimension?
+- **Public source:** the 2026 SRE chapter, reference [7] at https://cpp.anacay.org/references/
+
+### Putty-clay
+
+- **Term:** Putty-clay
+- **Proposed definition:** Capital that is flexible before it is built and fixed after.
+- **How people use it in practice:** The Buildings note uses it for data centre shells: before the pour, a building can be anything; after, it is clay. The pour is a commit point. Is the economists' term useful to planners, or does "commit point" already say it? Discussion of the note is in #18.
+- **Public source:** Johansen (1959), "Substitution versus Fixed Production Coefficients in the Theory of Economic Growth", Econometrica, as cited in the note: https://cpp.anacay.org/notes/buildings-at-ai-density/
+
+After posting, add the thread links to the Proposals open now post (§3), under "Open for comment".
+
+---
+
+## 7. Confirm the live state of the threads
+
+The site links threads #2 to #16 (the 15 open questions) and #18 (the Buildings note). Nobody has checked them from outside GitHub since the cloud session can't. Before the R8 deploy, open each one and note four things:
+
+| Thread | Title matches the site? | Category | Open or closed | Answered, or a proposal under way? |
+|---|---|---|---|---|
+| #2 to #16 | One row each | | | |
+| #18 | | | | |
+
+Then:
+- Send the table to whoever keeps `site/src/data/agenda.mjs`. Any status other than "open" is a data-only change there.
+- If a number points to the wrong thread, don't relabel by guesswork. Fix `body-of-knowledge/rfc/threads.json` first, in its own pull request.
+- Label threads (§5) only after this check.
 
 ---
 
