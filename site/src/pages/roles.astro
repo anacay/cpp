@@ -1,25 +1,25 @@
 ---
-// /roles/: the eight roles. Who holds each one comes from
+// /roles/: the roles. Who holds each one comes from
 // site/src/data/room.mjs, through holderLine(): a role with no consented
 // holder shows "Open". The duties and hours below are this page's own text.
 // Every role in room.mjs must have an entry in `detail`, or the build fails.
 import Base from '../layouts/Base.astro';
-import { room, rhythm, roles, holderLine, inboxLine, ownershipLine } from '../data/room.mjs';
+import { room, stream, roles, holderLine, ownershipLine } from '../data/room.mjs';
 
 const contact = room.contact;
-const mail = (subject) => `mailto:${contact}?subject=${encodeURIComponent(subject)}`;
 
 // Hours are estimates for a typical month [engineering judgment]; the people
 // who hold each role will correct them.
 const detail = {
   'co-organizer': {
     hours: '2 to 4 hours a month',
-    summary: 'Helps the founder build and run the Practice Room.',
+    summary: 'Helps the stream along, with the founder.',
     duties: [
-      'Welcome new members and answer join requests with the founder.',
-      'Help run the room’s Slack and its channels.',
-      'Help host one call a month, and apply the room rules.',
+      'Welcome new posters, and answer first questions kindly.',
+      'Tag posts, so the stream stays easy to search.',
+      'Point the best threads toward a CPP page, with the authors’ consent.',
     ],
+    link: ['/community/', 'The stream'],
   },
   editor: {
     hours: '4 to 8 hours a month',
@@ -45,7 +45,7 @@ const detail = {
   },
   'wg-lead': {
     hours: '4 to 6 hours a month, for a 6 to 8 week sprint',
-    summary: 'Leads one working group from charter to publication.',
+    summary: 'Would lead a working group, once a topic outgrows a thread.',
     duties: [
       'Confirm the charter, the dates and the members.',
       'Keep the group on synthetic data only.',
@@ -54,37 +54,17 @@ const detail = {
     ],
     link: ['/working-groups/', 'Working groups'],
   },
-  'channel-host': {
-    hours: 'About 2 hours a month',
-    summary: 'Keeps one topic channel useful. A channel opens only once it has a host.',
-    duties: [
-      'Start one thread a month on an open problem.',
-      'Answer questions, or route them to someone who can.',
-      'Keep the channel on topic and inside the room rules.',
-    ],
-    link: ['/community/', 'The channels'],
-  },
+
   'call-host': {
     hours: 'About 3 hours a month',
-    summary: 'Runs the monthly open call.',
+    summary: 'Would run an open call, once the stream asks for one.',
     duties: [
-      `Post the agenda ${rhythm.agendaDaysAhead} days ahead.`,
-      'Run the call to its hard stop, under the Chatham House rule.',
-      `Make sure notes go up within ${rhythm.notesHours} hours, without names. Nothing is recorded.`,
+      'Post the agenda a week ahead, in the stream.',
+      'Run the call to a hard stop, under the Chatham House rule.',
+      'Post notes without names. Nothing is recorded.',
     ],
-    extra: 'A scribe writes the notes. Each set of notes carries the line “Notes by”, with the scribe’s name or handle.',
-    link: ['/community/', 'How a call runs'],
   },
-  greeter: {
-    hours: '1 to 2 hours a month, on a rota',
-    summary: 'Makes sure nobody’s first question goes unanswered.',
-    duties: [
-      'Welcome new introductions.',
-      `Give each first question a kind answer within ${room.firstAnswerHours} hours.`,
-      'Point newcomers to their door on the Start here page.',
-    ],
-    link: ['/start/', 'Start here'],
-  },
+
   'pre-check': {
     hours: '1 to 3 hours a month',
     summary: 'Reads drafts privately before anyone shares them.',
@@ -93,7 +73,7 @@ const detail = {
       'Say what is safe, and what to band or drop.',
       'Never forward or post a draft.',
     ],
-    extra: 'A reader who knows supply confidentiality is especially wanted. In bring-your-problem reviews, that reader asks the first questions.',
+    extra: 'A reader who knows supply confidentiality is especially wanted.',
     link: ['/sharing-safely/#a-private-pre-check', 'The private pre-check'],
   },
 };
@@ -102,7 +82,7 @@ const openCount = roles.filter((r) => holderLine(r.holders) === 'Open').length;
 const missing = roles.filter((r) => !detail[r.id]).map((r) => r.id);
 if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${missing.join(', ')}`);
 ---
-<Base title="Roles" description="The eight roles that run the Practice Room and the practice: duties, hours, terms, how to raise your hand and how to step down." nav="room">
+<Base title="Roles" description="The volunteer roles behind the Practice Room and the practice: duties, hours, terms, how to raise your hand and how to step down." nav="room">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">The Practice Room</p>
@@ -114,22 +94,22 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
       <h2 id="every-h">What every role has</h2>
       <ul>
         <li><strong>A term of one edition.</strong> Renew it if you want to.</li>
-        <li><strong>A private hand-raise.</strong> Write to <a href={`mailto:${contact}`}>{contact}</a>. It stays private. {inboxLine()}</li>
-        <li><strong>A one-message step-down.</strong> Write one line to the same address. No reason needed.</li>
+        <li><strong>A hand-raise.</strong> Say so in <a href={stream.url}>the stream</a>.</li>
+        <li><strong>A one-message step-down.</strong> One line in the stream, or to <a href={`mailto:${contact}`}>{contact}</a>. No reason needed.</li>
         <li><strong>Emeritus credit.</strong> When you step down, you stay credited on <a href="/contributors/">Contributors</a>.</li>
       </ul>
       <p>Each card shows who holds the role, or “Open”. A name appears only after that person agrees. Hours are estimates; the people who hold each role will correct them.</p>
-      <p><strong>{openCount} of {roles.length} roles are open.</strong> They fill as people step forward. Co-organizers and greeters would help most first.</p>
-      <p class="note">{ownershipLine()} See <a href="/community/#who">Who runs this</a>. The co-organizer role, and the rules here that go beyond <a href="/governance/">Governance</a>, are proposed. They apply in the room once it opens, and reach GOVERNANCE.md only through a Governance proposal.</p>
+      <p><strong>{openCount} of {roles.length} roles are open.</strong> They fill as people step forward. Roles marked “later” wait until the stream asks for them.</p>
+      <p class="note">{ownershipLine()} See <a href="/community/#who">Who runs this</a>. The co-organizer role, and the rules here that go beyond <a href="/governance/">Governance</a>, are proposed. They reach GOVERNANCE.md only through a Governance proposal.</p>
     </section>
 
-    <ul class="cards roles" aria-label="The eight roles">
+    <ul class="cards roles" aria-label="The roles">
       {roles.map((r) => {
         const d = detail[r.id];
         const holder = holderLine(r.holders);
         return (
           <li id={r.id}>
-            <h2>{r.name}</h2>
+            <h2>{r.name}{r.later && <span class="later"> · later</span>}</h2>
             <p class="holder"><span class="k">Held by</span> {holder}</p>
             <p>{d.summary}</p>
             <ul class="duties">{d.duties.map((t) => <li>{t}</li>)}</ul>
@@ -140,7 +120,7 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
               <div><dt>Step down</dt><dd>One message, with emeritus credit</dd></div>
             </dl>
             <p class="acts">
-              <a class="more" href={mail(`Role: ${r.name}`)}>Raise your hand privately</a>
+              <a class="more" href={stream.newPost}>Raise your hand in the stream</a>
               {d.link && <> · <a class="more" href={d.link[0]}>{d.link[1]}</a></>}
             </p>
           </li>
@@ -151,7 +131,7 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
     <section class="prose reading" aria-labelledby="employer-h">
       <h2 id="employer-h">If you change employer</h2>
       <p class="note">Update your sector within 14 days. Step back from anything that mainly touches your new employer.</p>
-      <p>A one-line note to <a href={`mailto:${contact}`}>{contact}</a> is enough. You keep your role. The <a href="/governance/#conflicts-of-interest">conflict-of-interest rules</a> apply to everyone.</p>
+      <p>A one-line note in the stream, or to <a href={`mailto:${contact}`}>{contact}</a>, is enough. You keep your role. The <a href="/governance/#conflicts-of-interest">conflict-of-interest rules</a> apply to everyone.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="next-h">
@@ -172,4 +152,5 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
   .roles .terms div { display: flex; flex-wrap: wrap; gap: 0 0.5rem; margin-bottom: 0.2rem; }
   .roles dd { margin: 0; color: var(--ink); }
   .roles .acts { margin: 0; }
+  .roles .later { color: var(--ink-muted); font-size: 0.9rem; font-weight: 400; }
 </style>
