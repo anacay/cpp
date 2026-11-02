@@ -4,7 +4,7 @@
 // people have consented. Never write a name into this file directly; ask a
 // co-organizer to add the person to room.mjs with `consent: true`.
 import Base from '../layouts/Base.astro';
-import { room, stream, circle, circleNames, person } from '../data/room.mjs';
+import { room, stream, circle, circleNames, person, firstQuestion } from '../data/room.mjs';
 const names = circleNames();
 const founder = person('founder');
 ---
@@ -67,7 +67,7 @@ const founder = person('founder');
         <li>A one-line yes is enough. The person then says what may be shown: a name or a handle, a sector, topics.</li>
         <li>Nothing appears here until that written yes.</li>
       </ol>
-      <p>Not invited yet? You don’t need to be. <a href={stream.newPost}>Post one question in the stream</a>.</p>
+      <p>Not invited yet? You don’t need to be. <a href={firstQuestion()}>Post one question in the stream</a>.</p>
       <p>Want to do more than post? Every role is listed on <a href="/roles/">Roles</a>. How editors are added is set out in <a href="/governance/">Governance</a>.</p>
     </section>
   </div>

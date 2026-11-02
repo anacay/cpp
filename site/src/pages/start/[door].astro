@@ -4,10 +4,11 @@
 // site/src/data/start-paths.mjs and agenda.mjs; the sections that only one
 // door needs (the SRE checklist, the FinOps pointer) are below, by door id.
 import Base from '../../layouts/Base.astro';
-import { doors, doorPages, sreChecklist } from '../../data/start-paths.mjs';
+import { doors, doorPages, sreChecklist, DOOR_TAGS } from '../../data/start-paths.mjs';
 import { agendaItem } from '../../data/agenda.mjs';
-import { stream } from '../../data/room.mjs';
+import { streamPost, firstQuestion } from '../../data/room.mjs';
 import { community } from '../../lib/community.mjs';
+const firstPost = (d) => streamPost({ title: d.id === 'new' ? '' : `${d.name}: `, text: d.first.text, tag: DOOR_TAGS[d.id] });
 export function getStaticPaths() {
   return doorPages().map((d) => ({ params: { door: d.id }, props: { d } }));
 }
@@ -36,7 +37,7 @@ const desc = {
       <section class="prose reading" aria-labelledby="new-h">
         <h2 id="new-h">No question is too basic</h2>
         <p>Everyone here was new once. The guide puts it plainly: a planner two years in who remembers what was confusing is as valuable as one with twenty. See <a href="/guide/the-work-and-the-path/#the-path">The path</a>.</p>
-        <p>Ask it in <a href="/community/">the Practice Room</a>, the one stream on GitHub Discussions. Tag it #first-question. <a href={stream.newPost}>Post your first question</a>. New to GitHub? See <a href="/join/">Join in</a>.</p>
+        <p>Ask it in <a href="/community/">the Practice Room</a>, the one stream on GitHub Discussions. Tag it #first-question. <a href={firstQuestion()}>Post your first question</a>. New to GitHub? See <a href="/join/">Join in</a>.</p>
       </section>
     )}
 
@@ -101,7 +102,7 @@ const desc = {
 
     <section class="prose reading" aria-labelledby="first-h">
       <h2 id="first-h">One first contribution</h2>
-      <p>{d.first.text} <a href={`/agenda/#${d.first.item}`}>Where it goes</a>.</p>
+      <p>{d.first.text} <a href={`/agenda/#${d.first.item}`}>Where it goes</a>. <a href={firstPost(d)}>Post it in the stream</a>.</p>
       <p>New to GitHub? A free account takes two minutes; see <a href="/join/">Join in</a>. Unsure a post is safe? Ask for a <a href="/sharing-safely/#a-private-pre-check">private pre-check</a> first.</p>
     </section>
 

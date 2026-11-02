@@ -143,6 +143,8 @@ export const doors = [
 ];
 
 export const doorPages = () => doors.filter((d) => d.page);
+// The stream tag each door's first post carries.
+export const DOOR_TAGS = { new: 'first-question', practicing: 'forecasting', senior: 'forecasting', head: null, 'program-managers': 'gpu', sre: 'cloud', finance: 'cost', supply: 'supply' };
 export const minutes = (d) => d.steps.reduce((n, s) => n + s[2], 0);
 // Each door's headline time is the sum of its steps, so the two never
 // disagree. (The summary step is 5 minutes, as /summary/ counts its text.)

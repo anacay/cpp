@@ -6,7 +6,7 @@
 // record and never claim anything about live GitHub state.
 import Base from '../layouts/Base.astro';
 import { workstreams, allItems, STATUS, statusLine } from '../data/agenda.mjs';
-import { stream, tags, tagUrl, workingGroups } from '../data/room.mjs';
+import { stream, tags, tagUrl, workingGroups, streamPost } from '../data/room.mjs';
 import { community } from '../lib/community.mjs';
 const c = community();
 const thread = (n) => `${c.repo}/discussions/${n}`;
@@ -17,6 +17,10 @@ const tag = (id) => {
 // Questions a chartered or planned working group covers, e.g. Q2 → WG1.
 const wgFor = (i) => workingGroups.find((w) => i.label && w.questions.includes(i.label));
 const items = allItems();
+// One stream door per item without a thread: a new Practice post, prefilled
+// with the problem, its source link and the workstream's tag.
+const first = (s) => s.split(/(?<=[.?])\s/)[0];
+const door = (i, w) => streamPost({ title: `${i.label ? `${i.label}: ` : ''}${first(i.problem)}`.slice(0, 120), text: i.problem, tag: i.tag ?? w.tag, from: { name: i.sourceLabel, url: i.source } });
 const goodFirst = items.filter((i) => i.goodFirst);
 ---
 <Base title="Agenda" description={`The open problems the stream works on: ${items.length} problems in ${workstreams.length} workstreams, each with its source, its thread and a status.`} nav="room">
@@ -72,7 +76,7 @@ const goodFirst = items.filter((i) => i.goodFirst);
                     </p>
                     <p class="items__links">
                       Source: <a href={i.source}>{i.sourceLabel}</a>
-                      {' · '}Thread: {i.thread ? <a href={thread(i.thread)}>Discussion #{i.thread}</a> : <span>none yet</span>}
+                      {' · '}{i.thread ? <>Thread: <a href={thread(i.thread)}>Discussion #{i.thread}</a></> : <a href={door(i, w)}>Discuss in the stream</a>}
                       {own && <>{' · '}Tag: <a href={own.url}>{own.name}</a></>}
                     </p>
                     {wg && (wg.status === 'next'
@@ -91,7 +95,7 @@ const goodFirst = items.filter((i) => i.goodFirst);
       <h2 id="how-h">How to pick one up</h2>
       <ol>
         <li><strong>Read the source first.</strong> Each problem links the passage that names it.</li>
-        <li><strong>Reply in its thread.</strong> No thread yet? Post it in <a href={stream.newPost}>the stream</a>, quoting the source, with its tag.</li>
+        <li><strong>Reply in its thread.</strong> No thread yet? Use its “Discuss in the stream” link: the post opens with the problem, its source and its tag.</li>
         <li><strong>Share safely.</strong> Shapes, indexes and bands, never real figures or names. See <a href="/sharing-safely/">Sharing safely</a>.</li>
         <li><strong>Say you are working on it.</strong> Say so in the thread. The status changes to “Being worked”, with the date.</li>
       </ol>

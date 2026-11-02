@@ -5,7 +5,7 @@
 // no-hiring rule sits inside [data-rule] (check 9 skips it there only).
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
-import { room, stream, tags, tagUrl, later, circle, consented, person } from '../data/room.mjs';
+import { room, stream, tags, tagUrl, later, circle, consented, person, firstQuestion } from '../data/room.mjs';
 const mail = `mailto:${room.contact}`;
 const coOrganizers = consented(circle.coOrganizers);
 const founder = person('founder');
@@ -17,7 +17,7 @@ const list = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs[xs
       <p class="eyebrow">The Practice Room</p>
       <h1>{room.name}</h1>
       <p class="lede">One place for capacity planners to talk shop: a single stream on GitHub Discussions. Ask a question, share an observation or a link, or ask “how do you handle X?”</p>
-      <p class="hero__actions"><a class="btn" href={stream.newPost}>Post your first question</a> <a class="btn btn--quiet" href={stream.url}>Read the stream</a></p>
+      <p class="hero__actions"><a class="btn" href={firstQuestion()}>Post your first question</a> <a class="btn btn--quiet" href={stream.url}>Read the stream</a></p>
       <p class="muted">New to GitHub? A free account takes two minutes. See <a href="/join/">Join in</a>.</p>
     </div>
 

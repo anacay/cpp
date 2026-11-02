@@ -5,7 +5,7 @@
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
 import { community } from '../lib/community.mjs';
-import { room, stream } from '../data/room.mjs';
+import { room, stream, firstQuestion } from '../data/room.mjs';
 const c = community();
 const contact = room.contact;
 const mail = (subject) => `mailto:${contact}?subject=${encodeURIComponent(subject)}`;
@@ -33,7 +33,7 @@ const kinds = [
       <ol>
         <li><a href={stream.signup}>Create a free GitHub account</a>. Your username can be a handle. Your name appears only when you want credit.</li>
         <li>Open <a href={stream.url}>the stream</a> and read a few posts.</li>
-        <li><a href={stream.newPost}>Post your first question</a>. Add the tag #first-question if you like.</li>
+        <li><a href={firstQuestion()}>Post your first question</a>. It opens with the #first-question tag already in place.</li>
       </ol>
       <RoomRule />
       <p><a class="more" href="/community/">How the stream works</a> · <a class="more" href="/community/#room-rules">The rules</a></p>
@@ -50,7 +50,7 @@ const kinds = [
       <p><strong>What this is.</strong> The seed paper is a request for comments: a draft shared on purpose, so the people who do the work can improve it. The internet’s own standards have been written this way since 1969.</p>
       <p><strong>How to comment</strong></p>
       <ol>
-        <li>Select any sentence in the paper or the guide. A <strong>Discuss this passage</strong> button appears at the bottom of the screen. Or use <strong>Discuss</strong> at the end of any page.</li>
+        <li>Select any sentence in the paper or the guide. A <strong>Discuss this passage</strong> button appears at the bottom of the screen. Or use <strong>Talk about this page</strong> at the end of any page. Both open a post in the stream.</li>
         <li>GitHub opens. If you aren’t signed in, sign in or create a free account. It takes a minute, and you don’t need to know anything about code.</li>
         <li>The passage you picked is quoted for you. Add your comment and press <strong>Start discussion</strong>.</li>
       </ol>
