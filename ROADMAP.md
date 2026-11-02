@@ -4,7 +4,7 @@ These are the next seeds the community could build, in order. Each one stands on
 
 There are no dates. A seed is done when it's useful and it has been through an open comment round, not when a calendar says so.
 
-Want to lead one? Say so in the "Governance" discussion category.
+Want to lead one? Say so in the "Governance" discussion category, or write to [cpp@anacay.org](mailto:cpp@anacay.org).
 
 ## Open work on the seed paper
 
@@ -14,7 +14,7 @@ The seed paper is a working draft. This is what we know still needs doing, so no
 - **Ideas still under discussion.** A review on 10 October, done with the help of an AI model, raised ideas the paper doesn't settle yet. Three are open threads: AI demand declared as a policy, whether a market price changes the coefficient, and a shared dataset of declarations.
 - **The method is untested.** Section 13 says what hasn't been measured. The tests in Section 9.2 have not been run anywhere we know of.
 
-Say in the "Governance" category if you'd like to take one on.
+Say in the "Governance" category if you'd like to take one on, or write to [cpp@anacay.org](mailto:cpp@anacay.org).
 
 ---
 

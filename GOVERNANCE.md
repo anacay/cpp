@@ -43,7 +43,7 @@ Seniority doesn't matter. A planner two years in, who remembers what was confusi
 
 ### How editors are added
 
-1. Anyone can nominate someone, including themselves, in the "Governance" discussion category. A good nomination points to a few useful contributions.
+1. Anyone can nominate someone, including themselves, in the "Governance" discussion category, or write to [cpp@anacay.org](mailto:cpp@anacay.org). A good nomination points to a few useful contributions.
 2. The nomination stays open for 14 days. Anyone can comment.
 3. The current editors decide by consensus. While there's only one editor, the founder decides and writes down why.
 4. The steward confirms. It can only refuse for a Code of Conduct reason, and it has to say so.
