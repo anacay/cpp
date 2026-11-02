@@ -3,7 +3,7 @@ import '../styles/site.css';
 import Mark from '../components/Mark.astro';
 import Star from '../components/Star.astro';
 import { load } from '../lib/paper.mjs';
-import { stream, firstQuestion, tagForPath } from '../data/room.mjs';
+import { firstQuestion, tagForPath } from '../data/room.mjs';
 
 interface Props { title: string; description: string; nav?: string; bare?: boolean; commentable?: { name: string }; ld?: object; article?: { published?: string; modified?: string } }
 const { title, description, nav = '', commentable, ld, article } = Astro.props;
@@ -24,17 +24,15 @@ const elsewhere = [
   { href: ew.substack, label: 'Writing on Sentient Minds' },
   { href: ew.anacayOrg, label: 'anacay.org' },
 ].filter((x) => x.href);
+// The top nav: as few items as a newcomer needs. "Start here" and the
+// stream come first; everything else is reading, and the footer carries the rest.
 const links = [
   { key: 'start', href: '/start/', label: 'Start here' },
+  { key: 'room', href: '/community/', label: 'The Practice Room', cls: 'nav__room' },
   { key: 'bok', href: '/body-of-knowledge/', label: 'Body of knowledge' },
   { key: 'paper', href: '/paper/', label: 'The paper' },
   { key: 'cases', href: '/cases/', label: 'Case studies' },
-  { key: 'notes', href: '/notes/', label: 'Emerging topics' },
   { key: 'glossary', href: '/glossary/', label: 'Glossary' },
-  { key: 'practice', href: '/charter/', label: 'Charter' },
-  { key: 'related', href: '/related-work/', label: 'Related work' },
-  { key: 'room', href: '/community/', label: 'The Practice Room' },
-  { key: 'join', href: '/join/', label: 'Join in' },
   { key: 'about', href: '/about/', label: 'About' },
 ];
 ---
@@ -77,7 +75,7 @@ const links = [
     <nav class="nav" aria-label="Main">
       <ul>
         {links.map((l) => (
-          <li><a href={l.href} aria-current={path === l.href ? 'page' : undefined} class={nav === l.key && path !== l.href ? 'is-section' : undefined}>{l.label}</a></li>
+          <li><a href={l.href} aria-current={path === l.href ? 'page' : undefined} class={[l.cls, nav === l.key && path !== l.href ? 'is-section' : null].filter(Boolean).join(' ') || undefined}>{l.label}</a></li>
         ))}
       </ul>
     </nav>
@@ -95,28 +93,27 @@ const links = [
         <p>{community.edition}, {community.editionNote}: <em>{manifest.title}</em>, by Guillermo Martinez. Text and figures <a href="/license/">CC BY-SA 4.0</a>; site code MIT.</p>
       </div>
     </div>
+    <p class="colophon__post"><a class="btn btn--quiet" href={firstQuestion()}>Post in the stream</a> <span class="muted">The one place to ask, answer and share. <a href="/join/">New to GitHub?</a></span></p>
     <nav aria-label="Site">
       <ul>
-        <li><a href="/about/#behind">Who’s behind this</a></li>
+        <li><a href="/community/">The Practice Room</a></li>
+        <li><a href="/join/">Join in</a></li>
+        <li><a href="/agenda/">Open problems</a></li>
+        <li><a href="/sharing-safely/">Sharing safely</a></li>
+        <li><a href="/notes/">Emerging topics</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/related-work/">Related work</a></li>
+        <li><a href="/contributors/">Contributors</a></li>
         <li><a href="/charter/">Charter</a></li>
         <li><a href="/how-it-grows/">How it grows</a></li>
         <li><a href="/governance/">Governance</a></li>
         <li><a href="/roadmap/">Roadmap</a></li>
         <li><a href="/code-of-conduct/">Code of conduct</a></li>
-        <li><a href="/community/">The Practice Room</a></li>
-        <li><a href="/sharing-safely/">Sharing safely</a></li>
-        <li><a href="/contributors/">Contributors</a></li>
-        <li><a href="/agenda/">Agenda</a></li>
-        <li><a href="/tools/">Tools</a></li>
-        <li><a href="/paper/">Seed paper</a></li>
-        <li><a href="/cases/">Case studies</a></li>
-        <li><a href="/notes/">Emerging topics</a></li>
         <li><a href="/changes/">What changed</a></li>
         <li><a href="/downloads/">Downloads</a></li>
         <li><a href="/license/">Licence</a></li>
         <li><a href="/privacy/">Privacy</a></li>
         <li><a href="/support/">Support</a></li>
-        <li><a href="/about/">About</a></li>
       </ul>
     </nav>
     {elsewhere.length > 0 && <p class="elsewhere">Elsewhere: {elsewhere.map((x, i) => <>{i > 0 && ' · '}<a href={x.href}>{x.label}</a></>)}</p>}
