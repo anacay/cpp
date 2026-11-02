@@ -4,7 +4,7 @@
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
 import NextCall from '../components/NextCall.astro';
-import { room, rhythm } from '../data/room.mjs';
+import { room, rhythm, holderLine, role } from '../data/room.mjs';
 ---
 <Base title={room.name} description="The Practice Room is where capacity planners work the open problems together. What we conclude is published here, credited by name." nav="room">
   <div class="wrap wrap--reading">
@@ -28,13 +28,19 @@ import { room, rhythm } from '../data/room.mjs';
 
     <section class="prose reading" aria-labelledby="room-rules">
       <h2 id="room-rules">Room rules</h2>
-      <ul data-rule>
-        <li>No recruiting, for any employer, including your own.</li>
-        <li>No selling.</li>
-        <li>No one’s confidential data.</li>
-        <li>Chatham House rule.</li>
-        <li>Between roles is welcome and normal.</li>
-      </ul>
+      <div data-rule>
+        <p><strong>Room rules, in force now.</strong> They apply in the Practice Room, its direct messages and every call, until the Code of Conduct proposal closes.</p>
+        <ol>
+          <li><strong>No recruiting, for any employer, including your own.</strong> No job posts, referrals, interview prep, salary talk or approaches about roles.</li>
+          <li><strong>No selling.</strong> No pitches for products, services or yourself. Relevant public work is fine.</li>
+          <li><strong>No one’s confidential data.</strong> Follow <a href="/sharing-safely/">Sharing safely</a>. Never press others for real figures.</li>
+          <li><strong>Chatham House rule.</strong> Use what you hear; don’t say who said it.</li>
+          <li><strong>Between roles is welcome and normal.</strong> Give your sector, never “open to work”.</li>
+        </ol>
+        <p>A first breach: the post comes down and a co-organizer writes to you privately. A second: you leave the room. Report to <a href={`mailto:${room.contact}`}>{room.contact}</a> or any co-organizer. Reports about a co-organizer go to the independent conduct reviewer.</p>
+        <p>These rules sit alongside the <a href="/code-of-conduct/">Code of Conduct</a>. A proposal to add “No recruiting” to the code goes to GitHub Discussions, with an open period of at least 30 days. Until it closes, the rules above apply in the room.</p>
+      </div>
+      <p>Independent conduct reviewer: {holderLine(role('conduct-reviewer')?.holders ?? [])}. Until one is named, reports follow the <a href="/code-of-conduct/">Code of Conduct</a>.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="get-in">
