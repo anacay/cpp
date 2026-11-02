@@ -2,16 +2,44 @@
 
 Everything the founder sets up by hand in GitHub for R8. Paste each block as is. It takes about 30 minutes.
 
-**Why.** A newcomer needs a place to say hello and a place to ask a basic question. A returning member needs one list of what is open for comment. The labels let anyone find a first thread at their stage.
+**Why.** A newcomer needs a place to say hello and a place to ask a basic question. A member with a planning problem needs a way into a review. A returning member needs one list of what is open for comment. The labels let anyone find a first thread at their stage.
 
 **Order.**
-1. Create the two categories (§1, §2).
-2. Post and pin the three threads (§1, §2, §3).
-3. Create the six labels (§4).
-4. Check the 15 thread numbers, then label them (§5).
-5. Tell the co-organizers the kit is live, and hand them the weekly update of §3.
+1. **First, before R8 goes live:** create the "Review intake" category and the `review` label (§0). The intake link on /community/#reviews fails until both exist.
+2. Create the two newcomer categories (§1, §2).
+3. Post and pin the three threads (§1, §2, §3).
+4. Create the six stage and `good-first` labels (§4).
+5. Check the 15 thread numbers, then label them (§5).
+6. Tell the co-organizers the kit is live, and hand them the weekly update of §3.
 
 The GitHub state behind this kit is unverified from the cloud session. Check each thread number against its title before you label it.
+
+---
+
+## 0. Category: Review intake, and the `review` label (do this first)
+
+The bring-your-problem review form lives in `.github/DISCUSSION_TEMPLATE/review-intake.yml`. GitHub uses a form only when a category with the same slug exists. /community/#reviews links to `discussions/new?category=review-intake`, so the category must exist before the deploy.
+
+**Where.** Repository → Discussions → the pencil next to "Categories" → **New category**.
+
+- **Name:** Review intake (GitHub derives the slug `review-intake` from this name; check it after saving)
+- **Emoji:** any; suggested: magnifying glass
+- **Description:** Bring a sanitized planning problem to a Practice Room review. Private intake: cpp@anacay.org.
+- **Format:** Open-ended discussion
+
+**Then the label.** Repository → Issues → **Labels** → **New label**. The form applies it to every intake thread.
+
+| Name | Description (shown on hover) | Colour |
+|---|---|---|
+| `review` | A problem brought to a Practice Room review. Pre-checked before any call. | `#A05A4F` |
+
+```sh
+gh label create review -R anacay/cpp -c A05A4F -d "A problem brought to a Practice Room review. Pre-checked before any call."
+```
+
+**Test it.** Open https://github.com/anacay/cpp/discussions/new?category=review-intake. The form should appear, starting with "Bring a problem to a Practice Room review." Close it without posting.
+
+No pinned post is needed: the form carries its own instructions.
 
 ---
 
