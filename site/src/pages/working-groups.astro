@@ -1,10 +1,10 @@
 ---
-// /working-groups/: dated sprints that publish credited work. Leads, members,
-// dates and channels come from site/src/data/room.mjs, so naming a lead or
+// /working-groups/: later, when the stream asks for it. Leads, members and
+// notes come from site/src/data/room.mjs, so naming a lead or
 // confirming a date is a data-only change. The question titles and thread
 // numbers below are the open questions as listed on /open-questions/.
 import Base from '../layouts/Base.astro';
-import { room, workingGroups, holderLine, consented } from '../data/room.mjs';
+import { stream, workingGroups, holderLine, consented } from '../data/room.mjs';
 import { community } from '../lib/community.mjs';
 const c = community();
 const thread = (n) => `${c.repo}/discussions/${n}`;
@@ -14,36 +14,34 @@ const questions = {
   Q7: { title: 'Can you do better than buying each layer to its own percentile?', d: 8 },
   Q3: { title: 'Who arbitrates scarce accelerators between internal and external demand?', d: 4 },
 };
-const day = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const wg1 = workingGroups.find((g) => g.id === 'wg1');
 const next = workingGroups.filter((g) => g.status === 'next');
 const lead = (g) => holderLine(g.lead ? [g.lead] : []).replace(/^Open$/, 'open');
 const members = (g) => consented(g.members ?? []);
-const raise = (g) => `mailto:${room.contact}?subject=${encodeURIComponent(`${g.name}: I’d like to take part`)}`;
 ---
-<Base title="Working groups" description="Working groups of the Practice Room: six-to-eight-week sprints on open problems, on synthetic data, published with credit. WG1 is Scoring declarations." nav="room">
+<Base title="Working groups" description="Working groups, later: the first group forms when a topic in the stream outgrows a thread. WG1, Scoring declarations, would come first." nav="room">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">The Practice Room</p>
       <h1>Working groups</h1>
-      <p class="lede">A working group takes one cluster of open problems for six to eight weeks, on synthetic data. What it concludes is published, credited by name.</p>
+      <p class="lede">Later, when the stream asks for it. The first group forms when a topic in <a href={stream.url}>the stream</a> outgrows a thread. Until then, every problem below is worked in its thread.</p>
     </div>
 
     <section aria-labelledby="how">
-      <h2 class="group-title reading" id="how">How a group runs</h2>
+      <h2 class="group-title reading" id="how">How a group will run</h2>
       <ol class="steps">
         <li><h3>A charter</h3><p>One page: the questions, the outputs, the lead, three to five members and two dates. It is posted for comment before work starts.</p></li>
-        <li><h3>Six to eight weeks</h3><p>A start date and a publish date. The group works in its own channel and meets as it chooses.</p></li>
+        <li><h3>Six to eight weeks</h3><p>A start date and a publish date. The group works in one thread in the stream.</p></li>
         <li><h3>Synthetic data only</h3><p>No one brings real figures. Every dataset is invented, keeps the shape of the problem and is labeled illustrative.</p></li>
         <li><h3>A named review</h3><p>Reviewers outside the group read the draft. Their names and verdict are published with it.</p></li>
         <li><h3>Credited publication</h3><p>The output is published on this site under CC BY-SA 4.0. Every member is credited by name on the page.</p></li>
       </ol>
-      <p class="reading">Groups follow the <a href="/community/#room-rules">room rules</a> and <a href="/sharing-safely/">Sharing safely</a>. A change to the guide still goes through <a href="/how-it-grows/">How it grows</a>.</p>
+      <p class="reading">Groups follow the <a href="/community/#room-rules">rules</a> and <a href="/sharing-safely/">Sharing safely</a>. A change to the guide still goes through <a href="/how-it-grows/">How it grows</a>.</p>
     </section>
 
     {wg1 && (
       <section class="prose reading" aria-labelledby="wg1">
-        <h2 id="wg1">WG1 charter: {wg1.name}</h2>
+        <h2 id="wg1">First in line, WG1: {wg1.name}</h2>
         <p>Planners score declarations by stage, then blend a team’s record with everyone’s. <a href="/paper/5-coefficients-are-agreements/">Section 5</a> of the seed paper sets out scoring by stage and the blend; the <a href="/guide/concepts/demand-and-declarations/">guide</a> follows it. <a href="/paper/8-the-commit-point-method/">Section 8</a> says its per-layer rule is not a joint optimum, and a data scientist could do better. WG1 tries both.</p>
         <h3 id="wg1-questions">The questions</h3>
         <ul>
@@ -60,24 +58,22 @@ const raise = (g) => `mailto:${room.contact}?subject=${encodeURIComponent(`${g.n
         <p><strong>Lead: {lead(wg1)}.</strong></p>
         <dl class="pr-facts">
           <dt>Members</dt><dd>{members(wg1).length ? members(wg1).map((p) => p.name).join(', ') : 'Open'}. The group takes {wg1.size}.</dd>
-          <dt>Start</dt><dd>{day(wg1.start)}.</dd>
-          <dt>Publish by</dt><dd>{day(wg1.publishBy)}.</dd>
-          <dt>Channel</dt><dd>{wg1.channel} opens when a lead is named.</dd>
+          <dt>Dates</dt><dd>None yet.</dd>
         </dl>
-        <p class="note">{wg1.datesNote} Until a lead is named, the dates are a proposal.</p>
-        <p>To lead or join, write to <a href={raise(wg1)}>{room.contact}</a>, or reply in one of the three threads. The lead role is described on <a href="/roles/#wg-lead">Working-group lead</a>.</p>
+        <p class="note">{wg1.datesNote}</p>
+        <p>To lead or join, say so in <a href={stream.url}>the stream</a>, or reply in one of the three threads. The lead role is described on <a href="/roles/#wg-lead">Working-group lead</a>.</p>
       </section>
     )}
 
     {next.map((g) => (
       <section class="prose reading" aria-labelledby={g.id}>
-        <h2 id={g.id}>Next: WG2, {g.name}</h2>
-        <p>Planned for {g.when}. Lead: {lead(g)}.</p>
+        <h2 id={g.id}>After that: WG2, {g.name}</h2>
+        <p>Later. Lead: {lead(g)}.</p>
         <ul>
           {g.questions.map((q) => questions[q] && <li><strong>{q}.</strong> {questions[q].title} <a href={thread(questions[q].d)}>Discussion #{questions[q].d}</a></li>)}
         </ul>
-        <p>It goes second because it draws on confidential experience. The room’s sharing rules get tested on WG1 first.</p>
-        <p>Interested? Write to <a href={raise(g)}>{room.contact}</a>.</p>
+        <p>It goes second because it draws on confidential experience. The sharing rules get tested on WG1 first.</p>
+        <p>Interested? Say so in <a href={stream.url}>the stream</a>.</p>
       </section>
     ))}
   </div>
