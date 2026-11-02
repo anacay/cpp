@@ -99,6 +99,7 @@ const detail = {
   },
 };
 
+const openCount = roles.filter((r) => holderLine(r.holders) === 'Open').length;
 const missing = roles.filter((r) => !detail[r.id]).map((r) => r.id);
 if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${missing.join(', ')}`);
 ---
@@ -118,7 +119,8 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
         <li><strong>A one-message step-down.</strong> Write one line to the same address. No reason needed.</li>
         <li><strong>Emeritus credit.</strong> When you step down, you stay credited on <a href="/contributors/">Contributors</a>.</li>
       </ul>
-      <p>Each card shows who holds the role, or “Open”. A name appears only after that person agrees.</p>
+      <p>Each card shows who holds the role, or “Open”. A name appears only after that person agrees. Hours are estimates; the people who hold each role will correct them.</p>
+      <p><strong>{openCount} of {roles.length} roles are open.</strong> The first ones needed are two co-organizers and a greeter.</p>
       <p class="note">{ownershipLine()} The co-organizer role, and the rules here that go beyond <a href="/governance/">Governance</a>, are proposed. They apply in the room once it opens, and reach GOVERNANCE.md only through a Governance proposal.</p>
     </section>
 
