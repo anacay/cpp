@@ -39,6 +39,7 @@ const ctx = load();
     {seeds.length > 0 && (
       <p class="seed-from">Drawn from the seed paper: {seeds.map((s, i) => <>{i > 0 && ', '}{s.url ? <a href={s.url}>{s.label}</a> : s.label}</>)}.</p>
     )}
+    {page.levels?.includes('supply') && <p class="reading muted">Supply side? Start at <a href="/start/supply/">the supply door</a>.</p>}
     <ChangedBecause path={page.url} />
     <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a working note: thinking in progress, open for argument." />
     <nav class="pager" aria-label="Reading order">
