@@ -1,10 +1,26 @@
 ---
 // /community/: the hub for the Practice Room. People, dates and statuses come
-// from site/src/data/room.mjs, so a new date or name is a data-only change.
+// from site/src/data/room.mjs, so a new date, host or name is a data-only
+// change. Anything that states the no-hiring rule sits inside [data-rule]
+// (check 9 skips it there and nowhere else).
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
 import NextCall from '../components/NextCall.astro';
-import { room, rhythm, holderLine, role } from '../data/room.mjs';
+import { room, rhythm, channels, circle, consented, holderLine, role, person } from '../data/room.mjs';
+import { community } from '../lib/community.mjs';
+const c = community();
+const mail = `mailto:${room.contact}`;
+const hostOf = (ch) => (ch.host ? holderLine([ch.host]) : ch.topic ? 'open' : ch.hostRole);
+const roomChannels = channels.filter((ch) => !ch.topic);
+const topicChannels = channels.filter((ch) => ch.topic);
+const coOrganizers = consented(circle.coOrganizers);
+const founder = person('founder');
+const holders = (id) => holderLine(role(id)?.holders ?? []);
+const intake = `${c.repo}/discussions/new?category=review-intake`;
+const sections = [
+  ['what', 'What it is'], ['rhythm', 'The rhythm'], ['channels', 'Channels'], ['calls', 'How a call runs'],
+  ['reviews', 'Bring-your-problem reviews'], ['room-rules', 'Room rules'], ['get-in', 'How to get in'], ['who', 'Who runs it'],
+];
 ---
 <Base title={room.name} description="The Practice Room is where capacity planners work the open problems together. What we conclude is published here, credited by name." nav="room">
   <div class="wrap wrap--reading">
@@ -15,10 +31,61 @@ import { room, rhythm, holderLine, role } from '../data/room.mjs';
       <RoomRule />
     </div>
 
+    <nav class="toc reading" aria-labelledby="pr-toc"><h2 id="pr-toc">On this page</h2><ol>{sections.map(([id, t]) => <li><a href={`#${id}`}>{t}</a></li>)}</ol></nav>
+
+    <section class="prose reading" aria-labelledby="what">
+      <h2 id="what">What it is</h2>
+      <p>The room is a small, practitioner-only space around this open practice. Planners bring the problems the <a href="/paper/">seed paper</a> leaves open, and work them with peers.</p>
+      <p>It has two halves.</p>
+      <ul>
+        <li><strong>The closed room</strong> is a free Slack, owned by the co-organizers. It is invitation-only, so you can think out loud.</li>
+        <li><strong>The public record</strong> is this site and GitHub Discussions. Conclusions, summaries and credit land there.</li>
+      </ul>
+      <p>The work comes from the <a href="/agenda/">agenda of open problems</a> and the <a href="/working-groups/">working groups</a>. The first people in are the <a href="/circle/">founding circle</a>.</p>
+      <p>Everyone is welcome, at every stage. New to the work? Start with <a href="/start/">Start here</a> and the <a href="/glossary/">glossary</a>.</p>
+    </section>
+
     <section class="prose reading" aria-labelledby="rhythm">
       <h2 id="rhythm">The rhythm</h2>
-      <p>{rhythm.call}, with a newcomer half-hour first. Agenda {rhythm.agendaDaysAhead} days ahead. Notes within {rhythm.notesHours} hours, without names. No recordings.</p>
-      <NextCall />
+      <p>One open call a month, with a newcomer half-hour first. Agenda seven days ahead. Notes within 48 hours, without names. No recordings.</p>
+      <ul>
+        <li><strong>The call.</strong> {rhythm.length}. {rhythm.slots}.</li>
+        <li><strong>The newcomer half-hour.</strong> {rhythm.newcomer}. Bring any question about the work or the room.</li>
+        <li><strong>Written first.</strong> Send questions in writing, in any language, the day before. A written reply within 72 hours counts as attendance.</li>
+        <li><strong>The digest.</strong> {rhythm.digest}: the next call, proposals closing and new threads.</li>
+      </ul>
+      <NextCall class="note" />
+      <p>A first question gets a kind answer within {room.firstAnswerHours} hours. That is the greeters’ pledge, in #first-questions and on GitHub.</p>
+    </section>
+
+    <section aria-labelledby="channels">
+      <div class="prose reading">
+      <h2 id="channels">Channels</h2>
+      <p>Three channels hold the room together. Five more hold the work, one per topic. A topic channel opens when it has a named host. Until then it shows “Host: open”.</p>
+      </div>
+      <ul class="cards cards--3 pr-ch">
+        {roomChannels.map((ch) => <li><h3>{ch.name}</h3><p>{ch.purpose}</p><p class="pr-host">Host: {hostOf(ch)}</p></li>)}
+      </ul>
+      <ul class="cards cards--3 pr-ch">
+        {topicChannels.map((ch) => <li><h3>{ch.name}</h3><p>{ch.purpose}</p><p class="pr-host">Host: {hostOf(ch)}</p></li>)}
+      </ul>
+      <p class="reading">Each new post in a topic channel links a passage, a note or a thread. Hosts are a role with a term and an easy exit; see <a href="/roles/#channel-host">Channel host</a>.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="calls">
+      <h2 id="calls">How a call runs</h2>
+      <p>One hour, six parts, and a hard stop. The agenda is posted seven days ahead.</p>
+      <ol>
+        <li><strong>Welcome and room rules</strong>, 3 minutes. The host reads the rules aloud.</li>
+        <li><strong>Who’s here</strong>, 7 minutes. Your sector and one open problem, in 20 seconds. No employer needed.</li>
+        <li><strong>What the room is for</strong>, 5 minutes. The agenda, roles open now and the working groups.</li>
+        <li><strong>Review 1</strong>, 20 minutes. A <a href="#reviews">bring-your-problem review</a>.</li>
+        <li><strong>Review 2</strong>, 20 minutes. A second review, or an open problem from the agenda.</li>
+        <li><strong>Close</strong>, 5 minutes. Volunteers for open roles, the next date and who takes notes.</li>
+      </ol>
+      <p>Chatham House rule applies. Use what you hear; don’t say who said it. Cameras are optional, and nothing is recorded.</p>
+      <p>A scribe writes the notes, without names. They are posted within 48 hours and credited “Notes by” the scribe. Summaries move to GitHub Discussions within a week, so the record outlives the Slack.</p>
+      <p>Call host: {holders('call-host')}. See <a href="/roles/#call-host">the call host role</a>.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="reviews">
@@ -37,15 +104,36 @@ import { room, rhythm, holderLine, role } from '../data/room.mjs';
           <li><strong>Chatham House rule.</strong> Use what you hear; don’t say who said it.</li>
           <li><strong>Between roles is welcome and normal.</strong> Give your sector, never “open to work”.</li>
         </ol>
-        <p>A first breach: the post comes down and a co-organizer writes to you privately. A second: you leave the room. Report to <a href={`mailto:${room.contact}`}>{room.contact}</a> or any co-organizer. Reports about a co-organizer go to the independent conduct reviewer.</p>
+        <p>A first breach: the post comes down and a co-organizer writes to you privately. A second: you leave the room. Report to <a href={mail}>{room.contact}</a> or any co-organizer. Reports about a co-organizer go to the independent conduct reviewer.</p>
         <p>These rules sit alongside the <a href="/code-of-conduct/">Code of Conduct</a>. A proposal to add “No recruiting” to the code goes to GitHub Discussions, with an open period of at least 30 days. Until it closes, the rules above apply in the room.</p>
       </div>
-      <p>Independent conduct reviewer: {holderLine(role('conduct-reviewer')?.holders ?? [])}. Until one is named, reports follow the <a href="/code-of-conduct/">Code of Conduct</a>.</p>
+      <p>Independent conduct reviewer: {holders('conduct-reviewer')}. Until one is named, reports follow the <a href="/code-of-conduct/">Code of Conduct</a>.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="get-in">
       <h2 id="get-in">How to get in</h2>
-      <p>To join, write to <a href={`mailto:${room.contact}`}>{room.contact}</a> with your sector. A co-organizer replies within {room.joinReplyDays} working days.</p>
+      <p>To join, write to <a href={mail}>{room.contact}</a> with your sector. A co-organizer replies within {room.joinReplyDays} working days.</p>
+      <ul>
+        <li><strong>Say three things.</strong> Your sector, your stage and one problem you care about. Your employer is optional.</li>
+        <li><strong>It costs nothing.</strong> The room is free, and leaving takes one message.</li>
+        <li><strong>Only co-organizers invite.</strong> There is no open sign-up, so the room stays practitioner-only.</li>
+      </ul>
+      <p>Not ready for a room? Everything public is open now. Read <a href="/start/">Start here</a>, reply to an <a href="/open-questions/">open question</a>, or see <a href="/join/">Join in</a>.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="who">
+      <h2 id="who">Who runs it</h2>
+      <p><strong>Co-organizers</strong> own the room and its Slack, and hold the site’s keys.</p>
+      <p class="pr-who">Co-organizers: {coOrganizers.length ? coOrganizers.map((p) => p.name).join(', ') + '.' : 'Being invited now.'}</p>
+      <p><strong>Every other role</strong> is open, with a term of one edition and a one-message exit. See <a href="/roles/">Roles</a>.</p>
+      {founder && <p><strong>The founder</strong>, {founder.name}, is a disclosed founder and contributor. He is a member of the room, not an owner. Anacay LLC supports the practice, and says so.</p>}
+      <p>The first members are listed on <a href="/circle/">The founding circle</a>, once they sign off. How decisions are made is set out in <a href="/governance/">Governance</a>.</p>
     </section>
   </div>
 </Base>
+
+<style>
+  .pr-ch { margin-bottom: 1rem; }
+  .pr-ch h3 { overflow-wrap: anywhere; }
+  .cards .pr-host { color: var(--ink); font-size: 0.875rem; }
+</style>
