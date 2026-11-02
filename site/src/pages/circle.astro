@@ -1,27 +1,81 @@
 ---
-// /circle/: the founding circle. Names come from site/src/data/room.mjs and
-// show only with consent, once enough consented names exist.
+// /circle/: the founding circle. Every name on this page comes through
+// circleNames() in site/src/data/room.mjs, which returns nothing until enough
+// people have consented. Never write a name into this file directly; ask a
+// co-organizer to add the person to room.mjs with `consent: true`.
 import Base from '../layouts/Base.astro';
-import { circleNames } from '../data/room.mjs';
+import { room, circle, circleNames, person } from '../data/room.mjs';
 const names = circleNames();
+const founder = person('founder');
+const mail = `mailto:${room.contact}`;
 ---
-<Base title="The founding circle" description="The founding circle of the Practice Room: what members commit to, and how invitations work." nav="room">
+<Base title="The founding circle" description="The founding circle of the Practice Room: what members commit to, who runs it, and how invitations work." nav="room">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">The Practice Room</p>
       <h1>The founding circle</h1>
-      <p class="lede">The founding circle is the first group of experienced planners in the <a href="/community/">Practice Room</a>.</p>
+      <p class="lede">The founding circle is the first group of experienced planners in the <a href="/community/">Practice Room</a>. They set its tone, bring its first problems and review its first work.</p>
     </div>
+
     <section class="prose reading" aria-labelledby="commit">
       <h2 id="commit">What members commit to</h2>
-      <p>One hour a month. Chatham House rule in the room. Nothing about you is public without your sign-off. Leave any time.</p>
+      <p class="note">One hour a month. Chatham House rule in the room. Nothing about you is public without your sign-off. Leave any time.</p>
       <p>Your sector is enough. Your employer is optional.</p>
+      <ul>
+        <li><strong>The hour</strong> is the monthly open call, or a written reply to its agenda instead.</li>
+        <li><strong>Chatham House rule</strong> means you use what you hear, but never say who said it. Calls are not recorded.</li>
+        <li><strong>Your sign-off</strong> covers your name, your sector and anything you say. Each is shown only after a written yes.</li>
+        <li><strong>Leaving</strong> takes one message. Your name comes off this page in the next update.</li>
+      </ul>
+      <p>The room’s rules apply to everyone in it, the circle included. See <a href="/community/#room-rules">Room rules</a> and <a href="/sharing-safely/">Sharing safely</a>.</p>
     </section>
-    {names && (
-      <section class="prose reading" aria-labelledby="members">
-        <h2 id="members">Founding members</h2>
-        <ul>{[...names.coOrganizers, ...names.members].map((p) => <li>{p.name}{p.sector && <>, {p.sector}</>}</li>)}</ul>
+
+    <section class="prose reading" aria-labelledby="co-organizers">
+      <h2 id="co-organizers">Co-organizers</h2>
+      <p>Co-organizers own the room and its Slack, hold the site’s keys and answer join requests. The plan is three, from different seats. None works at the founder’s employer.</p>
+      {names && names.coOrganizers.length ? (
+        <ul class="pr-names">{names.coOrganizers.map((p) => <li><strong>{p.name}</strong>{p.sector && <>, {p.sector}</>}{p.topics?.length ? <>. Topics: {p.topics.join(', ')}</> : null}</li>)}</ul>
+      ) : (
+        <p class="pr-empty">Being invited now. Names appear here once each person signs off.</p>
+      )}
+      <p>The role has duties, a term and an easy exit. See <a href="/roles/#co-organizer">Co-organizer</a>.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="members">
+      <h2 id="members">Founding members</h2>
+      <p>Each entry shows a name or handle, a sector and the topics the person reviews. An employer appears only if the member asks for it.</p>
+      {names && names.members.length ? (
+        <ul class="pr-names">{names.members.map((p) => <li><strong>{p.name}</strong>{p.sector && <>, {p.sector}</>}{p.topics?.length ? <>. Topics: {p.topics.join(', ')}</> : null}</li>)}</ul>
+      ) : (
+        <p class="pr-empty">This list stays empty until at least {circle.showNamesAt} members have signed off. No one is listed before they say yes in writing.</p>
+      )}
+    </section>
+
+    {founder && (
+      <section class="prose reading" aria-labelledby="founder">
+        <h2 id="founder">The founder</h2>
+        <p><strong>{founder.name}</strong>{founder.sector && <>, {founder.sector}</>}. Disclosed founder and contributor.</p>
+        <p>He started the practice and wrote the <a href="/paper/">seed paper</a>. Anacay LLC, his company, supports the practice, and says so. He is a member of the room, not an owner, and contributes in a personal capacity.</p>
       </section>
     )}
+
+    <section class="prose reading" aria-labelledby="invitations">
+      <h2 id="invitations">How invitations work</h2>
+      <p>The circle grows by “one peer, one question”. Each invitation names one open problem that the person’s experience could move.</p>
+      <ol>
+        <li>A co-organizer or the founder picks a question from the <a href="/agenda/">agenda</a> for one person.</li>
+        <li>The invitation names that question and its thread, and links this page and <a href="/sharing-safely/">Sharing safely</a>.</li>
+        <li>A one-line yes is enough. The person then says what may be shown: a name or a handle, a sector, topics.</li>
+        <li>Nothing appears here until that written yes. The first call is announced once the founding circle confirms.</li>
+      </ol>
+      <p>Not invited yet? Write to <a href={mail}>{room.contact}</a> with your sector and one problem you care about. A co-organizer replies within {room.joinReplyDays} working days.</p>
+      <p>Want to do more than attend? Every role is listed on <a href="/roles/">Roles</a>. How editors are added is set out in <a href="/governance/">Governance</a>.</p>
+    </section>
   </div>
 </Base>
+
+<style>
+  .pr-names { list-style: none; padding-left: 0; }
+  .pr-names li { padding: 0.5rem 0; border-bottom: 1px solid var(--water-line); }
+  .pr-empty { color: var(--ink-muted); font-style: italic; }
+</style>
