@@ -6,12 +6,15 @@
 //     page that teaches a term, a "Read the concept" link follows.
 //  2. Practice terms: words the guide uses that the seed's lists don't define.
 //  3. Case 3 terms: Kuantillion Cloud's working vocabulary, so deep links resolve.
+// Before them, "Your words, our words" (#your-words): the crosswalk from
+// /start/, from site/src/data/start-paths.mjs. Pointers only; it defines nothing.
 // Parts 2 and 3 live in src/data/practice-glossary.mjs. Ids share one
 // term-<slug> namespace; a clash fails the build.
 import Base from '../layouts/Base.astro';
 import { load, glossary, renderInline, pageLabel, slugify } from '../lib/paper.mjs';
 import { guide } from '../lib/guide.mjs';
 import { PRACTICE_TERMS, CASE3_TERMS, SEED_CONCEPTS, SEED_NOTES } from '../data/practice-glossary.mjs';
+import { yourWords } from '../data/start-paths.mjs';
 const ctx = load();
 const terms = glossary(ctx);
 const g = guide();
@@ -36,6 +39,9 @@ const own = (list) => list.map((t) => {
 const practice = own(PRACTICE_TERMS);
 const case3 = own(CASE3_TERMS);
 const total = terms.length + practice.length + case3.length;
+// Names for the crosswalk's glossary pointers; an unknown id fails the build.
+const termName = new Map([...terms, ...practice, ...case3].map((t) => [t.id, t.term]));
+for (const w of yourWords) for (const id of w.terms) if (!termName.has(id)) throw new Error(`glossary: your-words points at unknown term ${id}`);
 ---
 <Base title="Glossary" description={`${total} terms: the ${terms.length} the seed paper defines, in its own words, plus the practice's terms and Case 3's, each linked to the page that teaches it.`} nav="glossary">
   <div class="wrap wrap--reading">
@@ -49,7 +55,20 @@ const total = terms.length + practice.length + case3.length;
       {letters.map((l) => <li><a href={`#letter-${l}`}>{l}</a></li>)}
       <li class="letters__part"><a href="#practice-terms">Practice terms</a></li>
       <li class="letters__part"><a href="#case-3-terms">Case 3 terms</a></li>
+      <li class="letters__part"><a href="#your-words">Your words</a></li>
     </ul></nav>
+    <section class="yw reading" aria-labelledby="your-words">
+      <h2 id="your-words">Your words, our words</h2>
+      <p class="muted">Pointers, not definitions. If you use the word on the left, the guide covers the same ground under the names on the right. New definitions go through a Terms discussion and the open period in <a href="/how-it-grows/">How it grows</a>.</p>
+      <dl>
+        {yourWords.map((w) => (
+          <div>
+            <dt>{w.yours}</dt>
+            <dd>{w.ours.map(([label, href], i) => <Fragment>{i > 0 && ', '}<a href={href}>{label}</a></Fragment>)}{w.terms.length > 0 && <Fragment>. In this glossary: {w.terms.map((id, i) => <Fragment>{i > 0 && ', '}<a href={`#${id}`}>{termName.get(id)}</a></Fragment>)}</Fragment>}.</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
     <div class="gloss">
       <h2 class="gloss__part" id="seed-terms">The seed paper’s terms</h2>
       {letters.map((l) => (
@@ -114,3 +133,13 @@ const total = terms.length + practice.length + case3.length;
     </div>
   </div>
 </Base>
+
+<style>
+  .yw { margin: 0 0 2.5rem; padding: 1.15rem 1.35rem 0.6rem; border: 1px solid var(--water-line); border-top: 2px solid var(--gold); border-radius: var(--radius); background: var(--water-raised); }
+  .yw h2 { font-size: 1.3rem; margin: 0 0 0.35rem; }
+  .yw dl { margin: 0.9rem 0; display: grid; gap: 0.5rem; }
+  .yw dl > div { display: grid; grid-template-columns: minmax(0, 9rem) minmax(0, 1fr); gap: 0.2rem 1rem; padding-top: 0.5rem; border-top: 1px solid var(--water-line); }
+  .yw dt { font-weight: 600; }
+  .yw dd { margin: 0; line-height: 1.5; }
+  @media (max-width: 34em) { .yw dl > div { grid-template-columns: 1fr; } }
+</style>
