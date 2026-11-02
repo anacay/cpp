@@ -80,7 +80,7 @@ No pinned post is needed: the form carries its own instructions.
 
 - **Name:** First questions
 - **Emoji:** seedling
-- **Description:** No question too basic. A kind answer within 24 hours.
+- **Description:** No question too basic. A kind answer, from greeters once they are named.
 - **Format:** Question / Answer (so the asker can mark the answer that helped)
 
 ### Pinned post
@@ -91,7 +91,9 @@ No pinned post is needed: the form carries its own instructions.
 
 > Ask anything here, however basic. "What is a commit point?" is a good question. So is "Why does my bill miss when my forecast was close?"
 >
-> **Our promise.** A first question gets a kind answer within 24 hours. A greeter rota watches this category, two people a week. If a day passes with no answer, write to cpp@anacay.org.
+> **Our promise.** Every first question gets a kind answer. Today the founder answers. Once greeters are named, they aim to answer within 24 hours. If a day passes with no answer, write to cpp@anacay.org.
+
+*(Add "A greeter rota watches this category, two people a week." only once a rota exists.)*
 >
 > **How to ask well.**
 > - Say where you got stuck: a page, a passage or a word.

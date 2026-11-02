@@ -6,11 +6,13 @@
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
 import NextCall from '../components/NextCall.astro';
-import { room, rhythm, channels, circle, consented, holderLine, role, person, inboxLine } from '../data/room.mjs';
+import RoomStatus from '../components/RoomStatus.astro';
+import { room, rhythm, channels, circle, consented, holderLine, role, person, inboxLine, settingUp } from '../data/room.mjs';
 import { community } from '../lib/community.mjs';
 const c = community();
 const mail = `mailto:${room.contact}`;
-const hostOf = (ch) => (ch.host ? holderLine([ch.host]) : ch.topic ? 'open' : ch.hostRole);
+const hostOf = (ch) => (ch.host ? holderLine([ch.host]) : 'open');
+const setup = settingUp();
 const roomChannels = channels.filter((ch) => !ch.topic);
 const topicChannels = channels.filter((ch) => ch.topic);
 const coOrganizers = consented(circle.coOrganizers);
@@ -29,6 +31,7 @@ const sections = [
       <h1>{room.name}</h1>
       <p class="lede">The Practice Room is where capacity planners work the open problems together. What we conclude is published here, credited by name.</p>
       <RoomRule />
+      <RoomStatus />
     </div>
 
     <nav class="toc reading" aria-labelledby="pr-toc"><h2 id="pr-toc">On this page</h2><ol>{sections.map(([id, t]) => <li><a href={`#${id}`}>{t}</a></li>)}</ol></nav>
@@ -38,7 +41,7 @@ const sections = [
       <p>The room is a small, practitioner-only space around this open practice. Planners bring the problems the <a href="/paper/">seed paper</a> leaves open, and work them with peers.</p>
       <p>It has two halves.</p>
       <ul>
-        <li><strong>The closed room</strong> is a free Slack, owned by the co-organizers. It is invitation-only, so you can think out loud.</li>
+        <li><strong>The closed room</strong> {setup ? 'will be' : 'is'} a free Slack, owned by the co-organizers. It is invitation-only, so you can think out loud.{setup && ' It opens once two co-organizers are named.'}</li>
         <li><strong>The public record</strong> is this site and GitHub Discussions. Conclusions, summaries and credit land there.</li>
       </ul>
       <p>The work comes from the <a href="/agenda/">agenda of open problems</a> and the <a href="/working-groups/">working groups</a>. The first people in are the <a href="/circle/">founding circle</a>.</p>
@@ -47,6 +50,7 @@ const sections = [
 
     <section class="prose reading" aria-labelledby="rhythm">
       <h2 id="rhythm">The rhythm</h2>
+      {setup && <p>The room isn’t open yet. Once it opens, it runs on this rhythm.</p>}
       <p>One open call a month, with a newcomer half-hour first. Agenda seven days ahead. Notes within 48 hours, without names. No recordings.</p>
       <ul>
         <li><strong>The call.</strong> {rhythm.length}. {rhythm.slots}.</li>
@@ -55,13 +59,15 @@ const sections = [
         <li><strong>The digest.</strong> {rhythm.digest}: the next call, proposals closing and new threads.</li>
       </ul>
       <NextCall class="note" />
-      <p>A first question gets a kind answer within {room.firstAnswerHours} hours. That is the greeters’ pledge, in #first-questions and on GitHub.</p>
+      {setup
+        ? <p>Once greeters are named, a first question will get a kind answer within {room.firstAnswerHours} hours, in #first-questions and on GitHub. Until then, the founder replies.</p>
+        : <p>A first question gets a kind answer within {room.firstAnswerHours} hours. That is the greeters’ pledge, in #first-questions and on GitHub.</p>}
     </section>
 
     <section aria-labelledby="channels">
       <div class="prose reading">
       <h2 id="channels">Channels</h2>
-      <p>Three channels hold the room together. Five more hold the work, one per topic. A topic channel opens when it has a named host. Until then it shows “Host: open”.</p>
+      <p>{setup ? 'The room will open with three channels that hold it together. Five more will hold the work, one per topic.' : 'Three channels hold the room together. Five more hold the work, one per topic.'} A channel opens when it has a named host. Until then it shows “Host: open”.</p>
       </div>
       <ul class="cards cards--3 pr-ch">
         {roomChannels.map((ch) => <li><h3>{ch.name}</h3><p>{ch.purpose}</p><p class="pr-host">Host: {hostOf(ch)}</p></li>)}
@@ -74,7 +80,7 @@ const sections = [
 
     <section class="prose reading" aria-labelledby="calls">
       <h2 id="calls">How a call runs</h2>
-      <p>One hour, six parts, and a hard stop. The agenda is posted seven days ahead.</p>
+      <p>{setup && 'Calls will start once the founding circle confirms. '}One hour, six parts, and a hard stop. The agenda is posted seven days ahead.</p>
       <ol>
         <li><strong>Welcome and room rules</strong>, 3 minutes. The host reads the rules aloud.</li>
         <li><strong>Who’s here</strong>, 7 minutes. Your sector and one open problem, in 20 seconds. No employer needed.</li>
@@ -111,7 +117,7 @@ const sections = [
     <section class="prose reading" aria-labelledby="room-rules">
       <h2 id="room-rules">Room rules</h2>
       <div data-rule>
-        <p><strong>Room rules, in force now.</strong> They apply in the Practice Room, its direct messages and every call, until the Code of Conduct proposal closes.</p>
+        <p><strong>Room rules.</strong> They apply in the Practice Room, its direct messages and every call, from the day the room opens until the Code of Conduct proposal closes.</p>
         <ol>
           <li><strong>No recruiting, for any employer, including your own.</strong> No job posts, referrals, interview prep, salary talk or approaches about roles.</li>
           <li><strong>No selling.</strong> No pitches for products, services or yourself. Relevant public work is fine.</li>
@@ -131,7 +137,7 @@ const sections = [
       <ul>
         <li><strong>Say three things.</strong> Your sector, your stage and one problem you care about. Your employer is optional.</li>
         <li><strong>It costs nothing.</strong> The room is free, and leaving takes one message.</li>
-        <li><strong>Only co-organizers invite.</strong> There is no open sign-up, so the room stays practitioner-only.</li>
+        <li><strong>Only co-organizers invite</strong>, once they are named. There is no open sign-up, so the room stays practitioner-only.</li>
       </ul>
       <p>Not ready for a room? Everything public is open now. Read <a href="/start/">Start here</a>, reply to an <a href="/open-questions/">open question</a>, or see <a href="/join/">Join in</a>.</p>
     </section>

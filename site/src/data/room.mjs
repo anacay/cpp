@@ -36,7 +36,7 @@ export const rhythm = {
 export const status = {
   state: 'setting-up', // 'setting-up' | 'open'
   asOf: '2026-11-02',
-  pending: ['the Slack room', 'greeters and channel hosts', 'the GitHub categories for first questions', 'the email digest', 'the first call'],
+  pending: ['the Slack room', 'greeters and channel hosts', 'the email digest', 'the first call'],
 };
 export const settingUp = () => status.state !== 'open';
 
