@@ -74,6 +74,10 @@ function parse(file, src) {
     altitude: expand(fm.altitude, ALTITUDES),
     levels: expand(fm.levels, LEVELS),
     seed: list(fm.seed),
+    // Credit (cases and notes): comma-separated names or handles, rendered as
+    // a byline. Empty means no byline. Add a name only with that person's yes.
+    author: list(fm.author),
+    reviewers: list(fm.reviewers),
     body: m[2],
   };
 }

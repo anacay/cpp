@@ -7,6 +7,8 @@ cadence: quarterly
 altitude: portfolio, region
 levels: practicing, leading, supply
 seed: 4, 5.2, 5.4, 6, 6.1, 6.2, 6.3, 6.4, 6.6, 6.7, 8.2, 9.2, 10.1, 11, 13
+author: Guillermo Martinez
+reviewers:
 ---
 
 *Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when supply comes back out of the fleet in parts, of uncertain condition, as a byproduct of decisions made for other reasons? And what replaces it? Related: Section 6, Section 6.2, Section 6.6, Section 6.7, Section 8.2. Discussion: to be opened under Proposals.*

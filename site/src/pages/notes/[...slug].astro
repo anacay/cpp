@@ -3,6 +3,8 @@ import RfcHint from '../../components/RfcHint.astro';
 import Base from '../../layouts/Base.astro';
 import HelpBuild from '../../components/HelpBuild.astro';
 import WhereStrip from '../../components/WhereStrip.astro';
+import Byline from '../../components/Byline.astro';
+import ChangedBecause from '../../components/ChangedBecause.astro';
 import { guide, renderGuide, seedLinks, KINDS } from '../../lib/guide.mjs';
 import { load, renderInline } from '../../lib/paper.mjs';
 import { guideDates } from '../../lib/dates.mjs';
@@ -26,6 +28,7 @@ const ctx = load();
       <p class="draft-tag">Guide · draft for review</p>
       <h1>{page.title}</h1>
       <p class="in-short guide-short"><em set:html={renderInline(page.short, ctx.targets)} /></p>
+      <Byline page={page} />
     </div>
     <RfcHint />
     <WhereStrip page={page} />
@@ -36,6 +39,7 @@ const ctx = load();
     {seeds.length > 0 && (
       <p class="seed-from">Drawn from the seed paper: {seeds.map((s, i) => <>{i > 0 && ', '}{s.url ? <a href={s.url}>{s.label}</a> : s.label}</>)}.</p>
     )}
+    <ChangedBecause path={page.url} />
     <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a working note: thinking in progress, open for argument." />
     <nav class="pager" aria-label="Reading order">
       {prev && <a class="prev" href={prev.url} rel="prev"><span class="dir">Previous</span><span class="sr-only">:&nbsp;</span><span class="t">{prev.title}</span></a>}
