@@ -1,130 +1,110 @@
-# GitHub kit: categories, pinned posts and labels
+# GitHub kit: one stream, tags and a welcome post
 
-Everything the founder sets up by hand in GitHub for R8. Paste each block as is. It takes about 30 minutes.
+Everything the founder sets up by hand in GitHub for R8. Paste each block as is. It takes about 20 minutes.
 
-**Why.** A newcomer needs a place to say hello and a place to ask a basic question. A member with a planning problem needs a way into a review. A returning member needs one list of what is open for comment. The labels let anyone find a first thread at their stage.
+**The principle: one way to interact until activity demands more.** A new community with few members needs a hundred interactions in one place, not two in each of fifty. So the Practice Room is one stream: a single Discussions category everyone reads. Short posts, replies in threads, tags instead of channels, reactions as light participation. The best threads are published to CPP, credited by name with consent.
 
-**Order.**
-1. **First, before R8 goes live:** create the "Review intake" category and the `review` label (§0). The intake link on /community/#reviews fails until both exist.
-2. **Also before R8 goes live:** confirm the live state of threads #2 to #16 and #18 (§7). /agenda/ shows every item as "open" until you do.
-3. Create the two newcomer categories (§1, §2).
-4. Post and pin the three threads (§1, §2, §3).
-5. Create the six stage and `good-first` labels (§4).
-6. Label the 15 open-question threads (§5).
-7. Open the three Terms threads (§6).
-8. Tell the co-organizers the kit is live, and hand them the weekly update of §3.
+**Order.** Do §0 to §2 after the R8 pull request is merged and before the version upload, because the site links them at launch.
+1. Create the stream category, "Practice" (§0).
+2. Create the tag labels (§1) and post and pin the welcome post (§2).
+3. Confirm the live state of threads #2 to #16 and #18 (§7). /agenda/ shows every item as "open" until you do.
+4. Create the stage and `good-first` labels (§4), and label the 15 open-question threads (§5).
+5. After the deploy: pin "Proposals open now" (§3) and open the three Terms threads (§6).
 
 The GitHub state behind this kit is unverified from the cloud session. Check each thread number against its title before you label it.
 
 ---
 
-## 0. Category: Review intake, and the `review` label (do this first)
+## 0. The stream: one category, "Practice"
 
-The bring-your-problem review form lives in `.github/DISCUSSION_TEMPLATE/review-intake.yml`. GitHub uses a form only when a category with the same slug exists. /community/#reviews links to `discussions/new?category=review-intake`, so the category must exist before the deploy.
+**Where.** Repository → **Discussions** → the pencil beside Categories → **New category**.
 
-**Where.** Repository → Discussions → the pencil next to "Categories" → **New category**.
+- **Name:** Practice
+- **Slug:** `practice` (the site links `discussions/new?category=practice` and `discussions/categories/practice`)
+- **Emoji:** speech balloon
+- **Description:** The one stream for capacity planners. Short posts, replies in threads. Don't break your NDA.
+- **Format:** Open-ended discussion. No form: a post can be one line.
 
-- **Name:** Review intake (GitHub derives the slug `review-intake` from this name; check it after saving)
-- **Emoji:** any; suggested: magnifying glass
-- **Description:** Bring a sanitized planning problem to a Practice Room review. Private intake: cpp@anacay.org.
-- **Format:** Open-ended discussion
+**Test it.** Open https://github.com/anacay/cpp/discussions/new?category=practice. A blank post opens in Practice. Close it without posting.
 
-**Then the label.** Repository → Issues → **Labels** → **New label**. The form applies it to every intake thread.
+**What stays separate, and why.**
+- **Proposals** stays its own category, for formal changes only. A proposal has an open period and a closing note under How it grows, so it must not scroll away in the stream.
+- The existing categories (Sections, Terms, Cases, Sources, Governance) stay. The per-page **Discuss** links and the 15 open-question threads already live there. They appear in the same Discussions list as the stream, so it is still one place to read.
+- Create no other categories. The old plan's "Review intake", "Introduce yourself" and "First questions" are dropped, and so is the review-intake form. A new category comes only when the stream asks for one.
+
+---
+
+## 1. Tag labels
+
+**Where.** Repository → Issues → **Labels** → **New label**. Labels apply to discussions too. A poster can also write the tag as a word (#supply); whoever triages adds the label.
 
 | Name | Description (shown on hover) | Colour |
 |---|---|---|
-| `review` | A problem brought to a Practice Room review. Pre-checked before any call. | `#A05A4F` |
+| `first-question` | No question too basic. | `#7FB069` |
+| `forecasting` | Demand, declarations and drift. | `#4F7CAC` |
+| `supply` | Lead times, contracts and reused parts. | `#B8935A` |
+| `gpu` | Accelerators and their allocation. | `#8E6C8A` |
+| `cost` | Rates, coefficients and the unallocated line. | `#C9B37E` |
+| `power` | Power, buildings and halls. | `#D98C5F` |
+| `cloud` | Single-cloud teams, reservations and stockouts. | `#6FA3B8` |
 
 ```sh
-gh label create review -R anacay/cpp -c A05A4F -d "A problem brought to a Practice Room review. Pre-checked before any call."
+gh label create first-question -R anacay/cpp -c 7FB069 -d "No question too basic."
+gh label create forecasting    -R anacay/cpp -c 4F7CAC -d "Demand, declarations and drift."
+gh label create supply         -R anacay/cpp -c B8935A -d "Lead times, contracts and reused parts."
+gh label create gpu            -R anacay/cpp -c 8E6C8A -d "Accelerators and their allocation."
+gh label create cost           -R anacay/cpp -c C9B37E -d "Rates, coefficients and the unallocated line."
+gh label create power          -R anacay/cpp -c D98C5F -d "Power, buildings and halls."
+gh label create cloud          -R anacay/cpp -c 6FA3B8 -d "Single-cloud teams, reservations and stockouts."
 ```
 
-**Test it.** Open https://github.com/anacay/cpp/discussions/new?category=review-intake. The form should appear, starting with "Bring a problem to a Practice Room review." Close it without posting.
-
-No pinned post is needed: the form carries its own instructions.
+Tags grow from use. When a new word keeps coming up, add a label for it, and add it to `tags` in `site/src/data/room.mjs`.
 
 ---
 
-## 1. Category: Introduce yourself
+## 2. Pinned welcome post
 
-**Where.** Repository → Discussions → the pencil next to "Categories" → **New category**.
+**Where.** Post in **Practice**, then pin it.
 
-- **Name:** Introduce yourself
-- **Emoji:** waving hand
-- **Description:** Your sector, your stage and one problem you care about. No employer needed.
-- **Format:** Open-ended discussion
-
-### Pinned post
-
-**Title:** Introduce yourself: sector, stage, one problem
+**Title:** Welcome to the Practice Room: start here
 
 **Body:**
 
-> Welcome. Say hello here, in three lines:
+> This is the one stream for capacity planners. Ask a question, share an observation or a link, or ask "how do you handle X?" A sentence is enough. Reply in threads, and use reactions freely.
 >
-> 1. **Your sector.** For example: cloud provider, AI lab, enterprise IT, colocation, telecom, finance. Your employer is optional.
-> 2. **Your stage.** New (0–2 years), practicing, senior or staff, head of a team, or from a neighbouring field (SRE, FinOps, supply, program management, data science).
-> 3. **One problem you care about.** One line is enough. The [open problems](https://cpp.anacay.org/agenda/) are a good place to find one.
+> **The rule that matters most.** Don't break your NDA. Don't share your company's prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game.
 >
-> An example, illustrative: "Supply chain, ex-telecom. Senior. How long new loads wait for power."
+> **Also:** no jobs, no recruiting, no selling. Your username can be a handle. Your name appears on CPP only when you want credit.
 >
-> **Please don't** post availability, rates or "open to work". This is a place for the craft. No jobs, no recruiting, no selling. The [room rules](https://cpp.anacay.org/community/#room-rules) explain why.
+> **Tags.** Write them in your post, or we add them as labels: #first-question, #forecasting, #supply, #gpu, #cost, #power, #cloud.
 >
-> **Where next.** A basic question goes in [First questions](https://github.com/anacay/cpp/discussions/categories/first-questions). A first thread at your stage is under the `good-first` label. The [Start here](https://cpp.anacay.org/start/) page picks a reading path for you.
+> **Three example posts.**
+> - "#first-question What's the difference between approving an ask and allocating it?"
+> - "#supply Has anyone seen a public source on transformer lead times newer than 2025? Here's the one I know: [link]"
+> - "#forecasting How do you handle a team whose declarations are always 40% high? (Illustrative number.)"
 >
-> Rather not post in public? Write to cpp@anacay.org. The founder reads it.
-
----
-
-## 2. Category: First questions
-
-- **Name:** First questions
-- **Emoji:** seedling
-- **Description:** No question too basic. A kind answer, from greeters once they are named.
-- **Format:** Question / Answer (so the asker can mark the answer that helped)
-
-### Pinned post
-
-**Title:** First questions: how this category works
-
-**Body:**
-
-> Ask anything here, however basic. "What is a commit point?" is a good question. So is "Why does my bill miss when my forecast was close?"
+> **What happens to good threads.** A thread that settles something can become a CPP page, credited by name, with your consent. Not sure a post is safe? Ask for a private pre-check at cpp@anacay.org first; the founder reads it.
 >
-> **Our promise.** Every first question gets a kind answer. Today the founder answers. Once greeters are named, they aim to answer within 24 hours. If a day passes with no answer, write to cpp@anacay.org.
-
-*(Add "A greeter rota watches this category, two people a week." only once a rota exists.)*
->
-> **How to ask well.**
-> - Say where you got stuck: a page, a passage or a word.
-> - Use invented numbers, and say they're illustrative. Never post real internal figures or internal system names. [Sharing safely](https://cpp.anacay.org/sharing-safely/) has the details.
->
-> **How to answer well.**
-> - Answer the question asked. Link the guide or the [glossary](https://cpp.anacay.org/glossary/) where it helps.
-> - No "just read the paper". Assume the asker is smart and new.
-> - If the question shows that a page is unclear, say so. A confusing page is a bug, and the asker is credited for finding it.
->
-> The asker marks the answer that helped. Good questions often become glossary entries or guide fixes, credited by name.
+> More: https://cpp.anacay.org/community/
 
 ---
 
 ## 3. Pinned post: Proposals open now
 
-**Where.** Post in **Proposals**, then pin it to the top of Discussions. An editor or co-organizer updates it weekly, and on the day anything opens or closes.
+**Where.** Post in **Proposals**, then pin it to the top of Discussions, beside the welcome post. The founder, or a co-organizer, updates it weekly, and on the day anything opens or closes.
 
 **Title:** Proposals open now (updated weekly)
 
 **Body (first version; fill the bracketed parts on the day you post):**
 
-> Everything open for comment, in one place. Each item closes on the date shown, under [How it grows](https://github.com/anacay/cpp/blob/main/HOW_IT_GROWS.md). Comment in its thread, or privately at cpp@anacay.org.
+> Everything open for comment, in one place. Each item closes on the date shown, under [How it grows](https://github.com/anacay/cpp/blob/main/HOW_IT_GROWS.md). Comment in its thread. Proposals sit apart from the Practice stream because each has an open period and a closing note.
 >
 > **Open for comment**
 >
 > | Proposal | Category | Opened | Closes | Thread |
 > |---|---|---|---|---|
 > | Code of Conduct: add "No recruiting", and cover the Practice Room | Proposals | [date] | [date + 60 days, or 30 once two editors are confirmed] | [#N] |
-> | Editor nominations: [Name A] and [Name B] | Governance | [date] | [date + 14 days] | [#N] |
->
+> >
 > **Open questions, always open.** The author's 15 questions each have a thread, from #2 to #16. The [open problems](https://cpp.anacay.org/agenda/) page lists them with their status.
 >
 > **Recently decided**
@@ -147,22 +127,22 @@ No pinned post is needed: the form carries its own instructions.
 
 | Name | Description (shown on hover) | Colour |
 |---|---|---|
-| `good-first` | A good first thread: answerable from public sources or your own experience. | `#7FB069` |
+| `good-first` | A good first thread: answerable from public sources or your own experience. | `#5C9E4A` |
 | `stage:new` | Fits planners in their first two years, or arriving from another field. | `#C9B37E` |
-| `stage:practicing` | Fits planners who run intakes, supply reviews and the ledger. | `#B8935A` |
+| `stage:practicing` | Fits planners who run intakes, supply reviews and the ledger. | `#A07F4C` |
 | `stage:senior` | Fits senior and staff planners: method, portfolio and cross-team design. | `#8C6D3F` |
 | `stage:head` | Fits people who lead planning teams and own the forum. | `#5E4A2C` |
-| `stage:adjacent` | Fits SRE, FinOps and finance, supply, program managers and data scientists. | `#4F7CAC` |
+| `stage:adjacent` | Fits SRE, FinOps and finance, supply, program managers and data scientists. | `#3E6A95` |
 
 Or, from a terminal with the GitHub CLI signed in:
 
 ```sh
-gh label create good-first       -R anacay/cpp -c 7FB069 -d "A good first thread: answerable from public sources or your own experience."
+gh label create good-first       -R anacay/cpp -c 5C9E4A -d "A good first thread: answerable from public sources or your own experience."
 gh label create stage:new        -R anacay/cpp -c C9B37E -d "Fits planners in their first two years, or arriving from another field."
-gh label create stage:practicing -R anacay/cpp -c B8935A -d "Fits planners who run intakes, supply reviews and the ledger."
+gh label create stage:practicing -R anacay/cpp -c A07F4C -d "Fits planners who run intakes, supply reviews and the ledger."
 gh label create stage:senior     -R anacay/cpp -c 8C6D3F -d "Fits senior and staff planners: method, portfolio and cross-team design."
 gh label create stage:head       -R anacay/cpp -c 5E4A2C -d "Fits people who lead planning teams and own the forum."
-gh label create stage:adjacent   -R anacay/cpp -c 4F7CAC -d "Fits SRE, FinOps and finance, supply, program managers and data scientists."
+gh label create stage:adjacent   -R anacay/cpp -c 3E6A95 -d "Fits SRE, FinOps and finance, supply, program managers and data scientists."
 ```
 
 **How to use them.** A stage label says who will find a thread easiest to join, not who may join. Any thread can carry more than one. `good-first` goes only on threads a newcomer can move forward in an hour, without confidential data.
@@ -248,6 +228,7 @@ Then:
 
 ## After setup
 
-- Link the two pinned posts from the room's #welcome channel description or bookmarks, not only a pin (the free plan hides history after 90 days).
 - When `/agenda/` statuses change, update §3 the same day.
-- Add `good-first` to any new thread that fits. Whoever triages new threads does this: the founder today, with co-organizers as they step forward.
+- Tag new posts, and add `good-first` to any thread that fits. The founder does this today, with co-organizers as they step forward.
+- Point the best threads toward a CPP page, and ask the authors for consent to credit them.
+- Later, when the stream asks for it: a monthly call, reviews, working groups, a digest. Each starts only when a topic outgrows its threads.
