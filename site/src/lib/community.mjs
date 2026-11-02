@@ -79,7 +79,11 @@ export function foundingDoc(file) {
   const body = h1 >= 0 ? lines.slice(h1 + 1).join('\n') : src;
   let html = md.render(body);
   // Links: sibling docs → site pages; other repo files → GitHub.
+  // Links to the site's own pages (written in full so they also work on
+  // GitHub) become bare paths, so they stay on-site and check 5 tests them.
+  const own = load().config.site.url.replace(/\/$/, '');
   html = html.replace(/href="([^"#]+?)(#[^"]*)?"/g, (m, href, hash = '') => {
+    if (href.startsWith(`${own}/`)) return `href="${href.slice(own.length)}${hash}"`;
     if (/^(https?:|mailto:)/.test(href)) return m;
     const base = href.replace(/^\.\//, '');
     if (DOCS[base]) return `href="${DOCS[base]}${hash}"`;

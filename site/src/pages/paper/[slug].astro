@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Pager from '../../components/Pager.astro';
 import HelpBuild from '../../components/HelpBuild.astro';
+import ChangedBecause from '../../components/ChangedBecause.astro';
 import { annotate } from '../../lib/notes.mjs';
 import RfcHint from '../../components/RfcHint.astro';
 import { load, renderBlocks, pageMeta, glossary, esc } from '../../lib/paper.mjs';
@@ -51,6 +52,7 @@ const terms = glossary(ctx).filter((t) => t.usedIn.some((u) => u.page === page))
         <ul class="chips">{terms.map((t) => <li><a href={`/glossary/#${t.id}`}>{t.term}</a></li>)}</ul>
       </aside>
     )}
+    <ChangedBecause path={page.url} />
     <HelpBuild page={page} />
     <Pager page={page} />
   </div>
