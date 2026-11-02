@@ -60,7 +60,7 @@ function noteLinks(note) {
   const q = (o) => Object.entries(o).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
   return {
     // The note's own thread once seed-discussions has posted it; until then, a new one.
-    discuss: threads()[note.quote] || `${ctx.config.community.repo}/discussions/new?${q({ category: 'sections', title, body })}`,
+    discuss: threads()[note.quote] || `${ctx.config.community.repo}/discussions/new?${q({ category: 'practice', title, body })}`,
     mail: `mailto:${ctx.config.site.contact}?${q({ subject: title, body })}`,
     open: l.open,
   };
@@ -84,7 +84,7 @@ export function annotate(html, page) {
     const aside = `<aside class="anno anno--${note.kind}" id="${note.id}" data-apparatus>
 <p class="anno__head"><span class="anno__n">${note.n}</span> Author's note · ${KINDS[note.kind]}${note.draft ? ' <span class="anno__draft">draft</span>' : ''}</p>
 <p class="anno__body">${renderInline(note.body, load().targets)}</p>
-<p class="anno__act"><a href="${l.open ? l.discuss : l.mail}">${l.open ? 'Reply on GitHub' : 'Reply by email'}</a>${l.open ? ` · <a href="${l.mail}">or email</a>` : ''} · <a href="/open-questions/">All open questions</a></p>
+<p class="anno__act"><a href="${l.open ? l.discuss : l.mail}">${l.open ? 'Reply on GitHub' : 'Reply by email'}</a> · <a href="/open-questions/">All open questions</a></p>
 </aside>`;
     html = html.slice(0, end) + aside + html.slice(end);
   }
