@@ -41,7 +41,8 @@ The Practice Room. R8 is the community release: a room for capacity planners to 
   - A "Changes to this page" footer renders from `changed-because.json` on guide, case, note, paper and founding-document pages. The file is empty, so nothing shows yet.
 - **/glossary/:** a `#your-words` crosswalk, labeled "Pointers, not definitions." It adds no new definitions.
 - **/related-work/:** "CPP and FinOps: who does what" (`#cpp-and-finops`), with the licence note.
-- **Private routes:** wherever ROADMAP.md says "say so in Governance", it now adds "or write to cpp@anacay.org", and points to /roles/. Every private route says who reads the inbox: today the founder, then the co-organizers once named. GOVERNANCE.md is unchanged from R7 (see Process).
+- **Private routes:** wherever ROADMAP.md says "say so in Governance", it now adds "or write to cpp@anacay.org", and points to /roles/. Every private route says the founder reads cpp@anacay.org. GOVERNANCE.md is unchanged from R7 (see Process).
+- **Who runs this:** /community/#who says Guillermo founded CPP and stewards it, with Anacay's disclosed support. What the community makes belongs to it, credited by name. Roles open as people step forward, and governance widens as the community grows. /circle/ and /roles/ point to it.
 - **Status:** /community/ and /join/ carry a "Status: being set up" block from `room.mjs`. Until the room opens, the Slack, greeters, hosts, the digest and the call are described in the future tense.
 - **Consistency fixes:**
   - CONTRIBUTORS.md credits the paper at v7.9.
@@ -75,7 +76,7 @@ People, dates and statuses live in `site/src/data/room.mjs`. A confirmed call da
 | R8-16 | CPP and FinOps: who does what | `related-work.astro` |
 | R8-17 | /tools/ starter pack | `tools.astro`, `site/public/tools/` |
 | R8-18 | Integration: links in and out, footer, llms.txt | several |
-| R8-fix-1 | Private routes say who reads cpp@anacay.org today (the founder), and that it moves to co-organizers once named; no reply promises in a co-organizer's name | `room.mjs` (`inboxLine()`), `join.astro`, `roles.astro`, `circle.astro`, `community.astro`, `SHARING_SAFELY.md`, `github-kit.md` |
+| R8-fix-1 | Private routes say who reads cpp@anacay.org today (the founder), no reply promises in a co-organizer's name | `room.mjs` (`inboxLine()`), `join.astro`, `roles.astro`, `circle.astro`, `community.astro`, `SHARING_SAFELY.md`, `github-kit.md` |
 | R8-fix-2 | "Status: being set up" block; the future tense for the Slack, greeters, hosts, digest and call; how to hear when the call is set | `room.mjs` (`status`), `RoomStatus.astro`, `NextCall.astro`, `community.astro`, `join.astro`, `start/[door].astro`, `github-kit.md` |
 | R8-fix-3 | One account of who runs CPP today (`ownershipLine()`); co-organizer rules marked proposed; GOVERNANCE.md restored to R7 | `community.astro`, `circle.astro`, `roles.astro`, `index.astro`, `GOVERNANCE.md` |
 | R8-fix-4 | Code of Conduct proposal argued on the merits, no invented claims; 60-day open period, closable at 30 | `coc-proposal.md`, `github-kit.md`, `community.astro` |
@@ -84,6 +85,7 @@ People, dates and statuses live in `site/src/data/room.mjs`. A confirmed call da
 | R8-fix-7 | Doors fit their readers: answer key, newcomer problems, head-of-planning circle step and Q3, supply writing line | `start-paths.mjs`, `start/[door].astro`, `notes/[...slug].astro`, `glossary.astro`, `the-work-and-the-path.md` |
 | R8-fix-8 | Illustrative labels on the ladder; estimated hours; one open-roles count; README | `SHARING_SAFELY.md`, `roles.astro`, `README.md` |
 | R8-fix-9 | Re-check after the fixes | `community.astro` |
+| R8-fix-10 | Founder decision: founder and steward, keeping editor, admin and conduct roles while leadership grows from members. "Who runs this" on /community/; co-organizers and other roles are open volunteer roles; every step-back, handover and founder's-employer line removed; the founder closes the CoC proposal | `room.mjs`, `RoomStatus.astro`, `community.astro`, `circle.astro`, `roles.astro`, `join.astro`, `index.astro`, `SHARING_SAFELY.md`, `github-kit.md`, `coc-proposal.md` |
 
 **New checks**, run on every build:
 - **8.** No banned term and no placeholder text, on every page. Reference lists are exempt, because a cited paper is titled "Flex".
@@ -97,18 +99,18 @@ The new pages and the ROADMAP.md hand-raise lines change no body-of-knowledge cl
 
 ## Commits
 
-cpp (`anacay/cpp`), branch `r8-community` from main `f3b9a18`: 35 commits for the items, follow-ups, integration and nine review fixes (R8-fix-1 to R8-fix-9), ending `21c0d1b`, then this record, 36 in all. This record is the last commit on the branch.
+cpp (`anacay/cpp`), branch `r8-community` from main `f3b9a18`: 40 commits for the items, follow-ups, integration, nine review fixes (R8-fix-1 to R8-fix-9) and four R8-fix-10 commits for the founder's decision on his role, ending `96b936f`, then this record, 41 in all. This record is the last commit on the branch.
 - Merged as PR (filled in at deploy), with merge commit (filled in at deploy).
 
 ## Checks (before deploy)
 
-- **Build:** `npm run build` on `r8-community` passes all checks: 87 pages, 86 sitemap URLs and 9,180 internal links and anchors resolved. Refresh the figure from the build on main at deploy.
+- **Build:** `npm run build` on `r8-community` passes all checks: 87 pages, 86 sitemap URLs and 9,186 internal links and anchors resolved. Refresh the figure from the build on main at deploy.
 - **Seed text:** unchanged (check 1). Figures and captions are unchanged (check 2).
 - **Scripts:** no new scripts (check 4). Interactive needs are `mailto:` or GitHub links.
 - **Public writing:** checks 8–11 pass. A separate grep of every line added since `f3b9a18` found no banned terms, and no case-sensitive `CL`, `Oz` or `Flex`. Its hiring words all sit in rule statements, source comments, the GitHub kit or the staged Code of Conduct proposal, plus the steering decision's home lead-in. The `/tools/` static files are clean.
 - **Consent:** `room.mjs` lists only the founder, and the circle is empty. The call status is `pending`, so no date appears anywhere. `status.state` is `setting-up`.
 - **Reviews:** VERIFY_PERSONAS (B1–B3, S1–S9, N1–N6) and VERIFY_AUDIT (1–18), both on 2 November 2026. All blockers and shoulds are fixed in R8-fix-1 to R8-fix-9, except those left to the founder (below).
-- **Left to the founder:** whether to replace or unlink the home page's cited role description; whether to disclose the founder's next employer; the program-manager claim on the home card (steering copy, unsourced); proposing in Governance the co-organizer role, private nominations and the LinkedIn-group wording in GOVERNANCE.md, CHARTER.md and CODE_OF_CONDUCT.md.
+- **Left to the founder:** whether to replace or unlink the home page's cited role description; the program-manager claim on the home card (steering copy, unsourced); proposing in Governance the co-organizer role, private nominations and the LinkedIn-group wording in GOVERNANCE.md, CHARTER.md and CODE_OF_CONDUCT.md.
 - **From main:** (filled in at deploy)
 - **Preview:** (filled in at deploy)
 
