@@ -23,7 +23,7 @@ export const doors = [
     ],
     aha: 'A team can land within 4% of its forecast and still be 30% over its bill. Two of the bill’s three terms belong to someone else. So a bill miss is not only a forecasting failure. Ask who owns each term.',
     ahaSource: ['Case 1', '/guide/cases/#case-1-the-launch-that-needed-memory'],
-    problems: ['q4', 'competency-map', 'q11'],
+    problems: ['worksheet', 'q13', 'competency-map'],
     first: { item: 'glossary-terms', text: 'Name one word that confused you. Open a Terms discussion, or send it to cpp@anacay.org and it is posted for you.' },
   },
   {
@@ -75,11 +75,12 @@ export const doors = [
       ['The path and the levels', '/guide/the-work-and-the-path/#the-path', 4, 'Who usually works where, from Learning to Leading.'],
       ['Roadmap', '/roadmap/', 5, 'The competency map and the survey.'],
       ['Governance', '/governance/', 5, 'How decisions are made, and by whom.'],
+      ['The founding circle', '/circle/', 2, 'What members commit to, and who runs the room.'],
     ],
     aha: 'The “What to fix first” table gives you a diagnostic for Monday. “Bills miss and nobody can say why” leads to splitting the miss and publishing coefficients.',
     ahaSource: ['Settings', '/guide/settings/#what-to-fix-first'],
-    problems: ['competency-map', 'survey', 'q15'],
-    first: { item: 'competency-map', text: 'Describe what a planner at each level should be able to do. The competency map is about skills and growth.' },
+    problems: ['q3', 'survey', 'q15'],
+    first: { item: 'competency-map', text: 'Describe what a planner at each level should be able to do. The competency map is about skills and growth. Or, with two hours a week to give, ask about the co-organizer role on Roles.' },
   },
   {
     id: 'program-managers', name: 'Program managers', time: '25 minutes',

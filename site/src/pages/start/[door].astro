@@ -74,6 +74,7 @@ const desc = {
         <h2 id="sup-h">The least documented side</h2>
         <p>Supply is where public evidence is thinnest. Order-to-dock times, turn-up durations and hardware contract terms were not found in public sources. Your experience is what the body of knowledge most lacks.</p>
         <p>Before you share anything, read <a href="/sharing-safely/">Sharing safely</a>. Band lead times, date them, and leave out vendor, site and tenant names.</p>
+        <p>Prefer writing? Every route here is written, and any language is fine. Ask for a <a href="/sharing-safely/#a-private-pre-check">private pre-check</a> before you post.</p>
       </section>
     )}
 
@@ -82,6 +83,7 @@ const desc = {
       <ol class="chapters chapters--path">
         {d.steps.map(([label, href, min, why], i) => <li><a href={href}><span class="n" aria-hidden="true">{i + 1}</span><span class="sr-only">{i + 1}.&nbsp;</span><span class="ct">{label}</span><span class="sr-only">:&nbsp;</span><span class="cs">{why} <span class="path-t">{min} min</span></span></a></li>)}
       </ol>
+      {d.id === 'new' && <p class="muted">Answer key for step 8: <a href="/tools/#learning-walkthrough">the Learning walk-through</a>.</p>}
       <p class="note"><strong>Where it clicks.</strong> {d.aha} <a href={d.ahaSource[1]}>{d.ahaSource[0]}</a></p>
     </section>
 
