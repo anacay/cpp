@@ -1,0 +1,18 @@
+section,item,value,unit,owner,how it is worked out
+about,"All numbers are illustrative. They are the seed paper's worked example: Product A's launch on Service X (Section 7). CC BY-SA 4.0, cpp.anacay.org.",,,,
+input,"Volume, plan (V0)",500000,requests per second,Product A,declared
+input,"Volume, actual (V1)",480000,requests per second,Product A,measured
+input,"Coefficient, plan (a0)",1.0,ms of CPU per request,Service X,0.4 calls per request x 2.5 ms per call
+input,"Coefficient, actual (a1)",1.25,ms of CPU per request,Service X,"0.4 calls per request x 3.125 ms per call, after X's release"
+input,"Rate, plan (r0)",0.12,$ per core-hour,Service X with finance,the rate card
+input,"Rate, actual (r1)",0.13,$ per core-hour,Service X with finance,after X's power contract was re-priced
+input,Hours in a year,8760,hours,,
+result,"Busy cores, plan",500,cores,,V0 x a0 / 1000
+result,"Busy cores, actual",600,cores,,V1 x a1 / 1000
+result,"Cost, plan",525600,$ a year,,V0 x a0 / 1000 x hours x r0
+result,Volume term,-21024,$ a year,Product A,(V1 - V0) x a0 / 1000 x hours x r0
+result,Coefficient term,126144,$ a year,Service X (its release),V1 x (a1 - a0) / 1000 x hours x r0
+result,Rate term,52560,$ a year,Service X with finance,V1 x a1 / 1000 x hours x (r1 - r0)
+result,"Cost, actual",683280,$ a year,,V1 x a1 / 1000 x hours x r1
+check,Sum of the three terms,157680,$ a year,,equals actual minus plan: +30.0%
+check,Rate term if the rate is swapped first,43800,$ a year,,V0 x a0 / 1000 x hours x (r1 - r0). The order of the swaps is a policy choice.

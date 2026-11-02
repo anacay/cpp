@@ -1,0 +1,72 @@
+---
+// /tools/: a starter pack of plain files a planner can use on Monday. Each file
+// is static, in site/public/tools/, and builds only on the guide and the seed
+// paper's worked example. Invented numbers are labeled illustrative.
+import Base from '../layouts/Base.astro';
+const tools = [
+  {
+    id: 'cadence-agendas', name: 'Cadence agendas', file: '/tools/cadence-agendas.md', kind: 'Markdown, 5 agendas',
+    who: 'Anyone who runs a planning meeting.',
+    body: 'Five meeting agendas: weekly, monthly, quarterly, annual and post-launch. Each lists the steps from the guide’s stage page, with illustrative time boxes. Each ends with what the meeting hands on, and who owns it.',
+    guide: [['Weekly', '/guide/weekly/'], ['Monthly', '/guide/monthly/'], ['Quarterly', '/guide/quarterly/'], ['Annual', '/guide/annual/'], ['Post-launch', '/guide/post-launch/']],
+  },
+  {
+    id: 'decision-rights', name: 'Decision-rights canvas', file: '/tools/decision-rights-canvas.md', kind: 'Markdown, one page',
+    who: 'Heads of planning, program managers, finance partners.',
+    body: 'A blank grid of fifteen planning decisions against capital, demand, shared services, supply, planning and the forum. Fill it in, then compare it with the guide’s reading. A row nobody will sign is your first agenda item.',
+    guide: [['People', '/guide/people/'], ['Approval and allocation', '/guide/concepts/approval-and-allocation/']],
+  },
+  {
+    id: 'split-the-miss', name: 'Split the miss', file: '/tools/split-the-miss-illustrative.csv', kind: 'CSV, illustrative numbers',
+    who: 'Planners and finance readers after a launch.',
+    body: 'The seed paper’s worked example as data: plan and actual volume, coefficient and rate, and the three terms of the miss with their owners. Every row says how it is worked out, so you can swap in your own invented numbers.',
+    guide: [['The coefficient', '/guide/concepts/the-coefficient/'], ['Post-launch', '/guide/post-launch/']],
+  },
+  {
+    id: 'learning-walkthrough', name: 'Learning walk-through, with answer key', file: '/tools/learning-walkthrough.md', kind: 'Markdown, about 10 minutes',
+    who: 'Planners in their first two years, and anyone teaching them.',
+    body: 'Ten steps through one bill: a forecast within 4% and a bill 30% over. You split the miss into volume, coefficient and rate, and name each owner. The answer key is at the end.',
+    guide: [['The work and the path', '/guide/the-work-and-the-path/#try-it-on-the-example'], ['Case 1', '/guide/cases/']],
+  },
+];
+---
+<Base title="Tools" description="A starter pack for capacity planners: cadence agendas, a decision-rights canvas, a split-the-miss CSV and a first walk-through with an answer key." nav="join">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Join in</p>
+      <h1>Tools for Monday</h1>
+      <p class="lede">Four plain files to try at work this week. Each one builds on the guide, and each links back to the page it comes from.</p>
+    </div>
+
+    <p class="note reading"><strong>Before you use them.</strong> The numbers in these files are illustrative: the seed paper’s worked example, Product A on Service X. The steps are the guide’s reading, argued and not yet tested across teams. Swap in your own invented numbers, never real internal ones.</p>
+
+    <ul class="cards tool-cards">
+      {tools.map((t) => (
+        <li id={t.id}>
+          <h2>{t.name}</h2>
+          <p class="tool-kind">{t.kind}</p>
+          <p>{t.body}</p>
+          <p><strong>For:</strong> {t.who}</p>
+          <p>From the guide: {t.guide.map(([n, h], i) => <>{i > 0 && ' · '}<a href={h}>{n}</a></>)}</p>
+          <p><a class="more" href={t.file} download>Download the file</a></p>
+        </li>
+      ))}
+    </ul>
+
+    <section class="prose reading" aria-labelledby="tried-h">
+      <h2 id="tried-h">Tried one? Tell us where it got stuck</h2>
+      <p>A tool nobody can run on Monday doesn’t help much. So every report counts, and it is credited on <a href="/contributors/">Contributors</a>.</p>
+      <ul>
+        <li>Say what you cut, added or couldn’t fill, in a Sections discussion (<a href="/join/#new">how commenting works</a>). Use invented numbers.</li>
+        <li>Rather not post in public? Write to <a href="mailto:cpp@anacay.org">cpp@anacay.org</a>. We post for you, with credit if you want it.</li>
+        <li>Want to build the next one? The <a href="/roadmap/">roadmap</a> lists worksheets as a seed, and the <a href="/worksheet/">declaration worksheet</a> is the first.</li>
+      </ul>
+      <p>The files are CC BY-SA 4.0, like the rest of the practice. Copy them, change them, and keep the credit line.</p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .tool-cards { grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr)); margin: 2rem 0; }
+  .tool-kind { font-size: 0.875rem; letter-spacing: 0.02em; color: var(--gold-soft); }
+</style>

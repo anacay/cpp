@@ -18,6 +18,7 @@ The full text, figures' alt text and captions included, is in one file: ${abs('/
 - [Roadmap](${abs('/roadmap/')}): the next seeds.
 - [Related work](${abs('/related-work/')}): the communities, frameworks and books this builds on.
 - [Join in](${abs('/join/')}): how to take part.
+- [Tools](${abs('/tools/')}): a starter pack: cadence agendas, a decision-rights canvas, a split-the-miss CSV and a first walk-through.
 - [Contributors](${abs('/contributors/')}): everyone credited, by edition.
 
 ## The Practice Room
