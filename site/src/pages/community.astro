@@ -7,7 +7,7 @@ import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
 import NextCall from '../components/NextCall.astro';
 import RoomStatus from '../components/RoomStatus.astro';
-import { room, rhythm, channels, circle, consented, holderLine, role, person, inboxLine, settingUp } from '../data/room.mjs';
+import { room, rhythm, channels, circle, consented, holderLine, role, person, inboxLine, settingUp, ownershipLine } from '../data/room.mjs';
 import { community } from '../lib/community.mjs';
 const c = community();
 const mail = `mailto:${room.contact}`;
@@ -144,10 +144,11 @@ const sections = [
 
     <section class="prose reading" aria-labelledby="who">
       <h2 id="who">Who runs it</h2>
-      <p><strong>Co-organizers</strong> own the room and its Slack, and hold the site’s keys.</p>
+      <p>{ownershipLine()} As the <a href="/governance/">governance</a> page says, the founder decides while he is the only editor.</p>
+      <p><strong>Co-organizers</strong> will own the room and its Slack. Two of them will hold the site’s deploy keys and read the shared inbox.</p>
       <p class="pr-who">Co-organizers: {coOrganizers.length ? coOrganizers.map((p) => p.name).join(', ') + '.' : 'Being invited now.'}</p>
-      <p><strong>Every other role</strong> is open, with a term of one edition and a one-message exit. See <a href="/roles/">Roles</a>.</p>
-      {founder && <p><strong>The founder</strong>, {founder.name}, is a disclosed founder and contributor. He is a member of the room, not an owner. Anacay LLC supports the practice, and says so.</p>}
+      <p><strong>Every other role</strong> is an open volunteer role, with a term of one edition and a one-message exit. See <a href="/roles/">Roles</a>.</p>
+      {founder && <p><strong>The founder</strong>, {founder.name}, started the practice and is its only editor today. Once co-organizers are named and confirmed as editors, he steps back to disclosed founder and contributor: a member of the room, not an owner. Anacay LLC supports the practice, and says so.</p>}
       <p>The first members are listed on <a href="/circle/">The founding circle</a>, once they sign off. How decisions are made is set out in <a href="/governance/">Governance</a>.</p>
     </section>
   </div>

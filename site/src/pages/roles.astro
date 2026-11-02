@@ -4,7 +4,7 @@
 // holder shows "Open". The duties and hours below are this page's own text.
 // Every role in room.mjs must have an entry in `detail`, or the build fails.
 import Base from '../layouts/Base.astro';
-import { room, rhythm, roles, holderLine, inboxLine } from '../data/room.mjs';
+import { room, rhythm, roles, holderLine, inboxLine, ownershipLine } from '../data/room.mjs';
 
 const contact = room.contact;
 const mail = (subject) => `mailto:${contact}?subject=${encodeURIComponent(subject)}`;
@@ -18,7 +18,7 @@ const detail = {
     duties: [
       'Read the shared inbox and reply to join requests.',
       'Co-own the room’s Slack with one other co-organizer.',
-      'Hold the site’s deploy keys with one other co-organizer.',
+      'Hold the site’s deploy keys with one other co-organizer, once handed over.',
       'Help host one call a month, and apply the room rules.',
     ],
   },
@@ -30,7 +30,7 @@ const detail = {
       'Call rough consensus in a thread, and write the closing note.',
       'Assemble each edition, with credit for everyone who helped.',
     ],
-    extra: 'Editors are added by an open nomination of 14 days. Raising your hand privately starts one.',
+    extra: 'Editors are added by an open nomination of 14 days in the Governance category. Today the founder is the only editor. He holds the role until co-organizer editors are confirmed, then steps back.',
     link: ['/governance/#how-editors-are-added', 'How editors are added'],
   },
   'conduct-reviewer': {
@@ -119,6 +119,7 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
         <li><strong>Emeritus credit.</strong> When you step down, you stay credited on <a href="/contributors/">Contributors</a>.</li>
       </ul>
       <p>Each card shows who holds the role, or “Open”. A name appears only after that person agrees.</p>
+      <p class="note">{ownershipLine()} The co-organizer role, and the rules here that go beyond <a href="/governance/">Governance</a>, are proposed. They apply in the room once it opens, and reach GOVERNANCE.md only through a Governance proposal.</p>
     </section>
 
     <ul class="cards roles" aria-label="The eight roles">
@@ -132,7 +133,7 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
             <p>{d.summary}</p>
             <ul class="duties">{d.duties.map((t) => <li>{t}</li>)}</ul>
             {d.extra && <p>{d.extra}</p>}
-            {r.notAtFoundersEmployer && <p class="limit">Not open to anyone at the founder’s employer.</p>}
+            {r.notAtFoundersEmployer && <p class="limit">Not open to anyone who works where the founder works. He discloses his employer, as Governance asks of everyone.</p>}
             <dl class="terms">
               <div><dt>Time</dt><dd>{d.hours}</dd></div>
               <div><dt>Term</dt><dd>One edition, renewable</dd></div>
@@ -150,7 +151,7 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
     <section class="prose reading" aria-labelledby="employer-h">
       <h2 id="employer-h">If you change employer</h2>
       <p class="note">Update your sector within 14 days. Step back from anything that mainly touches your new employer.</p>
-      <p>A one-line note to <a href={`mailto:${contact}`}>{contact}</a> is enough. You keep your role unless it is closed to people at the founder’s employer. The <a href="/governance/#conflicts-of-interest">conflict-of-interest rules</a> apply to everyone.</p>
+      <p>A one-line note to <a href={`mailto:${contact}`}>{contact}</a> is enough. You keep your role unless it is closed to people who work where the founder works. The <a href="/governance/#conflicts-of-interest">conflict-of-interest rules</a> apply to everyone.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="next-h">
