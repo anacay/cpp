@@ -11,7 +11,7 @@ const groups = [
       { name: 'ITIL: capacity and performance management', body: 'ITIL, first released in 1989, treats capacity and performance management as one of its management practices, aimed at meeting current and future demand. It is a proprietary, certification-backed framework for IT service management.',
         links: [['ITIL, overview (Wikipedia)', 'https://en.wikipedia.org/wiki/ITIL'], ['ITSM.tools on the practice (2025)', 'https://itsm.tools/itil-capacity-and-performance-management/']] },
       { name: 'The FinOps Foundation', body: 'The closest modern example of practitioners building an open framework together. Founded in 2019 and part of the Linux Foundation since 2020, it describes its framework as “iteratively developed from real-world practitioner experiences” and licenses it under CC BY 4.0. FinOps looks at capacity from the cost side; this practice looks at planning demand and supply.',
-        links: [['The FinOps Framework', 'https://www.finops.org/framework/'], ['About the Foundation', 'https://www.finops.org/about/']], internal: [['CPP and FinOps: who does what', '#finops']] },
+        links: [['The FinOps Framework', 'https://www.finops.org/framework/'], ['About the Foundation', 'https://www.finops.org/about/']], internal: [['CPP and FinOps: who does what', '#cpp-and-finops']] },
     ],
   },
   {
@@ -52,7 +52,7 @@ const groups = [
       <h1>Built on the work that came before</h1>
       <p class="lede">Capacity planning didn’t start here. People have measured, modeled and planned capacity for decades, and written down a lot of what they learned. This page credits that work and links to it.</p>
     </div>
-    <nav class="toc reading" aria-labelledby="rw-toc"><h2 id="rw-toc">On this page</h2><ol>{groups.map((g) => <li><a href={`#${g.id}`}>{g.title}</a></li>)}<li><a href="#finops">CPP and FinOps: who does what</a></li><li><a href="#gap-h">What this adds</a></li></ol></nav>
+    <nav class="toc reading" aria-labelledby="rw-toc"><h2 id="rw-toc">On this page</h2><ol>{groups.map((g) => <li><a href={`#${g.id}`}>{g.title}</a></li>)}<li><a href="#cpp-and-finops">CPP and FinOps: who does what</a></li><li><a href="#gap-h">What this adds</a></li></ol></nav>
     <div data-outbound>
       {groups.map((g) => (
         <section class="reading rw" aria-labelledby={g.id}>
@@ -69,8 +69,8 @@ const groups = [
         </section>
       ))}
     </div>
-    <section class="prose reading finops" aria-labelledby="finops">
-      <h2 id="finops">CPP and FinOps: who does what</h2>
+    <section class="prose reading finops" aria-labelledby="cpp-and-finops">
+      <h2 id="cpp-and-finops">CPP and FinOps: who does what</h2>
       <p>The FinOps Foundation and this practice look at the same fleets from two sides. We read them as complements, not rivals. This is the split as we see it, and FinOps practitioners are welcome to correct it.</p>
       <div class="split-who">
         <div>
