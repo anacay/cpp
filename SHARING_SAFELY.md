@@ -1,6 +1,6 @@
 # Sharing safely
 
-How to share what you know about capacity planning without sharing anything that isn't yours to share. It applies on this site, on GitHub and in the Practice Room.
+How to share what you know about capacity planning without sharing anything that isn't yours to share. It applies on this site and on GitHub, including the Practice Room stream.
 
 <!-- Editors: keep every sentence at 30 words or fewer (check 11). Links to site pages use the full https://cpp.anacay.org address, so they also work on GitHub. -->
 
@@ -109,7 +109,7 @@ Not sure? Before you post anything, write to [cpp@anacay.org](mailto:cpp@anacay.
 
 The founder reads cpp@anacay.org and the pre-checks. The [Pre-check reviewer](https://cpp.anacay.org/roles/#pre-check) role is open, so others can share the work.
 
-A pre-check is also the first step for a [bring-your-problem review](https://cpp.anacay.org/community/#reviews) in the Practice Room.
+A pre-check is the step before posting anything sensitive in [the stream](https://cpp.anacay.org/community/).
 
 ## If something slips
 
@@ -120,4 +120,4 @@ Mistakes happen, and they are fixed without blame.
 - **History too.** Where GitHub allows, editors also remove it from the edit history.
 - **No blame.** Nobody is named or shamed for a slip. The person who posted it hears about it privately.
 
-In the Practice Room, the same applies. Never press anyone for real figures. The [room rules](https://cpp.anacay.org/community/#room-rules) say so.
+In the stream, the same applies. Never press anyone for real figures. [The rules](https://cpp.anacay.org/community/#room-rules) say so.
