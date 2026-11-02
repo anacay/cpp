@@ -6,7 +6,7 @@ import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
 import NextCall from '../components/NextCall.astro';
 import { community } from '../lib/community.mjs';
-import { room, rhythm, circle, consented } from '../data/room.mjs';
+import { room, rhythm, circle, consented, inboxLine } from '../data/room.mjs';
 const c = community();
 const contact = room.contact;
 const mail = (subject) => `mailto:${contact}?subject=${encodeURIComponent(subject)}`;
@@ -34,7 +34,7 @@ const kinds = [
       <h2 id="room-h">The Practice Room</h2>
       <p>The Practice Room is where capacity planners work the open problems together. What we conclude is published here, credited by name.</p>
       <p>{rhythm.call}, with a newcomer half-hour first. A first question gets a kind answer within {room.firstAnswerHours} hours. The room is invitation-only, so it stays a room of peers.</p>
-      <p><strong>How to ask.</strong> Write to <a href={mail('Join the Practice Room')}>{contact}</a> with your sector and one problem you care about. Your employer is optional. A co-organizer replies within {room.joinReplyDays} working days.</p>
+      <p><strong>How to ask.</strong> Write to <a href={mail('Join the Practice Room')}>{contact}</a> with your sector and one problem you care about. Your employer is optional. {inboxLine()}</p>
       <NextCall />
       <RoomRule />
       <p><a class="more" href="/community/">How the room works</a> · <a class="more" href="/circle/">The founding circle</a></p>
@@ -42,11 +42,11 @@ const kinds = [
 
     <section class="prose reading" aria-labelledby="private-h">
       <h2 id="private-h">Private routes</h2>
-      <p>Not everyone can comment in public, and that’s fine. Write to <a href={`mailto:${contact}`}>{contact}</a> or message a co-organizer. We post for you, with credit if you want it.</p>
+      <p>Not everyone can comment in public, and that’s fine. Write to <a href={`mailto:${contact}`}>{contact}</a>. We post for you, with credit if you want it. {inboxLine()}</p>
       <ul>
         <li><strong>A comment or a correction.</strong> Send the passage and what you’d change. It’s posted in the right thread, with or without your name.</li>
         <li><strong>A problem you can’t share yet.</strong> Ask for a private pre-check. A written reply comes within {room.precheckHours} hours. <a href="/sharing-safely/">How the pre-check works</a>.</li>
-        <li><strong>A hand raised for a role.</strong> Say which <a href="/roles/">role</a> you’d like. Nobody sees it but the co-organizers.</li>
+        <li><strong>A hand raised for a role.</strong> Say which <a href="/roles/">role</a> you’d like. It stays private: only whoever reads the inbox sees it.</li>
       </ul>
       {coOrganizers.length > 0
         ? <p class="muted">Co-organizers: {coOrganizers.map((p) => p.name).join(', ')}.</p>

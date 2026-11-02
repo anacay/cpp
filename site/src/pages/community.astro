@@ -6,7 +6,7 @@
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
 import NextCall from '../components/NextCall.astro';
-import { room, rhythm, channels, circle, consented, holderLine, role, person } from '../data/room.mjs';
+import { room, rhythm, channels, circle, consented, holderLine, role, person, inboxLine } from '../data/room.mjs';
 import { community } from '../lib/community.mjs';
 const c = community();
 const mail = `mailto:${room.contact}`;
@@ -119,7 +119,7 @@ const sections = [
           <li><strong>Chatham House rule.</strong> Use what you hear; don’t say who said it.</li>
           <li><strong>Between roles is welcome and normal.</strong> Give your sector, never “open to work”.</li>
         </ol>
-        <p>A first breach: the post comes down and a co-organizer writes to you privately. A second: you leave the room. Report to <a href={mail}>{room.contact}</a> or any co-organizer. Reports about a co-organizer go to the independent conduct reviewer.</p>
+        <p>A first breach: the post comes down and a co-organizer writes to you privately. A second: you leave the room. Report to <a href={mail}>{room.contact}</a>, or to any co-organizer once they are named. Reports about a co-organizer go to the independent conduct reviewer.</p>
         <p>These rules sit alongside the <a href="/code-of-conduct/">Code of Conduct</a>. A proposal to add “No recruiting” to the code goes to GitHub Discussions, with an open period of at least 30 days. Until it closes, the rules above apply in the room.</p>
       </div>
       <p>Independent conduct reviewer: {holders('conduct-reviewer')}. Until one is named, reports follow the <a href="/code-of-conduct/">Code of Conduct</a>.</p>
@@ -127,7 +127,7 @@ const sections = [
 
     <section class="prose reading" aria-labelledby="get-in">
       <h2 id="get-in">How to get in</h2>
-      <p>To join, write to <a href={mail}>{room.contact}</a> with your sector. A co-organizer replies within {room.joinReplyDays} working days.</p>
+      <p>To join, write to <a href={mail}>{room.contact}</a> with your sector. {inboxLine()}</p>
       <ul>
         <li><strong>Say three things.</strong> Your sector, your stage and one problem you care about. Your employer is optional.</li>
         <li><strong>It costs nothing.</strong> The room is free, and leaving takes one message.</li>

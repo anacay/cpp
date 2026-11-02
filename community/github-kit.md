@@ -72,7 +72,7 @@ No pinned post is needed: the form carries its own instructions.
 >
 > **Where next.** A basic question goes in [First questions](https://github.com/anacay/cpp/discussions/categories/first-questions). A first thread at your stage is under the `good-first` label. The [Start here](https://cpp.anacay.org/start/) page picks a reading path for you.
 >
-> Rather not post in public? Write to cpp@anacay.org. A co-organizer replies within two working days.
+> Rather not post in public? Write to cpp@anacay.org. Today the founder reads it; once co-organizers are named, the inbox moves to them.
 
 ---
 
