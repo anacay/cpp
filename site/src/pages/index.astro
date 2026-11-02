@@ -7,6 +7,7 @@
 // quoted through quote(), so if the paper stops saying it, the build fails.
 import Base from '../layouts/Base.astro';
 import Behind from '../components/Behind.astro';
+import RoomRule from '../components/RoomRule.astro';
 import { load, quote, renderMarkdown, renderFigure, wordCount, readingTime } from '../lib/paper.mjs';
 
 const ctx = load();
@@ -20,8 +21,6 @@ const facts = [
     src: 'International Energy Agency, April 2026', href: 'https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions' },
   { big: '$175–185B', what: 'One company’s initial capital spending guidance for 2026, later raised. Several others guide to sums of the same order.',
     src: 'Alphabet, Q4 2025 earnings call, February 2026', href: 'https://abc.xyz/investor/events/event-details/2026/2025-Q4-Earnings-Call-2026-Dr_C033hS6/' },
-  { big: 'In orbit', what: 'Google is studying “solar-powered satellite constellations with TPUs,” with two prototypes “slated to launch” by early 2027.',
-    src: 'Google Research, November 2025', href: 'https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/' },
 ];
 const posting = {
   text: 'Move capacity planning from an ad hoc process to a rigorous, repeatable, and forward-looking strategic function.',
@@ -39,10 +38,11 @@ const covers = [
 ];
 
 const forWhom = [
-  ['New to the role', 'You may come from hardware, site reliability, finance or supply chain. Each route brings part of the work, and the job asks for all of it. Start with <a href="/one-page/">the one page</a> and <a href="/summary/">the executive summary</a>. Then read <a href="/guide/the-work-and-the-path/">The work and the path</a>: your route in, and what to read next. Or follow the <a href="/body-of-knowledge/#start-here">learning path</a>.'],
+  ['New to the role', 'You may come from hardware, site reliability, finance or supply chain. Each route brings part of the work, and the job asks for all of it. Start with <a href="/one-page/">the one page</a> and <a href="/summary/">the executive summary</a>. Then read <a href="/guide/the-work-and-the-path/">The work and the path</a>: your route in, and what to read next. Or take <a href="/start/new/">your door</a>, a 35-minute route.'],
   ['Practicing planners', 'You’ve run planning cycles and seen where plans break. The seed needs your corrections, your terms and your cases.'],
-  ['Finance and supply partners', 'You fund the capacity or build it. The handshake below is about you, too.'],
-  ['People who hire planners', 'What does the job actually ask? The roadmap’s competency map starts from that question.'],
+  ['Finance and supply partners', 'You fund the capacity or build it. The handshake below is about you, too. Your doors: <a href="/start/finance/">finance</a> and <a href="/start/supply/">supply</a>.'],
+  ['Program managers', 'Many accelerator fleets are planned by program managers. <a href="/start/#program-managers">Your door is here.</a>'],
+  ['People who lead planning teams', 'What should a planner at each level be able to do? The <a href="/roadmap/#3-a-capacity-planner-competency-map">competency map</a> starts there.'],
 ];
 
 // The handshake (Section 10) and its figure, quoted from the paper.
@@ -69,7 +69,8 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
       <p class="eyebrow">The Capacity Planning Practice</p>
       <h1 id="hero-h">Let’s build the body of knowledge for capacity planning, together.</h1>
       <p class="lede">Capacity planning is growing into a serious discipline, and the people who practice it have no open, shared body of knowledge to build on. This starts one, together and in the open. It stands on decades of work: CMG, ITIL, the SRE books, and Hixson and Guliani’s 2015 article. The seed is a paper drawn from that public record and one practitioner’s experience, put out as a request for comments. Highlight any passage, open a thread, and help shape what comes next.</p>
-      <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on the paper</a> <a class="btn btn--quiet" href="/open-questions/">Start with the open questions</a> <a class="btn btn--quiet" href="/join/">Join in</a></p>
+      <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on the paper</a> <a class="btn btn--quiet" href="/agenda/">Start with the open questions</a> <a class="btn btn--quiet" href="/join/">Join in</a></p>
+      <RoomRule />
       <p class="hero__paper muted">The seed paper: <a href="/paper/"><em>{manifest.title}</em></a> · <a href="/one-page/">one page</a> · <a href="/downloads/">PDF and EPUB</a> · <a href="/body-of-knowledge/">the body of knowledge, in progress</a></p>
     </section>
 
@@ -83,7 +84,7 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
       </ul>
       <div class="reading prose">
         <p>Someone has to say how much, where and by when. Someone has to order land, power, network and machines years before demand is certain. And someone has to keep finance, supply and the teams who use the capacity in one agreement. That someone is a capacity planner.</p>
-        <p>Labs and cloud providers now hire for the role by name. One posting puts the job this way:</p>
+        <p>The work now has its own name and levels. One public description puts the job this way:</p>
         <blockquote class="pull"><p>“{posting.text}”</p><footer><a href={posting.href}>{posting.src}</a></footer></blockquote>
         <p>Much has been written about the craft over the years. What we couldn’t find is an open place where planners build a shared body of knowledge together and keep it current as the work changes. So let’s make one, and start by arguing about the seed.</p>
       </div>
@@ -162,7 +163,7 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
         <li><h3>Editions, with credit</h3><p>Accepted changes go into the next version. Everyone who helped is named.</p></li>
       </ol>
       <p class="reading">The text is licensed CC BY-SA 4.0, the same licence Wikipedia uses. Anyone can copy, teach from and adapt it, and nobody, including the steward, can take it private.</p>
-      <p><a class="more" href="/how-it-grows/">How a change is decided</a> · <a class="more" href="/join/">Join in</a></p>
+      <p><a class="more" href="/how-it-grows/">How a change is decided</a> · <a class="more" href="/community/">The Practice Room</a> · <a class="more" href="/join/">Join in</a></p>
     </section>
 
     <section class="band" aria-labelledby="prior-h">

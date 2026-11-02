@@ -279,7 +279,9 @@ const pageText = ($, drop = '') => {
     if (!$) { c.fails.push(`community page not built: ${u}`); continue; }
     for (const line of pageText($, '[data-rule]').split('\n')) { const m = line.match(words); if (m) c.fails.push(`${u}: "${m[0]}" in "${line.trim().slice(0, 90)}"`); }
   }
-  c.notes.push(`${roomRoutes.length} community pages; text inside [data-rule] is exempt`);
+  // The home page keeps its cited job description, but never the hiring verbs.
+  for (const line of pageText(docs.get('/'), '[data-rule], [data-outbound] footer').split('\n')) { const m = line.match(/\b(hire[sd]?|hiring|recruit\w*)\b/i); if (m) c.fails.push(`/: "${m[0]}" in "${line.trim().slice(0, 90)}"`); }
+  c.notes.push(`${roomRoutes.length} community pages, and the hiring verbs on /; text inside [data-rule] is exempt`);
 }
 {
   const c = check('10. No name without consent');
