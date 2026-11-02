@@ -1,0 +1,20 @@
+---
+// /start/: doors by kind of reader. Doors live in site/src/data/start-paths.mjs.
+import Base from '../../layouts/Base.astro';
+import { doors } from '../../data/start-paths.mjs';
+---
+<Base title="Start here" description="Where to start in the Capacity Planning Practice: a door for each kind of reader, with reading times." nav="start">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Start here</p>
+      <h1>Start here</h1>
+      <p class="lede">Pick the door that matches your work. Each one is a short route through the body of knowledge.</p>
+    </div>
+    <ul class="cards cards--3">
+      {doors.map((d) => (
+        <li id={d.id}><h2>{d.page ? <a href={`/start/${d.id}/`}>{d.name}</a> : d.name}</h2>{d.time && <p>{d.time}</p>}</li>
+      ))}
+    </ul>
+    <p class="reading">Until every door has its route, the <a href="/body-of-knowledge/#start-here">learning path</a> is the place to begin.</p>
+  </div>
+</Base>

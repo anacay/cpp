@@ -1,0 +1,18 @@
+---
+// /start/<door>/: one door page per kind of reader.
+import Base from '../../layouts/Base.astro';
+import { doorPages } from '../../data/start-paths.mjs';
+export function getStaticPaths() {
+  return doorPages().map((d) => ({ params: { door: d.id }, props: { d } }));
+}
+const { d } = Astro.props;
+---
+<Base title={`Start here: ${d.name}`} description={`${d.name}: where to start in the Capacity Planning Practice, and what to read first.`} nav="start">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow"><a href="/start/">Start here</a></p>
+      <h1>{d.name}</h1>
+      <p class="lede">Start with <a href="/guide/the-work-and-the-path/">The work and the path</a>. It says where your route in begins, and what to read next.</p>
+    </div>
+  </div>
+</Base>
