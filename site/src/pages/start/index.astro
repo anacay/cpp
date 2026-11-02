@@ -1,20 +1,101 @@
 ---
-// /start/: doors by kind of reader. Doors live in site/src/data/start-paths.mjs.
+// /start/: a door for each kind of reader. Doors, the "Your words, our words"
+// crosswalk and reading times live in site/src/data/start-paths.mjs; the open
+// problems each door ends with come from site/src/data/agenda.mjs by id.
 import Base from '../../layouts/Base.astro';
-import { doors } from '../../data/start-paths.mjs';
+import { doors, yourWords } from '../../data/start-paths.mjs';
+import { agendaItem } from '../../data/agenda.mjs';
+import { community } from '../../lib/community.mjs';
+const c = community();
+const thread = (n) => `${c.repo}/discussions/${n}`;
+const probs = (d) => d.problems.map(agendaItem);
 ---
-<Base title="Start here" description="Where to start in the Capacity Planning Practice: a door for each kind of reader, with reading times." nav="start">
+<Base title="Start here" description="Where to start in the Capacity Planning Practice: eight doors by kind of reader, each with a timed reading path, three open problems and one first contribution." nav="start">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">Start here</p>
-      <h1>Start here</h1>
-      <p class="lede">Pick the door that matches your work. Each one is a short route through the body of knowledge.</p>
+      <h1>Pick the door that matches your work</h1>
+      <p class="lede">Each door is a short route through the body of knowledge, timed at 220 words a minute. Each one ends with three open problems and one first contribution.</p>
+      <p class="muted">Keep the <a href="/glossary/">glossary</a> open beside you. The full learning path is on <a href="/body-of-knowledge/#start-here">the body of knowledge</a>.</p>
     </div>
-    <ul class="cards cards--3">
-      {doors.map((d) => (
-        <li id={d.id}><h2>{d.page ? <a href={`/start/${d.id}/`}>{d.name}</a> : d.name}</h2>{d.time && <p>{d.time}</p>}</li>
-      ))}
-    </ul>
-    <p class="reading">Until every door has its route, the <a href="/body-of-knowledge/#start-here">learning path</a> is the place to begin.</p>
+
+    <nav aria-labelledby="doors-h">
+      <h2 class="group-title" id="doors-h">Eight doors</h2>
+      <ul class="paths paths--list doors">
+        {doors.map((d) => (
+          <li><a href={d.page ? `/start/${d.id}/` : `#${d.id}`}><span class="time">{d.time}</span><span class="sr-only">:&nbsp;</span><span class="name">{d.name}</span><span class="sr-only">:&nbsp;</span><span class="what">{d.who}</span></a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <aside class="words-box reading" aria-labelledby="your-words">
+      <h2 id="your-words">Your words, our words</h2>
+      <p class="muted">Pointers, not definitions. The word you use on the left; where the guide covers the same ground on the right.</p>
+      <dl>
+        {yourWords.map((w) => (
+          <div>
+            <dt>{w.yours}</dt>
+            <dd>{w.ours.map(([label, href], i) => <>{i > 0 && ', '}<a href={href}>{label}</a></>)}. <span class="muted">{w.hint}</span></dd>
+          </div>
+        ))}
+      </dl>
+      <p class="muted">The same list sits in the <a href="/glossary/#your-words">glossary</a>.</p>
+    </aside>
+
+    {doors.map((d) => (
+      <section class="door reading" id={d.id} aria-labelledby={`${d.id}-h`}>
+        <p class="door__time">{d.time}</p>
+        <h2 id={`${d.id}-h`}>{d.name}</h2>
+        <p>{d.who}</p>
+        {d.page ? (
+          <p><a class="more" href={`/start/${d.id}/`}>Open this door</a> <span class="muted">· {d.steps.length} readings, and why each one matters</span></p>
+        ) : (
+          <>
+            <ol class="chapters chapters--path">
+              {d.steps.map(([label, href, min, why], i) => <li><a href={href}><span class="n" aria-hidden="true">{i + 1}</span><span class="sr-only">{i + 1}.&nbsp;</span><span class="ct">{label}</span><span class="sr-only">:&nbsp;</span><span class="cs">{why} <span class="path-t">{min} min</span></span></a></li>)}
+            </ol>
+            {d.faster && <p class="muted">{d.faster[0]} <a href={d.faster[2]}>{d.faster[1]}</a>, {d.faster[3]}</p>}
+            <p class="note"><strong>Where it clicks.</strong> {d.aha} <a href={d.ahaSource[1]}>{d.ahaSource[0]}</a></p>
+          </>
+        )}
+        <h3>Three open problems</h3>
+        <ul class="probs">
+          {probs(d).map((p) => (
+            <li>
+              <p>{p.label && <strong>{p.label}. </strong>}{p.problem}</p>
+              <p class="probs__act"><a href={`/agenda/#${p.id}`}>On the agenda</a>{p.thread && <> · <a href={thread(p.thread)}>Discussion #{p.thread}</a></>}{p.goodFirst && <> · <span class="tag">good first</span></>}</p>
+            </li>
+          ))}
+        </ul>
+        <h3>One first contribution</h3>
+        <p>{d.first.text} <a href={`/agenda/#${d.first.item}`}>Where it goes</a>.</p>
+      </section>
+    ))}
+
+    <section class="prose reading" aria-labelledby="next-h">
+      <h2 id="next-h">After your door</h2>
+      <p>Every open problem the body of knowledge names is on <a href="/agenda/">the agenda</a>, by workstream. To work them with other planners, read about <a href="/community/">the Practice Room</a>. No GitHub account? Write to <a href="mailto:cpp@anacay.org">cpp@anacay.org</a>, and your comment is posted for you.</p>
+    </section>
   </div>
 </Base>
+
+<style>
+  .doors { margin-bottom: 2.5rem; }
+  .words-box { margin: 0 0 3rem; padding: 1.25rem 1.4rem 1rem; border: 1px solid var(--water-line); border-top: 2px solid var(--gold); border-radius: var(--radius); background: var(--water-raised); }
+  .words-box h2 { font-size: 1.35rem; margin: 0 0 0.35rem; }
+  .words-box dl { margin: 1rem 0; display: grid; gap: 0.6rem; }
+  .words-box dl > div { display: grid; grid-template-columns: minmax(0, 9rem) minmax(0, 1fr); gap: 0.2rem 1rem; padding-top: 0.6rem; border-top: 1px solid var(--water-line); }
+  .words-box dt { font-weight: 600; color: var(--ink); }
+  .words-box dd { margin: 0; line-height: 1.5; }
+  .words-box > p:last-child { margin-bottom: 0; font-size: 0.9375rem; }
+  @media (max-width: 34em) { .words-box dl > div { grid-template-columns: 1fr; } }
+  .door { border-top: 1px solid var(--water-line); padding-top: 1.5rem; margin-top: 2.5rem; scroll-margin-top: 1rem; }
+  .door h2 { margin: 0.2rem 0 0.75rem; }
+  .door h3 { font-size: 1.1rem; margin: 1.75rem 0 0.6rem; }
+  .door__time { margin: 0; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+  .probs { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+  .probs li { padding-left: 1rem; border-left: 2px solid var(--water-line); }
+  .probs p { margin: 0; line-height: 1.55; }
+  .probs__act { font-size: 0.875rem; color: var(--ink-muted); margin-top: 0.2rem !important; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0 0.5rem; border: 1px solid var(--gold); border-radius: 999px; color: var(--gold-soft); }
+</style>
