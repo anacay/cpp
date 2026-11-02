@@ -1,0 +1,8 @@
+---
+// The room's one-line rule, said the same way everywhere it appears (home,
+// /join/, /community/). Wrapped in data-rule: the hiring-words check (9)
+// skips text inside it, because this is where the rule itself is stated.
+interface Props { class?: string }
+const { class: cls = 'note' } = Astro.props;
+---
+<p class={cls} data-rule><strong>A place for the craft.</strong> No jobs, no recruiting, no selling.</p>

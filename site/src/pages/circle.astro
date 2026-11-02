@@ -1,0 +1,27 @@
+---
+// /circle/: the founding circle. Names come from site/src/data/room.mjs and
+// show only with consent, once enough consented names exist.
+import Base from '../layouts/Base.astro';
+import { circleNames } from '../data/room.mjs';
+const names = circleNames();
+---
+<Base title="The founding circle" description="The founding circle of the Practice Room: what members commit to, and how invitations work." nav="room">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">The Practice Room</p>
+      <h1>The founding circle</h1>
+      <p class="lede">The founding circle is the first group of experienced planners in the <a href="/community/">Practice Room</a>.</p>
+    </div>
+    <section class="prose reading" aria-labelledby="commit">
+      <h2 id="commit">What members commit to</h2>
+      <p>One hour a month. Chatham House rule in the room. Nothing about you is public without your sign-off. Leave any time.</p>
+      <p>Your sector is enough. Your employer is optional.</p>
+    </section>
+    {names && (
+      <section class="prose reading" aria-labelledby="members">
+        <h2 id="members">Founding members</h2>
+        <ul>{[...names.coOrganizers, ...names.members].map((p) => <li>{p.name}{p.sector && <>, {p.sector}</>}</li>)}</ul>
+      </section>
+    )}
+  </div>
+</Base>

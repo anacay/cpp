@@ -63,13 +63,16 @@ export const DOCS = {
   'ROADMAP.md': '/roadmap/',
   'CONTRIBUTING.md': '/contributing/',
   'CODE_OF_CONDUCT.md': '/code-of-conduct/',
+  'SHARING_SAFELY.md': '/sharing-safely/',
+  'CONTRIBUTORS.md': '/contributors/',
 };
 
 const md = new MarkdownIt({ html: false, linkify: false, typographer: false });
 
 export function foundingDoc(file) {
   const c = community();
-  const src = fs.readFileSync(path.resolve(root, c.foundingDir, file), 'utf8');
+  // HTML comments are notes for editors in the repository, never page text.
+  const src = fs.readFileSync(path.resolve(root, c.foundingDir, file), 'utf8').replace(/<!--[\s\S]*?-->\n?/g, '');
   const lines = src.split('\n');
   const h1 = lines.findIndex((l) => /^# /.test(l));
   const title = h1 >= 0 ? lines[h1].slice(2).trim() : file;

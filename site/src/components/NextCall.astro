@@ -1,0 +1,8 @@
+---
+// The next open call, from site/src/data/room.mjs. While the call is pending
+// it says so and shows no date; a confirmed date appears with a data-only edit.
+import { callLine, call } from '../data/room.mjs';
+interface Props { class?: string }
+const { class: cls = 'muted' } = Astro.props;
+---
+<p class={cls} data-call={call.status}>{callLine()}</p>

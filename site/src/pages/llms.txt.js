@@ -18,6 +18,16 @@ The full text, figures' alt text and captions included, is in one file: ${abs('/
 - [Roadmap](${abs('/roadmap/')}): the next seeds.
 - [Related work](${abs('/related-work/')}): the communities, frameworks and books this builds on.
 - [Join in](${abs('/join/')}): how to take part.
+- [Contributors](${abs('/contributors/')}): everyone credited, by edition.
+
+## The Practice Room
+- [The Practice Room](${abs('/community/')}): the community's room, its rhythm, channels and rules.
+- [Start here](${abs('/start/')}): doors by kind of reader, each ending in open problems and a first contribution.
+- [The founding circle](${abs('/circle/')}): what members commit to, and who they are, with consent.
+- [Roles](${abs('/roles/')}): eight roles, each with duties, hours, a term and a way out.
+- [Working groups](${abs('/working-groups/')}): dated sprints that publish credited work.
+- [Agenda](${abs('/agenda/')}): the open problems, each with a thread and a status.
+- [Sharing safely](${abs('/sharing-safely/')}): how to share planning experience without confidential detail.
 
 ## The guide (draft)
 ${guide().pages.map((p) => `- [${p.title}](${abs(p.url)}): ${p.short}`).join('\n')}

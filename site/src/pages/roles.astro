@@ -1,0 +1,19 @@
+---
+// /roles/: the eight roles. Holders come from site/src/data/room.mjs; a role
+// with no consented holder shows "Open".
+import Base from '../layouts/Base.astro';
+import { roles, holderLine } from '../data/room.mjs';
+---
+<Base title="Roles" description="The roles that run the Practice Room and the practice, and who holds each one." nav="room">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">The Practice Room</p>
+      <h1>Roles</h1>
+      <p class="lede">These roles run the <a href="/community/">Practice Room</a> and the practice. Each card shows who holds the role, or that it is open.</p>
+    </div>
+    <ul class="cards cards--3">
+      {roles.map((r) => <li id={r.id}><h2>{r.name}</h2><p>{holderLine(r.holders)}</p></li>)}
+    </ul>
+    <p class="reading">To raise your hand, write to <a href="mailto:cpp@anacay.org">cpp@anacay.org</a>.</p>
+  </div>
+</Base>

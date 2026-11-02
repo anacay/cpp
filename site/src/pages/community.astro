@@ -1,0 +1,45 @@
+---
+// /community/: the hub for the Practice Room. People, dates and statuses come
+// from site/src/data/room.mjs, so a new date or name is a data-only change.
+import Base from '../layouts/Base.astro';
+import RoomRule from '../components/RoomRule.astro';
+import NextCall from '../components/NextCall.astro';
+import { room, rhythm } from '../data/room.mjs';
+---
+<Base title={room.name} description="The Practice Room is where capacity planners work the open problems together. What we conclude is published here, credited by name." nav="room">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">The Practice Room</p>
+      <h1>{room.name}</h1>
+      <p class="lede">The Practice Room is where capacity planners work the open problems together. What we conclude is published here, credited by name.</p>
+      <RoomRule />
+    </div>
+
+    <section class="prose reading" aria-labelledby="rhythm">
+      <h2 id="rhythm">The rhythm</h2>
+      <p>{rhythm.call}, with a newcomer half-hour first. Agenda {rhythm.agendaDaysAhead} days ahead. Notes within {rhythm.notesHours} hours, without names. No recordings.</p>
+      <NextCall />
+    </section>
+
+    <section class="prose reading" aria-labelledby="reviews">
+      <h2 id="reviews">Bring-your-problem reviews</h2>
+      <p>Two problems a call, 20 minutes each. Every problem passes a private pre-check first. Read <a href="/sharing-safely/">Sharing safely</a> before you bring one.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="room-rules">
+      <h2 id="room-rules">Room rules</h2>
+      <ul data-rule>
+        <li>No recruiting, for any employer, including your own.</li>
+        <li>No selling.</li>
+        <li>No one’s confidential data.</li>
+        <li>Chatham House rule.</li>
+        <li>Between roles is welcome and normal.</li>
+      </ul>
+    </section>
+
+    <section class="prose reading" aria-labelledby="get-in">
+      <h2 id="get-in">How to get in</h2>
+      <p>To join, write to <a href={`mailto:${room.contact}`}>{room.contact}</a> with your sector. A co-organizer replies within {room.joinReplyDays} working days.</p>
+    </section>
+  </div>
+</Base>

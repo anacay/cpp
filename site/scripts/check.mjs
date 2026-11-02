@@ -9,7 +9,13 @@
 //   5. every internal link resolves, anchors included;
 //   6. every page has a <title>, a meta description and exactly one <h1>;
 //   7. no two words fuse across a tag boundary once tags are stripped
-//      ("CloudRead", "1Introduction"), as a search snippet would show them.
+//      ("CloudRead", "1Introduction"), as a search snippet would show them;
+//   8. no banned term (the public-writing rules) and no placeholder text on
+//      any page, outside reference lists;
+//   9. no hiring words on the community pages, except where the no-hiring
+//      rule itself is stated ([data-rule]);
+//  10. no name of anyone without consent in site/src/data/room.mjs;
+//  11. sentences of 30 words or fewer on the community pages.
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -241,6 +247,62 @@ const mdText = (m) => squash(cheerio.load(md.render(m)).root().text());
   const c = check('7. No words fused across a tag boundary');
   for (const [url, $] of docs) for (const h of fusedText($)) c.fails.push(`${url}: ${h.component}: "${h.text}"`);
   c.notes.push('inline tags joined with no space, as a search snippet reads them; see scripts/fused-text.mjs');
+}
+
+// ── 8–11. Public-writing rules ───────────────────────────────────────────────
+const room = await import('../src/data/room.mjs');
+const { doorPages } = await import('../src/data/start-paths.mjs');
+const roomRoutes = [...room.ROOM_ROUTES, '/start/', ...doorPages().map((d) => `/start/${d.id}/`)];
+// Visible text of a page, with chosen parts removed, block elements broken.
+const pageText = ($, drop = '') => {
+  const $c = cheerio.load($.html());
+  $c('script, style' + (drop ? `, ${drop}` : '')).remove();
+  $c('p, li, td, th, dd, dt, h1, h2, h3, h4, h5, h6, blockquote, figcaption, div, section').each((_, el) => { $c(el).append(' \n'); });
+  return `${$c('title').text()}\n${$c('meta[name="description"]').attr('content') ?? ''}\n${$c('body').text()}`;
+};
+{
+  const c = check('8. No banned terms and no placeholder text');
+  const banned = [/\bPARM\b/, /\bCL\b/, /\bbig bets\b/i, /\bKansas\b/i, /\bOz\b/, /\broadshows?\b/i, /\bpantries\b/i, /\bCapEng\b/i, /\bdonations?\b/i,
+    /\bCore Data\b/i, /\bDisplay Ads\b/i, /\bSearch Indexing\b/i, /\bFlex\b/, /\bminimum viable capacity\b/i, /\bGCUs?\b/i, /\bflex pools?\b/i,
+    /\bTODO\b/, /\bTBD\b/, /\bFIXME\b/, /\blorem ipsum\b/i];
+  for (const [u, $] of docs) {
+    const t = pageText($, '.refs');
+    for (const b of banned) { const m = t.match(new RegExp(`.{0,30}${b.source}.{0,30}`, b.flags)); if (m) c.fails.push(`${u}: ${b} in "${m[0].trim()}"`); }
+  }
+  c.notes.push(`${banned.length} patterns on ${docs.size} pages; reference lists (.refs) are exempt, as cited titles`);
+}
+{
+  const c = check('9. No hiring words on the community pages, outside the stated rule');
+  const words = /\b(hire[sd]?|hiring|recruit\w*|jobs?|job boards?|salar(y|ies)|referrals?|interview\w*|open to work|careers?|headhunt\w*|poach\w*|candidates?|vacanc(y|ies)|résumés?|resumes?)\b/i;
+  for (const u of roomRoutes) {
+    const $ = docs.get(u);
+    if (!$) { c.fails.push(`community page not built: ${u}`); continue; }
+    for (const line of pageText($, '[data-rule]').split('\n')) { const m = line.match(words); if (m) c.fails.push(`${u}: "${m[0]}" in "${line.trim().slice(0, 90)}"`); }
+  }
+  c.notes.push(`${roomRoutes.length} community pages; text inside [data-rule] is exempt`);
+}
+{
+  const c = check('10. No name without consent');
+  const names = room.unconsentedNames();
+  for (const [u, $] of docs) { const t = pageText($); for (const n of names) if (t.includes(n)) c.fails.push(`${u}: "${n}" has not consented`); }
+  c.notes.push(`${room.people.length} people in room.mjs; ${names.length} without consent, none shown`);
+}
+{
+  const c = check('11. Sentences of 30 words or fewer on the community pages');
+  let n = 0;
+  for (const u of roomRoutes) {
+    const $ = docs.get(u);
+    if (!$) continue;
+    $('main p, main li, main td, main th, main dd, main h1, main h2, main h3, main blockquote').each((_, el) => {
+      if ($(el).find('p, li, ul, ol, table').length) return; // leaf blocks only
+      for (const s of $(el).text().replace(/\s+/g, ' ').split(/(?<=[.!?:;])\s+(?=[A-Z“"‘(0-9#])/)) {
+        n++;
+        const w = s.split(' ').filter((x) => /\w/.test(x)).length;
+        if (w > 30) c.fails.push(`${u}: ${w} words: "${s.slice(0, 80)}…"`);
+      }
+    });
+  }
+  c.notes.push(`${n} sentences on ${roomRoutes.length} pages`);
 }
 
 {

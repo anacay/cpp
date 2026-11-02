@@ -353,7 +353,7 @@ blockquote.pull footer a { color: var(--ink-muted); }
 .cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); }
 .cards--3 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); margin-bottom: 2rem; }
 .cards li { background: var(--water-raised); border: 1px solid var(--water-line); border-radius: var(--radius); padding: 1.1rem 1.15rem; }
-.cards h3 { font-size: 1.2rem; margin: 0 0 0.5rem; }
+.cards h3, .cards h2 { font-size: 1.2rem; margin: 0 0 0.5rem; }
 .cards p { margin: 0 0 0.6rem; font-size: 0.9688rem; line-height: 1.55; color: var(--ink-muted); }
 .cards p:last-child { margin-bottom: 0; }
 
@@ -430,8 +430,8 @@ blockquote.pull footer a { color: var(--ink-muted); }
 .cycle .name { font-family: var(--serif); font-size: 1.2rem; line-height: 1.25; margin: 0.35rem 0 0.45rem; }
 .cycle .what { font-size: 0.875rem; color: var(--ink-muted); line-height: 1.5; }
 .cycle__loop { margin: 0.75rem 0 0; }
-.cards h3 a { color: var(--ink); text-decoration: none; }
-.cards h3 a:hover { color: var(--gold-soft); }
+.cards h3 a, .cards h2 a { color: var(--ink); text-decoration: none; }
+.cards h3 a:hover, .cards h2 a:hover { color: var(--gold-soft); }
 .hub-map { margin-top: 2rem; }
 .where__map table { width: auto; line-height: 1; }
 .where__map th, .where__map td { min-width: 0; border-bottom: 0; white-space: nowrap; }

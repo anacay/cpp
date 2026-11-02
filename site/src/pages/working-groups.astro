@@ -1,0 +1,21 @@
+---
+// /working-groups/: dated sprints that publish credited work. Leads, dates and
+// statuses come from site/src/data/room.mjs.
+import Base from '../layouts/Base.astro';
+import { workingGroups, holderLine } from '../data/room.mjs';
+---
+<Base title="Working groups" description="Working groups of the Practice Room: short, dated sprints on open problems, published with credit." nav="room">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">The Practice Room</p>
+      <h1>Working groups</h1>
+      <p class="lede">A working group takes one open problem for six to eight weeks, on synthetic data. What it concludes is published, credited by name.</p>
+    </div>
+    {workingGroups.map((g) => (
+      <section class="prose reading" aria-labelledby={g.id}>
+        <h2 id={g.id}>{g.name}</h2>
+        <p>Lead: {holderLine(g.lead ? [g.lead] : [])}.</p>
+      </section>
+    ))}
+  </div>
+</Base>
