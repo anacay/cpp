@@ -6,7 +6,7 @@
 import Base from '../../layouts/Base.astro';
 import { doors, doorPages, sreChecklist } from '../../data/start-paths.mjs';
 import { agendaItem } from '../../data/agenda.mjs';
-import { room } from '../../data/room.mjs';
+import { stream } from '../../data/room.mjs';
 import { community } from '../../lib/community.mjs';
 export function getStaticPaths() {
   return doorPages().map((d) => ({ params: { door: d.id }, props: { d } }));
@@ -36,7 +36,7 @@ const desc = {
       <section class="prose reading" aria-labelledby="new-h">
         <h2 id="new-h">No question is too basic</h2>
         <p>Everyone here was new once. The guide puts it plainly: a planner two years in who remembers what was confusing is as valuable as one with twenty. See <a href="/guide/the-work-and-the-path/#the-path">The path</a>.</p>
-        <p>In <a href="/community/">the Practice Room</a>, being set up now, the #first-questions channel will take any question. Once greeters are named, a first question will get a kind answer within {room.firstAnswerHours} hours. Newcomers are invited too. Until then, write to <a href={`mailto:${room.contact}`}>{room.contact}</a>.</p>
+        <p>Ask it in <a href="/community/">the Practice Room</a>, the one stream on GitHub Discussions. Tag it #first-question. <a href={stream.newPost}>Post your first question</a>. New to GitHub? See <a href="/join/">Join in</a>.</p>
       </section>
     )}
 
@@ -102,7 +102,7 @@ const desc = {
     <section class="prose reading" aria-labelledby="first-h">
       <h2 id="first-h">One first contribution</h2>
       <p>{d.first.text} <a href={`/agenda/#${d.first.item}`}>Where it goes</a>.</p>
-      <p>No GitHub account, or not ready to post in public? Write to <a href={`mailto:${room.contact}`}>{room.contact}</a>. It is posted for you, with credit if you want it.</p>
+      <p>New to GitHub? A free account takes two minutes; see <a href="/join/">Join in</a>. Unsure a post is safe? Ask for a <a href="/sharing-safely/#a-private-pre-check">private pre-check</a> first.</p>
     </section>
 
     <nav class="reading other" aria-labelledby="other-h">
@@ -110,7 +110,7 @@ const desc = {
       <ul class="chips">
         {others.map((x) => <li><a href={x.page ? `/start/${x.id}/` : `/start/#${x.id}`}>{x.name}</a></li>)}
       </ul>
-      <p class="muted">Every open problem is on <a href="/agenda/">the agenda</a>. To work them with other planners, see <a href="/community/">the Practice Room</a>.</p>
+      <p class="muted">Every open problem is on <a href="/agenda/">the agenda</a>. To talk them through with other planners, post in <a href="/community/">the stream</a>.</p>
     </nav>
   </div>
 </Base>
