@@ -4,7 +4,7 @@
 // people have consented. Never write a name into this file directly; ask a
 // co-organizer to add the person to room.mjs with `consent: true`.
 import Base from '../layouts/Base.astro';
-import { room, circle, circleNames, person, inboxLine, ownershipLine } from '../data/room.mjs';
+import { room, circle, circleNames, person, inboxLine } from '../data/room.mjs';
 const names = circleNames();
 const founder = person('founder');
 const mail = `mailto:${room.contact}`;
@@ -32,11 +32,11 @@ const mail = `mailto:${room.contact}`;
 
     <section class="prose reading" aria-labelledby="co-organizers">
       <h2 id="co-organizers">Co-organizers</h2>
-      <p>{ownershipLine()} Co-organizers will own the room and its Slack, read the shared inbox and answer join requests. Two of them will hold the site’s deploy keys. The plan is three, from different seats, and none who works where the founder works.</p>
+      <p>Co-organizers help the founder build the room: welcome people, host calls and keep the channels useful. It is an open volunteer role, and it grows as people step forward. See <a href="/community/#who">Who runs this</a>.</p>
       {names && names.coOrganizers.length ? (
         <ul class="pr-names">{names.coOrganizers.map((p) => <li><strong>{p.name}</strong>{p.sector && <>, {p.sector}</>}{p.topics?.length ? <>. Topics: {p.topics.join(', ')}</> : null}</li>)}</ul>
       ) : (
-        <p class="pr-empty">Being invited now. Names appear here once each person signs off.</p>
+        <p class="pr-empty">Open. Names appear here once each person signs off.</p>
       )}
       <p>The role has duties, a term and an easy exit. See <a href="/roles/#co-organizer">Co-organizer</a>.</p>
     </section>
@@ -54,8 +54,8 @@ const mail = `mailto:${room.contact}`;
     {founder && (
       <section class="prose reading" aria-labelledby="founder">
         <h2 id="founder">The founder</h2>
-        <p><strong>{founder.name}</strong>{founder.sector && <>, {founder.sector}</>}. Disclosed founder and contributor.</p>
-        <p>He started the practice and wrote the <a href="/paper/">seed paper</a>. Anacay LLC, his company, supports the practice, and says so. Today he is the only editor, and he reads the inbox. Once co-organizers are named and confirmed as editors, he steps back: a member of the room, not an owner, contributing in a personal capacity.</p>
+        <p><strong>{founder.name}</strong>{founder.sector && <>, {founder.sector}</>}. Founder and steward.</p>
+        <p>He started the practice and wrote the <a href="/paper/">seed paper</a>. Anacay LLC, his company, supports the practice, and says so. He is its editor and reads the inbox. What the circle makes belongs to the community, credited by name. See <a href="/community/#who">Who runs this</a>.</p>
       </section>
     )}
 
