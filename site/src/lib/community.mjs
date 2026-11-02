@@ -41,11 +41,13 @@ export function links(p, override = {}) {
   const c = community();
   const file = override.file ?? bokPath(p);
   const name = override.name ?? pageName(p);
-  const q = (o) => Object.entries(o).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+  const q = (o) => Object.entries(o).filter(([, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
   return {
     open: c.open,
-    discuss: `${c.repo}/discussions/new?${q({ category: 'sections', title: `${name}: ` })}`,
-    threads: `${c.repo}/discussions/categories/sections?${q({ discussions_q: `"${name}"` })}`,
+    // New posts go to the one stream, Practice. Search covers every category,
+    // so threads from the retired "sections" category still turn up.
+    discuss: `${c.repo}/discussions/new?${q({ category: 'practice', title: `${name}: `, body: p?.url ? `From [${name}](${load().config.site.url}${p.url})\n\n**Your post:**\n` : '' })}`,
+    threads: `${c.repo}/discussions?${q({ discussions_q: `"${name}"` })}`,
     edit: file ? `${c.repo}/edit/${c.branch}/${file}` : null,
     file,
     name,

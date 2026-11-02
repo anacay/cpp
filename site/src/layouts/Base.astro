@@ -3,6 +3,7 @@ import '../styles/site.css';
 import Mark from '../components/Mark.astro';
 import Star from '../components/Star.astro';
 import { load } from '../lib/paper.mjs';
+import { stream, firstQuestion, tagForPath } from '../data/room.mjs';
 
 interface Props { title: string; description: string; nav?: string; bare?: boolean; commentable?: { name: string }; ld?: object; article?: { published?: string; modified?: string } }
 const { title, description, nav = '', commentable, ld, article } = Astro.props;
@@ -123,7 +124,7 @@ const links = [
   </div>
 </footer>
 {commentable && (
-  <script is:inline src="/comment.js" defer data-repo={community.repo} data-open={community.open ? '1' : '0'} data-contact={site.contact} data-site={site.url} data-page={commentable.name}></script>
+  <script is:inline src="/comment.js" defer data-repo={community.repo} data-open={community.open ? '1' : '0'} data-contact={site.contact} data-site={site.url} data-page={commentable.name} data-tag={tagForPath(path) ?? undefined}></script>
 )}
 </body>
 </html>

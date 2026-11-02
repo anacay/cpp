@@ -41,7 +41,7 @@ const ctx = load();
     )}
     {page.levels?.includes('supply') && <p class="reading muted">Supply side? Start at <a href="/start/supply/">the supply door</a>.</p>}
     <ChangedBecause path={page.url} />
-    <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a working note: thinking in progress, open for argument." />
+    <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a working note: thinking in progress, open for argument." talk="Talk about this note" />
     <nav class="pager" aria-label="Reading order">
       {prev && <a class="prev" href={prev.url} rel="prev"><span class="dir">Previous</span><span class="sr-only">:&nbsp;</span><span class="t">{prev.title}</span></a>}
       {next && <a class="next" href={next.url} rel="next"><span class="dir">Next</span><span class="sr-only">:&nbsp;</span><span class="t">{next.title}</span></a>}

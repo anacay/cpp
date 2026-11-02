@@ -41,6 +41,45 @@ export const tags = [
 ];
 export const tagUrl = (t) => `${repo}/discussions?discussions_q=${encodeURIComponent(`label:${t}`)}`;
 
+// ── Doors to the stream ──────────────────────────────────────────────────────
+// Every "post in the stream" link on the site is built here, so there is one
+// source of truth. It opens a new discussion in Practice, with a prefilled
+// title and body. GitHub's new-discussion page reads `category`, `title` and
+// `body` from the URL; labels can't be set this way, so the tag goes into the
+// body as a word (#supply), and whoever triages adds the label.
+const SITE = 'https://cpp.anacay.org'; // matches site.url in paper.config.json
+const qs = (o) => Object.entries(o).filter(([, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+export const NDA_LINE = 'Don’t break your NDA: methods and public facts only.';
+export function streamPost({ title = '', text = '', tag = null, from = null } = {}) {
+  const parts = [];
+  if (tag) parts.push(`#${tag}`);
+  if (text) parts.push(text);
+  if (from) parts.push(`From [${from.name}](${from.url.startsWith('http') ? from.url : SITE + from.url})`);
+  parts.push(`**Your post:**\n\n\n_${NDA_LINE}_`);
+  return `${stream.newPost}&${qs({ title, body: parts.join('\n\n') })}`;
+}
+// The first-question door, used by the home page, /join/, /community/, the
+// newcomer door and the footer.
+export const firstQuestion = () => streamPost({ tag: 'first-question' });
+// A topic tag for a page, where the page's subject is plain. Prefix match on
+// the path; pages not listed get no tag.
+const PATH_TAGS = [
+  ['/guide/concepts/demand-and-declarations/', 'forecasting'],
+  ['/guide/concepts/measuring-loop/', 'forecasting'],
+  ['/guide/concepts/the-coefficient/', 'cost'],
+  ['/guide/concepts/three-prices/', 'cost'],
+  ['/guide/concepts/supply-layers-and-lead-times/', 'supply'],
+  ['/guide/concepts/commit-points/', 'supply'],
+  ['/guide/concepts/approval-and-allocation/', 'gpu'],
+  ['/cases/kuantillion-cloud', 'supply'],
+  ['/notes/buildings-at-ai-density/', 'power'],
+  ['/notes/second-lives/', 'supply'],
+  ['/paper/4-three-prices-three-questions/', 'cost'],
+  ['/paper/11-what-changes-in-the-ai-era/', 'gpu'],
+  ['/public-record/', 'supply'],
+];
+export const tagForPath = (path = '') => (PATH_TAGS.find(([p]) => path.startsWith(p)) ?? [])[1] ?? null;
+
 // Later, when the stream asks for it. Nothing here is a place to interact now.
 export const later = [
   'a monthly open call',

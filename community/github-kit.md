@@ -29,7 +29,9 @@ The GitHub state behind this kit is unverified from the cloud session. Check eac
 
 **What stays separate, and why.**
 - **Proposals** stays its own category, for formal changes only. A proposal has an open period and a closing note under How it grows, so it must not scroll away in the stream.
-- The existing categories (Sections, Terms, Cases, Sources, Governance) stay. The per-page **Discuss** links and the 15 open-question threads already live there. They appear in the same Discussions list as the stream, so it is still one place to read.
+- **"Sections" is retired for new posts.** Every per-page link ("Talk about this page", "Discuss this passage", "Reply on GitHub" on a new author's note) now opens a new post in **Practice**, prefilled with the passage or page and its tag. Old threads in Sections stay where they are, and "See the discussion" searches all categories, so they still turn up. Edit the Sections description to: "Retired for new posts. New posts go to Practice."
+- The other existing categories (Terms, Cases, Sources, Governance) stay for their forms. The 15 open-question threads stay where they are. Everything appears in the same Discussions list as the stream, so it is still one place to read.
+- **What the links can and can't prefill.** The site's links set `category`, `title` and `body` in the new-discussion URL. GitHub's documentation describes no URL parameter for labels on discussions, so the tag goes into the body as a word (#supply). Add the matching label when you triage. Check the prefill once on a test post (runbook step 7).
 - Create no other categories. The old plan's "Review intake", "Introduce yourself" and "First questions" are dropped, and so is the review-intake form. A new category comes only when the stream asks for one.
 
 ---
