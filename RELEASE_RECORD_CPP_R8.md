@@ -1,6 +1,6 @@
 # Release record: CPP R8
 
-The Practice Room. R8 is the community release: a room for capacity planners to work the open problems together, with its rules, roles, doors and credit on the site. One branch, one pull request and one deploy. The seed paper's text is unchanged; it stays at v7.9.
+The Practice Room. R8 is the community release: one stream on GitHub Discussions where capacity planners ask, answer and share, with its rules, tags, doors and credit on the site. The standing principle is one way to interact until activity demands more. One branch, one pull request and one deploy. The seed paper's text is unchanged; it stays at v7.9.
 
 | | |
 |---|---|
@@ -12,12 +12,12 @@ The Practice Room. R8 is the community release: a room for capacity planners to 
 
 ## What changed for readers
 
-**The Practice Room** (new). It is the community's room, where planners work the open problems together. What they conclude is published on the site, credited by name.
-- `/community/`: the hub. It covers what the room is, the rhythm, the channels, how a call runs, bring-your-problem reviews (`#reviews`), the room rules (`#room-rules`), how to get in and who runs it. No call date is shown until the founding circle confirms.
-- `/circle/`: the founding circle and what members commit to. No names are listed until at least three members have signed off in writing.
-- `/roles/`: eight role cards. Each gives duties, hours, a term, a private hand-raise and a one-message step-down. Each card shows "Open" or a consented name.
-- `/working-groups/`: how a working group runs, the WG1 charter ("Scoring declarations": Q2, Q10 and Q7; lead open) and WG2 next.
-- `/agenda/`: ten workstreams of open problems. Each item has a source, a thread, a status and a good-first flag.
+**The Practice Room** (new). One stream, the "Practice" category on GitHub Discussions: short posts, replies in threads, tags and reactions. The best threads become CPP pages, credited by name with consent.
+- `/community/`: a "Post your first question" link, how the stream works, the NDA rule and no hiring or selling (`#room-rules`), starter tags, how threads become CPP pages, and "Who runs this" (`#who`). Calls, reviews, working groups, a digest and more roles are listed once, as later.
+- `/circle/`: the founding circle and what members commit to (one post or reply a month, in the stream). No names are listed until at least three members have signed off in writing.
+- `/roles/`: six role cards, two marked "later". Each gives duties, hours, a term, a hand-raise in the stream and a one-message step-down. Each card shows "Open" or a consented name.
+- `/working-groups/`: later. The first group forms when a topic in the stream outgrows a thread; WG1 ("Scoring declarations": Q2, Q10 and Q7) would come first, with no dates yet.
+- `/agenda/`: ten workstreams of open problems, each with a stream tag. Each item has a source, a thread, a status and a good-first flag.
 - `/sharing-safely/`: the disclosure ladder, contributing in a personal capacity, supply data, an illustrative worked example, ten checks, a private pre-check and what happens if something slips.
 - `/contributors/`: CONTRIBUTORS.md, rendered.
 
@@ -35,7 +35,6 @@ The Practice Room. R8 is the community release: a room for capacity planners to 
   - The New, and Finance and supply, cards link their doors.
   - The satellite fact is dropped.
   - "Start with the open questions" opens `/agenda/`.
-- **/join/:** rebuilt around the room, with private routes and the no-hiring line. "Opening soon" is gone. LinkedIn carries news only.
 - **Credit:**
   - Case and note pages carry a byline from frontmatter.
   - A "Changes to this page" footer renders from `changed-because.json` on guide, case, note, paper and founding-document pages. The file is empty, so nothing shows yet.
@@ -43,17 +42,17 @@ The Practice Room. R8 is the community release: a room for capacity planners to 
 - **/related-work/:** "CPP and FinOps: who does what" (`#cpp-and-finops`), with the licence note.
 - **Private routes:** wherever ROADMAP.md says "say so in Governance", it now adds "or write to cpp@anacay.org", and points to /roles/. Every private route says the founder reads cpp@anacay.org. GOVERNANCE.md is unchanged from R7 (see Process).
 - **Who runs this:** /community/#who says Guillermo founded CPP and stewards it, with Anacay's disclosed support. What the community makes belongs to it, credited by name. Roles open as people step forward, and governance widens as the community grows. /circle/ and /roles/ point to it.
-- **Status:** /community/ and /join/ carry a "Status: being set up" block from `room.mjs`. Until the room opens, the Slack, greeters, hosts, the digest and the call are described in the future tense.
+- **/join/:** "New to GitHub? Create a free account in two minutes", then the stream and a first post. A username can be a handle. The only private route is a pre-check of anything sensitive at cpp@anacay.org, read by the founder.
 - **Consistency fixes:**
   - CONTRIBUTORS.md credits the paper at v7.9.
   - The guide is "draft v0.2, inside seed edition v0.1".
   - The executive summary's reading time is counted from its text: 5 minutes, not a fixed 10.
   - /privacy/ and the config comment drop the LinkedIn group.
-- **Feed:** the RSS title names calls and agenda changes. Call items appear only once a call is confirmed.
+- **Feed:** the RSS title names calls and agenda changes. Call items appear only once a call is confirmed; today the call is "later".
 
 ## Changes
 
-People, dates and statuses live in `site/src/data/room.mjs`. A confirmed call date, a consented name or a channel host is therefore a data-only redeploy. A name renders only with `consent: true`.
+The stream, its tags, the people and the statuses live in `site/src/data/room.mjs`. A new tag or a consented name is therefore a data-only redeploy. A name renders only with `consent: true`.
 
 | Item | What | Main files |
 |---|---|---|
@@ -71,7 +70,7 @@ People, dates and statuses live in `site/src/data/room.mjs`. A confirmed call da
 | R8-11 | /start/ and four doors; glossary crosswalk | `start/index.astro`, `start/[door].astro`, `start-paths.mjs`, `glossary.astro` |
 | R8-12 | /contributors/, bylines, "Changed because of" | `CONTRIBUTORS.md`, `Byline.astro`, `ChangedBecause.astro`, `changed-because.json`, `guide.mjs`, guide frontmatter |
 | R8-13 | /agenda/ and feed additions | `agenda.astro`, `agenda.mjs`, `feed.xml.js` |
-| R8-14 | Review format and private intake template | `community.astro`, `.github/DISCUSSION_TEMPLATE/review-intake.yml` |
+| R8-14 | Review format and private intake template (deferred in R8-fix-11; the template is deleted) | `community.astro` |
 | R8-15 | GitHub kit for the founder (categories, pins, labels, Terms threads) | `community/github-kit.md` |
 | R8-16 | CPP and FinOps: who does what | `related-work.astro` |
 | R8-17 | /tools/ starter pack | `tools.astro`, `site/public/tools/` |
@@ -86,6 +85,7 @@ People, dates and statuses live in `site/src/data/room.mjs`. A confirmed call da
 | R8-fix-8 | Illustrative labels on the ladder; estimated hours; one open-roles count; README | `SHARING_SAFELY.md`, `roles.astro`, `README.md` |
 | R8-fix-9 | Re-check after the fixes | `community.astro` |
 | R8-fix-10 | Founder decision: founder and steward, keeping editor, admin and conduct roles while leadership grows from members. "Who runs this" on /community/; co-organizers and other roles are open volunteer roles; every step-back, handover and founder's-employer line removed; the founder closes the CoC proposal | `room.mjs`, `RoomStatus.astro`, `community.astro`, `circle.astro`, `roles.astro`, `join.astro`, `index.astro`, `SHARING_SAFELY.md`, `github-kit.md`, `coc-proposal.md` |
+| R8-fix-11 | One stream: the Practice Room is the "Practice" category on GitHub Discussions. Slack, channels, greeters, the status banner and the call line removed; tags replace channels; /join/ leads with a GitHub account; calls, reviews, working groups, a digest and most roles marked later; the kit is one category, tag labels and a welcome post | `room.mjs`, `community.astro`, `join.astro`, `circle.astro`, `roles.astro`, `working-groups.astro`, `agenda.mjs`, `agenda.astro`, `start/`, `feed.xml.js`, `llms.txt.js`, `related-work.astro`, `SHARING_SAFELY.md`, `github-kit.md`, `coc-proposal.md`; deleted `RoomStatus.astro`, `NextCall.astro`, `review-intake.yml` |
 
 **New checks**, run on every build:
 - **8.** No banned term and no placeholder text, on every page. Reference lists are exempt, because a cited paper is titled "Flex".
@@ -99,16 +99,16 @@ The new pages and the ROADMAP.md hand-raise lines change no body-of-knowledge cl
 
 ## Commits
 
-cpp (`anacay/cpp`), branch `r8-community` from main `f3b9a18`: 40 commits for the items, follow-ups, integration, nine review fixes (R8-fix-1 to R8-fix-9) and four R8-fix-10 commits for the founder's decision on his role, ending `96b936f`, then this record, 41 in all. This record is the last commit on the branch.
+cpp (`anacay/cpp`), branch `r8-community` from main `f3b9a18`: 46 commits for the items, follow-ups, integration, nine review fixes (R8-fix-1 to R8-fix-9), four R8-fix-10 commits for the founder's role and five R8-fix-11 commits for the one-stream principle, then this record, 47 in all. The two earlier record updates are among them. This record is the last commit on the branch.
 - Merged as PR (filled in at deploy), with merge commit (filled in at deploy).
 
 ## Checks (before deploy)
 
-- **Build:** `npm run build` on `r8-community` passes all checks: 87 pages, 86 sitemap URLs and 9,186 internal links and anchors resolved. Refresh the figure from the build on main at deploy.
+- **Build:** `npm run build` on `r8-community` passes all checks: 87 pages, 86 sitemap URLs and 9,169 internal links and anchors resolved. Refresh the figure from the build on main at deploy.
 - **Seed text:** unchanged (check 1). Figures and captions are unchanged (check 2).
 - **Scripts:** no new scripts (check 4). Interactive needs are `mailto:` or GitHub links.
 - **Public writing:** checks 8–11 pass. A separate grep of every line added since `f3b9a18` found no banned terms, and no case-sensitive `CL`, `Oz` or `Flex`. Its hiring words all sit in rule statements, source comments, the GitHub kit or the staged Code of Conduct proposal, plus the steering decision's home lead-in. The `/tools/` static files are clean.
-- **Consent:** `room.mjs` lists only the founder, and the circle is empty. The call status is `pending`, so no date appears anywhere. `status.state` is `setting-up`.
+- **Consent:** `room.mjs` lists only the founder, and the circle is empty. The call status is `later`, so no date appears anywhere. Every site link to Discussions uses an existing category: `practice` (the stream, created in runbook step 5b) or `sections` (the per-page Discuss links, as in R7).
 - **Reviews:** VERIFY_PERSONAS (B1–B3, S1–S9, N1–N6) and VERIFY_AUDIT (1–18), both on 2 November 2026. All blockers and shoulds are fixed in R8-fix-1 to R8-fix-9, except those left to the founder (below).
 - **Left to the founder:** whether to replace or unlink the home page's cited role description; the program-manager claim on the home card (steering copy, unsourced); proposing in Governance the co-organizer role, private nominations and the LinkedIn-group wording in GOVERNANCE.md, CHARTER.md and CODE_OF_CONDUCT.md.
 - **From main:** (filled in at deploy)
