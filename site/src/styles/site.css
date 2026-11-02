@@ -95,6 +95,8 @@ a:focus-visible, [tabindex]:focus-visible, summary:focus-visible {
 }
 .nav a:hover { color: var(--ink); }
 .nav a[aria-current="page"], .nav a.is-section { color: var(--ink); border-bottom-color: var(--gold); }
+.nav a.nav__room { color: var(--gold-soft); }
+.colophon__post { grid-column: 1 / -1; margin: 0 0 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
 
 main { display: block; padding-bottom: 4rem; }
 
