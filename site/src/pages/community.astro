@@ -41,7 +41,7 @@ const sections = [
       <p>The room is a small, practitioner-only space around this open practice. Planners bring the problems the <a href="/paper/">seed paper</a> leaves open, and work them with peers.</p>
       <p>It has two halves.</p>
       <ul>
-        <li><strong>The closed room</strong> {setup ? 'will be' : 'is'} a free Slack, owned by the co-organizers. It is invitation-only, so you can think out loud.{setup && ' It opens once two co-organizers are named.'}</li>
+        <li><strong>The closed room</strong> {setup ? 'will be' : 'is'} a free Slack. It is invitation-only, so you can think out loud.{setup && ' It opens once the founding circle confirms.'}</li>
         <li><strong>The public record</strong> is this site and GitHub Discussions. Conclusions, summaries and credit land there.</li>
       </ul>
       <p>The work comes from the <a href="/agenda/">agenda of open problems</a> and the <a href="/working-groups/">working groups</a>. The first people in are the <a href="/circle/">founding circle</a>. Templates for your own reviews are on <a href="/tools/">Tools</a>.</p>
@@ -137,19 +137,20 @@ const sections = [
       <ul>
         <li><strong>Say three things.</strong> Your sector, your stage and one problem you care about. Your employer is optional.</li>
         <li><strong>It costs nothing.</strong> The room is free, and leaving takes one message.</li>
-        <li><strong>Only co-organizers invite</strong>, once they are named. There is no open sign-up, so the room stays practitioner-only.</li>
+        <li><strong>Invitations only.</strong> The founder and co-organizers invite. There is no open sign-up, so the room stays practitioner-only.</li>
       </ul>
       <p>Not ready for a room? Everything public is open now. Read <a href="/start/">Start here</a>, reply to an <a href="/open-questions/">open question</a>, or see <a href="/join/">Join in</a>.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="who">
-      <h2 id="who">Who runs it</h2>
-      <p>{ownershipLine()} As the <a href="/governance/">governance</a> page says, the founder decides while he is the only editor.</p>
-      <p><strong>Co-organizers</strong> will own the room and its Slack. Two of them will hold the site’s deploy keys and read the shared inbox.</p>
-      <p class="pr-who">Co-organizers: {coOrganizers.length ? coOrganizers.map((p) => p.name).join(', ') + '.' : 'Being invited now.'}</p>
-      <p><strong>Every other role</strong> is an open volunteer role, with a term of one edition and a one-message exit. See <a href="/roles/">Roles</a>.</p>
-      {founder && <p><strong>The founder</strong>, {founder.name}, started the practice and is its only editor today. Once co-organizers are named and confirmed as editors, he steps back to disclosed founder and contributor: a member of the room, not an owner. Anacay LLC supports the practice, and says so.</p>}
-      <p>The first members are listed on <a href="/circle/">The founding circle</a>, once they sign off. How decisions are made is set out in <a href="/governance/">Governance</a>.</p>
+      <h2 id="who">Who runs this</h2>
+      {founder && <p>{founder.name} founded CPP and stewards it. He is its editor today.</p>}
+      <p>Anacay LLC supports the practice, and says so. See <a href="/support/">Support</a>.</p>
+      <p><strong>By the community, for the community.</strong> What we make belongs to the community, credited by name.</p>
+      <p>Leadership grows from members. Roles open as people step forward, and governance widens as the community grows. <a href="/governance/">Governance</a> and <a href="/how-it-grows/">How it grows</a> set out how.</p>
+      <p>Private messages to <a href={mail}>{room.contact}</a> are read by the founder.</p>
+      <p class="pr-who">Co-organizers: {coOrganizers.length ? coOrganizers.map((p) => p.name).join(', ') + '.' : 'Open. A volunteer role for anyone who wants to help build the room.'}</p>
+      <p><strong>Every role</strong> is an open volunteer role, with a term of one edition and a one-message exit. See <a href="/roles/">Roles</a>. The first members are listed on <a href="/circle/">The founding circle</a>, once they sign off.</p>
     </section>
   </div>
 </Base>
