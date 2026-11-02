@@ -40,7 +40,7 @@ const shelf = [
 const seedLayers = [
   { href: '/abstract/', name: 'Abstract', t: '2 minutes' },
   { href: '/one-page/', name: 'One page', t: readingTime(wordCount(p('one-page').blocks)) },
-  { href: '/summary/', name: 'Executive summary', t: '10 minutes' },
+  { href: '/summary/', name: 'Executive summary', t: readingTime(wordCount(p('summary').blocks)) },
   { href: '/paper/', name: `The full paper, Sections 1–${ctx.chapters.length}`, t: readingTime(deep) },
 ];
 ---
@@ -55,7 +55,7 @@ const seedLayers = [
         <p>Everything below grows out of one paper. It’s published as a request for comments: select any passage to open a thread, or reply to one of the author’s open questions.</p>
         <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on <em>{manifest.title}</em></a> <a class="btn btn--quiet" href="/open-questions/">Open questions</a> <a class="more" href="/downloads/">PDF and EPUB</a></p>
       </div>
-      <p class="note"><strong>An early draft.</strong> The guide below (v0.2) is a first sketch of how the body of knowledge could be organized, drawn from the seed paper. Comment on it the same way.</p>
+      <p class="note"><strong>An early draft.</strong> The guide is draft v0.2, inside seed edition v0.1. It is a first sketch of how the body of knowledge could be organized, drawn from the seed paper. Comment on it the same way.</p>
     </div>
 
     <section class="band start-here" aria-labelledby="start-here">

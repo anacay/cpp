@@ -1,4 +1,7 @@
 ---
 import PaperPage from '../components/PaperPage.astro';
+import { load, wordCount, readingTime } from '../lib/paper.mjs';
+// The reading time is counted from the summary itself, so it can't drift.
+const t = readingTime(wordCount(load().pages.get('summary').blocks));
 ---
-<PaperPage id="summary" kicker="10 minutes · For a busy leader" nav="paper" />
+<PaperPage id="summary" kicker={`${t} · For a busy leader`} nav="paper" />

@@ -57,7 +57,7 @@ const p = (id) => ctx.pages.get(id);
 const paths = [
   { time: '2 minutes', name: 'The abstract', href: '/abstract/' },
   { time: readingTime(wordCount(p('one-page').blocks)), name: 'The one page', href: '/one-page/' },
-  { time: '10 minutes', name: 'The executive summary', href: '/summary/' },
+  { time: readingTime(wordCount(p('summary').blocks)), name: 'The executive summary', href: '/summary/' },
   { time: readingTime(ctx.chapters.reduce((n, ch) => n + wordCount(ch.blocks), 0)), name: `The full paper, Sections 1–${ctx.chapters.length}`, href: '/paper/' },
 ];
 

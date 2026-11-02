@@ -45,7 +45,7 @@ const kinds = [
       <ul class="cards cards--3">
         <li><h3>On every page</h3><p>Each body-of-knowledge page ends with <strong>Discuss</strong> and <strong>Suggest an edit</strong>. You need a free GitHub account. You don’t need to know Git.</p><p><a class="more" href="/body-of-knowledge/">Pick a section</a></p></li>
         <li><h3>On GitHub</h3><p>Discussions for questions, proposals, terms, cases and sources. Pull requests for edits. Every decision is written down in the thread.</p><p><a class="more" href={`${c.repo}/discussions`}>Discussions</a> · <a class="more" href={c.repo}>Repository</a></p></li>
-        <li><h3>On LinkedIn</h3><p>Follow the page for news and new open questions. A group for introductions and prompts opens with the repository. Good threads move to GitHub, with credit to the people in them.</p><p>{c.linkedinPage && <a class="more" href={c.linkedinPage}>The page</a>}{c.linkedinPage && ' · '}{c.linkedin ? <a class="more" href={c.linkedin}>The group</a> : <span class="muted">The group is opening soon.</span>}</p></li>
+        <li><h3>On LinkedIn</h3><p>LinkedIn carries news only: new versions, open questions and call dates. The conversation happens on GitHub and in the <a href="/community/">Practice Room</a>.</p><p>{c.linkedinPage && <a class="more" href={c.linkedinPage}>The page</a>}</p></li>
       </ul>
     </section>
 
