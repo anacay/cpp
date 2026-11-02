@@ -58,7 +58,7 @@ export const workstreams = [
     id: 'declarations', name: 'Declaration calibration and pooled data', channel: 'demand-forecasting',
     why: 'How well teams’ statements of future demand land, and how much to trust each team’s record.',
     items: [
-      q(2, 'How well do declarations land, by stage? The paper’s rule of 60% for intents and within 10% for configured asks is “a guess dressed as a number”.'),
+      q(2, 'How well do declarations land, by stage? The paper’s illustrative rule of 60% for intents and within 10% for configured asks is “a guess dressed as a number”.'),
       q(10, 'How much should a team’s own record count against every team’s? Insurers use credibility theory for this. Does it fit capacity declarations?'),
       q(12, 'Some steps have no reference class, such as a first accelerator cluster. Beyond bounding, phasing and buying options, what has worked?'),
       q(15, 'Could the community pool anonymized declaration records? Say what your organization would need to see first. Nothing is pooled before written rules and a legal-safe protocol exist.'),
@@ -71,7 +71,7 @@ export const workstreams = [
     why: 'Supply is the least documented side. Public evidence moves it most.',
     items: [
       q(4, 'Find public sources for order-to-dock time, turn-up duration, cancel windows and reschedule terms. A filing, a talk or a vendor document, with a link and the quote.', { goodFirst: true }),
-      q(5, 'How long does a large new load wait for power, from request to energized? Utility filings and interconnection queues may hold the answer.'),
+      q(5, 'How long does a large new load wait for power, from request to energized? Utility filings and interconnection queues may hold the answer.', { goodFirst: true }),
       q(11, 'Is the supply review the step most often missing between the demand review and the executive decision? If you have one, what does supply bring to it?', { goodFirst: true }),
       it('barter', 'How do you plan capacity paid for in kind? What changes if regulators force a price into it?', PP, 'Case 2, Popcorn Pajamas'),
     ],
@@ -104,7 +104,7 @@ export const workstreams = [
     why: 'Where the structure holds and the units move: power, topology, tokens and agents.',
     note: 'Arbitrating scarce accelerators (Q3) sits under arbitration and incentives. It is the planned topic of the second working group.',
     items: [
-      q(13, 'When a team’s own software creates the demand, is a cap a better declaration than a forecast?'),
+      q(13, 'When a team’s own software creates the demand, is a cap a better declaration than a forecast?', { goodFirst: true }),
       it('undeclarable', 'For demand no one can declare in time, what remains are buffers, bridges and admission control. What else catches it?', `${LIM}#where-the-ideas-break`, 'Limits'),
     ],
   },
@@ -145,7 +145,7 @@ export const workstreams = [
       it('map-path', 'Nobody has checked the guide’s map and path against how planning teams divide the work. The “what to fix first” table is judgment too.', `${LIM}#what-this-guide-adds-and-how-sure-it-is`, 'Limits'),
       it('multi-org', 'Multi-organization data on forecast bias, unallocated share and fulfillment age, before and after adoption. The guide calls it the best contribution you could bring.', `${LIM}#what-would-help-most`, 'Limits'),
       it('elastic-cloud', 'In elastic cloud, shortage comes back as regional stockouts and reservation planning. What does a single-cloud team need beyond the guide’s one paragraph?', `${LIM}#where-the-ideas-break`, 'Limits', { channel: 'cloud-reliability' }),
-      it('case3-tests', 'Case 3 sets ten strategy tests and eight experiments. None has been run.', '/cases/kuantillion-cloud-practice/#how-youll-know-the-strategy-is-working', 'Case 3, Kuantillion Cloud'),
+      it('case3-tests', 'Case 3 sets twelve strategy tests and eight experiments. None has been run.', '/cases/kuantillion-cloud-practice/#how-youll-know-the-strategy-is-working', 'Case 3, Kuantillion Cloud'),
       it('falsifiers', 'Case 2 lists 15 open questions with falsifiers, and Case 3 lists 16. Pick one and argue it.', '/cases/popcorn-pajamas-full/#14-open-questions-and-falsifiers', 'Case 2, full case'),
     ],
   },

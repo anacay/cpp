@@ -4,7 +4,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Bring a problem to a Practice Room review.** Two problems a call, 20 minutes each: five to present, fifteen for questions. A supply chair asks first. The format is on https://cpp.anacay.org/community/#reviews.
+        **Bring a problem to a Practice Room review.** Two problems a call, 20 minutes each: five to present, fifteen for questions. A reviewer who knows supply is asked first. The format is on https://cpp.anacay.org/community/#reviews.
 
         **This thread is public.** Read https://cpp.anacay.org/sharing-safely/ before you write anything. Use shape, indexed numbers (100 = plan) and banded ranges. Never absolute figures, names, contract terms or internal system names.
 
@@ -50,7 +50,7 @@ body:
     id: supply
     attributes:
       label: Does supply shape the problem?
-      description: The supply chair reads these first.
+      description: A reviewer who knows supply reads these first.
       options:
         - "Yes: lead times, power, space or vendor terms"
         - "Partly"

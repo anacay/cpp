@@ -26,7 +26,7 @@ const raise = (g) => `mailto:${room.contact}?subject=${encodeURIComponent(`${g.n
     <div class="page-head reading">
       <p class="eyebrow">The Practice Room</p>
       <h1>Working groups</h1>
-      <p class="lede">A working group takes one open problem for six to eight weeks, on synthetic data. What it concludes is published, credited by name.</p>
+      <p class="lede">A working group takes one cluster of open problems for six to eight weeks, on synthetic data. What it concludes is published, credited by name.</p>
     </div>
 
     <section aria-labelledby="how">
@@ -44,7 +44,7 @@ const raise = (g) => `mailto:${room.contact}?subject=${encodeURIComponent(`${g.n
     {wg1 && (
       <section class="prose reading" aria-labelledby="wg1">
         <h2 id="wg1">WG1 charter: {wg1.name}</h2>
-        <p>Planners score declarations by stage, then blend a team’s record with everyone’s. The <a href="/guide/concepts/demand-and-declarations/">guide</a> and <a href="/paper/8-the-commit-point-method/">Section 8</a> of the seed paper set this out, and say a data scientist could do better. WG1 tries.</p>
+        <p>Planners score declarations by stage, then blend a team’s record with everyone’s. <a href="/paper/5-coefficients-are-agreements/">Section 5</a> of the seed paper sets out scoring by stage and the blend; the <a href="/guide/concepts/demand-and-declarations/">guide</a> follows it. <a href="/paper/8-the-commit-point-method/">Section 8</a> says its per-layer rule is not a joint optimum, and a data scientist could do better. WG1 tries both.</p>
         <h3 id="wg1-questions">The questions</h3>
         <ul>
           {wg1.questions.map((q) => questions[q] && <li><strong>{q}.</strong> {questions[q].title} <a href={thread(questions[q].d)}>Discussion #{questions[q].d}</a></li>)}

@@ -34,7 +34,7 @@ export const doors = [
       ['Principles', '/guide/principles/', 4, 'The rules the rest of the guide leans on.'],
       ['The map', '/guide/the-map/', 6, 'Read “The same launch, with the method” closely.'],
       ['Quarterly', '/guide/quarterly/', 7, 'The intake and the supply review.'],
-      ['Monthly', '/guide/monthly/', 7, 'Where stocked machines and turn-up commit.'],
+      ['Monthly', '/guide/monthly/', 6, 'Where stocked machines and turn-up commit.'],
       ['Buffers and reserves', '/guide/concepts/buffers-and-reserves/', 4, 'One line called headroom hides several buffers.'],
       ['The worksheet', '/worksheet/', 17, 'Work one launch through the method.'],
       ['Open questions', '/open-questions/', 5, 'Where the seed paper runs out.'],
@@ -48,7 +48,7 @@ export const doors = [
     id: 'senior', name: 'Senior planners', time: '1 hour 50 minutes',
     who: 'You design the portfolio, the envelope and the process across organizations.',
     steps: [
-      ['Executive summary', '/summary/', 10, 'The seed paper’s argument, end to end.'],
+      ['Executive summary', '/summary/', 5, 'The seed paper’s argument, end to end.'],
       ['Operating mechanisms', '/guide/concepts/operating-mechanisms/', 5, 'Thirteen mechanisms and nine decision rights.'],
       ['Annual', '/guide/annual/', 8, 'The envelope, and the slow layers it commits.'],
       ['Post-launch', '/guide/post-launch/', 8, 'Where misses are split by owner and declarations are scored.'],
@@ -68,7 +68,7 @@ export const doors = [
     who: 'You run a team and own the forum where capacity is decided.',
     steps: [
       ['One page', '/one-page/', 2, 'Including “Five questions for your own planning”.'],
-      ['Executive summary', '/summary/', 10, 'The argument your team would be asked to adopt.'],
+      ['Executive summary', '/summary/', 5, 'The argument your team would be asked to adopt.'],
       ['Settings', '/guide/settings/#what-to-fix-first', 5, '“What to fix first” maps each symptom to one mechanism.'],
       ['Six roles, six promises', '/paper/14-a-minimum-viable-discipline/', 4, 'The smallest version of the discipline that still holds.'],
       ['People', '/guide/people/', 7, 'Seams, refusal and overrides.'],
@@ -114,7 +114,7 @@ export const doors = [
     who: 'You fund the capacity, set the rates or run FinOps.',
     steps: [
       ['Three prices', '/guide/concepts/three-prices/', 4, 'Rates, build decisions and scarcity each need their own price. Finance usually owns the first.'],
-      ['The coefficient', '/guide/concepts/the-coefficient/', 4, 'A bill is driver times coefficient times rate. You see the rate; the coefficient is where bills surprise.'],
+      ['The coefficient', '/guide/concepts/the-coefficient/', 3, 'A bill is driver times coefficient times rate. You see the rate; the coefficient is where bills surprise.'],
       ['Case 1', '/guide/cases/#case-1-the-launch-that-needed-memory', 3, 'A forecast within 4% and a bill 30% over, split by owner.'],
       ['Post-launch', '/guide/post-launch/', 7, 'The variance split: volume, coefficient and rate, each with an owner.'],
       ['People', '/guide/people/#the-three-seams', 6, 'The planning and finance seam: bridges, deferred decommissions and early orders.'],
@@ -143,6 +143,10 @@ export const doors = [
 
 export const doorPages = () => doors.filter((d) => d.page);
 export const minutes = (d) => d.steps.reduce((n, s) => n + s[2], 0);
+// Each door's headline time is the sum of its steps, so the two never
+// disagree. (The summary step is 5 minutes, as /summary/ counts its text.)
+const fmt = (m) => (m < 60 ? `${m} minutes` : `${Math.floor(m / 60)} hour${m >= 120 ? 's' : ''}${m % 60 ? ` ${m % 60} minutes` : ''}`);
+for (const d of doors) if (d.steps?.length) d.time = fmt(minutes(d));
 
 // "Your words, our words": the words newcomers bring, and where the guide
 // covers the same ground. Pointers, not definitions: nothing here defines a
