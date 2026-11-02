@@ -26,7 +26,7 @@ Copy everything between the two lines into the new discussion. The title line is
 
 **Why.** The code bans pitching yourself for hire, but not recruiting others. A room of planners from competing employers needs that rule written down. Without it, members between roles can't join without being approached, and teams can't share problems without fear of poaching.
 
-**Open period.** 60 days, because this changes governance and there is one editor today. It can close at 30 days once two editors are confirmed. Interim room rules apply in the room from the day it opens. Co-organizer editors will close this after I step back.
+**Open period.** 60 days, because this changes governance and there is one editor today. It can close at 30 days once two editors are confirmed. Interim room rules apply in the room from the day it opens. I will close it after the open period, and write down why.
 
 *Evidence label: argued.*
 
