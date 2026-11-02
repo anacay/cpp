@@ -31,7 +31,7 @@ export const rhythm = {
 
 // Where the room stands. While `state` is 'setting-up', /community/ and /join/
 // show a "Status: being set up" block, and the pages describe greeters, hosts,
-// the Slack, the digest and the call in the future tense. Co-organizers set
+// the Slack, the digest and the call in the future tense. The founder sets
 // `state` to 'open' (and update `asOf`) on the day the Slack opens.
 export const status = {
   state: 'setting-up', // 'setting-up' | 'open'
@@ -66,12 +66,11 @@ export const channels = [
   { id: 'cloud-reliability', name: '#cloud-reliability', purpose: 'Single-cloud teams, stockouts and headroom.', host: null, topic: true },
 ];
 
-// The eight roles. `holders` are person ids; an empty list renders "Open".
-// `notAtFoundersEmployer` adds the line "Not open to anyone at the founder's
-// employer." to the card.
+// The eight roles: open volunteer roles that fill as people step forward.
+// `holders` are person ids; an empty list renders "Open".
 export const roles = [
-  { id: 'co-organizer', name: 'Co-organizer', holders: [], notAtFoundersEmployer: true },
-  { id: 'editor', name: 'Editor', holders: ['founder'], notAtFoundersEmployer: true },
+  { id: 'co-organizer', name: 'Co-organizer', holders: [] },
+  { id: 'editor', name: 'Editor', holders: ['founder'] },
   { id: 'conduct-reviewer', name: 'Independent conduct reviewer', holders: [] },
   { id: 'wg-lead', name: 'Working-group lead', holders: [] },
   { id: 'channel-host', name: 'Channel host', holders: [] },
@@ -132,19 +131,10 @@ export function callLine() {
   const d = new Date(`${call.date}T12:00:00Z`).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
   return `Next open call: ${d}, ${call.startUtc}–${call.endUtc} UTC. Newcomer half-hour from ${call.newcomerUtc} UTC.`;
 }
-// Who reads cpp@anacay.org. Today the founder does; once a co-organizer has
-// consented, the line says the inbox has moved to them.
-export function inboxLine() {
-  return consented(circle.coOrganizers).length
-    ? `The co-organizers read ${room.contact}.`
-    : `Today the founder reads ${room.contact}. Once co-organizers are named, the inbox moves to them.`;
-}
-// Who runs CPP now. It matches GOVERNANCE.md: the founder is the only editor
-// until co-organizer editors are nominated and confirmed.
-export function ownershipLine() {
-  return consented(circle.coOrganizers).length
-    ? 'The co-organizers run the Practice Room. Editors are added under Governance.'
-    : 'Today the founder runs CPP as its only editor. Co-organizers take over the room when they are nominated.';
-}
+// Who reads cpp@anacay.org. The founder, as steward, reads it.
+export const inboxLine = () => `The founder reads ${room.contact}.`;
+// Who runs CPP, in one line. It matches GOVERNANCE.md; the full passage is
+// /community/#who.
+export const ownershipLine = () => 'The founder stewards CPP, with Anacay’s disclosed support. Roles open as people step forward.';
 // Names of people who have NOT consented, for check 10.
 export const unconsentedNames = () => people.filter((p) => p.consent !== true).map((p) => p.name).filter(Boolean);
