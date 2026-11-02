@@ -1,0 +1,14 @@
+---
+// "Status: being set up", from site/src/data/room.mjs. It shows while
+// status.state is 'setting-up' and disappears when co-organizers set it to
+// 'open'. Nothing here claims a person or a channel exists before it does.
+import { status, settingUp, inboxLine } from '../data/room.mjs';
+const d = new Date(`${status.asOf}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const list = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}` : xs[0]);
+---
+{settingUp() && (
+  <div class="note room-status" data-status={status.state}>
+    <p><strong>Status, {d}: being set up.</strong> The room isn’t open yet. Being set up now: {list(status.pending)}.</p>
+    <p>The Slack room opens once two co-organizers are named. Until then, everything goes through email. {inboxLine()}</p>
+  </div>
+)}

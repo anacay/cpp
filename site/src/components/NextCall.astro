@@ -1,8 +1,10 @@
 ---
 // The next open call, from site/src/data/room.mjs. While the call is pending
 // it says so and shows no date; a confirmed date appears with a data-only edit.
-import { callLine, call } from '../data/room.mjs';
-interface Props { class?: string }
-const { class: cls = 'muted' } = Astro.props;
+// `hear` adds how to hear first, while no date is set.
+import { callLine, call, room } from '../data/room.mjs';
+interface Props { class?: string; hear?: boolean }
+const { class: cls = 'muted', hear = true } = Astro.props;
+const pending = call.status !== 'confirmed' || !call.date;
 ---
-<p class={cls} data-call={call.status}>{callLine()}</p>
+<p class={cls} data-call={call.status}>{callLine()}{hear && pending && <> To hear first, write to <a href={`mailto:${room.contact}?subject=Call`}>{room.contact}</a> with “Call” in the subject, or follow the <a href="/feed.xml">RSS feed</a>.</>}</p>

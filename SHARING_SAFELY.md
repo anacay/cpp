@@ -107,7 +107,7 @@ Not sure? Before you post anything, write to [cpp@anacay.org](mailto:cpp@anacay.
 - Supply drafts go to a reader who knows supply confidentiality, once one is named.
 - If you prefer, we post it for you, with credit by name, by handle or as anonymous.
 
-Today the editor reads pre-checks. The [Pre-check reviewer](https://cpp.anacay.org/roles/#pre-check) role is open, so others can share the work.
+Today the founder, as the only editor, reads cpp@anacay.org and the pre-checks. Once co-organizers are named, the inbox moves to them. The [Pre-check reviewer](https://cpp.anacay.org/roles/#pre-check) role is open, so others can share the work.
 
 A pre-check is also the first step for a [bring-your-problem review](https://cpp.anacay.org/community/#reviews) in the Practice Room.
 

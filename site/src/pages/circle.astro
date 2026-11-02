@@ -4,7 +4,7 @@
 // people have consented. Never write a name into this file directly; ask a
 // co-organizer to add the person to room.mjs with `consent: true`.
 import Base from '../layouts/Base.astro';
-import { room, circle, circleNames, person } from '../data/room.mjs';
+import { room, circle, circleNames, person, inboxLine } from '../data/room.mjs';
 const names = circleNames();
 const founder = person('founder');
 const mail = `mailto:${room.contact}`;
@@ -68,7 +68,7 @@ const mail = `mailto:${room.contact}`;
         <li>A one-line yes is enough. The person then says what may be shown: a name or a handle, a sector, topics.</li>
         <li>Nothing appears here until that written yes. The first call is announced once the founding circle confirms.</li>
       </ol>
-      <p>Not invited yet? Write to <a href={mail}>{room.contact}</a> with your sector and one problem you care about. A co-organizer replies within {room.joinReplyDays} working days.</p>
+      <p>Not invited yet? Write to <a href={mail}>{room.contact}</a> with your sector and one problem you care about. {inboxLine()}</p>
       <p>Want to do more than attend? Every role is listed on <a href="/roles/">Roles</a>. How editors are added is set out in <a href="/governance/">Governance</a>.</p>
     </section>
   </div>

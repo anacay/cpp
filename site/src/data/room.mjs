@@ -13,8 +13,7 @@ export const room = {
   url: '/community/',
   contact: 'cpp@anacay.org',
   // Promises the pages make. Change them here, and every page follows.
-  joinReplyDays: 2, // a co-organizer replies to a join request within two working days
-  firstAnswerHours: 24, // a first question gets a kind answer within 24 hours
+  firstAnswerHours: 24, // once greeters are named, a first question gets a kind answer within 24 hours
   precheckHours: 72, // a private pre-check gets a written reply within 72 hours
 };
 
@@ -27,8 +26,19 @@ export const rhythm = {
   notesHours: 48,
   recordings: false,
   slots: 'The call alternates between 17:00 UTC and 00:00 UTC, so the Pacific gets a slot',
-  digest: 'A monthly digest by email and RSS',
+  digest: 'A monthly digest, by RSS, and by email once a list exists',
 };
+
+// Where the room stands. While `state` is 'setting-up', /community/ and /join/
+// show a "Status: being set up" block, and the pages describe greeters, hosts,
+// the Slack, the digest and the call in the future tense. Co-organizers set
+// `state` to 'open' (and update `asOf`) on the day the Slack opens.
+export const status = {
+  state: 'setting-up', // 'setting-up' | 'open'
+  asOf: '2026-11-02',
+  pending: ['the Slack room', 'greeters and channel hosts', 'the GitHub categories for first questions', 'the email digest', 'the first call'],
+};
+export const settingUp = () => status.state !== 'open';
 
 // The next call. While `status` is 'pending', pages say the call is announced
 // once the founding circle confirms, and show no date. Set `status` to
@@ -118,9 +128,23 @@ export const circleNames = () => {
 };
 // One line on the next call, for any page.
 export function callLine() {
-  if (call.status !== 'confirmed' || !call.date) return 'The first call is announced once the founding circle confirms.';
+  if (call.status !== 'confirmed' || !call.date) return 'The first call will be announced once the founding circle confirms.';
   const d = new Date(`${call.date}T12:00:00Z`).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
   return `Next open call: ${d}, ${call.startUtc}–${call.endUtc} UTC. Newcomer half-hour from ${call.newcomerUtc} UTC.`;
+}
+// Who reads cpp@anacay.org. Today the founder does; once a co-organizer has
+// consented, the line says the inbox has moved to them.
+export function inboxLine() {
+  return consented(circle.coOrganizers).length
+    ? `The co-organizers read ${room.contact}.`
+    : `Today the founder reads ${room.contact}. Once co-organizers are named, the inbox moves to them.`;
+}
+// Who runs CPP now. It matches GOVERNANCE.md: the founder is the only editor
+// until co-organizer editors are nominated and confirmed.
+export function ownershipLine() {
+  return consented(circle.coOrganizers).length
+    ? 'The co-organizers run the Practice Room. Editors are added under Governance.'
+    : 'Today the founder runs CPP as its only editor. Co-organizers take over the room when they are nominated.';
 }
 // Names of people who have NOT consented, for check 10.
 export const unconsentedNames = () => people.filter((p) => p.consent !== true).map((p) => p.name).filter(Boolean);
