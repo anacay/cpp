@@ -97,6 +97,21 @@ export const doors = [
     first: { item: 'q3', text: 'Describe how your accelerator forum decides, with no names or figures. Reply in Q3’s thread, or write privately.' },
   },
   {
+    id: 'resource-managers', name: 'Coming from resource or quota management?', time: '15 minutes',
+    who: 'You hand out quota, budgets or shared resources, and arbitrate who gets what. Capacity planning is the same problem, a year earlier.',
+    steps: [
+      ['Approval and allocation', '/guide/concepts/approval-and-allocation/', 4, 'Granting quota is approval. Delivering machines of the right shape is allocation.'],
+      ['Buffers and reserves', '/guide/concepts/buffers-and-reserves/', 4, 'Who holds the headroom, and what it costs to hold it.'],
+      ['The coefficient', '/guide/concepts/the-coefficient/', 3, 'A unit of demand, priced. Each term has an owner.'],
+      ['Three prices', '/guide/concepts/three-prices/', 4, 'Who pays, should we build, and who gets scarce capacity now.'],
+    ],
+    aha: 'Quota is a promise against supply that may not exist yet. Planning is deciding, before the commit date, which promises the fleet can keep.',
+    ahaSource: ['Approval and allocation', '/guide/concepts/approval-and-allocation/'],
+    problems: ['q3', 'q7', 'unallocated-owner'],
+    firstTitle: 'From quota management: ',
+    first: { item: 'q3', text: 'How does your quota or resource process decide between teams when supply is short? Describe the rule, not the figures.' },
+  },
+  {
     id: 'sre', name: 'Site reliability engineers', time: '20 minutes', page: true,
     who: 'You know load, headroom and failure. The new parts are money, supply and the annual cycle.',
     steps: [
@@ -143,8 +158,8 @@ export const doors = [
 ];
 
 export const doorPages = () => doors.filter((d) => d.page);
-// The stream tag each door's first post carries.
-export const DOOR_TAGS = { new: 'first-question', practicing: 'forecasting', senior: 'forecasting', head: null, 'program-managers': 'gpu', sre: 'cloud', finance: 'cost', supply: 'supply' };
+// The Commons tag each door's first post carries.
+export const DOOR_TAGS = { new: 'first-question', practicing: 'forecasting', senior: 'forecasting', head: null, 'program-managers': 'gpu', 'resource-managers': 'path-resource-managers', sre: 'cloud', finance: 'cost', supply: 'supply' };
 export const minutes = (d) => d.steps.reduce((n, s) => n + s[2], 0);
 // Each door's headline time is the sum of its steps, so the two never
 // disagree. (The summary step is 5 minutes, as /summary/ counts its text.)
