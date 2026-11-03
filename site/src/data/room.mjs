@@ -21,9 +21,10 @@ export const room = {
 const repo = 'https://github.com/anacay/cpp';
 export const stream = {
   name: 'The Commons', // the Discussions category
-  slug: 'commons',
-  url: `${repo}/discussions/categories/commons`,
-  newPost: `${repo}/discussions/new?category=commons`,
+  // GitHub derives the slug from the category name: "The Commons" → the-commons.
+  slug: 'the-commons',
+  url: `${repo}/discussions/categories/the-commons`,
+  newPost: `${repo}/discussions/new?category=the-commons`,
   all: `${repo}/discussions`,
   signup: 'https://github.com/signup',
 };
@@ -50,18 +51,23 @@ export const tagUrl = (t) => `${repo}/discussions?discussions_q=${encodeURICompo
 // body as a word (#supply), and whoever triages adds the label.
 const SITE = 'https://cpp.anacay.org'; // matches site.url in paper.config.json
 const qs = (o) => Object.entries(o).filter(([, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
-export const NDA_LINE = 'Don’t break your NDA: methods and public facts only.';
-export function streamPost({ title = '', text = '', tag = null, from = null } = {}) {
+// The NDA rule, word for word, as on /commons/#room-rules.
+export const NDA_LINE = 'Don’t break your NDA. Don’t share your company’s prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game.';
+// `starter: true` means `text` is already the poster's own opening, so no
+// "Your post:" prompt follows it.
+export function streamPost({ title = '', text = '', tag = null, from = null, starter = false } = {}) {
   const parts = [];
   if (tag) parts.push(`#${tag}`);
   if (text) parts.push(text);
   if (from) parts.push(`From [${from.name}](${from.url.startsWith('http') ? from.url : SITE + from.url})`);
-  parts.push(`**Your post:**\n\n\n_${NDA_LINE}_`);
+  parts.push(starter ? `\n_${NDA_LINE}_` : `**Your post:**\n\n\n_${NDA_LINE}_`);
   return `${stream.newPost}&${qs({ title, body: parts.join('\n\n') })}`;
 }
-// The first-question door, used by the home page, /join/, /commons/, the
-// newcomer door and the footer.
-export const firstQuestion = () => streamPost({ tag: 'first-question' });
+// The first-question door, used by /join/, /commons/, /circle/ and the
+// newcomer door.
+export const firstQuestion = () => streamPost({ tag: 'first-question', text: 'I’m new to capacity planning. My question: …', starter: true });
+// The general door (home hero, footer): no tag, so peers don't land in #first-question.
+export const anyPost = () => streamPost({});
 // A topic tag for a page, where the page's subject is plain. Prefix match on
 // the path; pages not listed get no tag.
 const PATH_TAGS = [
@@ -73,6 +79,7 @@ const PATH_TAGS = [
   ['/guide/concepts/commit-points/', 'supply'],
   ['/guide/concepts/approval-and-allocation/', 'gpu'],
   ['/cases/kuantillion-cloud', 'supply'],
+  ['/cases/popcorn-pajamas', 'cost'],
   ['/notes/buildings-at-ai-density/', 'power'],
   ['/notes/second-lives/', 'supply'],
   ['/paper/4-three-prices-three-questions/', 'cost'],

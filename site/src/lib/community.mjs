@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import MarkdownIt from 'markdown-it';
 import { load, slugify } from './paper.mjs';
+import { stream } from '../data/room.mjs';
 
 const root = process.cwd();
 
@@ -46,7 +47,7 @@ export function links(p, override = {}) {
     open: c.open,
     // New posts go to The Commons. Search covers every category,
     // so threads from the retired "sections" category still turn up.
-    discuss: `${c.repo}/discussions/new?${q({ category: 'commons', title: `${name}: `, body: p?.url ? `From [${name}](${load().config.site.url}${p.url})\n\n**Your post:**\n` : '' })}`,
+    discuss: `${c.repo}/discussions/new?${q({ category: stream.slug, title: `${name}: `, body: p?.url ? `From [${name}](${load().config.site.url}${p.url})\n\n**Your post:**\n` : '' })}`,
     threads: `${c.repo}/discussions?${q({ discussions_q: `"${name}"` })}`,
     edit: file ? `${c.repo}/edit/${c.branch}/${file}` : null,
     file,

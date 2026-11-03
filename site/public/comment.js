@@ -39,15 +39,6 @@
     if (w.length <= 10) return encodeURIComponent(w.join(' '));
     return encodeURIComponent(w.slice(0, 5).join(' ')) + ',' + encodeURIComponent(w.slice(-4).join(' '));
   }
-  function nearestId(node) {
-    var el = node.nodeType === 1 ? node : node.parentElement;
-    while (el && el !== document.body) {
-      var h = el.previousElementSibling;
-      while (h) { if (/^H[2-4]$/.test(h.tagName) && h.id) return h.id; h = h.previousElementSibling; }
-      el = el.parentElement;
-    }
-    return '';
-  }
   function q(o) { return Object.keys(o).map(function (k) { return k + '=' + encodeURIComponent(o[k]); }).join('&'); }
 
   var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
@@ -71,10 +62,9 @@
     if (text.length > 600) text = text.slice(0, 600).replace(/\s+\S*$/, '') + '…';
     var url = cfg.site.replace(/\/$/, '') + location.pathname + '#:~:text=' + fragment(text.replace(/…$/, ''));
     var head = cfg.page + ': "' + words(text).slice(0, 8).join(' ') + (words(text).length > 8 ? '…' : '') + '"';
-    var section = nearestId(sel.anchorNode);
-    var body = (cfg.tag ? '#' + cfg.tag + '\n\n' : '') + '> ' + text + '\n\nFrom [' + cfg.page + '](' + url + ')' + (section ? ' · section anchor `#' + section + '`' : '') + '\n\n**Your comment:**\n';
+    var body = (cfg.tag ? '#' + cfg.tag + '\n\n' : '') + '> ' + text + '\n\nFrom [' + cfg.page + '](' + url + ')\n\n**Your post:**\n\n\n' + (cfg.nda ? '_' + cfg.nda + '_' : '');
     var mailto = 'mailto:' + cfg.contact + '?' + q({ subject: head, body: body });
-    go.href = cfg.open === '1' ? cfg.repo + '/discussions/new?' + q({ category: 'commons', title: head, body: body }) : mailto;
+    go.href = cfg.open === '1' ? cfg.repo + '/discussions/new?' + q({ category: cfg.category || 'the-commons', title: head, body: body }) : mailto;
     mail.href = mailto;
     qEl.textContent = '“' + words(text).slice(0, 10).join(' ') + (words(text).length > 10 ? '…' : '') + '”';
     bar.hidden = false;
