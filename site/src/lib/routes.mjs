@@ -5,7 +5,7 @@ import { guide } from './guide.mjs';
 import { doorPages } from '../data/start-paths.mjs';
 export function allRoutes() {
   const { chapters } = load();
-  return ['/', '/start/', ...doorPages().map((d) => `/start/${d.id}/`), '/body-of-knowledge/', ...guide().pages.map((p) => p.url), '/cases/', '/notes/', '/join/', '/community/', '/circle/', '/roles/', '/working-groups/', '/agenda/', '/related-work/', ...Object.values(DOCS), '/license/', '/privacy/', '/open-questions/', '/support/',
+  return ['/', '/start/', ...doorPages().map((d) => `/start/${d.id}/`), '/body-of-knowledge/', ...guide().pages.map((p) => p.url), '/cases/', '/notes/', '/join/', '/commons/', '/circle/', '/roles/', '/working-groups/', '/agenda/', '/related-work/', ...Object.values(DOCS), '/license/', '/privacy/', '/open-questions/', '/support/',
     '/abstract/', '/summary/', '/one-page/', '/paper/', ...chapters.map((c) => c.url), '/paper/terms/',
     '/worksheet/', '/tools/', '/public-record/', '/visual-tour/', '/glossary/', '/references/', '/changes/', '/about/', '/downloads/'];
 }

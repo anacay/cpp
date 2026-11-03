@@ -44,9 +44,9 @@ export function links(p, override = {}) {
   const q = (o) => Object.entries(o).filter(([, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
   return {
     open: c.open,
-    // New posts go to the one stream, Practice. Search covers every category,
+    // New posts go to The Commons. Search covers every category,
     // so threads from the retired "sections" category still turn up.
-    discuss: `${c.repo}/discussions/new?${q({ category: 'practice', title: `${name}: `, body: p?.url ? `From [${name}](${load().config.site.url}${p.url})\n\n**Your post:**\n` : '' })}`,
+    discuss: `${c.repo}/discussions/new?${q({ category: 'commons', title: `${name}: `, body: p?.url ? `From [${name}](${load().config.site.url}${p.url})\n\n**Your post:**\n` : '' })}`,
     threads: `${c.repo}/discussions?${q({ discussions_q: `"${name}"` })}`,
     edit: file ? `${c.repo}/edit/${c.branch}/${file}` : null,
     file,

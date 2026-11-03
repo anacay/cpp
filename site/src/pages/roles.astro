@@ -13,13 +13,13 @@ const contact = room.contact;
 const detail = {
   'co-organizer': {
     hours: '2 to 4 hours a month',
-    summary: 'Helps the stream along, with the founder.',
+    summary: 'Helps The Commons along, with the founder.',
     duties: [
       'Welcome new posters, and answer first questions kindly.',
-      'Tag posts, so the stream stays easy to search.',
+      'Tag posts, so The Commons stays easy to search.',
       'Point the best threads toward a CPP page, with the authors’ consent.',
     ],
-    link: ['/community/', 'The stream'],
+    link: ['/commons/', 'The Commons'],
   },
   editor: {
     hours: '4 to 8 hours a month',
@@ -57,9 +57,9 @@ const detail = {
 
   'call-host': {
     hours: 'About 3 hours a month',
-    summary: 'Would run an open call, once the stream asks for one.',
+    summary: 'Would run an open call, once The Commons asks for one.',
     duties: [
-      'Post the agenda a week ahead, in the stream.',
+      'Post the agenda a week ahead, in The Commons.',
       'Run the call to a hard stop, under the Chatham House rule.',
       'Post notes without names. Nothing is recorded.',
     ],
@@ -82,25 +82,25 @@ const openCount = roles.filter((r) => holderLine(r.holders) === 'Open').length;
 const missing = roles.filter((r) => !detail[r.id]).map((r) => r.id);
 if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${missing.join(', ')}`);
 ---
-<Base title="Roles" description="The volunteer roles behind the Practice Room and the practice: duties, hours, terms, how to raise your hand and how to step down." nav="room">
+<Base title="Roles" description="The volunteer roles behind The Commons and the practice: duties, hours, terms, how to raise your hand and how to step down." nav="room">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
-      <p class="eyebrow">The Practice Room</p>
+      <p class="eyebrow">The Commons</p>
       <h1>Roles</h1>
-      <p class="lede">These roles run the <a href="/community/">Practice Room</a> and the practice. Each has edges: what it does, how long it takes, and how to leave it.</p>
+      <p class="lede">These roles run the <a href="/commons/">The Commons</a> and the practice. Each has edges: what it does, how long it takes, and how to leave it.</p>
     </div>
 
     <section class="prose reading" aria-labelledby="every-h">
       <h2 id="every-h">What every role has</h2>
       <ul>
         <li><strong>A term of one edition.</strong> Renew it if you want to.</li>
-        <li><strong>A hand-raise.</strong> Say so in <a href={stream.url}>the stream</a>.</li>
-        <li><strong>A one-message step-down.</strong> One line in the stream, or to <a href={`mailto:${contact}`}>{contact}</a>. No reason needed.</li>
+        <li><strong>A hand-raise.</strong> Say so in <a href={stream.url}>The Commons</a>.</li>
+        <li><strong>A one-message step-down.</strong> One line in The Commons, or to <a href={`mailto:${contact}`}>{contact}</a>. No reason needed.</li>
         <li><strong>Emeritus credit.</strong> When you step down, you stay credited on <a href="/contributors/">Contributors</a>.</li>
       </ul>
       <p>Each card shows who holds the role, or “Open”. A name appears only after that person agrees. Hours are estimates; the people who hold each role will correct them.</p>
-      <p><strong>{openCount} of {roles.length} roles are open.</strong> They fill as people step forward. Roles marked “later” wait until the stream asks for them.</p>
-      <p class="note">{ownershipLine()} See <a href="/community/#who">Who runs this</a>. The co-organizer role, and the rules here that go beyond <a href="/governance/">Governance</a>, are proposed. They reach GOVERNANCE.md only through a Governance proposal.</p>
+      <p><strong>{openCount} of {roles.length} roles are open.</strong> They fill as people step forward. Roles marked “later” wait until The Commons asks for them.</p>
+      <p class="note">{ownershipLine()} See <a href="/commons/#who">Who runs this</a>. The co-organizer role, and the rules here that go beyond <a href="/governance/">Governance</a>, are proposed. They reach GOVERNANCE.md only through a Governance proposal.</p>
     </section>
 
     <ul class="cards roles" aria-label="The roles">
@@ -120,7 +120,7 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
               <div><dt>Step down</dt><dd>One message, with emeritus credit</dd></div>
             </dl>
             <p class="acts">
-              <a class="more" href={streamPost({ title: `Role: ${r.name}`, text: `I’d like to help as ${r.name.toLowerCase()}.` })}>Raise your hand in the stream</a>
+              <a class="more" href={streamPost({ title: `Role: ${r.name}`, text: `I’d like to help as ${r.name.toLowerCase()}.` })}>Raise your hand in The Commons</a>
               {d.link && <> · <a class="more" href={d.link[0]}>{d.link[1]}</a></>}
             </p>
           </li>
@@ -131,7 +131,7 @@ if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${mis
     <section class="prose reading" aria-labelledby="employer-h">
       <h2 id="employer-h">If you change employer</h2>
       <p class="note">Update your sector within 14 days. Step back from anything that mainly touches your new employer.</p>
-      <p>A one-line note in the stream, or to <a href={`mailto:${contact}`}>{contact}</a>, is enough. You keep your role. The <a href="/governance/#conflicts-of-interest">conflict-of-interest rules</a> apply to everyone.</p>
+      <p>A one-line note in The Commons, or to <a href={`mailto:${contact}`}>{contact}</a>, is enough. You keep your role. The <a href="/governance/#conflicts-of-interest">conflict-of-interest rules</a> apply to everyone.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="next-h">

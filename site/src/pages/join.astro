@@ -1,6 +1,6 @@
 ---
-// /join/: how to take part. One place to interact: the stream on GitHub
-// Discussions. A GitHub account first, then the stream, then the public
+// /join/: how to take part. One place to interact: The Commons on GitHub
+// Discussions. A GitHub account first, then The Commons, then the public
 // record. The only private route is a pre-check for something sensitive.
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
@@ -10,21 +10,21 @@ const c = community();
 const contact = room.contact;
 const mail = (subject) => `mailto:${contact}?subject=${encodeURIComponent(subject)}`;
 const kinds = [
-  ['Ask or answer', 'A question, an observation, a link, “how do you handle X?”', 'Post in <a href="' + stream.url + '">the stream</a>, or reply to a post there.', 'Minutes'],
+  ['Ask or answer', 'A question, an observation, a link, “how do you handle X?”', 'Post in <a href="' + stream.url + '">The Commons</a>, or reply to a post there.', 'Minutes'],
   ['Fix an error', 'A typo, a broken link, a wrong number, a misquoted source.', 'Suggest an edit on the page, or open a “Fix an error” issue.', 'Minutes'],
-  ['Add or improve a term', 'A word planners use differently, or one that’s missing.', 'Post it in the stream, or open a “Terms” discussion with a one-sentence definition.', 'Minutes'],
+  ['Add or improve a term', 'A word planners use differently, or one that’s missing.', 'Post it in The Commons, or open a “Terms” discussion with a one-sentence definition.', 'Minutes'],
   ['Work an open problem', 'One of the questions on the agenda, marked good-first or not.', 'Pick one on the <a href="/agenda/">agenda</a> and reply in its thread.', 'An hour or two'],
   ['Propose a change', 'To an idea, a method, or how a section is built.', 'Open a “Proposals” discussion. Proposals are kept apart because they follow <a href="/how-it-grows/">How it grows</a>.', 'A short write-up'],
-  ['Add a public source', 'A paper, a talk, a public dataset, a filing.', 'Post it in the stream, or open an “Add a public source” issue.', 'Minutes'],
-  ['Take a role', 'Co-organizer, pre-check reviewer, editor.', 'Read the <a href="/roles/">role cards</a> and say so in the stream.', 'A few hours a month'],
+  ['Add a public source', 'A paper, a talk, a public dataset, a filing.', 'Post it in The Commons, or open an “Add a public source” issue.', 'Minutes'],
+  ['Take a role', 'Co-organizer, pre-check reviewer, editor.', 'Read the <a href="/roles/">role cards</a> and say so in The Commons.', 'A few hours a month'],
 ];
 ---
-<Base title="Join in" description="How to take part in the Capacity Planning Practice: create a free GitHub account, join the stream and post one question." nav="join">
+<Base title="Join in" description="How to take part in the Capacity Planning Practice: create a free GitHub account, join The Commons and post one question." nav="join">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">Join in</p>
-      <h1>Join the stream. Post one question.</h1>
-      <p class="lede">The Practice Room is one stream on GitHub Discussions. That is the one place to take part. A good question counts as much as a new section.</p>
+      <h1>Join The Commons. Post one question.</h1>
+      <p class="lede">The Commons is one place on GitHub Discussions. That is the one place to take part. A good question counts as much as a new section.</p>
     </div>
 
     <section class="prose reading" aria-labelledby="github-h">
@@ -32,17 +32,17 @@ const kinds = [
       <p>Capacity planners should be on GitHub. You don’t need to know anything about code to post.</p>
       <ol>
         <li><a href={stream.signup}>Create a free GitHub account</a>. Your username can be a handle. Your name appears only when you want credit.</li>
-        <li>Open <a href={stream.url}>the stream</a> and read a few posts.</li>
+        <li>Open <a href={stream.url}>The Commons</a> and read a few posts.</li>
         <li><a href={firstQuestion()}>Post your first question</a>. It opens with the #first-question tag already in place.</li>
       </ol>
       <RoomRule />
-      <p><a class="more" href="/community/">How the stream works</a> · <a class="more" href="/community/#room-rules">The rules</a></p>
+      <p><a class="more" href="/commons/">How The Commons works</a> · <a class="more" href="/commons/#room-rules">The rules</a></p>
     </section>
 
     <section class="prose reading" aria-labelledby="private-h">
       <h2 id="private-h">Something sensitive? Ask for a private pre-check</h2>
       <p>If you’re not sure a post is safe to share, write to <a href={mail('Pre-check')}>{contact}</a> first. The founder reads it, and replies in writing within {room.precheckHours} hours. <a href="/sharing-safely/">How the pre-check works</a>.</p>
-      <p>That is the only private route. Everything else happens in the stream.</p>
+      <p>That is the only private route. Everything else happens in The Commons.</p>
     </section>
 
     <section class="newhere prose reading" id="new" aria-labelledby="new-h">
@@ -50,7 +50,7 @@ const kinds = [
       <p><strong>What this is.</strong> The seed paper is a request for comments: a draft shared on purpose, so the people who do the work can improve it. The internet’s own standards have been written this way since 1969.</p>
       <p><strong>How to comment</strong></p>
       <ol>
-        <li>Select any sentence in the paper or the guide. A <strong>Discuss this passage</strong> button appears at the bottom of the screen. Or use <strong>Talk about this page</strong> at the end of any page. Both open a post in the stream.</li>
+        <li>Select any sentence in the paper or the guide. A <strong>Discuss this passage</strong> button appears at the bottom of the screen. Or use <strong>Talk about this page</strong> at the end of any page. Both open a post in The Commons.</li>
         <li>GitHub opens. If you aren’t signed in, sign in or create a free account. It takes a minute, and you don’t need to know anything about code.</li>
         <li>The passage you picked is quoted for you. Add your comment and press <strong>Start discussion</strong>.</li>
       </ol>
@@ -61,9 +61,9 @@ const kinds = [
     <section aria-labelledby="where-h">
       <h2 class="group-title reading" id="where-h">Where it happens</h2>
       <ul class="cards cards--3">
-        <li><h3>The stream</h3><p>The one place to interact: short posts, replies in threads, tags and reactions, in the “{stream.name}” category on GitHub Discussions.</p><p><a class="more" href={stream.url}>The stream</a></p></li>
-        <li><h3>This site</h3><p>For reading: the body of knowledge, the open problems and the tools. Each page’s <strong>Discuss</strong> link opens a thread on GitHub, beside the stream.</p><p><a class="more" href="/body-of-knowledge/">Body of knowledge</a></p></li>
-        <li><h3>On LinkedIn</h3><p>LinkedIn carries news only: new versions and new pages. The conversation happens in the stream.</p><p>{c.linkedinPage && <a class="more" href={c.linkedinPage}>The page</a>}</p></li>
+        <li><h3>The Commons</h3><p>The one place to interact: short posts, replies in threads, tags and reactions, in the “{stream.name}” category on GitHub Discussions.</p><p><a class="more" href={stream.url}>The Commons</a></p></li>
+        <li><h3>This site</h3><p>For reading: the body of knowledge, the open problems and the tools. Each page’s <strong>Discuss</strong> link opens a thread on GitHub, beside The Commons.</p><p><a class="more" href="/body-of-knowledge/">Body of knowledge</a></p></li>
+        <li><h3>On LinkedIn</h3><p>LinkedIn carries news only: new versions and new pages. The conversation happens in The Commons.</p><p>{c.linkedinPage && <a class="more" href={c.linkedinPage}>The page</a>}</p></li>
       </ul>
     </section>
 
@@ -94,7 +94,7 @@ const kinds = [
     <section class="prose reading" aria-labelledby="credit-h">
       <h2 id="credit-h">Credit, licence and conduct</h2>
       <p>Credit lands on <a href="/contributors/">Contributors</a> when your contribution is merged or used, not only at the next edition. Being listed doesn’t mean you endorse every word. It means you helped build it.</p>
-      <p>By contributing text you license it under CC BY-SA 4.0, like the rest of the content; code is MIT. There’s nothing else to sign. Everyone follows the <a href="/code-of-conduct/">code of conduct</a>, and the <a href="/community/#room-rules">rules</a> apply in the stream.</p>
+      <p>By contributing text you license it under CC BY-SA 4.0, like the rest of the content; code is MIT. There’s nothing else to sign. Everyone follows the <a href="/code-of-conduct/">code of conduct</a>, and the <a href="/commons/#room-rules">rules</a> apply in The Commons.</p>
       <p>Want to help edit? Editors review edits, call rough consensus and assemble each edition. <a href="/governance/">How editors are chosen</a>, or see every open <a href="/roles/">role</a>.</p>
     </section>
   </div>

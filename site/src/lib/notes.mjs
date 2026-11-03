@@ -60,7 +60,7 @@ function noteLinks(note) {
   const q = (o) => Object.entries(o).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
   return {
     // The note's own thread once seed-discussions has posted it; until then, a new one.
-    discuss: threads()[note.quote] || `${ctx.config.community.repo}/discussions/new?${q({ category: 'practice', title, body })}`,
+    discuss: threads()[note.quote] || `${ctx.config.community.repo}/discussions/new?${q({ category: 'commons', title, body })}`,
     mail: `mailto:${ctx.config.site.contact}?${q({ subject: title, body })}`,
     open: l.open,
   };

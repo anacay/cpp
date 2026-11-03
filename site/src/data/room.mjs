@@ -1,4 +1,4 @@
-// The Practice Room: the stream, its tags and the people behind the
+// The Commons: The Commons, its tags and the people behind the
 // community pages, kept in one place. Adding a tag or a consented name is an
 // edit to this file and a redeploy; no page changes. Read it through the helpers at the bottom.
 //
@@ -8,22 +8,22 @@
 // No member counts are published, anywhere.
 
 export const room = {
-  name: 'The Practice Room',
-  url: '/community/',
+  name: 'The Commons',
+  url: '/commons/',
   contact: 'cpp@anacay.org',
   precheckHours: 72, // a private pre-check gets a written reply within 72 hours
 };
 
-// One place to interact: one stream, a single GitHub Discussions category.
+// One place to interact: The Commons, a single GitHub Discussions category.
 // A new community needs many interactions in one place, not a few in many.
-// More places (calls, groups, other categories) come later, when the stream
+// More places (calls, groups, other categories) come later, when The Commons
 // asks for them. The repository URL matches paper.config.json.
 const repo = 'https://github.com/anacay/cpp';
 export const stream = {
-  name: 'Practice', // the Discussions category
-  slug: 'practice',
-  url: `${repo}/discussions/categories/practice`,
-  newPost: `${repo}/discussions/new?category=practice`,
+  name: 'The Commons', // the Discussions category
+  slug: 'commons',
+  url: `${repo}/discussions/categories/commons`,
+  newPost: `${repo}/discussions/new?category=commons`,
   all: `${repo}/discussions`,
   signup: 'https://github.com/signup',
 };
@@ -38,12 +38,13 @@ export const tags = [
   { tag: 'cost', what: 'Rates, coefficients and the unallocated line.' },
   { tag: 'power', what: 'Power, buildings and halls.' },
   { tag: 'cloud', what: 'Single-cloud teams, reservations and stockouts.' },
+  { tag: 'path-resource-managers', what: 'Coming from resource or quota management.' },
 ];
 export const tagUrl = (t) => `${repo}/discussions?discussions_q=${encodeURIComponent(`label:${t}`)}`;
 
-// ── Doors to the stream ──────────────────────────────────────────────────────
-// Every "post in the stream" link on the site is built here, so there is one
-// source of truth. It opens a new discussion in Practice, with a prefilled
+// ── Doors to The Commons ──────────────────────────────────────────────────────
+// Every "post in The Commons" link on the site is built here, so there is one
+// source of truth. It opens a new discussion in The Commons, with a prefilled
 // title and body. GitHub's new-discussion page reads `category`, `title` and
 // `body` from the URL; labels can't be set this way, so the tag goes into the
 // body as a word (#supply), and whoever triages adds the label.
@@ -58,7 +59,7 @@ export function streamPost({ title = '', text = '', tag = null, from = null } = 
   parts.push(`**Your post:**\n\n\n_${NDA_LINE}_`);
   return `${stream.newPost}&${qs({ title, body: parts.join('\n\n') })}`;
 }
-// The first-question door, used by the home page, /join/, /community/, the
+// The first-question door, used by the home page, /join/, /commons/, the
 // newcomer door and the footer.
 export const firstQuestion = () => streamPost({ tag: 'first-question' });
 // A topic tag for a page, where the page's subject is plain. Prefix match on
@@ -80,7 +81,7 @@ const PATH_TAGS = [
 ];
 export const tagForPath = (path = '') => (PATH_TAGS.find(([p]) => path.startsWith(p)) ?? [])[1] ?? null;
 
-// Later, when the stream asks for it. Nothing here is a place to interact now.
+// Later, when The Commons asks for it. Nothing here is a place to interact now.
 export const later = [
   'a monthly open call',
   'bring-your-problem reviews',
@@ -90,7 +91,7 @@ export const later = [
 ];
 
 // A call, for later. While `status` is 'later', no page or feed item
-// mentions a date. Set 'confirmed' and fill `date` once the stream asks for one.
+// mentions a date. Set 'confirmed' and fill `date` once The Commons asks for one.
 export const call = {
   status: 'later', // 'later' | 'confirmed' | 'held'
   date: null,
@@ -101,7 +102,7 @@ export const call = {
 
 // Roles: open volunteer roles that fill as people step forward.
 // `holders` are person ids; an empty list renders "Open". `later: true` marks
-// a role that waits until the stream asks for it.
+// a role that waits until The Commons asks for it.
 export const roles = [
   { id: 'co-organizer', name: 'Co-organizer', holders: [] },
   { id: 'editor', name: 'Editor', holders: ['founder'] },
@@ -131,7 +132,7 @@ export const workingGroups = [
   {
     id: 'wg1', name: 'Scoring declarations', status: 'chartered',
     questions: ['Q2', 'Q10', 'Q7'], lead: null, members: [], size: '3–5',
-    datesNote: 'It forms when the topic outgrows a thread in the stream. The lead sets the dates.',
+    datesNote: 'It forms when the topic outgrows a thread in The Commons. The lead sets the dates.',
   },
   {
     id: 'wg2', name: 'Accelerator allocation and the unallocated line', status: 'next',
@@ -140,7 +141,7 @@ export const workingGroups = [
 ];
 
 // The community pages, for the sitemap, llms.txt and the checks.
-export const ROOM_ROUTES = ['/community/', '/circle/', '/roles/', '/working-groups/', '/agenda/', '/sharing-safely/', '/contributors/', '/join/'];
+export const ROOM_ROUTES = ['/commons/', '/circle/', '/roles/', '/working-groups/', '/agenda/', '/sharing-safely/', '/contributors/', '/join/'];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 export const person = (id) => people.find((p) => p.id === id) ?? null;
@@ -159,7 +160,7 @@ export const circleNames = () => {
 // Who reads cpp@anacay.org. The founder, as steward, reads it.
 export const inboxLine = () => `The founder reads ${room.contact}.`;
 // Who runs CPP, in one line. It matches GOVERNANCE.md; the full passage is
-// /community/#who.
+// /commons/#who.
 export const ownershipLine = () => 'The founder stewards CPP, with Anacay’s disclosed support. Roles open as people step forward.';
 // Names of people who have NOT consented, for check 10.
 export const unconsentedNames = () => people.filter((p) => p.consent !== true).map((p) => p.name).filter(Boolean);
