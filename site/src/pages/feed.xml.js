@@ -1,5 +1,5 @@
 // RSS feed: paper versions (from the reader-facing history), new case
-// studies and working notes (dated from git), Practice Room calls and agenda
+// studies and working notes (dated from git), The Commons calls and agenda
 // status changes. One feed, newest first.
 //  - Calls appear only once `call.status` in room.mjs is 'confirmed' or 'held',
 //    so no date is ever announced here before the circle confirms it.
@@ -47,19 +47,19 @@ export function GET() {
     const day = new Date(`${call.date}T${call.startUtc}:00Z`);
     const label = day.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
     items.push({
-      title: `Practice Room open call, ${label}`,
-      link: new URL('/community/', site.url).href,
-      guid: `${site.url}/community/#call-${call.date}`,
+      title: `The Commons open call, ${label}`,
+      link: new URL('/commons/', site.url).href,
+      guid: `${site.url}/commons/#call-${call.date}`,
       date: day,
-      description: `An open call, ${call.startUtc}–${call.endUtc} UTC. The agenda is in the stream.`,
+      description: `An open call, ${call.startUtc}–${call.endUtc} UTC. The agenda is in The Commons.`,
     });
     if (call.status === 'held' && call.notes) {
       items.push({
         title: `Notes from the open call of ${label}`,
         link: call.notes,
-        guid: `${site.url}/community/#call-${call.date}-notes`,
+        guid: `${site.url}/commons/#call-${call.date}-notes`,
         date: day,
-        description: 'Notes from the Practice Room open call, without names.',
+        description: 'Notes from The Commons open call, without names.',
       });
     }
   }

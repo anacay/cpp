@@ -1,5 +1,5 @@
 ---
-// /working-groups/: later, when the stream asks for it. Leads, members and
+// /working-groups/: later, when The Commons asks for it. Leads, members and
 // notes come from site/src/data/room.mjs, so naming a lead or
 // confirming a date is a data-only change. The question titles and thread
 // numbers below are the open questions as listed on /open-questions/.
@@ -19,24 +19,24 @@ const next = workingGroups.filter((g) => g.status === 'next');
 const lead = (g) => holderLine(g.lead ? [g.lead] : []).replace(/^Open$/, 'open');
 const members = (g) => consented(g.members ?? []);
 ---
-<Base title="Working groups" description="Working groups, later: the first group forms when a topic in the stream outgrows a thread. WG1, Scoring declarations, would come first." nav="room">
+<Base title="Working groups" description="Working groups, later: the first group forms when a topic in The Commons outgrows a thread. WG1, Scoring declarations, would come first." nav="room">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
-      <p class="eyebrow">The Practice Room</p>
+      <p class="eyebrow">The Commons</p>
       <h1>Working groups</h1>
-      <p class="lede">Later, when the stream asks for it. The first group forms when a topic in <a href={stream.url}>the stream</a> outgrows a thread. Until then, every problem below is worked in its thread.</p>
+      <p class="lede">Later, when The Commons asks for it. The first group forms when a topic in <a href={stream.url}>The Commons</a> outgrows a thread. Until then, every problem below is worked in its thread.</p>
     </div>
 
     <section aria-labelledby="how">
       <h2 class="group-title reading" id="how">How a group will run</h2>
       <ol class="steps">
         <li><h3>A charter</h3><p>One page: the questions, the outputs, the lead, three to five members and two dates. It is posted for comment before work starts.</p></li>
-        <li><h3>Six to eight weeks</h3><p>A start date and a publish date. The group works in one thread in the stream.</p></li>
+        <li><h3>Six to eight weeks</h3><p>A start date and a publish date. The group works in one thread in The Commons.</p></li>
         <li><h3>Synthetic data only</h3><p>No one brings real figures. Every dataset is invented, keeps the shape of the problem and is labeled illustrative.</p></li>
         <li><h3>A named review</h3><p>Reviewers outside the group read the draft. Their names and verdict are published with it.</p></li>
         <li><h3>Credited publication</h3><p>The output is published on this site under CC BY-SA 4.0. Every member is credited by name on the page.</p></li>
       </ol>
-      <p class="reading">Groups follow the <a href="/community/#room-rules">rules</a> and <a href="/sharing-safely/">Sharing safely</a>. A change to the guide still goes through <a href="/how-it-grows/">How it grows</a>.</p>
+      <p class="reading">Groups follow the <a href="/commons/#room-rules">rules</a> and <a href="/sharing-safely/">Sharing safely</a>. A change to the guide still goes through <a href="/how-it-grows/">How it grows</a>.</p>
     </section>
 
     {wg1 && (
@@ -61,7 +61,7 @@ const members = (g) => consented(g.members ?? []);
           <dt>Dates</dt><dd>None yet.</dd>
         </dl>
         <p class="note">{wg1.datesNote}</p>
-        <p>To lead or join, say so in <a href={stream.url}>the stream</a>, or reply in one of the three threads. The lead role is described on <a href="/roles/#wg-lead">Working-group lead</a>.</p>
+        <p>To lead or join, say so in <a href={stream.url}>The Commons</a>, or reply in one of the three threads. The lead role is described on <a href="/roles/#wg-lead">Working-group lead</a>.</p>
       </section>
     )}
 
@@ -73,7 +73,7 @@ const members = (g) => consented(g.members ?? []);
           {g.questions.map((q) => questions[q] && <li><strong>{q}.</strong> {questions[q].title} <a href={thread(questions[q].d)}>Discussion #{questions[q].d}</a></li>)}
         </ul>
         <p>It goes second because it draws on confidential experience. The sharing rules get tested on WG1 first.</p>
-        <p>Interested? Say so in <a href={stream.url}>the stream</a>.</p>
+        <p>Interested? Say so in <a href={stream.url}>The Commons</a>.</p>
       </section>
     ))}
   </div>

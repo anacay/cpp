@@ -8,30 +8,30 @@ import { room, stream, circle, circleNames, person, firstQuestion } from '../dat
 const names = circleNames();
 const founder = person('founder');
 ---
-<Base title="The founding circle" description="The founding circle of the Practice Room: what members commit to, who runs the stream, and how invitations work." nav="room">
+<Base title="The founding circle" description="The founding circle of The Commons: what members commit to, who runs The Commons, and how invitations work." nav="room">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
-      <p class="eyebrow">The Practice Room</p>
+      <p class="eyebrow">The Commons</p>
       <h1>The founding circle</h1>
-      <p class="lede">The founding circle is the first group of experienced planners in the <a href="/community/">Practice Room</a>. They set the tone of the stream, bring its first problems and review its first work.</p>
+      <p class="lede">The founding circle is the first group of experienced planners in the <a href="/commons/">The Commons</a>. They set the tone of The Commons, bring its first problems and review its first work.</p>
     </div>
 
     <section class="prose reading" aria-labelledby="commit">
       <h2 id="commit">What members commit to</h2>
-      <p class="note">One post or reply a month, in the stream. Nothing about you is listed here without your sign-off. Leave any time.</p>
+      <p class="note">One post or reply a month, in The Commons. Nothing about you is listed here without your sign-off. Leave any time.</p>
       <p>Your sector is enough. Your employer is optional.</p>
       <ul>
-        <li><strong>The post</strong> is anything short: a question, an answer, an observation or a link, in <a href={stream.url}>the stream</a>.</li>
-        <li><strong>Calls</strong> come later, when the stream asks for them. If they start, they run under the Chatham House rule and are not recorded.</li>
+        <li><strong>The post</strong> is anything short: a question, an answer, an observation or a link, in <a href={stream.url}>The Commons</a>.</li>
+        <li><strong>Calls</strong> come later, when The Commons asks for them. If they start, they run under the Chatham House rule and are not recorded.</li>
         <li><strong>Your sign-off</strong> covers your name, your sector and anything you say. Each is shown only after a written yes.</li>
         <li><strong>Leaving</strong> takes one message. Your name comes off this page in the next update.</li>
       </ul>
-      <p>The stream’s rules apply to everyone, the circle included. See <a href="/community/#room-rules">the rules</a> and <a href="/sharing-safely/">Sharing safely</a>.</p>
+      <p>The Commons’s rules apply to everyone, the circle included. See <a href="/commons/#room-rules">the rules</a> and <a href="/sharing-safely/">Sharing safely</a>.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="co-organizers">
       <h2 id="co-organizers">Co-organizers</h2>
-      <p>Co-organizers help the founder keep the stream useful: they welcome new posters, tag posts and point good threads toward CPP pages. It is an open volunteer role, and it grows as people step forward. See <a href="/community/#who">Who runs this</a>.</p>
+      <p>Co-organizers help the founder keep The Commons useful: they welcome new posters, tag posts and point good threads toward CPP pages. It is an open volunteer role, and it grows as people step forward. See <a href="/commons/#who">Who runs this</a>.</p>
       {names && names.coOrganizers.length ? (
         <ul class="pr-names">{names.coOrganizers.map((p) => <li><strong>{p.name}</strong>{p.sector && <>, {p.sector}</>}{p.topics?.length ? <>. Topics: {p.topics.join(', ')}</> : null}</li>)}</ul>
       ) : (
@@ -54,7 +54,7 @@ const founder = person('founder');
       <section class="prose reading" aria-labelledby="founder">
         <h2 id="founder">The founder</h2>
         <p><strong>{founder.name}</strong>{founder.sector && <>, {founder.sector}</>}. Founder and steward.</p>
-        <p>He started the practice and wrote the <a href="/paper/">seed paper</a>. Anacay LLC, his company, supports the practice, and says so. He is its editor and reads cpp@anacay.org. What the circle makes belongs to the community, credited by name. See <a href="/community/#who">Who runs this</a>.</p>
+        <p>He started the practice and wrote the <a href="/paper/">seed paper</a>. Anacay LLC, his company, supports the practice, and says so. He is its editor and reads cpp@anacay.org. What the circle makes belongs to the community, credited by name. See <a href="/commons/#who">Who runs this</a>.</p>
       </section>
     )}
 
@@ -67,7 +67,7 @@ const founder = person('founder');
         <li>A one-line yes is enough. The person then says what may be shown: a name or a handle, a sector, topics.</li>
         <li>Nothing appears here until that written yes.</li>
       </ol>
-      <p>Not invited yet? You don’t need to be. <a href={firstQuestion()}>Post one question in the stream</a>.</p>
+      <p>Not invited yet? You don’t need to be. <a href={firstQuestion()}>Post one question in The Commons</a>.</p>
       <p>Want to do more than post? Every role is listed on <a href="/roles/">Roles</a>. How editors are added is set out in <a href="/governance/">Governance</a>.</p>
     </section>
   </div>
