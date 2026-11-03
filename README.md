@@ -21,7 +21,7 @@ Read a section on the site. If something is wrong, unclear or missing, click **D
 | [`CONTRIBUTORS.md`](CONTRIBUTORS.md), [`EDITORS.md`](EDITORS.md) | Who has helped, by edition; who edits | CC BY-SA 4.0 |
 | [`body-of-knowledge/guide/`](body-of-knowledge/guide/) | The guide (draft v0.2): principles, the work and the path, the map, one page per cadence, concepts, cases, limits. `_SPEC.md` is the writers' spec | CC BY-SA 4.0 |
 | [`body-of-knowledge/seed/`](body-of-knowledge/seed/) | The seed edition, one Markdown file per page, with figures | CC BY-SA 4.0 |
-| [`community/`](community/) | Kits for running the community spaces: the Practice Room's GitHub kit, the staged Code of Conduct proposal, and the older LinkedIn group kit | CC BY-SA 4.0 |
+| [`community/`](community/) | Kits for running the community spaces: The Commons's GitHub kit, the staged Code of Conduct proposal, and the older LinkedIn group kit | CC BY-SA 4.0 |
 | [`site/`](site/) | The code that builds cpp.anacay.org (Astro, static, no client JavaScript) | MIT |
 | [`.github/`](.github/) | Issue and discussion forms | MIT |
 

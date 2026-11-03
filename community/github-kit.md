@@ -2,10 +2,10 @@
 
 Everything the founder sets up by hand in GitHub for R8. Paste each block as is. It takes about 20 minutes.
 
-**The principle: one way to interact until activity demands more.** A new community with few members needs a hundred interactions in one place, not two in each of fifty. So the Practice Room is one stream: a single Discussions category everyone reads. Short posts, replies in threads, tags instead of channels, reactions as light participation. The best threads are published to CPP, credited by name with consent.
+**The principle: one way to interact until activity demands more.** A new community with few members needs a hundred interactions in one place, not two in each of fifty. So The Commons is one stream: a single Discussions category everyone reads. Short posts, replies in threads, tags instead of channels, reactions as light participation. The best threads are published to CPP, credited by name with consent.
 
 **Order.** Do §0 to §2 after the R8 pull request is merged and before the version upload, because the site links them at launch.
-1. Create the stream category, "Practice" (§0).
+1. Create the category "The Commons", slug `commons` (§0).
 2. Create the tag labels (§1) and post and pin the welcome post (§2).
 3. Confirm the live state of threads #2 to #16 and #18 (§7). /agenda/ shows every item as "open" until you do.
 4. Create the stage and `good-first` labels (§4), and label the 15 open-question threads (§5).
@@ -15,24 +15,24 @@ The GitHub state behind this kit is unverified from the cloud session. Check eac
 
 ---
 
-## 0. The stream: one category, "Practice"
+## 0. The Commons: one category
 
 **Where.** Repository → **Discussions** → the pencil beside Categories → **New category**.
 
-- **Name:** Practice
-- **Slug:** `practice` (the site links `discussions/new?category=practice` and `discussions/categories/practice`)
+- **Name:** The Commons
+- **Slug:** `commons` (the site links `discussions/new?category=commons` and `discussions/categories/commons`)
 - **Emoji:** speech balloon
-- **Description:** The one stream for capacity planners. Short posts, replies in threads. Don't break your NDA.
+- **Description:** The one place for capacity planners. Short posts, replies in threads. Don't break your NDA.
 - **Format:** Open-ended discussion. No form: a post can be one line.
 
-**Test it.** Open https://github.com/anacay/cpp/discussions/new?category=practice. A blank post opens in Practice. Close it without posting.
+**Test it.** Open https://github.com/anacay/cpp/discussions/new?category=commons. A blank post opens in The Commons. Close it without posting.
 
 **What stays separate, and why.**
-- **Proposals** stays its own category, for formal changes only. A proposal has an open period and a closing note under How it grows, so it must not scroll away in the stream.
-- **"Sections" is retired for new posts.** Every per-page link ("Talk about this page", "Discuss this passage", "Reply on GitHub" on a new author's note) now opens a new post in **Practice**, prefilled with the passage or page and its tag. Old threads in Sections stay where they are, and "See the discussion" searches all categories, so they still turn up. Edit the Sections description to: "Retired for new posts. New posts go to Practice."
-- The other existing categories (Terms, Cases, Sources, Governance) stay for their forms. The 15 open-question threads stay where they are. Everything appears in the same Discussions list as the stream, so it is still one place to read.
+- **Proposals** stays its own category, for formal changes only. A proposal has an open period and a closing note under How it grows, so it must not scroll away in The Commons.
+- **"Sections" is retired for new posts.** Every per-page link ("Talk about this page", "Discuss this passage", "Reply on GitHub" on a new author's note) now opens a new post in **The Commons**, prefilled with the passage or page and its tag. Old threads in Sections stay where they are, and "See the discussion" searches all categories, so they still turn up. Edit the Sections description to: "Retired for new posts. New posts go to The Commons."
+- The other existing categories (Terms, Cases, Sources, Governance) stay for their forms. The 15 open-question threads stay where they are. Everything appears in the same Discussions list as The Commons, so it is still one place to read.
 - **What the links can and can't prefill.** The site's links set `category`, `title` and `body` in the new-discussion URL. GitHub's documentation describes no URL parameter for labels on discussions, so the tag goes into the body as a word (#supply). Add the matching label when you triage. Check the prefill once on a test post (runbook step 7).
-- Create no other categories. The old plan's "Review intake", "Introduce yourself" and "First questions" are dropped, and so is the review-intake form. A new category comes only when the stream asks for one.
+- Create no other categories. The old plan's "Review intake", "Introduce yourself" and "First questions" are dropped, and so is the review-intake form. A new category comes only when The Commons asks for one.
 
 ---
 
@@ -49,6 +49,7 @@ The GitHub state behind this kit is unverified from the cloud session. Check eac
 | `cost` | Rates, coefficients and the unallocated line. | `#C9B37E` |
 | `power` | Power, buildings and halls. | `#D98C5F` |
 | `cloud` | Single-cloud teams, reservations and stockouts. | `#6FA3B8` |
+| `path-resource-managers` | Coming from resource or quota management. | `#9A8FBF` |
 
 ```sh
 gh label create first-question -R anacay/cpp -c 7FB069 -d "No question too basic."
@@ -58,6 +59,7 @@ gh label create gpu            -R anacay/cpp -c 8E6C8A -d "Accelerators and thei
 gh label create cost           -R anacay/cpp -c C9B37E -d "Rates, coefficients and the unallocated line."
 gh label create power          -R anacay/cpp -c D98C5F -d "Power, buildings and halls."
 gh label create cloud          -R anacay/cpp -c 6FA3B8 -d "Single-cloud teams, reservations and stockouts."
+gh label create path-resource-managers -R anacay/cpp -c 9A8FBF -d "Coming from resource or quota management."
 ```
 
 Tags grow from use. When a new word keeps coming up, add a label for it, and add it to `tags` in `site/src/data/room.mjs`.
@@ -66,13 +68,13 @@ Tags grow from use. When a new word keeps coming up, add a label for it, and add
 
 ## 2. Pinned welcome post
 
-**Where.** Post in **Practice**, then pin it.
+**Where.** Post in **The Commons**, then pin it.
 
-**Title:** Welcome to the Practice Room: start here
+**Title:** Welcome to The Commons
 
 **Body:**
 
-> This is the one stream for capacity planners. Ask a question, share an observation or a link, or ask "how do you handle X?" A sentence is enough. Reply in threads, and use reactions freely.
+> This is the one place for capacity planners. Ask a question, share an observation or a link, or ask "how do you handle X?" A sentence is enough. Reply in threads, and use reactions freely.
 >
 > **The rule that matters most.** Don't break your NDA. Don't share your company's prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game.
 >
@@ -87,7 +89,7 @@ Tags grow from use. When a new word keeps coming up, add a label for it, and add
 >
 > **What happens to good threads.** A thread that settles something can become a CPP page, credited by name, with your consent. Not sure a post is safe? Ask for a private pre-check at cpp@anacay.org first; the founder reads it.
 >
-> More: https://cpp.anacay.org/community/
+> More: https://cpp.anacay.org/commons/
 
 ---
 
@@ -99,13 +101,13 @@ Tags grow from use. When a new word keeps coming up, add a label for it, and add
 
 **Body (first version; fill the bracketed parts on the day you post):**
 
-> Everything open for comment, in one place. Each item closes on the date shown, under [How it grows](https://github.com/anacay/cpp/blob/main/HOW_IT_GROWS.md). Comment in its thread. Proposals sit apart from the Practice stream because each has an open period and a closing note.
+> Everything open for comment, in one place. Each item closes on the date shown, under [How it grows](https://github.com/anacay/cpp/blob/main/HOW_IT_GROWS.md). Comment in its thread. Proposals sit apart from The Commons because each has an open period and a closing note.
 >
 > **Open for comment**
 >
 > | Proposal | Category | Opened | Closes | Thread |
 > |---|---|---|---|---|
-> | Code of Conduct: add "No recruiting", and cover the Practice Room | Proposals | [date] | [date + 60 days, or 30 once two editors are confirmed] | [#N] |
+> | Code of Conduct: add "No recruiting", and cover The Commons | Proposals | [date] | [date + 60 days, or 30 once two editors are confirmed] | [#N] |
 > >
 > **Open questions, always open.** The author's 15 questions each have a thread, from #2 to #16. The [open problems](https://cpp.anacay.org/agenda/) page lists them with their status.
 >
@@ -233,4 +235,4 @@ Then:
 - When `/agenda/` statuses change, update §3 the same day.
 - Tag new posts, and add `good-first` to any thread that fits. The founder does this today, with co-organizers as they step forward.
 - Point the best threads toward a CPP page, and ask the authors for consent to credit them.
-- Later, when the stream asks for it: a monthly call, reviews, working groups, a digest. Each starts only when a topic outgrows its threads.
+- Later, when The Commons asks for it: a monthly call, reviews, working groups, a digest. Each starts only when a topic outgrows its threads.
