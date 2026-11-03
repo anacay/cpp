@@ -5,7 +5,7 @@ Everything the founder sets up by hand in GitHub for R8. Paste each block as is.
 **The principle: one way to interact until activity demands more.** A new community with few members needs a hundred interactions in one place, not two in each of fifty. So The Commons is one stream: a single Discussions category everyone reads. Short posts, replies in threads, tags instead of channels, reactions as light participation. The best threads are published to CPP, credited by name with consent.
 
 **Order.** Do §0 to §2 after the R8 pull request is merged and before the version upload, because the site links them at launch.
-1. Create the category "The Commons", slug `commons` (§0).
+1. Create the category "The Commons", slug `the-commons` (§0).
 2. Create the tag labels (§1) and post and pin the welcome post (§2).
 3. Confirm the live state of threads #2 to #16 and #18 (§7). /agenda/ shows every item as "open" until you do.
 4. Create the stage and `good-first` labels (§4), and label the 15 open-question threads (§5).
@@ -20,18 +20,19 @@ The GitHub state behind this kit is unverified from the cloud session. Check eac
 **Where.** Repository → **Discussions** → the pencil beside Categories → **New category**.
 
 - **Name:** The Commons
-- **Slug:** `commons` (the site links `discussions/new?category=commons` and `discussions/categories/commons`)
+- **Slug:** GitHub sets it from the name. "The Commons" becomes `the-commons` (the site links `discussions/new?category=the-commons` and `discussions/categories/the-commons`)
 - **Emoji:** speech balloon
-- **Description:** The one place for capacity planners. Short posts, replies in threads. Don't break your NDA.
+- **Description:** The one place for capacity planners. Short posts, replies in threads. Follow the NDA rule in the pinned post.
+  (GitHub limits the length of category descriptions, so the full NDA rule lives in the pinned welcome post, §2.)
 - **Format:** Open-ended discussion. No form: a post can be one line.
 
-**Test it.** Open https://github.com/anacay/cpp/discussions/new?category=commons. A blank post opens in The Commons. Close it without posting.
+**Test it.** Open https://github.com/anacay/cpp/discussions/new?category=the-commons. A blank post opens in The Commons. Close it without posting.
 
 **What stays separate, and why.**
 - **Proposals** stays its own category, for formal changes only. A proposal has an open period and a closing note under How it grows, so it must not scroll away in The Commons.
-- **"Sections" is retired for new posts.** Every per-page link ("Talk about this page", "Discuss this passage", "Reply on GitHub" on a new author's note) now opens a new post in **The Commons**, prefilled with the passage or page and its tag. Old threads in Sections stay where they are, and "See the discussion" searches all categories, so they still turn up. Edit the Sections description to: "Retired for new posts. New posts go to The Commons."
+- **"Sections" is retired for new posts.** Every per-page link now opens a new post in **The Commons**. That covers "Talk about this page", "Discuss this passage" and "Reply on GitHub" on a new author's note. Each post is prefilled with the passage or page and its tag. Old threads in Sections stay where they are. "See the discussion" searches all categories, so they still turn up. Edit the Sections description to: "Retired for new posts. New posts go to The Commons."
 - The other existing categories (Terms, Cases, Sources, Governance) stay for their forms. The 15 open-question threads stay where they are. Everything appears in the same Discussions list as The Commons, so it is still one place to read.
-- **What the links can and can't prefill.** The site's links set `category`, `title` and `body` in the new-discussion URL. GitHub's documentation describes no URL parameter for labels on discussions, so the tag goes into the body as a word (#supply). Add the matching label when you triage. Check the prefill once on a test post (runbook step 7).
+- **What the links can and can't prefill.** The site's links set `category`, `title` and `body` in the new-discussion URL. GitHub's documentation describes no URL parameter for labels on discussions. So the tag goes into the body as a word (#supply). Add the matching label when you triage. Check the prefill once on a test post (runbook step 7).
 - Create no other categories. The old plan's "Review intake", "Introduce yourself" and "First questions" are dropped, and so is the review-intake form. A new category comes only when The Commons asks for one.
 
 ---
@@ -80,14 +81,14 @@ Tags grow from use. When a new word keeps coming up, add a label for it, and add
 >
 > **Also:** no jobs, no recruiting, no selling. Your username can be a handle. Your name appears on CPP only when you want credit.
 >
-> **Tags.** Write them in your post, or we add them as labels: #first-question, #forecasting, #supply, #gpu, #cost, #power, #cloud.
+> **Tags.** Write a tag as a word in your post. The founder or a co-organizer adds the matching label. The tags: #first-question, #forecasting, #supply, #gpu, #cost, #power, #cloud, #path-resource-managers.
 >
 > **Three example posts.**
 > - "#first-question What's the difference between approving an ask and allocating it?"
 > - "#supply Has anyone seen a public source on transformer lead times newer than 2025? Here's the one I know: [link]"
 > - "#forecasting How do you handle a team whose declarations are always 40% high? (Illustrative number.)"
 >
-> **What happens to good threads.** A thread that settles something can become a CPP page, credited by name, with your consent. Not sure a post is safe? Ask for a private pre-check at cpp@anacay.org first; the founder reads it.
+> **What happens to good threads.** A thread that settles something can become a CPP page, credited by name, with your consent. Not sure a post is safe? Ask for a private pre-check at cpp@anacay.org first. The founder reads it.
 >
 > More: https://cpp.anacay.org/commons/
 
@@ -235,4 +236,4 @@ Then:
 - When `/agenda/` statuses change, update §3 the same day.
 - Tag new posts, and add `good-first` to any thread that fits. The founder does this today, with co-organizers as they step forward.
 - Point the best threads toward a CPP page, and ask the authors for consent to credit them.
-- Later, when The Commons asks for it: a monthly call, reviews, working groups, a digest. Each starts only when a topic outgrows its threads.
+- Later, when The Commons asks for it: a monthly open call, bring-your-problem reviews, working groups, a digest and more roles. Each starts only when a topic outgrows its threads.
