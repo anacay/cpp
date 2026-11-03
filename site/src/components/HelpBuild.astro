@@ -6,12 +6,12 @@
 import { links } from '../lib/community.mjs';
 import { load } from '../lib/paper.mjs';
 import { streamPost, tagForPath } from '../data/room.mjs';
-interface Props { page?: any; file?: string; name?: string; what?: string; talk?: string }
-const { page, file, name, what = 'This is part of the seed edition of an open body of knowledge.', talk = 'Talk about this page' } = Astro.props;
+interface Props { page?: any; file?: string; name?: string; what?: string; talk?: string; postTitle?: string }
+const { page, file, name, what = 'This is part of the seed edition of an open body of knowledge.', talk = 'Talk about this page', postTitle } = Astro.props;
 const l = links(page, { file, name });
 const contact = load().config.site.contact;
 const path = Astro.url.pathname;
-const post = streamPost({ title: `${l.name}: `, tag: tagForPath(path), from: { name: l.name, url: path } });
+const post = streamPost({ title: postTitle ?? `${l.name.replace(/^Guide:\s*/, '')} — `, tag: tagForPath(path), from: { name: postTitle ? postTitle.replace(/ — $/, '') : l.name.replace(/^Guide:\s*/, ''), url: path } });
 ---
 <aside class="help-build" aria-labelledby="help-h">
   <h2 id="help-h">Help build this page</h2>
