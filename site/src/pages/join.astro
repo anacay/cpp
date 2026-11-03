@@ -1,82 +1,101 @@
 ---
+// /join/: how to take part. One place to interact: The Commons on GitHub
+// Discussions. A GitHub account first, then The Commons, then the public
+// record. The only private route is a pre-check for something sensitive.
 import Base from '../layouts/Base.astro';
-import { load } from '../lib/paper.mjs';
+import RoomRule from '../components/RoomRule.astro';
 import { community } from '../lib/community.mjs';
-const { config } = load();
+import { room, stream, firstQuestion } from '../data/room.mjs';
 const c = community();
-const contact = config.site.contact;
+const contact = room.contact;
+const mail = (subject) => `mailto:${contact}?subject=${encodeURIComponent(subject)}`;
 const kinds = [
+  ['Ask or answer', 'A question, an observation, a link, “how do you handle X?”', 'Post in <a href="' + stream.url + '">The Commons</a>, or reply to a post there.', 'Minutes'],
   ['Fix an error', 'A typo, a broken link, a wrong number, a misquoted source.', 'Suggest an edit on the page, or open a “Fix an error” issue.', 'Minutes'],
-  ['Add or improve a term', 'A word planners use differently, or one that’s missing.', 'Open a “Terms” discussion with a one-sentence definition.', 'Minutes'],
-  ['Propose a change', 'To an idea, a method, or how a section is built.', 'Open a “Proposals” discussion.', 'A short write-up'],
-  ['Share a case', 'What happened, with names and numbers changed.', 'Open a “Cases” discussion. Read the anonymizing checklist first.', 'A few paragraphs'],
-  ['Add a public source', 'A paper, a talk, a public dataset, a filing.', 'Open an “Add a public source” issue.', 'Minutes'],
-  ['Translate a section', 'Into a language you plan in.', 'Open a discussion first, so two people don’t translate the same page.', 'Hours'],
+  ['Add or improve a term', 'A word planners use differently, or one that’s missing.', 'Post it in The Commons, or open a “Terms” discussion with a one-sentence definition.', 'Minutes'],
+  ['Work an open problem', 'One of the questions on the agenda, marked good-first or not.', 'Pick one on the <a href="/agenda/">agenda</a> and reply in its thread.', 'An hour or two'],
+  ['Propose a change', 'To an idea, a method, or how a section is built.', 'Open a “Proposals” discussion. Proposals are kept apart because they follow <a href="/how-it-grows/">How it grows</a>.', 'A short write-up'],
+  ['Add a public source', 'A paper, a talk, a public dataset, a filing.', 'Post it in The Commons, or open an “Add a public source” issue.', 'Minutes'],
+  ['Take a role', 'Co-organizer, pre-check reviewer, editor.', 'Read the <a href="/roles/">role cards</a> and say so in The Commons.', 'A few hours a month'],
 ];
 ---
-<Base title="Join in" description="How to take part in the Capacity Planning Practice: discuss a section, suggest an edit, share a case, or join the group." nav="join">
+<Base title="Join in" description="How to take part in the Capacity Planning Practice: create a free GitHub account, join The Commons and post one question." nav="join">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">Join in</p>
-      <h1>Read a section. If something is wrong, unclear or missing, say so.</h1>
-      <p class="lede">That’s the whole contribution model, and it takes about five minutes. A good correction counts as much as a new section.</p>
+      <h1>Join The Commons. Post one question.</h1>
+      <p class="lede">The Commons is one place on GitHub Discussions. That is the one place to take part. A good question counts as much as a new section.</p>
     </div>
 
-    {!c.open && (
-      <p class="note reading"><strong>Opening soon.</strong> The repository and the group aren't open yet. The links below show where things will be. Until then, comments go to <a href={`mailto:${contact}`}>{contact}</a>.</p>
-    )}
+    <section class="prose reading" aria-labelledby="github-h">
+      <h2 id="github-h">New to GitHub? Create a free account in two minutes</h2>
+      <p>Capacity planners should be on GitHub. You don’t need to know anything about code to post.</p>
+      <ol>
+        <li><a href={stream.signup}>Create a free GitHub account</a>. Your username can be a handle. Your name appears only when you want credit.</li>
+        <li>Open <a href={stream.url}>The Commons</a> and read a few posts.</li>
+        <li><a href={firstQuestion()}>Post your first question</a>. It opens with the #first-question tag already in place.</li>
+      </ol>
+      <RoomRule />
+      <p><a class="more" href="/commons/">How The Commons works</a> · <a class="more" href="/commons/#room-rules">The rules</a></p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="private-h">
+      <h2 id="private-h">Something sensitive? Ask for a private pre-check</h2>
+      <p>If you’re not sure a post is safe to share, write to <a href={mail('Pre-check')}>{contact}</a> first. The founder reads it, and replies in writing within {room.precheckHours} hours. <a href="/sharing-safely/">How the pre-check works</a>.</p>
+      <p>That is the only private route. Everything else happens in The Commons.</p>
+    </section>
 
     <section class="newhere prose reading" id="new" aria-labelledby="new-h">
       <h2 id="new-h">New here? How commenting works</h2>
       <p><strong>What this is.</strong> The seed paper is a request for comments: a draft shared on purpose, so the people who do the work can improve it. The internet’s own standards have been written this way since 1969.</p>
       <p><strong>How to comment</strong></p>
       <ol>
-        <li>Select any sentence in the paper or the guide. A <strong>Discuss this passage</strong> button appears at the bottom of the screen. Or use <strong>Discuss</strong> at the end of any page.</li>
-        <li>GitHub opens. If you aren’t signed in, sign in or create a free account. It takes a minute, and you don’t need to know anything about code.</li>
+        <li>Select any sentence in the paper or the guide. A <strong>Discuss this passage</strong> button appears at the bottom of the screen. Or use <strong>Talk about this page</strong> at the end of any page. Both open a post in The Commons.</li>
+        <li>GitHub opens. If you aren’t signed in, sign in or create a free account. It takes two minutes, and you don’t need to know anything about code.</li>
         <li>The passage you picked is quoted for you. Add your comment and press <strong>Start discussion</strong>.</li>
       </ol>
-      <p><strong>What happens next.</strong> The author reads every thread and replies. Others can join in. When a thread points to a change, it follows <a href="/how-it-grows/">How it grows</a>, and everyone who helped is credited by name.</p>
+      <p><strong>What happens next.</strong> The founder reads every thread. Others can join in. When a thread points to a change, it follows <a href="/how-it-grows/">How it grows</a>, and everyone who helped is credited by name.</p>
       <p><strong>A good comment can be one sentence.</strong> <span class="eg">“This doesn’t match what I’ve seen, because…” · “Here’s a public source for this: …” · “My team does this differently: …”</span></p>
-      <p><strong>No GitHub account?</strong> Write to <a href={`mailto:${contact}`}>{contact}</a>. Your comment gets posted for you, with credit if you want it.</p>
     </section>
 
     <section aria-labelledby="where-h">
       <h2 class="group-title reading" id="where-h">Where it happens</h2>
       <ul class="cards cards--3">
-        <li><h3>On every page</h3><p>Each body-of-knowledge page ends with <strong>Discuss</strong> and <strong>Suggest an edit</strong>. You need a free GitHub account. You don’t need to know Git.</p><p><a class="more" href="/body-of-knowledge/">Pick a section</a></p></li>
-        <li><h3>On GitHub</h3><p>Discussions for questions, proposals, terms, cases and sources. Pull requests for edits. Every decision is written down in the thread.</p><p><a class="more" href={`${c.repo}/discussions`}>Discussions</a> · <a class="more" href={c.repo}>Repository</a></p></li>
-        <li><h3>On LinkedIn</h3><p>Follow the page for news and new open questions. A group for introductions and prompts opens with the repository. Good threads move to GitHub, with credit to the people in them.</p><p>{c.linkedinPage && <a class="more" href={c.linkedinPage}>The page</a>}{c.linkedinPage && ' · '}{c.linkedin ? <a class="more" href={c.linkedin}>The group</a> : <span class="muted">The group is opening soon.</span>}</p></li>
+        <li><h3>The Commons</h3><p>The one place to interact: short posts, replies in threads, tags and reactions, in the “{stream.name}” category on GitHub Discussions.</p><p><a class="more" href={stream.url}>The Commons</a></p></li>
+        <li><h3>This site</h3><p>For reading: the body of knowledge, the open problems and the tools. Each page’s <strong>Talk about this page</strong> link opens a new post in The Commons.</p><p><a class="more" href="/body-of-knowledge/">Body of knowledge</a></p></li>
+        <li><h3>On LinkedIn</h3><p>LinkedIn carries news only: new versions and new pages. The conversation happens in The Commons.</p><p>{c.linkedinPage && <a class="more" href={c.linkedinPage}>The page</a>}</p></li>
       </ul>
     </section>
 
     <section>
       <h2 class="group-title reading" id="kinds-h">Ways to contribute</h2>
-      <div class="table-wrap" tabindex="0" role="region" aria-labelledby="kinds-h">
+      <div class="table-wrap table-wrap--fit" tabindex="0" role="region" aria-labelledby="kinds-h">
         <table>
           <thead><tr><th>You want to…</th><th>For example</th><th>Do this</th><th>Size</th></tr></thead>
-          <tbody>{kinds.map(([a, b, d, e]) => <tr><td><strong>{a}</strong></td><td>{b}</td><td>{d}</td><td>{e}</td></tr>)}</tbody>
+          <tbody>{kinds.map(([a, b, d, e]) => <tr><td><strong>{a}</strong></td><td>{b}</td><td set:html={d} /><td>{e}</td></tr>)}</tbody>
         </table>
       </div>
-      <p class="reading"><a href="/contributing/">Contributing, step by step</a>, from a two-minute comment to a pull request.</p>
+      <p class="reading"><a href="/contributing/">Contributing, step by step</a>, from a two-minute comment to a pull request. New to the field? <a href="/start/">Start here</a> picks a door for you. Want something to try at work? <a href="/tools/">Tools for Monday</a>.</p>
     </section>
 
-    <section class="prose reading" aria-labelledby="not-h">
-      <h2 id="not-h">What not to bring</h2>
-      <p>These keep the practice safe to contribute to, and safe to use.</p>
+    <section class="prose reading" aria-labelledby="share-h">
+      <h2 id="share-h">Before you share</h2>
+      <p>These keep the practice safe to contribute to, and safe to use. <a href="/sharing-safely/">Sharing safely</a> has the full ladder and ten checks.</p>
       <ul>
-        <li>Anything confidential to a current or former employer, client or vendor.</li>
-        <li>Names of internal systems, projects or teams that aren’t already public.</li>
-        <li>Real internal numbers: ratios, costs, utilization, forecasts, lead times. Invent illustrative ones, and label them.</li>
-        <li>“I’ve seen the data, trust me.” If it isn’t public, it’s labeled argued or unmeasured.</li>
-        <li>Sales pitches, including the steward’s.</li>
+        <li>Anything confidential to a current or former employer, client or vendor stays out.</li>
+        <li>Names of internal systems, projects or teams that aren’t already public stay out.</li>
+        <li>Real internal numbers stay out: ratios, costs, utilization, forecasts, lead times. Use shapes, indexes or bands, or invent illustrative numbers and label them.</li>
+        <li>“I’ve seen the data, trust me” isn’t evidence. If it isn’t public, it’s labeled argued or unmeasured.</li>
+        <li>Sales pitches stay out, including the steward’s.</li>
       </ul>
+      <p>You contribute in a personal capacity. If you’re unsure what your employer allows, ask your own employer. This is not legal advice.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="credit-h">
       <h2 id="credit-h">Credit, licence and conduct</h2>
-      <p>Everyone who contributes is named, by edition, with what they did. Being listed doesn’t mean you endorse every word. It means you helped build it.</p>
-      <p>By contributing text you license it under CC BY-SA 4.0, like the rest of the content; code is MIT. There’s nothing else to sign. Everyone follows the <a href="/code-of-conduct/">code of conduct</a>.</p>
-      <p>Want to help edit? Editors keep the loop moving: they review edits, call rough consensus and assemble each edition. <a href="/governance/">How editors are chosen</a>.</p>
+      <p>Credit lands on <a href="/contributors/">Contributors</a> when your contribution is merged or used, not only at the next edition. Being listed doesn’t mean you endorse every word. It means you helped build it.</p>
+      <p>By contributing text you license it under CC BY-SA 4.0, like the rest of the content; code is MIT. There’s nothing else to sign. Everyone follows the <a href="/code-of-conduct/">code of conduct</a>, and the <a href="/commons/#room-rules">rules</a> apply in The Commons.</p>
+      <p>Want to help edit? Editors review edits, call rough consensus and assemble each edition. <a href="/governance/">How editors are chosen</a>, or see every open <a href="/roles/">role</a>.</p>
     </section>
   </div>
 </Base>

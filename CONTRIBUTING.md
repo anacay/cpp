@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for being here. This page is the practical part: which buttons to press. For how decisions get made, read [HOW_IT_GROWS.md](HOW_IT_GROWS.md). Before you start, skim the [Code of Conduct](CODE_OF_CONDUCT.md) and the "What can't be contributed" list in HOW_IT_GROWS.
+Thanks for being here. This page is the practical part: which buttons to press. For how decisions get made, read [HOW_IT_GROWS.md](HOW_IT_GROWS.md). Before you start, skim the [Code of Conduct](CODE_OF_CONDUCT.md) and the "What can't be contributed" list in HOW_IT_GROWS. If you'll share anything from your own work, read [Sharing safely](SHARING_SAFELY.md) too.
 
 You'll need a free [GitHub account](https://github.com/signup). That's all.
 
@@ -77,14 +77,14 @@ Then open a pull request on GitHub. For anything beyond a small fix, link the di
 
 ## Writing a case
 
-Cases are short stories of what happened, told so others can learn from them. Use the **Share a case** form. Before you post:
+Cases are short stories of what happened, told so others can learn from them. Use the **Share a case** form. [Sharing safely](SHARING_SAFELY.md) has the full guide: the disclosure ladder, a worked example and ten checks. Before you post:
 
 - Remove company, product, team, system and people names.
 - Replace real numbers with illustrative ones that keep the shape (a 30% miss can stay a 30% miss; the dollar amount can't).
 - Shift dates and places if they'd identify the organization.
 - Ask yourself: could a colleague from that organization recognize it? If yes, blur it more.
 
-An editor will check it again before it's added to the case library.
+Not sure? Ask for a [private pre-check](SHARING_SAFELY.md#a-private-pre-check) at cpp@anacay.org. You get a written reply within 72 hours. An editor will check it again before it's added to the case library.
 
 **Problem-space cases** are different: a whole planning problem built only from public information, about a fictional company, with every claim's evidence labeled. They don't come from anyone's private experience, so they may resemble the industry they draw on. Don't quote a single company's material; paraphrase, and put further reading at the end. The rules are in the guide's Cases page.
 

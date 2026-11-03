@@ -1,0 +1,23 @@
+---
+// A byline for case and note pages, from the page's frontmatter: `author:` and
+// `reviewers:` (comma-separated names or handles). Renders nothing when both
+// are empty. Names are added to frontmatter only with the person's agreement.
+interface Props { page: any }
+const { page } = Astro.props;
+const author: string[] = page.author ?? [];
+const reviewers: string[] = page.reviewers ?? [];
+const join = (a: string[]) => (a.length < 3 ? a.join(' and ') : `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`);
+---
+{(author.length > 0 || reviewers.length > 0) && (
+  <p class="byline">
+    {author.length > 0 && <span>By {join(author)}.</span>}
+    {author.length > 0 && reviewers.length > 0 && ' '}
+    {reviewers.length > 0 && <span>Reviewed by {join(reviewers)}.</span>}
+    {' '}<a href="/contributors/">Contributors</a>
+  </p>
+)}
+
+<style>
+  .byline { margin: 0.25rem 0 1.25rem; font-size: 0.9375rem; color: var(--ink-muted); }
+  .byline a { margin-left: 0.35rem; }
+</style>

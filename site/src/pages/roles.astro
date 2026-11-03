@@ -1,0 +1,156 @@
+---
+// /roles/: the roles. Who holds each one comes from
+// site/src/data/room.mjs, through holderLine(): a role with no consented
+// holder shows "Open". The duties and hours below are this page's own text.
+// Every role in room.mjs must have an entry in `detail`, or the build fails.
+import Base from '../layouts/Base.astro';
+import { room, stream, roles, holderLine, ownershipLine, streamPost } from '../data/room.mjs';
+
+const contact = room.contact;
+
+// Hours are estimates for a typical month [engineering judgment]; the people
+// who hold each role will correct them.
+const detail = {
+  'co-organizer': {
+    hours: '2 to 4 hours a month',
+    summary: 'Helps The Commons along, with the founder.',
+    duties: [
+      'Welcome new posters, and answer first questions kindly.',
+      'Tag posts, so The Commons stays easy to search.',
+      'Point the best threads toward a CPP page, with the authors’ consent.',
+    ],
+    link: ['/commons/', 'The Commons'],
+  },
+  editor: {
+    hours: '4 to 8 hours a month',
+    summary: 'Keeps the body of knowledge moving, in public.',
+    duties: [
+      'Review edits and pull requests.',
+      'Call rough consensus in a thread, and write the closing note.',
+      'Assemble each edition, with credit for everyone who helped.',
+    ],
+    extra: 'Editors are added by an open nomination of 14 days in the Governance category. The founder is the editor today. More editors join as the community grows.',
+    link: ['/governance/#how-editors-are-added', 'How editors are added'],
+  },
+  'conduct-reviewer': {
+    hours: 'About 1 hour a month, more when a report arrives',
+    summary: 'Hears conduct reports about editors and co-organizers.',
+    duties: [
+      'Read reports about anyone who enforces the rules.',
+      'Decide with care, and write down why.',
+      'Keep the reporter’s name private.',
+    ],
+    extra: 'Not affiliated with Anacay. Named in EDITORS.md once someone agrees.',
+    link: ['/code-of-conduct/', 'The Code of Conduct'],
+  },
+  'wg-lead': {
+    hours: '4 to 6 hours a month, for a 6 to 8 week sprint',
+    summary: 'Would lead a working group, once a topic outgrows a thread.',
+    duties: [
+      'Confirm the charter, the dates and the members.',
+      'Keep the group on synthetic data only.',
+      'Arrange a named review before publication.',
+      'Publish the result, credited to every member.',
+    ],
+    link: ['/working-groups/', 'Working groups'],
+  },
+
+  'call-host': {
+    hours: 'About 3 hours a month',
+    summary: 'Would run an open call, once The Commons asks for one.',
+    duties: [
+      'Post the agenda a week ahead, in The Commons.',
+      'Run the call to a hard stop, under the Chatham House rule.',
+      'Post notes without names. Nothing is recorded.',
+    ],
+  },
+
+  'pre-check': {
+    hours: '1 to 3 hours a month',
+    summary: 'Reads drafts privately before anyone shares them.',
+    duties: [
+      `Reply in writing within ${room.precheckHours} hours.`,
+      'Say what is safe, and what to band or drop.',
+      'Never forward or post a draft.',
+    ],
+    extra: 'A reader who knows supply confidentiality is especially wanted.',
+    link: ['/sharing-safely/#a-private-pre-check', 'The private pre-check'],
+  },
+};
+
+const openCount = roles.filter((r) => holderLine(r.holders) === 'Open').length;
+const missing = roles.filter((r) => !detail[r.id]).map((r) => r.id);
+if (missing.length) throw new Error(`roles.astro: no card text for role(s) ${missing.join(', ')}`);
+---
+<Base title="Roles" description="The volunteer roles behind The Commons and the practice: duties, hours, terms, how to raise your hand and how to step down." nav="room">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">The Commons</p>
+      <h1>Roles</h1>
+      <p class="lede">These roles run <a href="/commons/">The Commons</a> and the practice. Each has edges: what it does, how long it takes, and how to leave it.</p>
+    </div>
+
+    <section class="prose reading" aria-labelledby="every-h">
+      <h2 id="every-h">What every role has</h2>
+      <ul>
+        <li><strong>A term of one edition.</strong> Renew it if you want to.</li>
+        <li><strong>A hand-raise.</strong> Say so in <a href={stream.url}>The Commons</a>.</li>
+        <li><strong>A one-message step-down.</strong> One line in The Commons, or to <a href={`mailto:${contact}`}>{contact}</a>. No reason needed.</li>
+        <li><strong>Emeritus credit.</strong> When you step down, you stay credited on <a href="/contributors/">Contributors</a>.</li>
+      </ul>
+      <p>Each card shows who holds the role, or “Open”. A name appears only after that person agrees. Hours are estimates; the people who hold each role will correct them.</p>
+      <p><strong>{openCount} of {roles.length} roles are open.</strong> They fill as people step forward. Roles marked “later” wait until The Commons asks for them.</p>
+      <p class="note">{ownershipLine()} See <a href="/commons/#who">Who runs this</a>. The co-organizer role, and the rules here that go beyond <a href="/governance/">Governance</a>, are proposed. They reach GOVERNANCE.md only through a Governance proposal.</p>
+    </section>
+
+    <ul class="cards roles" aria-label="The roles">
+      {roles.map((r) => {
+        const d = detail[r.id];
+        const holder = holderLine(r.holders);
+        return (
+          <li id={r.id}>
+            <h2>{r.name}{r.later && <span class="later"> · later</span>}</h2>
+            <p class="holder"><span class="k">Held by</span> {holder}</p>
+            <p>{d.summary}</p>
+            <ul class="duties">{d.duties.map((t) => <li>{t}</li>)}</ul>
+            {d.extra && <p>{d.extra}</p>}
+            <dl class="terms">
+              <div><dt>Time</dt><dd>{d.hours}</dd></div>
+              <div><dt>Term</dt><dd>One edition, renewable</dd></div>
+              <div><dt>Step down</dt><dd>One message, with emeritus credit</dd></div>
+            </dl>
+            <p class="acts">
+              <a class="more" href={streamPost({ title: `Role: ${r.name}`, text: `I’d like to help as ${r.name.toLowerCase()}.` })}>Raise your hand in The Commons</a>
+              {d.link && <> · <a class="more" href={d.link[0]}>{d.link[1]}</a></>}
+            </p>
+          </li>
+        );
+      })}
+    </ul>
+
+    <section class="prose reading" aria-labelledby="employer-h">
+      <h2 id="employer-h">If you change employer</h2>
+      <p class="note">Update your sector within 14 days. Step back from anything that mainly touches your new employer.</p>
+      <p>A one-line note in The Commons, or to <a href={`mailto:${contact}`}>{contact}</a>, is enough. You keep your role. The <a href="/governance/#conflicts-of-interest">conflict-of-interest rules</a> apply to everyone.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="next-h">
+      <h2 id="next-h">Where to go next</h2>
+      <p>See who has joined on <a href="/circle/">the founding circle</a>, and how decisions are made on <a href="/governance/">Governance</a>.</p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .roles { grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); margin: 1.5rem 0 2.5rem; }
+  .roles > li { display: flex; flex-direction: column; scroll-margin-top: 5rem; }
+  .roles .holder { color: var(--ink); }
+  .roles .k, .roles dt { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-right: 0.4rem; }
+  .roles .duties { margin: 0 0 0.6rem; padding-left: 1.1rem; font-size: 0.9375rem; line-height: 1.5; color: var(--ink-muted); }
+  .roles .duties li { margin: 0 0 0.3rem; padding: 0; background: none; border: 0; border-radius: 0; }
+  .roles .terms { margin: auto 0 0.6rem; padding-top: 0.6rem; border-top: 1px solid var(--water-line); font-size: 0.9375rem; }
+  .roles .terms div { display: flex; flex-wrap: wrap; gap: 0 0.5rem; margin-bottom: 0.2rem; }
+  .roles dd { margin: 0; color: var(--ink); }
+  .roles .acts { margin: 0; }
+  .roles .later { color: var(--ink-muted); font-size: 0.9rem; font-weight: 400; }
+</style>

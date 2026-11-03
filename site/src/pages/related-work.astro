@@ -11,7 +11,7 @@ const groups = [
       { name: 'ITIL: capacity and performance management', body: 'ITIL, first released in 1989, treats capacity and performance management as one of its management practices, aimed at meeting current and future demand. It is a proprietary, certification-backed framework for IT service management.',
         links: [['ITIL, overview (Wikipedia)', 'https://en.wikipedia.org/wiki/ITIL'], ['ITSM.tools on the practice (2025)', 'https://itsm.tools/itil-capacity-and-performance-management/']] },
       { name: 'The FinOps Foundation', body: 'The closest modern example of practitioners building an open framework together. Founded in 2019 and part of the Linux Foundation since 2020, it describes its framework as “iteratively developed from real-world practitioner experiences” and licenses it under CC BY 4.0. FinOps looks at capacity from the cost side; this practice looks at planning demand and supply.',
-        links: [['The FinOps Framework', 'https://www.finops.org/framework/'], ['About the Foundation', 'https://www.finops.org/about/']] },
+        links: [['The FinOps Framework', 'https://www.finops.org/framework/'], ['About the Foundation', 'https://www.finops.org/about/']], internal: [['CPP and FinOps: who does what', '#cpp-and-finops']] },
     ],
   },
   {
@@ -52,7 +52,7 @@ const groups = [
       <h1>Built on the work that came before</h1>
       <p class="lede">Capacity planning didn’t start here. People have measured, modeled and planned capacity for decades, and written down a lot of what they learned. This page credits that work and links to it.</p>
     </div>
-    <nav class="toc reading" aria-labelledby="rw-toc"><h2 id="rw-toc">On this page</h2><ol>{groups.map((g) => <li><a href={`#${g.id}`}>{g.title}</a></li>)}</ol></nav>
+    <nav class="toc reading" aria-labelledby="rw-toc"><h2 id="rw-toc">On this page</h2><ol>{groups.map((g) => <li><a href={`#${g.id}`}>{g.title}</a></li>)}<li><a href="#cpp-and-finops">CPP and FinOps: who does what</a></li><li><a href="#gap-h">What this adds</a></li></ol></nav>
     <div data-outbound>
       {groups.map((g) => (
         <section class="reading rw" aria-labelledby={g.id}>
@@ -69,6 +69,39 @@ const groups = [
         </section>
       ))}
     </div>
+    <section class="prose reading finops" aria-labelledby="cpp-and-finops">
+      <h2 id="cpp-and-finops">CPP and FinOps: who does what</h2>
+      <p>The FinOps Foundation and this practice look at the same fleets from two sides. We read them as complements, not rivals. This is the split as we see it, and FinOps practitioners are welcome to correct it.</p>
+      <div class="split-who">
+        <div>
+          <h3>FinOps leads on</h3>
+          <ul>
+            <li>Seeing and allocating cost: who spent what, and on which service.</li>
+            <li>Reporting, anomalies, budgets and unit economics.</li>
+            <li>Cutting waste in usage, and buying commitment discounts well.</li>
+            <li>Invoicing and chargeback.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>CPP works on</h3>
+          <ul>
+            <li><a href="/guide/concepts/demand-and-declarations/">Demand</a>: who declares it, in what units, and how far ahead.</li>
+            <li>Supply: <a href="/guide/concepts/supply-layers-and-lead-times/">supply layers and lead times</a>.</li>
+            <li><a href="/guide/concepts/commit-points/">Commit points</a>: when to commit to buy, lease or build.</li>
+            <li><a href="/guide/concepts/approval-and-allocation/">Approval and allocation</a> of capacity that is short.</li>
+            <li><a href="/guide/concepts/the-coefficient/">The coefficient</a>, and the agreement behind a rate.</li>
+          </ul>
+        </div>
+      </div>
+      <p><strong>Where the two meet.</strong> Rates and chargeback, which CPP treats as <a href="/guide/concepts/three-prices/">three prices</a>. Commitments, where a discount is not the same as capacity. The <a href="/guide/concepts/operating-mechanisms/#m4">unallocated line</a>, which neither side yet gives an owner. And the unit cost of AI work, where spend forecasts and capacity plans often disagree.</p>
+      <p><strong>How we work with it.</strong> We link to the Framework rather than restate it. Where a term overlaps, we point to the FinOps definition rather than write a rival one. FinOps practitioners are welcome in The Commons as individuals, and the #cost tag is the natural place. There is no formal partnership.</p>
+      <p class="note"><strong>Licence note.</strong> The FinOps Framework is licensed CC BY 4.0. CPP is CC BY-SA 4.0. Text from the Framework could be adapted here with credit. CPP text could not go back into the Framework, because ShareAlike would follow it. So CPP links to the Framework and quotes it only briefly, with credit. It never copies it. This is our reading of the two licences, not legal advice.</p>
+      <ul class="refs finops-refs">
+        <li><a href="https://www.finops.org/framework/">The FinOps Framework</a> (FinOps Foundation; CC BY 4.0; checked 2 November 2026)</li>
+        <li><a href="https://www.finops.org/about/">About the FinOps Foundation</a></li>
+      </ul>
+    </section>
+
     <section class="prose reading" aria-labelledby="gap-h">
       <h2 id="gap-h">What this adds</h2>
       <p>What we couldn’t find is an open place where practitioners build a shared body of knowledge for capacity planning together. It would be versioned, licensed so anyone can reuse it, and edited in public. It would keep up with AI and accelerator fleets. That’s the gap this tries to fill. It links to the work above rather than rewriting it.</p>
@@ -76,3 +109,11 @@ const groups = [
     </section>
   </div>
 </Base>
+
+<style>
+  .split-who { display: grid; gap: 1rem 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); margin: 1.25rem 0; }
+  .split-who > div { background: var(--water-raised); border: 1px solid var(--water-line); border-radius: var(--radius); padding: 1rem 1.15rem; }
+  .split-who h3 { margin-top: 0; font-size: 1.15rem; }
+  .split-who ul { margin: 0; padding-left: 1.1rem; }
+  .finops-refs { list-style: none; padding: 0; font-size: 0.9375rem; color: var(--ink-muted); }
+</style>

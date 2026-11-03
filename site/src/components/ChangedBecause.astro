@@ -1,0 +1,49 @@
+---
+// "Changed because of" lines: a short footer naming the thread and the people
+// a page changed because of. The lines come from src/data/changed-because.json,
+// which starts empty ([]), so nothing renders until a real change is logged.
+// No line is ever invented.
+//
+// One entry per change. Add an entry only when the change is merged, and name
+// people only with their agreement (a handle, or no name, is fine):
+//   {
+//     "page": "/guide/concepts/commit-points/",   // the page's path, with slashes
+//     "date": "2026-11-20",                         // YYYY-MM-DD, when it merged
+//     "change": "Clarified when a commit point closes.",
+//     "because": { "label": "Discussion #12", "url": "https://github.com/anacay/cpp/discussions/12" },
+//     "thanks": ["a-handle"]                        // optional; [] for none
+//   }
+// The build fails on an entry without page, date, change or because.
+import entries from '../data/changed-because.json';
+interface Props { path?: string }
+const path = Astro.props.path ?? Astro.url.pathname;
+const norm = (p: string) => (p.endsWith('/') ? p : `${p}/`);
+for (const e of entries as any[]) {
+  for (const k of ['page', 'date', 'change', 'because']) if (!e?.[k]) throw new Error(`changed-because.json: an entry lacks "${k}"`);
+  if (!e.because.label || !e.because.url) throw new Error('changed-because.json: "because" needs a label and a url');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(e.date)) throw new Error(`changed-because.json: bad date ${e.date}`);
+}
+const lines = (entries as any[]).filter((e) => norm(e.page) === norm(path)).sort((a, b) => (a.date < b.date ? 1 : -1));
+const fmt = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+{lines.length > 0 && (
+  <aside class="changed-because reading" aria-labelledby="changed-h">
+    <h2 id="changed-h">Changes to this page</h2>
+    <ul>
+      {lines.map((e) => (
+        <li>
+          <time datetime={e.date}>{fmt(e.date)}</time>: {e.change} Changed because of <a href={e.because.url}>{e.because.label}</a>{e.thanks?.length ? <>, thanks to {e.thanks.join(', ')}</> : null}.
+        </li>
+      ))}
+    </ul>
+    <p><a href="/contributors/">Everyone credited</a> · <a href="/changes/">What changed</a></p>
+  </aside>
+)}
+
+<style>
+  .changed-because { margin: 2rem 0; padding: 1rem 1.15rem; border: 1px solid var(--water-line); border-radius: var(--radius); background: var(--water-raised); font-size: 0.9375rem; }
+  .changed-because h2 { font-size: 1.05rem; margin: 0 0 0.5rem; }
+  .changed-because ul { margin: 0 0 0.6rem; padding-left: 1.1rem; color: var(--ink-muted); }
+  .changed-because li { margin-bottom: 0.35rem; }
+  .changed-because p { margin: 0; }
+</style>

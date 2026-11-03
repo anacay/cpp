@@ -1,6 +1,7 @@
 // llms.txt (https://llmstxt.org): what this site is, and where the text lives.
 import { load, pageMeta } from '../lib/paper.mjs';
 import { guide } from '../lib/guide.mjs';
+import { doorPages } from '../data/start-paths.mjs';
 export function GET() {
   const { manifest, chapters, pages, config } = load();
   const abs = (u) => new URL(u, config.site.url).href;
@@ -18,6 +19,18 @@ The full text, figures' alt text and captions included, is in one file: ${abs('/
 - [Roadmap](${abs('/roadmap/')}): the next seeds.
 - [Related work](${abs('/related-work/')}): the communities, frameworks and books this builds on.
 - [Join in](${abs('/join/')}): how to take part.
+- [Tools](${abs('/tools/')}): a starter pack: cadence agendas, a decision-rights canvas, a split-the-miss CSV and a first walk-through.
+- [Contributors](${abs('/contributors/')}): everyone credited, by edition.
+
+## The Commons
+- [The Commons](${abs('/commons/')}): one place on GitHub Discussions, its rules and tags.
+- [Start here](${abs('/start/')}): doors by kind of reader, each ending in open problems and a first contribution.
+${doorPages().map((d) => `  - [Start here: ${d.name}](${abs(`/start/${d.id}/`)})`).join('\n')}
+- [The founding circle](${abs('/circle/')}): what members commit to, and who they are, with consent.
+- [Roles](${abs('/roles/')}): eight roles, each with duties, hours, a term and a way out.
+- [Working groups](${abs('/working-groups/')}): later, when a topic in The Commons outgrows a thread.
+- [Agenda](${abs('/agenda/')}): the open problems, each with a thread and a status.
+- [Sharing safely](${abs('/sharing-safely/')}): how to share planning experience without confidential detail.
 
 ## The guide (draft)
 ${guide().pages.map((p) => `- [${p.title}](${abs(p.url)}): ${p.short}`).join('\n')}

@@ -7,6 +7,8 @@ cadence: all
 altitude: all
 levels: learning, practicing, leading
 seed: 4, 5, 5.4, 6, 8, 9.2, 10.1, 14
+author: Guillermo Martinez
+reviewers:
 ---
 
 The [Popcorn Pajamas case](case-popcorn-pajamas-full.md) describes a problem space and stops there. This note asks the next question: what does the practice's current body of knowledge say about each problem, and where does it run out? Section numbers refer to the seed paper, *The Coefficient Is an Agreement*. Mechanism numbers refer to its thirteen mechanisms (Section 9.2).
