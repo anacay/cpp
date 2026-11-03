@@ -3,7 +3,7 @@ import '../styles/site.css';
 import Mark from '../components/Mark.astro';
 import Star from '../components/Star.astro';
 import { load } from '../lib/paper.mjs';
-import { firstQuestion, tagForPath } from '../data/room.mjs';
+import { streamPost, tagForPath, stream, NDA_LINE } from '../data/room.mjs';
 
 interface Props { title: string; description: string; nav?: string; bare?: boolean; commentable?: { name: string }; ld?: object; article?: { published?: string; modified?: string } }
 const { title, description, nav = '', commentable, ld, article } = Astro.props;
@@ -93,7 +93,7 @@ const links = [
         <p>{community.edition}, {community.editionNote}: <em>{manifest.title}</em>, by Guillermo Martinez. Text and figures <a href="/license/">CC BY-SA 4.0</a>; site code MIT.</p>
       </div>
     </div>
-    <p class="colophon__post"><a class="btn btn--quiet" href={firstQuestion()}>Post in The Commons</a> <span class="muted">The one place to ask, answer and share. <a href="/join/">New to GitHub?</a></span></p>
+    <p class="colophon__post"><a class="btn btn--quiet" href={streamPost({ tag: tagForPath(path) })}>Post in The Commons</a> <span class="muted">The one place to ask, answer and share. <a href="/join/">New to GitHub?</a></span></p>
     <nav aria-label="Site">
       <ul>
         <li><a href="/commons/">The Commons</a></li>
@@ -121,7 +121,7 @@ const links = [
   </div>
 </footer>
 {commentable && (
-  <script is:inline src="/comment.js" defer data-repo={community.repo} data-open={community.open ? '1' : '0'} data-contact={site.contact} data-site={site.url} data-page={commentable.name} data-tag={tagForPath(path) ?? undefined}></script>
+  <script is:inline src="/comment.js" defer data-repo={community.repo} data-open={community.open ? '1' : '0'} data-contact={site.contact} data-site={site.url} data-page={commentable.name} data-tag={tagForPath(path) ?? undefined} data-category={stream.slug} data-nda={NDA_LINE}></script>
 )}
 </body>
 </html>

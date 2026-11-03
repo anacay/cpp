@@ -3,6 +3,7 @@
 // ../body-of-knowledge/rfc/author-notes.md. A passage that no longer appears
 // word for word in its section fails the build.
 import fs from 'node:fs';
+import { stream } from '../data/room.mjs';
 import path from 'node:path';
 import { load, renderInline, esc } from './paper.mjs';
 import { links } from './community.mjs';
@@ -60,7 +61,7 @@ function noteLinks(note) {
   const q = (o) => Object.entries(o).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
   return {
     // The note's own thread once seed-discussions has posted it; until then, a new one.
-    discuss: threads()[note.quote] || `${ctx.config.community.repo}/discussions/new?${q({ category: 'commons', title, body })}`,
+    discuss: threads()[note.quote] || `${ctx.config.community.repo}/discussions/new?${q({ category: stream.slug, title, body })}`,
     mail: `mailto:${ctx.config.site.contact}?${q({ subject: title, body })}`,
     open: l.open,
   };
