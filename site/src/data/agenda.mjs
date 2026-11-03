@@ -154,7 +154,7 @@ export const workstreams = [
     why: 'What a planner at each level should be able to do, and how newcomers find their way in.',
     items: [
       it('competency-map', 'No published competency map for capacity planners exists. What should a planner at each level be able to do? What confused you early on?', '/roadmap/#3-a-capacity-planner-competency-map', 'Roadmap, seed 3', { goodFirst: true }),
-      it('glossary-terms', 'Open a Terms discussion on a word planners use differently, or one that is missing.', '/roadmap/#1-a-shared-glossary', 'Roadmap, seed 1', { goodFirst: true }),
+      it('glossary-terms', 'Name a word planners use differently, or one that is missing from the glossary.', '/roadmap/#1-a-shared-glossary', 'Roadmap, seed 1', { goodFirst: true }),
       it('case-library', 'The case library needs a dozen cases from different settings. Share one, anonymized.', '/roadmap/#2-a-case-library', 'Roadmap, seed 2'),
       it('worksheet', 'Try the Appendix A worksheet on an invented case. Say where it got stuck.', '/roadmap/#4-worksheets-as-tools', 'Roadmap, seed 4', { goodFirst: true }),
       it('reading-list', 'Add a public source to the reading list.', '/roadmap/#5-a-reading-list', 'Roadmap, seed 5', { goodFirst: true }),

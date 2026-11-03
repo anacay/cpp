@@ -19,8 +19,12 @@ const wgFor = (i) => workingGroups.find((w) => i.label && w.questions.includes(i
 const items = allItems();
 // One door per item without a thread: a new post in The Commons, prefilled
 // with the problem, its source link and the workstream's tag.
-const first = (s) => s.split(/(?<=[.?])\s/)[0];
-const door = (i, w) => streamPost({ title: `${i.label ? `${i.label}: ` : ''}${first(i.problem)}`.slice(0, 120), text: i.problem, tag: i.tag ?? w.tag, from: { name: i.sourceLabel, url: i.source } });
+// The post title: the item's question sentence where it has one, else its
+// first sentence, cut at a word boundary.
+const sentences = (s) => s.split(/(?<=[.?])\s/);
+const lead = (s) => [...sentences(s)].reverse().find((x) => x.endsWith('?')) ?? sentences(s)[0];
+const trim = (s, n = 110) => (s.length <= n ? s : `${s.slice(0, n).replace(/\s+\S*$/, '')}…`);
+const door = (i, w) => streamPost({ title: trim(`${i.label ? `${i.label}: ` : ''}${lead(i.problem)}`), text: i.problem, tag: i.tag ?? w.tag, from: { name: i.sourceLabel, url: i.source } });
 const goodFirst = items.filter((i) => i.goodFirst);
 ---
 <Base title="Agenda" description={`The open problems The Commons works on: ${items.length} problems in ${workstreams.length} workstreams, each with its source, its thread and a status.`} nav="room">
@@ -114,7 +118,7 @@ const goodFirst = items.filter((i) => i.goodFirst);
   .gf li::marker { color: var(--gold); }
   .ws { border-top: 1px solid var(--water-line); padding-top: 1.5rem; margin-top: 2.75rem; scroll-margin-top: 1rem; }
   .ws h2 { margin: 0.2rem 0 0.6rem; }
-  .ws__n { margin: 0; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+  .ws__n { margin: 0; font-size: 0.8125rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
   .ws__ch { font-size: 0.9375rem; color: var(--ink-muted); }
   .ws__ch strong { color: var(--ink); font-weight: 600; }
   .items { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: 1rem; }
@@ -123,7 +127,7 @@ const goodFirst = items.filter((i) => i.goodFirst);
   .items p { margin: 0; line-height: 1.55; }
   .items__meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem !important; }
   .items__links, .items__wg { font-size: 0.875rem; color: var(--ink-muted); margin-top: 0.3rem !important; overflow-wrap: anywhere; }
-  .st, .tag { display: inline-block; font-size: 0.75rem; line-height: 1.6; padding: 0 0.55rem; border-radius: 999px; border: 1px solid var(--water-line); color: var(--ink); white-space: nowrap; }
+  .st, .tag { display: inline-block; font-size: 0.8125rem; line-height: 1.6; padding: 0 0.55rem; border-radius: 999px; border: 1px solid var(--water-line); color: var(--ink); white-space: nowrap; }
   .st--open { border-color: var(--ink-muted); }
   .st--worked { border-color: var(--viz-2); color: #8fd3e4; }
   .st--proposal { border-color: var(--gold); color: var(--gold-soft); }

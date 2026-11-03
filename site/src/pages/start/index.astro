@@ -7,7 +7,8 @@ import { doors, yourWords, DOOR_TAGS } from '../../data/start-paths.mjs';
 import { agendaItem } from '../../data/agenda.mjs';
 import { community } from '../../lib/community.mjs';
 import { streamPost } from '../../data/room.mjs';
-const firstPost = (d) => streamPost({ title: d.firstTitle ?? (d.id === 'new' ? '' : `${d.name}: `), text: d.first.text, tag: DOOR_TAGS[d.id] });
+// The post opens with a first-person starter for the newcomer to edit.
+const firstPost = (d) => streamPost({ title: d.first.title, text: d.first.prompt, tag: DOOR_TAGS[d.id], starter: true });
 const c = community();
 const thread = (n) => `${c.repo}/discussions/${n}`;
 const probs = (d) => d.problems.map(agendaItem);

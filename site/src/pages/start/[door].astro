@@ -8,7 +8,8 @@ import { doors, doorPages, sreChecklist, DOOR_TAGS } from '../../data/start-path
 import { agendaItem } from '../../data/agenda.mjs';
 import { streamPost, firstQuestion } from '../../data/room.mjs';
 import { community } from '../../lib/community.mjs';
-const firstPost = (d) => streamPost({ title: d.firstTitle ?? (d.id === 'new' ? '' : `${d.name}: `), text: d.first.text, tag: DOOR_TAGS[d.id] });
+// The post opens with a first-person starter for the newcomer to edit.
+const firstPost = (d) => streamPost({ title: d.first.title, text: d.first.prompt, tag: DOOR_TAGS[d.id], starter: true });
 export function getStaticPaths() {
   return doorPages().map((d) => ({ params: { door: d.id }, props: { d } }));
 }

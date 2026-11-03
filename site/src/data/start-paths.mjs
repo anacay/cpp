@@ -21,10 +21,10 @@ export const doors = [
       ['Case 1', '/guide/cases/#case-1-the-launch-that-needed-memory', 3, 'One launch, start to finish.'],
       ['Split a bill miss', '/guide/the-work-and-the-path/#try-it-on-the-example', 10, 'The Learning exercise: split one team’s miss into its three terms.'],
     ],
-    aha: 'A team can land within 4% of its forecast and still be 30% over its bill. Two of the bill’s three terms belong to someone else. So a bill miss is not only a forecasting failure. Ask who owns each term.',
+    aha: 'A team can land within 4% of its forecast and still be 30% over its bill (illustrative). Two of the bill’s three terms belong to someone else. So a bill miss is not only a forecasting failure. Ask who owns each term.',
     ahaSource: ['Case 1', '/guide/cases/#case-1-the-launch-that-needed-memory'],
     problems: ['worksheet', 'q13', 'competency-map'],
-    first: { item: 'glossary-terms', text: 'Name one word that confused you. Open a Terms discussion, or send it to cpp@anacay.org and it is posted for you.' },
+    first: { item: 'glossary-terms', text: 'Name one word that confused you, and where you read it.', title: 'A word that confused me', prompt: 'I’m new to capacity planning. The word that confused me: …\n\nWhere I read it: …' },
   },
   {
     id: 'practicing', name: 'Practicing planners', time: '55 minutes',
@@ -42,7 +42,7 @@ export const doors = [
     aha: 'On the map, the stored-data question moves from −3 to −12 months. The method doesn’t make the forecast more accurate. It moves the hard question to the date it was needed.',
     ahaSource: ['The map', '/guide/the-map/'],
     problems: ['q2', 'q11', 'q8'],
-    first: { item: 'q2', text: 'Reply in Q2’s thread with the shape of asked against landed. Index it so the plan is 100, and leave out real figures.' },
+    first: { item: 'q2', text: 'Share the shape of asked against landed, for Q2. Index it so the plan is 100, and leave out real figures.', title: 'How our declarations land, by stage', prompt: 'Here is how our declarations land against what was asked, indexed so the plan is 100: …' },
   },
   {
     id: 'senior', name: 'Senior planners', time: '1 hour 50 minutes',
@@ -61,7 +61,7 @@ export const doors = [
     ahaSource: ['Limits', '/guide/limits/#what-has-and-hasnt-been-measured'],
     faster: ['Short of time? Swap step 7 for', 'Case 2 in practice', '/cases/popcorn-pajamas-practice/', 'about 13 minutes.'],
     problems: ['q7', 'q14', 'q12'],
-    first: { item: 'six-mechanisms', text: 'Propose a test that can fail for one of the six mechanisms that have none.' },
+    first: { item: 'six-mechanisms', text: 'Propose a test that can fail for one of the six mechanisms that have none.', title: 'A test that can fail for one mechanism', prompt: 'A test that could fail for this mechanism: …\n\nWhat would count as failing: …' },
   },
   {
     id: 'head', name: 'People who lead planning teams', time: '42 minutes',
@@ -80,7 +80,7 @@ export const doors = [
     aha: 'The “What to fix first” table gives you a diagnostic for Monday. “Bills miss and nobody can say why” leads to splitting the miss and publishing coefficients.',
     ahaSource: ['Settings', '/guide/settings/#what-to-fix-first'],
     problems: ['q3', 'survey', 'q15'],
-    first: { item: 'competency-map', text: 'Describe what a planner at each level should be able to do. The competency map is about skills and growth. Or, with two hours a week to give, ask about the co-organizer role on Roles.' },
+    first: { item: 'competency-map', text: 'Describe what a planner at each level should be able to do. The competency map is about skills and growth.', title: 'What a planner at each level should be able to do', prompt: 'At each level, I’d expect a planner to be able to: …' },
   },
   {
     id: 'program-managers', name: 'Program managers', time: '25 minutes',
@@ -94,7 +94,7 @@ export const doors = [
     aha: 'Approval is not allocation. A fleet can hold enough chips and still be unable to place one training run, because topology is a shape.',
     ahaSource: ['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets'],
     problems: ['q3', 'q13', 'mix-owner'],
-    first: { item: 'q3', text: 'Describe how your accelerator forum decides, with no names or figures. Reply in Q3’s thread, or write privately.' },
+    first: { item: 'q3', text: 'Describe how your accelerator forum decides, with no names or figures.', title: 'How our accelerator forum decides', prompt: 'When accelerators are short, our forum decides like this, with no names or figures: …' },
   },
   {
     id: 'resource-managers', name: 'Coming from resource or quota management?', time: '15 minutes',
@@ -108,8 +108,7 @@ export const doors = [
     aha: 'Quota is a promise against supply that may not exist yet. Planning is deciding, before the commit date, which promises the fleet can keep.',
     ahaSource: ['Approval and allocation', '/guide/concepts/approval-and-allocation/'],
     problems: ['q3', 'q7', 'unallocated-owner'],
-    firstTitle: 'From quota management: ',
-    first: { item: 'q3', text: 'How does your quota or resource process decide between teams when supply is short? Describe the rule, not the figures.' },
+    first: { item: 'q3', text: 'How does your quota or resource process decide between teams when supply is short? Describe the rule, not the figures.', title: 'Quota rules when supply is short', prompt: 'I come from quota and resource management. When supply is short, our process decides between teams like this: …' },
   },
   {
     id: 'sre', name: 'Site reliability engineers', time: '20 minutes', page: true,
@@ -123,7 +122,7 @@ export const doors = [
     aha: 'The ratio alert has to compare with the published version, not just the recent past. A coefficient wrong from the start never shifts.',
     ahaSource: ['The measuring loop', '/guide/concepts/measuring-loop/#how-to-use-it'],
     problems: ['q6', 'q13', 'elastic-cloud'],
-    first: { item: 'q6', text: 'Say how you attribute cost for one cache or stateful service, sanitized. Reply in Q6’s thread.' },
+    first: { item: 'q6', text: 'Say how you attribute cost for one cache or stateful service, sanitized.', title: 'Attributing cost for a cache', prompt: 'For one cache or stateful service, we attribute cost like this, sanitized: …' },
   },
   {
     id: 'finance', name: 'Finance partners', time: '25 minutes', page: true,
@@ -138,7 +137,7 @@ export const doors = [
     aha: 'Set the rate on usage, and one consumer’s exit raises every other bill. Set it on practical capacity, and the idle hours sit on their own owned line instead.',
     ahaSource: ['Three prices', '/guide/concepts/three-prices/#how-to-use-it'],
     problems: ['q9', 'q14', 'unallocated-owner'],
-    first: { item: 'q9', text: 'Say what shortage-to-idle ratio you would set for one layer, and who in your organization would sign it.' },
+    first: { item: 'q9', text: 'Say what shortage-to-idle ratio you would set for one layer, and who in your organization would sign it.', title: 'A shortage-to-idle ratio for one layer', prompt: 'For this layer I would set the shortage-to-idle ratio at about …, and this role would sign it: …' },
   },
   {
     id: 'supply', name: 'Supply partners', time: '30 minutes', page: true,
@@ -153,13 +152,13 @@ export const doors = [
     aha: 'Slips are the most common timing miss. So the right to push a delivery out is often worth more than the right to cancel.',
     ahaSource: ['Supply layers and lead times', '/guide/concepts/supply-layers-and-lead-times/'],
     problems: ['q4', 'q5', 'q11'],
-    first: { item: 'q4', text: 'Add one public source on order-to-dock time, turn-up or cancel terms, with a link and the quote.' },
+    first: { item: 'q4', text: 'Add one public source on order-to-dock time, turn-up or cancel terms, with a link and the quote.', title: 'A public source on supply lead times', prompt: 'A public source on order-to-dock time, turn-up or cancel terms: [link]\n\nThe quote: …' },
   },
 ];
 
 export const doorPages = () => doors.filter((d) => d.page);
 // The Commons tag each door's first post carries.
-export const DOOR_TAGS = { new: 'first-question', practicing: 'forecasting', senior: 'forecasting', head: null, 'program-managers': 'gpu', 'resource-managers': 'path-resource-managers', sre: 'cloud', finance: 'cost', supply: 'supply' };
+export const DOOR_TAGS = { new: 'first-question', practicing: 'forecasting', senior: 'forecasting', head: 'forecasting', 'program-managers': 'gpu', 'resource-managers': 'path-resource-managers', sre: 'cloud', finance: 'cost', supply: 'supply' };
 export const minutes = (d) => d.steps.reduce((n, s) => n + s[2], 0);
 // Each door's headline time is the sum of its steps, so the two never
 // disagree. (The summary step is 5 minutes, as /summary/ counts its text.)
