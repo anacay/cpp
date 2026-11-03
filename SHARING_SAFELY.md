@@ -105,7 +105,6 @@ Not sure? Before you post anything, write to [cpp@anacay.org](mailto:cpp@anacay.
 - A person reads it, privately. Nothing is posted or forwarded.
 - You get a written reply within 72 hours. It says what is safe, and what to band or drop.
 - Supply drafts go to a reader who knows supply confidentiality, once one is named.
-- If you prefer, we post it for you, with credit by name, by handle or as anonymous.
 
 The founder reads cpp@anacay.org and the pre-checks. The [Pre-check reviewer](https://cpp.anacay.org/roles/#pre-check) role is open, so others can share the work.
 

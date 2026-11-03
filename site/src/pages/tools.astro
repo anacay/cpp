@@ -3,6 +3,7 @@
 // is static, in site/public/tools/, and builds only on the guide and the seed
 // paper's worked example. Invented numbers are labeled illustrative.
 import Base from '../layouts/Base.astro';
+import { streamPost } from '../data/room.mjs';
 const tools = [
   {
     id: 'cadence-agendas', name: 'Cadence agendas', file: '/tools/cadence-agendas.md', kind: 'Markdown, 5 agendas',
@@ -57,8 +58,8 @@ const tools = [
       <h2 id="tried-h">Tried one? Tell us where it got stuck</h2>
       <p>A tool nobody can run on Monday doesn’t help much. So every report counts, and it is credited on <a href="/contributors/">Contributors</a>.</p>
       <ul>
-        <li>Say what you cut, added or couldn’t fill, in a Sections discussion (<a href="/join/#new">how commenting works</a>). Use invented numbers.</li>
-        <li>Rather not post in public? Write to <a href="mailto:cpp@anacay.org">cpp@anacay.org</a>. We post for you, with credit if you want it.</li>
+        <li>Say what you cut, added or couldn’t fill, <a href={streamPost({ title: 'Tried a tool: ', text: 'I tried this tool. What I cut, added or couldn’t fill: …', starter: true })}>in The Commons</a>. Use invented numbers.</li>
+        <li>Something too sensitive to post? Ask for a <a href="/sharing-safely/#a-private-pre-check">private pre-check</a> first.</li>
         <li>Want to build the next one? The <a href="/roadmap/">roadmap</a> lists worksheets as a seed, and the <a href="/worksheet/">declaration worksheet</a> is the first.</li>
       </ul>
       <p>The files are CC BY-SA 4.0, like the rest of the practice. Copy them, change them, and keep the credit line.</p>

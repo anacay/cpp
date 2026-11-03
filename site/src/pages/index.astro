@@ -8,7 +8,7 @@
 import Base from '../layouts/Base.astro';
 import Behind from '../components/Behind.astro';
 import RoomRule from '../components/RoomRule.astro';
-import { firstQuestion } from '../data/room.mjs';
+import { anyPost } from '../data/room.mjs';
 import { load, quote, renderMarkdown, renderFigure, wordCount, readingTime } from '../lib/paper.mjs';
 
 const ctx = load();
@@ -43,6 +43,7 @@ const forWhom = [
   ['Practicing planners', 'You’ve run planning cycles and seen where plans break. The seed needs your corrections, your terms and your cases.'],
   ['Finance and supply partners', 'You fund the capacity or build it. The handshake below is about you, too. Your doors: <a href="/start/finance/">finance</a> and <a href="/start/supply/">supply</a>.'],
   ['Program managers', 'Many accelerator fleets are planned by program managers. <a href="/start/#program-managers">Your door is here.</a>'],
+  ['Resource and quota managers', 'You hand out quota and arbitrate who gets what. Capacity planning is the same problem, a year earlier. <a href="/start/#resource-managers">Your door.</a>'],
   ['People who lead planning teams', 'What should a planner at each level be able to do? The <a href="/roadmap/#3-a-capacity-planner-competency-map">competency map</a> starts there.'],
 ];
 
@@ -69,8 +70,8 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
     <section class="hero" aria-labelledby="hero-h">
       <p class="eyebrow">The Capacity Planning Practice</p>
       <h1 id="hero-h">Let’s build the body of knowledge for capacity planning, together.</h1>
-      <p class="lede">Capacity planning is growing into a serious discipline, and the people who practice it have no open, shared body of knowledge to build on. This starts one, together and in the open. It stands on decades of work: CMG, ITIL, the SRE books, and Hixson and Guliani’s 2015 article. The seed is a paper drawn from that public record and one practitioner’s experience, put out as a request for comments. Highlight any passage, open a thread, and help shape what comes next.</p>
-      <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on the paper</a> <a class="btn btn--quiet" href="/agenda/">Start with the open questions</a> <a class="btn btn--quiet" href={firstQuestion()}>Ask in The Commons</a></p>
+      <p class="lede">Capacity planning is growing into a serious discipline, and the people who practice it have no open, shared body of knowledge to build on. This starts one, together and in the open, from a seed paper put out as a request for comments. Planners meet in <a href="/commons/">The Commons</a> to ask, argue and work the open problems.</p>
+      <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on the paper</a> <a class="btn btn--quiet" href={anyPost()}>Ask in The Commons</a> <a class="btn btn--quiet" href="/agenda/">Start with the open questions</a></p>
       <RoomRule />
       <p class="hero__paper muted">The seed paper: <a href="/paper/"><em>{manifest.title}</em></a> · <a href="/one-page/">one page</a> · <a href="/downloads/">PDF and EPUB</a> · <a href="/body-of-knowledge/">the body of knowledge, in progress</a></p>
     </section>

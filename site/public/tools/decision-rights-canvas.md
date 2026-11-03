@@ -76,4 +76,4 @@ Product A's launch on Service X, from the seed paper's worked example. A release
 - Approval and allocation: https://cpp.anacay.org/guide/concepts/approval-and-allocation/
 - Operating mechanisms, including the forum decision log: https://cpp.anacay.org/guide/concepts/operating-mechanisms/
 
-**Tried it?** Say which rows nobody would sign, in the "Sections" discussions on GitHub, or write to cpp@anacay.org.
+**Tried it?** Say which rows nobody would sign, in The Commons: https://github.com/anacay/cpp/discussions/categories/the-commons

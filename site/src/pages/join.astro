@@ -51,10 +51,10 @@ const kinds = [
       <p><strong>How to comment</strong></p>
       <ol>
         <li>Select any sentence in the paper or the guide. A <strong>Discuss this passage</strong> button appears at the bottom of the screen. Or use <strong>Talk about this page</strong> at the end of any page. Both open a post in The Commons.</li>
-        <li>GitHub opens. If you aren’t signed in, sign in or create a free account. It takes a minute, and you don’t need to know anything about code.</li>
+        <li>GitHub opens. If you aren’t signed in, sign in or create a free account. It takes two minutes, and you don’t need to know anything about code.</li>
         <li>The passage you picked is quoted for you. Add your comment and press <strong>Start discussion</strong>.</li>
       </ol>
-      <p><strong>What happens next.</strong> The author reads every thread and replies. Others can join in. When a thread points to a change, it follows <a href="/how-it-grows/">How it grows</a>, and everyone who helped is credited by name.</p>
+      <p><strong>What happens next.</strong> The founder reads every thread. Others can join in. When a thread points to a change, it follows <a href="/how-it-grows/">How it grows</a>, and everyone who helped is credited by name.</p>
       <p><strong>A good comment can be one sentence.</strong> <span class="eg">“This doesn’t match what I’ve seen, because…” · “Here’s a public source for this: …” · “My team does this differently: …”</span></p>
     </section>
 
@@ -62,14 +62,14 @@ const kinds = [
       <h2 class="group-title reading" id="where-h">Where it happens</h2>
       <ul class="cards cards--3">
         <li><h3>The Commons</h3><p>The one place to interact: short posts, replies in threads, tags and reactions, in the “{stream.name}” category on GitHub Discussions.</p><p><a class="more" href={stream.url}>The Commons</a></p></li>
-        <li><h3>This site</h3><p>For reading: the body of knowledge, the open problems and the tools. Each page’s <strong>Discuss</strong> link opens a thread on GitHub, beside The Commons.</p><p><a class="more" href="/body-of-knowledge/">Body of knowledge</a></p></li>
+        <li><h3>This site</h3><p>For reading: the body of knowledge, the open problems and the tools. Each page’s <strong>Talk about this page</strong> link opens a new post in The Commons.</p><p><a class="more" href="/body-of-knowledge/">Body of knowledge</a></p></li>
         <li><h3>On LinkedIn</h3><p>LinkedIn carries news only: new versions and new pages. The conversation happens in The Commons.</p><p>{c.linkedinPage && <a class="more" href={c.linkedinPage}>The page</a>}</p></li>
       </ul>
     </section>
 
     <section>
       <h2 class="group-title reading" id="kinds-h">Ways to contribute</h2>
-      <div class="table-wrap" tabindex="0" role="region" aria-labelledby="kinds-h">
+      <div class="table-wrap table-wrap--fit" tabindex="0" role="region" aria-labelledby="kinds-h">
         <table>
           <thead><tr><th>You want to…</th><th>For example</th><th>Do this</th><th>Size</th></tr></thead>
           <tbody>{kinds.map(([a, b, d, e]) => <tr><td><strong>{a}</strong></td><td>{b}</td><td set:html={d} /><td>{e}</td></tr>)}</tbody>
