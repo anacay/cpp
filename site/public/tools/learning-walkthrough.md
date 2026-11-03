@@ -72,4 +72,4 @@ Work each step before you read the answer key.
 - Post-launch, where the miss is split: https://cpp.anacay.org/guide/post-launch/
 - The seed paper, Section 7: https://cpp.anacay.org/paper/7-a-worked-example/
 
-**Tried it?** Say where you got stuck, in the "Sections" discussions on GitHub, or write to cpp@anacay.org. A confusing step is a bug, and you are credited for finding it.
+**Tried it?** Say where you got stuck, in The Commons: https://github.com/anacay/cpp/discussions/categories/the-commons A confusing step is a bug, and you are credited for finding it.

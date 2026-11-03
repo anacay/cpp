@@ -151,4 +151,4 @@ Guide: https://cpp.anacay.org/guide/post-launch/ · 45 minutes (illustrative), a
 
 ---
 
-**Tried one?** Say what you cut or added, in the "Sections" discussions on GitHub, or write to cpp@anacay.org. Placing each step at a cadence is the guide's reading, and it has not been tested across teams.
+**Tried one?** Say what you cut or added, in The Commons: https://github.com/anacay/cpp/discussions/categories/the-commons Placing each step at a cadence is the guide's reading, and it has not been tested across teams.

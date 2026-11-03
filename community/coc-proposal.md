@@ -20,7 +20,7 @@ Copy everything between the two lines into the new discussion. The title line is
 **What changes in CODE_OF_CONDUCT.md.**
 
 1. A third rule: "**No recruiting.** Don't recruit for any employer, including your own, in any of the practice's spaces. That covers job posts, referrals, interview prep, and approaching members or their staff about roles. Being between roles is welcome. Give your sector, not your availability."
-2. Under "Where it applies", replace "the LinkedIn group" with "The Commons, the community's stream on GitHub Discussions, and any space added to it later".
+2. Under "Where it applies", replace "the LinkedIn group" with "The Commons, the community's place on GitHub Discussions, and any space added to it later".
 3. Under "Reporting", send reports about any editor or co-organizer to the independent conduct reviewer named in EDITORS.md.
 
 **Why.** The code bans pitching yourself for hire, but not recruiting others. A community of planners from competing employers needs that rule written down. Without it, members between roles can't join without being approached, and teams can't share problems without fear of poaching.
@@ -33,6 +33,6 @@ Copy everything between the two lines into the new discussion. The title line is
 
 <!--
 After it closes: edit CODE_OF_CONDUCT.md exactly as items 1–3 say, link the thread in the commit,
-and change /commons/#room-rules (site/src/pages/community.astro) so it
+and change /commons/#room-rules (site/src/pages/commons.astro) so it
 says the rule is now part of the code.
 -->
