@@ -4,9 +4,9 @@ The Commons. R8 is the community release: one stream on GitHub Discussions where
 
 | | |
 |---|---|
-| Date | (filled in at deploy) |
+| Date | 2 November 2026 (merged 02:56 UTC, 3 November) |
 | Worker | `cpp-anacay` |
-| Live version | (filled in at deploy) |
+| Live version | `00ef3b12-dfec-417e-baa5-ce39b1a43874` |
 | Previous version | `938c3000-e940-428b-886e-b13d1b0cd0ce` (R7, 31 Oct) |
 | Indexable | Yes (unchanged) |
 
@@ -103,7 +103,7 @@ The new pages and the ROADMAP.md hand-raise lines change no body-of-knowledge cl
 ## Commits
 
 cpp (`anacay/cpp`), branch `r8-community` from main `f3b9a18`: 61 commits in all: 25 for the items, foundations, follow-ups and integration (R8-00 to R8-18); 9 review fixes (R8-fix-1 to R8-fix-9); 20 for founder decisions and the final review (R8-fix-10: 4, R8-fix-11: 5, R8-fix-12: 3, R8-fix-13: 3, R8-fix-14: 5); and 7 release-record commits, including this one. This record is the last commit on the branch.
-- Merged as PR (filled in at deploy), with merge commit (filled in at deploy).
+- Merged as PR [#30](https://github.com/anacay/cpp/pull/30), with merge commit `4bcfafd` (parents `f3b9a18`, `1f087e3`). The branch was pushed from the bundle tip `1f087e3`, 61 commits, verified before the push.
 
 ## Checks (before deploy)
 
@@ -123,15 +123,16 @@ cpp (`anacay/cpp`), branch `r8-community` from main `f3b9a18`: 61 commits in all
 - **Final review (R8-fix-14).** After the fixes, a grep of the built site found no "Practice Room", "Practice stream", "Sections discussion", "greeter", "we post for you", "posted for you", the short NDA form, `category=commons` or "the The Commons". "Slack" appears only as the economics term ("in slack"). The crawl finds a post link on all 87 pages, and the Playwright walk passes at 390 and 1440 px.
 - **Prefill, as documented.** The links set `category`, `title` and `body`. No GitHub documentation page describes these new-discussion URL parameters. The community requests for them, [#3799](https://github.com/orgs/community/discussions/3799) and [#4571](https://github.com/orgs/community/discussions/4571), are unanswered, and labels can't be set by URL. So the tag goes in the body as a word, and the runbook checks the prefill live on test posts.
 - **Left to the founder:** whether to replace or unlink the home page's cited role description; the program-manager claim on the home card (steering copy, unsourced); proposing in Governance the co-organizer role, private nominations and the LinkedIn-group wording in GOVERNANCE.md, CHARTER.md and CODE_OF_CONDUCT.md.
-- **From main:** (filled in at deploy)
-- **Preview:** (filled in at deploy)
+- **From main:** `npm ci && npm run build` on `4bcfafd`: 87 HTML pages, 86 sitemap URLs, 8,750 internal links and images, 109 reference targets; checks 1–11 and the extras PASS; "all checks passed". The step 4 term scans on the branch matched the runbook: Pass 1 empty; Pass 2 empty on the diff, and only `references/index.html` and `llms-full.txt` (reference 87, "Flex") on the build; hiring words only on the listed rule lines.
+- **GitHub setup (step 5b), before the upload.** Created the category "The Commons"; its URL ends in `/categories/the-commons`. Created the eight tag labels (§1). Posted "Welcome to The Commons" as [#31](https://github.com/anacay/cpp/discussions/31), pinned globally and to The Commons; #1 was unpinned to stay within four pins. §7: threads #2–#16 and #18 are all open, in Sections, with titles matching `threads.json`; #18 is the fungibility thread the Buildings note links. Gate passed: the new-post link opens a blank post in The Commons, and the pin shows on the category page. §4/§5 are left for after launch. All six older categories are kept.
+- **Preview:** version `00ef3b12`, https://00ef3b12-cpp-anacay.martinez-giol.workers.dev. 31 routes returned 200, including the four `/tools/` files, `/guide/concepts/commit-points/` and `/comment.js`; /community/ returned 301 to /commons/. Text checks passed for the step 7 rows: the seven-item nav; the home no-jobs line, "Why now" lead-in, source line and cards, with no "In orbit"; /start/ door times (35 min, 1 h 43 min, 39 min); /commons/ NDA rule word for word, with no Slack; /circle/, /roles/, /working-groups/, /agenda/ (10 tag links), /sharing-safely/ (72 hours), /contributors/ (v7.9), /join/, /glossary/, /summary/, the bylines and /roadmap/. Sitemap 86, feed 16 items and parses. /governance/ body text matches R7; only the shared nav and footer differ. The prefilled links on /, /start/new/, /commons/ and /agenda/, and the one comment.js builds, all use `category=the-commons` and end with the NDA rule. The founder approved the deploy in writing on these checks. The three live test posts from step 7 were not made before the deploy, so the GitHub prefill is still unverified on a real post.
 
 ## Deploy
 
 Merged with a merge commit, rebuilt from main and deployed in two stages, after the preview checks and the founder's approval:
 
 ```
-npx wrangler versions upload                                            # version (filled in at deploy)
+npx wrangler versions upload                                            # version 00ef3b12-dfec-417e-baa5-ce39b1a43874
 npx wrangler versions deploy <id>@100%                                  # after preview checks and approval
 npx wrangler triggers deploy                                            # cpp.anacay.org (custom domain)
 bash scripts/indexnow-submit.sh                                         # from site/, after the live checks
@@ -139,7 +140,14 @@ bash scripts/indexnow-submit.sh                                         # from s
 
 ## Live checks
 
-(filled in at deploy)
+Version `00ef3b12-dfec-417e-baa5-ce39b1a43874` deployed at 100%, and triggers deployed to cpp.anacay.org (custom domain).
+
+- All 25 runbook routes on https://cpp.anacay.org return 200.
+- Sitemap: 86 `<loc>`. No `X-Robots-Tag` on /commons/.
+- "No jobs, no recruiting, no selling" on /: 1. "Post your first question" on /commons/: 1.
+- /community/: HTTP 301, `location: /commons/`.
+- The `/`, `/commons/` and `/circle/` rows repeated on live: "Who's behind this" present, no "In orbit", NDA rule word for word, no Slack, "Founder and steward", "One post or reply a month". /commons/ on live is byte-identical to the preview.
+- IndexNow: HTTP 200, 86 URLs sent.
 
 ## Rollback
 
