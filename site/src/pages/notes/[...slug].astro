@@ -3,6 +3,8 @@ import RfcHint from '../../components/RfcHint.astro';
 import Base from '../../layouts/Base.astro';
 import HelpBuild from '../../components/HelpBuild.astro';
 import WhereStrip from '../../components/WhereStrip.astro';
+import Byline from '../../components/Byline.astro';
+import ChangedBecause from '../../components/ChangedBecause.astro';
 import { guide, renderGuide, seedLinks, KINDS } from '../../lib/guide.mjs';
 import { load, renderInline } from '../../lib/paper.mjs';
 import { guideDates } from '../../lib/dates.mjs';
@@ -18,14 +20,17 @@ const notePages = g.pages.filter((x) => x.kind === 'note');
 const ni = notePages.indexOf(page);
 const prev = notePages[ni - 1] ?? null, next = notePages[ni + 1] ?? null;
 const ctx = load();
+// The title a post about this page starts with, e.g. "Note: …".
+const postName = `Note: ${page.title}`;
 ---
-<Base title={page.title} description={page.short} nav="notes" commentable={{ name: `Guide: ${page.title}` }} article={guideDates(page.file) ? { published: guideDates(page.file).first, modified: guideDates(page.file).last } : undefined} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, ...(guideDates(page.file) ? { datePublished: guideDates(page.file).first, dateModified: guideDates(page.file).last } : {}), isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
+<Base title={page.title} description={page.short} nav="notes" commentable={{ name: postName }} article={guideDates(page.file) ? { published: guideDates(page.file).first, modified: guideDates(page.file).last } : undefined} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, ...(guideDates(page.file) ? { datePublished: guideDates(page.file).first, dateModified: guideDates(page.file).last } : {}), isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
   <div class="wrap wrap--reading">
     <div class="page-head">
       <p class="crumbs"><a href="/notes/">Emerging topics</a></p>
       <p class="draft-tag">Guide · draft for review</p>
       <h1>{page.title}</h1>
       <p class="in-short guide-short"><em set:html={renderInline(page.short, ctx.targets)} /></p>
+      <Byline page={page} />
     </div>
     <RfcHint />
     <WhereStrip page={page} />
@@ -36,7 +41,9 @@ const ctx = load();
     {seeds.length > 0 && (
       <p class="seed-from">Drawn from the seed paper: {seeds.map((s, i) => <>{i > 0 && ', '}{s.url ? <a href={s.url}>{s.label}</a> : s.label}</>)}.</p>
     )}
-    <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a working note: thinking in progress, open for argument." />
+    {page.levels?.includes('supply') && <p class="reading muted">Supply side? Start at <a href="/start/supply/">the supply door</a>.</p>}
+    <ChangedBecause path={page.url} />
+    <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a working note: thinking in progress, open for argument." talk="Talk about this note" postTitle={`${postName} — `} />
     <nav class="pager" aria-label="Reading order">
       {prev && <a class="prev" href={prev.url} rel="prev"><span class="dir">Previous</span><span class="sr-only">:&nbsp;</span><span class="t">{prev.title}</span></a>}
       {next && <a class="next" href={next.url} rel="next"><span class="dir">Next</span><span class="sr-only">:&nbsp;</span><span class="t">{next.title}</span></a>}

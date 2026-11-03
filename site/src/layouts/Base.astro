@@ -3,6 +3,7 @@ import '../styles/site.css';
 import Mark from '../components/Mark.astro';
 import Star from '../components/Star.astro';
 import { load } from '../lib/paper.mjs';
+import { streamPost, tagForPath, stream, NDA_LINE } from '../data/room.mjs';
 
 interface Props { title: string; description: string; nav?: string; bare?: boolean; commentable?: { name: string }; ld?: object; article?: { published?: string; modified?: string } }
 const { title, description, nav = '', commentable, ld, article } = Astro.props;
@@ -23,15 +24,15 @@ const elsewhere = [
   { href: ew.substack, label: 'Writing on Sentient Minds' },
   { href: ew.anacayOrg, label: 'anacay.org' },
 ].filter((x) => x.href);
+// The top nav: as few items as a newcomer needs. "Start here" and the
+// stream come first; everything else is reading, and the footer carries the rest.
 const links = [
+  { key: 'start', href: '/start/', label: 'Start here' },
+  { key: 'room', href: '/commons/', label: 'The Commons', cls: 'nav__room' },
   { key: 'bok', href: '/body-of-knowledge/', label: 'Body of knowledge' },
   { key: 'paper', href: '/paper/', label: 'The paper' },
   { key: 'cases', href: '/cases/', label: 'Case studies' },
-  { key: 'notes', href: '/notes/', label: 'Emerging topics' },
   { key: 'glossary', href: '/glossary/', label: 'Glossary' },
-  { key: 'practice', href: '/charter/', label: 'Charter' },
-  { key: 'related', href: '/related-work/', label: 'Related work' },
-  { key: 'join', href: '/join/', label: 'Join in' },
   { key: 'about', href: '/about/', label: 'About' },
 ];
 ---
@@ -51,7 +52,7 @@ const links = [
 <meta property="og:type" content={article ? 'article' : 'website'}>
 {article?.published && <meta property="article:published_time" content={article.published}>}
 {article?.modified && <meta property="article:modified_time" content={article.modified}>}
-<link rel="alternate" type="application/rss+xml" title={`${site.name}: new versions, cases and notes`} href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title={`${site.name}: new versions, cases, notes, calls and agenda changes`} href="/feed.xml">
 <meta property="og:site_name" content={site.name}>
 <meta property="og:title" content={fullTitle}>
 <meta property="og:description" content={description}>
@@ -74,7 +75,7 @@ const links = [
     <nav class="nav" aria-label="Main">
       <ul>
         {links.map((l) => (
-          <li><a href={l.href} aria-current={path === l.href ? 'page' : undefined} class={nav === l.key && path !== l.href ? 'is-section' : undefined}>{l.label}</a></li>
+          <li><a href={l.href} aria-current={path === l.href ? 'page' : undefined} class={[l.cls, nav === l.key && path !== l.href ? 'is-section' : null].filter(Boolean).join(' ') || undefined}>{l.label}</a></li>
         ))}
       </ul>
     </nav>
@@ -92,23 +93,27 @@ const links = [
         <p>{community.edition}, {community.editionNote}: <em>{manifest.title}</em>, by Guillermo Martinez. Text and figures <a href="/license/">CC BY-SA 4.0</a>; site code MIT.</p>
       </div>
     </div>
+    <p class="colophon__post"><a class="btn btn--quiet" href={streamPost({ tag: tagForPath(path) })}>Post in The Commons</a> <span class="muted">The one place to ask, answer and share. <a href="/join/">New to GitHub?</a></span></p>
     <nav aria-label="Site">
       <ul>
-        <li><a href="/about/#behind">Who’s behind this</a></li>
+        <li><a href="/commons/">The Commons</a></li>
+        <li><a href="/join/">Join in</a></li>
+        <li><a href="/agenda/">Open problems</a></li>
+        <li><a href="/sharing-safely/">Sharing safely</a></li>
+        <li><a href="/notes/">Emerging topics</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/related-work/">Related work</a></li>
+        <li><a href="/contributors/">Contributors</a></li>
         <li><a href="/charter/">Charter</a></li>
         <li><a href="/how-it-grows/">How it grows</a></li>
         <li><a href="/governance/">Governance</a></li>
         <li><a href="/roadmap/">Roadmap</a></li>
         <li><a href="/code-of-conduct/">Code of conduct</a></li>
-        <li><a href="/paper/">Seed paper</a></li>
-        <li><a href="/cases/">Case studies</a></li>
-        <li><a href="/notes/">Emerging topics</a></li>
         <li><a href="/changes/">What changed</a></li>
         <li><a href="/downloads/">Downloads</a></li>
         <li><a href="/license/">Licence</a></li>
         <li><a href="/privacy/">Privacy</a></li>
         <li><a href="/support/">Support</a></li>
-        <li><a href="/about/">About</a></li>
       </ul>
     </nav>
     {elsewhere.length > 0 && <p class="elsewhere">Elsewhere: {elsewhere.map((x, i) => <>{i > 0 && ' · '}<a href={x.href}>{x.label}</a></>)}</p>}
@@ -116,7 +121,7 @@ const links = [
   </div>
 </footer>
 {commentable && (
-  <script is:inline src="/comment.js" defer data-repo={community.repo} data-open={community.open ? '1' : '0'} data-contact={site.contact} data-site={site.url} data-page={commentable.name}></script>
+  <script is:inline src="/comment.js" defer data-repo={community.repo} data-open={community.open ? '1' : '0'} data-contact={site.contact} data-site={site.url} data-page={commentable.name} data-tag={tagForPath(path) ?? undefined} data-category={stream.slug} data-nda={NDA_LINE}></script>
 )}
 </body>
 </html>

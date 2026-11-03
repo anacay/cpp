@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import HelpBuild from '../../components/HelpBuild.astro';
 import WhereStrip from '../../components/WhereStrip.astro';
 import CaseBar from '../../components/CaseBar.astro';
+import ChangedBecause from '../../components/ChangedBecause.astro';
 import { guide, renderGuide, seedLinks, neighboursOf, KINDS } from '../../lib/guide.mjs';
 import { load, renderInline } from '../../lib/paper.mjs';
 import { guideDates } from '../../lib/dates.mjs';
@@ -20,8 +21,10 @@ const ci = casePages.indexOf(page);
 const prev = casePages[ci - 1] ?? null, next = casePages[ci + 1] ?? null;
 const c = load().config.community;
 const ctx = load();
+// The title a post about this page starts with, e.g. "Case: …".
+const postName = `Case: ${page.title.replace(/^Case \d+:\s*/, '').replace(/:\s*/, ', ')}`;
 ---
-<Base title={page.title} description={page.short} nav="cases" commentable={{ name: `Guide: ${page.title}` }} article={guideDates(page.file) ? { published: guideDates(page.file).first, modified: guideDates(page.file).last } : undefined} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, ...(guideDates(page.file) ? { datePublished: guideDates(page.file).first, dateModified: guideDates(page.file).last } : {}), isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
+<Base title={page.title} description={page.short} nav="cases" commentable={{ name: postName }} article={guideDates(page.file) ? { published: guideDates(page.file).first, modified: guideDates(page.file).last } : undefined} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, ...(guideDates(page.file) ? { datePublished: guideDates(page.file).first, dateModified: guideDates(page.file).last } : {}), isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
   <div class="wrap wrap--reading">
     <div class="page-head">
       <p class="crumbs"><a href="/cases/">Case studies</a></p>
@@ -39,7 +42,8 @@ const ctx = load();
     {seeds.length > 0 && (
       <p class="seed-from">Drawn from the seed paper: {seeds.map((s, i) => <>{i > 0 && ', '}{s.url ? <a href={s.url}>{s.label}</a> : s.label}</>)}.</p>
     )}
-    <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a draft of the guide to the body of knowledge." />
+    <ChangedBecause path={page.url} />
+    <HelpBuild file={`body-of-knowledge/guide/${page.file}`} name={`Guide: ${page.title}`} what="This page is a draft of the guide to the body of knowledge." talk="Talk about this case" postTitle={`${postName} — `} />
     <nav class="pager" aria-label="Reading order">
       {prev && <a class="prev" href={prev.url} rel="prev"><span class="dir">Previous</span><span class="sr-only">:&nbsp;</span><span class="t">{prev.title}</span></a>}
       {next && <a class="next" href={next.url} rel="next"><span class="dir">Next</span><span class="sr-only">:&nbsp;</span><span class="t">{next.title}</span></a>}

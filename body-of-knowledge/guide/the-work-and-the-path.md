@@ -74,7 +74,7 @@ Levels describe scope, not worth. A planner two years in who remembers what was 
 
 One exercise per level, all on the seed paper's worked example: Product A's launch on Service X (Section 7 and Appendix A). All numbers are illustrative. [argued]
 
-- **Learning.** Split A's bill miss into volume, coefficient and rate, and say who owns each term ([the coefficient](concept-the-coefficient.md)).
+- **Learning.** Split A's bill miss into volume, coefficient and rate, and say who owns each term ([the coefficient](concept-the-coefficient.md)). Answer key: the [Learning walk-through](/tools/#learning-walkthrough).
 - **Practicing.** Fill the [worksheet](/worksheet/) for A's launch: find each layer's commit point, and what the declaration knows by then.
 - **Leading.** Set the shortage-to-idle ratios for machines and for power, and write the re-cut order for a 10% envelope cut ([buffers and reserves](concept-buffers-and-reserves.md), [annual](stage-annual.md)).
 - **Capital.** Price the roughly 1.0 NMU of spare the method holds (an [NMU](/glossary/#term-nmu-normalized-machine-unit), or normalized machine unit, is the example's invented unit: one standard machine), and decide who carries it at a 40,000 landing ([the map](the-map.md), [commit points](concept-commit-points.md)).

@@ -1,0 +1,136 @@
+---
+// /agenda/: every open problem the body of knowledge names, in ten
+// workstreams. Each item gives the problem, its source, its thread, a status
+// and a good-first flag. Items and statuses live in site/src/data/agenda.mjs;
+// tags and working groups in room.mjs. Statuses are this page's own
+// record and never claim anything about live GitHub state.
+import Base from '../layouts/Base.astro';
+import { workstreams, allItems, STATUS, statusLine } from '../data/agenda.mjs';
+import { stream, tags, tagUrl, workingGroups, streamPost } from '../data/room.mjs';
+import { community } from '../lib/community.mjs';
+const c = community();
+const thread = (n) => `${c.repo}/discussions/${n}`;
+const tag = (id) => {
+  if (!tags.some((t) => t.tag === id)) throw new Error(`agenda: unknown tag ${id}`);
+  return { name: `#${id}`, url: tagUrl(id) };
+};
+// Questions a chartered or planned working group covers, e.g. Q2 → WG1.
+const wgFor = (i) => workingGroups.find((w) => i.label && w.questions.includes(i.label));
+const items = allItems();
+// One door per item without a thread: a new post in The Commons, prefilled
+// with the problem, its source link and the workstream's tag.
+// The post title: the item's question sentence where it has one, else its
+// first sentence, cut at a word boundary.
+const sentences = (s) => s.split(/(?<=[.?])\s/);
+const lead = (s) => [...sentences(s)].reverse().find((x) => x.endsWith('?')) ?? sentences(s)[0];
+const trim = (s, n = 110) => (s.length <= n ? s : `${s.slice(0, n).replace(/\s+\S*$/, '')}…`);
+const door = (i, w) => streamPost({ title: trim(`${i.label ? `${i.label}: ` : ''}${lead(i.problem)}`), text: i.problem, tag: i.tag ?? w.tag, from: { name: i.sourceLabel, url: i.source } });
+const goodFirst = items.filter((i) => i.goodFirst);
+---
+<Base title="Agenda" description={`The open problems The Commons works on: ${items.length} problems in ${workstreams.length} workstreams, each with its source, its thread and a status.`} nav="room">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">The Commons</p>
+      <h1>Open problems</h1>
+      <p class="lede">Pick one. Reply in its thread, or ask in <a href={stream.url}>The Commons</a>.</p>
+      <p>These are the problems the body of knowledge names but cannot answer yet. They come from the open questions, the limits page, the cases and the working notes. They are grouped into {workstreams.length} workstreams, each with a tag in <a href="/commons/">The Commons</a>.</p>
+    </div>
+
+    <section class="reading" aria-labelledby="status-h">
+      <h2 id="status-h" class="group-title">What a status means</h2>
+      <dl class="legend">
+        {Object.entries(STATUS).map(([k, s]) => <div><dt><span class={`st st--${k}`}>{s.label}</span></dt><dd>{s.what}</dd></div>)}
+      </dl>
+      <p class="note">A status is this page’s own record. It does not mirror GitHub, and this page does not read GitHub. A thread may already hold replies, so read it before you post. Every problem starts as open.</p>
+    </section>
+
+    <nav class="toc reading" aria-labelledby="ws-toc">
+      <h2 id="ws-toc">Workstreams</h2>
+      <ol>{workstreams.map((w) => <li><a href={`#${w.id}`}>{w.name}</a></li>)}</ol>
+    </nav>
+
+    <section class="reading" aria-labelledby="good-first">
+      <h2 id="good-first">Good first problems</h2>
+      <p class="muted">Each takes an hour or two, and needs no confidential data.</p>
+      <ul class="gf">
+        {goodFirst.map((i) => <li><a href={`#${i.id}`}>{i.label && `${i.label}. `}{i.problem.split(/(?<=[.?])\s/)[0]}</a></li>)}
+      </ul>
+    </section>
+
+    <div data-outbound>
+      {workstreams.map((w, n) => {
+        const tg = tag(w.tag);
+        return (
+          <section class="ws reading" id={w.id} aria-labelledby={`${w.id}-h`}>
+            <p class="ws__n">Workstream {n + 1}</p>
+            <h2 id={`${w.id}-h`}>{w.name}</h2>
+            <p>{w.why}</p>
+            <p class="ws__ch">Tag in The Commons: <a href={tg.url}><strong>{tg.name}</strong></a>.</p>
+            {w.note && <p class="muted">{w.note}</p>}
+            <ul class="items">
+              {w.items.map((i) => {
+                const wg = wgFor(i);
+                const own = i.tag && tag(i.tag);
+                return (
+                  <li id={i.id}>
+                    <p class="items__problem">{i.label && <strong>{i.label}. </strong>}{i.problem}</p>
+                    <p class="items__meta">
+                      <span class={`st st--${i.status}`}>{statusLine(i)}</span>
+                      {i.goodFirst && <span class="tag">good first</span>}
+                    </p>
+                    <p class="items__links">
+                      Source: <a href={i.source}>{i.sourceLabel}</a>
+                      {' · '}{i.thread ? <>Thread: <a href={thread(i.thread)}>Discussion #{i.thread}</a></> : <a href={door(i, w)}>Discuss in The Commons</a>}
+                      {own && <>{' · '}Tag: <a href={own.url}>{own.name}</a></>}
+                    </p>
+                    {wg && (wg.status === 'next'
+                      ? <p class="items__wg">Later, a topic for <a href="/working-groups/">{wg.id.toUpperCase()}, {wg.name}</a>.</p>
+                      : <p class="items__wg">A topic for <a href="/working-groups/">{wg.id.toUpperCase()}, {wg.name}</a>, once The Commons asks for a group.</p>)}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        );
+      })}
+    </div>
+
+    <section class="prose reading" aria-labelledby="how-h">
+      <h2 id="how-h">How to pick one up</h2>
+      <ol>
+        <li><strong>Read the source first.</strong> Each problem links the passage that names it.</li>
+        <li><strong>Reply in its thread.</strong> No thread yet? Use its “Discuss in The Commons” link: the post opens with the problem, its source and its tag.</li>
+        <li><strong>Share safely.</strong> Shapes, indexes and bands, never real figures or names. See <a href="/sharing-safely/">Sharing safely</a>.</li>
+        <li><strong>Say you are working on it.</strong> Say so in the thread. The status changes to “Being worked”, with the date.</li>
+      </ol>
+      <p>Status changes appear in the site’s <a href="/feed.xml">feed</a>. Later, a problem that outgrows its thread can become a <a href="/working-groups/">working group</a>. New to all of this? <a href="/start/">Start here</a> picks three problems for each kind of reader.</p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .legend { margin: 0 0 1rem; display: grid; gap: 0.5rem; }
+  .legend > div { display: grid; grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr); gap: 0.2rem 1rem; align-items: baseline; }
+  .legend dd { margin: 0; color: var(--ink-muted); line-height: 1.5; }
+  @media (max-width: 34em) { .legend > div { grid-template-columns: 1fr; } }
+  #good-first { font-size: 1.35rem; margin: 2rem 0 0.35rem; }
+  .gf { margin: 0.75rem 0 1rem; padding-left: 1.2rem; display: grid; gap: 0.35rem; }
+  .gf li::marker { color: var(--gold); }
+  .ws { border-top: 1px solid var(--water-line); padding-top: 1.5rem; margin-top: 2.75rem; scroll-margin-top: 1rem; }
+  .ws h2 { margin: 0.2rem 0 0.6rem; }
+  .ws__n { margin: 0; font-size: 0.8125rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+  .ws__ch { font-size: 0.9375rem; color: var(--ink-muted); }
+  .ws__ch strong { color: var(--ink); font-weight: 600; }
+  .items { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: 1rem; }
+  .items li { padding: 0.15rem 0 0.15rem 1rem; border-left: 2px solid var(--water-line); scroll-margin-top: 1rem; }
+  .items li:target { border-left-color: var(--gold); }
+  .items p { margin: 0; line-height: 1.55; }
+  .items__meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem !important; }
+  .items__links, .items__wg { font-size: 0.875rem; color: var(--ink-muted); margin-top: 0.3rem !important; overflow-wrap: anywhere; }
+  .st, .tag { display: inline-block; font-size: 0.8125rem; line-height: 1.6; padding: 0 0.55rem; border-radius: 999px; border: 1px solid var(--water-line); color: var(--ink); white-space: nowrap; }
+  .st--open { border-color: var(--ink-muted); }
+  .st--worked { border-color: var(--viz-2); color: #8fd3e4; }
+  .st--proposal { border-color: var(--gold); color: var(--gold-soft); }
+  .st--decided { background: var(--water-line); }
+  .tag { border-color: var(--gold); color: var(--gold-soft); }
+</style>

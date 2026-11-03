@@ -7,6 +7,8 @@ cadence: all
 altitude: all
 levels: learning, practicing, leading
 seed: 5.4, 6, 8
+author: Guillermo Martinez
+reviewers:
 ---
 
 *Popcorn Pajamas is a fictional company. Any resemblance to real companies reflects problems the industry shares.*

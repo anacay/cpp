@@ -7,6 +7,8 @@ cadence: annual
 altitude: envelope, region
 levels: leading, capital, supply
 seed: 6.2, 8.2, 8.3, 13
+author: Guillermo Martinez
+reviewers:
 ---
 
 *Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when buildings stop being interchangeable, and what replaces it? Related: Section 6.2, Section 8.2, Section 8.3. Discussion: [#18](https://github.com/anacay/cpp/discussions/18).*

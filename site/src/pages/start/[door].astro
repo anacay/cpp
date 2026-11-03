@@ -1,0 +1,134 @@
+---
+// /start/<door>/: one door page per kind of reader. The path, the moment it
+// clicks, three open problems and a first contribution come from
+// site/src/data/start-paths.mjs and agenda.mjs; the sections that only one
+// door needs (the SRE checklist, the FinOps pointer) are below, by door id.
+import Base from '../../layouts/Base.astro';
+import { doors, doorPages, sreChecklist, DOOR_TAGS } from '../../data/start-paths.mjs';
+import { agendaItem } from '../../data/agenda.mjs';
+import { streamPost, firstQuestion } from '../../data/room.mjs';
+import { community } from '../../lib/community.mjs';
+// The post opens with a first-person starter for the newcomer to edit.
+const firstPost = (d) => streamPost({ title: d.first.title, text: d.first.prompt, tag: DOOR_TAGS[d.id], starter: true });
+export function getStaticPaths() {
+  return doorPages().map((d) => ({ params: { door: d.id }, props: { d } }));
+}
+const { d } = Astro.props;
+const c = community();
+const thread = (n) => `${c.repo}/discussions/${n}`;
+const probs = d.problems.map(agendaItem);
+const others = doors.filter((x) => x.id !== d.id);
+const desc = {
+  new: 'New to capacity planning? A 35-minute path through the body of knowledge, the moment it clicks, three open problems and a first contribution.',
+  sre: 'Capacity planning for site reliability engineers: where autoscaling stops and planning starts, a ten-line checklist, a 20-minute path and open problems.',
+  finance: 'Capacity planning for finance and FinOps: three prices, the variance split, the planning and finance seam, and the open problems on rates and ratios.',
+  supply: 'Capacity planning for supply partners: supply layers, commit points, what planning owes supply, and the open problems on lead times and power.',
+}[d.id];
+---
+<Base title={`Start here: ${d.name}`} description={desc ?? `${d.name}: where to start in the Capacity Planning Practice.`} nav="start">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow"><a href="/start/">Start here</a></p>
+      <h1>{d.name}</h1>
+      <p class="lede">{d.who}</p>
+      <p class="door__time">{d.time} · {d.steps.length} readings</p>
+    </div>
+
+    {d.id === 'new' && (
+      <section class="prose reading" aria-labelledby="new-h">
+        <h2 id="new-h">No question is too basic</h2>
+        <p>Everyone here was new once. The guide puts it plainly: a planner two years in who remembers what was confusing is as valuable as one with twenty. See <a href="/guide/the-work-and-the-path/#the-path">The path</a>.</p>
+        <p>Ask it in <a href="/commons/">The Commons</a>, the one place on GitHub Discussions. Tag it #first-question. <a href={firstQuestion()}>Post your first question</a>. New to GitHub? See <a href="/join/">Join in</a>.</p>
+      </section>
+    )}
+
+    {d.id === 'sre' && (
+      <section class="prose reading" aria-labelledby="autoscale-h">
+        <h2 id="autoscale-h">Autoscaling is not a plan</h2>
+        <p>Autoscaling works on layers that arrive faster than demand firms up. Where a layer takes longer, someone has to decide before demand is firm. The guide calls that date a <a href="/guide/concepts/commit-points/">commit point</a>. See <a href="/guide/settings/#scale-it-to-the-risk">Scale it to the risk</a>.</p>
+        <p>In a single cloud, the slow layer is often the commitment and its renewal date. A discount isn’t capacity: some reservations are a billing discount only. See <a href="/guide/settings/#mid-sized-companies">Mid-sized companies</a>.</p>
+        <p>Even guaranteed cloud capacity has a lead time. One provider accepts a future-dated reservation 5 to 120 days ahead, and may decline it. See <a href="/guide/limits/#where-the-ideas-break">Where the ideas break</a>.</p>
+        <p>Scale the effort to the risk. For small workloads, the 2026 SRE chapter finds simple overprovisioning often the best strategy. Stop where the next step costs more than it saves.</p>
+        <p class="muted">A field view of the same problem: the SREcon24 talk on cloud capacity constraints, <a href="/references/#ref-27">reference [27]</a>.</p>
+      </section>
+    )}
+
+    {d.id === 'sre' && (
+      <section class="reading" aria-labelledby="checklist-h">
+        <h2 id="checklist-h">Ten lines for this quarter</h2>
+        <p class="muted">A checklist drawn from the guide. It is a starting point, not a standard. Each line links to where the guide covers it.</p>
+        <ol class="check">
+          {sreChecklist.map(([line, href]) => <li><a href={href}>{line}</a></li>)}
+        </ol>
+      </section>
+    )}
+
+    {d.id === 'finance' && (
+      <section class="prose reading" aria-labelledby="fin-h">
+        <h2 id="fin-h">Why a finance reader should care</h2>
+        <p>Planning decides what gets bought, and when. Finance carries the rate, the depreciation and the cash. Each step below says what it changes for you.</p>
+        <p>Already in FinOps? FinOps looks at capacity from the cost side. This practice looks at planning demand and supply. <a href="/related-work/#cpp-and-finops">Related work</a> sets out how the two fit.</p>
+      </section>
+    )}
+
+    {d.id === 'supply' && (
+      <section class="prose reading" aria-labelledby="sup-h">
+        <h2 id="sup-h">The least documented side</h2>
+        <p>Supply is where public evidence is thinnest. Order-to-dock times, turn-up durations and hardware contract terms were not found in public sources. Your experience is what the body of knowledge most lacks.</p>
+        <p>Before you share anything, read <a href="/sharing-safely/">Sharing safely</a>. Band lead times, date them, and leave out vendor, site and tenant names.</p>
+        <p>Prefer writing? Every route here is written, and any language is fine. Ask for a <a href="/sharing-safely/#a-private-pre-check">private pre-check</a> before you post.</p>
+      </section>
+    )}
+
+    <section class="reading" aria-labelledby="path-h">
+      <h2 id="path-h">Read these in order</h2>
+      <ol class="chapters chapters--path">
+        {d.steps.map(([label, href, min, why], i) => <li><a href={href}><span class="n" aria-hidden="true">{i + 1}</span><span class="sr-only">{i + 1}.&nbsp;</span><span class="ct">{label}</span><span class="sr-only">:&nbsp;</span><span class="cs">{why} <span class="path-t">{min} min</span></span></a></li>)}
+      </ol>
+      {d.id === 'new' && <p class="muted">Answer key for step 8: <a href="/tools/#learning-walkthrough">the Learning walk-through</a>.</p>}
+      <p class="note"><strong>Where it clicks.</strong> {d.aha} <a href={d.ahaSource[1]}>{d.ahaSource[0]}</a></p>
+    </section>
+
+    <section class="reading" aria-labelledby="probs-h">
+      <h2 id="probs-h">Three open problems</h2>
+      <ul class="probs">
+        {probs.map((p) => (
+          <li>
+            <p>{p.label && <strong>{p.label}. </strong>}{p.problem}</p>
+            <p class="probs__act"><a href={`/agenda/#${p.id}`}>On the agenda</a>{p.thread && <> · <a href={thread(p.thread)}>Discussion #{p.thread}</a></>}{p.goodFirst && <> · <span class="tag">good first</span></>}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="prose reading" aria-labelledby="first-h">
+      <h2 id="first-h">One first contribution</h2>
+      <p>{d.first.text} <a href={`/agenda/#${d.first.item}`}>Where it goes</a>. <a href={firstPost(d)}>Post it in The Commons</a>.</p>
+      <p>New to GitHub? A free account takes two minutes; see <a href="/join/">Join in</a>. Unsure a post is safe? Ask for a <a href="/sharing-safely/#a-private-pre-check">private pre-check</a> first.</p>
+    </section>
+
+    <nav class="reading other" aria-labelledby="other-h">
+      <h2 id="other-h" class="group-title">Other doors</h2>
+      <ul class="chips">
+        {others.map((x) => <li><a href={x.page ? `/start/${x.id}/` : `/start/#${x.id}`}>{x.name}</a></li>)}
+      </ul>
+      <p class="muted">Every open problem is on <a href="/agenda/">the agenda</a>. To talk them through with other planners, post in <a href="/commons/">The Commons</a>.</p>
+    </nav>
+  </div>
+</Base>
+
+<style>
+  .door__time { margin: 0.5rem 0 0; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+  section { margin-top: 2.5rem; }
+  section h2 { margin-top: 0; }
+  .check { margin: 1rem 0 0; padding-left: 1.6rem; display: grid; gap: 0.45rem; }
+  .check li { line-height: 1.5; }
+  .check li::marker { color: var(--gold); font-family: var(--serif); }
+  .probs { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+  .probs li { padding-left: 1rem; border-left: 2px solid var(--water-line); }
+  .probs p { margin: 0; line-height: 1.55; }
+  .probs__act { font-size: 0.875rem; color: var(--ink-muted); margin-top: 0.2rem !important; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0 0.5rem; border: 1px solid var(--gold); border-radius: 999px; color: var(--gold-soft); }
+  .other { margin-top: 3rem; }
+  .other .chips { margin-bottom: 1rem; }
+</style>

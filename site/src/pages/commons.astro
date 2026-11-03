@@ -1,0 +1,86 @@
+---
+// /commons/: The Commons. One place to interact, The Commons on GitHub
+// Discussions, until activity there asks for more. The Commons, its tags and
+// the people come from site/src/data/room.mjs. Anything that states the
+// no-hiring rule sits inside [data-rule] (check 9 skips it there only).
+import Base from '../layouts/Base.astro';
+import RoomRule from '../components/RoomRule.astro';
+import { room, stream, tags, tagUrl, later, circle, consented, person, firstQuestion } from '../data/room.mjs';
+const mail = `mailto:${room.contact}`;
+const coOrganizers = consented(circle.coOrganizers);
+const founder = person('founder');
+const list = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}` : xs[0]);
+---
+<Base title={room.name} description="The Commons is where capacity planners meet, ask, argue and share, in one place on GitHub Discussions. The best threads become CPP pages, credited by name." nav="room">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">The Commons</p>
+      <h1>{room.name}</h1>
+      <p class="lede">Where capacity planners meet, partner, argue and get inspired, in one place on GitHub Discussions. Ask a question, share an observation or a link, or ask “how do you handle X?”</p>
+      <p class="hero__actions"><a class="btn" href={firstQuestion()}>Post your first question</a> <a class="btn btn--quiet" href={stream.url}>Read The Commons</a></p>
+      <p class="muted">New to GitHub? A free account takes two minutes. See <a href="/join/">Join in</a>.</p>
+    </div>
+
+    <section class="prose reading" aria-labelledby="why">
+      <h2 id="why">Why The Commons</h2>
+      <p>A commons is a shared resource that a community governs together, and sharing a scarce fleet fairly is the planner’s daily problem.</p>
+      <p>Elinor Ostrom won the 2009 prize in economic sciences in memory of Alfred Nobel. Her work showed that communities can govern a commons well, with clear rules made by the people who use it.</p>
+      <p>That is the idea behind “by the community, for the community”, and this is where planners meet, argue, partner and get inspired.</p>
+      <ol class="refs">
+        <li>Nobel Prize Outreach, <a href="https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/facts/">Elinor Ostrom, facts</a>. The 2009 Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel, shared with Oliver E. Williamson. Ostrom’s half was “for her analysis of economic governance, especially the commons”.</li>
+        <li>Elinor Ostrom, <em>Governing the Commons: The Evolution of Institutions for Collective Action</em>, Cambridge University Press, 1990. <a href="https://www.beyondintractability.org/bksum/ostrom-governing">A summary</a>.</li>
+      </ol>
+    </section>
+
+    <section class="prose reading" aria-labelledby="how">
+      <h2 id="how">How it works</h2>
+      <ul>
+        <li><strong>One place.</strong> Everyone sees every post, in the “{stream.name}” category on GitHub Discussions. The open-question threads it links to sit in the same Discussions list.</li>
+        <li><strong>Short posts.</strong> A question, an observation, a link, or a problem you’re stuck on. A sentence is enough.</li>
+        <li><strong>Replies in threads.</strong> Answer under the post, so the conversation stays together.</li>
+        <li><strong>Reactions count.</strong> A thumbs-up says “me too” or “this helped”.</li>
+      </ul>
+    </section>
+
+    <section class="prose reading" aria-labelledby="room-rules">
+      <h2 id="room-rules">The rules</h2>
+      <div data-rule>
+        <p class="note"><strong>Don’t break your NDA.</strong> Don’t share your company’s prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game.</p>
+        <RoomRule />
+        <p>A “No recruiting” rule for the Code of Conduct is being proposed, with an open period. Until it is adopted, the rules on this page apply here.</p>
+      </div>
+      <p>Unsure whether something is safe? Read <a href="/sharing-safely/">Sharing safely</a>, or ask for a private pre-check at <a href={mail}>{room.contact}</a> before you post. Everyone follows the <a href="/code-of-conduct/">Code of Conduct</a>.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="tags">
+      <h2 id="tags">Tags</h2>
+      <p>There are no channels. Tags sort the posts instead, and they grow from use. Write a tag as a word in your post, such as #supply. The founder or a co-organizer adds the matching label, so the post shows up under its tag. Start with these:</p>
+      <ul class="pr-tags">
+        {tags.map((t) => <li><a href={tagUrl(t.tag)}>#{t.tag}</a>: {t.what}</li>)}
+      </ul>
+      <p>When a new tag keeps coming up, it joins this list.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="published">
+      <h2 id="published">The best threads become CPP</h2>
+      <p>A thread that settles something can become a page on this site: a term, a source, a case or a correction. It is credited by name, and only with your consent. A handle is fine.</p>
+      <p>Everything else on this site is for reading: the <a href="/body-of-knowledge/">body of knowledge</a>, the <a href="/agenda/">open problems</a> and the <a href="/tools/">tools</a>. The conversation happens in The Commons.</p>
+      <p class="muted">Later, when The Commons asks for it: {list(later)}. Each starts only when a topic outgrows its threads. See <a href="/working-groups/">working groups</a>.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="who">
+      <h2 id="who">Who runs this</h2>
+      {founder && <p>{founder.name} founded CPP and stewards it. He is its editor today.</p>}
+      <p>Anacay LLC supports the practice, and says so. See <a href="/support/">Support</a>.</p>
+      <p><strong>By the community, for the community.</strong> What we make belongs to the community, credited by name.</p>
+      <p>Leadership grows from members. Roles open as people step forward, and governance widens as the community grows. <a href="/governance/">Governance</a> and <a href="/how-it-grows/">How it grows</a> set out how.</p>
+      <p>Private messages to <a href={mail}>{room.contact}</a> are read by the founder.</p>
+      <p class="pr-who">Co-organizers: {coOrganizers.length ? coOrganizers.map((p) => p.name).join(', ') + '.' : 'Open. A volunteer role for anyone who wants to help The Commons along.'} See <a href="/roles/">Roles</a> and <a href="/circle/">The founding circle</a>.</p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .pr-tags { list-style: none; padding-left: 0; }
+  .pr-tags li { padding: 0.25rem 0; }
+</style>

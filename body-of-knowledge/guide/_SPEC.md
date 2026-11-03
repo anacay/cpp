@@ -52,8 +52,12 @@ cadence: annual        # one or more of: annual, quarterly, monthly, weekly, pos
 altitude: envelope, region, portfolio   # one or more of: envelope, region, portfolio, launch, unit, all
 levels: leading, capital, supply        # one or more of: learning, practicing, leading, capital, supply, all
 seed: 9.1, 6.2, 6.5, Appendix B         # seed-paper sections this page draws from
+author: Guillermo Martinez              # optional; comma-separated; empty = no byline
+reviewers: a-handle, Another Name       # optional; comma-separated; empty = no reviewers line
 ---
 ```
+
+`author` and `reviewers` render as a byline on case and note pages. Name a person only with their agreement; a handle is fine. Leave both empty rather than guess.
 
 Then the body. No H1 (the title is the H1). Use `##` for sections, `###` sparingly.
 

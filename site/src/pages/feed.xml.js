@@ -1,9 +1,17 @@
-// RSS feed: paper versions (from the reader-facing history) and new case
-// studies and working notes (dated from git). One feed, newest first.
+// RSS feed: paper versions (from the reader-facing history), new case
+// studies and working notes (dated from git), The Commons calls and agenda
+// status changes. One feed, newest first.
+//  - Calls appear only once `call.status` in room.mjs is 'confirmed' or 'held',
+//    so no date is ever announced here before the circle confirms it.
+//  - Agenda items appear only from their dated `history` in agenda.mjs; the
+//    starting status ('open') is not a change and has no item.
+// Guids are built from ids and dates, never from titles, so they stay stable.
 import { load } from '../lib/paper.mjs';
 import { guide } from '../lib/guide.mjs';
 import { guideDates } from '../lib/dates.mjs';
 import versions from '../data/versions.json';
+import { call } from '../data/room.mjs';
+import { agendaChanges, STATUS } from '../data/agenda.mjs';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -35,6 +43,39 @@ export function GET() {
       description: p.short,
     });
   }
+  if ((call.status === 'confirmed' || call.status === 'held') && call.date) {
+    const day = new Date(`${call.date}T${call.startUtc}:00Z`);
+    const label = day.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+    items.push({
+      title: `The Commons open call, ${label}`,
+      link: new URL('/commons/', site.url).href,
+      guid: `${site.url}/commons/#call-${call.date}`,
+      date: day,
+      description: `An open call, ${call.startUtc}–${call.endUtc} UTC. The agenda is in The Commons.`,
+    });
+    if (call.status === 'held' && call.notes) {
+      items.push({
+        title: `Notes from the open call of ${label}`,
+        link: call.notes,
+        guid: `${site.url}/commons/#call-${call.date}-notes`,
+        date: day,
+        description: 'Notes from The Commons open call, without names.',
+      });
+    }
+  }
+  for (const ch of agendaChanges()) {
+    const d = new Date(`${ch.date} 12:00 UTC`);
+    if (Number.isNaN(d.getTime())) continue;
+    const i = ch.item;
+    const what = i.label ? `${i.label}, ${i.workstream.name}` : i.workstream.name;
+    items.push({
+      title: `Agenda: ${STATUS[ch.status]?.label ?? ch.status}. ${what}`,
+      link: new URL(`/agenda/#${i.id}`, site.url).href,
+      guid: `${site.url}/agenda/#${i.id}@${ch.date}-${ch.status}`,
+      date: d,
+      description: ch.note ? `${i.problem} ${ch.note}` : i.problem,
+    });
+  }
   items.sort((a, b) => b.date - a.date);
   const body = items.slice(0, 30).map((i) => `    <item>
       <title>${esc(i.title)}</title>
@@ -49,7 +90,7 @@ export function GET() {
     <title>${esc(site.name)}</title>
     <link>${site.url}</link>
     <atom:link href="${new URL('/feed.xml', site.url).href}" rel="self" type="application/rss+xml"/>
-    <description>New versions of the seed paper, new case studies and new working notes from the open body of knowledge for capacity planning.</description>
+    <description>New versions of the seed paper, new case studies and working notes, open calls (later) and changes to the open-problems agenda, from the open body of knowledge for capacity planning.</description>
     <language>en</language>
 ${body}
   </channel>

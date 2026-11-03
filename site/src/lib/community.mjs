@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import MarkdownIt from 'markdown-it';
 import { load, slugify } from './paper.mjs';
+import { stream } from '../data/room.mjs';
 
 const root = process.cwd();
 
@@ -41,11 +42,13 @@ export function links(p, override = {}) {
   const c = community();
   const file = override.file ?? bokPath(p);
   const name = override.name ?? pageName(p);
-  const q = (o) => Object.entries(o).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
+  const q = (o) => Object.entries(o).filter(([, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
   return {
     open: c.open,
-    discuss: `${c.repo}/discussions/new?${q({ category: 'sections', title: `${name}: ` })}`,
-    threads: `${c.repo}/discussions/categories/sections?${q({ discussions_q: `"${name}"` })}`,
+    // New posts go to The Commons. Search covers every category,
+    // so threads from the retired "sections" category still turn up.
+    discuss: `${c.repo}/discussions/new?${q({ category: stream.slug, title: `${name}: `, body: p?.url ? `From [${name}](${load().config.site.url}${p.url})\n\n**Your post:**\n` : '' })}`,
+    threads: `${c.repo}/discussions?${q({ discussions_q: `"${name}"` })}`,
     edit: file ? `${c.repo}/edit/${c.branch}/${file}` : null,
     file,
     name,
@@ -63,20 +66,27 @@ export const DOCS = {
   'ROADMAP.md': '/roadmap/',
   'CONTRIBUTING.md': '/contributing/',
   'CODE_OF_CONDUCT.md': '/code-of-conduct/',
+  'SHARING_SAFELY.md': '/sharing-safely/',
+  'CONTRIBUTORS.md': '/contributors/',
 };
 
 const md = new MarkdownIt({ html: false, linkify: false, typographer: false });
 
 export function foundingDoc(file) {
   const c = community();
-  const src = fs.readFileSync(path.resolve(root, c.foundingDir, file), 'utf8');
+  // HTML comments are notes for editors in the repository, never page text.
+  const src = fs.readFileSync(path.resolve(root, c.foundingDir, file), 'utf8').replace(/<!--[\s\S]*?-->\n?/g, '');
   const lines = src.split('\n');
   const h1 = lines.findIndex((l) => /^# /.test(l));
   const title = h1 >= 0 ? lines[h1].slice(2).trim() : file;
   const body = h1 >= 0 ? lines.slice(h1 + 1).join('\n') : src;
   let html = md.render(body);
   // Links: sibling docs → site pages; other repo files → GitHub.
+  // Links to the site's own pages (written in full so they also work on
+  // GitHub) become bare paths, so they stay on-site and check 5 tests them.
+  const own = load().config.site.url.replace(/\/$/, '');
   html = html.replace(/href="([^"#]+?)(#[^"]*)?"/g, (m, href, hash = '') => {
+    if (href.startsWith(`${own}/`)) return `href="${href.slice(own.length)}${hash}"`;
     if (/^(https?:|mailto:)/.test(href)) return m;
     const base = href.replace(/^\.\//, '');
     if (DOCS[base]) return `href="${DOCS[base]}${hash}"`;

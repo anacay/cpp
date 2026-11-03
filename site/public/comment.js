@@ -1,5 +1,6 @@
 /* Highlight to discuss. Select any passage on a reading page and a bar offers
-   to open a GitHub discussion with the passage quoted and linked back to it.
+   to open a new post in The Commons on GitHub Discussions, with the
+   passage quoted and linked back to it, and the page's tag when it has one.
    This file is the site's only script. It loads nothing, stores nothing and
    sends nothing: the only thing it does is build a link you choose to follow. */
 (function () {
@@ -18,7 +19,9 @@
   document.body.appendChild(bar);
   var qEl = bar.querySelector('.hl-bar__q'), go = bar.querySelector('.hl-bar__go'), mail = bar.querySelector('.hl-bar__mail'), x = bar.querySelector('.hl-bar__x');
   go.textContent = cfg.open === '1' ? 'Discuss this passage' : 'Comment by email';
-  if (cfg.open === '1') { go.target = '_blank'; go.rel = 'noopener'; } else { mail.hidden = true; }
+  // One place to interact: when The Commons is open, the bar offers only it.
+  if (cfg.open === '1') { go.target = '_blank'; go.rel = 'noopener'; }
+  mail.hidden = cfg.open === '1';
 
   // A small resting hint, so people know the feature is there before they
   // select anything. Dismissed for this page view only; nothing is stored.
@@ -35,15 +38,6 @@
     var w = words(s);
     if (w.length <= 10) return encodeURIComponent(w.join(' '));
     return encodeURIComponent(w.slice(0, 5).join(' ')) + ',' + encodeURIComponent(w.slice(-4).join(' '));
-  }
-  function nearestId(node) {
-    var el = node.nodeType === 1 ? node : node.parentElement;
-    while (el && el !== document.body) {
-      var h = el.previousElementSibling;
-      while (h) { if (/^H[2-4]$/.test(h.tagName) && h.id) return h.id; h = h.previousElementSibling; }
-      el = el.parentElement;
-    }
-    return '';
   }
   function q(o) { return Object.keys(o).map(function (k) { return k + '=' + encodeURIComponent(o[k]); }).join('&'); }
 
@@ -68,10 +62,9 @@
     if (text.length > 600) text = text.slice(0, 600).replace(/\s+\S*$/, '') + '…';
     var url = cfg.site.replace(/\/$/, '') + location.pathname + '#:~:text=' + fragment(text.replace(/…$/, ''));
     var head = cfg.page + ': "' + words(text).slice(0, 8).join(' ') + (words(text).length > 8 ? '…' : '') + '"';
-    var section = nearestId(sel.anchorNode);
-    var body = '> ' + text + '\n\nFrom [' + cfg.page + '](' + url + ')' + (section ? ' · section anchor `#' + section + '`' : '') + '\n\n**Your comment:**\n';
+    var body = (cfg.tag ? '#' + cfg.tag + '\n\n' : '') + '> ' + text + '\n\nFrom [' + cfg.page + '](' + url + ')\n\n**Your post:**\n\n\n' + (cfg.nda ? '_' + cfg.nda + '_' : '');
     var mailto = 'mailto:' + cfg.contact + '?' + q({ subject: head, body: body });
-    go.href = cfg.open === '1' ? cfg.repo + '/discussions/new?' + q({ category: 'sections', title: head, body: body }) : mailto;
+    go.href = cfg.open === '1' ? cfg.repo + '/discussions/new?' + q({ category: cfg.category || 'the-commons', title: head, body: body }) : mailto;
     mail.href = mailto;
     qEl.textContent = '“' + words(text).slice(0, 10).join(' ') + (words(text).length > 10 ? '…' : '') + '”';
     bar.hidden = false;

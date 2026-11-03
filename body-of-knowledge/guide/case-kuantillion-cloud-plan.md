@@ -7,6 +7,8 @@ cadence: all
 altitude: all
 levels: practicing, leading, capital, supply
 seed: 4, 5.2, 5.3, 5.4, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 8.2, 9.1, 9.2, 9.3, 10, 10.1, 10.2, 10.3, 10.4, 12, 13, 14, Appendix A
+author: Guillermo Martinez
+reviewers:
 ---
 
 *Kuantillion Cloud is a fictional company. Any resemblance to real companies reflects problems the industry shares.*
