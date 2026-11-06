@@ -178,7 +178,7 @@ The labels below are a proposal from the plan. Change any that read wrong.
 | #15 | Q14. Where a market price exists, does the agreement claim hold? | `stage:senior`, `stage:adjacent` |
 | #16 | Q15. Could the field have a shared, public dataset of declarations? | `stage:senior`, `stage:head` |
 
-**Why these four are `good-first`.** Q4 and Q5 move forward with one public source. Q11 moves forward with one public source. Q13 moves forward with a general method, told at the shape level.
+**Why these four are `good-first`.** Q4, Q5 and Q11 each move forward with one public source. Q13 moves forward with a general method, told at the shape level.
 
 **A note on #16.** It asks about preconditions only. No real data is pooled before written rules and a legal-safe protocol exist.
 

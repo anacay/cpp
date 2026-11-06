@@ -1,6 +1,6 @@
 # Author's notes on the seed paper
 
-Starting points for the conversation: what I know I don't know, questions I'd most like answered, and where help is wanted. Written in October 2026 for the seed's launch. They're the community's questions now. Each note is pinned to a passage in the seed paper and shows up there as a margin note, with its own Discuss link. At launch, each one also opens as a thread in GitHub Discussions.
+Starting points for the conversation: what I know I don't know, questions I'd most like answered, and where help is wanted. I wrote them in October 2026 for the seed's launch. They're the community's questions now. Each note is pinned to a passage in the seed paper and shows up there as a margin note, with its own Discuss link. At launch, each one also opens as a thread in GitHub Discussions.
 
 Format, one note per heading:
 
@@ -19,7 +19,7 @@ How often does a coefficient move, and by how much, across a hardware generation
 How well do declarations land, by stage? The paper's illustrative rule is that intents come in around 60% of declared size and configured asks within 10%. That's a guess dressed as a number. If a public study or talk reports asked against landed, add it as a source. A made-up example with the right shape helps too.
 
 ## open-question | 13 | I found no published mechanism for arbitrating scarce accelerators between them
-When accelerators are short, who decides between internal teams and external customers, and how? Operators have published splits and priority orders, but no mechanism we could find: the forum, the rule, the appeal. Know of a public account? Add it as a source. Or describe a method in general terms, with nothing your employer hasn't published.
+When accelerators are short, who decides between internal teams and external customers, and how? Operators have published splits and priority orders, but we found no mechanism: no forum, rule or appeal. Know a public account? Add it as a source. Or describe a method in general terms, with nothing your employer hasn't published.
 
 ## help-wanted | 13 | I found no published order-to-dock time, turn-up duration or hardware contract terms
 Supply is the least documented side. Public sources welcome: a filing, a talk, a vendor document that states order-to-dock time, turn-up duration, cancel windows or reschedule terms. Please add them as sources, with a link and the quote.
