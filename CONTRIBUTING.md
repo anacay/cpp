@@ -102,7 +102,9 @@ Once your contribution is merged or used, you're added to `CONTRIBUTORS.md` for 
 
 ## Licence
 
-By contributing, you agree your text is licensed CC BY-SA 4.0 and your code MIT, the same as the rest of the repository.
+What you contribute is licensed when you post it, on the same terms as the rest of the repository: text and figures under CC BY-SA 4.0, code under MIT. That covers pull requests, issues, posts and comments in Discussions, and anything you email and then agree can be published. These licences are irrevocable. Once it's in, a contribution can't be withdrawn from the practice, by you or by anyone else. You can always ask for your name to come off it.
+
+By contributing you confirm that it's yours to license, and that it contains nothing your employer, a client or anyone else hasn't allowed you to share. If your employer has a policy on outside contributions, follow it.
 
 ## Questions
 
