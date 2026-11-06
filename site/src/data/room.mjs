@@ -145,6 +145,16 @@ export const frozen = {
 };
 export const frozenLine = (file = '') => (frozen.files.includes(file) ? frozen.line : null);
 
+// The draft principles (/principles/), posted for discussion. `thread` is the
+// Commons thread for the proposal. Until that post exists it points at
+// Discussions; replace it with the thread's URL once posted (runbook step 9).
+export const principlesDraft = {
+  version: 'v0',
+  posted: '8 November 2026',
+  thread: 'https://github.com/anacay/cpp/discussions',
+  signing: 'after the open period',
+};
+
 // The founding circle. Ids from `people`. The names block on /circle/ stays
 // hidden until `showNamesAt` consented names exist.
 export const circle = {
@@ -167,7 +177,7 @@ export const workingGroups = [
 ];
 
 // The community pages, for the sitemap, llms.txt and the checks.
-export const ROOM_ROUTES = ['/commons/', '/circle/', '/roles/', '/working-groups/', '/agenda/', '/sharing-safely/', '/contributors/', '/join/'];
+export const ROOM_ROUTES = ['/commons/', '/circle/', '/roles/', '/working-groups/', '/agenda/', '/sharing-safely/', '/contributors/', '/join/', '/principles/'];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 export const person = (id) => people.find((p) => p.id === id) ?? null;
