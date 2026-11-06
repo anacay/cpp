@@ -1,7 +1,7 @@
 ---
 // /join/: how to take part. One place to interact: The Commons on GitHub
 // Discussions. A GitHub account first, then The Commons, then the public
-// record. The only private route is a pre-check for something sensitive.
+// record. The private pre-check is paused; the inbox is for conduct and admin.
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
 import { community } from '../lib/community.mjs';
@@ -40,9 +40,10 @@ const kinds = [
     </section>
 
     <section class="prose reading" aria-labelledby="private-h">
-      <h2 id="private-h">Something sensitive? Ask for a private pre-check</h2>
-      <p>If you’re not sure a post is safe to share, write to <a href={mail('Pre-check')}>{contact}</a> first. The founder reads it, and replies in writing within {room.precheckHours} hours. <a href="/sharing-safely/">How the pre-check works</a>.</p>
-      <p>That is the only private route. Everything else happens in The Commons.</p>
+      <h2 id="private-h">Something sensitive? Leave it out</h2>
+      <p><strong>The private pre-check is paused</strong> until an independent pre-check reviewer is named on <a href="/roles/#pre-check">Roles</a>. Until then, the founder doesn’t read other people’s unpublished drafts.</p>
+      <p>Use the ten checks in <a href="/sharing-safely/">Sharing safely</a>. If in doubt, leave it out, or post only the method and the public facts.</p>
+      <p>Private mail to <a href={mail('Conduct or admin')}>{contact}</a> is for conduct and admin only, not for case material. Everything else happens in The Commons.</p>
     </section>
 
     <section class="newhere prose reading" id="new" aria-labelledby="new-h">
