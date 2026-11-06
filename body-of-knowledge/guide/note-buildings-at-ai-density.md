@@ -13,6 +13,8 @@ reviewers:
 
 *Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when buildings stop being interchangeable, and what replaces it? Related: Section 6.2, Section 8.2, Section 8.3. Discussion: [#18](https://github.com/anacay/cpp/discussions/18).*
 
+*Provenance, dated 8 November 2026. Written in October 2026 from the seed paper, public sources and public discussion in [#18](https://github.com/anacay/cpp/discussions/18). It uses no confidential information. The note is open for anyone to develop; its first author doesn't extend it after 8 November 2026.*
+
 ## The seed
 
 This note grew from [discussion #18](https://github.com/anacay/cpp/discussions/18). The reviewer who opened it quoted the seed paper's line that "a shell stays fungible only if its specification (power per rack, cooling type) is written against the high scenario" (Section 6.2), and put experience behind it: in the past, a steady power-to-space ratio gave reasonable fungibility, and the fungibility of new high-density buildings "may be extremely limited and particularly awful at supporting storage."

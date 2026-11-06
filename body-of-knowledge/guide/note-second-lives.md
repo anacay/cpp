@@ -13,6 +13,8 @@ reviewers:
 
 *Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when supply comes back out of the fleet in parts, of uncertain condition, as a byproduct of decisions made for other reasons? And what replaces it? Related: Section 6, Section 6.2, Section 6.6, Section 6.7, Section 8.2. Discussion: to be opened under Proposals.*
 
+*Provenance, dated 8 November 2026. Written in October 2026 from the seed paper, public sources and [Case 3](case-kuantillion-cloud.md). It uses no confidential information. The note is open for anyone to develop; its first author doesn't extend it after 8 November 2026.*
+
 ## The seed
 
 This note grew from a problem-space case, [Case 3](case-kuantillion-cloud.md). The case is a hyperscale fleet trying to reuse its older solid-state drives during a flash shortage. Applying the practice to that case runs into a wall, and the wall is where this note starts.

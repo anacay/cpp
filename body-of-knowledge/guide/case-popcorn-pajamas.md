@@ -11,7 +11,7 @@ author: Guillermo Martinez
 reviewers:
 ---
 
-*Popcorn Pajamas is a fictional company. Any resemblance to real companies reflects problems the industry shares.*
+*Provenance, dated 8 November 2026. Written and first published on 28 October 2026 from public sources only, cited under Further reading. Popcorn Pajamas is a fictional name. Its Reported, Third party and Press figures are public figures about the streaming and content-delivery industry, used unchanged. Its Inferred, Speculated and Arithmetic figures are the case's own reasoning, with the basis shown. It uses no confidential information and describes no company's internal practice.*
 
 This is the practice's first problem-space case. It describes a capacity-planning problem space in full and leaves the answers open.
 
