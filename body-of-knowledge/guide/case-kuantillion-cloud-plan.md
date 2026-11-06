@@ -275,9 +275,9 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
   - The stranded line, owned ([mechanism 4](concept-operating-mechanisms.md#m4)).
   - A decision note.
 - **Owner.** Planning, with finance.
-- **The dollar test** [argued]. Go when expected annual net value over exit, under the declared anchor, times usable TB, exceeds the program's fixed cost. That cost is the record, the forum and the pipeline's standing staff.
-  - For example, a central harvest of about 1.8 EB a year at 80% yield is about 1.44 million usable TB (illustrative).
-  - At +$10 per TB over exit, that is about $14M a year. At +$370 it is about $530M.
+- **The dollar test** [argued]. Go when expected annual net value over exit, under the declared anchor, times harvested TB, exceeds the program's fixed cost. That cost is the record, the forum and the pipeline's standing staff.
+  - For example, a central harvest of about 1.8 EB a year is about 1.8 million harvested TB. The margin already nets 80% yield (illustrative).
+  - At +$10 per TB over exit, that is about $18M a year. At +$370 it is about $670M.
   - Against a fixed cost of $20–60M a year (illustrative), the low-price cell fails and the high-price cell passes easily.
 - **The ratio describes scope; it doesn't decide go.** It is the SSD harvest, before yield, divided by a year's new flash ([materiality](/glossary/#term-materiality)). The case puts it at about 0.5–30%, central 3–9% (illustrative).
 - **Its numerator is a hard-drive count.** The company's report calls the 3 million retired drives hard drives. If they all are, the ratio is near zero. A vintage check gives about 4–9 EB of flash retiring a year. So the day-10 pull splits harvest by drive type and vintage.
@@ -292,7 +292,7 @@ Each decision gate opens only on the evidence in its row. The paper's rule for d
 - **Tie-break.** If the ratio's range spans two rows, run the smaller scope, and re-test at the first quarterly supply review [argued].
 
 - **Stranded stock, beside it.** Neither the dollar test nor the ratio gates the stranded stock, which runs as its own track from week 2. The case puts installed flash at 60–100 EB.
-- Recovering the gap between one peer's 54% and 19% stranding, after a haircut for reach, frees about 11–35 EB, once (illustrative). That is two to six times the top harvest row.
+- Recovering the gap between one peer's reported 54% and 19% stranding, after a haircut for reach, frees about 11–35 EB, once (illustrative). That is two to six times the top harvest row.
 - The reclaim pilot reads out by day 90, and that is the track's own go or stop.
 - **Go or stop.** Go at the chosen scope. "Stop at the step where the next one costs more than it saves" (Section 12). The paper writes that for mid-sized companies; this plan applies it to the program's own steps.
 
@@ -453,7 +453,7 @@ Grade on event history, firmware and burn-in, not on wear. Those are the signals
 | Blind | Missing the fields this rule needs | Like-for-like spares only: the platform already runs blind drives of that exact model |
 
 - **Why event history.** After one uncorrectable error, the chance of another next month was about 30%, against 2% in a random month (Schroeder et al. 2016).
-- Firmware version can move the annual replacement rate tenfold (Maneas et al. 2020).
+- Firmware version can move the annual replacement rate more than tenfold (Maneas et al. 2020).
 - **Wear** stays a recorded field. It is a threshold only for write-heavy or QLC cohorts, because most drives use little of their rated endurance.
 - **Age** matters per firmware cohort, measured in power-on hours. At grading, reject or stagger drives near a known fault age.
 - N and the counts are [unmeasured]; set them from the first cohorts' telemetry. Three grades fit inside a [tier cap](/glossary/#term-tier-cap) of three or more. At a cap of two, merge grades 1 and 2 into one reusable grade, limited to loss-absorbing tiers and like-for-like spares, and keep grade 3 for exit [argued]. At a cap of one, G2's rule governs: run spares and exit only.
@@ -556,7 +556,7 @@ One experiment per stated assumption in the case. Each has an owner, a date in p
 |---|---|---|---|---|---|---|
 | 1 | Replacement cost is the right value anchor | Planning, with finance | 25 | Compute both anchors per zone from stockout logs, margins and contract terms; measure the attribution share | The capacity anchor passes replacement cost in most stockout zones | Which price ranks workload claims |
 | 2 | Reuse displaces purchases at all | Supply chain, with finance and legal | 20 | Read cancel, push-out and volume terms into mechanism 11 | No contract allows volume or timing to move | Whether purchases avoided can be claimed |
-| 3 | The program pays at some scope | Planning, with finance | 14–30 | Net value over exit × usable TB a year, against fixed program cost; harvest TB ÷ new flash TB, as a descriptor | Net value falls short of fixed cost in every price cell | G1 |
+| 3 | The program pays at some scope | Planning, with finance | 14–30 | Net value over exit × harvested TB a year, against fixed program cost; harvest TB ÷ new flash TB, as a descriptor | Net value falls short of fixed cost in every price cell | G1 |
 | 4 | Reuse beats exit after the pipeline | Reverse logistics | 120 | Time-and-motion and yield logs at one site, one cohort, beside that cohort's resale quotes | Net value over exit below zero for the cohort's drive class | Pipeline scope by drive class |
 | 5 | Stranded capacity is recoverable at reasonable cost | Storage systems | 30–90 | Reclaim and small-group pooling on one tier | Stranded share barely moves, or pooling costs more than it frees | Whether the stranded line gets a program |
 | 6 | The host-cost logic holds | Lifecycle transitions, with finance | 55 | The keep, redeploy or harvest sheet for one retiring cohort | Drive value, not host cost, decides the branch | How retirement dates are set |
