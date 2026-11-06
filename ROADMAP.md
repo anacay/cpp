@@ -10,7 +10,7 @@ Want to lead one? Say so in the "Governance" discussion category, or write to [c
 
 The seed paper is a working draft. This is what we know still needs doing, so nobody has to guess.
 
-- **Fold in the newest sources.** Version 7.9 lists nine new sources as A1 to A9, after the references. The next full version will number them in order of first appearance, with the rest.
+- **Fold in the newest sources.** Version 7.9 lists nine new sources as A1 to A9, after the references. A future version should number them in order of first appearance, with the rest. Anyone can take this on.
 - **Ideas still under discussion.** A review on 10 October, done with the help of an AI model, raised ideas the paper doesn't settle yet. Three are open threads: AI demand declared as a policy, whether a market price changes the coefficient, and a shared dataset of declarations.
 - **The method is untested.** Section 13 says what hasn't been measured. The tests in Section 9.2 have not been run anywhere we know of.
 
@@ -22,7 +22,7 @@ Say in the "Governance" category if you'd like to take one on, or write to [cpp@
 
 **What.** One page of terms, each with a one-sentence definition, synonyms and "see also" pointers. Versioned on its own, separately from the rest.
 
-**Why first.** Every other seed uses these words. Planners in different companies use the same word for different things ("commit", "allocation", "buffer"), and in our experience that confusion costs real money in real meetings. A glossary can be cited without anyone having to agree with the rest of the body of knowledge.
+**Why first.** Every other seed uses these words. Planners in different companies use the same word for different things ("commit", "allocation", "buffer"), and the confusion is costly [argued]. A glossary can be cited without anyone having to agree with the rest of the body of knowledge.
 
 **Starts from.** The terms in the seed paper, plus the terms in public sources it cites.
 
@@ -44,7 +44,7 @@ Say in the "Governance" category if you'd like to take one on, or write to [cpp@
 
 **What.** What a capacity planner needs to know and do, at a few levels: learning, practicing, leading. Areas might include demand and forecasting, supply and lead times, cost and coefficients, contracts, finance, operating cadence, and the people work of brokering an agreement.
 
-**Why.** In our experience, many new planners come in from hardware, accelerators or infrastructure engineering. They know the machines well. The map shows what else the job asks, and where to learn it. It also helps managers hire and grow planners.
+**Why.** Many new planners come in from hardware, accelerators or infrastructure engineering [argued]. They know the machines well. The map shows what else the job asks, and where to learn it. It also helps managers hire and grow planners.
 
 **A first version looks like.** One page: areas down the side, levels across the top, a sentence in each cell, and links into the body of knowledge and the reading list.
 

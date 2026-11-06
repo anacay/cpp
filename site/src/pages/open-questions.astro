@@ -22,7 +22,7 @@ const anyDraft = all.some((n) => n.draft);
       <h1>Open questions</h1>
       <p class="lede">The seed paper is everything I could gather from public sources and my own practice. This is where it runs out. Each note below is pinned to a passage in the paper. Pick one and reply, or select any other passage in the paper and start your own thread.</p>
       <p>The <a href="/agenda/">agenda</a> groups these and the guide’s open problems by workstream, each with a status.</p>
-      {anyDraft && <p class="note">Notes marked <span class="anno__draft">draft</span> are waiting for the author’s final wording.</p>}
+      {anyDraft && <p class="note">Notes marked <span class="anno__draft">draft</span> are waiting for an editor’s final wording.</p>}
     </div>
     {groups.map((g) => (
       <section class="reading" aria-labelledby={`g-${g.k}`}>

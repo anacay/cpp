@@ -61,7 +61,7 @@ export const workstreams = [
       q(2, 'How well do declarations land, by stage? The paper’s illustrative rule of 60% for intents and within 10% for configured asks is “a guess dressed as a number”.'),
       q(10, 'How much should a team’s own record count against every team’s? Insurers use credibility theory for this. Does it fit capacity declarations?'),
       q(12, 'Some steps have no reference class, such as a first accelerator cluster. Beyond bounding, phasing and buying options, what has worked?'),
-      q(15, 'Could the community pool anonymized declaration records? Say what your organization would need to see first. Nothing is pooled before written rules and a legal-safe protocol exist.'),
+      q(15, 'Could the field ever have a shared, public dataset of declarations, built only from published or synthetic records? What would make it trustworthy, and what should it never contain?'),
       it('censored', 'How do you score declarations when the system’s own controls hide part of the demand?', PP, 'Case 2, Popcorn Pajamas'),
       it('rivals', 'How do you size a step change when the best evidence is a rival’s record?', PP, 'Case 2, Popcorn Pajamas'),
     ],
@@ -72,7 +72,7 @@ export const workstreams = [
     items: [
       q(4, 'Find public sources for order-to-dock time, turn-up duration, cancel windows and reschedule terms. A filing, a talk or a vendor document, with a link and the quote.', { goodFirst: true }),
       q(5, 'How long does a large new load wait for power, from request to energized? Utility filings and interconnection queues may hold the answer.', { goodFirst: true }),
-      q(11, 'Is the supply review the step most often missing between the demand review and the executive decision? If you have one, what does supply bring to it?', { goodFirst: true }),
+      q(11, 'The paper argues the supply review is the step most often missing before the executive decision. Is there public evidence either way? What should a supply review bring?', { goodFirst: true }),
       it('barter', 'How do you plan capacity paid for in kind? What changes if regulators force a price into it?', PP, 'Case 2, Popcorn Pajamas'),
     ],
   },
@@ -93,7 +93,7 @@ export const workstreams = [
     id: 'arbitration', name: 'Arbitration and incentives', tag: 'gpu',
     why: 'Who decides when capacity is short, and what makes honest reporting the sensible choice.',
     items: [
-      q(3, 'When accelerators are short, who decides between internal teams and external customers? Operators publish splits and priority orders. What are the forum, the rule and the appeal?'),
+      q(3, 'When accelerators are short, who decides between internal teams and external customers? Operators publish splits and priority orders, but not the forum, the rule or the appeal. Know of a public account? Add it as a source.'),
       q(8, 'How often is a slipped launch’s reserve re-pegged to another tenant and reused? Its thread also holds the incentive layer: the forces that keep a slip hidden.'),
       it('host-side', 'Case 2 needs host-side versions of two threads: the incentive layer (#9) and the supply review’s purpose (#12).', '/cases/popcorn-pajamas-practice/#the-organization-as-part-of-the-answer', 'Case 2, Popcorn Pajamas'),
       it('goodhart', 'Any indicator can be gamed once it is rewarded. How should the mechanisms’ indicators be read as a set?', `${LIM}#where-the-ideas-break`, 'Limits'),
