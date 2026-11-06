@@ -126,6 +126,21 @@ export const people = [
   { id: 'founder', name: 'Guillermo Martinez', sector: null, topics: [], consent: true, founder: true },
 ];
 
+// Pages frozen for their first author. Each page's byline shows the line, so
+// a reader knows the author no longer edits it. Everyone else still can.
+// Changes to these pages go through another editor.
+export const frozen = {
+  since: '8 November 2026',
+  line: 'Frozen for its first author since 8 November 2026. Open to everyone else’s edits.',
+  files: [
+    'case-kuantillion-cloud.md',
+    'case-kuantillion-cloud-full.md',
+    'case-kuantillion-cloud-practice.md',
+    'case-kuantillion-cloud-plan.md',
+  ],
+};
+export const frozenLine = (file = '') => (frozen.files.includes(file) ? frozen.line : null);
+
 // The founding circle. Ids from `people`. The names block on /circle/ stays
 // hidden until `showNamesAt` consented names exist.
 export const circle = {
