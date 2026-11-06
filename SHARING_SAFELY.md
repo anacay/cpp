@@ -9,7 +9,7 @@ How to share what you know about capacity planning without sharing anything that
 - Share the shape of a problem, never its real figures.
 - Never name a customer, a vendor, a contract, a site or an internal system that isn't already public.
 - Label every invented number as illustrative.
-- Not sure? Leave it out, or post only the method and the public facts. The [private pre-check](#a-private-pre-check) is paused for now.
+- Not sure? Leave it out, or post only the method and the public facts. There is no [private review](#private-mail) of drafts.
 
 The [Code of Conduct](CODE_OF_CONDUCT.md) and [How it grows](HOW_IT_GROWS.md#what-cant-be-contributed) list what can't be contributed. This page shows how to share what can.
 
@@ -98,13 +98,11 @@ The guide's page on [approval and allocation](https://cpp.anacay.org/guide/conce
 
 If any check fails, climb down a rung on the ladder and check again.
 
-## A private pre-check
+## Private mail
 
-**The private pre-check is paused** until an independent pre-check reviewer is named on [Roles](https://cpp.anacay.org/roles/#pre-check). Until then, the founder doesn't read other people's unpublished drafts. Use the ten checks above. If in doubt, leave it out, or post only the method and the public facts.
+There is no private review of drafts. Please don't send drafts or case material to [cpp@anacay.org](mailto:cpp@anacay.org). That inbox is for conduct and admin only.
 
-Please don't send drafts or case material to [cpp@anacay.org](mailto:cpp@anacay.org). That inbox is for conduct and admin only.
-
-When a pre-check reviewer is named, this section will say how the pre-check works again.
+Use the ten checks above. If in doubt, leave it out, or post only the method and the public facts.
 
 ## If something slips
 

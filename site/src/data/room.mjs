@@ -11,10 +11,6 @@ export const room = {
   name: 'The Commons',
   url: '/commons/',
   contact: 'cpp@anacay.org',
-  // The private pre-check is paused until an independent pre-check reviewer
-  // is named (role 'pre-check'). While it is paused there is no reply time.
-  precheckPaused: true,
-  precheckHours: null,
 };
 
 // One place to interact: The Commons, a single GitHub Discussions category.
@@ -117,7 +113,6 @@ export const roles = [
   { id: 'co-organizer', name: 'Co-organizer', holders: [] },
   { id: 'editor', name: 'Editor', holders: ['founder'] },
   { id: 'conduct-reviewer', name: 'Independent conduct reviewer', holders: [] },
-  { id: 'pre-check', name: 'Pre-check reviewer', holders: [] },
   { id: 'wg-lead', name: 'Working-group lead', holders: [], later: true },
   { id: 'call-host', name: 'Call host', holders: [], later: true },
 ];
