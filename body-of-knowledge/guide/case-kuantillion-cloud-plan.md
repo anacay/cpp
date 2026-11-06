@@ -11,7 +11,7 @@ author: Guillermo Martinez
 reviewers:
 ---
 
-*Kuantillion Cloud is a fictional company. Any resemblance to real companies reflects problems the industry shares.*
+*Provenance, dated 8 November 2026. This plan answers Case 3 and was written and first published between 30 October and 2 November 2026, while the author was not employed by any infrastructure operator. It is built only from public sources: filings and earnings calls, sustainability and circularity reports, published papers and patents, public cloud documentation, public job postings, trade press, and the academic and field studies listed at the end. Kuantillion Cloud is a fictional name. Figures tagged Reported, Press or Third party are real public figures, used unchanged. Figures tagged Illustrative are invented. The case uses no company's confidential information and describes no real company's internal practice. Where the public record is silent, it says so and labels its reasoning Inferred or Speculated. The strategy and plan are a teaching exercise. They aren't any operator's plan, and no operator has reviewed or adopted them. From 8 November 2026 the author doesn't edit these pages or take part in their threads. Changes go through another editor. The text as of that date is tagged* `pre-employment-baseline-2026-11-08`.
 
 **What this program is.** Kuantillion Cloud retires drives by the million and holds idle flash in running machines, while new flash costs three to four times last year's price. The program decides where each older drive goes: a workload, a repair spare, a build, or exit. This page is its runbook: owners, dates, seven decision gates, rules, measures and playbooks.
 
