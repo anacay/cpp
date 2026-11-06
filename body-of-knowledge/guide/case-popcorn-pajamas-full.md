@@ -58,13 +58,13 @@ Every load-bearing claim carries an evidence tier. The tiers describe how a plan
 
 ## 1. Executive summary
 
-Popcorn Pajamas must produce one multi-year capacity plan for three estates that run on different clocks: Poppers (the Snack Bar's caching appliances) that live 4–6 years inside more than a thousand host networks, a cloud fleet that scales in minutes, and a production estate that follows shooting calendars. Its demand is being remade by live events contracted into the 2030s, cloud games with no settled hardware, and a component market where enterprise flash contract prices have risen roughly four to five times since mid-2025 (World). One small, senior planning team, sitting inside the edge partnerships and planning group, turns all of this into annual plans and 5-plus-year forecasts. It has no authority over the teams that buy, install or host the hardware, and its own job postings name shortage and excess as equal risks.
+Popcorn Pajamas must produce one multi-year capacity plan for three estates that run on different clocks: Poppers (the Snack Bar's caching appliances) that live 4–6 years inside more than a thousand host networks, a cloud fleet that scales in minutes, and a production estate that follows shooting calendars. Its demand is being remade by live events contracted into the 2030s, cloud games with no settled hardware, and a component market where enterprise flash contract prices are on course to rise four to five times from mid-2025 to the end of 2026 (World). One small, senior planning team, sitting inside the edge partnerships and planning group, turns all of this into annual plans and 5-plus-year forecasts. It has no authority over the teams that buy, install or host the hardware, and its own job postings name shortage and excess as equal risks.
 
 The plan must absorb demand that changes shape faster than its forecasts, through supply that is lumpy, slow, partly partner-hosted and newly expensive. It must hold request-path headroom as well as bandwidth, and it must survive changes in who pays for delivery. Cloud request-path and GPU capacity enter as interface requirements the plan specifies but does not own.
 
 **The five hardest sub-problems**
 
-1. **Sizing a site on one published number when the box has three coupled limits.** The published unit is Gbps; each Popper also binds on storage and fill. The all-flash generation holds less content per box (120 TB) than the 2021-era storage tier (354 TB), while flash became the dearest part of the bill.
+1. **Sizing a site on one published number when the box has three coupled limits.** The published unit is Gbps; each Popper also binds on storage and fill. The all-flash generation holds less content per box (120 TB) than the 2021-era storage tier (about 350 TB), while flash became the dearest part of the bill.
 2. **Provisioning live peaks on partner-hosted hardware.** About 90% of live traffic now lands on embedded caches, content cannot be pre-filled, event sizes span about 20×, and the world concurrency record moved to a rival within 16 months of Popcorn Pajamas' own.
 3. **Request-path headroom.** Both public peak failures (a marquee boxing event in late 2024 and the final-season premiere of its biggest series in late 2025) broke in manifests and playback starts while links had room; retries amplified load about 10×.
 4. **Games as a loss system with censored demand.** A session holds a GPU slice for its whole length; admission control turns away players when servers are full, and every rejection is demand the forecaster never sees.
@@ -73,8 +73,8 @@ The plan must absorb demand that changes shape faster than its forecasts, throug
 **The five most surprising connections**
 
 1. **The AI boom hits Popcorn Pajamas three times at once.** It multiplied the cost of flash in every new Popper, tightened the cloud instance generations its fleet wants, and created the GPU scarcity that production, machine learning and games now compete for inside one company.
-2. **Live and on-demand trade bytes but add requests.** One UK ISP's data shows Popcorn Pajamas' on-demand traffic falling up to 27% while a national-team match aired free-to-air (Third party). Streams substitute on the wire, but playback starts, manifests and ad events stack, which is why failures happen in the request path.
-3. **Q4 is triple-booked.** The holiday on-demand peak, the holiday football slate and the biggest premieres land in the quarter whose fill nights launches need. Christmas Day 2025 was one UK ISP's busiest day ever, credited to Popcorn Pajamas' tent-pole season finale (Third party), and the biggest US streaming day on record (World). Codec backfills and refresh waves get pushed to Q1–Q2.
+2. **Live and on-demand trade bytes but add requests.** One UK ISP's data shows Popcorn Pajamas' on-demand traffic falling by up to about a quarter while a national-team match aired free-to-air (Third party). Streams substitute on the wire, but playback starts, manifests and ad events stack, which is why failures happen in the request path.
+3. **Q4 is triple-booked.** The holiday on-demand peak, the holiday football slate and the biggest premieres land in the quarter whose fill nights launches need. Christmas Day 2025 was one UK ISP's busiest day ever, credited to the second part of Popcorn Pajamas' tent-pole final season (Third party), and the biggest US streaming day on record (World). Codec backfills and refresh waves get pushed to Q1–Q2.
 4. **Admission control blinds the forecast.** The mechanism that protects game sessions at peak is the same one that censors the proof-of-value signal that games investment is staged on.
 5. **The planning organization's own shape is telemetry.** Its drift from one generalist (2019) to a modeling seat, a fleet seat, a planner per stream and a Director (2026) tracks the problem becoming multi-stream, multi-estate and capital-heavy. The Director's remit still starts from Finance's demand forecast, so the move to signal-led planning is under way, not done.
 
@@ -86,18 +86,18 @@ Popcorn Pajamas is a roughly $50B-a-year service whose capital spend is rising f
 | --- | --- | --- |
 | Members | Over 300M paid; quarterly member reporting ended 2025; an audience approaching 1 billion people | Reported |
 | Footprint | Service in 190+ countries; unavailable in five markets, including the largest; Poppers in about 175 countries | Reported |
-| Viewing | About 96–97B hours per half-year, +2% a year; about half in the evening; about 5% of global TV time; engagement reporting becomes annual from 2027 | Reported |
+| Viewing | About 95B hours per half-year, reported to grow about 2% a year; about half in the evening; reported as about 5% of global TV time; engagement reporting becomes annual from 2027 | Reported |
 | Growth geography | Fastest growth in Asia-Pacific and Latin America; one large South Asian market grew viewing hours 24% year on year | Reported |
-| Revenue and margin | Q3 2026 about $12.9B (+12% YoY); FY26 about $51B; operating margin about 35% in Q3, about 31.5% full-year guide | Reported |
-| Advertising | Ad plan more than 60% of sign-ups where offered; FY26 ad revenue guide cut to about $2.7B on ad-tech delays; 15 more ad markets from 2027 | Reported |
-| Capital | Property and equipment purchases about $690M in 9M 2026 (+54% YoY); capital work in progress +58% in six months; not broken out by estate. The free-cash-flow guide was cut, mainly for a real estate transaction in Q4: a large studio-lot purchase of about $400M | Reported; Inferred (the lot) |
+| Revenue and margin | Q3 2026 about $13B (+12% YoY); FY26 about $51B; operating margin about 35% in Q3, about 31% full-year guide | Reported |
+| Advertising | Ad plan reported as more than 60% of sign-ups where offered; FY26 ad revenue guide cut by about a tenth, to under $3B, on ad-tech delays; 15 more ad markets from 2027 | Reported |
+| Capital | Property and equipment purchases about $700M in 9M 2026 (up about half year on year); capital work in progress up more than half in six months; not broken out by estate. The free-cash-flow guide was cut about $0.5B, mainly for a real estate transaction in Q4 | Reported; Inferred (the transaction's size) |
 | Technology and people | Technology and development expense up about 20% in 2026; about 16,000 staff before an October cut of about 1,000 (about 6%) in product, technology, legal and HR, games staff included | Reported + Press |
-| Traffic weight | About 12% of global fixed downstream; over 30% of primetime internet traffic at many ISPs (own posting) | Third party; Reported |
+| Traffic weight | Reported as about 12% of global fixed downstream; over 30% of primetime internet traffic at many ISPs (own posting) | Third party; Reported |
 | The Snack Bar | Nearly 20,000 Poppers; about 400 PoPs; 20,000+ eBGP sessions with thousands of peer networks; 6,000+ locations; 1,000+ host networks; 60+ own data centers; 100+ IXPs; more than $1B cumulative investment by 2022 | Reported (own conference talks, ESG report) |
-| Live | 72 → 220 → 400+ events a year (2024–2026); about 1% of view-hours and about 5% of 2026 content spend; 6 of the top-10 sign-up days in five years | Reported |
+| Live | About 70 → 200+ → 400+ events a year (2024–2026); about 1% of view-hours and about 5% of 2026 content spend; 6 of the top-10 sign-up days in five years | Reported |
 | Planning group | The capacity planning team, described as central to making sure there is always enough capacity; inside the edge partnerships and planning group; its charter covers owned infrastructure for members and internal customers | Reported (postings) |
 
-Two tensions set up everything below. Capital intensity is rising (+54%) as headcount fell 6%, so the planning system must do more per planner. And the external signals a planner could once borrow (member counts, twice-yearly viewing reports) are being switched off just as demand becomes more inorganic.
+Two tensions set up everything below. Capital spend is up about half while headcount fell about 6%, so the planning system must do more per planner. And the external signals a planner could once borrow (member counts, twice-yearly viewing reports) are being switched off just as demand becomes more inorganic.
 
 ## 3. The system
 
@@ -113,9 +113,9 @@ Most planning risk sits in the embedded Popper: inside a host network, filled ov
 
 ### 3.2 Network skeleton
 
-Popcorn Pajamas' 2026 operator-conference talks give the current map: nearly 20,000 Poppers, about 400 PoPs, 20,000+ eBGP sessions with thousands of peer networks. The full iBGP mesh was replaced in 2025–26 by route reflectors in eight cities across four regions, dual-attached per geography. Regional path scale runs from about 37M IPv4 paths (North America) to about 3M (Latin America), and BGP telemetry streams every 30 seconds (Reported).
+Popcorn Pajamas' 2026 operator-conference talks give the current map: nearly 20,000 Poppers, about 400 PoPs, 20,000+ eBGP sessions with thousands of peer networks. The full iBGP mesh was replaced in 2025–26 by route reflectors in eight cities across four regions, dual-attached per geography. Regional path scale runs from tens of millions of IPv4 paths (North America) to a few million (Latin America), and BGP telemetry streams every 30 seconds (Reported).
 
-Popcorn Pajamas' public exchange footprint is concentrated. A tally of its published peering listings gives about 105 exchanges whose first-listed ports sum to roughly 15 Tbps: one 800G port in South America, ten at 400G across five metros in North America, South America, Japan and the UK, and most of the rest at 100G or below (Inferred from the published list). When embedded caches saturate during a live peak, overflow lands on these few metros and on private interconnects.
+Popcorn Pajamas' public exchange footprint is concentrated. A tally of its published peering listings gives about 100 exchanges whose first-listed ports sum to roughly 14 Tbps: one 800G port in South America, ten at 400G across five metros in North America, South America, Japan and the UK, and most of the rest at 100G or below (Inferred from the published list). When embedded caches saturate during a live peak, overflow lands on these few metros and on private interconnects.
 
 ### 3.3 Appliances: nameplate versus reality
 
@@ -125,14 +125,14 @@ The catalog lists two all-flash classes. Popcorn Pajamas' own host-facing decks 
 | --- | --- | --- | --- | --- | --- |
 | Big Bucket (2026, all-flash) | ≤120 TB | about 200 Gbps | about 90–150+ Gbps | about 400 W | Appliances page; host deck, 2024 |
 | Small Bag (2026, all-flash) | ≤60 TB | about 80 Gbps | about 20 Gbps | about 250 W | Same |
-| Storage tier (2021, hybrid) | 354 TB | — | 36–70 Gbps | 670 W | Host deck, 2021 |
+| Storage tier (2021, hybrid) | About 350 TB | — | About 35–70 Gbps | About 650 W | Host deck, 2021 |
 | Typical Popper (2012) | — | 8 Gbps | — | supplies rated 750 W | Deployment guide, 2012 |
 
 - **Life.** Four to six years with no hands-on service except optics; Popcorn Pajamas replaces failing hardware free of charge to the host.
 - **The storage squeeze is architectural.** The all-flash transition traded about two-thirds of per-box content capacity for 2–3× throughput, before flash prices rose (Arithmetic from the table).
-- **Software ceiling.** With encryption offloaded to the network card, one server has served about 375–400 Gbps; Popcorn Pajamas says one point of efficiency is worth hundreds of thousands of dollars at fleet scale.
+- **Software ceiling.** With encryption offloaded to the network card, one server has served about 400 Gbps; Popcorn Pajamas says one point of efficiency is worth hundreds of thousands of dollars at fleet scale.
 - **Redundancy is bought in pairs.** Each Popper terminates its own link bundle on a single router (no multi-chassis LAG), so resilience is one Popper per router, active/active with identical BGP advertisements. A small resilient site holds at least two boxes and can lose half to a router failure (Reported).
-- **The fleet is a long tail.** Nearly 20,000 Poppers across 6,000+ locations is about three per location, so most sites are small (Inferred). A 2022 outside count of about 8,000 implies about 24% a year growth (Inferred; scopes may differ).
+- **The fleet is a long tail.** Nearly 20,000 Poppers across 6,000+ locations is about three per location, so most sites are small (Inferred). Popcorn Pajamas' own 2022 count was about 18,000 boxes in 6,000 locations. So the box count grew only a few percent a year (Arithmetic). An outside 2022 study counted about 8,000, a narrower scope (Inferred).
 - **No GPU or game-streaming class is published,** yet job postings put cloud-games bare metal under the Snack Bar organization (Inferred: a third hardware class exists or is coming).
 
 ### 3.4 Serve, fill and placement
@@ -163,7 +163,7 @@ A live origin on cloud compute sits between the encoding pipeline and the Snack 
 
 ### 3.8 Energy
 
-Popcorn Pajamas reports electricity only for Poppers it runs in colocation: 33.4 GWh (2021) to 68.7 GWh (2025), an average draw of about 7.85 MW, growing about 20% a year. Popcorn Pajamas says that is about one-tenth of its edge and cloud data-center electricity combined, so the total is on the order of 700 GWh a year (Arithmetic). Power drawn by Poppers inside host networks is the hosts' and is not reported. Colocated energy grows a little below the estimated fleet growth (about 24%), but the scopes differ, so no per-box efficiency conclusion follows (Inferred).
+Popcorn Pajamas reports electricity only for Poppers it runs in colocation: about 35 GWh (2021) to about 70 GWh (2025), an average draw of about 8 MW, growing about 20% a year. Popcorn Pajamas says that is about one-tenth of its edge and cloud data-center electricity combined, so the total is on the order of 700 GWh a year (Arithmetic). Power drawn by Poppers inside host networks is the hosts' and is not reported. Colocated energy grows about 20% a year while the whole fleet grows a few percent. Either growth is concentrated at owned sites or per-box draw is rising. Public data cannot separate the two (Inferred).
 
 ### 3.9 The production estate is separate
 
@@ -198,7 +198,7 @@ On-demand viewing is the smooth, predictable base, and Popcorn Pajamas forecasts
 
 Capacity write-ups usually sum streams. The evidence says they covary, with a sign that depends on the layer.
 
-- **Bytes substitute.** One UK ISP measured Popcorn Pajamas' on-demand traffic falling up to 27% while a national-team match aired on a free-to-air broadcaster's stream during the 2026 men's World Cup, recovering at full time (Third party). Popcorn Pajamas' own live events likely pull viewers off its on-demand catalog on the same Poppers, so net evening load is below on-demand peak plus live gross (Inferred).
+- **Bytes substitute.** One UK ISP measured Popcorn Pajamas' on-demand traffic falling by up to about a quarter while a national-team match aired on a free-to-air broadcaster's stream during the 2026 men's World Cup, recovering at full time (Third party). Popcorn Pajamas' own live events likely pull viewers off its on-demand catalog on the same Poppers, so net evening load is below on-demand peak plus live gross (Inferred).
 - **Requests add.** A live join brings playback starts, personalized manifests, real-time recommendation updates (100M+ devices in under a minute) and, with dynamic ad insertion now live, synchronized ad-break fetches, on top of normal browse traffic. Byte substitution does nothing for the request path, where both public failures happened.
 - **Games likely covary positively with the video evening peak** (same households, same hours; Speculated), while production is roughly anti-cyclical (weekday daytime). A plan that holds reserve per stream overbuys bytes and underbuys request-path and GPU-evening headroom.
 
@@ -207,7 +207,7 @@ Capacity write-ups usually sum streams. The evidence says they covary, with a si
 - **Hits.** Top titles draw 90–150M views in their first months, and five of the top ten series in early 2026 premiered that half. A hit film can add 130M views in its second year, so the tail matters as much as the spike.
 - **Release timing.** Big releases land at the evening peak, so launch fill must finish before release, and the first days hit only a few files.
 - **Launch failures were request failures** (the final-season premiere, see 3.6).
-- **Codecs.** The newest open codec carries about 30% of viewing at about one-third less bandwidth: about 10% fewer bytes overall; each further 10 points of share cuts about 3% (Arithmetic). The HDR catalog is being backfilled in the new codec (85% of HDR viewing hours covered, heading to 100%), a one-time storage and fill wave. Film-grain synthesis cut bitrate by two-thirds on one grainy test title.
+- **Codecs.** The newest open codec carries about 30% of viewing at about one-third less bandwidth: about 10% fewer bytes overall; each further 10 points of share cuts about 3% (Arithmetic). The HDR catalog is being backfilled in the new codec (more than 80% of HDR viewing hours covered, heading to 100%), a one-time storage and fill wave. Film-grain synthesis cut bitrate by two-thirds on one grainy test title.
 
 ### 4.5 Live events in depth
 
@@ -221,19 +221,18 @@ Dates are known years ahead; sizes are not. The football league alone brings fiv
 
 | Event | When | Reach | Reported peak or audience | Tier |
 | --- | --- | --- | --- | --- |
-| Football season opener played abroad | Sep 2026 | Global | 18.5M US average; US peak 21.3M | Reported/Press |
-| International baseball tournament | Mar 2026 | One country only | 31.4M total viewers; top game 17.9M; 9.6M+ concurrent accounts for one game | Reported |
+| Football season opener played abroad | Sep 2026 | Global | About 18M US average; US peak about 21M | Reported/Press |
+| International baseball tournament | Mar 2026 | One country only | About 30M total viewers; top game about 18M; concurrency not reported | Reported |
 | Baseball opening night | Mar 2026 | Global | About 3M US average | Press |
 | Boxing event | Dec 2025 | Global | 33M viewers | Reported |
-| Christmas football | Dec 2025 | Global | 27.5M US average for the larger game; US peak >30M | Reported/Press |
-| Boxing event | Nov 2025 | Global | Not reported | — |
-| Boxing event | Sep 2025 | Global | 41M global viewers over the weekend; >24M concurrent streams | Reported |
+| Christmas football | Dec 2025 | Global | About 27M US average for the larger game; US peak about 30M | Reported/Press |
+| Boxing event | Sep 2025 | Global | About 40M global viewers over the weekend; more than 24M concurrent streams | Reported |
 | Weekly wrestling premiere | Jan 2025 | Global | About 28% less traffic than the Christmas games | Third party |
-| Christmas football | Dec 2024 | Global | About 30–31M viewers per game worldwide; US peak >27M | Reported/Press |
+| Christmas football | Dec 2024 | Global | About 30M viewers per game worldwide; US peak about 27M | Reported/Press |
 | Marquee boxing event | Nov 2024 | Global | About 65M concurrent streams (38M US) | Reported |
 
-- **Size spans about 20×** between a weekly show and a marquee fight (Inferred, across mixed metrics: average-minute audience, live+1, cumulative viewers, peak streams). Peak-to-average on two football games was about 1.1–1.15.
-- **The world record is no longer Popcorn Pajamas'.** A South Asian streamer reached **65.2M and then 72.5M at the T20 World Cup semi-final and final in March 2026** (World). Its peak came from a single market, while Popcorn Pajamas' 65M was global, so the two are not like for like. Even so, the reference class for Popcorn Pajamas' marquee tier now sits above its own 65M.
+- **Size spans about 20×** between a weekly show and a marquee fight (Inferred, across mixed metrics: average-minute audience, live+1, cumulative viewers, peak streams). Peak-to-average on two football games was about 1.1–1.2.
+- **The world record is no longer Popcorn Pajamas'.** A South Asian streamer reached **about 65M and then about 72M at a T20 World Cup semi-final and final in March 2026** (World). Its peak came from a single market, while Popcorn Pajamas' 65M was global, so the two are not like for like. Even so, the reference class for Popcorn Pajamas' marquee tier now sits above its own 65M.
 - **Where it lands.** Embedded caches carried about 70% of the 2024 fight but about 88–90% of later football and wrestling events (Third party: a traffic-analytics firm). Live capacity has moved into other people's buildings.
 - **Live sport now sets exchange records.** A large European exchange's 2025 record day was a football night, at about 27 Tbps across its sites; it passed 32 Tbps on another football night in October 2026 (World). Popcorn Pajamas' overflow path rides on the same exchanges.
 - **What can and cannot be prepared.** Capacity can be pre-provisioned by prediction, shared with ISPs and the cloud ahead of time, and adjusted live. Content cannot be pre-filled: it exists seconds before it is watched.
@@ -244,9 +243,9 @@ Dates are known years ahead; sizes are not. The football league alone brings fiv
 
 **Plan on net load, and on records that climb in steps.** A UK ISP's measurements during the 2026 men's World Cup add three rules (World):
 
-- **One service, not the network.** One broadcaster's stream rose 544% above an average evening while national traffic barely moved. The binding limit is one service's edge and interconnect, not the ISP as a whole.
-- **Steps.** The network's live-streaming record rose about 30% in one tournament; second halves ran from 22% below to 26% above first halves. Size marquee events at the last record plus a margin, at the peak minute.
-- **Name the baseline.** The same match read +544% or +219% depending on whether the baseline was the average evening, the busiest five minutes or the normal busy hour.
+- **One service, not the network.** One broadcaster's stream rose more than 500% above an average evening while national traffic barely moved. The binding limit is one service's edge and interconnect, not the ISP as a whole.
+- **Steps.** The network's live-streaming record rose about 30% in one tournament. Size marquee events at the last record plus a margin, at the peak minute.
+- **Name the baseline.** The same match read about +540% or about +220%, depending on whether the baseline was the average evening or the week's busiest five minutes.
 
 One lever Popcorn Pajamas does not use: a UK operator converted more than 60% of a broadcast channel's peak traffic to multicast (World). That only works where the network controls delivery; unicast from caches keeps live at one stream per viewer.
 
@@ -254,16 +253,16 @@ One lever Popcorn Pajamas does not use: a UK operator converted more than 60% of
 
 Games break the Snack Bar's planning model, not just its forecast.
 
-- **Rollout.** TV cloud games launched broadly in late 2025 with phones as controllers: 22 titles, 20 countries, still in beta. About a third of members had access by early 2026; monthly active players grew about 11× in nine months from an undisclosed base. The Q3 2026 letter did not mention cloud games, and games staff were among those cut.
+- **Rollout.** TV cloud games launched broadly in late 2025 with phones as controllers: about 20 titles in about 20 countries, still in beta. About a third of members reportedly had access by early 2026; monthly active players grew about tenfold in nine months from an undisclosed base. The Q3 2026 letter did not mention cloud games, and games staff were among those cut.
 - **Where it runs.** The then-CTO said in 2025 that game-streaming appliances would need a different design and were being built. Postings put a cloud-games reliability team inside the Snack Bar managing bare-metal servers and custom hardware at scale; another describes edge caches as the foundation of the cloud gaming platform (Inferred: owned GPU servers at metro or regional sites, not inside ISPs).
-- **The unit.** A concurrent session holds a GPU slice, a hardware encoder slot, several CPU threads and about 10 Mbps outbound for its whole length (Inferred from industry norms). It cannot be cached, time-shifted or shared; by contrast, half a rack of Poppers can serve about 500,000 streams. Party games pool up to eight players per session, the one economic mercy.
+- **The unit.** A concurrent session holds a GPU slice, a hardware encoder slot, several CPU threads and about 10 Mbps outbound for its whole length (Inferred from industry norms). It cannot be cached, time-shifted or shared; by contrast, half a rack of Poppers can serve about 500,000 streams (Inferred: about ten boxes × 150 Gbps ÷ 3 Mbps). Party games pool up to eight players per session, the one economic mercy.
 - **A loss system.** Popcorn Pajamas chose rejection (a "servers are full" message; one session per account) over queueing. At metro scale the Erlang variance term is small, so sizing error is dominated by the peak forecast itself.
 - **Censored demand.** Proof of value is measured on admitted sessions only, so under-provisioning justifies itself. Rejection telemetry is the most valuable demand signal the games plan can collect (Inferred).
 - **Latency.** About 10 ms of round trip allows roughly 1,000 km of fiber before routing and processing. Party games tolerate more delay than action games, so the game mix decides how many sites are needed (Inferred).
 
 ### 4.7 Production
 
-Production demand follows the slate calendar, not a curve. About 200 TB of camera originals per title, up to 700 TB, before visual effects and working copies; 350+ titles on the production toolset, roughly 70 PB (Inferred). A quiet day on set may add little new footage, yet a visual-effects turnover can need thousands of parallel renders in a short window. Camera-file processing runs on CPU in the cloud and in Popcorn Pajamas' own centers; remote artist workstations run on cloud GPUs in local zones near studios. A 12-stage East Coast production campus opens in phases from 2027, a large studio lot is being bought, and generative-AI workflows touched about 300 titles in 2026, mostly in post-production. The 2026 Pajama Set planner posting puts this stream inside the Snack Bar capacity team, turning bandwidth, storage and network signals into forecasts.
+Production demand follows the slate calendar, not a curve. About 200 TB of camera originals per title, up to 700 TB, before visual effects and working copies; 350+ titles on the production toolset, roughly 70 PB (Arithmetic: 350 × 200 TB). A quiet day on set may add little new footage, yet a visual-effects turnover can need thousands of parallel renders in a short window. Camera-file processing runs on CPU in the cloud and in Popcorn Pajamas' own centers; remote artist workstations run on cloud GPUs in local zones near studios. A 12-stage East Coast production campus opens in phases from 2027, a large studio lot is being bought, and generative-AI workflows touched about 300 titles in 2026, mostly in post-production. The 2026 Pajama Set planner posting puts this stream inside the Snack Bar capacity team, turning bandwidth, storage and network signals into forecasts.
 
 ### 4.8 Cloud, ML and data
 
@@ -278,7 +277,7 @@ Video podcasts and a vertical clips feed launched in 2026; podcasts are watched 
 ### 4.10 Discontinuities
 
 - **Codecs.** The next open codec was announced for late 2025 with no Popcorn Pajamas deployment date. Each new codec adds a full stored ladder before it saves any bandwidth.
-- **Popper generations.** Each changes Gbps and TB per box, so past utilization does not translate one-to-one; 354 → 120 TB per box is the latest break.
+- **Popper generations.** Each changes Gbps and TB per box, so past utilization does not translate one-to-one; 350 → 120 TB per box is the latest break.
 - **The paid-sharing step.** About +41M members in 2024, a one-time household step now lapping out of growth comparisons.
 - **Access networks.** Faster cable standards and fiber raise peak bitrate per home. Fixed wireless (17M+ US homes) and satellite broadband (12M+ users worldwide) add congested or distant last miles; satellite users enter the internet at a few gateways, often far from the viewer (World).
 - **New markets and ad markets.** The ad tier enters 15 more countries from 2027, adding small, very popular objects and request load at new sites.
@@ -286,38 +285,38 @@ Video podcasts and a vertical clips feed launched in 2026; podcasts are watched 
 
 ## 5. Quantitative scale model
 
-Popcorn Pajamas publishes no traffic totals, but its own figures bound them: the fleet's effective serving ceiling is about 3.5–13× the sum of regional evening peaks, and most of that gap is explained by structure rather than waste. Every row is Arithmetic on tagged inputs and should be read as an order of magnitude.
+Popcorn Pajamas publishes no traffic totals, but its own figures bound them: the fleet's effective serving ceiling is about 3.5–12× the sum of regional evening peaks, and most of that gap is explained by structure rather than waste. Every row is Arithmetic on tagged inputs and should be read as an order of magnitude.
 
 | Quantity | Estimate | Formula and inputs |
 | --- | --- | --- |
-| Average concurrent streams | About 22M | 97B hours ÷ (181 days × 24 h) |
+| Average concurrent streams | About 22M | 95B hours ÷ (181 days × 24 h) |
 | Average delivered bitrate | About 2.3 Mbps measured; 4 Mbps upper bound | About 4.1 GB per 4 viewing hours (Third party) |
-| Average global delivery | About 45–90 Tbps | 22M streams × 2.3–4 Mbps |
+| Average global delivery | About 50–90 Tbps | 22M streams × 2.3–4 Mbps |
 | Regional evening peak factor | About 2.4–3× regional average | Half of viewing in a 4–5 hour evening window |
-| Sum of regional evening peaks | About 110–270 Tbps | Average × peak factor; regions peak on their own clocks and capacity is regionally captive, so the sum is what the fleet must cover |
-| Marquee live overlay | About 200–390 Tbps gross; net lower by on-demand displacement | 65M × 3–6 Mbps |
+| Sum of regional evening peaks | About 120–270 Tbps | Average × peak factor; regions peak on their own clocks and capacity is regionally captive, so the sum is what the fleet must cover |
+| Marquee live overlay | About 200–390 Tbps gross; net lower by on-demand displacement | 65M × 3–6 Mbps (bitrate range Speculated) |
 | Live overflow beyond embedded caches | About 60–120 Tbps at 70% embedded; about 20–40 Tbps at 90% | Gross overlay × (1 − embedded share) |
-| Public IXP port capacity | About 15 Tbps | Tally of first-listed ports (Inferred) |
+| Public IXP port capacity | About 14 Tbps | Tally of first-listed ports (Inferred) |
 | Fleet nameplate | About 2.5 Pbps (range 1.5–3.8 across all class mixes) | 11,000 Small Bag × 80 Gbps + 8,000 Big Bucket × 200 Gbps (class split Speculated) |
 | **Fleet effective serving ceiling** | **About 0.9–1.4 Pbps** | 11,000 × 20 Gbps + 8,000 × 90–150 Gbps (reported serving rates) |
-| Tail-site floor | About 0.22 Pbps effective | About 5,500 small embedded locations × 2 boxes (router-pair rule) × about 20 Gbps (tail sites assumed to hold Compact boxes) |
-| **Effective ceiling ÷ sum of peaks** | **About 3.5–13×** (about 2.7–11× outside the tail floor) | 0.94 ÷ 0.27 to 1.42 ÷ 0.11 Pbps |
+| Tail-site floor | About 0.22 Pbps effective | About 5,500 small embedded locations (Speculated) × 2 boxes (router-pair rule) × about 20 Gbps (tail sites assumed to hold Small Bag boxes) |
+| **Effective ceiling ÷ sum of peaks** | **About 3.5–12×** (about 2.7–10× outside the tail floor) | 0.94 ÷ 0.27 to 1.42 ÷ 0.12 Pbps |
 | Fill per box-night | About 6.5 TB; 120 TB in about 18 nights | 1.2 Gbps × 12 h ÷ 8 |
 | Annual bytes delivered | About 190–380 EB | About 190B hours × 1–2 GB/h |
-| 120 TB / 200 Gbps Popper bill of materials | About $24K (late 2024) → about $66K (late 2026); flash 59% → 79% of the bill | Priced components, section 6.3 (chassis share Speculated) |
-| Cost of capacity | About $122 → $329 per nameplate Gbps; about $203 → $548 per TB | Bill ÷ 200 Gbps; bill ÷ 120 TB |
-| All-in deployed cost per Popper | About $125K | More than $1B cumulative ÷ 8,000+ boxes (2022 inputs; includes R&D, logistics, IXP operating cost: not a bill of materials) |
+| 120 TB / 200 Gbps Popper bill of materials | About $24K (late 2024) → about $65K (late 2026); flash 60% → 79% of the bill | Priced components, section 6.3 (chassis share Speculated) |
+| Cost of capacity | About $120 → $325 per nameplate Gbps; about $200 → $540 per TB | Bill ÷ 200 Gbps; bill ÷ 120 TB |
+| All-in deployed cost per Popper | About $55–125K | More than $1B cumulative ÷ 8,000–18,000 boxes (two 2022 counts; includes R&D, logistics, IXP operating cost: not a bill of materials) |
 | Transit relief for live | From about $6K per month per sustained 200 Gbps | 200,000 Mbps × about $0.03 per Mbps-month in competitive hubs; more elsewhere (World prices) |
-| Games: owned versus cloud | Owned wins above about 15–20% average utilization | Owned: $60K 4-GPU server, 4 years, 24 slices → about $0.07 per slice-hour at 100%; graphics-class cloud GPU about $2.5 per GPU-hour (World: about $2–4 on demand) ÷ 6 slices ≈ $0.42; 0.07 ÷ 0.42 ≈ 17% (excludes power and colocation) |
+| Games: owned versus cloud | Owned wins above about 15–20% average utilization | Owned (Speculated inputs): $60K 4-GPU server, 4 years, 24 slices → about $0.07 per slice-hour at 100%; graphics-class cloud GPU about $2.5 per GPU-hour (World: about $2–4 on demand) ÷ 6 slices ≈ $0.42; 0.07 ÷ 0.42 ≈ 17% (excludes power and colocation) |
 | Cloud-region evacuation | About +33% load on each survivor | 4 active regions, lose 1: 4 ÷ 3 |
 
 **What the model shows**
 
-1. **The nameplate mystery mostly dissolves.** On spec sheets, nameplate looks about 9–23× the sum of peaks at the assumed class mix (6–35× across all mixes). On Popcorn Pajamas' own serving rates the ratio is about 3.5–13×, and that residual must still hold N+1 within sites (half of each router pair is reserve), the live overlay, generation mix and growth runway. The real stranding question is confined to the PoPs and the largest embedded clusters, not the fleet at large (Inferred).
+1. **The nameplate mystery mostly dissolves.** On spec sheets, nameplate looks about 9–21× the sum of peaks at the assumed class mix (6–32× across all mixes). On Popcorn Pajamas' own serving rates the ratio is about 3.5–12×, and that residual must still hold N+1 within sites (half of each router pair is reserve), the live overlay, generation mix and growth runway. The real stranding question is confined to the PoPs and the largest embedded clusters, not the fleet at large (Inferred).
 2. **Regional captivity is the binding geometry.** A Popper in Southeast Asia cannot serve South America's 8 p.m. Planning against the sum of regional peaks is correct, and global-average utilization is a misleading measure by construction.
 3. **Overflow cannot ride public exchanges.** Even at 90% embedded, a 65M-stream event spills 20–40 Tbps, above all of Popcorn Pajamas' public ports combined. It must land on private interconnects and transit, or not land (Inferred).
 4. **Fill is a scarce shared calendar.** About 6.5 TB per box-night covers steady catalog churn, but a codec or HDR backfill (tens of TB per box) costs 5–10 dedicated nights per box, and launch pre-positioning owns the nights before each premiere. Q4 is when windows are scarcest (scenario S1).
-5. **Fleet growth outruns viewing growth.** The fleet grew about 24% a year (about 8,000 in 2022 to nearly 20,000 in 2026) while viewing grew about 2%. Candidate explanations, none yet weighed: per-box storage fell from 354 to 120 TB, so storage sites need about three boxes for the same catalog depth; small sites buy boxes in router pairs; embedding went deeper (live share 70% → 90%); and the 2022 count may differ in scope (Speculated).
+5. **The box count is nearly flat; the mix is not.** The fleet went from about 18,000 boxes (2022) to nearly 20,000 (2026), close to viewing growth of about 2%. Under that flat total, the mix moved. Per-box storage fell from about 350 to 120 TB, so storage sites need about three boxes for the same catalog. Small sites buy boxes in router pairs, and embedding went deeper (live share 70% → 90%) (Speculated).
 6. **Owned GPUs win early.** The games breakeven at about 15–20% utilization explains the Snack Bar bare-metal path. The gating risk is whether demand exists, and section 4.6's censoring biases that signal low.
 
 ## 6. Supply and constraints
@@ -344,7 +343,7 @@ The Snack Bar can be added to only in whole boxes, inside other companies' build
 3. **Fill window.** 12 hours by default, editable per site; launches, churn, codec backfills and refresh re-fills compete for the same nights.
 4. **Shed threshold and trigger.** Sites shed at capacity; target 50–75% at peak hour; augment at a forecast 75% within 12–18 months.
 5. **Redundancy pattern.** One Popper per router, active/active, no multi-chassis LAG: resilience doubles box count at small sites; failover options are a named sizing input whose amount is not published.
-6. **Host limits.** Rack space, power (about 250–700 W per Popper; supplies rated 750 W; the 2021 storage tier drew 670 W), cooling, ports and the host's own refresh cycle. Popcorn Pajamas cannot relieve them alone (Inferred).
+6. **Host limits.** Rack space, power (about 250–700 W per Popper; supplies rated 750 W; the 2021 storage tier drew about 650 W), cooling, ports and the host's own refresh cycle. Popcorn Pajamas cannot relieve them alone (Inferred).
 7. **Interconnect.** 100+ IXPs and private interconnects at 10G–800G, with timely capacity upgrades required of both sides.
 8. **Hardware life.** Four to six years of no-touch operation makes every purchase a multi-year commitment and every over-buy a multi-year mistake.
 9. **Live admission.** Nominal-bitrate reservation makes live consume more planned capacity than measured traffic shows.
@@ -354,12 +353,12 @@ The Snack Bar can be added to only in whole boxes, inside other companies' build
 
 ### 6.3 The 2026 component shock
 
-AI data-center demand has absorbed the supply of exactly the parts Poppers are built from (World). The drive class Poppers use (61.44 TB-class enterprise QLC flash) went from about $60–65 per TB at launch (2024) to several hundred dollars per TB at retail by 2026; the 122.88 TB class listed at about $37K (about $300 per TB) in February 2026, roughly triple its price nine months earlier (World: dated listings).
+AI data-center demand has absorbed the supply of exactly the parts Poppers are built from (World). The drive classes Poppers use (60 and 120 TB-class enterprise QLC flash) launched near $100 per TB or less. By February 2026 the 120 TB class listed at about $37K (about $300 per TB), roughly triple its price nine months earlier (World: dated listings).
 
 | Component | 2025–2026 movement (World) | Lead time or availability (World) |
 | --- | --- | --- |
-| Enterprise SSD (contract) | About +35% in H2 2025; about +235% cumulative across 2026; +23–28% quarter on quarter in Q4 2026 | Year-long delays reported for high-capacity drives (late 2025); one memory maker says more than 75% of its 2027 memory and storage output is already committed |
-| NAND flash (contract) | Forecast +55–60% (Q1 2026) and +70–75% (Q2 2026) quarter on quarter | Little new fab relief expected soon |
+| Enterprise SSD (contract) | About +35% in H2 2025; about +235% projected across 2026; +23–28% quarter on quarter forecast for Q4 2026 | Year-long delays reported for high-capacity drives (late 2025); one memory maker says more than 75% of its 2027 memory and storage output is already committed |
+| NAND flash (contract) | Forecast +85–90% (Q1 2026) and +70–75% (Q2 2026) quarter on quarter | Little new fab relief expected soon |
 | Server DRAM (contract) | About +64% in H2 2025; a 64 GB server module from about $450 (Q4 2025) to over $900 (Q1 2026) | Undersupplied; multi-year agreements that cap price rises appearing |
 | Hard drives | Retail and NAS prices +46% on average (Sep 2025–Jan 2026) | One maker sold out for 2026, agreements into 2027–28 |
 | 800G-and-above optics | Shipments forecast at 2.6× in 2026 | Key laser lead times extend beyond 2027 |
@@ -367,11 +366,11 @@ AI data-center demand has absorbed the supply of exactly the parts Poppers are b
 | AI servers | Reported to rise more than 15% for early-2027 shipments | Allocation-driven |
 | Cloud GPU instances | Training-class GPUs roughly $3–4 per GPU-hour on demand at specialist clouds and $7–12 at the largest clouds; graphics-class instances cost less | Newest generations in a limited set of regions |
 
-The priced bill of materials for a 120 TB / 200 Gbps box rose from about $24K to about $66K, flash from 59% to 79% of it (Arithmetic at assumed flash prices of about $120 per TB in late 2024 and about $430 per TB in late 2026, a 3.6× rise; chassis figures Speculated): about 2.7× in two years with no spec change.
+The priced bill of materials for a 120 TB / 200 Gbps box rose from about $24K to about $65K, flash from 60% to 79% of it (Arithmetic at assumed flash prices of about $120 per TB in late 2024 and about $430 per TB in late 2026, a 3.6× rise; chassis figures Speculated): about 2.7× in two years with no spec change.
 
 What it means (Inferred):
 
-- **Cost per terabyte reversed.** Each generation is no longer cheaper per TB. Storage is now the scarce dimension on two axes, price and chassis (354 → 120 TB), while throughput is not.
+- **Cost per terabyte reversed.** Each generation is no longer cheaper per TB. Storage is now the scarce dimension on two axes, price and chassis (350 → 120 TB), while throughput is not.
 - **Lead time now sets the horizon.** Component lead times of many months to over a year, plus 4–5 weeks to ship, install and fill, consume most or all of the 12–18-month augment window. Orders must start earlier or rely on buffer stock.
 - **Refresh becomes a financial option.** Long-term agreements are calls on future supply; life extension and decommission scheduling are abandonment options; buying ahead is exercising early.
 - **Efficiency substitutes for hardware, with a catch.** A codec or software gain postpones purchases, but each new codec first adds stored copies to the expensive dimension.
@@ -384,13 +383,13 @@ An augment is a negotiation chain, not a purchase order: **Capacity Planning** (
 
 - **The Cloud Provider.** Reserved capacity for stateful services, reserved plus on-demand for stateless; the documented 10,000-instance shortfall was handled by fallback families. Newer generations are cheaper but scarcer; GPU instances exist in about 10 regions.
 - **GPUs.** Popcorn Pajamas' own GPU fleet is among the fastest-growing and most expensive parts of its infrastructure. Training, language-model post-training, production workstations and any games cloud burst draw on it.
-- **Interconnect.** Exchange port economics reward speed: at a large European exchange about €65 per Gbps-month at 10G, €32 at 100G and €16.5 at 400G; 400G ports there grew 65% in 2025 (World).
+- **Interconnect.** Exchange port economics reward speed: at a large European exchange about €65 per Gbps-month at 10G, €32 at 100G and about €17 at 400G; 400G ports there grew 65% in 2025 (World).
 - **Transit** at 100G fell to about $0.03 per Mbps-month in competitive hubs (2026), higher elsewhere, cheap enough to be a realistic live-event relief valve, but only where ports already exist (World).
 
 ### 6.6 Colocation and power
 
 - **Colocation is nearly full.** Vacancy in the top North American markets hit a record low in 2026, as low as 0.3% in the largest. Rents run about $165–265 per kW-month in major US and European hubs and about $400 in Singapore (World).
-- **Grids are the gate.** Grid connections for new data centers can take up to a decade in Europe's main hubs (Frankfurt, London, Amsterdam, Paris, Dublin); the Netherlands bars new hyperscale sites outside two locations; waits of three years or more are common elsewhere (World).
+- **Grids are the gate.** Grid connections for new data centers can take up to a decade in Europe's main hubs (Frankfurt, London, Amsterdam, Paris, Dublin); the Netherlands bars new hyperscale sites outside two locations; US waits average one to three years, and up to seven in the tightest hubs (World).
 - Popcorn Pajamas' PoPs and any games build-out price against this market.
 
 ### 6.7 Organizational constraints
@@ -429,7 +428,7 @@ Precedents bound the outcomes. Popcorn Pajamas' own dispute with a large Korean 
 | India | Telcos asked in 2025 for a levy on streaming revenue; no decision | Revenue-based, not traffic-based |
 | United Kingdom | The regulator declined to recommend network fees (2023) and allowed most zero-rating | Low near-term risk |
 
-The two sides disagree on the economics (World). European telco associations say hosting caches costs networks money, the savings are insignificant and hosting several providers' caches is hard to run. A study commissioned by content companies says caching and peering save networks $5–6.4B a year, A separate study Popcorn Pajamas commissioned put its own caches' 2021 savings to networks at about $1B or more (Reported).
+The two sides disagree on the economics (World). European telco associations say hosting caches costs networks money, the savings are insignificant and hosting several providers' caches is hard to run. A study commissioned by content companies says caching and peering save networks about $5–6B a year. A separate study Popcorn Pajamas commissioned put its own caches' 2021 savings to networks at about $1B or more (Reported).
 
 ### 7.3 Market access and data rules
 
@@ -447,15 +446,15 @@ The two sides disagree on the economics (World). European telco associations say
 
 ### 7.5 The networks underneath
 
-- **Consolidation.** The cable merger (about 37–38M customers, closed August 2026) and a telco fiber acquisition (about 30M fiber passings, January 2026): fewer, larger negotiations, and cache placement to revisit as networks integrate (World + Inferred).
+- **Consolidation.** The cable merger (about 38M customers, closed August 2026) and a telco fiber acquisition (about 30M fiber passings, January 2026): fewer, larger negotiations, and cache placement to revisit as networks integrate (World + Inferred).
 - **Access upgrades.** Faster cable standards now reach millions of homes and fiber keeps expanding; both raise peak bitrate per home.
-- **Fixed wireless.** 17M+ US connections (about 14% of home broadband), congested daily at peak, median latency 46–69 ms (World).
+- **Fixed wireless.** 17M+ US connections (about 14% of home broadband), congested daily at peak, median latency about 45–70 ms (World).
 - **Satellite broadband.** 12M+ users worldwide of the largest operator enter the internet at a few gateways, often far from the viewer; cache performance depends on gateway location. No evidence of Poppers inside a satellite network. Placement follows where traffic enters, not where viewers sit.
 - **Subsea cables.** Red Sea cuts in 2024 forced rerouting of about a quarter of Asia–Europe–Middle East traffic, with repairs taking months; more cuts followed in 2025, and the Baltic saw repeated incidents in 2023–25 (World). Pre-positioned content shields viewers; fill, long-tail misses and live events in those regions are exposed (Inferred).
 
 ### 7.6 Energy and climate commitments
 
-- Popcorn Pajamas targets a 46% absolute cut in scope 1 and 2 emissions by 2030 against 2019 (19% achieved by 2025) and reports 100% renewable electricity; colocated node electricity still grows about 20% a year.
+- Popcorn Pajamas targets a cut of nearly half in scope 1 and 2 emissions by 2030 against 2019 (about a fifth achieved by 2025) and reports 100% renewable electricity; colocated node electricity still grows about 20% a year.
 - Data centers used about 415 TWh worldwide in 2024, projected to roughly double by 2030; about a fifth of planned projects risk grid delays; the largest US grid operator cleared its 2027–28 capacity auction at its price cap (World).
 - Energy is a soft constraint on Popcorn Pajamas directly and a harder one on the hosts and colocation providers it depends on, which is exactly what fee advocates price (Inferred).
 
@@ -547,7 +546,7 @@ The overall problem breaks into sixteen decision-shaped problems in four cluster
 - **Decision (owner).** How many Poppers, of which class, at each site (Capacity Planning recommends; class selection unattributed).
 - **Inputs.** Peak-hour Gbps by site; catalog size and churn; fill window; failover options; host limits; health- and content-miss rates.
 - **Horizon.** 12–18 months ahead of the augment.
-- **Why hard.** Site capacity counts throughput only; a site at 60% can still shed content if the catalog does not fit or fill cannot finish. Per-box storage shrank 354 → 120 TB while flash became the dearest part of the bill, and redundancy buys boxes in pairs.
+- **Why hard.** Site capacity counts throughput only; a site at 60% can still shed content if the catalog does not fit or fill cannot finish. Per-box storage shrank 350 → 120 TB while flash became the dearest part of the bill, and redundancy buys boxes in pairs.
 - **Links.** P9 (what a box costs), P16 (what fill allows), P10.
 
 ### P2. Bring inorganic demand into a plan built for a smooth curve
@@ -563,7 +562,7 @@ The overall problem breaks into sixteen decision-shaped problems in four cluster
 - **Decision (owner).** Reserve per event, per region, per host network (Capacity Planning + host relations).
 - **Inputs.** Rights calendar and event tier; predicted peak concurrent streams by region and host; nominal bitrate ladder; the same evening's on-demand peak; forecasts shared with hosts.
 - **Horizon.** Years for the calendar (football to 2029–30, wrestling to at least the early-2030 opt-out point), weeks for the reservation, minutes during the event.
-- **Why hard.** Content cannot be pre-filled; about 90% lands on host-housed Poppers; the record (72.5M) climbs in steps; published audience metrics are not the unit capacity needs.
+- **Why hard.** Content cannot be pre-filled; about 90% lands on host-housed Poppers; the record (about 72M) climbs in steps; published audience metrics are not the unit capacity needs.
 - **Links.** P2 applied to live; drives P4, P13, P15; gated by P6; long-run load set by P14.
 
 ### P4. Hold headroom on the request path, not only on bandwidth
@@ -611,7 +610,7 @@ The overall problem breaks into sixteen decision-shaped problems in four cluster
 - **Decision (owner).** Buy ahead, extend life, change the class mix, or lean on efficiency; long-term agreement terms (fleet planner + Business Operations).
 - **Inputs.** Flash, DRAM, optics and GPU prices and lead times; fleet age and failure rates; codec and software gains; tariff exposure.
 - **Horizon.** Component orders 10–15+ months ahead.
-- **Why hard.** Flash rose from 59% to 79% of the bill and the box about 2.7×; lead times now match the augment window; the cheapest efficiency lever (a codec) first adds stored copies. Best treated as a portfolio of options.
+- **Why hard.** Flash rose from 60% to 79% of the bill and the box about 2.7×; lead times now match the augment window; the cheapest efficiency lever (a codec) first adds stored copies. Best treated as a portfolio of options.
 - **Links.** Shares the refresh decision with P10; sets what a box costs in P1.
 
 ### P10. Manage the installed fleet and its long tail
@@ -678,7 +677,7 @@ Twenty chains connect markets, rights, networks and the organization to concrete
 
 **Supply and cost**
 
-1. AI data-center demand → NAND allocation → enterprise flash from about $65 per TB at launch to several hundred dollars per TB → Popper bill about 2.7× → refresh deferral → older fleet, more watts per Gbps → host power limits bind sooner (World → Arithmetic → Inferred).
+1. AI data-center demand → NAND allocation → enterprise flash from about $100 per TB or less at launch to several hundred dollars per TB → Popper bill about 2.7× → refresh deferral → older fleet, more watts per Gbps → host power limits bind sooner (World → Arithmetic → Inferred).
 2. AI demand → newer cloud instance families scarce → fallback mixes → pre-scaling for live events planned against uncertain instance supply (Reported → Inferred).
 3. AI demand → GPU scarcity → production rendering pushed to CPU to free up GPU instances → the same pool games and ML training draw on → P8 arbitration now includes GPUs (Reported → Inferred).
 4. Flash price step → storage-heavy class uneconomic → catalog-fit pressure on 120 TB boxes → more content misses at tail sites → more shed to PoPs → exchange and private-interconnect port demand → high-speed optics on allocation (Arithmetic → World → Inferred).
@@ -689,9 +688,9 @@ Twenty chains connect markets, rights, networks and the organization to concrete
 6. Live rights signed to 2029–30 → dates known, sizes unknown → host-level forecasts shared ahead → embedded share 70% → 90% → live capacity is mostly other people's buildings → P6 governs P3 (Reported → Third party → Inferred).
 7. Marquee event joins in minutes → manifest and start surge + retries → request-path failure while links idle → headroom must be bought in the cloud, not in Gbps (Press → Inferred).
 8. VBR saves bytes → quiet scenes read as spare capacity → over-admission risk → admission reserves nominal bitrate → live books more than it uses → utilization measures understate live load (Reported).
-9. A viewer switches to a live event → on-demand bytes fall up to 27% on the same wire → net byte peak well below gross → but ad-break fetches synchronize → a request spike at each break → ads pipeline re-architecture (Third party → Reported).
-10. Christmas Day: football doubleheader + holiday on-demand peak + a tent-pole season finale → one UK ISP's busiest day ever and the biggest US streaming day on record → Q4 stacking is observed, not hypothetical (Third party + World).
-11. Rivals' records (72.5M, single market) → reference class for Popcorn Pajamas' marquee tier moves up → the 2027 women's tournament and any future men's-tournament bid imply peaks beyond anything Popcorn Pajamas has served → P14's pricing question becomes acute (World → Speculated).
+9. A viewer switches to a live event → on-demand bytes fall by up to about a quarter on the same wire → net byte peak well below gross → but ad-break fetches synchronize → a request spike at each break → ads pipeline re-architecture (Third party → Reported).
+10. Christmas Day: football doubleheader + holiday on-demand peak + a tent-pole final-season release → one UK ISP's busiest day ever and the biggest US streaming day on record → Q4 stacking is observed, not hypothetical (Third party + World).
+11. Rivals' records (about 72M, single market) → reference class for Popcorn Pajamas' marquee tier moves up → the 2027 women's tournament and any future men's-tournament bid imply peaks beyond anything Popcorn Pajamas has served → P14's pricing question becomes acute (World → Speculated).
 
 **Demand signals and games**
 
@@ -702,7 +701,7 @@ Twenty chains connect markets, rights, networks and the organization to concrete
 
 **Hosts, policy and networks**
 
-16. A cable merger (about 37–38M customers) → fewer, bigger counterparties → one negotiation covers a large share of US broadband homes → barter terms become strategic risk → P6 escalates from operations to the board (World → Inferred).
+16. A cable merger (about 38M customers) → fewer, bigger counterparties → one negotiation covers a large share of US broadband homes → barter terms become strategic risk → P6 escalates from operations to the board (World → Inferred).
 17. Net-neutrality rules struck down → hosting and interconnection purely contractual → fee precedents (the Korean bundle, the German ruling) → a path where delivery acquires a per-GB price → placement flips to fee-weighted bytes (World → Inferred).
 18. Route-reflector redesign → eight cities become control-plane concentration points → regional BGP health is a failure domain alongside sites and regions → P13 gains a network layer (Reported → Inferred).
 
@@ -813,7 +812,7 @@ The structure of the problem rests on Reported facts; its hardest parts (who dec
 | 3 | 6,000+ locations; 1,000+ host networks; 60+ own data centers; 100+ IXPs | Reported |
 | 4 | Big Bucket ≤120 TB / about 200 Gbps; Small Bag ≤60 TB / about 80 Gbps; all-flash; 4–6-year life | Reported |
 | 5 | Served in practice: Small Bag about 20 Gbps; Big Bucket about 90–150+ Gbps | Reported |
-| 6 | 2021 storage tier: 354 TB, 670 W, 36–70 Gbps | Reported |
+| 6 | 2021 storage tier: about 350 TB, about 650 W, about 35–70 Gbps | Reported |
 | 7 | Default fill window 2 a.m.–2 p.m.; 1.2 Gbps per box; one Popper per router, no multi-chassis LAG | Reported |
 | 8 | Site capacity = Gbps before shed; 50–75% band; augment at 75% within 12–18 months | Reported |
 | 9 | Content miss, health miss, content shed ratio | Reported |
@@ -822,12 +821,12 @@ The structure of the problem rests on Reported facts; its hardest parts (who dec
 | 12 | The 2025 premiere: TV start failures around release, recovered in about 5 minutes | Press |
 | 13 | Live about 1% of hours, about 5% of 2026 content spend; 6 of top-10 sign-up days | Reported |
 | 14 | Embedded share of live about 70% (2024) → about 88–90% (later events) | Third party |
-| 15 | A rival's single-market record of 72.5M concurrent (Mar 2026) | World |
+| 15 | A rival's single-market record of about 72M concurrent (Mar 2026) | World |
 | 16 | VBR: −15% bytes, −10% peak minute; admission on nominal bitrate | Reported |
 | 17 | Viewing about +2% a year; half in the evening; over 300M members | Reported |
 | 18 | Enterprise flash, DRAM and optics prices and lead times (section 6.3) | World |
-| 19 | Popper bill of materials about $24K → $66K; flash 59% → 79% | Arithmetic + Speculated |
-| 20 | All-in deployed cost about $125K per Popper | Arithmetic + Speculated |
+| 19 | Popper bill of materials about $24K → $65K; flash 60% → 79% | Arithmetic + Speculated |
+| 20 | All-in deployed cost about $55–125K per Popper | Arithmetic + Speculated |
 | 21 | Transit from about $0.03 per Mbps-month at 100G; record-low colocation vacancy | World |
 | 22 | The Director's remit starts from Finance's demand forecast; team inside the edge partnerships and planning group | Reported (postings) |
 | 23 | Seat evolution, 2019 → 2026: generalist → modeling, fleet, per-stream planner, Director | Reported (postings) |
@@ -853,9 +852,9 @@ Fifteen questions decide whether this problem statement is right, ranked by how 
 | # | Question | Current best guess | What would answer it |
 | --- | --- | --- | --- |
 | 1 | What unit does the team plan in, and does any cross-stream unit exist internally? | Gbps per site, with storage and fill as engineering side rules; no cross-stream unit (Inferred) | Internal planning documents; a future operator-conference talk |
-| 2 | How much of the 3.5–13× effective residual is deliberate reserve versus stranded, at the PoPs specifically? | Mostly live reserve, N+1 and growth runway; some stranding in generation mix (Speculated) | Utilization distributions by site class; shed-ratio trends; peak-to-average per site |
-| 3 | Popper unit cost and procurement lead time | About $25–70K bill of materials depending on era, about $125K all-in; weeks to months normally, longer under allocation (Arithmetic/Speculated) | Any procurement disclosure; host-forum delivery reports |
-| 4 | How is Popcorn Pajamas riding out the component shock, and will the 12–18-month trigger lengthen? | Buying ahead under long-term agreements plus life extension (capex +54% fits); trigger lengthened or buffer stock added (Speculated) | Supplier agreements; capex commentary; a help-center change to the trigger, a cheap falsifier to watch |
+| 2 | How much of the 3.5–12× effective residual is deliberate reserve versus stranded, at the PoPs specifically? | Mostly live reserve, N+1 and growth runway; some stranding in generation mix (Speculated) | Utilization distributions by site class; shed-ratio trends; peak-to-average per site |
+| 3 | Popper unit cost and procurement lead time | About $24–65K bill of materials depending on era, about $55–125K all-in; weeks to months normally, longer under allocation (Arithmetic/Speculated) | Any procurement disclosure; host-forum delivery reports |
+| 4 | How is Popcorn Pajamas riding out the component shock, and will the 12–18-month trigger lengthen? | Buying ahead under long-term agreements plus life extension (capex up about half fits); trigger lengthened or buffer stock added (Speculated) | Supplier agreements; capex commentary; a help-center change to the trigger, a cheap falsifier to watch |
 | 5 | Where exactly do cloud games run, and does a GPU appliance exist? | Owned GPU bare metal at PoPs or metros, run by the Snack Bar organization; no host-facing appliance yet (Inferred) | A games appliance on the appliances page; a Host Lounge entry |
 | 6 | Does Popcorn Pajamas collect rejection telemetry and use it to gate games investment? | Collected yes; used for investment, unknown (Speculated) | An engineering post or posting naming it |
 | 7 | Who owns request-path headroom for events and launches, and how close are tested ceilings to need? | Live reliability and cloud teams; tested to about 100K starts per second (Reported/Inferred) | Post-incident reviews; load-test write-ups |
@@ -895,12 +894,12 @@ Host-side requirements follow a common pattern; one large program, for example, 
 
 | Event | Year | Platform | Reported peak or audience | How it was delivered |
 | --- | --- | --- | --- | --- |
-| T20 World Cup final | 2026 | A South Asian streamer | 72.5M concurrent, single market | Not published |
-| T20 World Cup semi-final | 2026 | Same | 65.2M concurrent | Not published |
-| A European exchange's record day (football night) | 2025 | Exchange | About 27 Tbps across sites; about 18.7 Tbps at the main hub | Exchange record |
-| Christmas football game | 2025 | An e-commerce company's streamer | 21M average; 22.9M peak | For a November 2025 game: own CDN about 80%, a second CDN about 19%; about 48% peering, 47% embedded, 4% transit |
-| Football game played abroad | 2025 | A video platform | 17.3M average worldwide | Not published |
-| Championship game | 2025 | A free ad-supported streamer | 13.6M viewers; 15.5M peak | Not published |
+| T20 World Cup final | 2026 | A South Asian streamer | About 72M concurrent, single market | Not published |
+| T20 World Cup semi-final | 2026 | Same | About 65M concurrent | Not published |
+| A European exchange's record day (football night) | 2025 | Exchange | About 27 Tbps across sites; about 19 Tbps at the main hub | Exchange record |
+| Christmas football game | 2025 | An e-commerce company's streamer | About 21M average; about 23M peak | For a November 2025 game: own CDN about 80%, a second CDN about 19%; about 48% peering, 47% embedded, 4% transit |
+| Football game played abroad | 2025 | A video platform | About 17M average worldwide | Not published |
+| Championship game | 2025 | A free ad-supported streamer | About 14M viewers; about 15M peak | Not published |
 | Playoff game, streaming exclusive | 2024 | A broadcaster's streamer | 23M average; about 30% of US internet traffic in its slot | Several CDNs (outside observation); private peering 63%, transit 28%, embedded 1% |
 
 Rivals spread live across two to six CDNs and lean on peering; Popcorn Pajamas carries all of it on the Snack Bar, mostly inside host networks.
