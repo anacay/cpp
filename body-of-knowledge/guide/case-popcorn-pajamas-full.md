@@ -73,8 +73,8 @@ The plan must absorb demand that changes shape faster than its forecasts, throug
 **The five most surprising connections**
 
 1. **The AI boom hits Popcorn Pajamas three times at once.** It multiplied the cost of flash in every new Popper, tightened the cloud instance generations its fleet wants, and created the GPU scarcity that production, machine learning and games now compete for inside one company.
-2. **Live and on-demand trade bytes but add requests.** One UK ISP's data shows Popcorn Pajamas' on-demand traffic falling by up to about a quarter while a national-team match aired free-to-air (Third party). Streams substitute on the wire, but playback starts, manifests and ad events stack, which is why failures happen in the request path.
-3. **Q4 is triple-booked.** The holiday on-demand peak, the holiday football slate and the biggest premieres land in the quarter whose fill nights launches need. Christmas Day 2025 was one UK ISP's busiest day ever, credited to the second part of Popcorn Pajamas' tent-pole final season (Third party), and the biggest US streaming day on record (World). Codec backfills and refresh waves get pushed to Q1–Q2.
+2. **Live and on-demand trade bytes but add requests.** One UK ISP saw Popcorn Pajamas' on-demand traffic fall by up to about a quarter while a national-team match aired free-to-air (Third party). Streams substitute on the wire, but playback starts, manifests and ad events stack, which is why failures happen in the request path.
+3. **Q4 is triple-booked.** The holiday on-demand peak, the holiday football slate and the biggest premieres land in the quarter whose fill nights launches need. Christmas Day 2025 was one UK ISP's busiest day ever, credited to the second part of Popcorn Pajamas' tent-pole final season (Third party). It was also the biggest US streaming day on record (World). Codec backfills and refresh waves get pushed to Q1–Q2.
 4. **Admission control blinds the forecast.** The mechanism that protects game sessions at peak is the same one that censors the proof-of-value signal that games investment is staged on.
 5. **The planning organization's own shape is telemetry.** Its drift from one generalist (2019) to a modeling seat, a fleet seat, a planner per stream and a Director (2026) tracks the problem becoming multi-stream, multi-estate and capital-heavy. The Director's remit still starts from Finance's demand forecast, so the move to signal-led planning is under way, not done.
 
@@ -163,7 +163,7 @@ A live origin on cloud compute sits between the encoding pipeline and the Snack 
 
 ### 3.8 Energy
 
-Popcorn Pajamas reports electricity only for Poppers it runs in colocation: about 35 GWh (2021) to about 70 GWh (2025), an average draw of about 8 MW, growing about 20% a year. Popcorn Pajamas says that is about one-tenth of its edge and cloud data-center electricity combined, so the total is on the order of 700 GWh a year (Arithmetic). Power drawn by Poppers inside host networks is the hosts' and is not reported. Colocated energy grows about 20% a year while the whole fleet grows a few percent. Either growth is concentrated at owned sites or per-box draw is rising. Public data cannot separate the two (Inferred).
+Popcorn Pajamas reports electricity only for Poppers it runs in colocation: about 35 GWh (2021) to about 70 GWh (2025). That is an average draw of about 8 MW, growing about 20% a year. Popcorn Pajamas says that is about one-tenth of its edge and cloud data-center electricity combined, so the total is on the order of 700 GWh a year (Arithmetic). Power drawn by Poppers inside host networks is the hosts' and is not reported. Colocated energy grows about 20% a year while the whole fleet grows a few percent. Either growth is concentrated at owned sites or per-box draw is rising. Public data cannot separate the two (Inferred).
 
 ### 3.9 The production estate is separate
 
@@ -198,7 +198,7 @@ On-demand viewing is the smooth, predictable base, and Popcorn Pajamas forecasts
 
 Capacity write-ups usually sum streams. The evidence says they covary, with a sign that depends on the layer.
 
-- **Bytes substitute.** One UK ISP measured Popcorn Pajamas' on-demand traffic falling by up to about a quarter while a national-team match aired on a free-to-air broadcaster's stream during the 2026 men's World Cup, recovering at full time (Third party). Popcorn Pajamas' own live events likely pull viewers off its on-demand catalog on the same Poppers, so net evening load is below on-demand peak plus live gross (Inferred).
+- **Bytes substitute.** One UK ISP measured Popcorn Pajamas' on-demand traffic falling by up to about a quarter while a national-team match aired free-to-air during the 2026 men's World Cup. It recovered at full time (Third party). Popcorn Pajamas' own live events likely pull viewers off its on-demand catalog on the same Poppers, so net evening load is below on-demand peak plus live gross (Inferred).
 - **Requests add.** A live join brings playback starts, personalized manifests, real-time recommendation updates (100M+ devices in under a minute) and, with dynamic ad insertion now live, synchronized ad-break fetches, on top of normal browse traffic. Byte substitution does nothing for the request path, where both public failures happened.
 - **Games likely covary positively with the video evening peak** (same households, same hours; Speculated), while production is roughly anti-cyclical (weekday daytime). A plan that holds reserve per stream overbuys bytes and underbuys request-path and GPU-evening headroom.
 
