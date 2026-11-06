@@ -25,7 +25,7 @@ At the annual review, one slide sums every team's ask and the next shows finance
 
 Power, land, building shells and large electrical gear take years. One operator says they are "planned years in advance" [8]. Grid connections and large transformers each take years [60–62]. Hixson and Guliani give five years as an example "if you erect your own buildings" [6].
 
-Long-haul network and large contracts take several quarters, so they land here or at quarterly. The seed paper's example commits network at −15 months, at Intent (Section 6.5).
+Long-haul network and large contracts take several quarters, so they land here or at quarterly. The seed paper's two-clocks figure commits network at −15 months, at Intent, on a longer horizon (Section 6.5).
 
 So these layers commit before most launches firm up. Only the portfolio envelope can serve the slowest of them. Alphabet's chief executive put it plainly: "how we close the gap this year is a function of what we have done in the prior years" [90].
 
