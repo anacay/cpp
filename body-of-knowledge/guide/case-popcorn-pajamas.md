@@ -24,7 +24,7 @@ One small planning team turns all of this into annual plans and five-year foreca
 Three things are changing at once:
 
 - **Demand is becoming inorganic.** Live sport contracted into the 2030s, cloud games with no settled hardware, and launches that peak in minutes. None of it is on the smooth curve the plan was built for.
-- **Supply is slower and dearer.** AI demand has absorbed the flash, memory and optics the appliances are built from. Contract prices for enterprise flash rose roughly four to five times since mid-2025. Component lead times now consume most or all of the plan's own trigger window.
+- **Supply is slower and dearer.** AI demand has absorbed the flash, memory and optics the appliances are built from. Contract prices for enterprise flash are on course to rise four to five times from mid-2025 to the end of 2026. Component lead times now consume most or all of the plan's own trigger window.
 - **The free exchange is contested.** Regulators in several regions are debating who pays for delivery, and network operators are consolidating into fewer, larger counterparties.
 
 ## Why it is hard
