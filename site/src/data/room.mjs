@@ -137,6 +137,7 @@ export const frozen = {
     'case-kuantillion-cloud-full.md',
     'case-kuantillion-cloud-practice.md',
     'case-kuantillion-cloud-plan.md',
+    'note-second-lives.md', // the same problem space as Case 3
   ],
 };
 export const frozenLine = (file = '') => (frozen.files.includes(file) ? frozen.line : null);

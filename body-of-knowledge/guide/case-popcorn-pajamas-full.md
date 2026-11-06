@@ -11,7 +11,7 @@ author: Guillermo Martinez
 reviewers:
 ---
 
-*Popcorn Pajamas is a fictional company. Any resemblance to real companies reflects problems the industry shares.*
+*Provenance, dated 8 November 2026. Written and first published on 28 October 2026 from public sources only, cited under Further reading. Popcorn Pajamas is a fictional name. Its Reported, Third party and Press figures are public figures about the streaming and content-delivery industry, used unchanged. Its Inferred, Speculated and Arithmetic figures are the case's own reasoning, with the basis shown. It uses no confidential information and describes no company's internal practice.*
 
 The case describes one company's capacity-planning problem space as an outside analyst could reconstruct it: the system, the demand, the supply, the constraints, the planning organization, sixteen decision-shaped problems, twenty causal chains and six stress scenarios for 2027. It does not prescribe answers. A [companion note](case-popcorn-pajamas-practice.md) shows how the practice's body of knowledge approaches each problem.
 
@@ -925,7 +925,7 @@ Placement rule of thumb: fiber adds about 1 ms of round trip per 100 km, so a 10
 
 ## About this case
 
-Popcorn Pajamas, its teams, its people and its events are fictional. The case is inspired by public information about the streaming and content-delivery industry; figures are drawn to scale, not taken as facts about any company. Corrections, better reference classes and objections are welcome in the practice's discussions.
+Popcorn Pajamas is a fictional name, and its teams, people and events are fictional too. The figures tagged Reported, Press or Third party aren't invented: they are public figures about the streaming and content-delivery industry, taken unchanged and cited under Further reading, and attached to a fictional name so the case reads as a problem to work, not as an account of any company. Figures tagged Inferred, Speculated or Arithmetic are the case's own reasoning, with the basis shown. Nothing in the case comes from any company's confidential information, and where the public record is silent, the case says so. Corrections, better reference classes and objections are welcome in the practice's discussions.
 
 ### Further reading
 
