@@ -47,7 +47,7 @@ Three words recur. A [sink](/glossary/#term-sink) is a place a drive can go: a w
 
 ## Before you start
 
-Case 3 runs to about 50,000 words across four pages. You don't need all of it, and you don't need to start cold.
+Case 3 runs to about 55,000 words across four pages. You don't need all of it, and you don't need to start cold.
 
 **Five concepts to know first.** Each takes about five minutes.
 

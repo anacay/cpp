@@ -98,16 +98,16 @@ The problem was built in three movements. Drive generations quietly diverged for
 **The fleet gets older by choice (2020–2025).**
 
 - All four of the largest Western operators stretched server book lives in 2022–2023. Kuantillion Cloud moved to six years in 2023. Peers sit between five and six; one shortened a subset back to five in 2025, citing AI hardware's pace (Reported; Press).
-- Kuantillion Cloud's extension avoided about $3.9 billion of depreciation in its first year, roughly $3 billion of net income. One peer added about $900 million of net income in a quarter; a mid-size operator, about $20 million (Press). Life extension was an earnings lever before it was a supply lever (Inferred).
-- Kuantillion Cloud's reuse share rose from 22% of upgrade components in 2016 to 44% of components in builds, maintenance and upgrades in 2024. Its 2026 circularity report says machines now retire by their health, not their age. Old machines no longer leave on a calendar.
+- Kuantillion Cloud's two-year extension avoided about $4 billion of depreciation in its first year, about $3 billion of net income. One peer expected close to $1 billion of extra net income in one quarter; a mid-size operator, a few tens of millions (Press). Life extension was an earnings lever before it was a supply lever (Inferred).
+- Kuantillion Cloud's reuse share rose from about a fifth of upgrade components in 2016 to over two-fifths of components in builds, maintenance and upgrades in 2024. Its 2026 circularity report says machines now retire by their health, not their age. Old machines no longer leave on a calendar.
 
 **The shock (late 2025–2026).**
 
 - Late 2025: nearline (bulk) hard-drive lead times pass a year, and disk makers report being sold out for 2026. Cold data starts moving to QLC flash (Third party; Press).
-- Through 2026, enterprise SSD contract prices rise about 80% in the first quarter, 50% in the second and 20–25% in the third, with 23–28% forecast for the fourth (Third party). The midpoints compound to about 4.2 times end-2025; one analyst's cumulative figure implies about 3.4. Read the year as roughly 3.4 to 4.2 times (Arithmetic). Small SSDs enter their own squeeze as vendors favor high-capacity parts.
-- Flash makers move their largest buyers onto multi-year, often prepaid agreements; one reports more than 75% of its 2027 output committed, with 2027 supply contracts expected to close as early as Q1 (Press). By January 2026, analysts call the year's memory capacity all but sold out, and module makers get only 30–50% of the chip volumes they request (Third party). Unplanned volume is the hardest to get (Inferred).
+- Through 2026, enterprise SSD contract prices are reported to rise about 80% in the first quarter, 50% in the second and 20–25% in the third (Third party; figures vary by source). The fourth quarter is forecast at 23–28% (Third party). The midpoints compound to about 4.2 times end-2025; one analyst's reported cumulative figure implies about 3.4. Read the year as roughly 3.4 to 4.2 times (Arithmetic). Small SSDs enter their own squeeze as vendors favor high-capacity parts.
+- Flash makers move their largest buyers onto multi-year, often prepaid agreements; one reports more than 75% of its fiscal-2027 output committed, with 2027 supply contracts expected to close as early as Q1 (Press). By January 2026, analysts call the year's memory capacity all but sold out, and module makers get only 30–50% of the chip volumes they request (Third party). Unplanned volume is the hardest to get (Inferred).
 - PC makers halve standard SSD configurations (1 TB to 512 GB, 512 GB to 256 GB). A large content-delivery operator reports server costs up 75–200% and adds a customer surcharge, the response open to an operator too small to win allocation (Press; Inferred).
-- Kuantillion Cloud's disclosed purchase commitments run from about $149 billion at end-2025 to $332 billion in March 2026 and $811 billion by mid-2026. That is 5.4 times in six months, mainly technical infrastructure (Reported, quarterly filing for the period ended 30 June 2026; Press). Peers disclose hundreds of billions too. Supply risk is being turned into contract at historic scale (Inferred).
+- Kuantillion Cloud's disclosed purchase commitments run from about $150 billion at end-2025 to over $300 billion in March 2026 and over $800 billion by mid-2026. That is more than five times in six months, mainly technical infrastructure (Reported; Press). They passed $900 billion by 30 September 2026 (Reported). Peers disclose hundreds of billions too. Supply risk is being turned into contract at historic scale (Inferred).
 - September 2026: a supply-chain executive at Kuantillion Cloud says it has begun reclaiming older memory from retired servers. It goes into the newest AI servers through a dedicated hardware interface, and it still isn't enough (Press).
 - October 2026: Kuantillion Cloud reaffirms six-year server lives, says it is supply constrained, has started renting third-party compute and expects capital spending to rise significantly in 2027 (Reported; Press). Its cloud advises customers to reserve even some general-purpose capacity ahead of need (Press).
 
@@ -119,12 +119,12 @@ Kuantillion Cloud is spending record sums on its fleet and still can't buy enoug
 
 | Dimension | Figure (as of Oct 2026) | Tier |
 | --- | --- | --- |
-| Capital spending | 2026 guidance $195–205B, against $91B in 2025; about 60–65% of technical-infrastructure spend on servers; a further large rise signalled for 2027 | Reported; 2025 figure and server share Press |
-| Depreciation | Servers over six years since 2023, reaffirmed October 2026; first-year effect about $3.9B | Reported; effect Press |
-| Purchase commitments | About $149B → $332B → $811B, end-2025 to mid-2026; composition undisclosed | Press |
+| Capital spending | 2026 guidance about $200B, against about $90B in 2025; about three-fifths of technical-infrastructure spend on servers; a further large rise signalled for 2027 | Reported; 2025 figure and server share Press |
+| Depreciation | Servers over six years since 2023, reaffirmed October 2026; first-year effect about $4B | Reported; effect Press |
+| Purchase commitments | About $150B → over $300B → over $800B, end-2025 to mid-2026; over $900B by 30 September 2026; composition undisclosed | Reported; Press |
 | Supply position | Supply constrained; renting third-party compute since the third quarter of 2026 | Reported; Press |
-| Harvest | About 8.8M components in 2024, including 3M+ drives; 7.5M+ components for internal reuse in 2025; resale about 2.6M in 2025 | Reported; 2025 resale Press |
-| Reuse share | 22% of upgrade components (2016) → 44% of components in builds, maintenance and upgrades (2024) | Reported |
+| Harvest | Close to 9M components in 2024, including over 3M drives; over 7M components for internal reuse in 2025; resale about 2.5M in 2025 | Reported; 2025 resale Press |
+| Reuse share | About a fifth of upgrade components (2016) → over two-fifths of components in builds, maintenance and upgrades (2024) | Reported |
 | Lifecycle | Retirement by machine health rather than age (2026 report); reuse first, then resale, then recycling | Reported |
 | Flash in the fleet | Local storage on scheduled machines and a pooled cache tier; wear priced per byte written in published models | Reported |
 | SSD share of any published figure | Not disclosed | Unknown |
@@ -169,7 +169,7 @@ Legacy flash isn't one pile of drives. It is several populations, and each drive
 | Population | Where it is | What decides its value |
 | --- | --- | --- |
 | In service, well used | In running machines whose tenants use most of the flash | Already earning. The only question is how long to keep the host alive |
-| In service, stranded | In running machines whose tenants use little of the flash | Paid for but idle at the margin. One cloud measured 54% of server SSD capacity stranded (Third party) |
+| In service, stranded | In running machines whose tenants use little of the flash | Paid for but idle at the margin. One cloud is reported to have 54% of server SSD capacity stranded (Third party) |
 | Harvested, in inventory | Pulled from decommissioned machines, held on site or at a regional hub (Inferred) | Whatever demand it can be matched to before it ages out or is resold |
 | Out of custody | Resold, recycled or shredded | Gone. Only resale value or recovered materials remain |
 
@@ -210,9 +210,9 @@ Where a site skips that triage and pulls a drive on every ticket, each non-drive
 
 ### 4.5 Scale of the flow
 
-Kuantillion Cloud harvested about 8.8 million components in 2024 for reuse or resale, including over 3 million drives wiped and then reused or resold. In 2025 it harvested more than 7.5 million for internal reuse alone, through build, upgrade and spares programs, and resold about 2.6 million (Press for the 2025 resale).
+Kuantillion Cloud harvested close to 9 million components in 2024 for reuse or resale, including over 3 million drives wiped and then reused or resold. In 2025 it harvested more than 7 million for internal reuse alone, through build, upgrade and spares programs. It resold about 2.5 million (Press for the 2025 resale).
 
-The total flow didn't fall from 2024 to 2025. Internal reuse grew while resale fell from more than 6.7 million components to about 2.6 million. That fits parts staying in-house as supply tightened, though no source states the cause (Inferred). The reports say hard drives and never mention SSDs, so whether SSDs are in any figure isn't public (Unknown).
+The total flow didn't fall from 2024 to 2025. Internal reuse grew while resale fell from several million components to about 2.5 million. That fits parts staying in-house as supply tightened, though no source states the cause (Inferred). The reports say hard drives and never mention SSDs, so whether SSDs are in any figure isn't public (Unknown).
 
 The rest of the industry runs the same loop, mostly in silence, through supply-chain organizations rather than storage engineering (World; A.1).
 
@@ -235,7 +235,7 @@ It is tempting to frame legacy flash as a scheduling problem: find jobs that tol
 
 ### 5.1 Workloads
 
-Most data-center SSDs use a small share of rated endurance: typically under 2%, and about 15% at the 99th percentile in one large study (Third party). Most legacy drives likely have plenty left. Their limits are usually capacity per slot, interface speed, power per terabyte and tail latency (Inferred).
+Most data-center SSDs use a small share of rated endurance. In one large study, most drives used under 1% of it a year (Third party; Maneas et al. 2022). Most legacy drives likely have plenty left. Their limits are usually capacity per slot, interface speed, power per terabyte and tail latency (Inferred).
 
 - **Natural tenants** are plausibly read-mostly caches, replicated or erasure-coded data, scratch space and logs (Inferred; a sample, not a taxonomy). Its public cloud sells local-flash caching as cheaper than memory, and caches absorb device loss by design. A server maker's patent formally gives worn drives a read-mostly end of life (Third party).
 - **The acceptance question has been asked from the top:** two nines and twice the capacity, or four nines and half (section 3). Some workloads would rather have more, lower-assurance capacity. The problem is finding and pricing them (Inferred).
@@ -256,10 +256,10 @@ A six-year field study of a large fleet's SSDs found 4–10% replaced over four 
 
 ### 5.3 Upgrades and builds
 
-In 2024, 44% of components in Kuantillion Cloud's builds, maintenance and upgrades came from reused inventory, and its lifecycles are moving to condition-based, modular upgrades.
+In 2024, over two-fifths of components in Kuantillion Cloud's builds, maintenance and upgrades came from reused inventory, and its lifecycles are moving to condition-based, modular upgrades.
 
 - **Life extension.** Adding or swapping flash can reshape running machines to serve demand longer, substituting for new machines in a shock (Inferred).
-- **Reused parts in new builds.** One cloud published a server pairing 12 reused 1 TB drives with 2 new 4 TB drives, striped to hide the old drives' speed. It reports about 28–29% lower emissions per core (Third party; Wang et al. 2024). That figure is per core. Across that cloud's whole fleet, the modelled net cut is about 8%, or 15% when performance needs are met. Off-the-shelf passive adapters fitted the old M.2 drives into newer E1.S slots, so the fit gate can be crossed cheaply. With 14 drives instead of 6, the server's modelled failure rate rose from 4.8 to 7.2, about 50% more repair events per server (Third party; Arithmetic). Production use is Unknown. Striping evens load, not remaining life or tail latency, and same-age drives in one box sit uneasily with the correlated-failure evidence (Inferred).
+- **Reused parts in new builds.** One cloud published a server pairing 12 reused 1 TB drives with 2 new 4 TB drives, striped to hide the old drives' speed. It reports about 28% lower emissions per core (Third party; Wang et al. 2024). Across that cloud, the modelled net cut is about 8%. Deployed only where performance goals are met, the per-core cut is about 15%. Off-the-shelf passive adapters fitted the old M.2 drives into newer E1.S slots, so the fit gate can be crossed cheaply. With 14 drives instead of 6, and 20 memory modules instead of 12, the server's modelled failure rate rose from 4.8 to 7.2, about 50% more repair events per server (Third party; Arithmetic). Production use is Unknown. Striping evens load, not remaining life or tail latency, and same-age drives in one box sit uneasily with the correlated-failure evidence (Inferred).
 - **Physical fit limits this sink.** Older 2.5-inch and M.2 drives need adapters for EDSFF slots, and SATA or SAS needs a supporting backplane (Third party). Upgrades mostly mean legacy drives in their own or adjacent generations (Inferred).
 
 ### 5.4 Retirement
@@ -304,7 +304,7 @@ A legacy drive is only supply if it can reach a sink. Eleven gates sit in the wa
 
 The field studies below measure first lives, at other operators and researchers. They don't agree on what happens late in life (Third party; mapping Inferred).
 
-- **Early failures are common; a late rise is not established.** A study of 1.4 million enterprise SSDs over 30 months saw failure rates rise for 12–15 months, then fall for a long period. It saw no sign of a rise at end of life (Maneas et al. 2020). A six-year trace of about 30,000 SSDs found an infancy of about 90 days, then a roughly constant rate. Its oldest drives failed about as often as young ones past infancy (Alter et al. 2019; Pinciroli et al. 2020). Another large fleet found failure rates don't rise steadily with wear (Meza et al. 2015). A fourth found age raises raw bit errors, but raw errors don't predict uncorrectable ones (Schroeder et al. 2016).
+- **Early failures are common; a late rise is not established.** A study of 1.4 million enterprise SSDs over 30 months saw failure rates rise for 12–15 months, then fall slowly for 6–12 months. It saw no sign of a rise at end of life (Maneas et al. 2020). A six-year trace of about 30,000 SSDs found an infancy of about 90 days, then a roughly constant rate. Its oldest drives failed about as often as young ones past infancy (Alter et al. 2019; Pinciroli et al. 2020). Another large fleet found failure rates don't rise steadily with wear (Meza et al. 2015). A fourth found age raises raw bit errors, but raw errors don't predict uncorrectable ones (Schroeder et al. 2016).
 - **Firmware, model and history matter more than age.** In the 1.4-million-drive study, early firmware versions had from over 2 to over 10 times the replacement rate of later ones, and most drives never changed version. Model was a direct factor in a half-million-drive study (Narayanan et al. 2016). After one uncorrectable error, the chance of another the next month was nearly 30%, against 2% in a random month (Schroeder et al. 2016).
 - **Firmware time bombs.** Two published bugs killed drives at about 3.7 and 4.6 power-on years without a fix (Third party). Redeploying without firmware baselines redeploys the bomb (Inferred).
 - **Failures cluster.** In the 1.4-million-drive study, one replacement in a RAID group raised the chance of another there within a week about 180-fold (Maneas et al. 2020). A million-drive study found correlated failures within a node or rack common (Han et al. 2021).
@@ -329,7 +329,7 @@ The anchors differ in size, since capacity value during stockouts can exceed rep
 
 ### 7.2 What a legacy drive is worth now: an upper bound
 
-One mainstream 3.84 TB enterprise drive listed at $2,442 new in October 2026, about $640 per terabyte (Press; a seller with an interest). Dividing by the rise through the third quarter, about 3.3 times, implies about $190 per terabyte at end-2025 (Arithmetic). The forecast fourth-quarter rise of 23–28% is left out; if it lands, the top would be about $780–815 (Arithmetic on a forecast). A mid-2026 listing near $120 per terabyte on a high-capacity QLC part sits below that, as the cheapest tier would (Press; one listing with internal inconsistencies).
+One mainstream 3.84 TB enterprise drive listed at about $2,450 new in October 2026, about $640 per terabyte (Press; a seller with an interest). Dividing by the rise through the third quarter, about 3.3 times, implies about $190 per terabyte at end-2025 (Arithmetic). The forecast fourth-quarter rise of 23–28% is left out; if it lands, the top would be about $780–815 (Arithmetic on a forecast). A mid-2026 listing near $120 per terabyte on a high-capacity QLC part sits below that, as the cheapest tier would (Press; one listing with internal inconsistencies).
 
 The case carries **about $190 to $640 per terabyte**: from the pre-shock equivalent, about where Path B would return, to today's open-market price. Small or older-interface drives sit toward the top while the shortage lasts. Three limits apply (Inferred).
 
@@ -355,11 +355,11 @@ Every row below rests on an invented SSD share of the 3 million drives harvested
 
 Even the smallest cell may justify a program, or not, once pipeline cost, yield and forgone resale are netted out; the largest clearly would (Inferred). The SSD share is the numerator's biggest unknown.
 
-**The denominator.** Capital guidance near $200 billion, with 60–65% of technical-infrastructure spend on servers, implies server spend near $120 billion a year (low end, since not all capital is technical infrastructure). If flash is 5–15% of server cost, at $100–300 per terabyte, the spend arithmetic gives 20 to 180 EB a year (Illustrative). The top of that isn't credible. The whole industry shipped about 156 EB of enterprise SSD in the first three quarters of 2024, to all buyers (Third party: an industry tracker). The case carries 20–60 EB a year for Kuantillion Cloud (Illustrative); 60 EB is about two-fifths of those three quarters' industry total.
+**The denominator.** Capital guidance near $200 billion, with about three-fifths of technical-infrastructure spend on servers, implies server spend near $120 billion a year (low end, since not all capital is technical infrastructure). If flash is 5–15% of server cost, at $100–300 per terabyte, the spend arithmetic gives 20 to 180 EB a year (Illustrative). The top of that isn't credible. The whole industry shipped about 156 EB of enterprise SSD in the first three quarters of 2024, to all buyers (Third party: an industry tracker). The case carries an invented 20–60 EB a year, not an estimate of any operator (Illustrative). 60 EB is about two-fifths of those three quarters' industry total.
 
 The harvest rows then run from about 0.5% to 30% of deployment, with the central row at about 3–9% (Arithmetic on Illustrative inputs). If the 3 million really are all hard drives, the ratio is near zero. The ratio is gross, before yield, and every input is invented, so read it as a wide band, not an estimate. It describes the problem's scope (Inferred). Near the bottom, this is spares continuity and cost hygiene; near the top, supply strategy. Whether a program pays is a separate dollar question: its margin over exit times usable terabytes, against its fixed cost (Inferred). Both halves of the ratio are knowable inside Kuantillion Cloud in days, and neither is public.
 
-**One price basis at a time.** The ratio is in exabytes, so it mixes no prices. Each dollar row uses one anchor per end: $190 at its low end and $640 at its high end. The $100–300 deployment price is an assumed contract price, a third basis that enters only the denominator (Illustrative).
+**One price basis at a time.** The ratio is in exabytes, so it mixes no prices. Each dollar row uses one anchor per end: $190 at its low end and $640 at its high end. The $100–300 deployment price is an assumed contract price, not any buyer's actual price. It is a third basis that enters only the denominator (Illustrative).
 
 **A cross-check from the other end.** Drives retiring now were bought about six years ago, when the fleet was smaller. If deployment is 20 EB a year today and grew 15–30% a year, about 4–9 EB a year was bought six years ago (Illustrative; Arithmetic). That is roughly what retires each year now, before intact redeployment and yield. It is the same order as the top harvest row, 6 EB, not several times it. Dividing a flat 100 EB by a 5–6-year life gives 17–20 EB a year, but only for a fleet that isn't growing. And 4–9 EB is about 2–4% of all SSD bits the whole industry shipped in 2020, 207 EB (Third party: an industry tracker).
 
@@ -369,7 +369,7 @@ The harvest rows then run from about 0.5% to 30% of deployment, with the central
 
 - **Labor.** At 10 to 30 technician-minutes per drive (Illustrative), all 3 million drives would take about 250 to 750 technician-years a year. Those drives are already wiped today, though. The SSD share in the flow rows, 300,000 to 1.5 million drives, takes about 25 to 375 technician-years. That bounds the extra load a graded SSD program adds (Illustrative; Arithmetic). That is a staffing program, not an impossibility (Inferred). The risk is landing on the same sites and quarters as repairs, which take about half of technician hours at one peer. Whether labor is the true ceiling under Path A turns on this number; only time-and-motion data can settle it (Unknown).
 - **Dollars.** With loaded labor at $60–100 an hour plus $5–20 per drive for test, sanitization and shipping, a drive costs about $15–70 to process (Illustrative). Netted against replacement value at 50–90% yield, value before exit runs about $25 to $570 per terabyte. But reuse gives up resale. Used enterprise drives fetched about $80–160 per terabyte gross in the year to August 2026 (Press), an upper bound on what a seller nets. Less that forgone resale, reuse beats exit by about $90 to $490 per terabyte at the $640 anchor. At the $190 anchor the margin runs from about −$135 to +$85, so thin cohorts flip sign (Illustrative; Arithmetic). For example, at 80% yield, $20 per terabyte of pipeline cost and $120 of resale, reuse beats exit by about $370 at $640, and by about $10 at $190. Used prices lag new ones, so under Path B resale would likely fall too, after a delay (Inferred). The sign turns on the anchor, the resale band and whether a sink exists, more than on pipeline cost (Inferred).
-- **A year of life.** Kuantillion Cloud's one-year extension avoided about $3.9 billion of first-year depreciation; peers booked about $900 million and $20 million (Press). These price the *host* decision (P2), not the drive, and are the only published dollar anchors for lifecycle flexibility at fleet scale.
+- **Two years of life.** Kuantillion Cloud's two-year extension, from four to six years, avoided about $4 billion of first-year depreciation. Peers expected close to $1 billion in a quarter, and a few tens of millions (Press). These price the *host* decision (P2), not the drive, and are the only published dollar anchors for lifecycle flexibility at fleet scale.
 - **Carbon.** At about 0.16 kg CO2e per GB embodied, a 2 TB drive carries about 320 kg (Third party; Arithmetic). Across the flow rows, reuse would preserve about 0.05 to 1 MtCO2e a year (Arithmetic). That holds only if reuse truly displaces a new purchase, the additionality assumption under every avoided-procurement claim (Inferred). Kuantillion Cloud says procurement-centric metrics miss this preserved carbon.
 
 ### 7.6 The scale model in one table
@@ -379,31 +379,31 @@ Most rows are Arithmetic on tagged inputs. Read every row as an order of magnitu
 | Quantity | Estimate | Formula and inputs |
 | --- | --- | --- |
 | 2026 enterprise SSD price multiple | About 3.4–4.2× end-2025 | 1.80 × 1.50 × 1.225 × 1.255 ≈ 4.15 on quarterly midpoints; one analyst's cumulative figure ≈ 3.4 |
-| Replacement-value range | About $190–640 per TB | $2,442 ÷ 3.84 TB ≈ $636 (Oct 2026); ÷ 3.31 (1.80 × 1.50 × 1.225) ≈ $192 at end-2025. The forecast Q4 rise is left out; with it, about $780–815 |
-| Growth in purchase commitments | About 5.4× in six months | $811B ÷ $149.1B (Press inputs) |
+| Replacement-value range | About $190–640 per TB | About $2,450 ÷ 3.84 TB ≈ $640 (Oct 2026); ÷ 3.31 (1.80 × 1.50 × 1.225) ≈ $190 at end-2025. The forecast Q4 rise is left out; with it, about $780–815 |
+| Growth in purchase commitments | More than 5× in six months | Over $800B ÷ about $150B (Reported; Press inputs) |
 | Annual drive harvest | 3 million+ drives | Reported, as hard drives |
 | SSD harvest flow | 0.3–6 EB a year | 3M × 10–50% SSD share × 1–4 TB per drive (Illustrative) |
 | Gross value of the flow | About $0.06–3.8B a year | SSD flow × $190 (low end) to $640 (high end) per TB; one anchor per end |
-| Flow value against the commitments | About 0.01–0.5% | $0.06–3.8B ÷ $811B; an annual flow against a multi-year, mixed aggregate |
+| Flow value against the commitments | About 0.01–0.5% | $0.06–3.8B ÷ about $800B; an annual flow against a multi-year, mixed aggregate |
 | Enterprise SSD shipped, whole industry | About 156 EB in Q1–Q3 2024, all buyers | 41.9 + 52.5 + 61.5 EB by quarter (Third party: an industry tracker) |
 | Annual flash deployment | About 20–60 EB a year | Spend arithmetic: about $120B × 5–15% ÷ $100–300 per TB gives 20–180; the top is capped well below the industry total (Illustrative) |
 | Materiality ratio (gross) | About 0.5–30%; central row about 3–9%; near zero if the count is all hard drives | SSD flow before yield ÷ 20–60 EB (all inputs Illustrative) |
 | Flash retiring a year, cohort check | About 4–9 EB a year | 20 EB ÷ (1 + g)^6, g = 15–30% (Illustrative); a flat 100 EB ÷ 5–6 years would give 17–20 |
 | Installed drive base | At least 15–18 million | 3M a year × 5–6-year life (steady state, Illustrative; a floor) |
-| Installed flash base | About 60–100 EB | 100 EB flat (20 EB × 5 years); about 60–90 EB if deployment grew 15–30% a year (Illustrative) |
-| Stranded flash recoverable | About 11–35 EB, once | 60–100 EB × (54% − 19%) × 50–100% reachable (peer figures; reach Illustrative) |
+| Installed flash base | About 60–100 EB | 100 EB flat (20 EB × 5 years, the short end of the life range); about 60–90 EB if deployment grew 15–30% a year (Illustrative) |
+| Stranded flash recoverable | About 11–35 EB, once | 60–100 EB × (54% − 19%) × 50–100% reachable (reported peer figures; reach Illustrative) |
 | Spares demand | About 10,000–25,000 drives a year per million installed | 4–10% replaced over four years ÷ 4 |
 | Spare consumption against true failures, no-triage bound | Up to about 1.5× | 1 ÷ (1 − 0.344), reached only at a site that pulls on every ticket. The studied cloud triaged first; 31.2% of its tickets ended in a swap |
 | Pipeline labor, all drives | About 250–750 technician-years a year | 3M drives × 10–30 min ÷ 60 ÷ 2,000 h (minutes Illustrative) |
 | Pipeline labor, SSD share only | About 25–375 technician-years a year | 0.3–1.5M SSDs × 10–30 min ÷ 60 ÷ 2,000 h (Illustrative) |
 | Pipeline cost per drive | About $15–70 | 10–30 min × $60–100 per hour + $5–20 test, sanitization, shipping (Illustrative) |
 | Net value per TB, before exit | About $25–570 | 50–90% yield × $190–640 − $4–70 per TB pipeline cost (Illustrative) |
-| Used enterprise SSD resale, gross | About $80–160 per TB | Dealer appraisals and listings, 12 months to Aug 2026 (Press); about 13–25% of $636 and 42–83% of $192 |
+| Used enterprise SSD resale, gross | About $80–160 per TB | Dealer appraisals and listings, 12 months to Aug 2026 (Press); about 13–25% of $640 and 42–84% of $190 |
 | Margin of reuse over exit per TB | About −$135 to +$85 at $190; about +$90 to +$490 at $640 | 50–90% yield × anchor − $4–70 pipeline − $80–160 forgone gross resale (Illustrative) |
 | Extra power of an old drive | About $2 per TB per year | (3.0 − 0.2) W per TB × 8,760 h ÷ 1,000 × PUE 1.1 × $0.08 per kWh (PUE and price Illustrative) |
 | Power per TB, 2015 drive against 2025 QLC | About 10–20× (SATA); 30–60× (early NVMe) | 2.1–4.3 and 6–12.5 W per TB ÷ 0.2 W per TB (vendor specifications) |
 | Embodied carbon preserved | About 0.05–1 MtCO2e a year | 0.3–6 EB × 0.16 kg per GB |
-| One year of server life, fleet level | About $3.9B avoided depreciation in the first year | Press; the host decision's dollar anchor |
+| Two more years of server life, fleet level | About $4B avoided depreciation in the first year | Press; the host decision's dollar anchor |
 
 **What the model shows** (Inferred)
 
@@ -423,7 +423,7 @@ Most rows are Arithmetic on tagged inputs. Read every row as an order of magnitu
 
 ## 8. Two futures, and the signposts between them
 
-**What Kuantillion Cloud has said in 2026.** It calls itself supply constrained. It set 2026 capital guidance at $175–185 billion in February and raised it twice, to $195–205 billion by July (February and April figures Press). In October it said spending will rise significantly in 2027, and that it began using third-party compute at the end of the third quarter (Press). No statement about flash, like the one about memory, has been found (Unknown).
+**What Kuantillion Cloud has said in 2026.** It calls itself supply constrained. It set 2026 capital guidance at about $180 billion in February and raised it twice, to about $200 billion by July (February and April figures Press). In October it said spending will rise significantly in 2027, and that it began using third-party compute at the end of the third quarter (Press). No statement about flash, like the one about memory, has been found (Unknown).
 
 How long the shortage lasts is disputed, and the dispute is load-bearing: the right size for a reuse program depends on which future arrives. A good answer works under both (Inferred).
 
@@ -442,7 +442,7 @@ A third path: memory markets whipsaw (Third party history). A glut after this sh
 **Four forces the paths leave out** (Inferred).
 
 - **Kuantillion Cloud's own demand bends.** At three to four times the price, purchases get deferred, data gets re-tiered and some stranding is tolerated. A reused drive is worth no more than the cheapest substitute Kuantillion Cloud would choose, and under stress, doing without is one.
-- **The resale market feeds back.** Kuantillion Cloud's resale fell from more than 6.7 million components to about 2.6 million in a year. If peers retain too, used supply dries up as buyers are priced out of new, amplifying used prices under Path A and their fall under Path B. The big operators move the price their retention is judged against. The disposition trade already reports the Path A side (Press).
+- **The resale market feeds back.** Kuantillion Cloud's resale fell from several million components to about 2.5 million in a year. If peers retain too, used supply dries up as buyers are priced out of new, amplifying used prices under Path A and their fall under Path B. The big operators move the price their retention is judged against. The disposition trade already reports the Path A side (Press).
 - **Demand composition changes the slots.** If the AI-dominated build mix completes the move to EDSFF and large QLC, the upgrade sink closes on a roughly knowable schedule. Workloads and spares become wasting assets with estimable half-lives.
 - **The program moves its own market.** A visible program at this scale would shift allocation priority, warranty terms and small-SKU pricing, in both directions.
 
@@ -533,7 +533,7 @@ Beyond fleet provisioning, Kuantillion Cloud's 2026 postings staff a planning an
 
 A vice-president-level capacity role also existed in 2026; its posting is gone (Unknown contents). Financial, logistics and third-party-capacity roles fit the compute rental announced in October (Inferred link).
 
-The family is a senior engineering discipline, not back-office operations, with published base salaries from about $120,000 to $485,000. Every stage of the internal market is hired for by name. And agent-building in *minimum* qualifications dates the record: planning toil is being automated with language-model agents in 2026, by the planners themselves (Inferred).
+The family is a senior engineering discipline, not back-office operations, with published base salaries from about $120,000 to nearly $500,000. Every stage of the internal market is hired for by name. And agent-building in *minimum* qualifications dates the record: planning toil is being automated with language-model agents in 2026, by the planners themselves (Inferred).
 
 ### 10.4 How the wider field hires for the same work
 
@@ -542,7 +542,7 @@ The same search across the industry read about forty postings from about twenty 
 - **Supply-demand matching is a converged job category.** Clouds, a platform operator, a chip maker's cloud and a GPU cloud describe it in near-identical words. One platform operator plans by optimization model across millions of servers and billions of dollars a year.
 - **Scarcity language appears only at AI-exposed employers.** The AI labs, GPU clouds and biggest clouds speak of scarce capacity; traditional infrastructure postings speak of constraints (Inferred).
 - **Allocation and value recovery are hired into different organizations, everywhere.** Reuse is hired separately: a reverse-logistics subsidiary at one cloud, a recycle-planning function at one internet platform, circular centers at another cloud. No job description joins maximizing utilization now with preserving second-life value (Inferred). The job architecture may itself be the incentive mechanism (Speculated).
-- **The maturity signal is ad hoc to repeatable.** The AI labs want planning made rigorous and repeatable, rebuilding in a hurry what hyperscalers built over fifteen years, at $235,000–397,000 base (Inferred reading of published bands). One lab tracks the engineering work that affects capacity fungibility as a deliverable.
+- **The maturity signal is ad hoc to repeatable.** The AI labs want planning made rigorous and repeatable, rebuilding in a hurry what hyperscalers built over fifteen years, at about $235,000–400,000 base (Inferred reading of published bands). One lab tracks the engineering work that affects capacity fungibility as a deliverable.
 - **Spares economics are hired for even at young companies.** A three-year-old GPU cloud wants fleet managers who set spares from failure data, run warranty recovery that returns real money, and defend the working capital spares tie up.
 - **The edges show up too.** A games platform reports stranded capacity by name. A colocation operator wants records that match the floor. Others put lifecycle in the cost model, or qualify components for their own fleet.
 
@@ -576,7 +576,7 @@ It breaks into eight decisions and two sub-decisions carried inside them: P2a's 
 - **Horizon.** Quarters to years.
 - **Why hard.** Keeping a platform alive raises its need for spares while cutting the harvest that supplies them (Inferred). Value depends on a shortage of disputed length (Third party). The answer differs by cohort, not generation, as the battery industry found (A.2). Studied shape (A.3): optimal life in the current use says nothing about value in another use. Optimal keep, buy and scrap policies are thresholds. And an alternate source beats stockpiling against long disruptions, casting the harvest as mitigation.
 - **Links.** Sets the supply P3, P4, P5 and P7 draw on. Its intact branch competes with P6's sinks for every retiring host.
-- **P2a. The wear sub-decision.** One decision sits upstream of the whole set, and no team owns it (Inferred): how hard to run drives in their first life, given their second. Through its patented placement and admission software, Kuantillion Cloud sets every drive's wear rate. Where wear binds, today's placement shapes the harvest arriving in two or three years. At typical use under 2% of rated endurance, that means mainly write-heavy cohorts and low-endurance QLC, a share growing as QLC spreads. To that extent harvest is a partly *chosen* yield. The loop from scheduler to cage runs years, and the published per-byte wear price (P3) is the instrument that would carry it.
+- **P2a. The wear sub-decision.** One decision sits upstream of the whole set, and no team owns it (Inferred): how hard to run drives in their first life, given their second. Through its patented placement and admission software, Kuantillion Cloud sets every drive's wear rate. Where wear binds, today's placement shapes the harvest arriving in two or three years. At typical use under 1% of rated endurance a year, that means mainly write-heavy cohorts and low-endurance QLC, a share growing as QLC spreads. To that extent harvest is a partly *chosen* yield. The loop from scheduler to cage runs years, and the published per-byte wear price (P3) is the instrument that would carry it.
 
 ### P3. Match legacy flash to workloads
 
@@ -648,7 +648,7 @@ Eighteen chains connect markets, the organization and the physics of flash to co
 
 1. AI data-center demand → flash makers allocate to their largest buyers → enterprise SSD prices about 3.4–4.2× across 2026 → a working legacy drive's replacement value spans about $190–640 per TB → keep-or-shred becomes a real question for every retiring drive (Press → Third party → Arithmetic → Inferred).
 2. Allocation favors high-capacity parts → small and older-interface SKUs become scarce new → once last-time-buy stock runs out, spares for old platforms come from harvest → the spares sink has the harvest's most predictable claim (Third party → Inferred).
-3. Makers commit output years ahead, and Kuantillion Cloud's commitments rise about 5.4× in six months (composition undisclosed) → long-term contracts cover planned supply far better than the unplanned margin → repair spikes and late builds fall on hardware the fleet already owns, alongside third-party compute and demand shaping (Press → Inferred).
+3. Makers commit output years ahead, and Kuantillion Cloud's commitments rise more than fivefold in six months (composition undisclosed) → long-term contracts cover planned supply far better than the unplanned margin → repair spikes and late builds fall on hardware the fleet already owns, alongside third-party compute and demand shaping (Press → Inferred).
 4. Hard disks sell out → cold data moves to QLC flash → flash demand rises further → the substitution pressure lasts as long as disk allocation does (Third party → Inferred).
 5. Cloud buying crowds out other flash demand → PC makers halve standard SSD configurations and enterprises stretch refresh → the disposition trade reports higher residual values for used flash → resale strengthens just as internal reuse gains value, so two sinks bid against each other (Press → Inferred).
 
@@ -657,7 +657,7 @@ Eighteen chains connect markets, the organization and the physics of flash to co
 6. Longer book lives and condition-based retirement → machines stay in service longer → harvest arrives older → drives on unpatched firmware are likelier to have passed the power-on ages at which known faults strike → the firmware-baseline gate binds harder (Reported/Press → Inferred).
 7. Data-center construction delays (30–50% of 2026 capacity, by one estimate) → old halls carry demand longer → decommissions slip → harvest booked into plans fails to arrive: phantom supply (Press → Inferred).
 8. Machines retire by health rather than age → retirements become irregular and cohort-driven → harvest can be forecast only from telemetry, not a calendar → spares and pipeline plans run against stochastic supply (Reported → Inferred).
-9. Patented placement and admission software can set drives' wear rates → if deployed fleet-wide, today's placement shapes the endurance left in the harvest years later → with typical use under 2% of rated endurance, this matters mainly for write-heavy and low-endurance QLC cohorts → there, harvest yield is partly chosen, not random (Reported → Speculated).
+9. Patented placement and admission software can set drives' wear rates → if deployed fleet-wide, today's placement shapes the endurance left in the harvest years later → with typical use under 1% of rated endurance a year, this matters mainly for write-heavy and low-endurance QLC cohorts → there, harvest yield is partly chosen, not random (Reported → Speculated).
 
 **Diagnosis, health and trust**
 
@@ -675,7 +675,7 @@ Eighteen chains connect markets, the organization and the physics of flash to co
 **Customers and markets**
 
 17. Scarcity reaches customers: stockout errors name local SSD capacity, and the cloud advises reserving scarce machine families and planning fallbacks → customer demand is reshaped by time, price and shape → the same reshaping, pointed inward, is the legacy-flash matching problem (Press → Inferred).
-18. Kuantillion Cloud's resale falls from more than 6.7 million components to about 2.6 million in a year, cause unstated → if peers retain more too, used supply thins while new prices are high → used prices rise under Path A and fall harder under Path B → the operators' own retention moves the price their retention is judged against (Reported/Press → Inferred → Speculated).
+18. Kuantillion Cloud's resale falls from several million components to about 2.5 million in a year, cause unstated → if peers retain more too, used supply thins while new prices are high → used prices rise under Path A and fall harder under Path B → the operators' own retention moves the price their retention is judged against (Reported/Press → Inferred → Speculated).
 
 ## 13. Stress scenarios for 2027
 
@@ -806,15 +806,15 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 
 | # | Claim | Tier |
 | --- | --- | --- |
-| 1 | Kuantillion Cloud reuses harvested components at scale: 44% of components in builds, maintenance and upgrades in 2024; internal reuse comes first | Reported |
+| 1 | Kuantillion Cloud reuses harvested components at scale: over two-fifths of components in builds, maintenance and upgrades in 2024; internal reuse comes first | Reported |
 | 2 | Over 3 million drives were wiped and reused or resold in 2024; the report calls them hard drives | Reported |
 | 3 | Any published reuse figure covers SSDs | Unknown |
-| 4 | Resale fell from more than 6.7 million components (2024) to about 2.6 million (2025), while internal-reuse harvest stayed above 7.5 million | Reported (2024); Press (2025) |
+| 4 | Resale fell from several million components (2024) to about 2.5 million (2025), while internal-reuse harvest stayed above 7 million | Reported (2024); Press (2025) |
 | 5 | More harvested parts stay in-house because of the shortage | Inferred |
 | 6 | The fleet provisioning team works on stranding, the reverse supply chain and resource returns | Reported (postings); ownership Inferred |
 | 7 | Obtainability is a formal supply target; solver and fungibility work is hired for; divestments fund new allocations | Reported (postings, 2026) |
 | 8 | The industry hires for these problems in near-identical terms, and splits allocation from value recovery | World; Inferred convergence; Speculated mechanism |
-| 9 | Purchase commitments rose about 5.4× in six months, to about $811B | Reported (quarterly filing, 30 June 2026); Press |
+| 9 | Purchase commitments rose more than fivefold in six months, to over $800B, and passed $900B by 30 September 2026 | Reported; Press |
 | 10 | Fleet components are capitalized, so no financial statement shows the drive pool | Reported (note text); Inferred (consequence) |
 | 11 | Capacity errors name local SSD capacity; 2026 stockouts reached general-purpose machines; customers were advised to reserve | Press; error class Reported |
 | 12 | Kuantillion Cloud's patents cover wear control points; none found on grading, refurbishment or redeployment | Reported (two patents); Inferred (absence; a sample) |
@@ -869,7 +869,7 @@ The structure of the problem rests on Reported facts about reuse at scale and a 
 
 | Claim | Why it doesn't hold |
 | --- | --- |
-| Used SSDs are worn out | Most data-center SSDs use under 2% of rated endurance; the binding limits are fit, latency, capacitor age and firmware |
+| Used SSDs are worn out | Most data-center SSDs use under 1% of rated endurance a year; the binding limits are fit, latency, capacitor age and firmware |
 | The 2026 inventory jump is fleet parts being stockpiled | The filing says inventory is systems for sale and devices; fleet parts are capitalized |
 | The published harvest figures include SSDs | The reports say hard drives and never mention flash |
 | This is a scheduling problem | Workloads are one sink of four, and spares may claim the harvest first |
@@ -921,12 +921,12 @@ The harvest, requalify and redeploy loop is line operations across the industry,
 | --- | --- | --- | --- |
 | One cloud (2024) | Obsolete spare parts met from harvested inventory | 85% | How far harvest can carry aging-platform spares |
 | Another cloud | All spare parts supplied from reuse | 13% | Harvest's share of spares fleet-wide |
-| One cloud | Server SSD capacity stranded; with small-group pooling (research estimate) | 54%; about 19% | The stranded stock |
+| One cloud | Server SSD capacity stranded; with small-group pooling (research estimate) | Reported as 54%; about 19% | The stranded stock |
 | One operator (2020) | Legacy out-of-warranty PCIe drives: share of drives against share of failures in a quarter | 22% against 77% | One bad quarter; confounded with model, firmware and warranty |
 | One cloud | Repair time, median and 99th percentile; share of technician hours; share of six-year cost | 3 days and 190 days; about half; about 9% | Repair cost and labor |
 | One cloud | Repair tickets cut by fail-in-place | About 55% | Fail-in-place as a substitute for spares |
 | One Asian cloud (2019) | SSD-related failure tickets not caused by the drive; tickets ending in a drive swap | 34.4%; 31.2% | Ticket triage |
-| One cloud | Emissions per core, reused-drive server design; fleet-wide net | About 28–29% lower per core; about 8% fleet-wide | The upgrade-and-build sink |
+| One cloud | Emissions per core, reused-drive server design; fleet-wide net | About 28% lower per core; about 8% net | The upgrade-and-build sink |
 | A mid-size European cloud (2025) | Outbound components redeployed, resold, recycled | About 30%, 50%, 20% | Internal reuse below hyperscale |
 | A mid-size storage provider (2026) | Quarterly failure rate, driven by drives seven to eight years old | Highest in years | The keep branch's price |
 | The disposition market (2026) | Market size; fastest-growing asset class | About $14B; SSDs | The exit sink's depth (Press, analyst) |
