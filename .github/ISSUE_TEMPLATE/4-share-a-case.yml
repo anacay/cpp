@@ -60,3 +60,10 @@ body:
           required: true
         - label: A colleague from that organization couldn't easily recognize it.
           required: true
+  - type: checkboxes
+    id: licence
+    attributes:
+      label: Licence
+      options:
+        - label: "I license what I post here under CC BY-SA 4.0 (code under MIT), and it's mine to share. See [CONTRIBUTING.md](https://github.com/anacay/cpp/blob/main/CONTRIBUTING.md#licence)."
+          required: true
