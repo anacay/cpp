@@ -84,7 +84,7 @@ Cases are short stories of what happened, told so others can learn from them. Us
 - Shift dates and places if they'd identify the organization.
 - Ask yourself: could a colleague from that organization recognize it? If yes, blur it more.
 
-Not sure? Leave it out, or share only the method and the public facts. The [private pre-check](SHARING_SAFELY.md#a-private-pre-check) is paused until an independent reviewer is named, so don't email drafts. An editor will check a case again before it's added to the case library.
+Not sure? Leave it out, or share only the method and the public facts. There is no private review of drafts, so don't email them. An editor checks a case again before it goes into the case library.
 
 **Problem-space cases** are different: a whole planning problem built only from public information, about a fictional company, with every claim's evidence labeled. They don't come from anyone's private experience, so they may resemble the industry they draw on. Don't quote a single company's material; paraphrase, and put further reading at the end. The rules are in the guide's Cases page.
 

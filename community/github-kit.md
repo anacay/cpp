@@ -88,7 +88,7 @@ Tags grow from use. When a new word keeps coming up, add a label for it, and add
 > - "#supply Has anyone seen a public source on transformer lead times newer than 2025? Here's the one I know: [link]"
 > - "#forecasting How do you handle a team whose declarations are always 40% high? (Illustrative number.)"
 >
-> **What happens to good threads.** A thread that settles something can become a CPP page, credited by name, with your consent. Not sure a post is safe? Leave it out, or post only the method and the public facts. The private pre-check is paused; see https://cpp.anacay.org/sharing-safely/.
+> **What happens to good threads.** A thread that settles something can become a CPP page, credited by name, with your consent. Not sure a post is safe? Leave it out, or post only the method and the public facts. See https://cpp.anacay.org/sharing-safely/.
 >
 > More: https://cpp.anacay.org/commons/
 
