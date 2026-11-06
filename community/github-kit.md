@@ -77,7 +77,7 @@ Tags grow from use. When a new word keeps coming up, add a label for it, and add
 
 > This is the one place for capacity planners. Ask a question, share an observation or a link, or ask "how do you handle X?" A sentence is enough. Reply in threads, and use reactions freely.
 >
-> **The rule that matters most.** Don't break your NDA. Don't share your company's prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game.
+> **The rule that matters most.** Don't break your NDA. Don't share your company's prices, contract terms, demand forecasts, future plans or any other confidential information. Methods and public facts are fair game.
 >
 > **Also:** no jobs, no recruiting, no selling. Your username can be a handle. Your name appears on CPP only when you want credit.
 >

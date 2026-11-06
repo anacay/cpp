@@ -55,7 +55,7 @@ export const tagUrl = (t) => `${repo}/discussions?discussions_q=${encodeURICompo
 const SITE = 'https://cpp.anacay.org'; // matches site.url in paper.config.json
 const qs = (o) => Object.entries(o).filter(([, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
 // The NDA rule, word for word, as on /commons/#room-rules.
-export const NDA_LINE = 'Don’t break your NDA. Don’t share your company’s prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game.';
+export const NDA_LINE = 'Don’t break your NDA. Don’t share your company’s prices, contract terms, demand forecasts, future plans or any other confidential information. Methods and public facts are fair game.';
 // `starter: true` means `text` is already the poster's own opening, so no
 // "Your post:" prompt follows it.
 export function streamPost({ title = '', text = '', tag = null, from = null, starter = false } = {}) {
