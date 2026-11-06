@@ -26,7 +26,7 @@ Read a section on the site. If something is wrong, unclear or missing, click **D
 | [`site/`](site/) | The code that builds cpp.anacay.org (Astro, static, no client JavaScript) | MIT |
 | [`.github/`](.github/) | Issue and discussion forms | MIT |
 
-Text and figures © 2026 Guillermo Martinez and contributors, licensed CC BY-SA 4.0 ([LICENSE](LICENSE)); code © 2026 Anacay LLC and contributors, licensed MIT ([LICENSE-CODE](LICENSE-CODE)). See [NOTICE](NOTICE). Short quotations from cited works stay their owners'.
+Text, figures and code © 2026 Guillermo Martinez and contributors. Text and figures are licensed CC BY-SA 4.0 ([LICENSE](LICENSE)); code is licensed MIT ([LICENSE-CODE](LICENSE-CODE)). Anacay LLC hosts the practice and pays its running costs; it holds no rights in the content. See [NOTICE](NOTICE). Short quotations from cited works stay their owners'.
 
 ## Credit it
 
