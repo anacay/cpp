@@ -13,7 +13,7 @@ reviewers:
 
 *Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when buildings stop being interchangeable, and what replaces it? Related: Section 6.2, Section 8.2, Section 8.3. Discussion: [#18](https://github.com/anacay/cpp/discussions/18).*
 
-*Provenance, dated 8 November 2026. Written in October 2026 from the seed paper, public sources and public discussion in [#18](https://github.com/anacay/cpp/discussions/18). It uses no confidential information. The note is open for anyone to develop; its first author doesn't extend it after 8 November 2026.*
+*Provenance, dated 8 November 2026. Written in October 2026 from the seed paper, public sources and public discussion in [#18](https://github.com/anacay/cpp/discussions/18). It uses no confidential information. Anyone can develop it; its first author doesn't extend it after 8 November 2026.*
 
 ## The seed
 
