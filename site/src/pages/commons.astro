@@ -49,7 +49,7 @@ const list = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs[xs
         <RoomRule />
         <p>A “No recruiting” rule for the Code of Conduct is being proposed, with an open period. Until it is adopted, the rules on this page apply here.</p>
       </div>
-      <p>Unsure whether something is safe? Read <a href="/sharing-safely/">Sharing safely</a>, or ask for a private pre-check at <a href={mail}>{room.contact}</a> before you post. Everyone follows the <a href="/code-of-conduct/">Code of Conduct</a>.</p>
+      <p>Unsure whether something is safe? Read <a href="/sharing-safely/">Sharing safely</a>. If in doubt, leave it out, or post only the method and the public facts. Everyone follows the <a href="/code-of-conduct/">Code of Conduct</a>.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="tags">
@@ -74,7 +74,7 @@ const list = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs[xs
       <p>Anacay LLC supports the practice, and says so. See <a href="/support/">Support</a>.</p>
       <p><strong>By the community, for the community.</strong> What we make belongs to the community, credited by name.</p>
       <p>Leadership grows from members. Roles open as people step forward, and governance widens as the community grows. <a href="/governance/">Governance</a> and <a href="/how-it-grows/">How it grows</a> set out how.</p>
-      <p>Private messages to <a href={mail}>{room.contact}</a> are read by the founder.</p>
+      <p>Private messages to <a href={mail}>{room.contact}</a> are read by the founder. They are for conduct and admin only, not for case material.</p>
       <p class="pr-who">Co-organizers: {coOrganizers.length ? coOrganizers.map((p) => p.name).join(', ') + '.' : 'Open. A volunteer role for anyone who wants to help The Commons along.'} See <a href="/roles/">Roles</a> and <a href="/circle/">The founding circle</a>.</p>
     </section>
   </div>

@@ -11,7 +11,10 @@ export const room = {
   name: 'The Commons',
   url: '/commons/',
   contact: 'cpp@anacay.org',
-  precheckHours: 72, // a private pre-check gets a written reply within 72 hours
+  // The private pre-check is paused until an independent pre-check reviewer
+  // is named (role 'pre-check'). While it is paused there is no reply time.
+  precheckPaused: true,
+  precheckHours: null,
 };
 
 // One place to interact: The Commons, a single GitHub Discussions category.
@@ -180,8 +183,8 @@ export const circleNames = () => {
   const c = consented(all);
   return c.length >= circle.showNamesAt ? { coOrganizers: consented(circle.coOrganizers), members: consented(circle.members) } : null;
 };
-// Who reads cpp@anacay.org. The founder, as steward, reads it.
-export const inboxLine = () => `The founder reads ${room.contact}.`;
+// Who reads cpp@anacay.org, and what it is for: conduct and admin, never case material.
+export const inboxLine = () => `The founder reads ${room.contact}. It is for conduct and admin only, not for case material.`;
 // Who runs CPP, in one line. It matches GOVERNANCE.md; the full passage is
 // /commons/#who.
 export const ownershipLine = () => 'The founder stewards CPP, with Anacay’s disclosed support. Roles open as people step forward.';

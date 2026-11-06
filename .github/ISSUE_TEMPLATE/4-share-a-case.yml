@@ -9,7 +9,7 @@ body:
         Cases teach the shape of a problem. They don't need anyone's real data.
         Before you write: remove company, product, team, system and people names. Replace real numbers with illustrative ones that keep the shape. Shift dates and places if they'd identify anyone.
         Prefer to talk it through first? Use a **Cases** discussion.
-        Read [Sharing safely](https://cpp.anacay.org/sharing-safely/) first. Not sure? Write to cpp@anacay.org with "Pre-check" in the subject for a private reply within 72 hours.
+        Read [Sharing safely](https://cpp.anacay.org/sharing-safely/) first. The private pre-check is paused; see Sharing safely.
   - type: input
     id: setting
     attributes:

@@ -9,7 +9,7 @@ How to share what you know about capacity planning without sharing anything that
 - Share the shape of a problem, never its real figures.
 - Never name a customer, a vendor, a contract, a site or an internal system that isn't already public.
 - Label every invented number as illustrative.
-- Not sure? Ask for a [private pre-check](#a-private-pre-check) first. A person reads it before anything is posted.
+- Not sure? Leave it out, or post only the method and the public facts. The [private pre-check](#a-private-pre-check) is paused for now.
 
 The [Code of Conduct](CODE_OF_CONDUCT.md) and [How it grows](HOW_IT_GROWS.md#what-cant-be-contributed) list what can't be contributed. This page shows how to share what can.
 
@@ -100,15 +100,11 @@ If any check fails, climb down a rung on the ladder and check again.
 
 ## A private pre-check
 
-Not sure? Before you post anything, write to [cpp@anacay.org](mailto:cpp@anacay.org) with your draft. Put "Pre-check" in the subject.
+**The private pre-check is paused** until an independent pre-check reviewer is named on [Roles](https://cpp.anacay.org/roles/#pre-check). Until then, the founder doesn't read other people's unpublished drafts. Use the ten checks above. If in doubt, leave it out, or post only the method and the public facts.
 
-- A person reads it, privately. Nothing is posted or forwarded.
-- You get a written reply within 72 hours. It says what is safe, and what to band or drop.
-- Supply drafts go to a reader who knows supply confidentiality, once one is named.
+Please don't send drafts or case material to [cpp@anacay.org](mailto:cpp@anacay.org). That inbox is for conduct and admin only.
 
-The founder reads cpp@anacay.org and the pre-checks. The [Pre-check reviewer](https://cpp.anacay.org/roles/#pre-check) role is open, so others can share the work.
-
-A pre-check is the step before posting anything sensitive in [The Commons](https://cpp.anacay.org/commons/).
+When a pre-check reviewer is named, this section will say how the pre-check works again.
 
 ## If something slips
 

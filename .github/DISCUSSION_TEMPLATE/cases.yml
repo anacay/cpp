@@ -6,7 +6,7 @@ body:
       value: |
         Share a "what happened" story, anonymized. Remove company, product, team, system and people names. Use illustrative numbers that keep the shape. Mark opinion as opinion.
         This thread is public. An editor will check it again before anything goes into the case library.
-        Read [Sharing safely](https://cpp.anacay.org/sharing-safely/) first. Not sure? Write to cpp@anacay.org with "Pre-check" in the subject for a private reply within 72 hours.
+        Read [Sharing safely](https://cpp.anacay.org/sharing-safely/) first. The private pre-check is paused; see Sharing safely.
   - type: input
     id: setting
     attributes:

@@ -84,7 +84,7 @@ Cases are short stories of what happened, told so others can learn from them. Us
 - Shift dates and places if they'd identify the organization.
 - Ask yourself: could a colleague from that organization recognize it? If yes, blur it more.
 
-Not sure? Ask for a [private pre-check](SHARING_SAFELY.md#a-private-pre-check) at cpp@anacay.org. You get a written reply within 72 hours. An editor will check it again before it's added to the case library.
+Not sure? Leave it out, or share only the method and the public facts. The [private pre-check](SHARING_SAFELY.md#a-private-pre-check) is paused until an independent reviewer is named, so don't email drafts. An editor will check a case again before it's added to the case library.
 
 **Problem-space cases** are different: a whole planning problem built only from public information, about a fictional company, with every claim's evidence labeled. They don't come from anyone's private experience, so they may resemble the industry they draw on. Don't quote a single company's material; paraphrase, and put further reading at the end. The rules are in the guide's Cases page.
 
@@ -108,4 +108,4 @@ By contributing you confirm that it's yours to license, and that it contains not
 
 ## Questions
 
-Ask in Discussions, or write to cpp@anacay.org.
+Ask in Discussions. Write to cpp@anacay.org only about conduct or admin.
