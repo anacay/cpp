@@ -262,14 +262,20 @@ const pageText = ($, drop = '') => {
 };
 {
   const c = check('8. No banned terms and no placeholder text');
-  const banned = [/* private term list removed from history (R9) */
-    /* see site/.banned-terms, kept privately */
-    /\bTODO\b/, /\bTBD\b/, /\bFIXME\b/, /\blorem ipsum\b/i];
+  // The banned-term list is private: it is read from site/.banned-terms (or
+  // $CPP_BANNED_FILE), which is gitignored and never committed. One regex per
+  // line, then a tab and its flags. Without the file, only placeholders are checked.
+  const LIST = process.env.CPP_BANNED_FILE || path.join(root, '.banned-terms');
+  const extra = fs.existsSync(LIST)
+    ? fs.readFileSync(LIST, 'utf8').split('\n').filter((l) => l.trim() && !l.startsWith('#')).map((l) => { const [src, flags = ''] = l.split('\t'); return new RegExp(src, flags.trim()); })
+    : (console.warn('check 8: private term list not found; placeholder check only'), []);
+  if (!extra.length) c.notes.push('WARNING: no private term list loaded (site/.banned-terms); placeholder check only');
+  const banned = [...extra, /\bTODO\b/, /\bTBD\b/, /\bFIXME\b/, /\blorem ipsum\b/i];
   for (const [u, $] of docs) {
     const t = pageText($, '.refs');
     for (const b of banned) { const m = t.match(new RegExp(`.{0,30}${b.source}.{0,30}`, b.flags)); if (m) c.fails.push(`${u}: ${b} in "${m[0].trim()}"`); }
   }
-  c.notes.push(`${banned.length} patterns on ${docs.size} pages; reference lists (.refs) are exempt, as cited titles`);
+  c.notes.push(`${banned.length} patterns (${extra.length} private, 4 placeholder) on ${docs.size} pages; reference lists (.refs) are exempt, as cited titles`);
 }
 {
   const c = check('9. No hiring words on the community pages, outside the stated rule');

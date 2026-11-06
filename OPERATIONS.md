@@ -113,7 +113,7 @@ LinkedIn is for talking. GitHub is where text changes and decisions are recorded
 
 **If an account is lost or taken over:** use recovery codes, then the provider's recovery. Change the password and revoke sessions and tokens. Check recent commits, settings and deploys for anything you didn't do. Roll back if needed. Post a short note in Governance.
 
-## Turning on search indexing later
+## Opening the site to search engines later
 
 It's one switch: `site.indexable` in `site/paper.config.json`. Check first:
 
