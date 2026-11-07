@@ -146,7 +146,7 @@ export const frozenLine = (file = '') => (frozen.files.includes(file) ? frozen.l
 export const principlesDraft = {
   version: 'v0',
   posted: '8 November 2026',
-  thread: 'https://github.com/anacay/cpp/discussions',
+  thread: 'https://github.com/anacay/cpp/discussions/38',
   signing: 'after the open period',
 };
 
