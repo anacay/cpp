@@ -13,6 +13,8 @@ reviewers:
 
 *Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when buildings stop being interchangeable, and what replaces it? Related: Section 6.2, Section 8.2, Section 8.3. Discussion: [#18](https://github.com/anacay/cpp/discussions/18).*
 
+*Provenance, dated 8 November 2026. Written in October 2026 from the seed paper, public sources and public discussion in [#18](https://github.com/anacay/cpp/discussions/18). It uses no confidential information. Anyone can develop it; its first author doesn't extend it after 8 November 2026.*
+
 ## The seed
 
 This note grew from [discussion #18](https://github.com/anacay/cpp/discussions/18). The reviewer who opened it quoted the seed paper's line that "a shell stays fungible only if its specification (power per rack, cooling type) is written against the high scenario" (Section 6.2), and put experience behind it: in the past, a steady power-to-space ratio gave reasonable fungibility, and the fungibility of new high-density buildings "may be extremely limited and particularly awful at supporting storage."
@@ -33,7 +35,7 @@ One more distinction. **Substitution** (Section 8.3) is covering demand of one k
 
 The paper already uses the operations canon at the machine layer: chained flexibility across machine shapes [77], postponement down the supply chain [73], the option value of waiting [76]. The claim of this note is that the same results now need to be applied one layer up, to the halls themselves — and that several of the discipline's quiet assumptions break if they are not. The chain of reasoning, one small step at a time; each step is open to challenge.
 
-**1. Lead times are inherited.** "Plan at least as far ahead as the order time for your resources" is the frame the paper builds on [6]. The quiet question is which resource. A machine order's real lead time is the lead time of the slowest non-fungible thing it needs. If the right hall type exists, that is weeks or quarters. If it does not, the order inherits the building's clock — and the building inherits the grid's, where connection queues in major markets now run years (IEA, reported). Walking the commit points (Section 8.2) now has to start above the layers the paper walks, and the highest layer dominates [argued].
+**1. Lead times are inherited.** "Plan at least as far ahead as the order time for your resources" is the frame the paper builds on [6]. The quiet question is which resource. A machine order's real lead time is the lead time of the slowest non-fungible thing it needs. If the right hall type exists, that is weeks or quarters. If it does not, the order inherits the building's clock — and the building inherits the grid's. In primary markets, the average grid connection now takes more than four years (JLL, January 2026, reported). Walking the commit points (Section 8.2) now has to start above the layers the paper walks, and the highest layer dominates [argued].
 
 **2. The forecast question changes from "how much" to "what kind."** A fungible pool needs a total. Typed halls need the mix — AI density against everything else — at the building's horizon of three to five years, which is exactly where the mix is least knowable. It becomes possible to be right in total and wrong everywhere [argued].
 
@@ -41,7 +43,7 @@ The paper already uses the operations canon at the machine layer: chained flexib
 
 **4. Reserves must be typed, and typed reserves cost more.** A buffer only protects the pool it can serve. Split one pool into several and the same protection needs more total buffer — the pooling result [81], run in reverse again. The cost of safety rises as fungibility falls [argued].
 
-**5. Mistakes turn asymmetric.** In a fungible world, overbuilding costs carrying charges. In a typed world, overbuilding the wrong hall costs carrying charges plus the full building lead time to get the right one. A mix miss is priced in years, not dollars [argued]. This is not hypothetical: one large operator cancelled a nearly-complete European expansion plan in late 2022 because the existing design could not be retooled for its AI-era needs, and rescoped its other projects in flight (press reporting; sources at the end).
+**5. Mistakes turn asymmetric.** In a fungible world, overbuilding costs carrying charges. In a typed world, overbuilding the wrong hall costs carrying charges plus the full building lead time to get the right one. A mix miss is priced in years, not dollars [argued]. This is not hypothetical: one large operator cancelled a planned European expansion in late 2022 because the site no longer fit its AI-era needs. It rescoped its other projects in flight (press reporting; sources at the end).
 
 **6. Flexibility becomes a priced option.** The paper already carries the option value of waiting [76]. The same machinery prices the option to convert: the more uncertain the mix, the more a flexible build is worth, because irreversible investment under uncertainty rewards whoever keeps choices open (Pindyck 1991). The substitutes a team will accept (Section 8.3) stop being free and become something someone pays for [argued].
 
@@ -88,4 +90,4 @@ The thread is [discussion #18](https://github.com/anacay/cpp/discussions/18); th
 - Vendor rack-density roadmap statements (Mar 2025): https://www.datacenterdynamics.com/en/analysis/nvidia-gtc-jensen-huang-data-center-rack-density/
 - The cancelled and rescoped expansion projects (Dec 2022): https://www.datacenterdynamics.com/en/news/exclusive-after-meta-cancels-odense-data-center-expansion-other-projects-are-being-rescoped/
 - Retrofit economics and constraints (industry analysis): https://stlpartners.com/articles/data-centres/liquid-cooled-data-centre-retrofits-economics/
-- Grid connection queues (IEA): https://www.iea.org/reports/electricity-grids-and-secure-energy-transitions/executive-summary
+- Grid connection waits in primary data center markets (JLL, January 2026): https://www.jll.com/en-us/insights/market-outlook/data-center-outlook

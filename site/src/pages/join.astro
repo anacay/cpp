@@ -1,7 +1,7 @@
 ---
 // /join/: how to take part. One place to interact: The Commons on GitHub
 // Discussions. A GitHub account first, then The Commons, then the public
-// record. The only private route is a pre-check for something sensitive.
+// record. There is no private review of drafts; the inbox is for conduct and admin.
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
 import { community } from '../lib/community.mjs';
@@ -16,7 +16,7 @@ const kinds = [
   ['Work an open problem', 'One of the questions on the agenda, marked good-first or not.', 'Pick one on the <a href="/agenda/">agenda</a> and reply in its thread.', 'An hour or two'],
   ['Propose a change', 'To an idea, a method, or how a section is built.', 'Open a “Proposals” discussion. Proposals are kept apart because they follow <a href="/how-it-grows/">How it grows</a>.', 'A short write-up'],
   ['Add a public source', 'A paper, a talk, a public dataset, a filing.', 'Post it in The Commons, or open an “Add a public source” issue.', 'Minutes'],
-  ['Take a role', 'Co-organizer, pre-check reviewer, editor.', 'Read the <a href="/roles/">role cards</a> and say so in The Commons.', 'A few hours a month'],
+  ['Take a role', 'Co-organizer, editor, conduct reviewer.', 'Read the <a href="/roles/">role cards</a> and say so in The Commons.', 'A few hours a month'],
 ];
 ---
 <Base title="Join in" description="How to take part in the Capacity Planning Practice: create a free GitHub account, join The Commons and post one question." nav="join">
@@ -40,9 +40,9 @@ const kinds = [
     </section>
 
     <section class="prose reading" aria-labelledby="private-h">
-      <h2 id="private-h">Something sensitive? Ask for a private pre-check</h2>
-      <p>If you’re not sure a post is safe to share, write to <a href={mail('Pre-check')}>{contact}</a> first. The founder reads it, and replies in writing within {room.precheckHours} hours. <a href="/sharing-safely/">How the pre-check works</a>.</p>
-      <p>That is the only private route. Everything else happens in The Commons.</p>
+      <h2 id="private-h">Something sensitive? Leave it out</h2>
+      <p>There is no private review of drafts. Use the ten checks in <a href="/sharing-safely/">Sharing safely</a>. If in doubt, leave it out, or post only the method and the public facts.</p>
+      <p>Private mail to <a href={mail('Conduct or admin')}>{contact}</a> is for conduct and admin only. Don’t send drafts or case material. Everything else happens in The Commons.</p>
     </section>
 
     <section class="newhere prose reading" id="new" aria-labelledby="new-h">
@@ -55,7 +55,7 @@ const kinds = [
         <li>The passage you picked is quoted for you. Add your comment and press <strong>Start discussion</strong>.</li>
       </ol>
       <p><strong>What happens next.</strong> The founder reads every thread. Others can join in. When a thread points to a change, it follows <a href="/how-it-grows/">How it grows</a>, and everyone who helped is credited by name.</p>
-      <p><strong>A good comment can be one sentence.</strong> <span class="eg">“This doesn’t match what I’ve seen, because…” · “Here’s a public source for this: …” · “My team does this differently: …”</span></p>
+      <p><strong>A good comment can be one sentence.</strong> <span class="eg">“This doesn’t match what I’ve seen, because…” · “Here’s a public source for this: …” · “Here’s another way to do it, in general terms: …”</span></p>
     </section>
 
     <section aria-labelledby="where-h">

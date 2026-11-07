@@ -11,7 +11,6 @@ export const room = {
   name: 'The Commons',
   url: '/commons/',
   contact: 'cpp@anacay.org',
-  precheckHours: 72, // a private pre-check gets a written reply within 72 hours
 };
 
 // One place to interact: The Commons, a single GitHub Discussions category.
@@ -52,7 +51,7 @@ export const tagUrl = (t) => `${repo}/discussions?discussions_q=${encodeURICompo
 const SITE = 'https://cpp.anacay.org'; // matches site.url in paper.config.json
 const qs = (o) => Object.entries(o).filter(([, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&');
 // The NDA rule, word for word, as on /commons/#room-rules.
-export const NDA_LINE = 'Don’t break your NDA. Don’t share your company’s prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game.';
+export const NDA_LINE = 'Don’t break your NDA. Don’t share your company’s prices, contract terms, demand forecasts, future plans or any other confidential information. Methods and public facts are fair game.';
 // `starter: true` means `text` is already the poster's own opening, so no
 // "Your post:" prompt follows it.
 export function streamPost({ title = '', text = '', tag = null, from = null, starter = false } = {}) {
@@ -114,7 +113,6 @@ export const roles = [
   { id: 'co-organizer', name: 'Co-organizer', holders: [] },
   { id: 'editor', name: 'Editor', holders: ['founder'] },
   { id: 'conduct-reviewer', name: 'Independent conduct reviewer', holders: [] },
-  { id: 'pre-check', name: 'Pre-check reviewer', holders: [] },
   { id: 'wg-lead', name: 'Working-group lead', holders: [], later: true },
   { id: 'call-host', name: 'Call host', holders: [], later: true },
 ];
@@ -125,6 +123,32 @@ export const roles = [
 export const people = [
   { id: 'founder', name: 'Guillermo Martinez', sector: null, topics: [], consent: true, founder: true },
 ];
+
+// Pages frozen for their first author. Each page's byline shows the line, so
+// a reader knows the author no longer edits it. Everyone else still can.
+// Changes to these pages go through another editor.
+export const frozen = {
+  since: '8 November 2026',
+  line: 'Frozen for its first author since 8 November 2026. Open to everyone else’s edits.',
+  files: [
+    'case-kuantillion-cloud.md',
+    'case-kuantillion-cloud-full.md',
+    'case-kuantillion-cloud-practice.md',
+    'case-kuantillion-cloud-plan.md',
+    'note-second-lives.md', // the same problem space as Case 3
+  ],
+};
+export const frozenLine = (file = '') => (frozen.files.includes(file) ? frozen.line : null);
+
+// The draft principles (/principles/), posted for discussion. `thread` is the
+// Commons thread for the proposal. Until that post exists it points at
+// Discussions; replace it with the thread's URL once posted (runbook step 9).
+export const principlesDraft = {
+  version: 'v0',
+  posted: '8 November 2026',
+  thread: 'https://github.com/anacay/cpp/discussions',
+  signing: 'after the open period',
+};
 
 // The founding circle. Ids from `people`. The names block on /circle/ stays
 // hidden until `showNamesAt` consented names exist.
@@ -148,7 +172,7 @@ export const workingGroups = [
 ];
 
 // The community pages, for the sitemap, llms.txt and the checks.
-export const ROOM_ROUTES = ['/commons/', '/circle/', '/roles/', '/working-groups/', '/agenda/', '/sharing-safely/', '/contributors/', '/join/'];
+export const ROOM_ROUTES = ['/commons/', '/circle/', '/roles/', '/working-groups/', '/agenda/', '/sharing-safely/', '/contributors/', '/join/', '/principles/'];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 export const person = (id) => people.find((p) => p.id === id) ?? null;
@@ -164,8 +188,8 @@ export const circleNames = () => {
   const c = consented(all);
   return c.length >= circle.showNamesAt ? { coOrganizers: consented(circle.coOrganizers), members: consented(circle.members) } : null;
 };
-// Who reads cpp@anacay.org. The founder, as steward, reads it.
-export const inboxLine = () => `The founder reads ${room.contact}.`;
+// Who reads cpp@anacay.org, and what it is for: conduct and admin, never case material.
+export const inboxLine = () => `The founder reads ${room.contact}. It is for conduct and admin only, not for case material.`;
 // Who runs CPP, in one line. It matches GOVERNANCE.md; the full passage is
 // /commons/#who.
 export const ownershipLine = () => 'The founder stewards CPP, with Anacay’s disclosed support. Roles open as people step forward.';

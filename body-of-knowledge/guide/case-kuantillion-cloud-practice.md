@@ -11,6 +11,8 @@ author: Guillermo Martinez
 reviewers:
 ---
 
+*Provenance, dated 8 November 2026. This strategy answers Case 3. It was written and first published between 30 October and 2 November 2026, while the author was not employed by any infrastructure operator. It was revised for rounding and corrections on 8 November 2026. Kuantillion Cloud is a fictional name. The case draws on research into hyperscale operators. Where it uses public figures about the case company, they come from one such public company and are rounded and adjusted for illustration. Treat them as orders of magnitude, not as that company's exact numbers. Figures from cited studies are given as published. Figures tagged Illustrative are invented. It uses public sources only, contains no confidential information and describes no company's internal practice. Where the public record is silent, it says so. The strategy and plan are a teaching exercise, not any operator's plan. From 8 November 2026 the author doesn't edit these pages or take part in their threads; another editor handles changes. The text as of that date is tagged* `pre-employment-baseline-2026-11-08`.
+
 This page is the strategy for [Case 3](case-kuantillion-cloud.md). It shows how a practitioner would tackle the case with the practice's body of knowledge. You'll see how to frame the problem, how to break it down and what order to work it in.
 
 Two companion pages sit beside it. The [full case](case-kuantillion-cloud-full.md) sets out the problem in detail and prescribes nothing. The [execution plan](case-kuantillion-cloud-plan.md) turns this strategy into owners, dates, gates and tables. You don't need either to follow this page. Each section carries enough context to stand on its own.
@@ -23,7 +25,7 @@ Kuantillion Cloud is a fictional hyperscale operator. It runs one of the largest
 
 **The shock.** New enterprise flash now costs three to four times what it did a year earlier. Next year's supply from the flash makers is largely pledged to their biggest buyers already. Any flash Kuantillion Cloud didn't contract for in advance is hard to get at any price.
 
-**The old flash.** Kuantillion Cloud retires machines every year and takes them apart. In 2024 it wiped and then reused or resold over 3 million drives. Its public environmental reports call them hard drives, so how many were solid-state drives (SSDs) is unknown. Older flash also sits idle inside machines that are still running. One peer cloud measured 54% of its server SSD capacity stranded that way ([section 4.1](case-kuantillion-cloud-full.md#4-1-four-populations)).
+**The old flash.** Kuantillion Cloud retires machines every year and takes them apart. In 2024 it wiped and then reused or resold over 3 million drives. Its public environmental reports call them hard drives, so how many were solid-state drives (SSDs) is unknown. Older flash also sits idle inside machines that are still running. One peer cloud is reported to have 54% of its server SSD capacity stranded that way ([section 4.1](case-kuantillion-cloud-full.md#4-1-four-populations)).
 
 **Where a drive can go.** When a host retires, it can be kept, redeployed whole to lighter work, or taken apart. A harvested drive then has four sinks ([section 5](case-kuantillion-cloud-full.md#5-demand-four-places-a-legacy-drive-can-go)):
 
@@ -255,7 +257,7 @@ Three lines of the paper are new to this decision. An approved unit must still b
 | 2 | One event-history flag, or old firmware with no known fault | Loss-absorbing tiers, and like-for-like spares only |
 | 3 | Repeat events, a failed capacitor test, or no safe firmware | Exit or destroy |
 
-Grade on event history, not wear. In the field studies, error history predicts. After one uncorrectable error, the chance of another the next month was about 30%, against 2% in a random month (Schroeder et al., 2016). Firmware version moved replacement rates up to tenfold (Maneas et al., 2020). Wear rarely binds, since most drives use under 1% of their rated endurance a year. Keep wear as a recorded field, and use it as a threshold only for write-heavy or QLC cohorts. Age matters per firmware cohort, measured in power-on hours. The thresholds themselves are [unmeasured].
+Grade on event history, not wear. In the field studies, error history predicts. After one uncorrectable error, the chance of another the next month was about 30%, against 2% in a random month (Schroeder et al., 2016). Firmware version moved replacement rates more than tenfold (Maneas et al., 2020). Wear rarely binds, since most drives use under 1% of their rated endurance a year. Keep wear as a recorded field, and use it as a threshold only for write-heavy or QLC cohorts. Age matters per firmware cohort, measured in power-on hours. The thresholds themselves are [unmeasured].
 
 Burn-in comes before any grade 1 placement, with its yield logged. Infant mortality is common in first lives, and a second life may restart that clock; that is a hypothesis, not a finding [unmeasured].
 
@@ -393,7 +395,7 @@ Score the rule after two cycles. It is a rule, not a computed shadow price: the 
 
 **Who pays.** Set an internal showback rate on usable, yield-adjusted capacity [argued]. It is the higher of net realizable resale for that cohort and grade, and pipeline cost per usable TB, plus a risk loading drawn from the incident bound. Carry is charged per TB-month while the drive is held. Call it a showback rate, not a transfer price, to keep it apart from tax transfer pricing.
 
-The floor at resale matters. A drive that could be sold is never free to a sink. For example, take net resale of $100 per usable TB, pipeline cost of $25 and a $5 risk loading. The rate is about $105 per TB, plus about $0.83 per TB-month held, the capital charge on $100 at 10% (illustrative). A cost-plus price of about $32 would show reuse at an 83–95% discount to new flash, and every sink would over-claim. Where resale exceeds pipeline cost, the gap is a management-ledger credit to the recovery team, not a booked saving.
+The floor at resale matters. A drive that could be sold is never free to a sink. For example, take net resale of $100 per usable TB, pipeline cost of $25 and a $5 risk loading. The rate is about $105 per TB, plus about $0.83 per TB-month held, the capital charge on $100 at 10% (illustrative). A cost-plus price of about $30 would show reuse at an 84–95% discount to new flash, and every sink would over-claim. Where resale exceeds pipeline cost, the gap is a management-ledger credit to the recovery team, not a booked saving.
 
 Show it back for a full cycle before anyone is billed. The paper's order is "Move to attributed cost only after a full cycle of showback" (Section 10.4). The forum ranks on next-best-source value, not on this price.
 
@@ -427,7 +429,7 @@ The key line is the label for harvest not yet answered. "An approval becomes cap
 
 **An estimate, by cohort.** Read the booking as a share of what is scheduled, built cohort by cohort. Yield is close to all-or-nothing within a cohort, so averaging it across cohorts hides the risk.
 
-- On-time share, about 50–70%. Our estimate rests on retirements waiting for new halls, and on the case's report that 30–50% of large 2026 data-center capacity may be delayed [argued].
+- On-time share, about 50–70% (illustrative). Our estimate rests on retirements waiting for new halls, and on the case's report that 30–50% of large 2026 data-center capacity may be delayed [argued].
 - Yield through the technical gates is unpublished [unmeasured]. Take a batch that is 60% observable cohorts at about 90% yield and 40% blind cohorts at about 40% (illustrative).
 - The central expectation is then about 35–49% of scheduled drives on the date. For a retiring batch of 40,000 drives, that is about 14,000–19,600. The firm slice, at the low on-time share and observable cohorts only, is about 27%, or 10,800 drives (all illustrative).
 
@@ -522,7 +524,7 @@ Nothing gets built until you know whether the program pays. Our reading, applied
 
 *The test.* Compare the expected annual margin over exit, under the declared anchor, with the program's fixed cost: the drive record, the forum and the fixed part of pipeline staffing. Next year's purchase doesn't enter it.
 
-For example, take the case's central harvest row of 1.8 EB a year at 80% yield, about 1.44 million usable TB. At the $190 anchor's central margin of about $10 per TB, that is about $14 million a year. At the $640 anchor's central $370, it is about $530 million. Against a fixed program cost of $20–60 million a year (all illustrative), the low anchor fails and the high anchor passes easily. The anchor fork decides the program's fate before its size does.
+For example, take the case's central harvest row of 1.8 EB a year, about 1.8 million harvested TB. The margin already nets yield. At the $190 anchor's central margin of about $10 per TB, that is about $18 million a year. At the $640 anchor's central $370, it is about $670 million. Against a fixed program cost of $20–60 million a year (all illustrative), the low anchor fails and the high anchor passes easily. The anchor fork decides the program's fate before its size does.
 
 *The ratio, as a descriptor.* The ratio of SSD harvest to a year's new flash sets scope; it doesn't decide go or no-go. The case puts it at about 0.5–30%, central 3–9%, from harvest rows against 20–60 EB of new flash a year ([section 7.4](case-kuantillion-cloud-full.md#7-4-the-flow-the-denominator-and-the-stock)). Its numerator is a count the report calls hard drives, so the ratio is near zero if they were all disks.
 

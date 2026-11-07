@@ -45,11 +45,11 @@ const list = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs[xs
     <section class="prose reading" aria-labelledby="room-rules">
       <h2 id="room-rules">The rules</h2>
       <div data-rule>
-        <p class="note"><strong>Don’t break your NDA.</strong> Don’t share your company’s prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game.</p>
+        <p class="note"><strong>Don’t break your NDA.</strong> Don’t share your company’s prices, contract terms, demand forecasts, future plans or any other confidential information. Methods and public facts are fair game.</p>
         <RoomRule />
         <p>A “No recruiting” rule for the Code of Conduct is being proposed, with an open period. Until it is adopted, the rules on this page apply here.</p>
       </div>
-      <p>Unsure whether something is safe? Read <a href="/sharing-safely/">Sharing safely</a>, or ask for a private pre-check at <a href={mail}>{room.contact}</a> before you post. Everyone follows the <a href="/code-of-conduct/">Code of Conduct</a>.</p>
+      <p>Unsure whether something is safe? Read <a href="/sharing-safely/">Sharing safely</a>. If in doubt, leave it out, or post only the method and the public facts. Everyone follows the <a href="/code-of-conduct/">Code of Conduct</a>.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="tags">
@@ -68,13 +68,18 @@ const list = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs[xs
       <p class="muted">Later, when The Commons asks for it: {list(later)}. Each starts only when a topic outgrows its threads. See <a href="/working-groups/">working groups</a>.</p>
     </section>
 
+    <section class="prose reading" aria-labelledby="principles-h">
+      <h2 id="principles-h">Draft principles, open for argument</h2>
+      <p>A one-page draft of the practice’s principles is up for discussion: <a href="/principles/">Principles, draft v0</a>. It is distilled from the body of knowledge. Argue it, amend it or object to it. Signing opens only after the open period.</p>
+    </section>
+
     <section class="prose reading" aria-labelledby="who">
       <h2 id="who">Who runs this</h2>
       {founder && <p>{founder.name} founded CPP and stewards it. He is its editor today.</p>}
       <p>Anacay LLC supports the practice, and says so. See <a href="/support/">Support</a>.</p>
       <p><strong>By the community, for the community.</strong> What we make belongs to the community, credited by name.</p>
       <p>Leadership grows from members. Roles open as people step forward, and governance widens as the community grows. <a href="/governance/">Governance</a> and <a href="/how-it-grows/">How it grows</a> set out how.</p>
-      <p>Private messages to <a href={mail}>{room.contact}</a> are read by the founder.</p>
+      <p>Private messages to <a href={mail}>{room.contact}</a> are read by the founder. They are for conduct and admin only, not for case material.</p>
       <p class="pr-who">Co-organizers: {coOrganizers.length ? coOrganizers.map((p) => p.name).join(', ') + '.' : 'Open. A volunteer role for anyone who wants to help The Commons along.'} See <a href="/roles/">Roles</a> and <a href="/circle/">The founding circle</a>.</p>
     </section>
   </div>

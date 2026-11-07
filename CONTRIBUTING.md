@@ -84,7 +84,7 @@ Cases are short stories of what happened, told so others can learn from them. Us
 - Shift dates and places if they'd identify the organization.
 - Ask yourself: could a colleague from that organization recognize it? If yes, blur it more.
 
-Not sure? Ask for a [private pre-check](SHARING_SAFELY.md#a-private-pre-check) at cpp@anacay.org. You get a written reply within 72 hours. An editor will check it again before it's added to the case library.
+Not sure? Leave it out, or share only the method and the public facts. There is no private review of drafts, so don't email them. An editor checks a case again before it goes into the case library.
 
 **Problem-space cases** are different: a whole planning problem built only from public information, about a fictional company, with every claim's evidence labeled. They don't come from anyone's private experience, so they may resemble the industry they draw on. Don't quote a single company's material; paraphrase, and put further reading at the end. The rules are in the guide's Cases page.
 
@@ -102,8 +102,10 @@ Once your contribution is merged or used, you're added to `CONTRIBUTORS.md` for 
 
 ## Licence
 
-By contributing, you agree your text is licensed CC BY-SA 4.0 and your code MIT, the same as the rest of the repository.
+What you contribute is licensed when you post it, on the same terms as the rest of the repository: text and figures under CC BY-SA 4.0, code under MIT. That covers pull requests, issues, Discussions posts and comments, and anything you email and then agree to publish. The licences are irrevocable, so nobody can withdraw a contribution once it's in. You can always ask for your name to come off it.
+
+By contributing, you confirm it's yours to license. It holds nothing your employer, a client or anyone else hasn't allowed you to share. If your employer has a policy on outside contributions, follow it.
 
 ## Questions
 
-Ask in Discussions, or write to cpp@anacay.org.
+Ask in Discussions. Write to cpp@anacay.org only about conduct or admin.

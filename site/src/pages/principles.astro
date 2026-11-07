@@ -1,0 +1,174 @@
+---
+// /principles/: the draft one-page principles, v0, posted for discussion.
+// It is a draft, clearly marked, and nobody can sign it yet. Changes to it
+// follow How it grows: principles changes stay open at least 30 days, doubled
+// to 60 while there is one editor. Text: E_principles v0, distilled only from
+// the canon (the sources table below). Sentences stay at 30 words or fewer (check 11).
+import Base from '../layouts/Base.astro';
+import { guide } from '../lib/guide.mjs';
+import { DOCS } from '../lib/community.mjs';
+import { load } from '../lib/paper.mjs';
+import { principlesDraft } from '../data/room.mjs';
+
+const g = guide();
+const { chapters } = load();
+// A canon path ("guide/people.md", "seed/05-….md", "CHARTER.md") to its page
+// on this site, or null if the site has no page for it.
+const SPECIAL = { '00b-executive-summary': '/summary/', '00c-one-page': '/one-page/' };
+const href = (p) => {
+  const [dir, file] = p.includes('/') ? p.split('/') : ['', p];
+  if (dir === 'guide') return g.byFile.get(file)?.url ?? null;
+  if (dir === 'seed') {
+    const stem = file.replace(/\.md$/, '');
+    if (SPECIAL[stem]) return SPECIAL[stem];
+    const url = `/paper/${stem.replace(/^0+/, '')}/`;
+    return chapters.some((c) => c.url === url) ? url : null;
+  }
+  return DOCS[file] ?? null;
+};
+
+const values = [
+  ['Agreed numbers', 'measured numbers alone'],
+  ['Delivered capacity', 'approved capacity'],
+  ['Rules agreed in advance', 'negotiation in the moment'],
+  ['Legitimacy', 'precision'],
+];
+const principles = [
+  'A coefficient is also a price, so it needs an owner, a version and a date, and is restated when hardware or the meter changes.',
+  'Approval is not allocation: until supply answers with a dated commit or a named gap, an approval stays uncommitted.',
+  'Commit each supply layer only when its lead time forces it, plan on the cautious lead time, and hold earlier claims as options.',
+  'Every number has a named owner; when a plan misses, split the miss by term and send each piece to whoever moved it.',
+  'When supply cannot meet an ask, name the gap with a date and an owner, and give every refusal a path forward.',
+  'Agree shortage rules, landing rules and the re-cut order before they are needed; agreed afterward, they are only negotiations.',
+  'Demand with no history enters as a signed declaration that firms up in stages, and each stage licenses only its own supply action.',
+  'Size every buffer as a priced decision: the cost of running short against the cost of holding spare.',
+  'Planning does not pad its own numbers. It scores supply’s promises the way it scores demand’s forecasts.',
+  'Anyone who pays for a coefficient can challenge it through an open channel, and can sometimes win.',
+  'Scale the discipline to the risk. Where running short costs less than the process, simpler choices are fair.',
+  'Mark every claim as published, argued or unmeasured; the unmeasured parts are where the next work belongs.',
+];
+const questions = [
+  {
+    id: 'q-commit', title: 'Principle 3: commit only what the lead time forces',
+    text: [
+      'Senior planners in power-bound and accelerator settings buy slow layers ahead of any declaration, as a strategic bet. They may read this principle as a brake.',
+      'The working note on buildings at AI density says the shell is losing its fungibility. Once that happens, an early commitment is a deliberate choice of shape, not a neutral option.',
+      'The canon also labels the commit-point method untested.',
+    ],
+    ask: 'Should it read “commit what the lead time forces, and price any earlier commitment as a strategic bet”?',
+    sources: ['guide/note-buildings-at-ai-density.md', 'guide/settings.md', 'guide/limits.md'],
+  },
+  {
+    id: 'q-coefficient', title: 'Principles 1 and 10: a coefficient is an agreement, and anyone can challenge it',
+    text: [
+      'This is the seed paper’s first claim, so it is the most exposed.',
+      'People who own platforms see a coefficient as a measurement, not something consumers can negotiate. To them, a consumer who can challenge it and win looks like a bill set by lobbying.',
+      'The canon answers with legitimacy over precision, a published version and a forum that rules. That answer is argued from practice, not measured.',
+    ],
+    ask: 'Is the answer strong enough to put in the principles? If not, what would make it so?',
+    sources: ['guide/concept-the-coefficient.md', 'seed/05-coefficients-are-agreements.md', 'seed/10-people.md'],
+  },
+  {
+    id: 'q-padding', title: 'Principle 9: planning doesn’t pad, and scores supply like demand',
+    text: [
+      'Many experienced planners pad quietly, because it has protected them before. Supply organizations may also object to being scored on promised against actual, as demand is.',
+      'The canon says unpadded numbers are where a planner’s standing to say no comes from.',
+    ],
+    ask: 'Where exactly is the line between a named, priced buffer and padding?',
+    sources: ['guide/people.md', 'guide/concept-buffers-and-reserves.md', 'guide/concept-supply-layers-and-lead-times.md'],
+  },
+];
+const mapping = [
+  ['Framing', 'Brokering between those who fund, build and use', ['guide/people.md', 'CHARTER.md']],
+  ['V1', 'Agreed numbers over measured numbers alone', ['guide/concept-the-coefficient.md', 'guide/concept-measuring-loop.md', 'seed/05-coefficients-are-agreements.md']],
+  ['V2', 'Delivered capacity over approved capacity', ['guide/concept-approval-and-allocation.md', 'seed/06-approval-is-not-allocation.md']],
+  ['V3', 'Rules agreed in advance over negotiation in the moment', ['guide/principles.md', 'guide/concept-operating-mechanisms.md']],
+  ['V4', 'Legitimacy over precision', ['seed/10-people.md', 'guide/people.md']],
+  ['1', 'A coefficient is a price: owner, version, date, restated', ['guide/principles.md', 'guide/concept-the-coefficient.md', 'seed/05-coefficients-are-agreements.md', 'seed/00b-executive-summary.md']],
+  ['2', 'Approval is not allocation', ['guide/principles.md', 'guide/concept-approval-and-allocation.md', 'seed/06-approval-is-not-allocation.md']],
+  ['3', 'Commit only what the lead time forces', ['guide/principles.md', 'guide/concept-commit-points.md', 'guide/concept-supply-layers-and-lead-times.md', 'seed/08-the-commit-point-method.md', 'seed/09-the-operating-discipline.md']],
+  ['4', 'Every number has an owner; split the miss by term', ['guide/principles.md', 'guide/concept-operating-mechanisms.md', 'guide/concept-the-coefficient.md', 'seed/00c-one-page.md']],
+  ['5', 'Name the gap; every refusal has a path forward', ['guide/principles.md', 'guide/people.md', 'seed/09-the-operating-discipline.md']],
+  ['6', 'Agree shortage, landing and re-cut rules in advance', ['guide/principles.md', 'guide/concept-operating-mechanisms.md', 'seed/14-a-minimum-viable-discipline.md']],
+  ['7', 'Declarations firm up in stages', ['guide/concept-demand-and-declarations.md', 'seed/05-coefficients-are-agreements.md']],
+  ['8', 'Buffers are priced decisions', ['guide/concept-buffers-and-reserves.md', 'seed/06-approval-is-not-allocation.md']],
+  ['9', 'Planning doesn’t pad; supply is scored like demand', ['guide/people.md', 'guide/concept-supply-layers-and-lead-times.md', 'seed/14-a-minimum-viable-discipline.md']],
+  ['10', 'An open channel to challenge coefficients', ['seed/10-people.md', 'guide/people.md']],
+  ['11', 'Scale the discipline to the risk', ['guide/settings.md', 'guide/limits.md', 'seed/13-where-this-breaks.md']],
+  ['12', 'Published, argued or unmeasured', ['guide/principles.md', 'guide/limits.md', 'CHARTER.md', 'HOW_IT_GROWS.md']],
+  ['Signing', 'Sign as an individual; endorse principles, not products', ['GOVERNANCE.md', 'CHARTER.md', 'HOW_IT_GROWS.md']],
+];
+const label = (p) => p.replace(/^guide\//, 'guide: ').replace(/^seed\//, 'seed: ').replace(/\.md$/, '');
+const thread = principlesDraft.thread;
+---
+<Base title="Principles, draft v0" description="A one-page draft of the Capacity Planning Practice's principles, distilled from its body of knowledge. Draft v0 for discussion, posted 8 November 2026. Nobody can sign it yet." nav="room">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Draft v0 for discussion, posted {principlesDraft.posted}</p>
+      <h1>Principles of the Capacity Planning Practice</h1>
+      <p class="lede">A one-page draft, for argument and amendment. Every line comes from the practice’s own pages, listed at the end. Nothing here is new doctrine.</p>
+      <p class="note"><strong>This is a draft.</strong> It isn’t adopted, and nobody can sign it yet. Signing opens after the open period, once an editor has called rough consensus. <a href={thread}>Argue it in The Commons</a>.</p>
+    </div>
+
+    <article class="prose reading" aria-labelledby="text-h">
+      <h2 id="text-h">The draft</h2>
+      <p>We plan the capacity behind digital services, brokering between those who fund it, build it and use it, and we have come to value these things.</p>
+      <ul class="pr-values">
+        {values.map(([l, r]) => <li><strong>{l}</strong> over {r}.</li>)}
+      </ul>
+      <p>The items on the right still matter; when the two pull apart, we lean left.</p>
+
+      <h3 id="principles-list">Principles</h3>
+      <ol>
+        {principles.map((p) => <li>{p}</li>)}
+      </ol>
+
+      <h3 id="signing">On signing</h3>
+      <p>You sign as an individual, in your own name, not on behalf of your employer.</p>
+      <p>Signing endorses these principles, not any company, product or service, including the steward’s.</p>
+    </article>
+
+    <section class="prose reading" aria-labelledby="decided-h">
+      <h2 id="decided-h">How it will be decided</h2>
+      <p>Changes follow <a href="/how-it-grows/">How it grows</a>. Principles changes stay open at least 30 days, or 60 while there is only one editor.</p>
+      <p>Every objection gets an answer. Then an editor calls rough consensus and writes a closing note. The founder proposed this draft, so another editor makes the call if one is confirmed by then. If not, the founder calls it and says so.</p>
+      <p>This page is separate from the guide’s own <a href="/guide/principles/">principles</a>, which are testable claims. The <a href="#q-framing">framing question</a> asks which form should win.</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="questions-h">
+      <h2 id="questions-h">Three questions for the open period</h2>
+      <p>These are the principles most likely to be argued. Each is a question, not a settled line.</p>
+      {questions.map((q) => (
+        <>
+          <h3 id={q.id}>{q.title}</h3>
+          {q.text.map((t) => <p>{t}</p>)}
+          <p><strong>The question.</strong> {q.ask}</p>
+          <p class="muted">From: {q.sources.map((s, i) => { const h = href(s); return <>{i > 0 && ', '}{h ? <a href={h}>{label(s)}</a> : label(s)}</>; })}.</p>
+        </>
+      ))}
+      <h3 id="q-framing">A framing question to settle first</h3>
+      <p>The guide states its principles as testable claims, “not virtues”. A page of value lines cuts against that.</p>
+      <p><strong>The question.</strong> Should the value lines stay, or should each principle keep its evidence label instead?</p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="sources-h">
+      <h2 id="sources-h">Where each line comes from</h2>
+      <div class="table-wrap table-wrap--fit" tabindex="0" role="region" aria-labelledby="sources-h">
+      <table>
+        <thead><tr><th scope="col">Line</th><th scope="col">In short</th><th scope="col">From</th></tr></thead>
+        <tbody>
+          {mapping.map(([n, short, srcs]) => (
+            <tr><td>{n}</td><td>{short}</td><td>{srcs.map((s, i) => { const h = href(s); return <>{i > 0 && ', '}{h ? <a href={h}>{label(s)}</a> : label(s)}</>; })}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+      <p><a class="more" href={thread}>Discuss the draft in The Commons</a></p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .pr-values { list-style: none; padding-left: 0; }
+  .pr-values li { padding: 0.15rem 0; }
+</style>

@@ -20,9 +20,9 @@ This is a request for comments: a draft shared on purpose, so the people who do 
 
 **What happens next:** the founder reads every thread. Others can join in. When a thread points to a change, it follows [How it grows](https://github.com/anacay/cpp/blob/main/HOW_IT_GROWS.md), and everyone who helped is credited by name in [CONTRIBUTORS.md](https://github.com/anacay/cpp/blob/main/CONTRIBUTORS.md).
 
-**A good comment can be one sentence.** "This doesn't match what I've seen, because…" · "Here's a public source for this: …" · "My team does this differently: …"
+**A good comment can be one sentence.** "This doesn't match what I've seen, because…" · "Here's a public source for this: …" · "Here's another way to do it, in general terms: …"
 
-**Don't break your NDA.** Don't share your company's prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game. The [Code of Conduct](https://github.com/anacay/cpp/blob/main/CODE_OF_CONDUCT.md) applies here.
+**Don't break your NDA.** Don't share your company's prices, contract terms, demand forecasts, future plans or any other confidential information. Methods and public facts are fair game. The [Code of Conduct](https://github.com/anacay/cpp/blob/main/CODE_OF_CONDUCT.md) applies here.
 
 **No GitHub account?** Anyone can read here. A free account takes two minutes: https://github.com/signup. Your username can be a handle.
 

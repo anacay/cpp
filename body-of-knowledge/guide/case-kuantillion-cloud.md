@@ -11,7 +11,7 @@ author: Guillermo Martinez
 reviewers:
 ---
 
-*Kuantillion Cloud is a fictional company. Any resemblance to real companies reflects problems the industry shares.*
+*Provenance, dated 8 November 2026. This case, its strategy and its execution plan were written and first published between 30 October and 2 November 2026, while the author was not employed by any infrastructure operator. They were revised for rounding and corrections on 8 November 2026. Kuantillion Cloud is a fictional name. The case draws on research into hyperscale operators. Where it uses public figures about the case company, they come from one such public company and are rounded and adjusted for illustration. Treat them as orders of magnitude, not as that company's exact numbers. Figures from cited studies are given as published. Figures tagged Illustrative are invented. It uses public sources only, contains no confidential information and describes no company's internal practice. Where the public record is silent, it says so. The strategy and plan are a teaching exercise, not any operator's plan. From 8 November 2026 the author doesn't edit these pages or take part in their threads; another editor handles changes. The text as of that date is tagged* `pre-employment-baseline-2026-11-08`.
 
 This is the practice's second problem-space case, and the first with a full answer beside it. The case sets out the problem in full and prescribes nothing. A companion page then works the problem through the practice's body of knowledge, and names where that body of knowledge runs out.
 
@@ -47,7 +47,7 @@ Three words recur. A [sink](/glossary/#term-sink) is a place a drive can go: a w
 
 ## Before you start
 
-Case 3 runs to about 50,000 words across four pages. You don't need all of it, and you don't need to start cold.
+Case 3 runs to about 55,000 words across four pages. You don't need all of it, and you don't need to start cold.
 
 **Five concepts to know first.** Each takes about five minutes.
 

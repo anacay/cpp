@@ -24,7 +24,7 @@ const probs = (d) => d.problems.map(agendaItem);
 
     <nav aria-labelledby="doors-h">
       <h2 class="group-title" id="doors-h">{doors.length} doors</h2>
-      <p class="muted">The resource-managers door is the first growth path into the craft from a neighbouring field. SRE, finance and supply growth paths will follow the same pattern.</p>
+      <p class="muted">The resource-managers door is the first growth path into the craft from a neighbouring field. SRE, finance and supply growth paths could follow the same pattern. Want to draft one? See <a href="/roles/">Roles</a>.</p>
       <ul class="paths paths--list doors">
         {doors.map((d) => (
           <li><a href={d.page ? `/start/${d.id}/` : `#${d.id}`}><span class="time">{d.time}</span><span class="sr-only">:&nbsp;</span><span class="name">{d.name}</span><span class="sr-only">:&nbsp;</span><span class="what">{d.who}</span></a></li>

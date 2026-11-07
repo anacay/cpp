@@ -77,7 +77,7 @@ Tags grow from use. When a new word keeps coming up, add a label for it, and add
 
 > This is the one place for capacity planners. Ask a question, share an observation or a link, or ask "how do you handle X?" A sentence is enough. Reply in threads, and use reactions freely.
 >
-> **The rule that matters most.** Don't break your NDA. Don't share your company's prices, contract terms, future plans or any other confidential information. Methods and public facts are fair game.
+> **The rule that matters most.** Don't break your NDA. Don't share your company's prices, contract terms, demand forecasts, future plans or any other confidential information. Methods and public facts are fair game.
 >
 > **Also:** no jobs, no recruiting, no selling. Your username can be a handle. Your name appears on CPP only when you want credit.
 >
@@ -88,7 +88,7 @@ Tags grow from use. When a new word keeps coming up, add a label for it, and add
 > - "#supply Has anyone seen a public source on transformer lead times newer than 2025? Here's the one I know: [link]"
 > - "#forecasting How do you handle a team whose declarations are always 40% high? (Illustrative number.)"
 >
-> **What happens to good threads.** A thread that settles something can become a CPP page, credited by name, with your consent. Not sure a post is safe? Ask for a private pre-check at cpp@anacay.org first. The founder reads it.
+> **What happens to good threads.** A thread that settles something can become a CPP page, credited by name, with your consent. Not sure a post is safe? Leave it out, or post only the method and the public facts. See https://cpp.anacay.org/sharing-safely/.
 >
 > More: https://cpp.anacay.org/commons/
 
@@ -176,9 +176,9 @@ The labels below are a proposal from the plan. Change any that read wrong.
 | #13 | Q12. Steps with no reference class | `stage:senior` |
 | #14 | Q13. For agent-created demand, is a cap a better declaration than a forecast? | `good-first`, `stage:practicing`, `stage:adjacent` |
 | #15 | Q14. Where a market price exists, does the agreement claim hold? | `stage:senior`, `stage:adjacent` |
-| #16 | Q15. Could the community pool anonymized declaration records? | `stage:senior`, `stage:head` |
+| #16 | Q15. Could the field have a shared, public dataset of declarations? | `stage:senior`, `stage:head` |
 
-**Why these four are `good-first`.** Q4 and Q5 move forward with one public source. Q11 and Q13 move forward with one account from your own work, told at the shape level.
+**Why these four are `good-first`.** Q4, Q5 and Q11 each move forward with one public source. Q13 moves forward with a general method, told at the shape level.
 
 **A note on #16.** It asks about preconditions only. No real data is pooled before written rules and a legal-safe protocol exist.
 

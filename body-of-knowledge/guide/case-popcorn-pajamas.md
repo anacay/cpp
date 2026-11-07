@@ -11,7 +11,7 @@ author: Guillermo Martinez
 reviewers:
 ---
 
-*Popcorn Pajamas is a fictional company. Any resemblance to real companies reflects problems the industry shares.*
+*Provenance, dated 8 November 2026. Written and first published on 28 October 2026, from public sources only, cited under Further reading. Revised for rounding and corrections on 8 November 2026. Popcorn Pajamas is a fictional name. The case draws on research into the streaming industry. Where it uses public figures about the case company, they come from one such public company and are rounded and adjusted for illustration. Treat them as orders of magnitude, not as that company's exact numbers. Figures tagged Inferred, Speculated or Arithmetic are the case's own reasoning, with the basis shown. It contains no confidential information and describes no company's internal practice.*
 
 This is the practice's first problem-space case. It describes a capacity-planning problem space in full and leaves the answers open.
 
@@ -24,7 +24,7 @@ One small planning team turns all of this into annual plans and five-year foreca
 Three things are changing at once:
 
 - **Demand is becoming inorganic.** Live sport contracted into the 2030s, cloud games with no settled hardware, and launches that peak in minutes. None of it is on the smooth curve the plan was built for.
-- **Supply is slower and dearer.** AI demand has absorbed the flash, memory and optics the appliances are built from. Contract prices for enterprise flash rose roughly four to five times since mid-2025. Component lead times now consume most or all of the plan's own trigger window.
+- **Supply is slower and dearer.** AI demand has absorbed the flash, memory and optics the appliances are built from. Contract prices for enterprise flash are on course to rise four to five times from mid-2025 to the end of 2026. Component lead times now consume most or all of the plan's own trigger window.
 - **The free exchange is contested.** Regulators in several regions are debating who pays for delivery, and network operators are consolidating into fewer, larger counterparties.
 
 ## Why it is hard

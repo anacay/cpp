@@ -11,7 +11,9 @@ author: Guillermo Martinez
 reviewers:
 ---
 
-*Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when supply comes back out of the fleet in parts, of uncertain condition, as a byproduct of decisions made for other reasons? And what replaces it? Related: Section 6, Section 6.2, Section 6.6, Section 6.7, Section 8.2. Discussion: to be opened under Proposals.*
+*Stage: working note. Status: draft, open for argument. The question: what does capacity planning lose when supply comes back out of the fleet in parts, of uncertain condition, as a byproduct of decisions made for other reasons? And what replaces it? Related: Section 6, Section 6.2, Section 6.6, Section 6.7, Section 8.2. Discussion: open a thread under Proposals.*
+
+*Provenance, dated 8 November 2026. Written in October 2026 from the seed paper, public sources and [Case 3](case-kuantillion-cloud.md), whose public figures are rounded and adjusted for illustration. It uses no confidential information. Anyone can develop it; its first author doesn't extend it after 8 November 2026.*
 
 ## The seed
 

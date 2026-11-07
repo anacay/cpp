@@ -18,6 +18,7 @@ Read a section on the site. If something is wrong, unclear or missing, click **D
 | [`OPERATIONS.md`](OPERATIONS.md) | How the practice is run day to day: triage, moderation, releases, security | CC BY-SA 4.0 |
 | [`ROADMAP.md`](ROADMAP.md) | The next six seeds | CC BY-SA 4.0 |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | How to contribute; how we treat each other | CC BY-SA 4.0 |
+| [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE), [`NOTICE`](NOTICE) | The two licences, and who holds the copyright | — |
 | [`CONTRIBUTORS.md`](CONTRIBUTORS.md), [`EDITORS.md`](EDITORS.md) | Who has helped, by edition; who edits | CC BY-SA 4.0 |
 | [`body-of-knowledge/guide/`](body-of-knowledge/guide/) | The guide (draft v0.2): principles, the work and the path, the map, one page per cadence, concepts, cases, limits. `_SPEC.md` is the writers' spec | CC BY-SA 4.0 |
 | [`body-of-knowledge/seed/`](body-of-knowledge/seed/) | The seed edition, one Markdown file per page, with figures | CC BY-SA 4.0 |
@@ -25,7 +26,7 @@ Read a section on the site. If something is wrong, unclear or missing, click **D
 | [`site/`](site/) | The code that builds cpp.anacay.org (Astro, static, no client JavaScript) | MIT |
 | [`.github/`](.github/) | Issue and discussion forms | MIT |
 
-Text and figures are licensed under [CC BY-SA 4.0](LICENSE). Code is licensed under [MIT](LICENSE-CODE). Short quotations from cited works stay their owners'.
+Text, figures and code © 2026 Guillermo Martinez and contributors. Text and figures are licensed CC BY-SA 4.0 ([LICENSE](LICENSE)); code is licensed MIT ([LICENSE-CODE](LICENSE-CODE)). Anacay LLC hosts the practice and pays its running costs; it holds no rights in the content. See [NOTICE](NOTICE). Short quotations from cited works stay their owners'.
 
 ## Credit it
 
