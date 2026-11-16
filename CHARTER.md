@@ -81,9 +81,7 @@ We won't make that split early. First the community has to prove what lasts.
 
 ## Stewardship
 
-Anacay stewards the practice for now. It holds the domain, the repository and the group, and keeps the lights on. The stated intent is to hand it to community governance as the community grows. [GOVERNANCE.md](GOVERNANCE.md) sets out how.
-
-The practice was started by Guillermo Martinez, who wrote the seed paper. It belongs to the people who build on it.
+The practice was started by Guillermo Martinez, who wrote the seed paper and stewards it. Anacay LLC hosts it: the domain, the hosting and the running costs. The stated intent is to hand it to community governance as the community grows. [GOVERNANCE.md](GOVERNANCE.md) sets out how. It belongs to the people who build on it.
 
 ## Join in
 

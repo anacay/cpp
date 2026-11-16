@@ -6,7 +6,7 @@ Each editor lists their employer, or at least their sector, and keeps it current
 
 | Editor | Since | Employer or sector | Status |
 |---|---|---|---|
-| Guillermo Martinez | Seed edition, v0.1 | Founder; Anacay (steward) | Active |
+| Guillermo Martinez | Seed edition, v0.1 | Founder and steward; co-founder of Anacay, the host | Active |
 
 ## Conduct reports, for now
 

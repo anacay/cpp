@@ -4,25 +4,31 @@ This page says who looks after the practice, how decisions get made, and how it 
 
 It's meant to be light. A young practice needs a few clear rules, not a constitution.
 
-## The steward
+## The steward and the host
 
-Anacay is the steward for now. It supports the practice the way a company supports a foundation: it gives time, hosting and a home on the web, and takes no control over what the practice says. The [Support page](https://cpp.anacay.org/support/) says what it gives and what it gets.
+The founder, Guillermo Martinez, is the steward. He looks after the practice as an individual, pro bono, until the community runs it. Anacay LLC is the host. It sponsors the platform the way a company supports a foundation: hosting, the domain and the running costs. It takes no control over what the practice says. The [Support page](https://cpp.anacay.org/support/) says what Anacay gives and what it gets. This matches the statement of record the founder and Anacay signed on 9 November 2026.
 
 **The steward does:**
 
-- hold the domain (cpp.anacay.org), the GitHub repository and the LinkedIn page and group;
-- pay for hosting and keep the site running;
+- administer the GitHub repository, The Commons and the LinkedIn page;
 - appoint the first editors and confirm new ones;
 - enforce the [Code of Conduct](CODE_OF_CONDUCT.md);
 - step in only when the editors can't settle something themselves.
 
-**The steward doesn't:**
+**The host does:**
 
-- own the content. It's CC BY-SA 4.0, so anyone can copy, adapt or fork it;
-- decide what the body of knowledge says. Editors call consensus; the steward doesn't override them on content;
-- use the practice to sell anything. No Anacay services or offers appear in the body of knowledge, the site or the group. Anacay is named only as the practice's supporter and steward (in the footer, on the Support, About and licence pages, and in these founding documents), never with its services. It links to anacay.org, Anacay's page for the open work it supports, not to its commercial site;
-- get first or private access to contributions, cases or survey data;
-- earn money from the practice. It charges nothing and has no ads, sponsorships or paid tiers.
+- hold the domain (cpp.anacay.org) and the GitHub organization the repository lives in;
+- pay for hosting, the domains, email and API usage, and keep the site running.
+
+**Neither the steward nor the host:**
+
+- owns the content as a whole. Each contributor keeps the copyright in their own contribution, and it's all CC BY-SA 4.0, so anyone can copy, adapt or fork it;
+- overrides the editors on what the body of knowledge says;
+- uses the practice to sell anything. No Anacay services or offers appear in the body of knowledge, the site or The Commons. Anacay is named only as the practice's host (in the footer, on the Support, About and licence pages, and in these founding documents), never with its services. It links to anacay.org, Anacay's page for the open work it supports, not to its commercial site;
+- gets first or private access to contributions, cases or survey data;
+- earns money from the practice. It charges nothing and has no ads, sponsorships or paid tiers.
+
+**When the steward is unavailable.** Nobody acts in the steward's place. The site and The Commons stay open under these rules, and members keep posting and answering. Anacay keeps hosting and paying the running costs, and does nothing else. Decisions that need the steward wait until he is back.
 
 ## Editors
 
@@ -62,15 +68,15 @@ Everyone has one. The rule is to say so, and to step back when it matters.
 
 **Editors.** Editors list their employer, or at least their sector, in `EDITORS.md`, and keep it current. An editor who proposed a change doesn't call consensus on it. While the founder is the only editor, the single-editor rules in [HOW_IT_GROWS.md](HOW_IT_GROWS.md) apply.
 
-**The steward.** Anacay is an advisory company, and capacity planning is one of the things it advises on. So it has an interest too. That's why it doesn't decide content, doesn't promote its services here, and doesn't hold a majority of editor seats once the group has three or more editors.
+**The steward and the host.** The steward works in the field, so he has an interest too. He steps back from any editorial or consensus call that touches his employer's interests, and hands it to an independent editor where there is one. Anacay is an advisory company, and capacity planning is one of the things it advises on. That's why it doesn't decide content, doesn't promote its services here, and doesn't hold editor seats.
 
 ## The path to a community-run body
 
 There are no dates on this path. Each stage starts when the conditions are met.
 
-**Stage 0: Seed (now).** Anacay is steward. The founder is the sole editor. The practice runs on the rules in this repository.
+**Stage 0: Seed (now).** The founder is steward and the sole editor. Anacay hosts. The practice runs on the rules in this repository.
 
-**Stage 1: Editorial group.** Starts when at least three editors are in place, at least two of them unaffiliated with Anacay. Editors decide by consensus. The steward's role narrows to infrastructure and Code of Conduct enforcement.
+**Stage 1: Editorial group.** Starts when at least three editors are in place, at least two of them unaffiliated with the steward and with Anacay. Editors decide by consensus. The steward's role narrows to administration and Code of Conduct enforcement.
 
 **Stage 2: Community council.** Starts after edition 1, once there's a steady base of contributors. Contributors with at least one credited contribution in the last two editions choose a small council. The council owns governance changes, editor appointments and the roadmap. Editors keep their content role.
 
@@ -80,15 +86,15 @@ Anyone can propose moving to the next stage in the "Governance" category. Change
 
 ## How the steward hands over
 
-When the community body is ready, or if the steward can no longer do the job, Anacay will:
+When the community body is ready, or if the steward can no longer do the job, the steward and Anacay will:
 
 1. **Transfer the repository** to an organization the community controls, with its full history, issues and discussions.
-2. **Transfer the LinkedIn group** by making the community's chosen people admins, then stepping down as owner.
+2. **Transfer the LinkedIn page** by making the community's chosen people admins, then stepping down.
 3. **Move the address.** Help set up a new domain, and redirect cpp.anacay.org to it for at least two years.
 4. **Hand over the accounts**: hosting, email aliases, analytics if any. No data is kept back.
 5. **Write it down.** A short handover record in the repository, saying what was transferred and when.
 
-If Anacay ever has to stop before a community body exists, it will hand the practice to the editors rather than shut it down. The licence already guarantees the content survives any steward: anyone can fork it.
+If Anacay ever has to stop hosting before a community body exists, it will give at least 90 days' notice and hand the practice to the steward and editors rather than shut it down. The licence already guarantees the content survives any steward: anyone can fork it.
 
 ## When rules are unclear
 
