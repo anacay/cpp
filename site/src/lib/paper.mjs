@@ -417,7 +417,7 @@ export function pageMeta(p) {
         title: p.heading,
         short: `Appendix ${p.letter}`,
         label: p.heading.replace(/^(Appendix [A-Z])\.\s*/, '$1 · '),
-        description: `${p.heading}, from ${manifest.title}. ${firstSentence(p.blocks.find((b) => b.markdown)?.markdown ?? firstText)}`.replace(/\*\*/g, ''),
+        description: `${p.heading}, from ${manifest.title}. ${firstSentence(p.blocks.find((b) => b.markdown && !b.starts_heading && !/^#/.test(b.markdown.trim()))?.markdown ?? firstText)}`.replace(/\*\*/g, ''),
       };
     case 'terms':
       return { title: p.heading, short: 'Terms', label: p.heading, description: `The short glossary that follows Section 14 of ${manifest.title}.` };

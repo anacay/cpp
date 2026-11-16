@@ -1,5 +1,6 @@
 ---
 title: Supply layers and lead times
+seoTitle: Supply layers and lead times in capacity planning
 short: Supply comes in layers, each with its own lead time and contract terms, and the slow ones must be bought long before demand firms up.
 kind: concept
 order: 31

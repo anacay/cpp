@@ -7,7 +7,7 @@
   "scripts": {
     "sync": "node scripts/sync-paper.mjs && node scripts/sync-guide.mjs",
     "build": "npm run sync && astro build && node scripts/headers.mjs && node scripts/check.mjs",
-    "build:only": "astro build",
+    "build:only": "astro build && node scripts/headers.mjs",
     "check": "node scripts/check.mjs",
     "dev": "npm run sync && astro dev",
     "preview": "node scripts/serve.mjs",

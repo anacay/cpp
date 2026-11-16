@@ -12,3 +12,9 @@
 # /community/ moved to /commons/ (R8).
 /community/ /commons/ 301
 /community /commons/ 301
+
+# /guide/ has no index page; the guide's hub is /body-of-knowledge/ (R10).
+/guide/ /body-of-knowledge/ 301
+/guide /body-of-knowledge/ 301
+/guide/concepts/ /body-of-knowledge/#concept 301
+/guide/concepts /body-of-knowledge/#concept 301

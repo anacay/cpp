@@ -72,6 +72,11 @@ export const DOCS = {
 
 const md = new MarkdownIt({ html: false, linkify: false, typographer: false });
 
+const DESCRIPTIONS = {
+  'CHARTER.md': 'The charter of the Capacity Planning Practice: an open, non-commercial body of knowledge for capacity planners, what it covers and how it stays open.',
+  'CONTRIBUTING.md': 'How to contribute to the Capacity Planning Practice: comment on a section, propose a change, add a case or a term.',
+  'HOW_IT_GROWS.md': 'How the capacity planning body of knowledge changes: a comment, a short discussion, rough consensus, then the text changes, with every change recorded.',
+};
 export function foundingDoc(file) {
   const c = community();
   // HTML comments are notes for editors in the repository, never page text.
@@ -104,8 +109,11 @@ export function foundingDoc(file) {
     return `<h${lvl} id="${id}">${inner}</h${lvl}>`;
   });
   html = html.replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, '</table></div>');
-  // First paragraph after the title, as a plain description.
+  // First paragraph after the title, as a plain description, unless the file
+  // has a hand-written one below (R10: some first paragraphs were cut short or
+  // off-topic as descriptions).
+  const handWritten = DESCRIPTIONS[path.basename(String(file ?? ''))];
   const firstPara = (body.split(/\n\s*\n/).map((s) => s.trim()).find((s) => s && !s.startsWith('#') && !s.startsWith('*The Capacity')) ?? '')
     .replace(/\[([^\]]+)\]\[[^\]]*\]|\[([^\]]+)\]\([^)]*\)/g, '$1$2').replace(/[*_`]/g, '');
-  return { title, html, toc, description: firstPara.length > 200 ? firstPara.slice(0, 197).replace(/\s+\S*$/, '') + '…' : firstPara };
+  return { title, html, toc, description: handWritten ?? (firstPara.length > 200 ? firstPara.slice(0, 197).replace(/\s+\S*$/, '') + '…' : firstPara) };
 }

@@ -1,5 +1,6 @@
 ---
 title: Settings: how much of this you need
+seoTitle: Capacity planning for AI fleets, cloud and mid-sized firms
 short: How to scale the discipline to the size and risk of your setting, from an accelerator fleet to a mid-sized company, and what to start with.
 kind: across
 order: 21

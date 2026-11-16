@@ -44,8 +44,17 @@ const total = terms.length + practice.length + case3.length;
 // Names for the crosswalk's glossary pointers; an unknown id fails the build.
 const termName = new Map([...terms, ...practice, ...case3].map((t) => [t.id, t.term]));
 for (const w of yourWords) for (const id of w.terms) if (!termName.has(id)) throw new Error(`glossary: your-words points at unknown term ${id}`);
+// Structured data: one DefinedTermSet, one DefinedTerm per entry, so search
+// and answer engines can quote a term with its own URL.
+const strip = (x) => String(x).replace(/<[^>]+>/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim();
+const gurl = new URL('/glossary/', ctx.config.site.url).href;
+const ld = { '@context': 'https://schema.org', '@type': 'DefinedTermSet', '@id': gurl + '#set', name: 'Capacity planning glossary', url: gurl, inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/',
+  hasDefinedTerm: [
+    ...terms.map((t) => ({ '@type': 'DefinedTerm', name: t.term, url: gurl + '#' + t.id, description: strip(t.defs[0].def), inDefinedTermSet: gurl + '#set' })),
+    ...[...practice, ...case3].map((t) => ({ '@type': 'DefinedTerm', name: t.term, url: gurl + '#' + t.id, description: strip(t.def), inDefinedTermSet: gurl + '#set' })),
+  ] };
 ---
-<Base title="Glossary" description={`${total} terms: the ${terms.length} the seed paper defines, in its own words, plus the practice's terms and Case 3's, each linked to the page that teaches it.`} nav="glossary">
+<Base seoTitle={`Capacity planning glossary: ${total} terms defined`} title="Glossary" ld={ld} description={`A capacity planning glossary: ${total} terms, from coefficient and commit point to declaration and supply layer, each linked to the page that teaches it.`} nav="glossary">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">{total} terms</p>

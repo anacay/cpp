@@ -19,7 +19,7 @@ const kinds = [
   ['Take a role', 'Co-organizer, editor, conduct reviewer.', 'Read the <a href="/roles/">role cards</a> and say so in The Commons.', 'A few hours a month'],
 ];
 ---
-<Base title="Join in" description="How to take part in the Capacity Planning Practice: create a free GitHub account, join The Commons and post one question." nav="join">
+<Base seoTitle="Join the capacity planning community" title="Join in" description="How to take part in the Capacity Planning Practice: create a free GitHub account, join The Commons and post one question." nav="join">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">Join in</p>
@@ -29,14 +29,28 @@ const kinds = [
 
     <section class="prose reading" aria-labelledby="github-h">
       <h2 id="github-h">New to GitHub? Create a free account in two minutes</h2>
-      <p>Capacity planners should be on GitHub. You don’t need to know anything about code to post.</p>
+      <p>The Commons runs on GitHub Discussions because it is open, free and public. Reading needs no account. Posting needs a free one, and no code.</p>
       <ol>
         <li><a href={stream.signup}>Create a free GitHub account</a>. Your username can be a handle. Your name appears only when you want credit.</li>
         <li>Open <a href={stream.url}>The Commons</a> and read a few posts.</li>
-        <li><a href={firstQuestion()}>Post your first question</a>. It opens with the #first-question tag already in place.</li>
+        <li>New to the field? <a href={firstQuestion()}>Ask a first question</a>. It opens with the #first-question tag already in place.</li>
+        <li>Done this for years? Take on the strongest known challenge to the seed: <a href={`${stream.all}/15`}>“When a market price exists, is the coefficient still an agreement?”</a> One paragraph is enough.</li>
       </ol>
+      <p>Not sure where to start? Reply to an open thread. Each one names a gap in the seed: <a href="/agenda/">the open problems</a>.</p>
       <RoomRule />
       <p><a class="more" href="/commons/">How The Commons works</a> · <a class="more" href="/commons/#room-rules">The rules</a></p>
+    </section>
+
+    <section class="prose reading" aria-labelledby="lead-h">
+      <h2 id="lead-h">Lead something small</h2>
+      <p>This community is meant to be run by the people who show up. Leaders emerge by doing, not by title.</p>
+      <ul>
+        <li><strong>Host a week.</strong> Post one question on a Monday and keep the thread going.</li>
+        <li><strong>Welcome newcomers.</strong> Answer first questions kindly, and point to the right page.</li>
+        <li><strong>Keep a topic.</strong> Gather the threads on one subject, such as accelerators or forecasting.</li>
+        <li><strong>Bring a case.</strong> Write up a planning problem in general terms, with public sources.</li>
+      </ul>
+      <p>Say what you’ll take on in a post, then start. Longer roles, with duties and hours, are on <a href="/roles/">Roles</a>.</p>
     </section>
 
     <section class="prose reading" aria-labelledby="private-h">

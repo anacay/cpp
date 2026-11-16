@@ -1,6 +1,7 @@
 ---
 title: Demand and declarations
-short: How step-change demand enters a plan as a declaration that firms up in five stages, and how you score it.
+seoTitle: Demand forecasting for step changes: declarations
+short: Demand forecasting for step changes. How launch demand enters a plan as a declaration that firms up in five stages, and how you score it.
 kind: concept
 order: 30
 cadence: annual, quarterly, monthly, weekly, post-launch

@@ -64,7 +64,7 @@ export function streamPost({ title = '', text = '', tag = null, from = null, sta
 }
 // The first-question door, used by /join/, /commons/, /circle/ and the
 // newcomer door.
-export const firstQuestion = () => streamPost({ tag: 'first-question', text: 'I’m new to capacity planning. My question: …', starter: true });
+export const firstQuestion = () => streamPost({ tag: 'first-question', text: 'My question: …', starter: true });
 // The general door (home hero, footer): no tag, so peers don't land in #first-question.
 export const anyPost = () => streamPost({});
 // A topic tag for a page, where the page's subject is plain. Prefix match on

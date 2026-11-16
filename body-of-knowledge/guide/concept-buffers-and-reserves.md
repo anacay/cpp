@@ -1,5 +1,6 @@
 ---
 title: Buffers and reserves
+seoTitle: Capacity buffers and reserves: how to size them
 short: Name each buffer and size it on which mistake costs more, running short or holding spare; lead time pushes buffers up and pooling pulls them down.
 kind: concept
 order: 36

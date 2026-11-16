@@ -67,6 +67,8 @@ function parse(file, src) {
     file,
     url: urlFor(file),
     title: fm.title,
+    // Optional search title (R10): the page's own words, with the field named.
+    seoTitle: fm.seoTitle || undefined,
     short: fm.short,
     kind: fm.kind,
     order: Number(fm.order),

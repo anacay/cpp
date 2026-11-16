@@ -13,7 +13,7 @@ const c = community();
 const thread = (n) => `${c.repo}/discussions/${n}`;
 const probs = (d) => d.problems.map(agendaItem);
 ---
-<Base title="Start here" description={`Where to start in the Capacity Planning Practice: ${doors.length} doors by kind of reader, each with a timed reading path, three open problems and one first contribution.`} nav="start">
+<Base seoTitle="Capacity planning: where to start, by role" title="Start here" description={`Where to start in the Capacity Planning Practice: ${doors.length} doors by kind of reader, each with a timed reading path, three open problems and one first contribution.`} nav="start">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">Start here</p>
@@ -23,13 +23,13 @@ const probs = (d) => d.problems.map(agendaItem);
     </div>
 
     <nav aria-labelledby="doors-h">
-      <h2 class="group-title" id="doors-h">{doors.length} doors</h2>
-      <p class="muted">The resource-managers door is the first growth path into the craft from a neighbouring field. SRE, finance and supply growth paths could follow the same pattern. Want to draft one? See <a href="/roles/">Roles</a>.</p>
+      <h2 class="group-title" id="doors-h">Pick a door</h2>
       <ul class="paths paths--list doors">
         {doors.map((d) => (
           <li><a href={d.page ? `/start/${d.id}/` : `#${d.id}`}><span class="time">{d.time}</span><span class="sr-only">:&nbsp;</span><span class="name">{d.name}</span><span class="sr-only">:&nbsp;</span><span class="what">{d.who}</span></a></li>
         ))}
       </ul>
+      <p class="muted">Chip and accelerator experts: start with <a href="/guide/settings/#ai-and-accelerator-fleets">AI and accelerator fleets</a>, then the program managers’ door. More doors from neighbouring fields can follow. Want to draft one? See <a href="/roles/">Roles</a>.</p>
     </nav>
 
     <aside class="words-box reading" aria-labelledby="your-words">

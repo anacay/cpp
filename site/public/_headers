@@ -9,7 +9,6 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  X-Robots-Tag: noindex, nofollow
 
 # Figures opened full size are SVG documents whose drawing uses inline style
 # attributes; they need style-src 'unsafe-inline' and nothing else. No script.

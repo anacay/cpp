@@ -5,13 +5,31 @@ import Star from '../components/Star.astro';
 import { load } from '../lib/paper.mjs';
 import { streamPost, tagForPath, stream, NDA_LINE } from '../data/room.mjs';
 
-interface Props { title: string; description: string; nav?: string; bare?: boolean; commentable?: { name: string }; ld?: object; article?: { published?: string; modified?: string } }
-const { title, description, nav = '', commentable, ld, article } = Astro.props;
+interface Props { title: string; seoTitle?: string; description: string; nav?: string; bare?: boolean; commentable?: { name: string }; ld?: object | object[]; article?: { published?: string; modified?: string }; canonical?: string; noindex?: boolean; meta?: [string, string][] }
+const { title, seoTitle, description: rawDescription, nav = '', commentable, ld, article, canonical: canonicalOverride, noindex = false, meta = [] } = Astro.props;
 const { config, manifest } = load();
 const site = config.site;
 const path = Astro.url.pathname;
-const fullTitle = path === '/' ? `${site.name}` : `${title} · ${site.name}`;
-const canonical = new URL(path, site.url).href;
+// Titles: the page's own words first, then a short brand that keeps the
+// keyword. If the pair would run past about 62 characters, the page title
+// stands alone (search engines cut longer titles).
+const brand = 'Capacity Planning Practice';
+const base = seoTitle ?? title;
+const fullTitle = path === '/' ? (seoTitle ?? site.name)
+  : base.length + brand.length + 3 <= 62 ? `${base} · ${brand}`
+  : /capacity/i.test(base) || base.length + 20 > 72 ? base
+  : `${base} · Capacity planning`;
+// Descriptions: capped at 158 characters on a word boundary.
+// Prefer ending at a full sentence; otherwise cut at a word and add an ellipsis.
+const description = (() => {
+  if (rawDescription.length <= 158) return rawDescription;
+  const head = rawDescription.slice(0, 158);
+  const stop = Math.max(head.lastIndexOf('. '), head.lastIndexOf('? '), head.lastIndexOf('! '));
+  if (stop >= 90) return head.slice(0, stop + 1);
+  return head.slice(0, 157).replace(/\s+\S*$/, '').replace(/[,;:.]$/, '') + '…';
+})();
+const canonical = canonicalOverride ?? new URL(path, site.url).href;
+const lds = (Array.isArray(ld) ? ld : ld ? [ld] : []);
 const version = manifest.version.replace(/\s*draft$/, '');
 
 const community = config.community;
@@ -20,8 +38,6 @@ const elsewhere = [
   { href: community.open ? community.repo : '', label: 'GitHub' },
   { href: community.linkedinPage, label: 'LinkedIn' },
   { href: community.linkedin, label: 'LinkedIn group' },
-  { href: ew.youtube, label: 'Talks on Sentient Minds' },
-  { href: ew.substack, label: 'Writing on Sentient Minds' },
   { href: ew.anacayOrg, label: 'anacay.org' },
 ].filter((x) => x.href);
 // The top nav: as few items as a newcomer needs. "Start here" and the
@@ -44,7 +60,8 @@ const links = [
 <title>{fullTitle}</title>
 <meta name="description" content={description}>
 {!site.indexable && <meta name="robots" content="noindex, nofollow">}
-<link rel="canonical" href={canonical}>
+{site.indexable && noindex && <meta name="robots" content="noindex">}
+{!noindex && <link rel="canonical" href={canonical}>}
 <meta name="theme-color" content="#0A2231">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -56,13 +73,15 @@ const links = [
 <meta property="og:site_name" content={site.name}>
 <meta property="og:title" content={fullTitle}>
 <meta property="og:description" content={description}>
-<meta property="og:url" content={canonical}>
+{!noindex && <meta property="og:url" content={canonical}>}
+<meta property="og:locale" content="en_GB">
 <meta property="og:image" content={new URL('/og/card.jpg', site.url).href}>
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
 <meta property="og:image:alt" content="The Capacity Planning Practice: an open body of knowledge for capacity planning, built together. Request for comments.">
 <meta name="twitter:card" content="summary_large_image">
-{ld && <script type="application/ld+json" set:html={JSON.stringify(ld)} />}
+{meta.map(([name, content]) => <meta name={name} content={content} />)}
+{lds.map((x) => <script type="application/ld+json" set:html={JSON.stringify(x)} />)}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -89,7 +108,7 @@ const links = [
     <div class="steward">
       <Star />
       <div>
-        <p class="by">An open body of knowledge for capacity planners. <a href="/support/">Supported by Anacay</a>.</p>
+        <p class="by">An open, non-commercial body of knowledge for capacity planners. <a href="/support/">Hosted by Anacay</a>.</p>
         <p>{community.edition}, {community.editionNote}: <em>{manifest.title}</em>, by Guillermo Martinez. Text and figures <a href="/license/">CC BY-SA 4.0</a>; site code MIT.</p>
       </div>
     </div>
@@ -104,6 +123,8 @@ const links = [
         <li><a href="/tools/">Tools</a></li>
         <li><a href="/related-work/">Related work</a></li>
         <li><a href="/contributors/">Contributors</a></li>
+        <li><a href="/what-is-capacity-planning/">What is capacity planning?</a></li>
+        <li><a href="/principles/">Principles</a></li>
         <li><a href="/charter/">Charter</a></li>
         <li><a href="/how-it-grows/">How it grows</a></li>
         <li><a href="/governance/">Governance</a></li>

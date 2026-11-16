@@ -2,15 +2,26 @@
 import { load, pageMeta } from '../lib/paper.mjs';
 import { guide } from '../lib/guide.mjs';
 import { doorPages } from '../data/start-paths.mjs';
+import { ENTITY, ENTITY_MORE, DEFINITION } from '../data/entity.mjs';
 export function GET() {
   const { manifest, chapters, pages, config } = load();
   const abs = (u) => new URL(u, config.site.url).href;
   const line = (p) => `- [${pageMeta(p).title}](${abs(p.url)}): ${pageMeta(p).description}`;
   const body = `# ${config.site.name}
 
-> An open, community-built body of knowledge for capacity planning, licensed CC BY-SA 4.0. Its seed edition (${config.community.edition}) is ${manifest.title} (${manifest.version}) by Guillermo Martinez: ${manifest.subtitle.toLowerCase()}. Stewarded by Anacay (${config.site.steward.url}). Examples not attributed to a source are invented for illustration.
+> ${ENTITY} ${ENTITY_MORE} Its seed edition (${config.community.edition}) is ${manifest.title} (${manifest.version}): ${manifest.subtitle.toLowerCase()}. Examples not attributed to a source are invented for illustration.
 
-The full text, figures' alt text and captions included, is in one file: ${abs('/llms-full.txt')}
+The full text of the seed paper, and of the guide and glossary, is in one file: ${abs('/llms-full.txt')}
+The community, The Commons, is on GitHub Discussions: ${config.community.repo}/discussions
+
+## Key definitions
+- ${DEFINITION} More: ${abs('/what-is-capacity-planning/')}
+- Coefficient: the amount of a resource a service uses per unit of the driver of its load, such as CPU time per request. Cost = driver volume × coefficient × rate. ${abs('/guide/concepts/the-coefficient/')}
+- Declaration: a signed statement of expected demand for a launch with no history, in units the planner already prices. It firms up in stages. ${abs('/guide/concepts/demand-and-declarations/')}
+- Supply layer: one kind of supply with its own lead time, such as power and positions, network, each machine shape, turn-up, and job placement. ${abs('/guide/concepts/supply-layers-and-lead-times/')}
+- Commit point: the last date a layer's order can still be placed: its need date minus its cautious lead time. ${abs('/guide/concepts/commit-points/')}
+- Approval is not allocation: approved capacity still has to arrive in the right shape, place and time, and reach the team that needs it. ${abs('/guide/concepts/approval-and-allocation/')}
+- Glossary of all terms: ${abs('/glossary/')}
 
 ## The practice
 - [Charter](${abs('/charter/')}): why the practice exists, what it covers, its principles.

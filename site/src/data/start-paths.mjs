@@ -42,7 +42,7 @@ export const doors = [
     aha: 'On the map, the stored-data question moves from −3 to −12 months. The method doesn’t make the forecast more accurate. It moves the hard question to the date it was needed.',
     ahaSource: ['The map', '/guide/the-map/'],
     problems: ['q2', 'q11', 'q8'],
-    first: { item: 'q2', text: 'Share the shape of asked against landed, for Q2. Index it so the plan is 100, and leave out real figures.', title: 'How our declarations land, by stage', prompt: 'Here is how our declarations land against what was asked, indexed so the plan is 100: …' },
+    first: { item: 'q2', text: 'Say how declarations usually land against what was asked, in general terms or from public sources. Bands are fine; no company figures.', title: 'How declarations usually land, by stage', prompt: 'In general terms, or from public sources, declarations usually move this much between stages: … Bands are fine. No company figures.' },
   },
   {
     id: 'senior', name: 'Senior planners', time: '1 hour 50 minutes',
@@ -94,7 +94,7 @@ export const doors = [
     aha: 'Approval is not allocation. A fleet can hold enough chips and still be unable to place one training run, because topology is a shape.',
     ahaSource: ['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets'],
     problems: ['q3', 'q13', 'mix-owner'],
-    first: { item: 'q3', text: 'Describe how your accelerator forum decides, with no names or figures.', title: 'How our accelerator forum decides', prompt: 'When accelerators are short, our forum decides like this, with no names or figures: …' },
+    first: { item: 'q3', text: 'Describe how a fair accelerator forum should decide, in general terms.', title: 'How an accelerator forum should decide', prompt: 'When accelerators are short, a fair forum would decide like this, in general terms: …' },
   },
   {
     id: 'resource-managers', name: 'Coming from resource or quota management?', time: '15 minutes',
@@ -108,7 +108,7 @@ export const doors = [
     aha: 'Quota is a promise against supply that may not exist yet. Planning is deciding, before the commit date, which promises the fleet can keep.',
     ahaSource: ['Approval and allocation', '/guide/concepts/approval-and-allocation/'],
     problems: ['q3', 'q7', 'unallocated-owner'],
-    first: { item: 'q3', text: 'How does your quota or resource process decide between teams when supply is short? Describe the rule, not the figures.', title: 'Quota rules when supply is short', prompt: 'I come from quota and resource management. When supply is short, our process decides between teams like this: …' },
+    first: { item: 'q3', text: 'How should a fair quota process decide between teams when supply is short? Describe the rule in general terms.', title: 'Quota rules when supply is short', prompt: 'I come from quota and resource management. When supply is short, a fair process would decide between teams like this, in general terms: …' },
   },
   {
     id: 'sre', name: 'Site reliability engineers', time: '20 minutes', page: true,
@@ -122,7 +122,7 @@ export const doors = [
     aha: 'The ratio alert has to compare with the published version, not just the recent past. A coefficient wrong from the start never shifts.',
     ahaSource: ['The measuring loop', '/guide/concepts/measuring-loop/#how-to-use-it'],
     problems: ['q6', 'q13', 'elastic-cloud'],
-    first: { item: 'q6', text: 'Say how you attribute cost for one cache or stateful service, sanitized.', title: 'Attributing cost for a cache', prompt: 'For one cache or stateful service, we attribute cost like this, sanitized: …' },
+    first: { item: 'q6', text: 'Say how you would attribute cost for a cache or stateful service, in general terms.', title: 'Attributing cost for a cache', prompt: 'For a cache or stateful service, I would attribute cost like this, in general terms: …' },
   },
   {
     id: 'finance', name: 'Finance partners', time: '25 minutes', page: true,
@@ -137,7 +137,7 @@ export const doors = [
     aha: 'Set the rate on usage, and one consumer’s exit raises every other bill. Set it on practical capacity, and the idle hours sit on their own owned line instead.',
     ahaSource: ['Three prices', '/guide/concepts/three-prices/#how-to-use-it'],
     problems: ['q9', 'q14', 'unallocated-owner'],
-    first: { item: 'q9', text: 'Say what shortage-to-idle ratio you would set for one layer, and who in your organization would sign it.', title: 'A shortage-to-idle ratio for one layer', prompt: 'For this layer I would set the shortage-to-idle ratio at about …, and this role would sign it: …' },
+    first: { item: 'q9', text: 'Say what shortage-to-idle ratio you would set for one layer, and which role should sign it.', title: 'A shortage-to-idle ratio for one layer', prompt: 'For this layer I would set the shortage-to-idle ratio at about …, and this role would sign it: …' },
   },
   {
     id: 'supply', name: 'Supply partners', time: '30 minutes', page: true,
@@ -183,6 +183,16 @@ export const yourWords = [
     hint: 'Who pays is one of three price questions. The other two are whether to build and who gets scarce capacity now.' },
   { yours: 'Forecast', ours: [['Demand and declarations', '/guide/concepts/demand-and-declarations/']], terms: ['term-declaration'],
     hint: 'The guide plans from declarations, scored by how firm they are.' },
+  { yours: 'Demand forecasting, capacity forecast', ours: [['Demand and declarations', '/guide/concepts/demand-and-declarations/'], ['The quarterly plan', '/guide/quarterly/']], terms: ['term-declaration'],
+    hint: 'A trend covers organic growth. Launches and migrations arrive as steps, so the guide scores each one by how firm it is.' },
+  { yours: 'Infrastructure planning', ours: [['The map', '/guide/the-map/'], ['Supply layers and lead times', '/guide/concepts/supply-layers-and-lead-times/']], terms: ['term-supply-layer'],
+    hint: 'The guide lays the work on one map: the planning cycle, and the altitude from fleet to service.' },
+  { yours: 'Goodput, utilization', ours: [['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets']], terms: [],
+    hint: 'A busy chip is not always a productive one. The guide plans on the useful work done.' },
+  { yours: 'Power envelope, TDP', ours: [['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets'], ['Buildings at AI density', '/notes/buildings-at-ai-density/']], terms: [],
+    hint: 'For the largest operators, by their own public account, power is now the binding constraint.' },
+  { yours: 'Pod, cluster, interconnect domain', ours: [['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets']], terms: [],
+    hint: 'Topology is a shape. A fleet can hold enough chips and still be unable to place a training run.' },
 ];
 
 // The ten-line checklist on /start/sre/, drawn from the guide (J6, idea 1).

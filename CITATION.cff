@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The Capacity Planning Practice, Seed edition 0.1: The Coefficient Is an Agreement"
+abstract: "An open, non-commercial body of knowledge and community for capacity planners, built in public from public sources."
+authors:
+  - family-names: Martinez
+    given-names: Guillermo
+  - name: "The Capacity Planning Practice contributors"
+version: "7.9"
+date-released: "2026-10-10"
+license: CC-BY-SA-4.0
+url: "https://cpp.anacay.org"
+repository-code: "https://github.com/anacay/cpp"
+keywords:
+  - capacity planning
+  - capacity management
+  - demand forecasting
+  - infrastructure planning
+  - site reliability engineering
+  - body of knowledge
