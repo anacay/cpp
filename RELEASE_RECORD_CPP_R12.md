@@ -6,7 +6,7 @@ Steward and host, as signed. The founder and Anacay signed a statement of record
 |---|---|
 | Date | 16 November 2026 |
 | Worker | `cpp-anacay` |
-| Live version | (fill in at deploy) |
+| Live version | `a4a1a0a9-216a-4daa-8109-6374d2e64664`, deployed 2026-11-16 from merge commit `448b9ec` |
 | Previous version | R11, `99a31ca4-a975-417b-9200-fd57392a8c45` |
 
 ## What changed
