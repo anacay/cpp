@@ -1,7 +1,7 @@
 # The Capacity Planning Practice (cpp)
 
 The static site for the Capacity Planning Practice, an open body of knowledge
-for capacity planning, at **cpp.anacay.org**. Stewarded by Anacay. Code: MIT
+for capacity planning, at **cpp.anacay.org**. Stewarded by its founder; hosted by Anacay. Code: MIT
 (`../LICENSE-CODE`); text and figures: CC BY-SA 4.0 (`../LICENSE`).
 
 - Astro, static output, no external requests (no CDNs, fonts, analytics or

@@ -8,7 +8,7 @@ How the practice is run day to day, written so a second editor could pick it up.
 |---|---|
 | Editor: triage, replies, consensus calls, editions | The founder, Guillermo Martinez |
 | Conduct reports | The founder. Reports about him go to GitHub **Report content** ([EDITORS.md](EDITORS.md)) |
-| Domain, hosting, accounts | Anacay, as steward |
+| Domain, hosting, accounts | Anacay, as host (the steward administers the repository, The Commons and the LinkedIn page) |
 | cpp@anacay.org inbox and site deploys | The founder |
 
 While there's one editor, he says so in each closing note, and open periods double: 28 days, or 60 for the stable core, principles and governance.

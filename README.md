@@ -38,4 +38,4 @@ Text, figures and code © 2026 Guillermo Martinez and contributors. Text and fig
 
 ## Stewardship
 
-Anacay stewards the practice for now and intends to hand it to community governance as the community grows. See [GOVERNANCE.md](GOVERNANCE.md). The practice was started by Guillermo Martinez, who wrote the seed paper. It belongs to the people who build on it.
+The practice was started by Guillermo Martinez, who wrote the seed paper and stewards it. Anacay LLC hosts it and pays the running costs. The intent is to hand it to community governance as the community grows. See [GOVERNANCE.md](GOVERNANCE.md). It belongs to the people who build on it.
