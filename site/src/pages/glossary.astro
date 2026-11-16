@@ -16,6 +16,8 @@ import { load, glossary, renderInline, pageLabel, slugify } from '../lib/paper.m
 import { guide } from '../lib/guide.mjs';
 import { PRACTICE_TERMS, CASE3_TERMS, SEED_CONCEPTS, SEED_NOTES } from '../data/practice-glossary.mjs';
 import { yourWords } from '../data/start-paths.mjs';
+import { TERM_PAGES } from '../data/term-pages.mjs';
+const termPage = new Map(TERM_PAGES.map((t) => [t.id, `/glossary/${t.slug}/`]));
 const ctx = load();
 const terms = glossary(ctx);
 const g = guide();
@@ -50,7 +52,7 @@ const strip = (x) => String(x).replace(/<[^>]+>/g, '').replace(/\[([^\]]+)\]\([^
 const gurl = new URL('/glossary/', ctx.config.site.url).href;
 const ld = { '@context': 'https://schema.org', '@type': 'DefinedTermSet', '@id': gurl + '#set', name: 'Capacity planning glossary', url: gurl, inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/',
   hasDefinedTerm: [
-    ...terms.map((t) => ({ '@type': 'DefinedTerm', name: t.term, url: gurl + '#' + t.id, description: strip(t.defs[0].def), inDefinedTermSet: gurl + '#set' })),
+    ...terms.map((t) => ({ '@type': 'DefinedTerm', name: t.term, url: termPage.has(t.id) ? new URL(termPage.get(t.id), gurl).href : gurl + '#' + t.id, description: strip(t.defs[0].def), inDefinedTermSet: gurl + '#set' })),
     ...[...practice, ...case3].map((t) => ({ '@type': 'DefinedTerm', name: t.term, url: gurl + '#' + t.id, description: strip(t.def), inDefinedTermSet: gurl + '#set' })),
   ] };
 ---
@@ -98,6 +100,7 @@ const ld = { '@context': 'https://schema.org', '@type': 'DefinedTermSet', '@id':
                   ))}
                   {SEED_NOTES[t.id] && <p class="gloss__note"><span class="gloss__tag">Practice note</span> {SEED_NOTES[t.id]}</p>}
                   {SEED_CONCEPTS[t.id] && <p class="read">Read the concept: <a href={guideUrl(SEED_CONCEPTS[t.id][0])}>{SEED_CONCEPTS[t.id][1]}</a></p>}
+                  {termPage.has(t.id) && <p class="read">On its own page: <a href={termPage.get(t.id)}>{t.term}</a></p>}
                   {t.usedIn.length > 0 && (
                     <p class="used">Used in: {t.usedIn.map((u, i) => <Fragment>{i > 0 && ', '}<a href={u.url}>{pageLabel(u.page)}</a></Fragment>)}</p>
                   )}

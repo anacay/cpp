@@ -624,3 +624,11 @@ h2:hover > .h-link, h3:hover > .h-link, .h-link:focus-visible, :target > .h-link
 /* "Cite this page" (R10). */
 .cite-this { margin-top: 2rem; padding-top: .75rem; border-top: 1px solid var(--water-line); font-size: .9rem; color: var(--ink-muted); }
 .cite-this__text { user-select: all; color: var(--ink); }
+
+/* "Came here from an AI answer?" (R11). */
+.from-answer { margin: 1.25rem 0 1.75rem; padding: .7rem 1rem; border-left: 3px solid var(--gold); background: var(--water-raised); font-size: .95rem; }
+.from-answer p { margin: 0; }
+/* Questions hub (R11). */
+.qa-group { margin-top: 2.5rem; }
+.qa h3 { margin-bottom: .35rem; }
+.qa__more { font-size: .92rem; color: var(--ink-muted); }

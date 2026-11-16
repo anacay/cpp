@@ -1,0 +1,9 @@
+---
+// A short welcome for readers who arrive from an AI assistant's answer (R11):
+// where to read more, and the one next step into The Commons.
+interface Props { post: string; topic?: string }
+const { post, topic = 'this' } = Astro.props;
+---
+<aside class="from-answer reading" aria-label="Arrived from an AI answer?">
+  <p><strong>Came here from an AI answer?</strong> Read on for the full version, with sources. Planners discuss {topic} in The Commons. <a href={post}>Ask a follow-up</a> or <a href="/join/">see how to join</a>. It’s free, open and non-commercial.</p>
+</aside>

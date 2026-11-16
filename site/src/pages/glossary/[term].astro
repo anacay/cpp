@@ -1,0 +1,65 @@
+---
+// /glossary/<slug>/: one page per central term (R11), so "what is X in capacity
+// planning" has a citable address. The seed paper's definitions appear in its
+// own words; the plain sentence above them comes from src/data/term-pages.mjs.
+import Base from '../../layouts/Base.astro';
+import Cite from '../../components/Cite.astro';
+import FromAnswer from '../../components/FromAnswer.astro';
+import { load, glossary, renderInline } from '../../lib/paper.mjs';
+import { guide } from '../../lib/guide.mjs';
+import { streamPost } from '../../data/room.mjs';
+import { TERM_PAGES } from '../../data/term-pages.mjs';
+import { SEED_CONCEPTS } from '../../data/practice-glossary.mjs';
+import { QUESTIONS } from '../../data/questions.mjs';
+
+export function getStaticPaths() {
+  return TERM_PAGES.map((t) => ({ params: { term: t.slug }, props: { id: t.id } }));
+}
+const ctx = load();
+const page = TERM_PAGES.find((t) => t.id === Astro.props.id);
+const term = glossary(ctx).find((t) => t.id === page.id);
+if (!term) throw new Error(`term page: unknown glossary id ${page.id}`);
+const name = term.term.replace(/\s*\(.*\)\s*$/, '');
+const concept = SEED_CONCEPTS[page.id];
+const g = guide();
+const conceptPage = concept ? g.byFile.get(concept[0]) : null;
+const qs = page.q.map((id) => QUESTIONS.find((x) => x.id === id)).filter(Boolean);
+if (qs.length !== page.q.length) throw new Error(`term page ${page.slug}: unknown question id`);
+const url = new URL(`/glossary/${page.slug}/`, ctx.config.site.url).href;
+const post = streamPost({ title: `Term: ${name}`, text: `A question about “${name}”:`, tag: page.tag, from: { name: `Glossary: ${name}`, url: `/glossary/${page.slug}/` } });
+const strip = (x) => String(x).replace(/<[^>]+>/g, '').replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim();
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'DefinedTerm', '@id': url, name: term.term, url, description: page.plain,
+    inDefinedTermSet: new URL('/glossary/', ctx.config.site.url).href + '#set' },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Glossary', item: new URL('/glossary/', ctx.config.site.url).href },
+    { '@type': 'ListItem', position: 2, name: term.term, item: url } ] },
+];
+---
+<Base seoTitle={`${name} in capacity planning: a definition`} title={name} description={page.plain} ld={ld} nav="glossary">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="crumbs"><a href="/glossary/">Glossary</a> <span aria-hidden="true">›</span> {term.term}</p>
+      <h1>{term.term}</h1>
+      <p class="lede"><strong>{page.plain}</strong></p>
+    </div>
+    <FromAnswer post={post} topic={`“${name.toLowerCase()}”`} />
+    <section class="prose reading" aria-labelledby="defs-h">
+      <h2 id="defs-h">In the seed paper’s words</h2>
+      {term.defs.map((d) => <blockquote><p set:html={renderInline(d.def, ctx.targets)} /><footer>— {d.label}, <em>{ctx.manifest.title}</em></footer></blockquote>)}
+      {conceptPage && <p>Taught in the guide: <a href={conceptPage.url}>{concept[1]}</a>.</p>}
+      <p>All terms: <a href={`/glossary/#${page.id}`}>the glossary</a>.</p>
+    </section>
+    {qs.length > 0 && (
+      <section class="prose reading" aria-labelledby="q-h">
+        <h2 id="q-h">Related questions</h2>
+        <ul>{qs.map((x) => <li><a href={`/questions/#${x.id}`}>{x.q}</a></li>)}</ul>
+      </section>
+    )}
+    <section class="prose reading" aria-labelledby="talk-h">
+      <h2 id="talk-h">Use a different word for it?</h2>
+      <p>Tell us what your team calls it, or where this definition breaks. <a href={post}>Post in The Commons</a>.</p>
+    </section>
+    <Cite title={`${name} (glossary)`} url={url} />
+  </div>
+</Base>
