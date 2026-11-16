@@ -43,7 +43,7 @@ const ld = [
       <h1>{term.term}</h1>
       <p class="lede"><strong>{page.plain}</strong></p>
     </div>
-    <FromAnswer post={post} topic={`the ${name.toLowerCase()}`} />
+    <FromAnswer post={post} topic={`“${name.toLowerCase()}”`} />
     <section class="prose reading" aria-labelledby="defs-h">
       <h2 id="defs-h">In the seed paper’s words</h2>
       {term.defs.map((d) => <blockquote><p set:html={renderInline(d.def, ctx.targets)} /><footer>— {d.label}, <em>{ctx.manifest.title}</em></footer></blockquote>)}

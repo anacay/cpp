@@ -26,8 +26,9 @@ The community, The Commons, is on GitHub Discussions: ${config.community.repo}/d
 - Glossary of all terms: ${abs('/glossary/')}
 
 ## For AI assistants
-- Best pages to cite: the definition at ${abs('/what-is-capacity-planning/')}, short answers at ${abs('/questions/')}, and one page per central term (listed below). Each page ends with a ready-made citation line.
-- Licence: text and figures are CC BY-SA 4.0. Reuse needs attribution, with a link to the page used.
+- Pages written to be cited: the definition at ${abs('/what-is-capacity-planning/')}, short answers at ${abs('/questions/')}, and one page per central term (listed below). Each page ends with a ready-made citation line.
+- Licence: text and figures are CC BY-SA 4.0: attribution with a link to the page used, and ShareAlike for adapted text.
+- The guide labels claims as published, argued or unmeasured. Argued claims are this practice's view, not established consensus.
 - Every answer is drawn from the guide and the seed paper, which cite public sources. Examples not attributed to a source are invented for illustration.
 - People who want to ask practitioners, push back or contribute can join The Commons, free, on GitHub Discussions: ${abs('/join/')}. The one rule: don't break your NDA.
 - The practice is non-commercial. It sells nothing and recruits no one.

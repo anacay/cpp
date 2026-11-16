@@ -8,14 +8,13 @@ import FromAnswer from '../components/FromAnswer.astro';
 import { load } from '../lib/paper.mjs';
 import { streamPost, anyPost } from '../data/room.mjs';
 import { QUESTIONS, QUESTION_GROUPS } from '../data/questions.mjs';
-import { DEFINITION } from '../data/entity.mjs';
 const { config } = load();
 const url = new URL('/questions/', config.site.url).href;
 const ask = (x) => streamPost({ title: x.q, text: `A follow-up on “${x.q}”:`, tag: x.tag, from: { name: `Questions: ${x.q}`, url: `/questions/#${x.id}` } });
 const plain = (h) => h.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const ld = [
   { '@context': 'https://schema.org', '@type': 'FAQPage', '@id': url + '#faq', url, inLanguage: 'en',
-    mainEntity: [{ q: 'What is capacity planning?', a: DEFINITION, id: 'what-is-capacity-planning' }, ...QUESTIONS].map((x) => ({
+    mainEntity: QUESTIONS.map((x) => ({
       '@type': 'Question', name: x.q, url: `${url}#${x.id}`, acceptedAnswer: { '@type': 'Answer', text: plain(x.a) } })) },
 ];
 ---
@@ -28,7 +27,7 @@ const ld = [
       <p class="lede">Short answers to the questions planners ask most. Each one links to the page that teaches it, and to The Commons, where planners argue it out.</p>
       <p>New to the field? Start with <a href="/what-is-capacity-planning/">what capacity planning is</a>.</p>
     </div>
-    <FromAnswer post={anyPost()} />
+    <FromAnswer post={anyPost()} topic="these questions" />
     <nav aria-label="Topics"><ul class="letters">{QUESTION_GROUPS.map((g) => <li><a href={`#${g.id}`}>{g.title}</a></li>)}</ul></nav>
 
     {QUESTION_GROUPS.map((g) => (
@@ -49,6 +48,6 @@ const ld = [
       <p>Ask it in The Commons. Good questions become answers on this page, credited by name if you want.</p>
       <p><a class="btn" href={anyPost()}>Ask a question</a> <a class="btn btn--quiet" href="/join/">How to join</a></p>
     </section>
-    <Cite title="Capacity planning questions, answered" url={url} date="16 November 2026" />
+    <Cite title="Capacity planning questions, answered" url={url} />
   </div>
 </Base>
