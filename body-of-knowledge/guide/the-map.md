@@ -1,5 +1,6 @@
 ---
 title: "The map: altitude and cadence"
+seoTitle: The capacity planning map: cadence and altitude
 short: One picture that connects the high level to the low level over time. Every page in this guide sits somewhere on it.
 kind: foundation
 order: 2

@@ -11,6 +11,7 @@ import RoomRule from '../components/RoomRule.astro';
 import { anyPost } from '../data/room.mjs';
 import { load, quote, renderMarkdown, renderFigure, wordCount, readingTime } from '../lib/paper.mjs';
 
+import { ENTITY } from '../data/entity.mjs';
 const ctx = load();
 const { manifest, targets, config } = ctx;
 const c = config.community;
@@ -20,15 +21,7 @@ const facts = [
     src: 'International Energy Agency, April 2025', href: 'https://www.iea.org/news/ai-is-set-to-drive-surging-electricity-demand-from-data-centres-while-offering-the-potential-to-transform-how-the-energy-sector-works' },
   { big: '+17%', what: 'Demand from data centres “soared by 17% in 2025.” A project pipeline is now “holding up grid connections and other necessary approvals.”',
     src: 'International Energy Agency, April 2026', href: 'https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions' },
-  { big: '~$200B', what: 'One company’s capital spending guidance for 2026: about $200 billion by July, raised twice since February. Several others guide to sums of the same order.',
-    src: 'Alphabet, Q2 2026 earnings call, July 2026', href: 'https://s206.q4cdn.com/479360582/files/doc_events/2026/Jul/22/2026_Q2_Earnings_Transcript.pdf' },
 ];
-const posting = {
-  text: 'Move capacity planning from an ad hoc process to a rigorous, repeatable, and forward-looking strategic function.',
-  src: 'OpenAI, public role description, “Strategic Compute Capacity Planning Lead”, seen October 2026',
-  href: 'https://openai.com/careers/strategic-compute-capacity-planning-lead-san-francisco/',
-};
-
 const covers = [
   ['Demand', 'Organic growth, launches and other step changes, and how firm a forecast is when it’s needed.'],
   ['Supply', 'Layers, lead times, contracts, power, and supply’s own step changes.'],
@@ -39,11 +32,12 @@ const covers = [
 ];
 
 const forWhom = [
+  ['Resource and quota managers', 'You hand out quota and arbitrate who gets what. Capacity planning is the same problem, a year earlier. <a href="/start/#resource-managers">Your door.</a>'],
   ['New to the role', 'You may come from hardware, site reliability, finance or supply chain. Each route brings part of the work, and the work asks for all of it. Start with <a href="/one-page/">the one page</a> and <a href="/summary/">the executive summary</a>. Then read <a href="/guide/the-work-and-the-path/">The work and the path</a>: your route in, and what to read next. Or take <a href="/start/new/">your door</a>, a 35-minute route.'],
   ['Practicing planners', 'You’ve run planning cycles and seen where plans break. The seed needs your corrections, your terms and your cases.'],
   ['Finance and supply partners', 'You fund the capacity or build it. The handshake below is about you, too. Your doors: <a href="/start/finance/">finance</a> and <a href="/start/supply/">supply</a>.'],
   ['Program managers', 'Many accelerator fleets are planned by program managers. <a href="/start/#program-managers">Your door is here.</a>'],
-  ['Resource and quota managers', 'You hand out quota and arbitrate who gets what. Capacity planning is the same problem, a year earlier. <a href="/start/#resource-managers">Your door.</a>'],
+  ['Chip and accelerator experts', 'You know the chip, its interconnect and its power. Planning asks when to order it, in what shape, and who gets it when it runs short. <a href="/guide/settings/#ai-and-accelerator-fleets">Start here</a>, then <a href="/start/#program-managers">this door</a>.'],
   ['People who lead planning teams', 'What should a planner at each level be able to do? The <a href="/roadmap/#3-a-capacity-planner-competency-map">competency map</a> starts there.'],
 ];
 
@@ -63,15 +57,18 @@ const paths = [
   { time: readingTime(ctx.chapters.reduce((n, ch) => n + wordCount(ch.blocks), 0)), name: `The full paper, Sections 1–${ctx.chapters.length}`, href: '/paper/' },
 ];
 
-const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capacity and performance practice', 'Google’s SRE books', 'Hixson and Guliani (2015)', 'Allspaw and Gunther’s books', 'The FinOps Foundation', 'PMI, for how a profession organizes'];
+const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capacity and performance practice', 'The Site Reliability Engineering books', 'Hixson and Guliani (2015)', 'Allspaw and Gunther’s books', 'The FinOps Foundation', 'PMI, for how a profession organizes'];
 ---
-<Base ld={{ '@context': 'https://schema.org', '@type': 'WebSite', name: config.site.name, url: config.site.url, description: 'An open, community-built body of knowledge for capacity planning, put out as a request for comments.', inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/', publisher: { '@type': 'Organization', name: 'Anacay', url: 'https://anacay.org' }, author: { '@type': 'Person', name: config.site.founder.name, sameAs: config.site.founder.linkedin } }} title={config.site.name} description="Capacity planning is growing into a serious discipline, and practitioners have no open, shared body of knowledge to build on. Let's build one together, starting from a seed paper put out as a request for comments.">
+<Base ld={[
+  { '@context': 'https://schema.org', '@type': 'WebSite', '@id': config.site.url + '/#website', name: config.site.name, alternateName: 'CPP', url: config.site.url + '/', description: ENTITY, inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/', publisher: { '@id': config.site.url + '/#practice' } },
+  { '@context': 'https://schema.org', '@type': 'Organization', '@id': config.site.url + '/#practice', name: config.site.name, alternateName: 'CPP', url: config.site.url + '/', description: ENTITY, foundingDate: '2026', founder: { '@type': 'Person', name: config.site.founder.name, sameAs: config.site.founder.linkedin }, sameAs: [c.repo, c.linkedinPage].filter(Boolean), knowsAbout: ['Capacity planning', 'Demand forecasting', 'Infrastructure planning', 'Data center capacity', 'AI accelerator capacity'] },
+]} seoTitle="The Capacity Planning Practice: an open body of knowledge" title={config.site.name} description="An open, non-commercial body of knowledge and community for capacity planners: a guide, a glossary, cases and a seed paper, built in public from public sources.">
   <div class="wrap">
     <section class="hero" aria-labelledby="hero-h">
       <p class="eyebrow">The Capacity Planning Practice</p>
       <h1 id="hero-h">Let’s build the body of knowledge for capacity planning, together.</h1>
-      <p class="lede">Capacity planning is growing into a serious discipline, and the people who practice it have no open, shared body of knowledge to build on. This starts one, together and in the open, from a seed paper put out as a request for comments. Planners meet in <a href="/commons/">The Commons</a> to ask, argue and work the open problems.</p>
-      <p class="hero__actions"><a class="btn" href="/paper/">Read and comment on the paper</a> <a class="btn btn--quiet" href={anyPost()}>Ask in The Commons</a> <a class="btn btn--quiet" href="/agenda/">Start with the open questions</a></p>
+      <p class="lede">An open, non-commercial <a href="/body-of-knowledge/">body of knowledge</a> and community for capacity planners. It starts from one seed paper, written to be challenged. Planners meet in <a href="/commons/">The Commons</a> to ask, argue and work the open problems.</p>
+      <p class="hero__actions"><a class="btn" href="/start/">Pick your door</a> <a class="btn btn--quiet" href="/what-is-capacity-planning/">What is capacity planning?</a> <a class="btn btn--quiet" href="/join/">Ask or challenge in The Commons</a></p>
       <RoomRule />
       <p class="hero__paper muted">The seed paper: <a href="/paper/"><em>{manifest.title}</em></a> · <a href="/one-page/">one page</a> · <a href="/downloads/">PDF and EPUB</a> · <a href="/body-of-knowledge/">the body of knowledge, in progress</a></p>
     </section>
@@ -86,8 +83,7 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
       </ul>
       <div class="reading prose">
         <p>Someone has to say how much, where and by when. Someone has to order land, power, network and machines years before demand is certain. And someone has to keep finance, supply and the teams who use the capacity in one agreement. That someone is a capacity planner.</p>
-        <p>The work now has its own name and levels. One public description puts the job this way:</p>
-        <blockquote class="pull"><p>“{posting.text}”</p><footer><a href={posting.href}>{posting.src}</a></footer></blockquote>
+        <p>The work has outgrown spreadsheets and goodwill. It needs shared words, methods that can be tested, and a place to argue about both.</p>
         <p>Much has been written about the craft over the years. What we couldn’t find is an open place where planners build a shared body of knowledge together and keep it current as the work changes. So let’s make one, and start by arguing about the seed.</p>
       </div>
     </section>
@@ -98,6 +94,7 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
       <ul class="cards">
         {forWhom.map(([t, d]) => <li><h3>{t}</h3><p set:html={d} /></li>)}
       </ul>
+      <p class="reading muted">Your word for it may differ. <a href="/glossary/#your-words">Your words, our words</a> maps it.</p>
     </section>
 
     <section class="band" aria-labelledby="hand-h">

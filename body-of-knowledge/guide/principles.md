@@ -1,5 +1,6 @@
 ---
 title: "Principles"
+seoTitle: Principles that hold across the capacity planning map
 short: A few ideas that hold across the whole map. Each one can be tested, and each one says how well it's supported.
 kind: foundation
 order: 0

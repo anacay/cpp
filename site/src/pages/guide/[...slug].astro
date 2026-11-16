@@ -19,7 +19,7 @@ const { prev, next } = neighboursOf(page);
 const c = load().config.community;
 const ctx = load();
 ---
-<Base title={page.title} description={page.short} nav="bok" commentable={{ name: `Guide: ${page.title}` }} article={guideDates(page.file) ? { published: guideDates(page.file).first, modified: guideDates(page.file).last } : undefined} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, ...(guideDates(page.file) ? { datePublished: guideDates(page.file).first, dateModified: guideDates(page.file).last } : {}), isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
+<Base seoTitle={page.seoTitle} title={page.title} description={page.short} nav="bok" commentable={{ name: `Guide: ${page.title}` }} article={guideDates(page.file) ? { published: guideDates(page.file).first, modified: guideDates(page.file).last } : undefined} ld={{ "@context": "https://schema.org", "@type": "TechArticle", headline: page.title, description: page.short, author: { "@type": "Person", name: "Guillermo Martinez" }, ...(guideDates(page.file) ? { datePublished: guideDates(page.file).first, dateModified: guideDates(page.file).last } : {}), isPartOf: { "@type": "WebSite", name: "The Capacity Planning Practice", url: "https://cpp.anacay.org" } }}>
   <div class="wrap wrap--reading">
     <div class="page-head">
       <p class="crumbs"><a href="/body-of-knowledge/">Body of knowledge</a> <span aria-hidden="true">›</span> <a href={`/body-of-knowledge/#${page.kind}`}>{KINDS[page.kind].label}</a></p>
@@ -27,12 +27,12 @@ const ctx = load();
       <h1>{page.title}</h1>
       <p class="in-short guide-short"><em set:html={renderInline(page.short, ctx.targets)} /></p>
     </div>
-    <RfcHint />
-    <WhereStrip page={page} />
     {toc.length > 2 && (
       <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">On this page</h2><ol>{toc.map((t) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol></nav>
     )}
     <article class="prose reading-wrap guide-body" set:html={html} />
+    <WhereStrip page={page} />
+    <RfcHint />
     {seeds.length > 0 && (
       <p class="seed-from">Drawn from the seed paper: {seeds.map((s, i) => <>{i > 0 && ', '}{s.url ? <a href={s.url}>{s.label}</a> : s.label}</>)}.</p>
     )}

@@ -1,5 +1,6 @@
 ---
 title: The coefficient
+seoTitle: The coefficient in capacity planning
 short: One number forecasts a shared service's load and prices a caller's growth, so it needs an owner, versions and restating at breaks.
 kind: concept
 order: 32

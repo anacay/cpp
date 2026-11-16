@@ -1,12 +1,27 @@
-// The whole paper as plain markdown, rebuilt from the manifest's blocks.
+// The whole seed paper as plain markdown, rebuilt from the manifest's blocks,
+// then the guide (the practice's newer, practical pages) and the practice's
+// own glossary terms, so a model that reads this file sees the whole body of
+// knowledge, not only the seed.
 import { load } from '../lib/paper.mjs';
+import { guide } from '../lib/guide.mjs';
+import { PRACTICE_TERMS } from '../data/practice-glossary.mjs';
+import { ENTITY, ENTITY_MORE, DEFINITION } from '../data/entity.mjs';
 export function GET() {
-  const { manifest } = load();
-  const out = [];
+  const { manifest, config } = load();
+  const abs = (u) => new URL(u, config.site.url).href;
+  const out = [`# ${config.site.name}`, `${ENTITY} ${ENTITY_MORE}`, `Capacity planning: ${DEFINITION}`, '---', '# Part 1. The seed paper'];
   for (const b of manifest.blocks) {
     if (b.starts_heading) out.push(`${'#'.repeat(b.heading_level)} ${b.heading}`);
     if (b.type === 'text') { if (b.markdown) out.push(b.markdown); }
     else out.push(`[${b.figure.label}${b.figure.page ? `, page ${b.figure.page}` : ''}. Image description: ${b.figure.alt}]\n\n${b.figure.caption}`);
   }
+  out.push('---', '# Part 2. The guide (draft for review)');
+  for (const p of guide().pages) {
+    out.push(`## ${p.title}`, `Source: ${abs(p.url)}`);
+    if (p.short) out.push(`*${p.short}*`);
+    out.push(String(p.body).replace(/^#\s.*\n/m, '').replace(/^(#+)\s/gm, '#$1 ').trim());
+  }
+  out.push('---', '# Part 3. Practice terms', `The seed paper's own terms are in Part 1 and at ${abs('/glossary/')}.`);
+  for (const t of PRACTICE_TERMS) out.push(`- **${t.term}**: ${t.def}`);
   return new Response(out.join('\n\n') + '\n', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }

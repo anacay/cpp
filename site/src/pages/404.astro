@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Page not found" description="This page isn't here. The contents of the paper, the summary and the glossary are.">
+<Base noindex title="Page not found" description="This page isn't here. The contents of the paper, the summary and the glossary are.">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">404</p>
@@ -9,6 +9,8 @@ import Base from '../layouts/Base.astro';
       <p class="lede">The address may be from an earlier draft, or mistyped. These will get you back on course:</p>
       <ul class="prose">
         <li><a href="/">Home</a></li>
+        <li><a href="/start/">Start here, by role</a></li>
+        <li><a href="/body-of-knowledge/">The body of knowledge</a></li>
         <li><a href="/summary/">The executive summary</a></li>
         <li><a href="/paper/">The paper, section by section</a></li>
         <li><a href="/glossary/">The glossary</a></li>

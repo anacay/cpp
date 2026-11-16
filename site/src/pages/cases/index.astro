@@ -10,7 +10,7 @@ const doors = cases.filter((p) => Number.isInteger(p.order));
 const subsOf = (d) => cases.filter((p) => !Number.isInteger(p.order) && Math.floor(p.order) === d.order);
 const subTitle = (t) => { const x = t.replace(/^[^:]+:\s*/, ''); return x.charAt(0).toUpperCase() + x.slice(1); };
 ---
-<Base title="Case studies" description="Whole capacity-planning problem spaces, set out in full for the practice to work on. Some carry the practice's answer on a companion page." nav="cases">
+<Base seoTitle="Capacity planning case studies" title="Case studies" description="Whole capacity-planning problem spaces, set out in full for the practice to work on. Some carry the practice's answer on a companion page." nav="cases">
   <div class="wrap wrap--reading">
     <div class="page-head">
       <p class="draft-tag">Guide · draft for review</p>

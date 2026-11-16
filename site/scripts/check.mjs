@@ -318,7 +318,9 @@ const pageText = ($, drop = '') => {
   const read = (f) => (fs.existsSync(path.join(dist, f)) ? fs.readFileSync(path.join(dist, f), 'utf8') : null);
   const robots = read('robots.txt') ?? '';
   const hdr = read('_headers') ?? '';
-  const meta = [...docs.values()].filter(($) => $('meta[name="robots"]').length).length;
+  // The 404 page carries its own noindex (it has no URL of its own); it is
+  // left out of the count either way.
+  const meta = [...docs.entries()].filter(([u, $]) => u !== '/404.html' && $('meta[name="robots"]').length).length;
   if (config.site.indexable) {
     if (!/Allow:\s*\/\s*$/m.test(robots) || /Disallow:\s*\/\s*$/m.test(robots)) c.fails.push('indexable, but robots.txt does not allow all');
     if (/X-Robots-Tag/.test(hdr)) c.fails.push('indexable, but _headers still sends X-Robots-Tag');
@@ -326,7 +328,7 @@ const pageText = ($, drop = '') => {
   } else {
     if (!/Disallow:\s*\/\s*$/m.test(robots)) c.fails.push('not indexable, but robots.txt does not disallow all');
     if (!/X-Robots-Tag: noindex/.test(hdr)) c.fails.push('not indexable, but _headers lacks X-Robots-Tag');
-    if (meta !== docs.size) c.fails.push(`not indexable, but only ${meta}/${docs.size} pages carry meta robots`);
+    if (meta !== docs.size - (docs.has('/404.html') ? 1 : 0)) c.fails.push(`not indexable, but only ${meta}/${docs.size} pages carry meta robots`);
   }
   c.notes.push(config.site.indexable ? 'indexable: robots allow, no noindex' : 'not indexable: noindex in robots.txt, header and meta');
   const sm = read('sitemap.xml') ?? '';

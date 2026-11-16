@@ -6,6 +6,7 @@ import ChangedBecause from '../../components/ChangedBecause.astro';
 import { annotate } from '../../lib/notes.mjs';
 import RfcHint from '../../components/RfcHint.astro';
 import { load, renderBlocks, pageMeta, glossary, esc } from '../../lib/paper.mjs';
+import versions from '../../data/versions.json';
 
 export function getStaticPaths() {
   const { chapters } = load();
@@ -29,8 +30,21 @@ if (toc) {
 }
 
 const terms = glossary(ctx).filter((t) => t.usedIn.some((u) => u.page === page));
+// Structured data: each section is a chapter of the seed paper, with a breadcrumb.
+const url = new URL(page.url, ctx.config.site.url).href;
+const abs = (u) => new URL(u, ctx.config.site.url).href;
+const paperDate = new Date(`${versions.versions[0].date} 12:00 UTC`).toISOString().slice(0, 10);
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'TechArticle', headline: meta.title, description: meta.description, url, mainEntityOfPage: url, image: abs('/og/card.jpg'), inLanguage: 'en',
+    author: { '@type': 'Person', name: ctx.config.site.founder.name }, dateModified: paperDate, version: ctx.manifest.version,
+    isPartOf: { '@type': 'ScholarlyArticle', '@id': abs('/paper/') + '#paper', name: ctx.manifest.title }, license: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Body of knowledge', item: abs('/body-of-knowledge/') },
+    { '@type': 'ListItem', position: 2, name: 'Seed paper', item: abs('/paper/') },
+    { '@type': 'ListItem', position: 3, name: `Section ${page.number}`, item: url } ] },
+];
 ---
-<Base title={meta.title} description={meta.description} nav="paper" commentable={{ name: `Section ${page.number}, ${page.title}` }}>
+<Base ld={ld} title={meta.title} description={meta.description} nav="paper" commentable={{ name: `Section ${page.number}, ${page.title}` }}>
   <div class="wrap wrap--reading">
     <div class="page-head">
       <p class="crumbs"><a href="/body-of-knowledge/">Body of knowledge</a> <span aria-hidden="true">›</span> <a href="/paper/">Seed paper</a> <span aria-hidden="true">›</span> Section {page.number}</p>

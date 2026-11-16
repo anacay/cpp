@@ -4,18 +4,17 @@
 
 ## Why this exists
 
-Capacity planning is growing into a serious discipline again, and it's hired for by name. You can see why in the numbers.
+Capacity planning is growing into a serious discipline again. You can see why in the numbers.
 
 - Data centres used about 415 TWh of electricity in 2024, around 1.5% of the world's total ([IEA, April 2025][iea25s]). The International Energy Agency expects that to "more than double by 2030 to around 945 terawatt-hours" ([IEA, April 2025][iea25]).
 - Demand from data centres "soared by 17% in 2025" ([IEA, April 2026][iea26]). The IEA also names shortages of gas turbines, transformers and chips, and a project pipeline that is "holding up grid connections and other necessary approvals".
-- Single companies now guide to capital spending of close to $200 billion a year. Alphabet's initial 2026 guidance was "$175 billion to $185 billion" ([Alphabet, February 2026][goog]), later raised, per press reports.
-- Compute is heading to orbit. Google is studying "solar-powered satellite constellations with TPUs", with two prototypes "slated to launch … by early 2027" ([Google Research, November 2025][sun]). A startup, Starcloud, says its first satellite "launched in November 2025 with the first Nvidia H100 GPU in space" ([Starcloud][sc]).
+- Several companies now guide to capital spending in the hundreds of billions of dollars a year between them, much of it for data centres.
 
 All of it has to be planned. Someone has to say how much, where, and by when. Someone has to order land, power, network and machines years before the demand is certain. And someone has to keep finance, supply and the teams who use the capacity in one agreement.
 
-That someone is a capacity planner. Frontier labs and cloud providers now post the role by name. One posting asks the hire to "move capacity planning from an ad hoc process to a rigorous, repeatable, and forward-looking strategic function" ([OpenAI careers, seen October 2026][oai]). In my experience, many people in these roles are new to them. They know the latest accelerators well. They're hired to plan, and then they find out how much of the job is lead times, contracts, forecasts and people.
+That someone is a capacity planner. In my experience, many people doing this work are new to it. They know the latest accelerators well. Then they find out how much of the job is lead times, contracts, forecasts and people.
 
-There's good work to learn from. The Computer Measurement Group (CMG) has gathered performance and capacity people since its roots as a user group in 1971, under the CMG name since 1975 ([CMG][cmg]). ITIL describes capacity and performance management as a practice. Books by Neil Gunther (2007) and John Allspaw (2008) cover the craft. Hixson and Guliani's 2015 article warned it "can be a torturous exercise in spreadsheets and meetings" and showed how to make it less so ([;login:, February 2015][hg]). Google's *Site Reliability Engineering* book names capacity planning as a core tenet of the work ([SRE book, chapter 1][sre]), and its second edition (September 2026) gives it a full chapter. The FinOps Foundation showed, for cloud cost, that practitioners can build an open framework together ([FinOps Foundation][finops]).
+There's good work to learn from. The Computer Measurement Group (CMG) has gathered performance and capacity people since its roots as a user group in 1971, under the CMG name since 1975 ([CMG][cmg]). ITIL describes capacity and performance management as a practice. Books by Neil Gunther (2007) and John Allspaw (2008) cover the craft. Hixson and Guliani's 2015 article warned it "can be a torturous exercise in spreadsheets and meetings" and showed how to make it less so ([;login:, February 2015][hg]). The *Site Reliability Engineering* book (O'Reilly, 2016) names capacity planning as a core tenet of the work ([SRE book, chapter 1][sre]), and its second edition (September 2026) gives it a full chapter. The FinOps Foundation showed, for cloud cost, that practitioners can build an open framework together ([FinOps Foundation][finops]).
 
 What we couldn't find is an open place where practitioners build a shared body of knowledge together, and keep it current as the work changes. So this is that place. It doesn't replace any of the above. It links to them, credits them, and builds on them. If something like this already exists, tell us. We'd rather join it than compete with it.
 
@@ -93,11 +92,7 @@ Read a section. If something is wrong, unclear or missing, say so. That's the wh
 
 [iea25]: https://www.iea.org/news/ai-is-set-to-drive-surging-electricity-demand-from-data-centres-while-offering-the-potential-to-transform-how-the-energy-sector-works
 [iea26]: https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions
-[goog]: https://abc.xyz/investor/events/event-details/2026/2025-Q4-Earnings-Call-2026-Dr_C033hS6/
-[sun]: https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/
-[sc]: https://www.starcloud.com/starcloud-1
 [iea25s]: https://www.iea.org/reports/energy-and-ai/executive-summary
-[oai]: https://openai.com/careers/strategic-compute-capacity-planning-lead-san-francisco/
 [cmg]: https://www.cmg.org/2009/08/measureit-issue-7-08-the-genesis-of-cmg/
 [hg]: https://www.usenix.org/publications/login/feb15/capacity-planning
 [sre]: https://sre.google/sre-book/introduction/
