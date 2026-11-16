@@ -6,7 +6,7 @@ From a chatbot's answer to The Commons. Planners increasingly ask AI assistants 
 |---|---|
 | Date | Built 16 November 2026; to ship from the founder's Mac before 30 November 2026 |
 | Worker | `cpp-anacay` |
-| Live version | (fill in at deploy) |
+| Live version | `99a31ca4-a975-417b-9200-fd57392a8c45`, deployed 2026-11-15 from merge commit `ac2024f` |
 | Previous version | R10, `44c41249-3609-462b-aaa6-5d83fbc02b56` |
 | Indexable | Yes (unchanged) |
 
