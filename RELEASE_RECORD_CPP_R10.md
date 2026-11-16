@@ -6,8 +6,8 @@ Visibility and house rules. R10 makes the practice easier to find and to quote, 
 |---|---|
 | Date | Built 15–16 November 2026; to ship from the founder's Mac by 30 November 2026 |
 | Worker | `cpp-anacay` |
-| Live version | (fill in at deploy) |
-| Previous version | R9.1 (fill in from `wrangler deployments list`) |
+| Live version | `44c41249-3609-462b-aaa6-5d83fbc02b56`, deployed 2026-11-15 from merge commit `7aa0d8d` |
+| Previous version | R9.1, `9bcf62cc-38f7-4487-ac2e-9c24b67e6633` |
 | Indexable | Yes (unchanged) |
 
 ## What changed for readers
