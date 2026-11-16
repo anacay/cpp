@@ -8,7 +8,7 @@
 import Base from '../layouts/Base.astro';
 import Behind from '../components/Behind.astro';
 import RoomRule from '../components/RoomRule.astro';
-import { anyPost } from '../data/room.mjs';
+import { anyPost, stream } from '../data/room.mjs';
 import { load, quote, renderMarkdown, renderFigure, wordCount, readingTime } from '../lib/paper.mjs';
 
 import { ENTITY } from '../data/entity.mjs';
@@ -69,6 +69,7 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
       <h1 id="hero-h">Let’s build the body of knowledge for capacity planning, together.</h1>
       <p class="lede">An open, non-commercial <a href="/body-of-knowledge/">body of knowledge</a> and community for capacity planners. It starts from one seed paper, written to be challenged. Planners meet in <a href="/commons/">The Commons</a> to ask, argue and work the open problems.</p>
       <p class="hero__actions"><a class="btn" href="/start/">Pick your door</a> <a class="btn btn--quiet" href="/what-is-capacity-planning/">What is capacity planning?</a> <a class="btn btn--quiet" href="/join/">Ask or challenge in The Commons</a></p>
+      <p class="muted">Or jump into an open conversation: <a href={`${stream.all}/15`}>when a market price exists, is the coefficient still an agreement?</a> · <a href="/agenda/">all open problems</a></p>
       <RoomRule />
       <p class="hero__paper muted">The seed paper: <a href="/paper/"><em>{manifest.title}</em></a> · <a href="/one-page/">one page</a> · <a href="/downloads/">PDF and EPUB</a> · <a href="/body-of-knowledge/">the body of knowledge, in progress</a></p>
     </section>
@@ -161,6 +162,7 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
         <li><h3>Rough consensus</h3><p>Changes stay open at least 14 days. Every objection gets an answer. An editor calls it and writes down why.</p></li>
         <li><h3>Editions, with credit</h3><p>Accepted changes go into the next version. Everyone who helped is named.</p></li>
       </ol>
+      <p class="reading">Leaders emerge from the people who show up. <a href="/join/#lead-h">Pick something small to lead</a>.</p>
       <p class="reading">The text is licensed CC BY-SA 4.0, the same licence Wikipedia uses. Anyone can copy, teach from and adapt it, and nobody, including the steward, can take it private.</p>
       <p><a class="more" href="/how-it-grows/">How a change is decided</a> · <a class="more" href="/commons/">The Commons</a> · <a class="more" href="/join/">Join in</a></p>
     </section>

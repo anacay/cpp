@@ -24,6 +24,10 @@ Visibility and house rules. R10 makes the practice easier to find and to quote, 
 
 **For answer engines.** llms.txt opens with the entity facts and six key definitions taken from the glossary. llms-full.txt now holds the guide and the practice terms as well as the seed paper.
 
+**Citations, for people and machines.** Guide pages, paper sections and the new page end with a one-line "Cite this page", ready to copy, with a link to the reference list. `/paper/` lists all 114 references as structured data and carries Google Scholar tags with the PDF. `CITATION.cff` gives GitHub a "Cite this repository" button.
+
+**Easy to step up.** Join in has "Lead something small": host a week, welcome newcomers, keep a topic, bring a case. The home page and The Commons link to it. The home page also links straight into an open conversation.
+
 **Safety.** `public/_headers` no longer carries a robots header; `scripts/headers.mjs` adds `noindex` only when the site is not indexable, and `build:only` runs it. A build that skips the script can no longer ship noindex. Check 8–11 and the extras pass.
 
 ## What did not change

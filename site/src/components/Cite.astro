@@ -1,0 +1,9 @@
+---
+// "Cite this page": one plain line to copy, and a link to the full reference list.
+import { citeLine } from '../lib/cite.mjs';
+interface Props { title: string; url: string; author?: string; date?: string }
+const { title, url, author, date } = Astro.props;
+---
+<aside class="cite-this reading" aria-label="Cite this page">
+  <p><strong>Cite this page:</strong> <span class="cite-this__text">{citeLine({ title, url, author, date })}</span> Sources: <a href="/references/">the reference list</a>.</p>
+</aside>

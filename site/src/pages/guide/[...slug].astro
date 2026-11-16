@@ -1,4 +1,5 @@
 ---
+import Cite from '../../components/Cite.astro';
 import RfcHint from '../../components/RfcHint.astro';
 import Base from '../../layouts/Base.astro';
 import HelpBuild from '../../components/HelpBuild.astro';
@@ -31,6 +32,7 @@ const ctx = load();
       <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">On this page</h2><ol>{toc.map((t) => <li><a href={`#${t.id}`}>{t.text}</a></li>)}</ol></nav>
     )}
     <article class="prose reading-wrap guide-body" set:html={html} />
+    <Cite title={`${page.title} (guide)`} url={new URL(page.url, ctx.config.site.url).href} date={guideDates(page.file) ? new Date(guideDates(page.file).last).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : undefined} />
     <WhereStrip page={page} />
     <RfcHint />
     {seeds.length > 0 && (

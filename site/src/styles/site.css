@@ -620,3 +620,7 @@ h2:hover > .h-link, h3:hover > .h-link, .h-link:focus-visible, :target > .h-link
 .glance dt { color: var(--ink-muted); }
 .glance dd { margin: 0; }
 @media (max-width: 34rem) { .glance { grid-template-columns: 1fr; gap: 0; } .glance dd { margin-bottom: .6rem; } }
+
+/* "Cite this page" (R10). */
+.cite-this { margin-top: 2rem; padding-top: .75rem; border-top: 1px solid var(--water-line); font-size: .9rem; color: var(--ink-muted); }
+.cite-this__text { user-select: all; color: var(--ink); }

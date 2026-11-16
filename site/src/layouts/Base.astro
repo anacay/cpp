@@ -5,8 +5,8 @@ import Star from '../components/Star.astro';
 import { load } from '../lib/paper.mjs';
 import { streamPost, tagForPath, stream, NDA_LINE } from '../data/room.mjs';
 
-interface Props { title: string; seoTitle?: string; description: string; nav?: string; bare?: boolean; commentable?: { name: string }; ld?: object | object[]; article?: { published?: string; modified?: string }; canonical?: string; noindex?: boolean }
-const { title, seoTitle, description: rawDescription, nav = '', commentable, ld, article, canonical: canonicalOverride, noindex = false } = Astro.props;
+interface Props { title: string; seoTitle?: string; description: string; nav?: string; bare?: boolean; commentable?: { name: string }; ld?: object | object[]; article?: { published?: string; modified?: string }; canonical?: string; noindex?: boolean; meta?: [string, string][] }
+const { title, seoTitle, description: rawDescription, nav = '', commentable, ld, article, canonical: canonicalOverride, noindex = false, meta = [] } = Astro.props;
 const { config, manifest } = load();
 const site = config.site;
 const path = Astro.url.pathname;
@@ -80,6 +80,7 @@ const links = [
 <meta property="og:image:height" content="627">
 <meta property="og:image:alt" content="The Capacity Planning Practice: an open body of knowledge for capacity planning, built together. Request for comments.">
 <meta name="twitter:card" content="summary_large_image">
+{meta.map(([name, content]) => <meta name={name} content={content} />)}
 {lds.map((x) => <script type="application/ld+json" set:html={JSON.stringify(x)} />)}
 </head>
 <body>

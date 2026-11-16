@@ -5,6 +5,7 @@
 // on-screen text word for word (built from the same array). No employer is
 // named; everything links to the page that teaches it.
 import Base from '../layouts/Base.astro';
+import Cite from '../components/Cite.astro';
 import { load } from '../lib/paper.mjs';
 import { DEFINITION, ENTITY } from '../data/entity.mjs';
 const { config } = load();
@@ -64,5 +65,6 @@ const ld = [
         <li><a href="/join/">Ask in The Commons</a>: one rule, don’t break your NDA.</li>
       </ul>
     </section>
+    <Cite title="What is capacity planning?" url={url} date="16 November 2026" />
   </div>
 </Base>
