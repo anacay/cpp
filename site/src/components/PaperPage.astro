@@ -16,7 +16,7 @@ const page = ctx.pages.get(id);
 const meta = pageMeta(page);
 const html = annotate(renderBlocks(page, ctx), page);
 ---
-<Base title={meta.title} description={meta.description} nav={nav} canonical={id === 'terms' ? new URL('/glossary/', ctx.config.site.url).href : undefined} commentable={bokFile(page) ? { name: pageName(page) } : undefined}>
+<Base title={meta.title} description={meta.description} nav={nav} commentable={bokFile(page) ? { name: pageName(page) } : undefined}>
   <div class="wrap wrap--reading">
     <div class="page-head">
       {kicker && <p class="eyebrow">{kicker}</p>}

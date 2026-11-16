@@ -15,7 +15,7 @@ The full text of the seed paper, and of the guide and glossary, is in one file: 
 The community, The Commons, is on GitHub Discussions: ${config.community.repo}/discussions
 
 ## Key definitions
-- Capacity planning: ${DEFINITION} More: ${abs('/what-is-capacity-planning/')}
+- ${DEFINITION} More: ${abs('/what-is-capacity-planning/')}
 - Coefficient: the amount of a resource a service uses per unit of the driver of its load, such as CPU time per request. Cost = driver volume × coefficient × rate. ${abs('/guide/concepts/the-coefficient/')}
 - Declaration: a signed statement of expected demand for a launch with no history, in units the planner already prices. It firms up in stages. ${abs('/guide/concepts/demand-and-declarations/')}
 - Supply layer: one kind of supply with its own lead time, such as power and positions, network, each machine shape, turn-up, and job placement. ${abs('/guide/concepts/supply-layers-and-lead-times/')}

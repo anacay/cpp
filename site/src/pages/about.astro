@@ -12,7 +12,6 @@ const html = renderBlocks(page, ctx);
 const lasting = quote(manifest, 3, 'The two claims are the part meant to last.', 'as people use them.');
 const synthesis = quote(manifest, 14, 'This is a practitioner synthesis, and it describes no particular organization.', 'not any one organization\'s process.');
 const version = manifest.version.replace(/^v/, '').replace(/\s*draft$/, '');
-const subject = encodeURIComponent(`Comment on ${manifest.title}, v${version}`);
 ---
 <Base seoTitle="About the Capacity Planning Practice" title="About" description={`What ${site.name} is, how it will change, how to comment, and who started and stewards it.`} nav="about">
   <div class="wrap wrap--reading">

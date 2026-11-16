@@ -13,7 +13,7 @@ const site = config.site;
 // [question, answer as HTML]. Keep each answer to one paragraph of short sentences.
 const faq = [
   ['How is capacity planning different from capacity management?',
-   'Capacity management is the ongoing practice of keeping services within their capacity: monitoring, tuning and fixing shortfalls. Capacity planning is the forward-looking part. It decides what capacity to add, where and when, often months or years before the demand arrives.'],
+   'Capacity management, as ITIL describes it, is the wider practice of making sure services have the capacity and performance they need, now and later. Capacity planning is its forward-looking core. It decides what to add, where and when, often months or years ahead.'],
   ['What does a capacity planner do?',
    'A capacity planner turns demand forecasts into supply commitments. They gather what teams expect to need, convert it into resources, and decide what to order and when. They also broker the agreement between the teams who fund capacity, build it and use it. <a href="/guide/the-work-and-the-path/">The work and the path</a> describes the role at each level.'],
   ['Why does capacity have to be planned so far ahead?',
@@ -25,7 +25,7 @@ const faq = [
   ['What is a coefficient in capacity planning?',
    'A coefficient is the amount of a resource a service uses per unit of the thing that drives its load, such as CPU time per request. Cost is the driver volume, times the coefficient, times the rate. The seed paper argues that a coefficient is an agreement that someone owns and versions. See <a href="/guide/concepts/the-coefficient/">the coefficient</a>.'],
   ['How is capacity planned for AI accelerators?',
-   'The structure holds, but the units move. Power often binds before chips do. Topology is a shape, so a fleet can hold enough chips and still be unable to place a job. A busy chip is not always a productive one. See <a href="/guide/settings/#ai-and-accelerator-fleets">AI and accelerator fleets</a>.'],
+   'The structure holds, but the units move. For the largest operators, by their own public account, power has become the binding constraint. Topology is a shape, so a fleet can hold enough chips and still be unable to place a training run. A busy chip is not always a productive one. See <a href="/guide/settings/#ai-and-accelerator-fleets">AI and accelerator fleets</a>.'],
   ['Is there an open body of knowledge for capacity planning?',
    `Yes. ${ENTITY} It has a <a href="/body-of-knowledge/">guide</a>, a <a href="/glossary/">glossary</a>, <a href="/cases/">case studies</a> and a seed paper, and practitioners meet in <a href="/commons/">The Commons</a>.`],
 ];
@@ -37,7 +37,7 @@ const ld = [
   { '@context': 'https://schema.org', '@type': 'DefinedTerm', name: 'Capacity planning', description: DEFINITION, url, inDefinedTermSet: new URL('/glossary/', site.url).href + '#set' },
 ];
 ---
-<Base seoTitle="What is capacity planning? A plain definition" title="What is capacity planning?" description={DEFINITION} ld={ld} nav="bok">
+<Base seoTitle="What is capacity planning? A plain definition" title="What is capacity planning?" description="A plain definition of capacity planning, with short answers on what planners do, why lead times matter, how demand is forecast and how AI fleets differ." ld={ld} nav="bok">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">A plain answer</p>

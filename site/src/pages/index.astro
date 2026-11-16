@@ -61,8 +61,8 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
 ---
 <Base ld={[
   { '@context': 'https://schema.org', '@type': 'WebSite', '@id': config.site.url + '/#website', name: config.site.name, alternateName: 'CPP', url: config.site.url + '/', description: ENTITY, inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/', publisher: { '@id': config.site.url + '/#practice' } },
-  { '@context': 'https://schema.org', '@type': 'Organization', '@id': config.site.url + '/#practice', name: config.site.name, alternateName: 'CPP', url: config.site.url + '/', description: ENTITY, foundingDate: '2026', founder: { '@type': 'Person', name: config.site.founder.name, sameAs: config.site.founder.linkedin }, sameAs: [c.repo, c.linkedinPage].filter(Boolean), knowsAbout: ['Capacity planning', 'Demand forecasting', 'Infrastructure planning', 'Data center capacity', 'AI accelerator capacity'] },
-]} seoTitle="The Capacity Planning Practice: an open body of knowledge" title={config.site.name} description="An open, non-commercial body of knowledge and community for capacity planners: a guide, a glossary, cases and a seed paper, built in public from public sources.">
+  { '@context': 'https://schema.org', '@type': 'Organization', '@id': config.site.url + '/#practice', name: config.site.name, alternateName: 'CPP', url: config.site.url + '/', description: ENTITY, foundingDate: '2026', founder: { '@type': 'Person', name: config.site.founder.name }, sameAs: [c.repo, c.linkedinPage].filter(Boolean), knowsAbout: ['Capacity planning', 'Demand forecasting', 'Infrastructure planning', 'Data center capacity', 'AI accelerator capacity'] },
+]} seoTitle="The Capacity Planning Practice: an open body of knowledge" title={config.site.name} description="An open, non-commercial body of knowledge and community for capacity planners: a guide, a glossary, cases and a seed paper, built from public sources.">
   <div class="wrap">
     <section class="hero" aria-labelledby="hero-h">
       <p class="eyebrow">The Capacity Planning Practice</p>

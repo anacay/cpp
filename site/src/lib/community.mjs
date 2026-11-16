@@ -73,7 +73,7 @@ export const DOCS = {
 const md = new MarkdownIt({ html: false, linkify: false, typographer: false });
 
 const DESCRIPTIONS = {
-  'CHARTER.md': 'The charter of the Capacity Planning Practice: an open, non-commercial body of knowledge for capacity planners, what it covers, what it won’t do and how it stays open.',
+  'CHARTER.md': 'The charter of the Capacity Planning Practice: an open, non-commercial body of knowledge for capacity planners, what it covers and how it stays open.',
   'CONTRIBUTING.md': 'How to contribute to the Capacity Planning Practice: comment on a section, propose a change, add a case or a term.',
   'HOW_IT_GROWS.md': 'How the capacity planning body of knowledge changes: a comment, a short discussion, rough consensus, then the text changes, with every change recorded.',
 };

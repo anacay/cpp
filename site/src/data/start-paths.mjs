@@ -108,7 +108,7 @@ export const doors = [
     aha: 'Quota is a promise against supply that may not exist yet. Planning is deciding, before the commit date, which promises the fleet can keep.',
     ahaSource: ['Approval and allocation', '/guide/concepts/approval-and-allocation/'],
     problems: ['q3', 'q7', 'unallocated-owner'],
-    first: { item: 'q3', text: 'How does your quota or resource process decide between teams when supply is short? Describe the rule, not the figures.', title: 'Quota rules when supply is short', prompt: 'I come from quota and resource management. When supply is short, our process decides between teams like this: …' },
+    first: { item: 'q3', text: 'How should a fair quota process decide between teams when supply is short? Describe the rule in general terms.', title: 'Quota rules when supply is short', prompt: 'I come from quota and resource management. When supply is short, a fair process would decide between teams like this, in general terms: …' },
   },
   {
     id: 'sre', name: 'Site reliability engineers', time: '20 minutes', page: true,
@@ -190,7 +190,7 @@ export const yourWords = [
   { yours: 'Goodput, utilization', ours: [['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets']], terms: [],
     hint: 'A busy chip is not always a productive one. The guide plans on the useful work done.' },
   { yours: 'Power envelope, TDP', ours: [['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets'], ['Buildings at AI density', '/notes/buildings-at-ai-density/']], terms: [],
-    hint: 'At AI density, power often binds before space or chips do.' },
+    hint: 'For the largest operators, by their own public account, power is now the binding constraint.' },
   { yours: 'Pod, cluster, interconnect domain', ours: [['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets']], terms: [],
     hint: 'Topology is a shape. A fleet can hold enough chips and still be unable to place a training run.' },
 ];

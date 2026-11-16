@@ -9,7 +9,7 @@ import { ENTITY, ENTITY_MORE, DEFINITION } from '../data/entity.mjs';
 export function GET() {
   const { manifest, config } = load();
   const abs = (u) => new URL(u, config.site.url).href;
-  const out = [`# ${config.site.name}`, `${ENTITY} ${ENTITY_MORE}`, `Capacity planning: ${DEFINITION}`, '---', '# Part 1. The seed paper'];
+  const out = [`# ${config.site.name}`, `${ENTITY} ${ENTITY_MORE}`, DEFINITION, '---', '# Part 1. The seed paper'];
   for (const b of manifest.blocks) {
     if (b.starts_heading) out.push(`${'#'.repeat(b.heading_level)} ${b.heading}`);
     if (b.type === 'text') { if (b.markdown) out.push(b.markdown); }
@@ -19,7 +19,11 @@ export function GET() {
   for (const p of guide().pages) {
     out.push(`## ${p.title}`, `Source: ${abs(p.url)}`);
     if (p.short) out.push(`*${p.short}*`);
-    out.push(String(p.body).replace(/^#\s.*\n/m, '').replace(/^(#+)\s/gm, '#$1 ').trim());
+    // Relative links and figures in the guide's Markdown point at repo files;
+    // keep the words and drop the targets.
+    out.push(String(p.body).replace(/^#\s.*\n/m, '').replace(/^(#+)\s/gm, '#$1 ')
+      .replace(/!\[([^\]]*)\]\((?!https?:)[^)]*\)/g, '[Figure: $1]')
+      .replace(/\[([^\]]+)\]\((?!https?:)[^)]*\)/g, '$1').trim());
   }
   out.push('---', '# Part 3. Practice terms', `The seed paper's own terms are in Part 1 and at ${abs('/glossary/')}.`);
   for (const t of PRACTICE_TERMS) out.push(`- **${t.term}**: ${t.def}`);

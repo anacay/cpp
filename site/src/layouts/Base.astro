@@ -15,9 +15,19 @@ const path = Astro.url.pathname;
 // stands alone (search engines cut longer titles).
 const brand = 'Capacity Planning Practice';
 const base = seoTitle ?? title;
-const fullTitle = path === '/' ? (seoTitle ?? site.name) : (base.length + brand.length + 3 <= 62 ? `${base} · ${brand}` : base);
+const fullTitle = path === '/' ? (seoTitle ?? site.name)
+  : base.length + brand.length + 3 <= 62 ? `${base} · ${brand}`
+  : /capacity/i.test(base) || base.length + 20 > 72 ? base
+  : `${base} · Capacity planning`;
 // Descriptions: capped at 158 characters on a word boundary.
-const description = rawDescription.length <= 158 ? rawDescription : rawDescription.slice(0, 157).replace(/\s+\S*$/, '').replace(/[,;:]$/, '') + '…';
+// Prefer ending at a full sentence; otherwise cut at a word and add an ellipsis.
+const description = (() => {
+  if (rawDescription.length <= 158) return rawDescription;
+  const head = rawDescription.slice(0, 158);
+  const stop = Math.max(head.lastIndexOf('. '), head.lastIndexOf('? '), head.lastIndexOf('! '));
+  if (stop >= 90) return head.slice(0, stop + 1);
+  return head.slice(0, 157).replace(/\s+\S*$/, '').replace(/[,;:.]$/, '') + '…';
+})();
 const canonical = canonicalOverride ?? new URL(path, site.url).href;
 const lds = (Array.isArray(ld) ? ld : ld ? [ld] : []);
 const version = manifest.version.replace(/\s*draft$/, '');
@@ -64,7 +74,7 @@ const links = [
 <meta property="og:title" content={fullTitle}>
 <meta property="og:description" content={description}>
 {!noindex && <meta property="og:url" content={canonical}>}
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="en_GB">
 <meta property="og:image" content={new URL('/og/card.jpg', site.url).href}>
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
