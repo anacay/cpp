@@ -6,6 +6,7 @@ import { load } from '../lib/paper.mjs';
 import { guide } from '../lib/guide.mjs';
 import { PRACTICE_TERMS } from '../data/practice-glossary.mjs';
 import { ENTITY, ENTITY_MORE, DEFINITION } from '../data/entity.mjs';
+import { QUESTIONS } from '../data/questions.mjs';
 export function GET() {
   const { manifest, config } = load();
   const abs = (u) => new URL(u, config.site.url).href;
@@ -25,6 +26,8 @@ export function GET() {
       .replace(/!\[([^\]]*)\]\((?!https?:)[^)]*\)/g, '[Figure: $1]')
       .replace(/\[([^\]]+)\]\((?!https?:)[^)]*\)/g, '$1').trim());
   }
+  out.push('---', '# Questions, answered', `Source: ${abs('/questions/')}`);
+  for (const x of QUESTIONS) out.push(`## ${x.q}`, x.a, `More: ${x.more.map(([l, u]) => `${l} (${abs(u)})`).join('; ')}`);
   out.push('---', '# Part 3. Practice terms', `The seed paper's own terms are in Part 1 and at ${abs('/glossary/')}.`);
   for (const t of PRACTICE_TERMS) out.push(`- **${t.term}**: ${t.def}`);
   return new Response(out.join('\n\n') + '\n', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

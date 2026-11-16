@@ -1,0 +1,54 @@
+---
+// /questions/: questions planners ask, each answered in a few sentences from
+// the guide, each with a door into The Commons (R11). The FAQ structured data
+// is built from the same array, so it repeats the on-screen text word for word.
+import Base from '../layouts/Base.astro';
+import Cite from '../components/Cite.astro';
+import FromAnswer from '../components/FromAnswer.astro';
+import { load } from '../lib/paper.mjs';
+import { streamPost, anyPost } from '../data/room.mjs';
+import { QUESTIONS, QUESTION_GROUPS } from '../data/questions.mjs';
+import { DEFINITION } from '../data/entity.mjs';
+const { config } = load();
+const url = new URL('/questions/', config.site.url).href;
+const ask = (x) => streamPost({ title: x.q, text: `A follow-up on “${x.q}”:`, tag: x.tag, from: { name: `Questions: ${x.q}`, url: `/questions/#${x.id}` } });
+const plain = (h) => h.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'FAQPage', '@id': url + '#faq', url, inLanguage: 'en',
+    mainEntity: [{ q: 'What is capacity planning?', a: DEFINITION, id: 'what-is-capacity-planning' }, ...QUESTIONS].map((x) => ({
+      '@type': 'Question', name: x.q, url: `${url}#${x.id}`, acceptedAnswer: { '@type': 'Answer', text: plain(x.a) } })) },
+];
+---
+<Base seoTitle="Capacity planning questions, answered" title="Questions" ld={ld} nav="bok"
+  description="Questions capacity planners ask, answered in a few sentences each: forecasting launches, lead times, headroom, chargeback, FinOps and AI accelerators.">
+  <div class="wrap wrap--reading">
+    <div class="page-head reading">
+      <p class="eyebrow">Questions, answered</p>
+      <h1>Capacity planning questions, answered</h1>
+      <p class="lede">Short answers to the questions planners ask most. Each one links to the page that teaches it, and to The Commons, where planners argue it out.</p>
+      <p>New to the field? Start with <a href="/what-is-capacity-planning/">what capacity planning is</a>.</p>
+    </div>
+    <FromAnswer post={anyPost()} />
+    <nav aria-label="Topics"><ul class="letters">{QUESTION_GROUPS.map((g) => <li><a href={`#${g.id}`}>{g.title}</a></li>)}</ul></nav>
+
+    {QUESTION_GROUPS.map((g) => (
+      <section class="qa-group prose reading" aria-labelledby={g.id}>
+        <h2 id={g.id}>{g.title}</h2>
+        {QUESTIONS.filter((x) => x.group === g.id).map((x) => (
+          <div class="qa">
+            <h3 id={x.id}>{x.q}</h3>
+            <p>{x.a}</p>
+            <p class="qa__more">Read more: {x.more.map(([l, u], i) => <>{i > 0 && ' · '}<a href={u}>{l}</a></>)} · <a href={ask(x)}>Discuss this in The Commons</a></p>
+          </div>
+        ))}
+      </section>
+    ))}
+
+    <section class="prose reading" aria-labelledby="missing-h">
+      <h2 id="missing-h">Your question isn’t here?</h2>
+      <p>Ask it in The Commons. Good questions become answers on this page, credited by name if you want.</p>
+      <p><a class="btn" href={anyPost()}>Ask a question</a> <a class="btn btn--quiet" href="/join/">How to join</a></p>
+    </section>
+    <Cite title="Capacity planning questions, answered" url={url} date="16 November 2026" />
+  </div>
+</Base>
