@@ -17,8 +17,10 @@ const brand = 'Capacity Planning Practice';
 const base = seoTitle ?? title;
 const fullTitle = path === '/' ? (seoTitle ?? site.name)
   : base.length + brand.length + 3 <= 62 ? `${base} · ${brand}`
-  : /capacity/i.test(base) || base.length + 38 > 72 ? base
-  : `${base} · Infrastructure capacity planning`;
+  : /capacity/i.test(base) ? base
+  : base.length + 35 <= 72 ? `${base} · Infrastructure capacity planning`
+  : base.length + 20 <= 72 ? `${base} · Capacity planning`
+  : base;
 // Descriptions: capped at 158 characters on a word boundary.
 // Prefer ending at a full sentence; otherwise cut at a word and add an ellipsis.
 const description = (() => {
@@ -80,7 +82,7 @@ const links = [
 <meta property="og:image" content={new URL('/og/card-r14.jpg', site.url).href}>
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
-<meta property="og:image:alt" content="The Capacity Planning Practice: an open body of knowledge for capacity planning, built together. Request for comments.">
+<meta property="og:image:alt" content="The Capacity Planning Practice: an open, non-commercial community for infrastructure capacity planners: compute, data centres, accelerators and power. Built in public from public sources.">
 <meta name="twitter:card" content="summary_large_image">
 {meta.map(([name, content]) => <meta name={name} content={content} />)}
 {lds.map((x) => <script type="application/ld+json" set:html={JSON.stringify(x)} />)}

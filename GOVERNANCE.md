@@ -94,7 +94,7 @@ When the community body is ready, the steward hands over. Anacay, as host, trans
 4. **Hand over the accounts**: hosting, email aliases, analytics if any. No data is kept back.
 5. **Write it down.** A short handover record in the repository, saying what was transferred and when.
 
-If Anacay ever has to stop hosting before a community body exists, it will give at least 90 days' notice and hand the practice to the steward and editors rather than shut it down. The licence already guarantees the content survives any steward: anyone can fork it.
+If Anacay ever has to stop hosting before a community body exists, it will give at least 90 days' notice. It will hand the practice to the steward and editors rather than shut it down. The licence already guarantees the content survives any steward: anyone can fork it.
 
 ## When rules are unclear
 

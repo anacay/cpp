@@ -16,7 +16,7 @@ Everything needed to set up the group. Paste each block as is.
 
 > A home for people who plan capacity: compute, storage, network, accelerators, and the space, power and contracts underneath them.
 >
-> Capacity planning is growing into a profession of its own. Labs and cloud providers now name it as a role of its own, and some of the people in these roles are new to it. Some know the latest accelerators inside out and are now learning lead times, forecasts, contracts and the people side of the job. Others have done this work for decades. Both are welcome here.
+> Capacity planning is growing into a profession of its own. Labs and cloud providers now name it as a role, and some of the people in these roles are new to it. Some know the latest accelerators inside out and are now learning lead times, forecasts, contracts and the people side of the job. Others have done this work for decades. Both are welcome here.
 >
 > This group is the conversation side of an open body of knowledge for capacity planning, at cpp.anacay.org. The text lives on GitHub. Anyone can comment on it, correct it or add to it, and everyone who contributes is credited. It's licensed CC BY-SA 4.0.
 >

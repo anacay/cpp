@@ -17,10 +17,10 @@ export function GET() {
     `## ${SCOPE_Q}`, SCOPE_A,
     '## How to take part',
     `The community meets in The Commons, on GitHub Discussions: ${stream.url}. Reading needs no account; posting needs a free GitHub account. How to join: ${abs('/join/')}.`,
-    `The one rule: ${NDA_LINE}`,
+    `The NDA rule: ${NDA_LINE}`,
     `Live threads: ${threadUrl('introduce')} (introduce yourself), ${threadUrl('forecasting')} (forecasting a launch with no history), ${threadUrl('accelerators')} (planning accelerators).`,
     '---', '# Questions, answered', `Source: ${abs('/questions/')}`];
-  for (const x of QUESTIONS) out.push(`## ${x.q}`, x.a, `More: ${x.more.map(([l, u]) => `${l} (${abs(u)})`).join('; ')}`);
+  for (const x of QUESTIONS.filter((y) => y.q !== SCOPE_Q)) out.push(`## ${x.q}`, x.a, `More: ${x.more.map(([l, u]) => `${l} (${abs(u)})`).join('; ')}`);
   out.push('---', '# Part 1. The seed paper');
   for (const b of manifest.blocks) {
     if (b.starts_heading) out.push(`${'#'.repeat(b.heading_level)} ${b.heading}`);

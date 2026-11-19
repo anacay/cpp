@@ -27,8 +27,8 @@ const kinds = [
       <h1>Join The Commons. Post one question.</h1>
       <p class="lede">The Commons is one place on GitHub Discussions. That is the one place to take part. A good question counts as much as a new section.</p>
     </div>
-    <div class="reading" data-rule>
-      <p class="note"><strong>The one rule: don’t break your NDA.</strong> Don’t share your company’s prices, contract terms, demand forecasts, future plans or any other confidential information. Methods and public facts are fair game.</p>
+    <div class="reading">
+      <p class="note"><strong>Don’t break your NDA.</strong> Don’t share your company’s prices, contract terms, demand forecasts, future plans or any other confidential information. Methods and public facts are fair game.</p>
     </div>
     <div class="reading"><LiveThreads /></div>
 
@@ -39,7 +39,7 @@ const kinds = [
         <li><a href={stream.signup}>Create a free GitHub account</a>. Your username can be a handle. Your name appears only when you want credit.</li>
         <li>Open <a href={stream.url}>The Commons</a> and read a few posts.</li>
         <li>New to the field? <a href={firstQuestion()}>Ask a first question</a>. It opens with the #first-question tag already in place.</li>
-        <li>Say hello in <a href={threadUrl('introduce')}>Introduce yourself</a>: what you plan, and what you want to learn.</li>
+        <li>Then say hello in <a href={threadUrl('introduce')}>Introduce yourself</a>.</li>
         <li>Done this for years? Answer a live thread, such as <a href={threadUrl('forecasting')}>forecasting a launch with no history</a>. Or take on the strongest known challenge to the seed: <a href={`${stream.all}/15`}>“When a market price exists, is the coefficient still an agreement?”</a></li>
       </ol>
       <p>Not sure where to start? Reply to an open thread. Each one names a gap in the seed: <a href="/agenda/">the open problems</a>.</p>
@@ -56,7 +56,8 @@ const kinds = [
         <li><strong>Keep a topic.</strong> Gather the threads on one subject, such as accelerators or forecasting.</li>
         <li><strong>Bring a case.</strong> Write up a planning problem in general terms, with public sources.</li>
       </ul>
-      <p><a class="btn" href={threadUrl('lead')}>Say what you’ll take on</a> Then start. Longer roles, with duties and hours, are on <a href="/roles/">Roles</a>.</p>
+      <p>Say what you’ll take on, then start. Longer roles, with duties and hours, are on <a href="/roles/">Roles</a>.</p>
+      <p><a class="btn" href={threadUrl('lead')}>Say what you’ll take on</a></p>
     </section>
 
     <section class="prose reading" aria-labelledby="private-h">

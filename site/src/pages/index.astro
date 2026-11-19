@@ -9,7 +9,7 @@ import Base from '../layouts/Base.astro';
 import Behind from '../components/Behind.astro';
 import RoomRule from '../components/RoomRule.astro';
 import LiveThreads from '../components/LiveThreads.astro';
-import { anyPost, stream } from '../data/room.mjs';
+import { anyPost, stream, threadUrl } from '../data/room.mjs';
 import { load, quote, renderMarkdown, renderFigure, wordCount, readingTime } from '../lib/paper.mjs';
 
 import { ENTITY } from '../data/entity.mjs';
@@ -38,7 +38,7 @@ const forWhom = [
   ['Practicing planners', 'You’ve run planning cycles and seen where plans break. The seed needs your corrections, your terms and your cases.'],
   ['Finance and supply partners', 'You fund the capacity or build it. The handshake below is about you, too. Your doors: <a href="/start/finance/">finance</a> and <a href="/start/supply/">supply</a>.'],
   ['Program managers', 'Many accelerator fleets are planned by program managers. <a href="/start/#program-managers">Your door is here.</a>'],
-  ['Chip and accelerator experts', 'You know the chip, its interconnect and its power. Planning asks when to order it, in what shape, and who gets it when it runs short. <a href="/guide/settings/#ai-and-accelerator-fleets">Start here</a>, then <a href="/start/#chip-experts">your door</a>, then <a href="https://github.com/anacay/cpp/discussions/45">tell planners what they get wrong</a>.'],
+  ['Chip and accelerator experts', `You know the chip, its interconnect and its power. Planning asks when to order it, in what shape, and who gets it when it runs short. <a href="/start/#chip-experts">Your door</a>, then <a href="${threadUrl('accelerators')}">tell planners what they get wrong</a>.`],
   ['People who lead planning teams', 'What should a planner at each level be able to do? The <a href="/roadmap/#3-a-capacity-planner-competency-map">competency map</a> starts there.'],
 ];
 
