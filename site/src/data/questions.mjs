@@ -5,6 +5,8 @@
 // named as anyone's employer; public sources only, as the guide cites them.
 // `more`: [label, url] pairs, internal pages only; the build checks the links.
 // `tag`: a Commons tag from room.mjs, or null.
+import { SCOPE_Q, SCOPE_A } from './entity.mjs';
+
 export const QUESTION_GROUPS = [
   { id: 'basics', title: 'The basics' },
   { id: 'demand', title: 'Demand' },
@@ -15,6 +17,8 @@ export const QUESTION_GROUPS = [
 ];
 
 export const QUESTIONS = [
+  { id: 'not-team-capacity', group: 'basics', tag: 'first-question', q: SCOPE_Q, a: SCOPE_A,
+    more: [['What is infrastructure capacity planning?', '/what-is-capacity-planning/']] },
   { id: 'what-does-a-capacity-planner-do', group: 'basics', tag: 'first-question',
     q: 'What does a capacity planner do?',
     a: 'The capacity planning chapter of Site Reliability Engineering, second edition (2026), defines it as forecasting future demand and provisioning supply to meet it. This guide argues there is a third part: keeping the agreement that pays for it. The planner sits between the people who fund capacity, build it and use it, usually owning no capacity and no budget.',

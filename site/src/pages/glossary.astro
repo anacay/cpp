@@ -56,7 +56,7 @@ const ld = { '@context': 'https://schema.org', '@type': 'DefinedTermSet', '@id':
     ...[...practice, ...case3].map((t) => ({ '@type': 'DefinedTerm', name: t.term, url: gurl + '#' + t.id, description: strip(t.def), inDefinedTermSet: gurl + '#set' })),
   ] };
 ---
-<Base seoTitle={`Capacity planning glossary: ${total} terms defined`} title="Glossary" ld={ld} description={`A capacity planning glossary: ${total} terms, from coefficient and commit point to declaration and supply layer, each linked to the page that teaches it.`} nav="glossary">
+<Base seoTitle={`Infrastructure capacity planning glossary: ${total} terms`} title="Glossary" ld={ld} description={`An infrastructure capacity planning glossary: ${total} terms, from coefficient and commit point to declaration and supply layer, each linked to the page that teaches it.`} nav="glossary">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">{total} terms</p>
