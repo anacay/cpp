@@ -6,7 +6,7 @@ An open room. On the night of 18–19 November 2026, five independent reviews lo
 |---|---|
 | Date | 19 November 2026 |
 | Worker | `cpp-anacay` |
-| Live version | (fill in at deploy) |
+| Live version | `b7273348-2961-4e69-be1f-67178036f868`, deployed 2026-11-19 from merge commit `cc981e0` |
 | Previous version | R13, `9776861b-9e8c-4bb1-a8ba-f743bd2e575d` |
 
 ## What changed
