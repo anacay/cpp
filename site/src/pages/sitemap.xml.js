@@ -1,5 +1,5 @@
 import { load } from '../lib/paper.mjs';
-import { allRoutes } from '../lib/routes.mjs';
+import { allRoutes, NOINDEX } from '../lib/routes.mjs';
 import { guide } from '../lib/guide.mjs';
 import { guideDates } from '../lib/dates.mjs';
 import versions from '../data/versions.json';
@@ -9,7 +9,7 @@ const paperDate = new Date(`${versions.versions[0].date} 12:00 UTC`).toISOString
 export function GET() {
   const { config } = load();
   const fileByUrl = new Map(guide().pages.map((p) => [p.url, p.file]));
-  const urls = allRoutes().map((u) => {
+  const urls = allRoutes().filter((u) => !NOINDEX.includes(u)).map((u) => {
     const f = fileByUrl.get(u);
     const d = f ? guideDates(f) : null;
     const day = d ? d.last.slice(0, 10) : PAPER_ROUTES.some((r) => u === r || (r === '/paper/' && u.startsWith(r))) ? paperDate : null;

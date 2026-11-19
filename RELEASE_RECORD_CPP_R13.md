@@ -17,4 +17,6 @@ Say "infrastructure". A fresh search on 18 November 2026 showed that search engi
 - llms.txt gains a "Scope" section.
 - README: the first paragraph says infrastructure, not team or project capacity; links the questions page.
 
+- Three housekeeping pages (`/privacy/`, `/changes/`, `/circle/`) carry noindex and leave the sitemap (96 URLs), so search engines judge the site on its substance. Search Console on 18 November showed 49 pages "crawled, currently not indexed", including key pages; the main remedies are links from elsewhere and requested indexing, which follow this release.
+
 URLs are unchanged.
