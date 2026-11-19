@@ -6,7 +6,7 @@ Say "infrastructure". A fresh search on 18 November 2026 showed that search engi
 |---|---|
 | Date | 18 November 2026 |
 | Worker | `cpp-anacay` |
-| Live version | (fill in at deploy) |
+| Live version | `9776861b-9e8c-4bb1-a8ba-f743bd2e575d`, deployed 2026-11-18 from merge commit `1d4d625` |
 | Previous version | R12, `a4a1a0a9-216a-4daa-8109-6374d2e64664` |
 
 ## What changed
