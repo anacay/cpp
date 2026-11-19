@@ -6,7 +6,7 @@ Each editor lists their employer, or at least their sector, and keeps it current
 
 | Editor | Since | Employer or sector | Status |
 |---|---|---|---|
-| Guillermo Martinez | Seed edition, v0.1 | Founder and steward; co-founder of Anacay, the host | Active |
+| Guillermo Martinez | Seed edition, v0.1 | Infrastructure capacity planning (sector). Founder and steward. Also co-founder of Anacay, the host. | Active |
 
 ## Conduct reports, for now
 

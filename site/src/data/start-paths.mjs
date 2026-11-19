@@ -97,6 +97,20 @@ export const doors = [
     first: { item: 'q3', text: 'Describe how a fair accelerator forum should decide, in general terms.', title: 'How an accelerator forum should decide', prompt: 'When accelerators are short, a fair forum would decide like this, in general terms: …' },
   },
   {
+    id: 'chip-experts', name: 'Chip and accelerator experts', time: '23 minutes',
+    who: 'You know the chip, its interconnect and its power. Planning asks when to order it, in what shape, and who gets it when it runs short.',
+    steps: [
+      ['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets', 5, 'Power binds, topology is a shape, and a busy chip isn’t a productive one.'],
+      ['Supply layers and lead times', '/guide/concepts/supply-layers-and-lead-times/', 5, 'Why chips, halls and power each have their own order-by date.'],
+      ['Approval and allocation', '/guide/concepts/approval-and-allocation/', 4, 'An approved ask still has to become chips of the right shape, place and time.'],
+      ['Buildings at AI density', '/notes/buildings-at-ai-density/', 9, 'What planning loses when halls stop being interchangeable.'],
+    ],
+    aha: 'A fleet can hold enough chips and still be unable to place one training run, because topology is a shape.',
+    ahaSource: ['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets'],
+    problems: ['q3', 'q13', 'mix-owner'],
+    first: { item: 'q13', thread: 'accelerators', text: 'Tell planners what they get wrong about accelerators, in general terms.', title: 'What planners get wrong about accelerators', prompt: 'From the hardware side, here is what capacity planning often gets wrong about accelerators, in general terms: …' },
+  },
+  {
     id: 'resource-managers', name: 'Coming from resource or quota management?', time: '15 minutes',
     who: 'You hand out quota, budgets or shared resources, and arbitrate who gets what. Capacity planning is the same problem, a year earlier.',
     steps: [
@@ -158,7 +172,7 @@ export const doors = [
 
 export const doorPages = () => doors.filter((d) => d.page);
 // The Commons tag each door's first post carries.
-export const DOOR_TAGS = { new: 'first-question', practicing: 'forecasting', senior: 'forecasting', head: 'forecasting', 'program-managers': 'gpu', 'resource-managers': 'path-resource-managers', sre: 'cloud', finance: 'cost', supply: 'supply' };
+export const DOOR_TAGS = { new: 'first-question', practicing: 'forecasting', senior: 'forecasting', head: 'forecasting', 'program-managers': 'gpu', 'chip-experts': 'gpu', 'resource-managers': 'path-resource-managers', sre: 'cloud', finance: 'cost', supply: 'supply' };
 export const minutes = (d) => d.steps.reduce((n, s) => n + s[2], 0);
 // Each door's headline time is the sum of its steps, so the two never
 // disagree. (The summary step is 5 minutes, as /summary/ counts its text.)

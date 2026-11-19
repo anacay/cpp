@@ -1,6 +1,8 @@
 ---
 title: Second lives
+seoTitle: Second lives for old hardware in infrastructure planning
 short: Capacity that comes back out of the fleet arrives in parts, of uncertain condition, as a byproduct of other decisions. The second emerging-topics working note.
+description: Capacity that comes back out of the fleet arrives in parts, of uncertain condition, as a byproduct of other decisions. A working note.
 kind: note
 order: 5
 cadence: quarterly

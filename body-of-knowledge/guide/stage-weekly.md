@@ -1,5 +1,6 @@
 ---
 title: "Weekly: steer, bridge, test before launch"
+seoTitle: Weekly infrastructure capacity planning: steer and bridge
 short: Between monthly reviews, you arbitrate, broker trades, run the bridges, test the coefficient before launch and keep the ledger true.
 kind: stage
 order: 13

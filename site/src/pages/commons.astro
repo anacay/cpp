@@ -5,22 +5,24 @@
 // no-hiring rule sits inside [data-rule] (check 9 skips it there only).
 import Base from '../layouts/Base.astro';
 import RoomRule from '../components/RoomRule.astro';
-import { room, stream, tags, tagUrl, later, circle, consented, person, firstQuestion, anyPost } from '../data/room.mjs';
+import LiveThreads from '../components/LiveThreads.astro';
+import { room, stream, tags, tagUrl, later, circle, consented, person, firstQuestion, anyPost, threadUrl } from '../data/room.mjs';
 const mail = `mailto:${room.contact}`;
 const coOrganizers = consented(circle.coOrganizers);
 const founder = person('founder');
 const list = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}` : xs[0]);
 ---
-<Base seoTitle="The Commons: a community for infrastructure capacity planners" title={room.name} description="The Commons is where capacity planners meet to ask, argue and learn, in one place on GitHub Discussions. The best threads become CPP pages, credited by name." nav="room">
+<Base seoTitle="The Commons: a community for infrastructure capacity planners" title={room.name} description="The Commons is where infrastructure capacity planners meet to ask, argue and learn on GitHub Discussions. The best threads become CPP pages, credited by name." nav="room">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">The Commons</p>
       <h1>{room.name}</h1>
-      <p class="lede">Where capacity planners meet to ask, argue and learn, in one place on GitHub Discussions. Ask a question, share an observation or a link, or ask “how do you handle X?”</p>
+      <p class="lede">Where infrastructure capacity planners meet to ask, argue and learn, in one place on GitHub Discussions. Ask a question, share an observation or a link, or ask “how do you handle X?”</p>
       <p class="hero__actions"><a class="btn" href={anyPost()}>Post a question</a> <a class="btn btn--quiet" href={stream.url}>Read The Commons</a></p>
       <p class="muted">New to GitHub? A free account takes two minutes. See <a href="/join/">Join in</a>.</p>
-      <p class="muted">Leaders emerge by doing. <a href="/join/#lead-h">Lead something small</a>: host a week, welcome newcomers, or keep a topic.</p>
+      <p class="muted">Leaders emerge by doing. <a href={threadUrl('lead')}>Lead something small</a>: host a week, welcome newcomers, or keep a topic.</p>
     </div>
+    <div class="reading"><LiveThreads /></div>
 
     <section class="prose reading" aria-labelledby="why">
       <h2 id="why">Why The Commons</h2>

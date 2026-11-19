@@ -144,7 +144,7 @@ alphabetical, with where each term is used), `/downloads/`, `/404.html`,
    neighbours. The served SVG is byte-identical to the paper's, and each
    figure appears once in the visual tour, in order.
 3. There are no external URLs in `src`/`href`. The exceptions are outbound
-   links inside reference lists (`.refs`), the steward link to anacay.com and
+   links inside reference lists (`.refs`), the host link to anacay.org and
    the site's own canonical URL.
 4. There are no `<script>` tags and no emitted JavaScript.
 5. Every internal link resolves, anchors included, and no page has duplicate
@@ -174,7 +174,7 @@ anacay.com:
 Plate widths follow the manifest's `canvas` (`.plate--band`, `--standard`,
 `--tall`, `--page`). The mark (`src/components/Mark.astro`,
 `public/favicon.svg`) reuses the parent star's ring and orbiting point around a
-rising step. Anacay's own star (`Star.astro`) appears only beside the steward
+rising step. Anacay's own star (`Star.astro`) appears only beside the host
 line.
 
 To restyle the figures themselves, see `06_WHITEPAPER/web/README.md` and

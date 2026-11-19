@@ -135,7 +135,7 @@ const mdText = (m) => squash(cheerio.load(md.render(m)).root().text());
 // ── 3. External URLs ─────────────────────────────────────────────────────────
 {
   const c = check('3. No external URLs in src/href, except reference, source and community links');
-  const allowedHosts = new Set([new URL(config.site.steward.url).host, new URL(config.site.url).host]);
+  const allowedHosts = new Set([new URL(config.site.host.url).host, new URL(config.site.url).host]);
   // Community links (the repository, the group) are allowed on any <a>; other
   // outbound links only inside reference lists (.refs) or cited-source blocks
   // ([data-outbound]). Nothing external is ever loaded (src).
@@ -161,7 +161,7 @@ const mdText = (m) => squash(cheerio.load(md.render(m)).root().text());
   }
   c.notes.push(`${refLinks} outbound links inside reference lists, ${srcLinks} inside cited-source blocks, ${commLinks} community links (allowed)`);
   const own = [...allowed.keys()].filter((v) => v.startsWith(config.site.url)).length;
-  c.notes.push(`also allowed: the steward link (${config.site.steward.url}) and ${own} canonical/og:url self-references to ${config.site.url}`);
+  c.notes.push(`also allowed: the host link (${config.site.host.url}) and ${own} canonical/og:url self-references to ${config.site.url}`);
   // Stylesheets must be the site's own, and no @import or url() pointing out.
   for (const f of fs.readdirSync(path.join(dist, '_astro'))) {
     if (f.endsWith('.css') && /url\(\s*['"]?(https?:)?\/\//.test(fs.readFileSync(path.join(dist, '_astro', f), 'utf8'))) c.fails.push(`external url() in ${f}`);

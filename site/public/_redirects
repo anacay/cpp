@@ -18,3 +18,6 @@
 /guide /body-of-knowledge/ 301
 /guide/concepts/ /body-of-knowledge/#concept 301
 /guide/concepts /body-of-knowledge/#concept 301
+
+# The share card was renamed so link previews refresh (R14).
+/og/card.jpg /og/card-r14.jpg 301

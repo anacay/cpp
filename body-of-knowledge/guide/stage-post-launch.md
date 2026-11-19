@@ -1,6 +1,8 @@
 ---
 title: "Post-launch: measure, restate, re-baseline"
+seoTitle: After launch: measure and re-baseline infrastructure capacity
 short: After launch, actuals become the next coefficient, misses are split by owner, declarations are scored, and what you learn feeds the next quarterly intake and, through it, the next annual plan.
+description: After launch, actuals become the next coefficient, misses are split by owner, declarations are scored, and the lessons feed the next plan.
 kind: stage
 order: 14
 cadence: post-launch

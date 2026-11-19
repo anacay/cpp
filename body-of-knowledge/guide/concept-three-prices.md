@@ -1,6 +1,6 @@
 ---
 title: Three prices
-seoTitle: Pricing capacity: three prices, three questions
+seoTitle: Pricing infrastructure capacity: three prices, three questions
 short: "What does capacity cost?" is three questions (who pays, should we build, who gets it now), and each needs its own price.
 kind: concept
 order: 33

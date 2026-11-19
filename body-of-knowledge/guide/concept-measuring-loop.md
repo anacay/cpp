@@ -1,5 +1,6 @@
 ---
 title: The measuring loop
+seoTitle: The measuring loop in infrastructure capacity planning
 short: Watch the ratio between a business driver and the resources it uses, alert when it shifts, and treat every change to it as a new version of a price.
 kind: concept
 order: 38

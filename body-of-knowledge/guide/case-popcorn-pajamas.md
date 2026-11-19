@@ -1,6 +1,8 @@
 ---
 title: Case 2: Popcorn Pajamas
+seoTitle: Case 2: Popcorn Pajamas, an infrastructure capacity case
 short: A fictional streaming service's whole capacity problem, built from public information. The case leaves the answers open; a companion page shows how the practice approaches it.
+description: A fictional streaming service's whole infrastructure capacity problem, built from public information. The answers are left open for planners to argue.
 kind: case
 order: 2
 cadence: all

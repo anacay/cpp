@@ -70,6 +70,8 @@ function parse(file, src) {
     // Optional search title (R10): the page's own words, with the field named.
     seoTitle: fm.seoTitle || undefined,
     short: fm.short,
+    // Optional meta description (R14) when `short` runs past 158 characters.
+    description: fm.description || fm.short,
     kind: fm.kind,
     order: Number(fm.order),
     cadence: expand(fm.cadence, CADENCES),

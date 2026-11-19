@@ -44,7 +44,7 @@ Say in the "Governance" category if you'd like to take one on, or write to [cpp@
 
 **What.** What a capacity planner needs to know and do, at a few levels: learning, practicing, leading. Areas might include demand and forecasting, supply and lead times, cost and coefficients, contracts, finance, operating cadence, and the people work of brokering an agreement.
 
-**Why.** Many new planners come in from hardware, accelerators or infrastructure engineering [argued]. They know the machines well. The map shows what else the job asks, and where to learn it. It also helps managers hire and grow planners.
+**Why.** Many new planners come in from hardware, accelerators or infrastructure engineering [argued]. They know the machines well. The map shows what else the job asks, and where to learn it. It also helps managers grow planners and plan their teams' learning.
 
 **A first version looks like.** One page: areas down the side, levels across the top, a sentence in each cell, and links into the body of knowledge and the reading list.
 

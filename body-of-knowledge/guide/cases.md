@@ -1,5 +1,6 @@
 ---
 title: Cases
+seoTitle: Infrastructure capacity planning case studies
 short: The seed paper's worked example told as a case, two problem-space cases, and the format to use when you write one of your own.
 kind: across
 order: 22

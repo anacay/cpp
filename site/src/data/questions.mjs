@@ -5,6 +5,8 @@
 // named as anyone's employer; public sources only, as the guide cites them.
 // `more`: [label, url] pairs, internal pages only; the build checks the links.
 // `tag`: a Commons tag from room.mjs, or null.
+// `thread`: a key in THREADS (room.mjs) when a live thread already asks this;
+// the page then links to it instead of opening a new post (R14).
 import { SCOPE_Q, SCOPE_A } from './entity.mjs';
 
 export const QUESTION_GROUPS = [
@@ -28,7 +30,7 @@ export const QUESTIONS = [
     a: 'Follow one path. Read the one page, then four concepts: the coefficient, demand and declarations, commit points, and approval and allocation. Then work one case with the worksheet. If you come from another field, pick the door for your background.',
     more: [['Start by role', '/start/'], ['The one page', '/one-page/']] },
 
-  { id: 'forecast-a-launch-with-no-history', group: 'demand', tag: 'forecasting',
+  { id: 'forecast-a-launch-with-no-history', group: 'demand', tag: 'forecasting', thread: 'forecasting',
     q: 'How do you forecast demand for a launch with no history?',
     a: 'A trend can extend organic growth, but not a step change with no history. The substitute is a declaration: a signed statement of expected demand, in units the planner already prices. Check it against how comparable declarations turned out. It firms up in stages: intent, dated, configured, live and organic.',
     more: [['Demand and declarations', '/guide/concepts/demand-and-declarations/']] },
@@ -67,7 +69,7 @@ export const QUESTIONS = [
     a: 'A coefficient is the amount of a resource a service uses per unit of the driver of its load, such as CPU time per request. The planner reads it as a load forecast and the caller reads it as a price. The seed paper argues it is an agreement, so it needs an owner, versions and restating at breaks.',
     more: [['The coefficient', '/guide/concepts/the-coefficient/'], ['The seed paper, Section 5', '/paper/5-coefficients-are-agreements/']] },
 
-  { id: 'plan-gpu-capacity', group: 'ai', tag: 'gpu',
+  { id: 'plan-gpu-capacity', group: 'ai', tag: 'gpu', thread: 'accelerators',
     q: 'How do you plan capacity for GPUs and AI accelerators?',
     a: 'The structure holds, but the units move. For the largest operators, by their own public account, the binding constraint has moved toward power. Topology is a shape, so a fleet can hold enough chips and still be unable to place a training run. A busy chip is not always a productive one.',
     more: [['AI and accelerator fleets', '/guide/settings/#ai-and-accelerator-fleets'], ['Buildings at AI density', '/notes/buildings-at-ai-density/']] },

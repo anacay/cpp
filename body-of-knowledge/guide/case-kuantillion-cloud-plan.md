@@ -1,6 +1,7 @@
 ---
 title: Kuantillion Cloud: the execution plan
 short: The practice's answer to Case 3, turned into a plan a program lead can run: who decides what, the first 90 days, seven decision gates (G0–G6), the standing cadence, the rules to sign, the measures, the experiments and the playbook.
+description: The practice's answer to Case 3 as a plan a program lead can run: who decides, the first 90 days, seven decision gates, the cadence and the measures.
 kind: case
 order: 3.3
 cadence: all

@@ -6,11 +6,11 @@ import Base from '../layouts/Base.astro';
 import Cite from '../components/Cite.astro';
 import FromAnswer from '../components/FromAnswer.astro';
 import { load } from '../lib/paper.mjs';
-import { streamPost, anyPost } from '../data/room.mjs';
+import { streamPost, anyPost, threadUrl } from '../data/room.mjs';
 import { QUESTIONS, QUESTION_GROUPS } from '../data/questions.mjs';
 const { config } = load();
 const url = new URL('/questions/', config.site.url).href;
-const ask = (x) => streamPost({ title: x.q, text: `A follow-up on “${x.q}”:`, tag: x.tag, from: { name: `Questions: ${x.q}`, url: `/questions/#${x.id}` } });
+const ask = (x) => x.thread ? threadUrl(x.thread) : streamPost({ title: x.q, text: `A follow-up on “${x.q}”:`, tag: x.tag, from: { name: `Questions: ${x.q}`, url: `/questions/#${x.id}` } });
 const plain = (h) => h.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const ld = [
   { '@context': 'https://schema.org', '@type': 'FAQPage', '@id': url + '#faq', url, inLanguage: 'en',
@@ -19,7 +19,7 @@ const ld = [
 ];
 ---
 <Base seoTitle="Infrastructure capacity planning questions, answered" title="Questions" ld={ld} nav="bok"
-  description="Questions infrastructure capacity planners ask, answered in a few sentences each: forecasting launches, lead times, headroom, chargeback, FinOps and AI accelerators.">
+  description="Infrastructure capacity planning questions, answered in a few sentences: launch forecasts, lead times, headroom, chargeback, FinOps and AI accelerators.">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">Questions, answered</p>
@@ -37,7 +37,7 @@ const ld = [
           <div class="qa">
             <h3 id={x.id}>{x.q}</h3>
             <p>{x.a}</p>
-            <p class="qa__more">Read more: {x.more.map(([l, u], i) => <>{i > 0 && ' · '}<a href={u}>{l}</a></>)} · <a href={ask(x)}>Discuss this in The Commons</a></p>
+            <p class="qa__more">Read more: {x.more.map(([l, u], i) => <>{i > 0 && ' · '}<a href={u}>{l}</a></>)} · <a href={ask(x)}>{x.thread ? 'Join the live thread' : 'Discuss this in The Commons'}</a></p>
           </div>
         ))}
       </section>

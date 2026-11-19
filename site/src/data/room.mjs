@@ -28,6 +28,18 @@ export const stream = {
   signup: 'https://github.com/signup',
 };
 
+// Live threads the site points newcomers at, so first replies gather in one
+// place instead of splitting into new posts (R14). Numbers are GitHub
+// Discussion numbers. `introduce` and `lead` are created by the R14 runbook;
+// if GitHub assigns other numbers, the runbook updates them here before build.
+export const THREADS = {
+  forecasting: 44, // How do you forecast a launch that has no history?
+  accelerators: 45, // Planning accelerators: what's different from CPUs, and what isn't?
+  introduce: 47, // Introduce yourself
+  lead: 48, // Lead something small: say what you'll take on
+};
+export const threadUrl = (key) => `${repo}/discussions/${THREADS[key]}`;
+
 // Starter tags. Write them as words in a post (#supply) or add them as
 // labels. More tags emerge from use; add one here once it is in use.
 export const tags = [

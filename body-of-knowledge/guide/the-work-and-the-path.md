@@ -1,6 +1,6 @@
 ---
 title: "The work and the path"
-seoTitle: What a capacity planner does, and how the role grows
+seoTitle: What an infrastructure capacity planner does, and the path
 short: What a capacity planner does, how people come into the role, and how the work grows from one service to the whole fleet, then forks.
 kind: foundation
 order: 1
