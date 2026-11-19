@@ -1,6 +1,8 @@
 ---
 title: "Monthly: commit, fulfil, name the gap"
+seoTitle: Monthly infrastructure capacity planning: commit and fulfil
 short: Each month, supply answers every approved ask with a date or a named gap, launches are re-ranked against what supply can do, and the ledger shows where each ask has got to.
+description: Each month, supply answers every approved ask with a date or a named gap, launches are re-ranked, and the ledger shows where each ask stands.
 kind: stage
 order: 12
 cadence: monthly

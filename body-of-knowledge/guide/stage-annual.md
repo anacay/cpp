@@ -1,5 +1,6 @@
 ---
 title: "Annual: the envelope and strategic bets"
+seoTitle: Annual infrastructure capacity planning: envelope and bets
 short: What you settle once a year, before finance locks its budget, and why the slowest supply has to be decided here.
 kind: stage
 order: 10

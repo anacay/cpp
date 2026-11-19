@@ -1,5 +1,6 @@
 ---
 title: The operating mechanisms
+seoTitle: Operating mechanisms for infrastructure capacity planning
 short: Thirteen artifacts, each with an owner and an indicator, keep the agreement true from one cycle to the next; nine decision rights sit beside them.
 kind: concept
 order: 37

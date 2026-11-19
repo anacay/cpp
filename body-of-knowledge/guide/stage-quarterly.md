@@ -1,6 +1,6 @@
 ---
 title: "Quarterly: forecast, declare, agree the coefficients"
-seoTitle: The quarterly capacity plan: forecast, agree, order
+seoTitle: The quarterly infrastructure capacity plan
 short: Where demand is specified in driver units, supply answers in its own review, and medium-lead orders go in.
 kind: stage
 order: 11

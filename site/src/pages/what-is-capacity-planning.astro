@@ -10,6 +10,10 @@ import FromAnswer from '../components/FromAnswer.astro';
 import { anyPost } from '../data/room.mjs';
 import { load } from '../lib/paper.mjs';
 import { DEFINITION, ENTITY, SCOPE_Q, SCOPE_A } from '../data/entity.mjs';
+import { QUESTIONS } from '../data/questions.mjs';
+// Where /questions/ already answers a question, reuse its words exactly, so the
+// same question never gets two answers on this site (R14).
+const Q = (id, link) => { const x = QUESTIONS.find((y) => y.id === id); if (!x) throw new Error(`what-is: unknown question ${id}`); return [x.q, `${x.a} ${link}`]; };
 const { config } = load();
 const site = config.site;
 
@@ -18,19 +22,15 @@ const faq = [
   [SCOPE_Q, SCOPE_A],
   ['How is capacity planning different from capacity management?',
    'Capacity management, as ITIL describes it, is the wider practice of making sure services have the capacity and performance they need, now and later. Capacity planning is its forward-looking core. It decides what to add, where and when, often months or years ahead.'],
-  ['What does a capacity planner do?',
-   'A capacity planner turns demand forecasts into supply commitments. They gather what teams expect to need, convert it into resources, and decide what to order and when. They also broker the agreement between the teams who fund capacity, build it and use it. <a href="/guide/the-work-and-the-path/">The work and the path</a> describes the role at each level.'],
+  Q('what-does-a-capacity-planner-do', 'See <a href="/guide/the-work-and-the-path/">The work and the path</a>.'),
   ['Why does capacity have to be planned so far ahead?',
    'Each layer of supply has its own lead time. Cloud capacity can arrive in minutes, machines in months, and buildings and power in years. A plan has to commit each layer before its lead time runs out, while demand is still uncertain. See <a href="/guide/concepts/supply-layers-and-lead-times/">supply layers and lead times</a> and <a href="/guide/concepts/commit-points/">commit points</a>.'],
   ['How is demand forecast for capacity?',
    'Organic growth can be forecast from a trend. Launches, migrations and new customers arrive as steps, so a trend misses them. The practice asks for a declaration instead: a signed statement of expected demand, which firms up in stages. See <a href="/guide/concepts/demand-and-declarations/">demand and declarations</a>.'],
-  ['Why do capacity plans miss even when the forecast was right?',
-   'Approved capacity is not yet usable capacity. It still has to arrive in the right shape, place and time, and reach the team that needs it. Many misses happen in that gap. See <a href="/guide/concepts/approval-and-allocation/">approval and allocation</a>.'],
-  ['What is a coefficient in capacity planning?',
-   'A coefficient is the amount of a resource a service uses per unit of the thing that drives its load, such as CPU time per request. Cost is the driver volume, times the coefficient, times the rate. The seed paper argues that a coefficient is an agreement that someone owns and versions. See <a href="/guide/concepts/the-coefficient/">the coefficient</a>.'],
-  ['How is capacity planned for AI accelerators?',
-   'The structure holds, but the units move. For the largest operators, by their own public account, power has become the binding constraint. Topology is a shape, so a fleet can hold enough chips and still be unable to place a training run. A busy chip is not always a productive one. See <a href="/guide/settings/#ai-and-accelerator-fleets">AI and accelerator fleets</a>.'],
-  ['Is there an open body of knowledge for capacity planning?',
+  Q('plans-miss-when-forecast-was-right', 'See <a href="/guide/concepts/approval-and-allocation/">approval and allocation</a>.'),
+  Q('what-is-a-coefficient', 'See <a href="/guide/concepts/the-coefficient/">the coefficient</a>.'),
+  Q('plan-gpu-capacity', 'See <a href="/guide/settings/#ai-and-accelerator-fleets">AI and accelerator fleets</a>.'),
+  ['Is there an open body of knowledge for infrastructure capacity planning?',
    `Yes. ${ENTITY} It has a <a href="/body-of-knowledge/">guide</a>, a <a href="/glossary/">glossary</a>, <a href="/cases/">case studies</a> and a seed paper, and practitioners meet in <a href="/commons/">The Commons</a>.`],
 ];
 const text = (h) => h.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -38,10 +38,10 @@ const url = new URL('/what-is-capacity-planning/', site.url).href;
 const ld = [
   { '@context': 'https://schema.org', '@type': 'FAQPage', '@id': url + '#faq', url, inLanguage: 'en',
     mainEntity: [['What is infrastructure capacity planning?', DEFINITION], ...faq].map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: text(a) } })) },
-  { '@context': 'https://schema.org', '@type': 'DefinedTerm', name: 'Capacity planning', description: DEFINITION, url, inDefinedTermSet: new URL('/glossary/', site.url).href + '#set' },
+  { '@context': 'https://schema.org', '@type': 'DefinedTerm', name: 'Infrastructure capacity planning', alternateName: 'Capacity planning (infrastructure)', description: DEFINITION, url, inDefinedTermSet: new URL('/glossary/', site.url).href + '#set' },
 ];
 ---
-<Base seoTitle="What is infrastructure capacity planning? A plain definition" title="What is capacity planning?" description="A plain definition of infrastructure capacity planning (compute, data centres, accelerators), with short answers on what planners do, why lead times matter, how demand is forecast and how AI fleets differ." ld={ld} nav="bok">
+<Base seoTitle="What is infrastructure capacity planning? A plain definition" title="What is capacity planning?" description="What infrastructure capacity planning is, in one sentence, with short answers on what planners do, lead times, demand forecasts and AI accelerator fleets." ld={ld} nav="bok">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">A plain answer</p>

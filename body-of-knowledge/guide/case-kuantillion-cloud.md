@@ -1,6 +1,8 @@
 ---
 title: Case 3: Kuantillion Cloud
+seoTitle: Case 3: Kuantillion Cloud, an infrastructure capacity case
 short: A fictional hyperscale fleet trying to get the most from its older flash drives during a flash shortage, with the problem set out in full and the practice's answer beside it.
+description: A fictional hyperscale fleet stretching its older flash drives through a flash shortage. An infrastructure capacity planning case, with the practice's answer.
 kind: case
 order: 3
 cadence: all

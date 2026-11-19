@@ -1,6 +1,7 @@
 ---
 title: Kuantillion Cloud: how the practice solves it
 short: A practitioner's strategy for Case 3. How to see the problem through the body of knowledge, break it into decisions and sequence the work, with every move linked to its theory.
+description: A practitioner's strategy for Case 3: see the problem through the body of knowledge, break it into decisions and sequence the work.
 kind: case
 order: 3.2
 cadence: all

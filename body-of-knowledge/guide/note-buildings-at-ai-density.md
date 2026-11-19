@@ -1,5 +1,6 @@
 ---
 title: Buildings at AI density
+seoTitle: Data centre buildings at AI density: infrastructure planning
 short: The shell used to be fungible, and half the discipline quietly leaned on that. The first emerging-topics working note.
 kind: note
 order: 4

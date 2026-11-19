@@ -1,6 +1,6 @@
 ---
 title: Demand and declarations
-seoTitle: Demand forecasting for step changes: declarations
+seoTitle: Infrastructure demand forecasting for step changes
 short: Demand forecasting for step changes. How launch demand enters a plan as a declaration that firms up in five stages, and how you score it.
 kind: concept
 order: 30

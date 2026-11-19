@@ -1,5 +1,6 @@
 ---
 title: Limits: where this breaks
+seoTitle: Limits of infrastructure capacity planning methods
 short: Where the discipline stops working, what nobody has measured in public, and what the guide itself only argues.
 kind: across
 order: 23

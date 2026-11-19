@@ -1,7 +1,8 @@
 ---
 title: Commit points and the commit-point method
-seoTitle: Commit points: when to order each layer of capacity
+seoTitle: Commit points: when to order each layer of infrastructure
 short: Each supply layer has a last date it can be ordered; the method reads how firm a launch is at each one and decides what to commit, in what form, and who owns the rest.
+description: Each supply layer has a last date it can be ordered. The commit-point method reads how firm a launch is at each one and decides what to commit.
 kind: concept
 order: 35
 cadence: annual, quarterly, monthly, weekly

@@ -1,5 +1,6 @@
 ---
 title: People: brokering the handshake
+seoTitle: The people side of infrastructure capacity planning
 short: How you work between capital, supply and demand when you own no capacity and no budget, and where your standing to say no comes from.
 kind: across
 order: 20

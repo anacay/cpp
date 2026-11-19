@@ -19,7 +19,13 @@ const figs = (p) => p.blocks.filter((b) => b.type === 'figure').length;
 const deepWords = ctx.chapters.reduce((n, c) => n + wordCount(c.blocks), 0);
 // Citations for machines: the reference list as structured data, and the
 // Google Scholar (Highwire) tags for the paper and its PDF.
-const refs = references(ctx).map((r) => ({ '@type': 'CreativeWork', name: r.text.slice(0, 300), ...(r.url ? { url: r.url } : {}) }));
+// Working notes in square brackets ("[Secondary]", "[Not re-consulted]") are
+// for editors, not machines; long entries end at a word, not mid-word (R14).
+const refName = (t) => {
+  const clean = t.replace(/\s*\[[^\]]*\]\s*/g, ' ').replace(/\s+/g, ' ').trim();
+  return clean.length <= 300 ? clean : clean.slice(0, 300).replace(/\s+\S*$/, '') + '…';
+};
+const refs = references(ctx).map((r) => ({ '@type': 'CreativeWork', name: refName(r.text), ...(r.url ? { url: r.url } : {}) }));
 const pdf = downloads.find((d) => d.key === 'pdf');
 const hw = [
   ['citation_title', ctx.manifest.title],
@@ -31,7 +37,7 @@ const hw = [
   ...(pdf ? [['citation_pdf_url', new URL(pdf.href, ctx.config.site.url).href]] : []),
 ];
 ---
-<Base meta={hw} seoTitle="The Coefficient Is an Agreement: a capacity planning paper" ld={{ '@context': 'https://schema.org', '@type': 'ScholarlyArticle', '@id': new URL('/paper/', ctx.config.site.url).href + '#paper', datePublished: '2026-10-08', dateModified: new Date(`${versions.versions[0].date} 12:00 UTC`).toISOString().slice(0, 10), image: new URL('/og/card.jpg', ctx.config.site.url).href, headline: ctx.manifest.title, citation: refs,  alternativeHeadline: ctx.manifest.subtitle, author: { '@type': 'Person', name: ctx.config.site.founder.name }, version: ctx.manifest.version.replace(/\s*draft$/, ''), inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/', url: new URL('/paper/', ctx.config.site.url).href, isPartOf: { '@type': 'WebSite', name: ctx.config.site.name, url: ctx.config.site.url }, publisher: { '@type': 'Organization', name: 'Anacay', url: 'https://anacay.org' }, keywords: 'capacity planning, demand forecasting, supply planning, cost drivers, request for comments' }} title="The paper" description={`${ctx.manifest.title}: ${ctx.manifest.subtitle}. Contents, from the abstract to the appendices.`} nav="paper" commentable={{ name: "The seed paper, contents" }}>
+<Base meta={hw} seoTitle="The Coefficient Is an Agreement: an infrastructure capacity planning paper" ld={{ '@context': 'https://schema.org', '@type': 'ScholarlyArticle', '@id': new URL('/paper/', ctx.config.site.url).href + '#paper', datePublished: '2026-10-08', dateModified: new Date(`${versions.versions[0].date} 12:00 UTC`).toISOString().slice(0, 10), image: new URL('/og/card-r14.jpg', ctx.config.site.url).href, headline: ctx.manifest.title, citation: refs,  alternativeHeadline: ctx.manifest.subtitle, author: { '@type': 'Person', name: ctx.config.site.founder.name }, version: ctx.manifest.version.replace(/\s*draft$/, ''), inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/', url: new URL('/paper/', ctx.config.site.url).href, isPartOf: { '@id': ctx.config.site.url + '/#website' }, publisher: { '@id': ctx.config.site.url + '/#practice' }, keywords: 'infrastructure capacity planning, capacity planning, demand forecasting, supply planning, cost drivers, request for comments' }} title="The paper" description={`${ctx.manifest.title}: ${ctx.manifest.subtitle}. Contents, from the abstract to the appendices.`} nav="paper" commentable={{ name: "The seed paper, contents" }}>
   <div class="wrap wrap--reading">
     <div class="page-head"><p class="eyebrow"><a href="/body-of-knowledge/">Body of knowledge</a> · The seed paper · Request for comments</p></div>
     <RfcHint />

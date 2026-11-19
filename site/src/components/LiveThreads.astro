@@ -1,0 +1,15 @@
+---
+// "The room is new": an honest invitation to be among the first voices, with
+// doors to the live threads (R14). Used on home, /join/ and /commons/.
+import { threadUrl } from '../data/room.mjs';
+interface Props { heading?: boolean }
+const { heading = true } = Astro.props;
+---
+<div class="note live-threads">
+  {heading && <p><strong>The room is new. Your first post shapes it.</strong> Early voices set the tone, the topics and the leads. Start in one of these:</p>}
+  <ul>
+    <li><a href={threadUrl('introduce')}>Introduce yourself</a>: what you plan, and what you want to learn.</li>
+    <li><a href={threadUrl('forecasting')}>How do you forecast a launch that has no history?</a></li>
+    <li><a href={threadUrl('accelerators')}>Planning accelerators: what’s different from CPUs, and what isn’t?</a></li>
+  </ul>
+</div>

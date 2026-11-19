@@ -1,7 +1,8 @@
 ---
 title: Approval and allocation
-seoTitle: Approval and allocation in capacity planning
+seoTitle: Approval and allocation in infrastructure capacity planning
 short: Approving an ask in a common unit prices it but doesn't deliver machines of the right shape, in the right place, on time, so the gap needs an owner and a ledger.
+description: Approving an ask prices it but doesn't deliver machines of the right shape, in the right place, on time. The gap needs an owner and a ledger.
 kind: concept
 order: 34
 cadence: quarterly, monthly, weekly

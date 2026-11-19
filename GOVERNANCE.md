@@ -38,7 +38,7 @@ Editors don't get the last word because they're editors. They get it because the
 
 **At the start,** the only editor is the founder, Guillermo Martinez.
 
-**Next,** we'll recruit a small editorial group of three to five practitioners. We're looking for people who:
+**Next,** we'll invite a small editorial group of three to five practitioners. We're looking for people who:
 
 - plan, or have planned, capacity for real systems;
 - come from different settings: large fleets, AI fleets, cloud, mid-sized companies, supply and finance;
@@ -52,7 +52,7 @@ Seniority doesn't matter. A planner two years in, who remembers what was confusi
 1. Anyone can nominate someone, including themselves, in the "Governance" discussion category. A good nomination points to a few useful contributions.
 2. The nomination stays open for 14 days. Anyone can comment.
 3. The current editors decide by consensus. While there's only one editor, the founder decides and writes down why.
-4. The steward confirms. It can only refuse for a Code of Conduct reason, and it has to say so.
+4. The steward confirms. He can only refuse for a Code of Conduct reason, and has to say why.
 
 Editors serve one edition at a time and can renew. Anyone can step down at any time, no explanation needed. An editor who's been inactive for six months moves to emeritus and is still credited.
 
@@ -86,7 +86,7 @@ Anyone can propose moving to the next stage in the "Governance" category. Change
 
 ## How the steward hands over
 
-When the community body is ready, or if the steward can no longer do the job, the steward and Anacay will:
+When the community body is ready, the steward hands over. Anacay, as host, transfers what it holds. Together they:
 
 1. **Transfer the repository** to an organization the community controls, with its full history, issues and discussions.
 2. **Transfer the LinkedIn page** by making the community's chosen people admins, then stepping down.

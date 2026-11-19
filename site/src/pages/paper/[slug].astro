@@ -36,7 +36,7 @@ const url = new URL(page.url, ctx.config.site.url).href;
 const abs = (u) => new URL(u, ctx.config.site.url).href;
 const paperDate = new Date(`${versions.versions[0].date} 12:00 UTC`).toISOString().slice(0, 10);
 const ld = [
-  { '@context': 'https://schema.org', '@type': 'TechArticle', headline: meta.title, description: meta.description, url, mainEntityOfPage: url, image: abs('/og/card.jpg'), inLanguage: 'en',
+  { '@context': 'https://schema.org', '@type': 'TechArticle', headline: meta.title, description: meta.description, url, mainEntityOfPage: url, image: abs('/og/card-r14.jpg'), inLanguage: 'en',
     author: { '@type': 'Person', name: ctx.config.site.founder.name }, dateModified: paperDate, version: ctx.manifest.version,
     isPartOf: { '@type': 'ScholarlyArticle', '@id': abs('/paper/') + '#paper', name: ctx.manifest.title }, license: 'https://creativecommons.org/licenses/by-sa/4.0/' },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
