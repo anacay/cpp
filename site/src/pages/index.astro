@@ -61,13 +61,13 @@ const prior = ['The Computer Measurement Group (roots in 1971)', 'ITIL’s capac
 ---
 <Base ld={[
   { '@context': 'https://schema.org', '@type': 'WebSite', '@id': config.site.url + '/#website', name: config.site.name, alternateName: 'CPP', url: config.site.url + '/', description: ENTITY, inLanguage: 'en', license: 'https://creativecommons.org/licenses/by-sa/4.0/', publisher: { '@id': config.site.url + '/#practice' } },
-  { '@context': 'https://schema.org', '@type': 'Organization', '@id': config.site.url + '/#practice', name: config.site.name, alternateName: 'CPP', url: config.site.url + '/', description: ENTITY, foundingDate: '2026', founder: { '@type': 'Person', name: config.site.founder.name }, sameAs: [c.repo, c.linkedinPage].filter(Boolean), knowsAbout: ['Capacity planning', 'Demand forecasting', 'Infrastructure planning', 'Data center capacity', 'AI accelerator capacity'] },
-]} seoTitle="The Capacity Planning Practice: an open body of knowledge" title={config.site.name} description="An open, non-commercial body of knowledge and community for capacity planners: a guide, a glossary, cases and a seed paper, built from public sources.">
+  { '@context': 'https://schema.org', '@type': 'Organization', '@id': config.site.url + '/#practice', name: config.site.name, alternateName: 'CPP', url: config.site.url + '/', description: ENTITY, foundingDate: '2026', founder: { '@type': 'Person', name: config.site.founder.name }, sameAs: [c.repo, c.linkedinPage].filter(Boolean), knowsAbout: ['Infrastructure capacity planning', 'Capacity planning', 'Demand forecasting', 'Infrastructure planning', 'Data center capacity', 'AI accelerator capacity'] },
+]} seoTitle="The Capacity Planning Practice: open infrastructure capacity planning" title={config.site.name} description="An open, non-commercial body of knowledge and community for infrastructure capacity planners: a guide, a glossary, cases and a seed paper, built from public sources.">
   <div class="wrap">
     <section class="hero" aria-labelledby="hero-h">
       <p class="eyebrow">The Capacity Planning Practice</p>
       <h1 id="hero-h">Let’s build the body of knowledge for capacity planning, together.</h1>
-      <p class="lede">An open, non-commercial <a href="/body-of-knowledge/">body of knowledge</a> and community for capacity planners. It starts from one seed paper, written to be challenged. Planners meet in <a href="/commons/">The Commons</a> to ask, argue and work the open problems.</p>
+      <p class="lede">An open, non-commercial <a href="/body-of-knowledge/">body of knowledge</a> and community for infrastructure capacity planners: compute, data centres, accelerators and power. It starts from one seed paper, written to be challenged. Planners meet in <a href="/commons/">The Commons</a> to ask, argue and work the open problems.</p>
       <p class="hero__actions"><a class="btn" href="/start/">Pick your door</a> <a class="btn btn--quiet" href="/what-is-capacity-planning/">What is capacity planning?</a> <a class="btn btn--quiet" href="/join/">Ask or challenge in The Commons</a></p>
       <p class="muted">Or jump into an open conversation: <a href={`${stream.all}/15`}>when a market price exists, is the coefficient still an agreement?</a> · <a href="/agenda/">all open problems</a></p>
       <RoomRule />

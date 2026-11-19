@@ -1,8 +1,8 @@
 # The Capacity Planning Practice
 
-The Capacity Planning Practice (CPP) is an open, non-commercial body of knowledge and community for capacity planners, built in public from public sources and licensed CC BY-SA 4.0. It covers the terms, methods, cases and sources behind planning the capacity of digital services: compute, storage, network, accelerators, and the power, space and contracts underneath them.
+The Capacity Planning Practice (CPP) is an open, non-commercial body of knowledge and community for infrastructure capacity planners, built in public from public sources and licensed CC BY-SA 4.0. It covers the terms, methods, cases and sources behind planning the capacity of computing infrastructure, not team or project capacity: compute, storage, network, accelerators, and the power, space and contracts underneath them.
 
-- **Read it:** https://cpp.anacay.org ([what is capacity planning?](https://cpp.anacay.org/what-is-capacity-planning/), [start by role](https://cpp.anacay.org/start/), [glossary](https://cpp.anacay.org/glossary/))
+- **Read it:** https://cpp.anacay.org ([what is infrastructure capacity planning?](https://cpp.anacay.org/what-is-capacity-planning/), [questions, answered](https://cpp.anacay.org/questions/), [start by role](https://cpp.anacay.org/start/), [glossary](https://cpp.anacay.org/glossary/))
 - **Talk:** [The Commons](https://github.com/anacay/cpp/discussions), on GitHub Discussions. One rule: don't break your NDA.
 - **Follow:** [The Capacity Planning Practice on LinkedIn](https://www.linkedin.com/company/capacity-planning-practice/)
 

@@ -18,14 +18,14 @@ const ld = [
       '@type': 'Question', name: x.q, url: `${url}#${x.id}`, acceptedAnswer: { '@type': 'Answer', text: plain(x.a) } })) },
 ];
 ---
-<Base seoTitle="Capacity planning questions, answered" title="Questions" ld={ld} nav="bok"
-  description="Questions capacity planners ask, answered in a few sentences each: forecasting launches, lead times, headroom, chargeback, FinOps and AI accelerators.">
+<Base seoTitle="Infrastructure capacity planning questions, answered" title="Questions" ld={ld} nav="bok"
+  description="Questions infrastructure capacity planners ask, answered in a few sentences each: forecasting launches, lead times, headroom, chargeback, FinOps and AI accelerators.">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">Questions, answered</p>
-      <h1>Capacity planning questions, answered</h1>
+      <h1>Infrastructure capacity planning questions, answered</h1>
       <p class="lede">Short answers to the questions planners ask most. Each one links to the page that teaches it, and to The Commons, where planners argue it out.</p>
-      <p>New to the field? Start with <a href="/what-is-capacity-planning/">what capacity planning is</a>.</p>
+      <p>Capacity here means computing infrastructure: machines, accelerators, networks, data centres and power. New to the field? Start with <a href="/what-is-capacity-planning/">what infrastructure capacity planning is</a>.</p>
     </div>
     <FromAnswer post={anyPost()} topic="these questions" />
     <nav aria-label="Topics"><ul class="letters">{QUESTION_GROUPS.map((g) => <li><a href={`#${g.id}`}>{g.title}</a></li>)}</ul></nav>
@@ -48,6 +48,6 @@ const ld = [
       <p>Ask it in The Commons. Good questions become answers on this page, credited by name if you want.</p>
       <p><a class="btn" href={anyPost()}>Ask a question</a> <a class="btn btn--quiet" href="/join/">How to join</a></p>
     </section>
-    <Cite title="Capacity planning questions, answered" url={url} />
+    <Cite title="Infrastructure capacity planning questions, answered" url={url} />
   </div>
 </Base>

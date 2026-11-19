@@ -2,7 +2,7 @@
 import { load, pageMeta } from '../lib/paper.mjs';
 import { guide } from '../lib/guide.mjs';
 import { doorPages } from '../data/start-paths.mjs';
-import { ENTITY, ENTITY_MORE, DEFINITION } from '../data/entity.mjs';
+import { ENTITY, ENTITY_MORE, DEFINITION, SCOPE_A } from '../data/entity.mjs';
 import { QUESTIONS } from '../data/questions.mjs';
 import { TERM_PAGES } from '../data/term-pages.mjs';
 export function GET() {
@@ -15,6 +15,9 @@ export function GET() {
 
 The full text of the seed paper, and of the guide and glossary, is in one file: ${abs('/llms-full.txt')}
 The community, The Commons, is on GitHub Discussions: ${config.community.repo}/discussions
+
+## Scope
+${SCOPE_A}
 
 ## Key definitions
 - ${DEFINITION} More: ${abs('/what-is-capacity-planning/')}

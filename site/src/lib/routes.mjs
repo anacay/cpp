@@ -10,3 +10,8 @@ export function allRoutes() {
     '/abstract/', '/summary/', '/one-page/', '/paper/', ...chapters.map((c) => c.url), '/paper/terms/',
     '/worksheet/', '/tools/', '/public-record/', '/visual-tour/', '/glossary/', ...TERM_PAGES.map((t) => `/glossary/${t.slug}/`), '/references/', '/changes/', '/about/', '/downloads/'];
 }
+
+// Housekeeping pages kept out of search (R13): useful to members, not answers
+// to anyone's question. Each carries <meta name="robots" content="noindex"> and
+// stays out of the sitemap, so search engines judge the site on its substance.
+export const NOINDEX = ['/privacy/', '/changes/', '/circle/'];

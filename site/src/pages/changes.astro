@@ -8,7 +8,7 @@ const html = renderBlocks(page, ctx);
 const current = ctx.manifest.version.replace(/^v/, '').replace(/\s*draft$/, '');
 if (data.versions[0].version !== current) throw new Error(`src/data/versions.json has no row for version ${current}; add one at the top.`);
 ---
-<Base title="What changed" description={`What changed in version ${current} of ${ctx.manifest.title}, and a short history of earlier versions.`} nav="paper">
+<Base noindex title="What changed" description={`What changed in version ${current} of ${ctx.manifest.title}, and a short history of earlier versions.`} nav="paper">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">Version {current}</p>

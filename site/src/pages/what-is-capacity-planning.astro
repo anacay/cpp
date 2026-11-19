@@ -9,12 +9,13 @@ import Cite from '../components/Cite.astro';
 import FromAnswer from '../components/FromAnswer.astro';
 import { anyPost } from '../data/room.mjs';
 import { load } from '../lib/paper.mjs';
-import { DEFINITION, ENTITY } from '../data/entity.mjs';
+import { DEFINITION, ENTITY, SCOPE_Q, SCOPE_A } from '../data/entity.mjs';
 const { config } = load();
 const site = config.site;
 
 // [question, answer as HTML]. Keep each answer to one paragraph of short sentences.
 const faq = [
+  [SCOPE_Q, SCOPE_A],
   ['How is capacity planning different from capacity management?',
    'Capacity management, as ITIL describes it, is the wider practice of making sure services have the capacity and performance they need, now and later. Capacity planning is its forward-looking core. It decides what to add, where and when, often months or years ahead.'],
   ['What does a capacity planner do?',
@@ -36,20 +37,20 @@ const text = (h) => h.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const url = new URL('/what-is-capacity-planning/', site.url).href;
 const ld = [
   { '@context': 'https://schema.org', '@type': 'FAQPage', '@id': url + '#faq', url, inLanguage: 'en',
-    mainEntity: [['What is capacity planning?', DEFINITION], ...faq].map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: text(a) } })) },
+    mainEntity: [['What is infrastructure capacity planning?', DEFINITION], ...faq].map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: text(a) } })) },
   { '@context': 'https://schema.org', '@type': 'DefinedTerm', name: 'Capacity planning', description: DEFINITION, url, inDefinedTermSet: new URL('/glossary/', site.url).href + '#set' },
 ];
 ---
-<Base seoTitle="What is capacity planning? A plain definition" title="What is capacity planning?" description="A plain definition of capacity planning, with short answers on what planners do, why lead times matter, how demand is forecast and how AI fleets differ." ld={ld} nav="bok">
+<Base seoTitle="What is infrastructure capacity planning? A plain definition" title="What is capacity planning?" description="A plain definition of infrastructure capacity planning (compute, data centres, accelerators), with short answers on what planners do, why lead times matter, how demand is forecast and how AI fleets differ." ld={ld} nav="bok">
   <div class="wrap wrap--reading">
     <div class="page-head reading">
       <p class="eyebrow">A plain answer</p>
-      <h1>What is capacity planning?</h1>
+      <h1>What is infrastructure capacity planning?</h1>
       <p class="lede"><strong>{DEFINITION}</strong></p>
-      <p>It covers computing, storage, network and accelerators, and the space, power and contracts underneath them. It works across lead times from minutes to years, and across altitudes from a whole fleet down to one service.</p>
+      <p>Here, capacity planning means infrastructure, not people’s time on a team. It covers computing, storage, network and accelerators, and the space, power and contracts underneath them. It works across lead times from minutes to years, and across altitudes from a whole fleet down to one service.</p>
     </div>
 
-    <FromAnswer post={anyPost()} topic="capacity planning" />
+    <FromAnswer post={anyPost()} topic="infrastructure capacity planning" />
     <section class="prose reading" aria-label="Questions and answers">
       {faq.map(([q, a], i) => (
         <>
@@ -69,6 +70,6 @@ const ld = [
         <li><a href="/join/">Ask in The Commons</a>: one rule, don’t break your NDA.</li>
       </ul>
     </section>
-    <Cite title="What is capacity planning?" url={url} date="16 November 2026" />
+    <Cite title="What is infrastructure capacity planning?" url={url} date="18 November 2026" />
   </div>
 </Base>

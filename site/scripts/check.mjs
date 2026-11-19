@@ -320,7 +320,11 @@ const pageText = ($, drop = '') => {
   const hdr = read('_headers') ?? '';
   // The 404 page carries its own noindex (it has no URL of its own); it is
   // left out of the count either way.
-  const meta = [...docs.entries()].filter(([u, $]) => u !== '/404.html' && $('meta[name="robots"]').length).length;
+  // Pages listed in NOINDEX (housekeeping) carry their own noindex and stay
+  // out of the sitemap; they are left out of these counts too.
+  const NOINDEX = ['/privacy/', '/changes/', '/circle/'];
+  const skip = (u) => u === '/404.html' || NOINDEX.includes(u);
+  const meta = [...docs.entries()].filter(([u, $]) => !skip(u) && $('meta[name="robots"]').length).length;
   if (config.site.indexable) {
     if (!/Allow:\s*\/\s*$/m.test(robots) || /Disallow:\s*\/\s*$/m.test(robots)) c.fails.push('indexable, but robots.txt does not allow all');
     if (/X-Robots-Tag/.test(hdr)) c.fails.push('indexable, but _headers still sends X-Robots-Tag');
@@ -328,13 +332,13 @@ const pageText = ($, drop = '') => {
   } else {
     if (!/Disallow:\s*\/\s*$/m.test(robots)) c.fails.push('not indexable, but robots.txt does not disallow all');
     if (!/X-Robots-Tag: noindex/.test(hdr)) c.fails.push('not indexable, but _headers lacks X-Robots-Tag');
-    if (meta !== docs.size - (docs.has('/404.html') ? 1 : 0)) c.fails.push(`not indexable, but only ${meta}/${docs.size} pages carry meta robots`);
+    if (meta !== [...docs.keys()].filter((u) => !skip(u)).length) c.fails.push(`not indexable, but only ${meta}/${docs.size} pages carry meta robots`);
   }
   c.notes.push(config.site.indexable ? 'indexable: robots allow, no noindex' : 'not indexable: noindex in robots.txt, header and meta');
   const sm = read('sitemap.xml') ?? '';
   const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname);
   for (const l of locs) if (!docs.has(l)) c.fails.push(`sitemap lists missing page ${l}`);
-  for (const u of docs.keys()) if (u !== '/404.html' && !locs.includes(u)) c.fails.push(`sitemap misses ${u}`);
+  for (const u of docs.keys()) if (!skip(u) && !locs.includes(u)) c.fails.push(`sitemap misses ${u}`);
   if (!read('llms.txt')) c.fails.push('no llms.txt');
   if (!read('llms-full.txt')) c.fails.push('no llms-full.txt');
   if (!read('404.html')) c.fails.push('no 404.html');
